@@ -47,18 +47,18 @@ for data in train dev10h dev2h eval; do
     my_nj=$nj
   fi
 
-  if [ -f data_reseg/${data}_orig/.done ]; then
+  if [ ! -f data_reseg/${data}_orig/.done ]; then
     cp -rT data/${data} data_reseg/${data}_orig; rm -r data_reseg/${data}_orig/split*
     for f in text utt2spk spk2utt feats.scp cmvn.scp segments; do rm data_reseg/${data}_orig/$f; done
     cat data_reseg/${data}_orig/wav.scp  | awk '{print $1, $1;}' | \
-      tee data_reseg/${data}_orig/spk2utt > data_reseg/${}_orig/utt2spk
+      tee data_reseg/${data}_orig/spk2utt > data_reseg/${data}_orig/utt2spk
     plpdir=plp_reseg # don't use plp because of the way names are assigned within that
     # dir, we'll overwrite the old data.
     mkdir -p exp/plp_reseg
     [ -e plp_reseg ] && rm plp_reseg
     ln -s exp/plp_reseg .
 
-    steps/make_plp --cmd "$train_cmd" --nj $my_nj data_reseg/${data}_orig exp/make_plp/${data}_orig $plpdir 
+    steps/make_plp.sh --cmd "$train_cmd" --nj $my_nj data_reseg/${data}_orig exp/make_plp/${data}_orig $plpdir 
     # caution: the new speakers don't correspond to the old ones, since they now have "sw0" at the start..
     steps/compute_cmvn_stats.sh data_reseg/${data}_orig exp/make_plp/${data}_orig $plpdir 
     touch data_reseg/${data}_orig/.done
