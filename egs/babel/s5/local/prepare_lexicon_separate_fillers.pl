@@ -260,26 +260,16 @@ print OUTLEX ("$OOV_symbol\t<oov>\n");             # The symbol <oov> is assumed
 $is_silence_phone{"<oov>"} = 1;                    # a phone in the original lexicon :-)
 $numProns++;
 
-# Add the vocal noise symbol to the lexicon
-print OUTLEX ("$vocalNoise\t<vns>\n");             # The symbol <vns> is assumed not to be
-$is_silence_phone{"<vns>"} = 1;                    # a phone in the original lexicon :-)
-$numProns++;
-
-# Add the nonvocal noise symbol to the lexicon
-print OUTLEX ("$nVoclNoise\t<sss>\n");             # The symbol <sss> is assumed not to be
-$is_silence_phone{"<sss>"} = 1;                    # a phone in the original lexicon :-)
-$numProns++;
-
 # Finally, add the silence symbol to the lexicon
 print OUTLEX ("$silence\t$sil\n");
 $is_silence_phone{$sil} = 1;
 $numProns++;
 
-# Add additional hesitations
-print OUTLEX ("$hesitation\tO~\n");
-$numProns++;
-print OUTLEX ("$hesitation\to~\n");
-$numProns++;
+## Add additional hesitations
+#print OUTLEX ("$hesitation\tO~\n");
+#$numProns++;
+#print OUTLEX ("$hesitation\to~\n");
+#$numProns++;
 
 close(OUTLEX)
     && print STDERR ("$0: Wrote $numProns pronunciations to $outLex\n");
@@ -410,3 +400,4 @@ $numExtraQs++;
 
 close(EXQ)
     && print STDERR ("$0: Wrote $numExtraQs extra questions (incl compound tags and sil) to $exqFile\n");
+

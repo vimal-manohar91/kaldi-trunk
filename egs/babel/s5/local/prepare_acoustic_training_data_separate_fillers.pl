@@ -76,7 +76,7 @@ use Getopt::Long;
 #
 #  -  Babel transcriptions also contain a few non-linguistics tokens
 #
-#         <limspack>   map to a vocal noise symbol
+#         <lipsmack>   map to a vocal noise symbol
 #         <breath>     map to a vocal noise symbol
 #         <cough>      map to a vocal noise symbol
 #         <laugh>      map to a vocal noise symbol
@@ -222,45 +222,40 @@ if (-d $TranscriptionDir) {
 		    @tokens = split(/\s+/, $line);
 		    $text = "";
 		    while ($w = shift(@tokens)) {
-			# First, some Babel-specific transcription filtering
-			if (($w eq "<sta>")||($w eq "<male-to-female>")||($w eq "<female-to-male>")||($w eq "~")) {
-        if (($w eq "<sta>")) {
-			    $text .= " $nVoclNoise";
-			    $numWords++;
-        } else {
-			    next;
-        }
-			} elsif (($w eq "<lipsmack>")||($w eq "<breath>")||($w eq "<cough>")||($w eq "<laugh>")) {
-			    $text .= " $vocalNoise";
-			    $numWords++;
-			} elsif (($w eq "<click>")||($w eq "<ring>")||($w eq "<dtmf>")||($w eq "<int>")){
-			    $text .= " $nVoclNoise";
-			    $numWords++;
-			} elsif (($w eq "(())")||($w eq "<foreign>")||($w eq "<overlap>")||($w eq "<prompt>")) {
-			    $text .= " $OOV_symbol";
-			    $oovCount{$w}++;
-			    $numOOV++;
-			    $numWords++;
-			} elsif ($w eq "<no-speech>") {
-			    $text .= " $silence";
-			    $numSilence++;
-			} else {
-			    # This is a just regular spoken word
-			    if ($vocabFile && (! $inVocab{$w}) && $fragMarkers) {
-				# $w is a potential OOV token
-				# Remove fragMarkers to see if $w becomes in-vocabulary
-				while ($w =~ m:^(\S+[$fragMarkers]|[$fragMarkers]\S+)$:) {
-				    if ($w =~ m:^(\S+)[$fragMarkers]$:) {
-					$w = $1;
-					last if ($inVocab{$w});
-				    } elsif ($w =~m:^[$fragMarkers](\S+)$:) {
-					$w = $1;
-					last if ($inVocab{$w});
-				    } else {
-					die "Logically, the program should never reach here!";
-				    }
-				}
-			    }
+          # First, some Babel-specific transcription filtering
+          if (($w eq "<male-to-female>")||($w eq "<female-to-male>")||($w eq "~")) {
+            next;
+            #} elsif (($w eq "<lipsmack>")||($w eq "<breath>")||($w eq "<cough>")||($w eq "<laugh>")) {
+            #  $text .= " $vocalNoise";
+            #  $numWords++;
+            #} elsif (($w eq "<sta>")||($w eq "<click>")||($w eq "<ring>")||($w eq "<dtmf>")||($w eq "<int>")){
+            #  $text .= " $nVoclNoise";
+            #  $numWords++;
+          } elsif (($w eq "(())")||($w eq "<foreign>")||($w eq "<overlap>")||($w eq "<prompt>")) {
+            $text .= " $OOV_symbol";
+            $oovCount{$w}++;
+            $numOOV++;
+            $numWords++;
+          } elsif ($w eq "<no-speech>") {
+            $text .= " $silence";
+            $numSilence++;
+          } else {
+            # This is a just regular spoken word
+            if ($vocabFile && (! $inVocab{$w}) && $fragMarkers) {
+              # $w is a potential OOV token
+              # Remove fragMarkers to see if $w becomes in-vocabulary
+              while ($w =~ m:^(\S+[$fragMarkers]|[$fragMarkers]\S+)$:) {
+                if ($w =~ m:^(\S+)[$fragMarkers]$:) {
+                  $w = $1;
+                  last if ($inVocab{$w});
+                } elsif ($w =~m:^[$fragMarkers](\S+)$:) {
+                  $w = $1;
+                  last if ($inVocab{$w});
+                } else {
+                  die "Logically, the program should never reach here!";
+                }
+              }
+            }
 			    # If still an OOV, replace $w by $OOV_symbol
 			    if ($vocabFile && (! $inVocab{$w})) {
 				# $w is definitely an OOV token
@@ -276,9 +271,9 @@ if (-d $TranscriptionDir) {
 			    $numWords++;
 			}
 		    }
-        $text =~ s:^\s+::; # Remove leading white space, if any
-        # Transcriptions must contain real words to be useful in training
-        # $text =~ s:^(($OOV_symbol|$vocalNoise|$nVoclNoise|$silence)[ ]{0,1})+$::;
+		    $text =~ s:^\s+::; # Remove leading white space, if any
+                    # Transcriptions must contain real words to be useful in training
+                    $text =~ s:^(($silence)[ ]{0,1})+$::;
 		}
 	    }
             close(TRANSCRIPTION);

@@ -6,7 +6,8 @@
 nj=10
 train_nj=30
 type=dev10h
-segmentation_opts="--remove-noise-only-segments false --split-on-noise-transitions true" 
+remove_oov=false
+segmentation_opts="--remove-noise-only-segments false" 
 
 . utils/parse_options.sh
 
@@ -30,14 +31,14 @@ fi
 
 if [ ! -f exp/tri4b_whole_seg/graph.done ]; then
   # Make the phone decoding-graph.
-  steps/make_phone_graph.sh data/lang exp/tri4_whole_ali_all exp/tri4b_whole_seg || exit 1;
+  steps/make_phone_graph.sh --remove-oov $remove_oov data/lang exp/tri4_whole_ali_all exp/tri4b_whole_seg || exit 1;
   touch exp/tri4b_whole_seg/graph.done
 fi
 
 mkdir -p data_reseg
 
 for data in train dev10h dev2h eval; do
-  if [ "$data" != "$type" ]; then
+  if [ "$data" != "$type" ] && [ "$data" != "train" ]; then
     continue
   fi
 
@@ -58,9 +59,9 @@ for data in train dev10h dev2h eval; do
     [ -e plp_reseg ] && rm plp_reseg
     ln -s exp/plp_reseg .
 
-    steps/make_plp.sh --cmd "$train_cmd" --nj $my_nj data_reseg/${data}_orig exp/make_plp/${data}_orig $plpdir 
+    steps/make_plp.sh --cmd "$train_cmd" --nj $my_nj data_reseg/${data}_orig exp/make_plp/${data}_orig $plpdir || exit 1
     # caution: the new speakers don't correspond to the old ones, since they now have "sw0" at the start..
-    steps/compute_cmvn_stats.sh data_reseg/${data}_orig exp/make_plp/${data}_orig $plpdir 
+    steps/compute_cmvn_stats.sh data_reseg/${data}_orig exp/make_plp/${data}_orig $plpdir || exit 1
     touch data_reseg/${data}_orig/.done
   fi
 
@@ -72,8 +73,8 @@ for data in train dev10h dev2h eval; do
   fi
   
   if [ ! -f exp/tri4b_whole_resegment_${data}/.done ]; then
-    sh -x steps/resegment_data.sh --cmd "$train_cmd" data_reseg/${data}_orig data/lang \
-      exp/tri4b_whole_seg/decode_${data}_orig data_reseg/$data exp/tri4b_whole_resegment_${data}
+    sh -x steps/resegment_data.sh --segmentation_opts "$segmentation_opts" --cmd "$train_cmd" data_reseg/${data}_orig data/lang \
+      exp/tri4b_whole_seg/decode_${data}_orig data_reseg/$data exp/tri4b_whole_resegment_${data} || exit 1
     touch exp/tri4b_whole_resegment_${data}/.done
   fi
 

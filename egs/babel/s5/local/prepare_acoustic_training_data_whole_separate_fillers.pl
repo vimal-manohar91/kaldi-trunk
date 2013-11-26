@@ -223,19 +223,14 @@ if (-d $TranscriptionDir) {
 		    $text = "";
 		    while ($w = shift(@tokens)) {
 			# First, some Babel-specific transcription filtering
-			if (($w eq "<sta>")||($w eq "<male-to-female>")||($w eq "<female-to-male>")||($w eq "~")) {
-        if (($w eq "<sta>")) {
-			    $text .= " $nVoclNoise";
-			    $numWords++;
-        } else {
+			if (($w eq "<male-to-female>")||($w eq "<female-to-male>")||($w eq "~")) {
 			    next;
-        }
-			} elsif (($w eq "<lipsmack>")||($w eq "<breath>")||($w eq "<cough>")||($w eq "<laugh>")) {
-			    $text .= " $vocalNoise";
-			    $numWords++;
-			} elsif (($w eq "<click>")||($w eq "<ring>")||($w eq "<dtmf>")||($w eq "<int>")){
-			    $text .= " $nVoclNoise";
-			    $numWords++;
+          #} elsif (($w eq "<lipsmack>")||($w eq "<breath>")||($w eq "<cough>")||($w eq "<laugh>")) {
+			    #    $text .= " $vocalNoise";
+			    #    $numWords++;
+			    #} elsif (($w eq "<click>")||($w eq "<ring>")||($w eq "<dtmf>")||($w eq "<int>")){
+			    #    $text .= " $nVoclNoise";
+			    #    $numWords++;
 			} elsif (($w eq "(())")||($w eq "<foreign>")||($w eq "<overlap>")||($w eq "<prompt>")) {
 			    $text .= " $OOV_symbol";
 			    $oovCount{$w}++;

@@ -3,6 +3,102 @@
 import os, glob, argparse, sys, re, time
 from argparse import ArgumentParser
 
+import numpy as np
+
+def mean(l):
+  if len(l) > 0:
+    return float(sum(l)) / len(l)
+  return 0
+
+class Analysis:
+  def __init__(self, file_id, frame_shift, prefix):
+    self.confusion_matrix = [0] * 9
+    self.type_counts = [ [[] for j in range(0,9)] for i in range(0,3)]
+    self.state_count = [ [] for i in range(0,9) ]
+    self.markers = [ [] for i in range(0,9) ]
+    self.min_length = [0] * 9
+    self.max_length = [0] * 9
+    self.mean_length = [0] * 9
+    self.percentile25 = [0] * 9
+    self.percentile50 = [0] * 9
+    self.percentile75 = [0] * 9
+    self.file_id = file_id
+    self.frame_shift = frame_shift
+    self.prefix = prefix
+
+  def write_confusion_matrix(self, file_handle = sys.stderr):
+    sys.stderr.write("Total counts: \n")
+    for j in range(0,9):
+      if self.frame_shift != None:
+        sys.stderr.write("File %s: %s : Confusion: Type %d : %8.3f seconds\n" % (self.file_id, self.prefix, j, self.confusion_matrix[j] * self.frame_shift))
+      else:
+        sys.stderr.write("File %s: %s : Confusion: Type %d : %8.3f counts\n" % (self.file_id, self.prefix, j, self.confusion_matrix[j]))
+
+  def write_type_stats(self, file_handle = sys.stderr):
+    for j in range(0,3):
+      for i in range(0,9):
+        max_length    = max([0]+self.type_counts[j][i])
+        min_length    = min([10000]+self.type_counts[j][i])
+        mean_length   = mean(self.type_counts[j][i])
+        try:
+          percentile25  = np.percentile(self.type_counts[j][i], 25)
+        except ValueError:
+          percentile25 = 0
+        try:
+          percentile50  = np.percentile(self.type_counts[j][i], 50)
+        except ValueError:
+          percentile50 = 0
+        try:
+          percentile75  = np.percentile(self.type_counts[j][i], 75)
+        except ValueError:
+          percentile75 = 0
+
+        file_handle.write("File %s: %s : TypeStats: Type %d %d: Min: %4d Max: %4d Mean: %4d percentile25: %4d percentile50: %4d percentile75: %4d\n" % (self.file_id, self.prefix, j, i,  min_length, max_length, mean_length, percentile25, percentile50, percentile75))
+
+  def write_length_stats(self, file_handle = sys.stderr):
+    for i in range(0,9):
+      self.max_length[i]    = max([0]+self.state_count[i])
+      self.min_length[i]    = min([10000]+self.state_count[i])
+      self.mean_length[i]   = mean(self.state_count[i])
+      try:
+        self.percentile25[i]  = np.percentile(self.state_count[i], 25)
+      except ValueError:
+        self.percentile25[i] = 0
+      try:
+        self.percentile50[i]  = np.percentile(self.state_count[i], 50)
+      except ValueError:
+        self.percentile50[i] = 0
+      try:
+        self.percentile75[i]  = np.percentile(self.state_count[i], 75)
+      except ValueError:
+        self.percentile75[i] = 0
+
+      file_handle.write("File %s: %s : Length: Type %d: Min: %4d Max: %4d Mean: %4d percentile25: %4d percentile50: %4d percentile75: %4d\n" % (self.file_id, self.prefix, i,  self.min_length[i], self.max_length[i], self.mean_length[i], self.percentile25[i], self.percentile50[i], self.percentile75[i]))
+    #file_handle.write("Length: File %s: %40s: Min: %4d Max: %4d Mean: %4d percentile25: %4d percentile50: %4d percentile75: %4d\n" % (self.file_id, "Silence classified as Silence",  self.min_length[0], self.max_length[0], self.mean_length[0], self.percentile25[0], self.percentile50[0], self.percentile75[0]))
+    #file_handle.write("Length: File %s: %40s: Min: %4d Max: %4d Mean: %4d percentile25: %4d percentile50: %4d percentile75: %4d\n" % (self.file_id, "Silence classified as Noise",    self.min_length[1], self.max_length[1], self.mean_length[1], self.percentile25[1], self.percentile50[1], self.percentile75[1]))
+    #file_handle.write("Length: File %s: %40s: Min: %4d Max: %4d Mean: %4d percentile25: %4d percentile50: %4d percentile75: %4d\n" % (self.file_id, "Silence classified as Speech",   self.min_length[2], self.max_length[2], self.mean_length[2], self.percentile25[2], self.percentile50[2], self.percentile75[2]))
+    #file_handle.write("Length: File %s: %40s: Min: %4d Max: %4d Mean: %4d percentile25: %4d percentile50: %4d percentile75: %4d\n" % (self.file_id, "Noise classified as Silence",    self.min_length[3], self.max_length[3], self.mean_length[3], self.percentile25[3], self.percentile50[3], self.percentile75[3]))
+    #file_handle.write("Length: File %s: %40s: Min: %4d Max: %4d Mean: %4d percentile25: %4d percentile50: %4d percentile75: %4d\n" % (self.file_id, "Noise classified as Noise",      self.min_length[4], self.max_length[4], self.mean_length[4], self.percentile25[4], self.percentile50[4], self.percentile75[4]))
+    #file_handle.write("Length: File %s: %40s: Min: %4d Max: %4d Mean: %4d percentile25: %4d percentile50: %4d percentile75: %4d\n" % (self.file_id, "Noise classified as Speech",     self.min_length[5], self.max_length[5], self.mean_length[5], self.percentile25[5], self.percentile50[5], self.percentile75[5]))
+    #file_handle.write("Length: File %s: %40s: Min: %4d Max: %4d Mean: %4d percentile25: %4d percentile50: %4d percentile75: %4d\n" % (self.file_id, "Speech classified as Silence",   self.min_length[6], self.max_length[6], self.mean_length[6], self.percentile25[6], self.percentile50[6], self.percentile75[6]))
+    #file_handle.write("Length: File %s: %40s: Min: %4d Max: %4d Mean: %4d percentile25: %4d percentile50: %4d percentile75: %4d\n" % (self.file_id, "Speech classified as Noise",     self.min_length[7], self.max_length[7], self.mean_length[7], self.percentile25[7], self.percentile50[7], self.percentile75[7]))
+    #file_handle.write("Length: File %s: %40s: Min: %4d Max: %4d Mean: %4d percentile25: %4d percentile50: %4d percentile75: %4d\n" % (self.file_id, "Speech classified as Speech",    self.min_length[8], self.max_length[8], self.mean_length[8], self.percentile25[8], self.percentile50[8], self.percentile75[8]))
+
+  def write_markers(self, file_handle = sys.stderr):
+    file_handle.write("Start frames of different segments:\n")
+    for j in range(0,9):
+      file_handle.write("File %s: %s : Markers: Type %d: %s\n" % (self.file_id, self.prefix, j,  str(sorted([str(self.markers[j][i])+' ('+ str(self.state_count[j][i])+')' for i in range(0, len(self.state_count[j]))],key=lambda x:int(x.split()[0])))))
+    #file_handle.write("%40s:\n %s\n" % ("Silence classified as Silence",  str([str(self.markers[0][i])+' ('+ str(self.state_count[0][i])+')' for i in range(0, len(self.state_count[0]))])))
+    #file_handle.write("%40s:\n %s\n" % ("Silence classified as Noise",    str([str(self.markers[1][i])+' ('+ str(self.state_count[1][i])+')' for i in range(0, len(self.state_count[1]))])))
+    #file_handle.write("%40s:\n %s\n" % ("Silence classified as Speech",   str([str(self.markers[2][i])+' ('+ str(self.state_count[2][i])+')' for i in range(0, len(self.state_count[2]))])))
+    #file_handle.write("%40s:\n %s\n" % ("Noise classified as Silence",    str([str(self.markers[3][i])+' ('+ str(self.state_count[3][i])+')' for i in range(0, len(self.state_count[3]))])))
+    #file_handle.write("%40s:\n %s\n" % ("Noise classified as Noise",      str([str(self.markers[4][i])+' ('+ str(self.state_count[4][i])+')' for i in range(0, len(self.state_count[4]))])))
+    #file_handle.write("%40s:\n %s\n" % ("Noise classified as Speech",     str([str(self.markers[5][i])+' ('+ str(self.state_count[5][i])+')' for i in range(0, len(self.state_count[5]))])))
+    #file_handle.write("%40s:\n %s\n" % ("Speech classified as Silence",   str([str(self.markers[6][i])+' ('+ str(self.state_count[6][i])+')' for i in range(0, len(self.state_count[6]))])))
+    #file_handle.write("%40s:\n %s\n" % ("Speech classified as Noise",     str([str(self.markers[7][i])+' ('+ str(self.state_count[7][i])+')' for i in range(0, len(self.state_count[7]))])))
+    #file_handle.write("%40s:\n %s\n" % ("Speech classified as Speech",    str([str(self.markers[8][i])+' ('+ str(self.state_count[8][i])+')' for i in range(0, len(self.state_count[8]))])))
+
+
 def read_rttm_file(rttm_file, temp_dir, frame_shift):
   file_id = None
   this_file = []
@@ -115,6 +211,7 @@ class JointResegmenter:
       self.remove_noise_segments = True
 
     self.THIS_SILENCE = ("0","1","2")
+    self.THIS_NOISE = ("3","4","5")
     self.THIS_SPEECH = ("6", "7", "8")
     self.THIS_SPEECH_THAT_SIL = ("6",)
     self.THIS_SPEECH_THAT_NOISE = ("7",)
@@ -123,13 +220,19 @@ class JointResegmenter:
     self.THIS_SIL_THAT_SIL = ("9",)
     self.THIS_SIL_THAT_NOISE = ("10",)
     self.THIS_SILENCE_CONVERT = ("9","10","11")
+    self.THIS_NOISE_OR_SILENCE_CONVERT = self.THIS_NOISE + self.THIS_SILENCE_CONVERT
     self.THIS_SILENCE_PLUS = self.THIS_SILENCE + self.THIS_SILENCE_CONVERT
 
     if stats != None:
       self.stats = stats
 
+    self.reference = None
     if reference != None:
-      self.reference = reference
+      if len(reference) < self.N:
+        self.reference = reference + ["0"] * (self.N - len(reference))
+        assert (len(self.reference) == self.N)
+      else:
+        self.reference = reference
 
   def restrict(self, N):
     self.B = self.B[0:N]
@@ -195,6 +298,45 @@ class JointResegmenter:
       # Handle the special case where the last frame of file is not silence
       self.E[self.N] = True
     assert(sum(self.S) == sum(self.E))
+
+    if self.reference != None and self.options.verbose > 0:
+      self.C = ["0"] * self.N
+      C = self.C
+      a = Analysis(self.file_id, self.frame_shift,"Initial")
+
+      count = 1
+      for i in range(0,self.N):
+        if   self.reference[i] == "0" and self.A[i] in self.THIS_SILENCE:
+          C[i] = "0"
+        elif self.reference[i] == "0" and self.A[i] in self.THIS_NOISE:
+          C[i] = "1"
+        elif self.reference[i] == "0" and self.A[i] in self.THIS_SPEECH:
+          C[i] = "2"
+        elif self.reference[i] == "1" and self.A[i] in self.THIS_SILENCE:
+          C[i] = "3"
+        elif self.reference[i] == "1" and self.A[i] in self.THIS_NOISE:
+          C[i] = "4"
+        elif self.reference[i] == "1" and self.A[i] in self.THIS_SPEECH:
+          C[i] = "5"
+        elif self.reference[i] == "2" and self.A[i] in self.THIS_SILENCE:
+          C[i] = "6"
+        elif self.reference[i] == "2" and self.A[i] in self.THIS_NOISE:
+          C[i] = "7"
+        elif self.reference[i] == "2" and self.A[i] in self.THIS_SPEECH:
+          C[i] = "8"
+        if i > 0 and C[i-1] != C[i]:
+          a.state_count[int(C[i-1])].append(count)
+          a.markers[int(C[i-1])].append(i - count)
+          count = 1
+        else:
+          count += 1
+
+      for j in range(0,9):
+        a.confusion_matrix[j] = sum([C[i] == str(j) for i in range(0,self.N)])
+      a.write_confusion_matrix()
+      a.write_length_stats()
+    if self.reference != None and self.options.verbose > 2:
+      a.write_markers()
 
   def set_silence_proportion(self):
     num_nonsil_frames = 0
@@ -280,6 +422,44 @@ class JointResegmenter:
     if num_segment_frames < target_segment_frames:
       proportion = float(num_segment_frames - num_nonsil_frames) / num_segment_frames
       sys.stderr.write("%s: Warning: for recording %s, only got a proportion %f of silence frames, versus target %f\n" % (sys.argv[0], self.file_id, proportion, self.options.silence_proportion))
+
+    if self.reference != None and self.options.verbose > 0:
+      C = ["0"] * self.N
+      a = Analysis(self.file_id, self.frame_shift,"Silence Proportion")
+
+      count = 1
+      for i in range(0,self.N):
+        if   self.reference[i] == "0" and self.A[i] in self.THIS_SILENCE:
+          C[i] = "0"
+        elif self.reference[i] == "0" and self.A[i] in self.THIS_NOISE_OR_SILENCE_CONVERT:
+          C[i] = "1"
+        elif self.reference[i] == "0" and self.A[i] in self.THIS_SPEECH:
+          C[i] = "2"
+        elif self.reference[i] == "1" and self.A[i] in self.THIS_SILENCE:
+          C[i] = "3"
+        elif self.reference[i] == "1" and self.A[i] in self.THIS_NOISE_OR_SILENCE_CONVERT:
+          C[i] = "4"
+        elif self.reference[i] == "1" and self.A[i] in self.THIS_SPEECH:
+          C[i] = "5"
+        elif self.reference[i] == "2" and self.A[i] in self.THIS_SILENCE:
+          C[i] = "6"
+        elif self.reference[i] == "2" and self.A[i] in self.THIS_NOISE_OR_SILENCE_CONVERT:
+          C[i] = "7"
+        elif self.reference[i] == "2" and self.A[i] in self.THIS_SPEECH:
+          C[i] = "8"
+        if i > 0 and C[i-1] != C[i]:
+          a.state_count[int(C[i-1])].append(count)
+          a.markers[int(C[i-1])].append(i - count)
+          count = 1
+        else:
+          count += 1
+
+      for j in range(0,9):
+        a.confusion_matrix[j] = sum([C[i] == str(j) for i in range(0,self.N)])
+      a.write_confusion_matrix()
+      a.write_length_stats()
+    if self.reference != None and self.options.verbose > 0:
+      a.write_markers()
 
   def set_silence_proportion_slow(self):
     n = 0
@@ -495,6 +675,76 @@ class JointResegmenter:
         self.stats.merge_segments += 1
         self.S[b[0]] = False
         self.E[b[0]] = False
+      # End if
+    if self.reference != None and self.options.verbose > 0:
+      segment_starts = [i for i in range(0,self.N) if self.S[i]]
+      segment_ends = [i for i in range(0,self.N+1) if self.E[i]]
+
+      D = {}
+      for i,st in enumerate(segment_starts):
+        en = segment_ends[i]
+        types = {}
+        for val in self.reference[st:en]:
+          types[val] = types.get(val,0) + 1
+        D[st] = (en, types.get("0",0), types.get("1", 0), types.get("2", 0))
+      a = Analysis(self.file_id, None, "Merge")
+      for st, info in D.items():
+        en = info[0]
+
+        if info[1] > 0 and info[2] == 0 and info[3] == 0:
+          a.confusion_matrix[0] += 1
+          a.state_count[0].append((en-st,)+info[1:])
+          a.type_counts[0][0].append(info[1])
+          a.type_counts[1][0].append(info[2])
+          a.type_counts[2][0].append(info[3])
+          a.markers[0].append(st)
+        elif info[1] == 0 and info[2] > 0 and info[3] == 0:
+          a.confusion_matrix[1] += 1
+          a.state_count[1].append((en-st,)+info[1:])
+          a.type_counts[0][1].append(info[1])
+          a.type_counts[1][1].append(info[2])
+          a.type_counts[2][1].append(info[3])
+          a.markers[1].append(st)
+        elif info[1] == 0 and info[2] == 0 and info[3] > 0:
+          a.confusion_matrix[2] += 1
+          a.state_count[2].append((en-st,)+info[1:])
+          a.type_counts[0][2].append(info[1])
+          a.type_counts[1][2].append(info[2])
+          a.type_counts[2][2].append(info[3])
+          a.markers[2].append(st)
+        elif info[1] > 0 and info[2] > 0 and info[3] == 0:
+          a.confusion_matrix[3] += 1
+          a.state_count[3].append((en-st,)+info[1:])
+          a.type_counts[0][3].append(info[1])
+          a.type_counts[1][3].append(info[2])
+          a.type_counts[2][3].append(info[3])
+          a.markers[3].append(st)
+        elif info[1] > 0 and info[2] == 0 and info[3] > 0:
+          a.confusion_matrix[4] += 1
+          a.type_counts[0][4].append(info[1])
+          a.type_counts[1][4].append(info[2])
+          a.type_counts[2][4].append(info[3])
+          a.state_count[4].append((en-st,)+info[1:])
+          a.markers[4].append(st)
+        elif info[1] == 0 and info[2] > 0 and info[3] > 0:
+          a.confusion_matrix[5] += 1
+          a.state_count[5].append((en-st,)+info[1:])
+          a.type_counts[0][5].append(info[1])
+          a.type_counts[1][5].append(info[2])
+          a.type_counts[2][5].append(info[3])
+          a.markers[5].append(st)
+        elif info[1] > 0 and info[2] > 0 and info[3] > 0:
+          a.confusion_matrix[6] += 1
+          a.state_count[6].append((en-st,)+info[1:])
+          a.type_counts[0][6].append(info[1])
+          a.type_counts[1][6].append(info[2])
+          a.type_counts[2][6].append(info[3])
+          a.markers[6].append(st)
+        else:
+          assert (False)
+      a.write_confusion_matrix()
+      a.write_type_stats()
+      a.write_markers()
 
   def split_long_segments(self):
     for n in range(0, self.N):
@@ -560,6 +810,76 @@ class JointResegmenter:
           self.E[p] = False
         if p - 1 > n:
           n = p - 1
+
+    if self.reference != None and self.options.verbose > 0:
+      segment_starts = [i for i in range(0,self.N) if self.S[i]]
+      segment_ends = [i for i in range(0,self.N+1) if self.E[i]]
+
+      D = {}
+      for i,st in enumerate(segment_starts):
+        en = segment_ends[i]
+        types = {}
+        for val in self.reference[st:en]:
+          types[val] = types.get(val,0) + 1
+        D[st] = (en, types.get("0",0), types.get("1", 0), types.get("2", 0))
+      a = Analysis(self.file_id, None, "Remove Noise")
+      for st, info in D.items():
+        en = info[0]
+
+        if info[1] > 0 and info[2] == 0 and info[3] == 0:
+          a.confusion_matrix[0] += 1
+          a.state_count[0].append((en-st,)+info[1:])
+          a.type_counts[0][0].append(info[1])
+          a.type_counts[1][0].append(info[2])
+          a.type_counts[2][0].append(info[3])
+          a.markers[0].append(st)
+        elif info[1] == 0 and info[2] > 0 and info[3] == 0:
+          a.confusion_matrix[1] += 1
+          a.state_count[1].append((en-st,)+info[1:])
+          a.type_counts[0][1].append(info[1])
+          a.type_counts[1][1].append(info[2])
+          a.type_counts[2][1].append(info[3])
+          a.markers[1].append(st)
+        elif info[1] == 0 and info[2] == 0 and info[3] > 0:
+          a.confusion_matrix[2] += 1
+          a.state_count[2].append((en-st,)+info[1:])
+          a.type_counts[0][2].append(info[1])
+          a.type_counts[1][2].append(info[2])
+          a.type_counts[2][2].append(info[3])
+          a.markers[2].append(st)
+        elif info[1] > 0 and info[2] > 0 and info[3] == 0:
+          a.confusion_matrix[3] += 1
+          a.state_count[3].append((en-st,)+info[1:])
+          a.type_counts[0][3].append(info[1])
+          a.type_counts[1][3].append(info[2])
+          a.type_counts[2][3].append(info[3])
+          a.markers[3].append(st)
+        elif info[1] > 0 and info[2] == 0 and info[3] > 0:
+          a.confusion_matrix[4] += 1
+          a.type_counts[0][4].append(info[1])
+          a.type_counts[1][4].append(info[2])
+          a.type_counts[2][4].append(info[3])
+          a.state_count[4].append((en-st,)+info[1:])
+          a.markers[4].append(st)
+        elif info[1] == 0 and info[2] > 0 and info[3] > 0:
+          a.confusion_matrix[5] += 1
+          a.state_count[5].append((en-st,)+info[1:])
+          a.type_counts[0][5].append(info[1])
+          a.type_counts[1][5].append(info[2])
+          a.type_counts[2][5].append(info[3])
+          a.markers[5].append(st)
+        elif info[1] > 0 and info[2] > 0 and info[3] > 0:
+          a.confusion_matrix[6] += 1
+          a.state_count[6].append((en-st,)+info[1:])
+          a.type_counts[0][6].append(info[1])
+          a.type_counts[1][6].append(info[2])
+          a.type_counts[2][6].append(info[3])
+          a.markers[6].append(st)
+        else:
+          assert (False)
+      a.write_confusion_matrix()
+      a.write_type_stats()
+      a.write_markers()
 
   def transition_type(self, j):
     assert (j > 0)
@@ -698,6 +1018,7 @@ def main():
   channel2_file = options.channel2_file
 
   temp_dir = prediction_dir + "/../rttm_classes"
+  os.system("mkdir -p %s" % temp_dir)
   if options.reference_rttm != None:
     read_rttm_file(options.reference_rttm, temp_dir, options.frame_shift)
   else:
