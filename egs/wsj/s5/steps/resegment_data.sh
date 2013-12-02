@@ -11,8 +11,8 @@
 stage=0
 cmd=run.pl
 cleanup=true
-segmentation_opts=  # E.g. set this as --segmentation-opts "--silence-proportion 0.2 --max-segment-length 10"
-rttm_based_map=false
+segmentation_opts="--max-length-diff 0.4"  # E.g. set this as --segmentation-opts "--silence-proportion 0.2 --max-segment-length 10"
+rttm_based_map=true
 
 #end configuration section.
 
@@ -94,17 +94,31 @@ else
 fi
 
 nj=`cat $alidir/num_jobs` || exit 1;
+echo $nj > $dir/num_jobs
 
 if [ $stage -le 0 ]; then
-  $cmd JOB=1:$nj $dir/log/classify.JOB.log \
-    ali-to-phones --per-frame=true "$model" "ark:gunzip -c $alidir/ali.JOB.gz|" ark,t:- \| \
-    utils/int2sym.pl -f 2- $lang/phones.txt \| \
-    utils/apply_map.pl -f 2- $dir/phone_map.txt \| \
-    gzip -c '>' $dir/classes.JOB.gz
-  $cmd JOB=1:$nj $dir/log/resegment.JOB.log \
-    gunzip -c $dir/classes.JOB.gz \| \
-    utils/segmentation2.pl $segmentation_opts \| \
-    gzip -c '>' $dir/segments.JOB.gz
+  if [ ! -f $dir/classes.1.gz ]; then
+    $cmd JOB=1:$nj $dir/log/classify.JOB.log \
+      ali-to-phones --per-frame=true "$model" "ark:gunzip -c $alidir/ali.JOB.gz|" ark,t:- \| \
+      utils/int2sym.pl -f 2- $lang/phones.txt \| \
+      utils/apply_map.pl -f 2- $dir/phone_map.txt \| \
+      gzip -c '>' $dir/classes.JOB.gz || exit 1
+  fi
+
+  mkdir -p $dir/classes
+  rm $dir/classes/*
+  
+  if [ -z $(ls $dir/classes) ] || [ ! -f $dir/classes.done ]; then
+    for n in `seq $nj`; do gunzip -c $dir/classes.$n.gz; done \
+      | awk '{print "echo \""$0"\" > '$dir'/classes/"$1".pred"}' \
+      | bash -e
+    touch $dir/classes.done
+  fi
+
+  #local/segmentation_joint_with_analysis.py --verbose 1 $segmentation_opts $dir/classes \
+  #  2> $dir/log/joint_resegment.log | sort > $data_out/segments || exit 1
+  local/segmentation_nonoise_with_analysis.py --verbose 1 $segmentation_opts $dir/classes \
+    2> $dir/log/nonoise_resegment.log | sort > $data_out/segments || exit 1
 fi
 
 if [ $stage -le 1 ]; then
@@ -122,9 +136,6 @@ if [ $stage -le 1 ]; then
       cp $data/$f $data_out/$f
     fi
   done
-
-  for n in `seq $nj`; do gunzip -c $dir/segments.$n.gz; done | \
-    sort > $data_out/segments || exit 1;
 
   [ ! -s $data_out/segments ] && echo "No data produced" && exit 1;
 

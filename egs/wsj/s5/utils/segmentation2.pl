@@ -50,7 +50,6 @@
 #  This matters because recording-ids will often equal speaker-ids, and Kaldi scripts
 #  require that the utterance-ids and speaker-ids sort in the "same order".
 
-
 use Getopt::Long;
 
 $silence_proportion = 0.2; # The amount of silence at the sides of segments is
@@ -68,7 +67,7 @@ $second_separator = "-";  # separator between start-time and end-time, in uttera
 $remove_noise_only_segments = "true";  # boolean option; if true,
                                        # remove segments that have no speech.
 $min_inter_utt_silence_length = 1.0; # Minimum silence that must exist between two separate utterances
-$split_on_noise_transitions = "false"
+$split_on_noise_transitions = "false";
 
 GetOptions('silence-proportion:f' => \$silence_proportion,
            'frame-shift:f' => \$frame_shift,
@@ -173,8 +172,8 @@ sub set_silence_proportion {
   # achieved on merging two adjacent segments.
   # i.e. a target of half the min_inter_utt_silence_length is set for the 
   # left and right sides of the current segment
-  my $left_target_frames = int($min_inter_utt_silence_length/2.0/$frame_shift)
-  my $right_target_frames = int($min_inter_utt_silence_length/2.0/$frame_shift)
+  my $left_target_frames = int($min_inter_utt_silence_length/2.0/$frame_shift);
+  my $right_target_frames = int($min_inter_utt_silence_length/2.0/$frame_shift);
 
   my $num_segment_frames = $num_nonsil_frames;
   while ($num_segment_frames < $target_segment_frames || $left_segment_frames < $left_target_frames || $right_segment_frames < $right_target_frames) {
@@ -282,18 +281,18 @@ sub split_long_segments {
       ($E[$p] == 1) || die;
       my $segment_length = $p - $n;
 
-      if ($segment_length > $max_frames) {
-        if ($split_on_noise_transitions == "true") {
-          @NS = (0) * ($p - $n + 1);
-          @NE = (0) * ($p - $n + 1);
+      if ($segment_length > $max_segment_length) {
+        if ($split_on_noise_transitions eq 'true') {
+          @NS = (0) x ($p - $n + 1);
+          @NE = (0) x ($p - $n + 1);
           my $k;
 
-          for ($k = $n; $k <= $p; $k++) {
+          for ($k = $n; $k < $p; $k++) {
             if ($A[$k] == 1) {
               # Current frame is noise
               if ($k == $n || $A[$k-1] != 1) {
                 # But previous is not noise. Start of noise
-                $NS[$k-$n] == 1;
+                $NS[$k-$n] = 1;
               }
             } else {
               # Current frame is not noise
@@ -315,7 +314,7 @@ sub split_long_segments {
           my @noise_length = ();
           
           for ($k = $n; $k < $p; $k++) {
-            if ($NS[$k] == 1) {
+            if ($NS[$k-$n] == 1) {
               push @noise_boundaries, $k;
               my $num_noise = 0;
               my $l;
@@ -336,39 +335,44 @@ sub split_long_segments {
 
           foreach $k (@sorted_noise_boundaries) {
             # Find end of the noise segment as $l
-            $l = $k + $noise_length[$k] + 1;
+            my $l = $k + $noise_length[$k];
 
-            if ($noise_length[$k] > $max_length) {
+            if ($noise_length[$k] > $max_segment_length) {
               # This noise segment is too long. Need to split it
               # on both sides.
               # TODO: Don't break at exactly the boundary. 
               # Break it a little inside the noise.
               $S[$k] = 1; $E[$k] = 1;
-              $S[$l] = 1; $E[$l] = 1;
+              if ($l < $N) {
+                $S[$l] = 1; $E[$l] = 1;
+              }
             } else {
-              if ($k>0 && $A[k-1] == 2 && $A[l]==0) {
+              #print STDOUT $k . " " . $l . " " . @A . "\n";
+              if ($k>0 && $A[$k-1] == 2 && $l < @A  && $A[$l]==0) {
                 my $non_sil = 0;
                 for (my $m = $k - 1; $m >= 0; $m --) {
                   if ($A[$m] == 2) { $non_sil++; }
                   else { last; }
                 }
-                if ($non_sil > $max_length) {
+                if ($non_sil > $max_segment_length) {
                   # TODO: Don't break at exactly the boundary. 
                   # Break it a little inside the noise.
                   $S[$k] = 1; $E[$k] = 1;
                 }
-              } elsif (($k==0 || $A[k-1] == 0) && $A[l]==2) {
+              } elsif (($k==0 || $A[$k-1] == 0) && $l < @A && $A[$l]==2) {
                 my $non_sil = 0;
                 for (my $m = $l; $m < $N; $m--) {
                   if ($A[$m] == 2) { $non_sil++; }
                   else { last; }
                 }
-                if ($non_sil > $max_length) {
+                if ($non_sil > $max_segment_length) {
                   # TODO: Don't break at exactly the boundary. 
                   # Break it a little inside the noise.
-                  $S[$l] = 1; $E[$l] = 1;
+                  if ($l < $N) {
+                    $S[$l] = 1; $E[$l] = 1;
+                  }
                 }
-              } elsif ($A[$k-1] == 2 && $A[$l] == 2) {
+              } elsif ($A[$k-1] == 2 && $l < @A &&  $A[$l] == 2) {
                 # There is speech to the both sides of 
                 # noise.
                 my $non_sil = 0;
@@ -380,11 +384,13 @@ sub split_long_segments {
                   if ($A[$m] == 2) { $non_sil++; }
                   else { last; }
                 }
-                if ($non_sil > $max_length) {
+                if ($non_sil > $max_segment_length) {
                   # TODO: Don't break at exactly the boundary. 
                   # Break it a little inside the noise.
                   $S[$k] = 1; $E[$k] = 1;
-                  $S[$l] = 1; $E[$l] = 1;
+                  if ($l < $N) {
+                    $S[$l] = 1; $E[$l] = 1;
+                  }
                 }
               } 
             }
@@ -396,7 +402,7 @@ sub split_long_segments {
         if ($E[$p] == 1) { last; }
       }
       ($E[$p] == 1) || die;
-      my $segment_length = $p - $n;
+      $segment_length = $p - $n;
       my $max_frames = int($hard_max_segment_length / $frame_shift);
       if ($segment_length > $max_frames) {
         # The segment is too long, we need to split it.  First work out
@@ -448,8 +454,12 @@ sub print_segments {
   # We also do some sanity checking here.
   my @segments = (); # each element will be a string start-time:end-time, in frames.
 
-  $N == @S || die; # check array size.
-  ($N+1) == @E || die; # check array size.
+  if ($N != @S) {
+    print STDERR $N
+  }
+
+  $N == @S+0 || die; # check array size.
+  ($N+1) == @E+0 || die; # check array size.
 
   my $max_end_time = 0;
 

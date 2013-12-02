@@ -1,61 +1,51 @@
 #!/bin/bash
 
-# Copyright Johns Hopkins University (Author: Daniel Povey) 2013.  Apache 2.0.
+# Copyright Johns Hopkins University (Author: Vimal Manohar) 2013.  Apache 2.0.
 
 # This script takes two data directories that represent different
 # segmentations of the same data (both must have "segments" files and
 # the recording-ids must match), and it converts the text in one directory
-# to correspond to the segmentation in the other.  Its output is the
-# "text" file in the second directory.  To get the alignments, it
-# must be provided an "alignment" directory where the training data
-# from the first directory has been aligned.
+# to correspond to the segmentation in the other using the ctm file.  
+# Its output is the "text" file in the second directory. 
+# The ctm is typically the original ctm augmented with additional filler
+# models to better model the fillers in the training data
 
 # begin configuration section.
 stage=0
 cmd=run.pl
-ctm_file=
+get_whole_transcripts=false
 #end configuration section.
 
 [ -f ./path.sh ] && . ./path.sh
 . parse_options.sh || exit 1;
 
 if [ $# -ne 5 ]; then
-  echo "Usage: $0 [options] <in-data-dir> <lang> <ali-dir|model-dir> <out-data-dir> <temp/log-dir>"
+  echo "Usage: $0 [options] <in-data-dir> <lang> <ctm-file> <out-data-dir> <temp/log-dir>"
   echo " Options:"
   echo "    --cmd (run.pl|queue.pl...)      # specify how to run the sub-processes."
   echo "    --stage (0|1|2)                 # start scoring script from part-way through."
   echo "e.g.:"
-  echo "$0 data/train data/lang exp/tri3b_ali_all data/train_reseg exp/tri3b_resegment"
+  echo "$0 data_reseg/train data/lang data_reseg/train/ctm.augmented data_augmented/train exp/tri4b_augment_train"
   exit 1;
 fi
 
 data=$1
 lang=$2
-alidir=$3
+ctm_file=$3
 data_out=$4
 dir=$5
 
-[ -z $ctm_file ] && ctm_file=$alidir/ctm
-
 mkdir -p $dir/log || exit 1;
 
-for f in $data/feats.scp $lang/phones.txt $alidir/ali.1.gz $alidir/num_jobs \
-   $alidir/final.mdl $data_out/reco2file_and_channel $data_out/segments; do
+for f in $data/feats.scp $lang/phones.txt $ctm_file \
+   $data_out/reco2file_and_channel $data_out/segments; do
   if [ ! -f $f ]; then 
     echo "$0: no such file $f"
     exit 1;
   fi
 done
 
-
 if [ $stage -le 0 ]; then
-  echo "$0: calling get_train_ctm.sh to produce ctms of the alignments."
-  # Caution: this will produce logs in $alidir/log/get_ctm.log
-  steps/get_train_ctm.sh --cmd "$cmd" $data $lang $alidir || exit 1;  
-fi
-
-
-if [ $stage -le 1 ]; then
   if [ ! -s $ctm_file ]; then
     echo "$0: file $data/ctm does not exist or is empty."
     exit 1;
@@ -70,7 +60,7 @@ if [ $stage -le 1 ]; then
      print reco, $3, $4, $5; } ' > $dir/ctm_per_reco
 fi
 
-if [ $stage -le 2 ]; then
+if [ $stage -le 1 ]; then
   cat $data_out/segments | perl -e '
      @ARGV == 1 || die;
      $ctm_per_reco = shift @ARGV;
@@ -110,6 +100,7 @@ if [ $stage -le 2 ]; then
        }
        $num_utts++;
        if (@text > 0) { $t = join(" ", @text); print "$utt $t\n";; }
+       elsif ( '$get_whole_transcripts' eq "true" ) { print "$utt\n"; }
        else { $num_empty++; }
      }
      print STDERR "Processed $num_utts utterances, of which $num_empty had no text.\n"; ' \
@@ -124,3 +115,4 @@ if [ $stage -le 2 ]; then
     exit 1;
   fi
 fi
+

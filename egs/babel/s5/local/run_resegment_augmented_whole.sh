@@ -13,28 +13,28 @@ data_out=data_reseg
 
 . utils/parse_options.sh
 
-if [ ! -f exp/tri4_whole_ali_sub3/.done ]; then
+if [ ! -f exp/tri4_augmented_whole_ali_sub3/.done ]; then
   steps/align_fmllr.sh --nj $nj --cmd "$train_cmd" \
-    $data_in/train_whole_sub3 $data_in/lang exp/tri4 exp/tri4_whole_ali_sub3 || exit 1;
-  touch exp/tri4_whole_ali_sub3/.done
+    $data_in/train_whole_sub3 $data_in/lang exp/tri4_augmented exp/tri4_augmented_whole_ali_sub3 || exit 1;
+  touch exp/tri4_augmented_whole_ali_sub3/.done
 fi
 
-if [ ! -f exp/tri4b_whole_seg/.done ]; then
+if [ ! -f exp/tri4b_augmented_whole_seg/.done ]; then
   steps/train_lda_mllt.sh --cmd "$train_cmd" --realign-iters "" \
-    1000 10000 $data_in/train_whole_sub3 $data_in/lang exp/tri4_whole_ali_sub3 exp/tri4b_whole_seg || exit 1;
-  touch exp/tri4b_whole_seg/.done
+    1000 10000 $data_in/train_whole_sub3 $data_in/lang exp/tri4_augmented_whole_ali_sub3 exp/tri4b_augmented_whole_seg || exit 1;
+  touch exp/tri4b_augmented_whole_seg/.done
 fi
 
-if [ ! -f exp/tri4_whole_ali_all/.done ]; then
+if [ ! -f exp/tri4_augmented_whole_ali_all/.done ]; then
   steps/align_fmllr.sh --nj $train_nj --cmd "$train_cmd" \
-    $data_in/train_whole $data_in/lang exp/tri4 exp/tri4_whole_ali_all || exit 1;
-  touch exp/tri4_whole_ali_all/.done
+    $data_in/train_whole $data_in/lang exp/tri4_augmented exp/tri4_augmented_whole_ali_all || exit 1;
+  touch exp/tri4_augmented_whole_ali_all/.done
 fi
 
-if [ ! -f exp/tri4b_whole_seg/graph.done ]; then
+if [ ! -f exp/tri4b_augmented_whole_seg/graph.done ]; then
   # Make the phone decoding-graph.
-  steps/make_phone_graph.sh --remove-oov $remove_oov $data_in/lang exp/tri4_whole_ali_all exp/tri4b_whole_seg || exit 1;
-  touch exp/tri4b_whole_seg/graph.done
+  steps/make_phone_graph.sh --remove-oov $remove_oov $data_in/lang exp/tri4_augmented_whole_ali_all exp/tri4b_augmented_whole_seg || exit 1;
+  touch exp/tri4b_augmented_whole_seg/graph.done
 fi
 
 mkdir -p data_reseg
@@ -51,6 +51,8 @@ for data in train dev10h dev2h eval; do
   fi
 
   if [ ! -f $data_out/${data}_orig/.done ]; then
+    mkdir -p $data_out/${data}_orig
+    mkdir -p $data_out/${data}
     cp -rT $data_in/${data} $data_out/${data}_orig; rm -r $data_out/${data}_orig/split*
     for f in text utt2spk spk2utt feats.scp cmvn.scp segments; do rm $data_out/${data}_orig/$f; done
     cat $data_out/${data}_orig/wav.scp  | awk '{print $1, $1;}' | \
@@ -67,17 +69,17 @@ for data in train dev10h dev2h eval; do
     touch $data_out/${data}_orig/.done
   fi
 
-  if [ ! -f exp/tri4b_whole_seg/decode_${data}_orig/.done ]; then
+  if [ ! -f exp/tri4b_augmented_whole_seg/decode_${data}_orig/.done ]; then
     steps/decode_nolats.sh --write-words false --write-alignments true \
       --cmd "$decode_cmd" --nj $my_nj --beam 7.0 --max-active 1000 \
-      exp/tri4b_whole_seg/phone_graph $data_out/${data}_orig exp/tri4b_whole_seg/decode_${data}_orig || exit 1
-    touch exp/tri4b_whole_seg/decode_${data}_orig/.done
+      exp/tri4b_augmented_whole_seg/phone_graph $data_out/${data}_orig exp/tri4b_augmented_whole_seg/decode_${data}_orig || exit 1
+    touch exp/tri4b_augmented_whole_seg/decode_${data}_orig/.done
   fi
   
-  if [ ! -f exp/tri4b_whole_resegment_${data}/.done ]; then
+  if [ ! -f exp/tri4b_augmented_whole_resegment_${data}/.done ]; then
     sh -x steps/resegment_data.sh --segmentation_opts "$segmentation_opts" --cmd "$train_cmd" $data_out/${data}_orig $data_in/lang \
-      exp/tri4b_whole_seg/decode_${data}_orig $data_out/$data exp/tri4b_whole_resegment_${data} || exit 1
-    touch exp/tri4b_whole_resegment_${data}/.done
+      exp/tri4b_augmented_whole_seg/decode_${data}_orig $data_out/$data exp/tri4b_augmented_whole_resegment_${data} || exit 1
+    touch exp/tri4b_augmented_whole_resegment_${data}/.done
   fi
 
   if [ "$data" == "train" ]; then
@@ -88,16 +90,16 @@ for data in train dev10h dev2h eval; do
 
     # We need all the training data to be aligned (not just "train_nodup"), in order
     # to get the resegmented "text".
-    if [ ! -f exp/tri4_whole_ali_train/.done ]; then
+    if [ ! -f exp/tri4_augmented_whole_ali_train/.done ]; then
       steps/align_fmllr.sh --nj $my_nj --cmd "$train_cmd" \
-        $data_in/train $data_in/lang exp/tri4 exp/tri4_whole_ali_train || exit 1;
-      touch exp/tri4_whole_ali_train/.done
+        $data_in/train $data_in/lang exp/tri4_augmented exp/tri4_augmented_whole_ali_train || exit 1;
+      touch exp/tri4_augmented_whole_ali_train/.done
     fi
     
     if [ ! -f exp/$data_out/train/text ]; then
       # Get the file $data_out/train/text
       steps/resegment_text.sh --cmd "$train_cmd" $data_in/train $data_in/lang \
-        exp/tri4_whole_ali_train $data_out/train exp/tri4b_whole_resegment_train
+        exp/tri4_augmented_whole_ali_train $data_out/train exp/tri4b_augmented_whole_resegment_train
     fi
   fi
   
