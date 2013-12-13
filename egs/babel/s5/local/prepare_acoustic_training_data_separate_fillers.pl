@@ -239,6 +239,9 @@ if (-d $TranscriptionDir) {
           } elsif ($w eq "<no-speech>") {
             $text .= " $silence";
             $numSilence++;
+          } elsif ($w =~ m:^<(\w)+>$:) {
+            $text .= " $w";
+            $numWords++;
           } else {
             # This is a just regular spoken word
             if ($vocabFile && (! $inVocab{$w}) && $fragMarkers) {
@@ -256,42 +259,42 @@ if (-d $TranscriptionDir) {
                 }
               }
             }
-			    # If still an OOV, replace $w by $OOV_symbol
-			    if ($vocabFile && (! $inVocab{$w})) {
-				# $w is definitely an OOV token
-				if (exists $oovCount{$w}) {
-				    $oovCount{$w}++;
-				} else {
-				    $oovCount{$w} = 1;
-				}
-				$w = $OOV_symbol;
-				$numOOV++;
-			    }
-			    $text .= " $w";
-			    $numWords++;
-			}
-		    }
-		    $text =~ s:^\s+::; # Remove leading white space, if any
-                    # Transcriptions must contain real words to be useful in training
-                    $text =~ s:^(($silence)[ ]{0,1})+$::;
-		}
-	    }
-            close(TRANSCRIPTION);
-            if ($numUtterancesThisFile>0) {
-                $lastTimeMarkInFile{$fileID} = $prevTimeMark;
-                $numUtterancesInFile{$fileID} = $numUtterancesThisFile;
-                $numUtterancesThisFile = 0;
+            # If still an OOV, replace $w by $OOV_symbol
+            if ($vocabFile && (! $inVocab{$w})) {
+              # $w is definitely an OOV token
+              if (exists $oovCount{$w}) {
+                $oovCount{$w}++;
+              } else {
+                $oovCount{$w} = 1;
+              }
+              $w = $OOV_symbol;
+              $numOOV++;
             }
-            $numFiles++;
+            $text .= " $w";
+            $numWords++;
+          }
         }
-        print STDERR ("$0: Recorded $numUtterances non-empty utterances from $numFiles files\n");
-    } else {
-        print STDERR ("$0 ERROR: No .txt files found $TranscriptionDir\n");
-        exit(1);
-    } 
+        $text =~ s:^\s+::; # Remove leading white space, if any
+        # Transcriptions must contain real words to be useful in training
+        $text =~ s:^(($silence)[ ]{0,1})+$::;
+      }
+    }
+    close(TRANSCRIPTION);
+    if ($numUtterancesThisFile>0) {
+      $lastTimeMarkInFile{$fileID} = $prevTimeMark;
+      $numUtterancesInFile{$fileID} = $numUtterancesThisFile;
+      $numUtterancesThisFile = 0;
+    }
+    $numFiles++;
+  }
+  print STDERR ("$0: Recorded $numUtterances non-empty utterances from $numFiles files\n");
 } else {
-    print STDERR ("$0 ERROR: No directory named $TranscriptionDir\n");
-    exit(1);
+  print STDERR ("$0 ERROR: No .txt files found $TranscriptionDir\n");
+  exit(1);
+} 
+} else {
+  print STDERR ("$0 ERROR: No directory named $TranscriptionDir\n");
+  exit(1);
 }
 
 ########################################################################
@@ -300,86 +303,86 @@ if (-d $TranscriptionDir) {
 
 $AudioDir = "$inDir/audio";
 if (-d $AudioDir) {
-    @AudioFiles = `ls ${AudioDir}/*.sph`;
-    if ($#AudioFiles >= 0) {
-        printf STDERR ("$0: Found %d .sph files in $AudioDir\n", ($#AudioFiles +1));
-        $numFiles = 0;
-        while ($filename = shift @AudioFiles) {
-            $fileID = $filename;
-            $fileID =~ s:.+/::;      # remove path prefix
-            $fileID =~ s:\.sph\s*::; # remove file extension
-            if (exists $numUtterancesInFile{$fileID}) {
-                # Some portion of this file has training transcriptions
-                @Info = `head $filename`;
-                $SampleCount = -1;
-                $SampleRate  = 8000; #default
-                while ($#Info>=0) {
-                   $line = shift @Info;
-                   $SampleCount = $1 if ($line =~ m:sample_count -i (\d+):); 
-                   $SampleRate  = $1 if ($line =~ m:sample_rate -i (\d+):); 
-                }
-                if ($SampleCount<0) {
-                    # Unable to extract a valid duration from the sphere header
-                    print STDERR ("Unable to extract duration: skipping file $filename");
-                } else {
-                    $waveformName{$fileID} = $filename; chomp $waveformName{$fileID};
-                    $duration{$fileID} = $SampleCount/$SampleRate;
-                    $numFiles++;
-                }
-            } else {
-                # Could be due to text filtering resulting in an empty transcription
-                # Output information to STDOUT to enable > /dev/null
-                print STDOUT ("$0: No transcriptions for audio file ${fileID}.sph\n");
-            }
+  @AudioFiles = `ls ${AudioDir}/*.sph`;
+  if ($#AudioFiles >= 0) {
+    printf STDERR ("$0: Found %d .sph files in $AudioDir\n", ($#AudioFiles +1));
+    $numFiles = 0;
+    while ($filename = shift @AudioFiles) {
+      $fileID = $filename;
+      $fileID =~ s:.+/::;      # remove path prefix
+      $fileID =~ s:\.sph\s*::; # remove file extension
+      if (exists $numUtterancesInFile{$fileID}) {
+        # Some portion of this file has training transcriptions
+        @Info = `head $filename`;
+        $SampleCount = -1;
+        $SampleRate  = 8000; #default
+        while ($#Info>=0) {
+          $line = shift @Info;
+          $SampleCount = $1 if ($line =~ m:sample_count -i (\d+):); 
+          $SampleRate  = $1 if ($line =~ m:sample_rate -i (\d+):); 
         }
-        print STDERR ("$0: Recorded durations from headers of $numFiles .sph files\n");
-    } else {
-        print STDERR ("$0 NOTICE: No .sph files in $AudioDir\n");
-    } 
-
-    @AudioFiles = `ls ${AudioDir}/*.wav`;
-    if ($#AudioFiles >= 0) {
-        $soxi=`which soxi` or die "Could not find soxi binary -- do you have sox installed?\n";
-        chomp $soxi;
-        printf STDERR ("$0: Found %d .wav files in $AudioDir\n", ($#AudioFiles +1));
-        print STDERR "Soxi found: $soxi\n";
-        $numFiles = 0;
-        while ($filename = shift @AudioFiles) {
-            $fileID = $filename;
-            $fileID =~ s:.+/::;      # remove path prefix
-            $fileID =~ s:\.wav\s*::; # remove file extension
-            if (exists $numUtterancesInFile{$fileID}) {
-                # Some portion of this file has training transcriptions
-                $duration = `$soxi -D $filename`;
-                if ($duration <=0) {
-                    # Unable to extract a valid duration from the sphere header
-                    print STDERR ("Unable to extract duration: skipping file $filename");
-                } else {
-                    if (exists $waveformName{$fileID} ) {
-                      print STDERR ("$0 ERROR: duplicate fileID \"$fileID\" for files \"$filename\" and \"" . $waveformName{$fileID} ."\"\n");
-                      exit(1);
-                    }
-                    $waveformName{$fileID} = $filename; chomp $waveformName{$fileID};
-                    $duration{$fileID} = $duration;
-                    $numFiles++;
-                }
-            } else {
-                # Could be due to text filtering resulting in an empty transcription
-                # Output information to STDOUT to enable > /dev/null
-                print STDOUT ("$0: No transcriptions for audio file ${fileID}.sph\n");
-            }
+        if ($SampleCount<0) {
+          # Unable to extract a valid duration from the sphere header
+          print STDERR ("Unable to extract duration: skipping file $filename");
+        } else {
+          $waveformName{$fileID} = $filename; chomp $waveformName{$fileID};
+          $duration{$fileID} = $SampleCount/$SampleRate;
+          $numFiles++;
         }
-        print STDERR ("$0: Recorded durations from headers of $numFiles .sph files\n");
-    } else {
-        print STDERR ("$0 NOTICE: No .wav files in $AudioDir\n");
-    } 
-    
-    if ( $#waveformName == 0 ) {
-      print STDERR ("$0 ERROR: No audio files found!");
+      } else {
+        # Could be due to text filtering resulting in an empty transcription
+        # Output information to STDOUT to enable > /dev/null
+        print STDOUT ("$0: No transcriptions for audio file ${fileID}.sph\n");
+      }
     }
+    print STDERR ("$0: Recorded durations from headers of $numFiles .sph files\n");
+  } else {
+    print STDERR ("$0 NOTICE: No .sph files in $AudioDir\n");
+  } 
+
+  @AudioFiles = `ls ${AudioDir}/*.wav`;
+  if ($#AudioFiles >= 0) {
+    $soxi=`which soxi` or die "Could not find soxi binary -- do you have sox installed?\n";
+    chomp $soxi;
+    printf STDERR ("$0: Found %d .wav files in $AudioDir\n", ($#AudioFiles +1));
+    print STDERR "Soxi found: $soxi\n";
+    $numFiles = 0;
+    while ($filename = shift @AudioFiles) {
+      $fileID = $filename;
+      $fileID =~ s:.+/::;      # remove path prefix
+      $fileID =~ s:\.wav\s*::; # remove file extension
+      if (exists $numUtterancesInFile{$fileID}) {
+        # Some portion of this file has training transcriptions
+        $duration = `$soxi -D $filename`;
+        if ($duration <=0) {
+          # Unable to extract a valid duration from the sphere header
+          print STDERR ("Unable to extract duration: skipping file $filename");
+        } else {
+          if (exists $waveformName{$fileID} ) {
+            print STDERR ("$0 ERROR: duplicate fileID \"$fileID\" for files \"$filename\" and \"" . $waveformName{$fileID} ."\"\n");
+            exit(1);
+          }
+          $waveformName{$fileID} = $filename; chomp $waveformName{$fileID};
+          $duration{$fileID} = $duration;
+          $numFiles++;
+        }
+      } else {
+        # Could be due to text filtering resulting in an empty transcription
+        # Output information to STDOUT to enable > /dev/null
+        print STDOUT ("$0: No transcriptions for audio file ${fileID}.sph\n");
+      }
+    }
+    print STDERR ("$0: Recorded durations from headers of $numFiles .sph files\n");
+  } else {
+    print STDERR ("$0 NOTICE: No .wav files in $AudioDir\n");
+  } 
+
+  if ( $#waveformName == 0 ) {
+    print STDERR ("$0 ERROR: No audio files found!");
+  }
 } else {
-    print STDERR ("$0 ERROR: No directory named $AudioDir\n");
-    exit(1);
+  print STDERR ("$0 ERROR: No directory named $AudioDir\n");
+  exit(1);
 }
 
 ########################################################################
@@ -387,8 +390,8 @@ if (-d $AudioDir) {
 ########################################################################
 
 unless (-d $outDir) {
-    print STDERR ("$0: Creating output directory $outDir\n");
-    die "Failed to create output directory" if (`mkdir -p $outDir`); # i.e. if the exit status is not zero.
+  print STDERR ("$0: Creating output directory $outDir\n");
+  die "Failed to create output directory" if (`mkdir -p $outDir`); # i.e. if the exit status is not zero.
 }
 print STDERR ("$0: Writing 5 output files to $outDir\n");
 
@@ -417,41 +420,41 @@ open (OOV, "| sort -nrk2 > $oovFileName") || die "$0 ERROR: Unable to write oov 
 $numUtterances = $numSpeakers = $numWaveforms = 0;
 $totalSpeech = $totalSpeechSq = 0.0;
 foreach $utteranceID (sort keys %transcription) {
-    $fileID = $baseFileID{$utteranceID};
-    if (exists $waveformName{$fileID}) {
-        # There are matching transcriptions and audio
-        $numUtterances++;
-      	$totalSpeech += ($endTime{$utteranceID} - $startTime{$utteranceID});
-        $totalSpeechSq += (($endTime{$utteranceID} - $startTime{$utteranceID})
-			   *($endTime{$utteranceID} - $startTime{$utteranceID}));
-        print TEXT ("$utteranceID $transcription{$utteranceID}\n");
-        print UTT2SPK ("$utteranceID $speakerID{$utteranceID}\n");
-        print SEGMENTS ("$utteranceID $fileID $startTime{$utteranceID} $endTime{$utteranceID}\n");
-        if (exists $uttList{$speakerID{$utteranceID}}) {
-            $uttList{$speakerID{$utteranceID}} .= " $utteranceID";
-        } else {
-            $numSpeakers++;
-            $uttList{$speakerID{$utteranceID}} = "$utteranceID";
-        }
-        next if (exists $scpEntry{$fileID});
-        $numWaveforms++;
-        if ($waveformName{$fileID} =~ /.*\.sph/ ) {
-          $scpEntry{$fileID} = "$SPH2PIPE $waveformName{$fileID} |";
-        } else {
-          $scpEntry{$fileID} = "$SOXBINARY $waveformName{$fileID} $SOXFLAGS |";
-        }
+  $fileID = $baseFileID{$utteranceID};
+  if (exists $waveformName{$fileID}) {
+    # There are matching transcriptions and audio
+    $numUtterances++;
+    $totalSpeech += ($endTime{$utteranceID} - $startTime{$utteranceID});
+    $totalSpeechSq += (($endTime{$utteranceID} - $startTime{$utteranceID})
+      *($endTime{$utteranceID} - $startTime{$utteranceID}));
+    print TEXT ("$utteranceID $transcription{$utteranceID}\n");
+    print UTT2SPK ("$utteranceID $speakerID{$utteranceID}\n");
+    print SEGMENTS ("$utteranceID $fileID $startTime{$utteranceID} $endTime{$utteranceID}\n");
+    if (exists $uttList{$speakerID{$utteranceID}}) {
+      $uttList{$speakerID{$utteranceID}} .= " $utteranceID";
     } else {
-        print STDERR ("$0 WARNING: No audio file for transcription $utteranceID\n");
+      $numSpeakers++;
+      $uttList{$speakerID{$utteranceID}} = "$utteranceID";
     }
+    next if (exists $scpEntry{$fileID});
+    $numWaveforms++;
+    if ($waveformName{$fileID} =~ /.*\.sph/ ) {
+      $scpEntry{$fileID} = "$SPH2PIPE $waveformName{$fileID} |";
+    } else {
+      $scpEntry{$fileID} = "$SOXBINARY $waveformName{$fileID} $SOXFLAGS |";
+    }
+  } else {
+    print STDERR ("$0 WARNING: No audio file for transcription $utteranceID\n");
+  }
 }
 foreach $fileID (sort keys %scpEntry) {
-    print SCP ("$fileID $scpEntry{$fileID}\n");
+  print SCP ("$fileID $scpEntry{$fileID}\n");
 }
 foreach $speakerID (sort keys %uttList) {
-    print SPK2UTT ("$speakerID $uttList{$speakerID}\n");
+  print SPK2UTT ("$speakerID $uttList{$speakerID}\n");
 }
 foreach $w (sort keys %oovCount) {
-    print OOV ("$w\t$oovCount{$w}\n");
+  print OOV ("$w\t$oovCount{$w}\n");
 }
 exit(1) unless (close(TEXT) && close(UTT2SPK) && close(SEGMENTS) && close(SCP) && close(SPK2UTT) && close(OOV));
 
@@ -460,15 +463,15 @@ print STDERR ("\tWrote $numUtterances lines each to text, utt2spk and segments\n
 print STDERR ("\tWrote $numWaveforms lines to wav.scp\n");
 print STDERR ("\tWrote $numSpeakers lines to spk2utt\n");
 print STDERR ("\tHmmm ... $numSpeakers distinct speakers in this corpus? Unusual!\n")
-    if (($numSpeakers<($numUtterances/500.0)) || ($numSpeakers>($numUtterances/2.0)));
+if (($numSpeakers<($numUtterances/500.0)) || ($numSpeakers>($numUtterances/2.0)));
 print STDERR ("\tTotal # words = $numWords (including $numOOV OOVs) + $numSilence $silence\n")
-    if ($vocabFile);
+if ($vocabFile);
 printf STDERR ("\tAmount of speech = %.2f hours (including some due to $silence)\n", $totalSpeech/3600.0);
 if ($numUtterances>0) {
-    printf STDERR ("\tAverage utterance length = %.2f sec +/- %.2f sec, and %.2f words\n",
-		   $totalSpeech /= $numUtterances,
-		   sqrt(($totalSpeechSq/$numUtterances)-($totalSpeech*$totalSpeech)),
-		   $numWords/$numUtterances);
+  printf STDERR ("\tAverage utterance length = %.2f sec +/- %.2f sec, and %.2f words\n",
+    $totalSpeech /= $numUtterances,
+    sqrt(($totalSpeechSq/$numUtterances)-($totalSpeech*$totalSpeech)),
+    $numWords/$numUtterances);
 }
 
 exit(0);

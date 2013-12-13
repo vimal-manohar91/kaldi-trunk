@@ -40,7 +40,7 @@ fi
 mkdir -p data_reseg
 
 for data in train dev10h dev2h eval; do
-  if [ "$data" != "$type" ] && [ "$data" != "train" ]; then
+  if [ "$data" != "$type" ]; then
     continue
   fi
 
@@ -57,6 +57,9 @@ for data in train dev10h dev2h eval; do
       tee $data_out/${data}_orig/spk2utt > $data_out/${data}_orig/utt2spk
     plpdir=plp_reseg # don't use plp because of the way names are assigned within that
     # dir, we'll overwrite the old data.
+    # NOTE: We are overwriting the data that was obtained by resegmenting the training data
+    # for the purpose of augmenting the text with artificial fillers
+    
     mkdir -p exp/plp_reseg
     [ -e plp_reseg ] && rm plp_reseg
     ln -s exp/plp_reseg .
