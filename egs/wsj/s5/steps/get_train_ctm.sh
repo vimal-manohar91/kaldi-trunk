@@ -72,6 +72,6 @@ if [ $stage -le 1 ]; then
   else
     for n in `seq $nj`; do gunzip -c $dir/ctm.$n.gz; done > $dir/ctm || exit 1;
   fi
-  rm $dir/ctm.*.gz
+  #rm $dir/ctm.*.gz
 fi
 

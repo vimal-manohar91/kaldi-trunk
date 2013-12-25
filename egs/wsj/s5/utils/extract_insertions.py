@@ -10,6 +10,8 @@ def main():
   parser.add_argument('--segments', type=str, \
       dest='segments_file', \
       help='Sorted segments file to restrict insertions to outside it')
+  parser.add_argument('--inside-only', action='store_true',
+      help='Add insertions only inside segments')
   options = parser.parse_args()
 
   segments_file = options.segments_file
@@ -84,16 +86,20 @@ def main():
         # sequentially scanning the file and moving to
         # next line whenever the end of the segment is before
         # the start of the hypothesis
-        while segments_file != None and len(line) > 0 and (seg_file_id < file_id or seg_e < s):
+
+        # NOTE: Initial segments line is read
+        # is read while opening the file
+        while segments_file != None and len(line) > 0 and (seg_file_id < file_id or (seg_file_id == file_id and seg_e < s)):
           line = segments_handle.readline()
-          seg_utt_id, seg_file_id, seg_s, seg_e = line.strip().split()
-          seg_s = float(seg_s)
-          seg_e = float(seg_e)
+          if len(line) > 0:
+            seg_utt_id, seg_file_id, seg_s, seg_e = line.strip().split()
+            seg_s = float(seg_s)
+            seg_e = float(seg_e)
         # End while loop. Means we have reached the end of the
         # file or we have reached the location in time of the
         # hypothesized speech
 
-        if segments_file == None or (seg_file_id == file_id and seg_s > e):
+        if segments_file == None or ((not options.inside_only) and seg_file_id == file_id and seg_s > e):
           # Outside the segments
           if b[1] != "":
             # This is a substitution
@@ -114,6 +120,28 @@ def main():
             insertions["ALL"] = insertions.get("ALL",0) + 1
             insertion_lengths["ALL"].append(e-s)
           # End if
+        elif segments_file != None and options.inside_only and not (seg_file_id == file_id and seg_s > e):
+          # Inside the segments
+          if b[1] != "":
+            # This is a substitution
+            locations.append((file_id, channel, s, e, e-s, b[2], b[1]))
+            # Accumulate substitution statistics
+            substitutions[b[2]] = substitutions.get(b[2],0) + 1
+            substitution_lengths.setdefault(b[2],[])
+            substitution_lengths[b[2]].append(e-s)
+            substitutions["ALL"] = substitutions.get("ALL",0) + 1
+            substitution_lengths["ALL"].append(e-s)
+          else:
+            # This is an insertion
+            locations.append((file_id, channel, s, e, e-s, b[2]))
+            # Accumulate insertion statistics
+            insertions[b[2]] = insertions.get(b[2],0) + 1
+            insertion_lengths.setdefault(b[2],[])
+            insertion_lengths[b[2]].append(e-s)
+            insertions["ALL"] = insertions.get("ALL",0) + 1
+            insertion_lengths["ALL"].append(e-s)
+          # End if
+
         # End if
       # End for loop over the extracted insertions
     # End if

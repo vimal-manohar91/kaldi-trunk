@@ -16,7 +16,6 @@ N=3  # change N and P for non-trigram systems.
 P=1
 tscale=1.0 # transition scale.
 loopscale=0.1 # scale for self-loops.
-remove_oov=false
 # End configuration section.
 
 echo "$0 $@"  # Print the command line for logging
@@ -68,17 +67,9 @@ mkdir -p $dir/phone_graph
 
 if [ $stage -le 0 ]; then
   echo "$0: creating phone LM-training data"
-  if $remove_oov; then
-    gunzip -c $alidir/ali.*gz | ali-to-phones $alidir/final.mdl ark:- ark,t:- | \
-      awk '{for (x=2; x <= NF; x++) printf("%s ", $x); printf("\n"); }' | \
-      utils/int2sym.pl $lang/phones.txt | \
-      sed 's/\ <oov>_S/\n/g' | sed 's/<oov>_S//g' > \
-      $dir/phone_graph/train_phones.txt
-  else
-    gunzip -c $alidir/ali.*gz | ali-to-phones $alidir/final.mdl ark:- ark,t:- | \
-      awk '{for (x=2; x <= NF; x++) printf("%s ", $x); printf("\n"); }' | \
-      utils/int2sym.pl $lang/phones.txt > $dir/phone_graph/train_phones.txt
-  fi
+  gunzip -c $alidir/ali.*gz | ali-to-phones $alidir/final.mdl ark:- ark,t:- | \
+    awk '{for (x=2; x <= NF; x++) printf("%s ", $x); printf("\n"); }' | \
+    utils/int2sym.pl $lang/phones.txt > $dir/phone_graph/train_phones.txt
 fi
 
 if [ $stage -le 1 ]; then

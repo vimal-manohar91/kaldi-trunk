@@ -9,12 +9,11 @@ set -o pipefail
 nj=10         # nj for training subset of whole ali
 train_nj=30   # nj for full training set
 type=dev10h
-remove_oov=false
 segmentation_opts="--remove-noise-only-segments false" 
 data_in=data
 data_out=data_reseg
 augmented=false
-
+plpdir=exp/plp_reseg
 . utils/parse_options.sh
 
 tri4=tri4
@@ -44,7 +43,7 @@ fi
 
 if [ ! -f exp/${tri4b}_whole_seg/graph.done ]; then
   # Make the phone decoding-graph.
-  steps/make_phone_graph.sh --remove-oov $remove_oov $data_in/lang exp/${tri4}_whole_ali_all exp/${tri4b}_whole_seg || exit 1;
+  steps/make_phone_graph.sh $data_in/lang exp/${tri4}_whole_ali_all exp/${tri4b}_whole_seg || exit 1;
   touch exp/${tri4b}_whole_seg/graph.done
 fi
 
@@ -68,11 +67,8 @@ for data in train dev10h dev2h eval; do
     for f in text utt2spk spk2utt feats.scp cmvn.scp segments; do rm $data_out/${data}_orig/$f; done
     cat $data_out/${data}_orig/wav.scp  | awk '{print $1, $1;}' | \
       tee $data_out/${data}_orig/spk2utt > $data_out/${data}_orig/utt2spk
-    plpdir=plp_reseg # don't use plp because of the way names are assigned within that
     # dir, we'll overwrite the old data.
-    mkdir -p exp/plp_reseg
-    [ -e plp_reseg ] && rm plp_reseg
-    ln -s exp/plp_reseg .
+    mkdir -p $plpdir
 
     steps/make_plp.sh --cmd "$train_cmd" --nj $my_nj $data_out/${data}_orig exp/make_plp/${data}_orig $plpdir || exit 1
     # caution: the new speakers don't correspond to the old ones, since they now have "sw0" at the start..
@@ -130,10 +126,6 @@ for data in train dev10h dev2h eval; do
     t1=$(date +%s)
     utils/fix_data_dir.sh $data_out/${data}
     utils/validate_data_dir.sh --no-feats --no-text $data_out/${data}
-    plpdir=plp_reseg # don't use plp because of the way names are assigned within that
-    # dir, we'll overwrite the old data.
-    mkdir -p exp/plp_reseg
-    [ ! -e plp_reseg ] && ln -s exp/plp_reseg .
 
     steps/make_plp.sh --cmd "$train_cmd" --nj $my_nj $data_out/${data} exp/make_plp/${data} $plpdir 
     # caution: the new speakers don't correspond to the old ones, since they now have "sw0" at the start..

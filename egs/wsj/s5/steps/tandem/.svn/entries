@@ -1,7 +1,7 @@
 10
 
 dir
-3126
+3318
 svn://svn.code.sf.net/p/kaldi/code/trunk/egs/wsj/s5/steps/tandem
 svn://svn.code.sf.net/p/kaldi/code
 
@@ -25,6 +25,74 @@ jtrmal
 
 
 5e6a8d80-dfce-4ca6-a32a-6e07a63d50c8
+
+train_deltas.sh
+file
+
+
+
+
+2013-10-31T18:31:21.024135Z
+5ede8c57662c103c225a44a361a11dae
+2013-02-19T18:57:58.283752Z
+2033
+sikoried
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6323
+
+make_denlats_sgmm.sh
+file
+
+
+
+
+2013-10-31T18:31:21.028135Z
+9113229cb04f1ce70039cce94a9946e0
+2013-02-20T18:24:08.748419Z
+2047
+sikoried
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7957
 
 align_sgmm.sh
 file
@@ -298,14 +366,14 @@ has-props
 
 5533
 
-mk_aslf_lda_mllt.sh
+train_sat.sh
 file
 
 
 
 
-2013-10-31T18:31:21.076135Z
-f2c85e866115b4b05bab74e43a50bfde
+2013-10-31T18:31:21.068135Z
+64bc1f71e69b276412b110f22726535f
 2013-02-19T18:57:58.283752Z
 2033
 sikoried
@@ -330,7 +398,7 @@ has-props
 
 
 
-6954
+10635
 
 train_mmi_sgmm2.sh
 file
@@ -366,14 +434,14 @@ has-props
 
 7662
 
-train_sat.sh
+mk_aslf_lda_mllt.sh
 file
 
 
 
 
-2013-10-31T18:31:21.068135Z
-64bc1f71e69b276412b110f22726535f
+2013-10-31T18:31:21.076135Z
+f2c85e866115b4b05bab74e43a50bfde
 2013-02-19T18:57:58.283752Z
 2033
 sikoried
@@ -398,41 +466,7 @@ has-props
 
 
 
-10635
-
-align_si.sh
-file
-
-
-
-
-2013-10-31T18:31:21.080135Z
-4ea4aa761e77e96dd9841421df8a4f61
-2012-11-29T00:23:45.298099Z
-1628
-sikoried
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4750
+6954
 
 train_lda_mllt.sh
 file
@@ -467,6 +501,40 @@ has-props
 
 
 10070
+
+align_si.sh
+file
+
+
+
+
+2013-10-31T18:31:21.080135Z
+4ea4aa761e77e96dd9841421df8a4f61
+2012-11-29T00:23:45.298099Z
+1628
+sikoried
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4750
 
 align_fmllr.sh
 file
@@ -706,40 +774,6 @@ has-props
 
 7670
 
-train_mllt.sh
-file
-
-
-
-
-2013-10-31T18:31:21.124135Z
-5ed6d1d8804d6d4d0da39145056b4138
-2013-02-19T18:57:58.283752Z
-2033
-sikoried
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-9116
-
 train_mono.sh
 file
 
@@ -774,6 +808,40 @@ has-props
 
 5941
 
+train_mllt.sh
+file
+
+
+
+
+2013-10-31T18:31:21.124135Z
+5ed6d1d8804d6d4d0da39145056b4138
+2013-02-19T18:57:58.283752Z
+2033
+sikoried
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9116
+
 decode_sgmm.sh
 file
 
@@ -807,72 +875,4 @@ has-props
 
 
 13225
-
-train_deltas.sh
-file
-
-
-
-
-2013-10-31T18:31:21.024135Z
-5ede8c57662c103c225a44a361a11dae
-2013-02-19T18:57:58.283752Z
-2033
-sikoried
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6323
-
-make_denlats_sgmm.sh
-file
-
-
-
-
-2013-10-31T18:31:21.028135Z
-9113229cb04f1ce70039cce94a9946e0
-2013-02-20T18:24:08.748419Z
-2047
-sikoried
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-7957
 

@@ -52,7 +52,10 @@ use Encode;
 # Note: A .ctm file must be sorted via "sort +0 -1 +1 -2 +2nb -3"
 #
 ################################################################################
-GetOptions("fragmentMarkers=s" => \$fragMarkers, "hesitationToken=s" => \$Hesitation,"oovToken=s" => \$OOV_symbol);
+
+$keep_fillers = "false";
+
+GetOptions("fragmentMarkers=s" => \$fragMarkers, "hesitationToken=s" => \$Hesitation,"oovToken=s" => \$OOV_symbol,"keep-fillers=s" => \$keep_fillers);
 
 if ($#ARGV == 0) {
     $inDir = $ARGV[0];
@@ -65,7 +68,13 @@ if ($#ARGV == 0) {
     print STDERR ("\t--fragmentMarkers <chars>  Strip these from ends of each token (default: none)\n");
     print STDERR ("\t--hesitationToken <foo>    Preserve <foo> when deleting non-speech tokens (default: <hes>)\n");
     print STDERR ("\t--oovToken <bar>           Use <bar> to replace hard-coded OOVs (default: <unk>)\n");
+    print STDERR ("\t--keep-fillers (true|false) Do not remove fillers from STM file\n");
     exit(1);
+}
+
+if ($keep_fillers ne "true" && $keep_fillers ne "false") {
+  print STDERR ("Unexpected value $keep_fillers for --keep-fillers. Must be (true|false)\n");
+  exit(1);
 }
 
 $segmentsFile = "$inDir/segments";
@@ -225,7 +234,9 @@ while ($line=<TEXT>) {
 	# Remove fragMarkers, if provided, from either end of the word
 	$w =~ s:(^[$fragMarkers]|[$fragMarkers]$)::g if ($fragMarkers);
 	# Omit non-speech symbols such as <cough>, <breath>, etc.
-	$w =~ s:^<[^>]+>$:: unless (($w eq $OOV_symbol) || ($w eq $Hesitation));
+  if ($keep_fillers eq "false") {
+    $w =~ s:^<[^>]+>$:: unless (($w eq $OOV_symbol) || ($w eq $Hesitation)); 
+  }
 	next if ($w eq "");
 	$transcription{$segmentID} .= " $w";
 	$numWords++;
@@ -233,10 +244,12 @@ while ($line=<TEXT>) {
     $transcription{$segmentID} =~ s:^\s+::;  # Remove leading white space
     $transcription{$segmentID} =~ s:\s+$::;  # Remove training white space
     $transcription{$segmentID} =~ s:\s+: :g; # Normalize remaining white space
-    # Transcriptions containing no words, or only OOVs and hesitations are not scored
+    # Transcriptions containing no words, or only OOVs and hesitations are not scored.
+    # But if the purpose of STM file generation is to add fillers. Then we 
+    # do not ignore any segments.
     $transcription{$segmentID} = "IGNORE_TIME_SEGMENT_IN_SCORING"
-	if (($transcription{$segmentID} eq "") ||
-	    ($transcription{$segmentID} =~ m:^(($OOV_symbol|$Hesitation)\s*)+$:));
+    if ($keep_fillers eq "false" && (($transcription{$segmentID} eq "") ||
+      ($transcription{$segmentID} =~ m:^(($OOV_symbol|$Hesitation)\s*)+$:)));
     ++$numSegments;
 }
 close(TEXT);

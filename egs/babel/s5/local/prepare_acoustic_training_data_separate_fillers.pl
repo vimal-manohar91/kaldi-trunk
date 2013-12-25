@@ -61,9 +61,9 @@ use Getopt::Long;
 #
 #     The default settings are
 #
-      $vocabFile = "";       # No vocab file; nothing is mapped to OOV
-      $OOV_symbol = "<unk>"; # Default OOV symbol
-      $fragMarkers = "";     # No characters are word-fragment markers
+$vocabFile = "";       # No vocab file; nothing is mapped to OOV
+$OOV_symbol = "<unk>"; # Default OOV symbol
+$fragMarkers = "";     # No characters are word-fragment markers
 #
 #  -  Babel transcriptions contain 4 kinds of untranscribed words
 #
@@ -88,35 +88,41 @@ use Getopt::Long;
 #
 #         <no-speech>  designates silence > 1 sec.
 #
-      $vocalNoise = "<v-noise>";
-      $nVoclNoise = "<noise>";
-      $silence    = "<silence>";
-      $icu_transform="";
+$silence    = "<silence>";
+$icu_transform="";
+$get_whole_transcripts = "false";
+
 #
 ########################################################################
 
 GetOptions("fragmentMarkers=s" => \$fragMarkers,
-           "oov=s" => \$OOV_symbol, 
-           "vocab=s" => \$vocabFile,
-           "icu-transform=s" => \$icu_transform
-           );
+"oov=s" => \$OOV_symbol, 
+"vocab=s" => \$vocabFile,
+"icu-transform=s" => \$icu_transform,
+"--get-whole-transcripts=s" => \$get_whole_transcripts
+);
 
 if ($#ARGV == 1) {
-    $inDir  = $ARGV[0];
-    $outDir = $ARGV[1];
-    print STDERR ("$0: $inDir $outDir\n");
-    if($vocabFile) {
-	print STDERR ("\tLimiting transcriptions to words in $vocabFile\n");
-	print STDERR ("\tMapping OOV tokens to \"$OOV_symbol\"\n");
-	print STDERR ("\tif they remain OOV even after removing [$fragMarkers] from either end\n") if ($fragMarkers);
-    }        
-    print STDERR ("$0 ADVICE: Use full path for the Input Directory\n") unless ($inDir=~m:^/:);
+  $inDir  = $ARGV[0];
+  $outDir = $ARGV[1];
+  print STDERR ("$0: $inDir $outDir\n");
+  if($vocabFile) {
+    print STDERR ("\tLimiting transcriptions to words in $vocabFile\n");
+    print STDERR ("\tMapping OOV tokens to \"$OOV_symbol\"\n");
+    print STDERR ("\tif they remain OOV even after removing [$fragMarkers] from either end\n") if ($fragMarkers);
+  }        
+  print STDERR ("$0 ADVICE: Use full path for the Input Directory\n") unless ($inDir=~m:^/:);
 } else {
-    print STDERR ("Usage: $0 [--options] InputDir OutputDir\n");
-    print STDERR ("\t--vocab <file>             File containing the permitted vocabulary\n");
-    print STDERR ("\t--oov <symbol>             Use this symbol for OOV words (default <unk>)\n");
-    print STDERR ("\t--fragmentMarkers <chars>  Remove these from ends of words to minimize OOVs (default none)\n");
-    exit(1);
+  print STDERR ("Usage: $0 [--options] InputDir OutputDir\n");
+  print STDERR ("\t--vocab <file>             File containing the permitted vocabulary\n");
+  print STDERR ("\t--oov <symbol>             Use this symbol for OOV words (default <unk>)\n");
+  print STDERR ("\t--fragmentMarkers <chars>  Remove these from ends of words to minimize OOVs (default none)\n");
+  print STDERR ("\t--get-whole-transcripts (true|false) Do not remove <silence> from transcript");
+  exit(1);
+}
+
+if ($get_whole_transcripts ne "true" && $get_whole_transcripts ne "false") {
+  print STDERR ("ERROR: Unexpected value $get_whole_transcripts for --get-whole-transcripts. Must be (true|false)\n");
 }
 
 ########################################################################
@@ -124,16 +130,16 @@ if ($#ARGV == 1) {
 ########################################################################
 
 if ($vocabFile) {
-    open (VOCAB, $vocabFile)
-        || die "Unable to open vocabulary file $vocabFile";
-    $numWords = 0;
-    while (<VOCAB>) {
-        next unless (m:^([^\s]+):);
-        $numWords++ unless (exists $inVocab{$1}); # Don't count word repetitions
-        $inVocab{$1} = 1;                         # commonly found in lexicons
-    }
-    close(VOCAB);
-    print STDERR ("Read $numWords unique words from $vocabFile\n");
+  open (VOCAB, $vocabFile)
+  || die "Unable to open vocabulary file $vocabFile";
+  $numWords = 0;
+  while (<VOCAB>) {
+    next unless (m:^([^\s]+):);
+    $numWords++ unless (exists $inVocab{$1}); # Don't count word repetitions
+    $inVocab{$1} = 1;                         # commonly found in lexicons
+  }
+  close(VOCAB);
+  print STDERR ("Read $numWords unique words from $vocabFile\n");
 }
 
 ########################################################################
@@ -142,156 +148,152 @@ if ($vocabFile) {
 
 $TranscriptionDir = "$inDir/transcription";
 if (-d $TranscriptionDir) {
-    @TranscriptionFiles = `ls ${TranscriptionDir}/*.txt`;
-    if ($#TranscriptionFiles >= 0) {
-        printf STDERR ("$0: Found %d .txt files in $TranscriptionDir\n", ($#TranscriptionFiles +1));
-        $numFiles = $numUtterances = $numWords = $numOOV = $numSilence = 0;
-        while ($filename = shift @TranscriptionFiles) {
-            $fileID =  $filename;     # To capture the base file name
-            $fileID =~ s:.+/::;       # remove path prefix
-            $fileID =~ s:\.txt\s*$::; # remove file extension
-            # For each transcription file, extract and save segmentation data
-            $numUtterancesThisFile = 0;
-            $prevTimeMark = -1.0;
-            $text = "";
-            if ( $icu_transform ) {
-              $inputspec="uconv -f utf8 -t utf8 -x \"$icu_transform\" $filename |";
-            } else {
-              $inputspec=$filename;
-            }
-            open (TRANSCRIPT, $inputspec) || die "Unable to open $filename";
-            while ($line=<TRANSCRIPT>) {
-                chomp $line;
-                if ($line =~ m:^\[([0-9]+\.*[0-9]*)\]$:) {
-                    $thisTimeMark = $1;
-                    if ($thisTimeMark < $prevTimeMark) {
-                      print STDERR ("$0 ERROR: Found segment with negative duration in $filename\n");
-                      print STDERR ("\tStart time = $prevTimeMark, End time = $thisTimeMark\n");
-                      print STDERR ("\tThis could be a sign of something seriously wrong!\n");
-                      print STDERR ("\tFix the file by hand or remove it from the directory, and retry.\n");
-                      exit(1);
-                    }
-                    if ($prevTimeMark<0) {
-                        # Record the first timemark and continue
-                        $prevTimeMark = $thisTimeMark;
-                        next;
-                    }
-                    ##################################################
-                    # Create an utteranceID using fileID & start time
-                    #    -  Assume Babel file naming conventions
-                    #    -  Remove prefix: program_phase_language
-                    #    -  inLine = scripted = spkr A, outLine = B
-                    #    -  Move A/B so that utteranceIDs sort by spkr
-                    #    -  Assume utterance start time < 10000 sec.
-                    ##################################################
-                    $utteranceID =  $fileID;
-                    $utteranceID =~ s:[^_]+_[^_]+_[^_]+_::;
-                    $utteranceID =~ s:([^_]+)_(.+)_(inLine|scripted):${1}_A_${2}:;
-                    $utteranceID =~ s:([^_]+)_(.+)_outLine:${1}_B_${2}:;
-                    $utteranceID .= sprintf ("_%06i", (100*$prevTimeMark));
-                    ##################################################
-                    # Then save segmentation, transcription, spkeaerID
-                    ##################################################
-                    if (exists $transcription{$utteranceID}) {
-                        # utteranceIDs should be unique, but this one is not!
-                        # Either time marks in the transcription file are bad,
-                        # or something went wrong in generating the utteranceID
-                        print STDERR ("$0 WARNING: Skipping duplicate utterance $utteranceID\n");
-                    }
-                    elsif ($text eq "") {
-                        # Could be due to text filtering done below
-                        # Output information to STDOUT to enable > /dev/null
-                        print STDOUT ("$0: Skipping empty transcription $utteranceID\n");
-                    } else {
-                        $transcription{$utteranceID} = $text;
-                        $startTime{$utteranceID} = $prevTimeMark;
-                        $endTime{$utteranceID} = $thisTimeMark;
-                        if ($utteranceID =~ m:([^_]+_[AB]).*:) {
-                            $speakerID{$utteranceID} = $1;
-                        } else {
-                            # default: one speaker per audio file
-                            $speakerID{$utteranceID} = $fileID;
-                        }
-                        $baseFileID{$utteranceID} = $fileID;
-                        $numUtterancesThisFile++;
-                        $numUtterances++;
-                        $text = "";
-                    }
-                    $prevTimeMark = $thisTimeMark;
-                } else {
-		    @tokens = split(/\s+/, $line);
-		    $text = "";
-		    while ($w = shift(@tokens)) {
-          # First, some Babel-specific transcription filtering
-          if (($w eq "<male-to-female>")||($w eq "<female-to-male>")||($w eq "~")) {
+  @TranscriptionFiles = `ls ${TranscriptionDir}/*.txt`;
+  if ($#TranscriptionFiles >= 0) {
+    printf STDERR ("$0: Found %d .txt files in $TranscriptionDir\n", ($#TranscriptionFiles +1));
+    $numFiles = $numUtterances = $numWords = $numOOV = $numSilence = 0;
+    while ($filename = shift @TranscriptionFiles) {
+      $fileID =  $filename;     # To capture the base file name
+      $fileID =~ s:.+/::;       # remove path prefix
+      $fileID =~ s:\.txt\s*$::; # remove file extension
+# For each transcription file, extract and save segmentation data
+      $numUtterancesThisFile = 0;
+      $prevTimeMark = -1.0;
+      $text = "";
+      if ( $icu_transform ) {
+        $inputspec="uconv -f utf8 -t utf8 -x \"$icu_transform\" $filename |";
+      } else {
+        $inputspec=$filename;
+      }
+      open (TRANSCRIPT, $inputspec) || die "Unable to open $filename";
+      while ($line=<TRANSCRIPT>) {
+        chomp $line;
+        if ($line =~ m:^\[([0-9]+\.*[0-9]*)\]$:) {
+          $thisTimeMark = $1;
+          if ($thisTimeMark < $prevTimeMark) {
+            print STDERR ("$0 ERROR: Found segment with negative duration in $filename\n");
+            print STDERR ("\tStart time = $prevTimeMark, End time = $thisTimeMark\n");
+            print STDERR ("\tThis could be a sign of something seriously wrong!\n");
+            print STDERR ("\tFix the file by hand or remove it from the directory, and retry.\n");
+            exit(1);
+          }
+          if ($prevTimeMark<0) {
+            # Record the first timemark and continue
+            $prevTimeMark = $thisTimeMark;
             next;
-            #} elsif (($w eq "<lipsmack>")||($w eq "<breath>")||($w eq "<cough>")||($w eq "<laugh>")) {
-            #  $text .= " $vocalNoise";
-            #  $numWords++;
-            #} elsif (($w eq "<sta>")||($w eq "<click>")||($w eq "<ring>")||($w eq "<dtmf>")||($w eq "<int>")){
-            #  $text .= " $nVoclNoise";
-            #  $numWords++;
-          } elsif (($w eq "(())")||($w eq "<foreign>")||($w eq "<overlap>")||($w eq "<prompt>")) {
-            $text .= " $OOV_symbol";
-            $oovCount{$w}++;
-            $numOOV++;
-            $numWords++;
-          } elsif ($w eq "<no-speech>") {
-            $text .= " $silence";
-            $numSilence++;
-          } elsif ($w =~ m:^<(\w)+>$:) {
-            $text .= " $w";
-            $numWords++;
+          }
+          ##################################################
+          # Create an utteranceID using fileID & start time
+          #    -  Assume Babel file naming conventions
+          #    -  Remove prefix: program_phase_language
+          #    -  inLine = scripted = spkr A, outLine = B
+          #    -  Move A/B so that utteranceIDs sort by spkr
+          #    -  Assume utterance start time < 10000 sec.
+          ##################################################
+          $utteranceID =  $fileID;
+          $utteranceID =~ s:[^_]+_[^_]+_[^_]+_::;
+          $utteranceID =~ s:([^_]+)_(.+)_(inLine|scripted):${1}_A_${2}:;
+          $utteranceID =~ s:([^_]+)_(.+)_outLine:${1}_B_${2}:;
+          $utteranceID .= sprintf ("_%06i", (100*$prevTimeMark));
+          ##################################################
+          # Then save segmentation, transcription, spkeaerID
+          ##################################################
+          if (exists $transcription{$utteranceID}) {
+            # utteranceIDs should be unique, but this one is not!
+            # Either time marks in the transcription file are bad,
+            # or something went wrong in generating the utteranceID
+            print STDERR ("$0 WARNING: Skipping duplicate utterance $utteranceID\n");
+          }
+          elsif ($text eq "") {
+            # Could be due to text filtering done below
+            # Output information to STDOUT to enable > /dev/null
+            print STDOUT ("$0: Skipping empty transcription $utteranceID\n");
           } else {
-            # This is a just regular spoken word
-            if ($vocabFile && (! $inVocab{$w}) && $fragMarkers) {
-              # $w is a potential OOV token
-              # Remove fragMarkers to see if $w becomes in-vocabulary
-              while ($w =~ m:^(\S+[$fragMarkers]|[$fragMarkers]\S+)$:) {
-                if ($w =~ m:^(\S+)[$fragMarkers]$:) {
-                  $w = $1;
-                  last if ($inVocab{$w});
-                } elsif ($w =~m:^[$fragMarkers](\S+)$:) {
-                  $w = $1;
-                  last if ($inVocab{$w});
-                } else {
-                  die "Logically, the program should never reach here!";
+            $transcription{$utteranceID} = $text;
+            $startTime{$utteranceID} = $prevTimeMark;
+            $endTime{$utteranceID} = $thisTimeMark;
+            if ($utteranceID =~ m:([^_]+_[AB]).*:) {
+              $speakerID{$utteranceID} = $1;
+            } else {
+              # default: one speaker per audio file
+              $speakerID{$utteranceID} = $fileID;
+            }
+            $baseFileID{$utteranceID} = $fileID;
+            $numUtterancesThisFile++;
+            $numUtterances++;
+            $text = "";
+          }
+          $prevTimeMark = $thisTimeMark;
+        } else {
+          @tokens = split(/\s+/, $line);
+          $text = "";
+          while ($w = shift(@tokens)) {
+            # First, some Babel-specific transcription filtering
+            if (($w eq "<male-to-female>")||($w eq "<female-to-male>")||($w eq "~")) {
+              next;
+            } elsif (($w eq "(())")||($w eq "<foreign>")||($w eq "<overlap>")||($w eq "<prompt>")) {
+              $text .= " $OOV_symbol";
+              $oovCount{$w}++;
+              $numOOV++;
+              $numWords++;
+            } elsif ($w eq "<no-speech>") {
+              $text .= " $silence";
+              $numSilence++;
+            } elsif ($w =~ m:^<(\w)+>$:) {
+              $text .= " $w";
+              $numWords++;
+            } else {
+              # This is a just regular spoken word
+              if ($vocabFile && (! $inVocab{$w}) && $fragMarkers) {
+                # $w is a potential OOV token
+                # Remove fragMarkers to see if $w becomes in-vocabulary
+                while ($w =~ m:^(\S+[$fragMarkers]|[$fragMarkers]\S+)$:) {
+                  if ($w =~ m:^(\S+)[$fragMarkers]$:) {
+                    $w = $1;
+                    last if ($inVocab{$w});
+                  } elsif ($w =~m:^[$fragMarkers](\S+)$:) {
+                    $w = $1;
+                    last if ($inVocab{$w});
+                  } else {
+                    die "Logically, the program should never reach here!";
+                  }
                 }
               }
-            }
-            # If still an OOV, replace $w by $OOV_symbol
-            if ($vocabFile && (! $inVocab{$w})) {
-              # $w is definitely an OOV token
-              if (exists $oovCount{$w}) {
-                $oovCount{$w}++;
-              } else {
-                $oovCount{$w} = 1;
+              # If still an OOV, replace $w by $OOV_symbol
+              if ($vocabFile && (! $inVocab{$w})) {
+                # $w is definitely an OOV token
+                if (exists $oovCount{$w}) {
+                  $oovCount{$w}++;
+                } else {
+                  $oovCount{$w} = 1;
+                }
+                $w = $OOV_symbol;
+                $numOOV++;
               }
-              $w = $OOV_symbol;
-              $numOOV++;
+              $text .= " $w";
+              $numWords++;
             }
-            $text .= " $w";
-            $numWords++;
+          }
+          $text =~ s:^\s+::; # Remove leading white space, if any
+          # Transcriptions must contain real words to be useful in training
+          if (! $get_whole_transcripts) {
+            $text =~ s:^(($silence)[ ]{0,1})+$::;
           }
         }
-        $text =~ s:^\s+::; # Remove leading white space, if any
-        # Transcriptions must contain real words to be useful in training
-        $text =~ s:^(($silence)[ ]{0,1})+$::;
       }
+      close(TRANSCRIPTION);
+      if ($numUtterancesThisFile>0) {
+        $lastTimeMarkInFile{$fileID} = $prevTimeMark;
+        $numUtterancesInFile{$fileID} = $numUtterancesThisFile;
+        $numUtterancesThisFile = 0;
+      }
+      $numFiles++;
     }
-    close(TRANSCRIPTION);
-    if ($numUtterancesThisFile>0) {
-      $lastTimeMarkInFile{$fileID} = $prevTimeMark;
-      $numUtterancesInFile{$fileID} = $numUtterancesThisFile;
-      $numUtterancesThisFile = 0;
-    }
-    $numFiles++;
-  }
-  print STDERR ("$0: Recorded $numUtterances non-empty utterances from $numFiles files\n");
-} else {
-  print STDERR ("$0 ERROR: No .txt files found $TranscriptionDir\n");
-  exit(1);
-} 
+    print STDERR ("$0: Recorded $numUtterances non-empty utterances from $numFiles files\n");
+  } else {
+    print STDERR ("$0 ERROR: No .txt files found $TranscriptionDir\n");
+    exit(1);
+  } 
 } else {
   print STDERR ("$0 ERROR: No directory named $TranscriptionDir\n");
   exit(1);
@@ -312,7 +314,7 @@ if (-d $AudioDir) {
       $fileID =~ s:.+/::;      # remove path prefix
       $fileID =~ s:\.sph\s*::; # remove file extension
       if (exists $numUtterancesInFile{$fileID}) {
-        # Some portion of this file has training transcriptions
+# Some portion of this file has training transcriptions
         @Info = `head $filename`;
         $SampleCount = -1;
         $SampleRate  = 8000; #default
@@ -330,8 +332,8 @@ if (-d $AudioDir) {
           $numFiles++;
         }
       } else {
-        # Could be due to text filtering resulting in an empty transcription
-        # Output information to STDOUT to enable > /dev/null
+# Could be due to text filtering resulting in an empty transcription
+# Output information to STDOUT to enable > /dev/null
         print STDOUT ("$0: No transcriptions for audio file ${fileID}.sph\n");
       }
     }
@@ -352,7 +354,7 @@ if (-d $AudioDir) {
       $fileID =~ s:.+/::;      # remove path prefix
       $fileID =~ s:\.wav\s*::; # remove file extension
       if (exists $numUtterancesInFile{$fileID}) {
-        # Some portion of this file has training transcriptions
+# Some portion of this file has training transcriptions
         $duration = `$soxi -D $filename`;
         if ($duration <=0) {
           # Unable to extract a valid duration from the sphere header
@@ -367,8 +369,8 @@ if (-d $AudioDir) {
           $numFiles++;
         }
       } else {
-        # Could be due to text filtering resulting in an empty transcription
-        # Output information to STDOUT to enable > /dev/null
+# Could be due to text filtering resulting in an empty transcription
+# Output information to STDOUT to enable > /dev/null
         print STDOUT ("$0: No transcriptions for audio file ${fileID}.sph\n");
       }
     }
@@ -422,7 +424,7 @@ $totalSpeech = $totalSpeechSq = 0.0;
 foreach $utteranceID (sort keys %transcription) {
   $fileID = $baseFileID{$utteranceID};
   if (exists $waveformName{$fileID}) {
-    # There are matching transcriptions and audio
+# There are matching transcriptions and audio
     $numUtterances++;
     $totalSpeech += ($endTime{$utteranceID} - $startTime{$utteranceID});
     $totalSpeechSq += (($endTime{$utteranceID} - $startTime{$utteranceID})

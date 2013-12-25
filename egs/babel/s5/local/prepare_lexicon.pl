@@ -63,6 +63,7 @@ use Data::Dumper;
 ###############################################################################
 
 GetOptions("add=s" => \$nsWordsFile,  
+           "nonshared-noise=s" => \$nonshared_noise,
            "oov=s" => \$OOV_symbol, 
            "romanized!" => \$romanized, 
            "sil=s" => \$sil, 
@@ -275,12 +276,6 @@ print OUTLEX ("$silence\t$sil\n");
 $is_silence_phone{$sil} = 1;
 $numProns++;
 
-# Add additional hesitations
-print OUTLEX ("$hesitation\tO~\n");
-$numProns++;
-print OUTLEX ("$hesitation\to~\n");
-$numProns++;
-
 close(OUTLEX)
     && print STDERR ("$0: Wrote $numProns pronunciations to $outLex\n");
 
@@ -313,6 +308,15 @@ foreach $phone (sort keys %is_original_phone) {
     }
 }
 
+if ($nonshared_noise eq "true") {
+  foreach $phone (keys %is_silence_phone) {
+    if ($phone =~ /<.*>/) {
+      print NSP ("$phone\n");
+      $p++;
+    }
+  }
+}
+
 close(NSP)
     && print STDERR ("$0: Wrote $p (sets of) nonsilence phones to $nspFile\n");
 
@@ -332,8 +336,10 @@ open (SPF, "| sort > $spFile")
     || die "Unable to write silence phones to $spFile";
 $p = 0;
 foreach $phone (keys %is_silence_phone) {
+  if (($nonshared_noise eq "false") || (($nonshared_noise eq "true") && ($phone !~ /<.*>/))) {
     print SPF ("$phone\n");
     $p++;
+  }
 }
 close(SPF)
     && print STDERR ("$0: Wrote $p silence phones to $spFile\n");

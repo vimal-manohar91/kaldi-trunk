@@ -82,7 +82,7 @@ if $rttm_based_map; then
     | awk '{print $1, 1;}' \
     | sed 's/SIL\(.*\)1/SIL\10/' \
     | sed 's/<oov>\(.*\)1/<oov>\12/'
-  cat $lang/phones/nonsilence.txt | awk '{print $1, 2;}'
+  cat $lang/phones/nonsilence.txt | awk '{print $1, 2;}' | sed 's/\(<.*>.*\)2/\11/' | sed 's/<oov>\(.*\)1/<oov>\12/'
   ) > $dir/phone_map.txt
 else
   (
@@ -117,8 +117,8 @@ if [ $stage -le 0 ]; then
 
   #local/segmentation_joint_with_analysis.py --verbose 1 $segmentation_opts $dir/classes \
   #  2> $dir/log/joint_resegment.log | sort > $data_out/segments || exit 1
-  local/segmentation_nonoise_with_analysis.py --verbose 1 $segmentation_opts $dir/classes \
-    2> $dir/log/nonoise_resegment.log | sort > $data_out/segments || exit 1
+  local/segmentation.py --verbose 10 $segmentation_opts $dir/classes \
+    2> $dir/log/resegment.log | sort > $data_out/segments || exit 1
 fi
 
 if [ $stage -le 1 ]; then

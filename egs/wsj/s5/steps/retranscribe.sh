@@ -10,10 +10,14 @@
 # The ctm is typically the original ctm augmented with additional filler
 # models to better model the fillers in the training data
 
+set -o pipefail
+set -e
+
 # begin configuration section.
 stage=0
 cmd=run.pl
 get_whole_transcripts=false
+clean_insertions=false
 #end configuration section.
 
 [ -f ./path.sh ] && . ./path.sh
@@ -37,8 +41,7 @@ dir=$5
 
 mkdir -p $dir/log || exit 1;
 
-for f in $data/feats.scp $lang/phones.txt $ctm_file \
-   $data_out/reco2file_and_channel $data_out/segments; do
+for f in $ctm_file $data_out/reco2file_and_channel $data_out/segments; do
   if [ ! -f $f ]; then 
     echo "$0: no such file $f"
     exit 1;
@@ -47,7 +50,7 @@ done
 
 if [ $stage -le 0 ]; then
   if [ ! -s $ctm_file ]; then
-    echo "$0: file $data/ctm does not exist or is empty."
+    echo "$0: file $ctm_file does not exist or is empty."
     exit 1;
   fi
   echo "$0: converting ctm to a format where we have the recording-id ..."
@@ -61,50 +64,75 @@ if [ $stage -le 0 ]; then
 fi
 
 if [ $stage -le 1 ]; then
-  cat $data_out/segments | perl -e '
-     @ARGV == 1 || die;
-     $ctm_per_reco = shift @ARGV;
-     $chunk_size = 3;
-     open(C, "<$ctm_per_reco") || die "opening ctm file $ctm_per_reco";
-     # we build up an associative array indexed by a pair of ids: $reco,$n
-     # where $n is a 5-second chunk of time.
-     sub to_chunk { my $t = shift @_; return int($t / $chunk_size); }
-     while (<C>) {
-       @A = split;  @A == 4 || die "Bad line $_ in $ctm_per_reco";
-       ($reco, $start, $length, $word) = @A;
-       $chunk = to_chunk($start);
-       if (! defined $reco2list{$reco,$chunk} ){ $reco2list{$reco,$chunk} = [ ]; } # new anonymous array
-       $arrayref = $reco2list{$reco,$chunk};
-       push @$arrayref, [ $start, $length, $word ]; # another level of anonymous array..
-     }
-     $num_utts = 0; $num_empty = 0;
-     while(<STDIN>) {
-       @A = split;  @A == 4 || die "Bad line $_ in stdin";
-       ($utt, $reco, $start, $end) = @A;
-       @text = ();
-       for ($chunk = to_chunk($start); $chunk <= to_chunk($end); $chunk++) {
-         $arrayref = $reco2list{$reco,$chunk};
-         if (defined $arrayref) {
-           foreach $entry ( @$arrayref ) { # note, $entry is itself an arrayref
-                                           # to an array containing $start $end $word.
-             $word_start = $$entry[0];
-             if ($word_start >= $start && $word_start <= $end) {
-               $word_end = $$entry[1] + $word_start;
-               if ($word_end >= $start && $word_end <= $end) {
-                 $word = $$entry[2]; defined $word || die;
-                 push @text, $word;
-               }
-             }
-           }
-         }
-       }
-       $num_utts++;
-       if (@text > 0) { $t = join(" ", @text); print "$utt $t\n";; }
-       elsif ( '$get_whole_transcripts' eq "true" ) { print "$utt\n"; }
-       else { $num_empty++; }
-     }
-     print STDERR "Processed $num_utts utterances, of which $num_empty had no text.\n"; ' \
-       $dir/ctm_per_reco | sort > $data_out/text || exit 1;
+  if $clean_insertions; then
+    mv $data_out/segments $data_out/segments.orig
+    utils/ctm2text_and_segments.py --get-whole-transcripts $get_whole_transcripts $dir/ctm_per_reco $data_out/segments.orig $data_out/segments > $data_out/text || exit 1
+    cat $data_out/text | awk '{print $1}' | awk -F'-' '{print $0" "$1}' | sort > $data_out/utt2spk
+    cat $data_out/utt2spk | python -c 'import sys
+speakers = {}
+for line in sys.stdin.readlines():
+  utt, spk = line.strip().split()
+  speakers.setdefault(spk, [])
+  speakers[spk].append(utt)
+for spk,utts in speakers.items():
+  print("%s %s" % (spk, " ".join(utts)))' | sort > $data_out/spk2utt
+  else
+    utils/ctm2text.py --get-whole-transcripts $get_whole_transcripts $dir/ctm_per_reco $data_out/segments > $data_out/text || exit 1
+    cat $data_out/text | awk '{print $1}' | awk -F'-' '{print $0" "$1}' | sort > $data_out/utt2spk
+    cat $data_out/utt2spk | python -c 'import sys
+speakers = {}
+for line in sys.stdin.readlines():
+  utt, spk = line.strip().split()
+  speakers.setdefault(spk, [])
+  speakers[spk].append(utt)
+for spk,utts in speakers.items():
+  print("%s %s" % (spk, " ".join(utts)))' | sort > $data_out/spk2utt
+  fi
+
+#  cat $data_out/segments | perl -e '
+#     @ARGV == 1 || die;
+#     $ctm_per_reco = shift @ARGV;
+#     $chunk_size = 3;
+#     open(C, "<$ctm_per_reco") || die "opening ctm file $ctm_per_reco";
+#     # we build up an associative array indexed by a pair of ids: $reco,$n
+#     # where $n is a 5-second chunk of time.
+#     sub to_chunk { my $t = shift @_; return int($t / $chunk_size); }
+#     while (<C>) {
+#       @A = split;  @A == 4 || die "Bad line $_ in $ctm_per_reco";
+#       ($reco, $start, $length, $word) = @A;
+#       $chunk = to_chunk($start);
+#       if (! defined $reco2list{$reco,$chunk} ){ $reco2list{$reco,$chunk} = [ ]; } # new anonymous array
+#       $arrayref = $reco2list{$reco,$chunk};
+#       push @$arrayref, [ $start, $length, $word ]; # another level of anonymous array..
+#     }
+#     $num_utts = 0; $num_empty = 0;
+#     while(<STDIN>) {
+#       @A = split;  @A == 4 || die "Bad line $_ in stdin";
+#       ($utt, $reco, $start, $end) = @A;
+#       @text = ();
+#       for ($chunk = to_chunk($start); $chunk <= to_chunk($end); $chunk++) {
+#         $arrayref = $reco2list{$reco,$chunk};
+#         if (defined $arrayref) {
+#           foreach $entry ( @$arrayref ) { # note, $entry is itself an arrayref
+#                                           # to an array containing $start $end $word.
+#             $word_start = $$entry[0];
+#             if ($word_start >= $start && $word_start <= $end) {
+#               $word_end = $$entry[1] + $word_start;
+#               if ($word_end >= $start && $word_end <= $end) {
+#                 $word = $$entry[2]; defined $word || die;
+#                 push @text, $word;
+#               }
+#             }
+#           }
+#         }
+#       }
+#       $num_utts++;
+#       if (@text > 0) { $t = join(" ", @text); print "$utt $t\n";; }
+#       elsif ( '$get_whole_transcripts' eq "true" ) { print "$utt\n"; }
+#       else { $num_empty++; }
+#     }
+#     print STDERR "Processed $num_utts utterances, of which $num_empty had no text.\n"; ' \
+#       $dir/ctm_per_reco | sort > $data_out/text || exit 1;
 
   nw_old=`cat $data/text | wc | awk '{print $2 - $1}'`
   nw_new=`cat $data_out/text | wc | awk '{print $2 - $1}'`
