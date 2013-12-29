@@ -125,7 +125,7 @@ for variable in $option_variables ; do
   echo "$variable=$my_variable"
 done
 
-datadir=${data}/${type}
+datadir=${data}/${type}.whole
 dirid=${type}
 
 if [[ $type == shadow ]] ; then
