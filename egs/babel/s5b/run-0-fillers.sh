@@ -16,22 +16,41 @@ set -o pipefail  #Exit if any of the commands in the pipeline will
                  #return non-zero return code
 #set -u           #Fail on an undefined variable
 
-share_silence_phones=true
 data_only=false
-nonshared_noise=false
-full_initial=false
+share_silence_phones=true   # If set to true, silence phones 
+                            # share same root in context dependency tree
+nonshared_noise=false       # If set to true, pdf is not 
+                            # shared across the noise phones
+full_initial=false          # Set this to true to build SGMM models without 
+                            # adding artificial fillers in 
+                            # exp/sgmm5_initial_mmi_b0.1. 
+                            # This is only to get baseline results.
+
+# Configuration for adding artificial fillers
+train_decode_dir=                 # The best LMWT score is taken automatically. e.g. exp/tri5_initial/decode_train.seg/score_8
+train_ali_dir=exp/tri5_initial_ali
+add_fillers_opts="--num-fillers 5 --count-threshold 30"
+extract_insertions_opts=          # Give "--segments data/train/segments" if you want to add insertions only outside the human segments
+clean_insertions=true             # See steps/retranscribe.sh for details
+
+[ -z "$add_fillers_opts" ] && exit 1    # Just to be safe, give the options here explicitly.
 
 . ./path.sh
 . utils/parse_options.sh
 
-type=train
-skip_kws=true
-skip_stt=false
+# Configuration for decoding train data
 max_states=150000
 wip=0.5
+
+# Configuration for segmenting train data
 segmentation_opts="--remove-noise-only-segments true --max-length-diff 0.4 --min-inter-utt-silence-length 1.0" 
-silence_segment_fraction=1.0
-keep_silence_segments=false
+silence_segment_fraction=1.0      # Fraction of silence segments that are kept as part of whole data
+keep_silence_segments=true       # If true, equivalent to silence_segment_fraction=1.0; otherwise silence_segment_fraction=0.0
+
+mkdir -p data
+mkdir -p data/train
+mkdir -p data/train_whole
+mkdir -p data_initial
 
 function make_plp {
   t=$1
@@ -39,35 +58,31 @@ function make_plp {
   plpdir=$3
 
   if [ "$use_pitch" = "false" ] && [ "$use_ffv" = "false" ]; then
-   steps/make_plp.sh --cmd "$train_cmd" --nj $my_nj ${data}/${t} exp/make_plp/${t} ${plpdir}
+   steps/make_plp.sh --cmd "$train_cmd" --nj $train_nj ${data}/${t} exp/make_plp/${t} ${plpdir}
   elif [ "$use_pitch" = "true" ] && [ "$use_ffv" = "true" ]; then
     cp -rT ${data}/${t} ${data}/${t}_plp; cp -rT ${data}/${t} ${data}/${t}_pitch; cp -rT ${data}/${t} ${data}/${t}_ffv
-    steps/make_plp.sh --cmd "$train_cmd" --nj $my_nj ${data}/${t}_plp exp/make_plp/${t} plp_tmp_${t}
-    local/make_pitch.sh --cmd "$train_cmd" --nj $my_nj ${data}/${t}_pitch exp/make_pitch/${t} pitch_tmp_${t}
-    local/make_ffv.sh --cmd "$train_cmd"  --nj $my_nj ${data}/${t}_ffv exp/make_ffv/${t} ffv_tmp_${t}
-    steps/append_feats.sh --cmd "$train_cmd" --nj $my_nj ${data}/${t}{_plp,_pitch,_plp_pitch} exp/make_pitch/append_${t}_pitch plp_tmp_${t}
-    steps/append_feats.sh --cmd "$train_cmd" --nj $my_nj ${data}/${t}{_plp_pitch,_ffv,} exp/make_ffv/append_${t}_pitch_ffv ${plpdir}
+    steps/make_plp.sh --cmd "$train_cmd" --nj $train_nj ${data}/${t}_plp exp/make_plp/${t} plp_tmp_${t}
+    local/make_pitch.sh --cmd "$train_cmd" --nj $train_nj ${data}/${t}_pitch exp/make_pitch/${t} pitch_tmp_${t}
+    local/make_ffv.sh --cmd "$train_cmd"  --nj $train_nj ${data}/${t}_ffv exp/make_ffv/${t} ffv_tmp_${t}
+    steps/append_feats.sh --cmd "$train_cmd" --nj $train_nj ${data}/${t}{_plp,_pitch,_plp_pitch} exp/make_pitch/append_${t}_pitch plp_tmp_${t}
+    steps/append_feats.sh --cmd "$train_cmd" --nj $train_nj ${data}/${t}{_plp_pitch,_ffv,} exp/make_ffv/append_${t}_pitch_ffv ${plpdir}
     rm -rf {plp,pitch,ffv}_tmp_${t} ${data}/${t}_{plp,pitch,plp_pitch}
   elif [ "$use_pitch" = "true" ]; then
     cp -rT ${data}/${t} ${data}/${t}_plp; cp -rT ${data}/${t} ${data}/${t}_pitch
-    steps/make_plp.sh --cmd "$train_cmd" --nj $my_nj ${data}/${t}_plp exp/make_plp/${t} plp_tmp_${t}
-    local/make_pitch.sh --cmd "$train_cmd" --nj $my_nj ${data}/${t}_pitch exp/make_pitch/${t} pitch_tmp_${t}
-    steps/append_feats.sh --cmd "$train_cmd" --nj $my_nj ${data}/${t}{_plp,_pitch,} exp/make_pitch/append_${t} ${plpdir}
+    steps/make_plp.sh --cmd "$train_cmd" --nj $train_nj ${data}/${t}_plp exp/make_plp/${t} plp_tmp_${t}
+    local/make_pitch.sh --cmd "$train_cmd" --nj $train_nj ${data}/${t}_pitch exp/make_pitch/${t} pitch_tmp_${t}
+    steps/append_feats.sh --cmd "$train_cmd" --nj $train_nj ${data}/${t}{_plp,_pitch,} exp/make_pitch/append_${t} ${plpdir}
     rm -rf {plp,pitch}_tmp_${t} ${data}/${t}_{plp,pitch}
   elif [ "$use_ffv" = "true" ]; then
     cp -rT ${data}/${t} ${data}/${t}_plp; cp -rT ${data}/${t} ${data}/${t}_ffv
-    steps/make_plp.sh --cmd "$train_cmd" --nj $my_nj ${data}/${t}_plp exp/make_plp/${t} plp_tmp_${t}
-    local/make_ffv.sh --cmd "$train_cmd" --nj $my_nj ${data}/${t}_ffv exp/make_ffv/${t} ffv_tmp_${t}
-    steps/append_feats.sh --cmd "$train_cmd" --nj $my_nj ${data}/${t}{_plp,_ffv,} exp/make_ffv/append_${t} ${plpdir}
+    steps/make_plp.sh --cmd "$train_cmd" --nj $train_nj ${data}/${t}_plp exp/make_plp/${t} plp_tmp_${t}
+    local/make_ffv.sh --cmd "$train_cmd" --nj $train_nj ${data}/${t}_ffv exp/make_ffv/${t} ffv_tmp_${t}
+    steps/append_feats.sh --cmd "$train_cmd" --nj $train_nj ${data}/${t}{_plp,_ffv,} exp/make_ffv/append_${t} ${plpdir}
     rm -rf {plp,ffv}_tmp_${t} ${data}/${t}_{plp,ffv}
   fi
   steps/compute_cmvn_stats.sh ${data}/${t} exp/make_plp/${t} ${plpdir}
   utils/fix_data_dir.sh ${data}/${t}
 }
-
-
-mkdir -p data_initial
-mkdir -p data
 
 #Preparing dev2h and train directories
 if [ ! -d data/raw_train_data ]; then
@@ -118,6 +133,12 @@ if [[ ! -f data_initial/local/lexicon.txt || data_initial/local/lexicon.txt -ot 
     $lexiconFlags $lexicon_file data_initial/local
 fi
 
+###############################################################################
+#
+# Data preparation in data_initial/train
+#
+###############################################################################
+
 if [[ ! -f data_initial/train/wav.scp || data_initial/train/wav.scp -ot "$train_data_dir" ]]; then
   echo ---------------------------------------------------------------------
   echo "Preparing acoustic training lists in data_initial/train on" `date`
@@ -151,7 +172,6 @@ if [[ ! -f data_initial/lang/L.fst || data_initial/lang/L.fst -ot data_initial/l
     --share-silence-phones $share_silence_phones \
     data_initial/local $oovSymbol data_initial/local/tmp.lang data_initial/lang
 fi
-
 
 if [[ ! -f data_initial/train/glm || data_initial/train/glm -ot "$glmFile" ]]; then
   echo ---------------------------------------------------------------------
@@ -204,39 +224,39 @@ echo ---------------------------------------------------------------------
 echo "Starting plp feature extraction for data_initial/train in plp on" `date`
 echo ---------------------------------------------------------------------
 
-mkdir -p exp/plp_initial
-[ -e plp ] && rm plp
-ln -s exp/plp_initial plp
-
 if [ ! -f data_initial/train/.plp.done ]; then
-  if [ "$use_pitch" = "false" ] && [ "$use_ffv" = "false" ]; then
-   steps/make_plp.sh --cmd "$train_cmd" --nj $train_nj data_initial/train exp/make_plp/train plp
-  elif [ "$use_pitch" = "true" ] && [ "$use_ffv" = "true" ]; then
-    cp -rT data_initial/train data_initial/train_plp; cp -rT data_initial/train data_initial/train_pitch; cp -rT data_initial/train data_initial/train_ffv
-    steps/make_plp.sh --cmd "$train_cmd" --nj $train_nj data_initial/train_plp exp/make_plp/train plp_tmp_train
-    local/make_pitch.sh --cmd "$train_cmd" --nj $train_nj data_initial/train_pitch exp/make_pitch/train pitch_tmp_train
-    local/make_ffv.sh --cmd "$train_cmd"  --nj $train_nj data_initial/train_ffv exp/make_ffv/train ffv_tmp_train
-    steps/append_feats.sh --cmd "$train_cmd" --nj $train_nj data_initial/train{_plp,_pitch,_plp_pitch} exp/make_pitch/append_train_pitch plp_tmp_train
-    steps/append_feats.sh --cmd "$train_cmd" --nj $train_nj data_initial/train{_plp_pitch,_ffv,} exp/make_ffv/append_train_pitch_ffv plp
-    rm -rf {plp,pitch,ffv}_tmp_train data_initial/train_{plp,pitch,plp_pitch}
-  elif [ "$use_pitch" = "true" ]; then
-    cp -rT data_initial/train data_initial/train_plp; cp -rT data_initial/train data_initial/train_pitch
-    steps/make_plp.sh --cmd "$train_cmd" --nj $train_nj data_initial/train_plp exp/make_plp/train plp_tmp_train
-    local/make_pitch.sh --cmd "$train_cmd" --nj $train_nj data_initial/train_pitch exp/make_pitch/train pitch_tmp_train
-    steps/append_feats.sh --cmd "$train_cmd" --nj $train_nj data_initial/train{_plp,_pitch,} exp/make_pitch/append_train plp
-    rm -rf {plp,pitch}_tmp_train data_initial/train_{plp,pitch}
-  elif [ "$use_ffv" = "true" ]; then
-    cp -rT data_initial/train data_initial/train_plp; cp -rT data_initial/train data_initial/train_ffv
-    steps/make_plp.sh --cmd "$train_cmd" --nj $train_nj data_initial/train_plp exp/make_plp/train plp_tmp_train
-    local/make_ffv.sh --cmd "$train_cmd" --nj $train_nj data_initial/train_ffv exp/make_ffv/train ffv_tmp_train
-    steps/append_feats.sh --cmd "$train_cmd" --nj $train_nj data_initial/train{_plp,_ffv,} exp/make_ffv/append_train plp
-    rm -rf {plp,ffv}_tmp_train data_initial/train_{plp,ffv}
-  fi
+  mkdir -p exp/plp_initial
+  make_plp train data_initial exp/plp_initial
 
-  steps/compute_cmvn_stats.sh \
-    data_initial/train exp/make_plp/train plp
-  # In case plp or pitch extraction failed on some utterances, delist them
-  utils/fix_data_dir.sh data_initial/train
+  #if [ "$use_pitch" = "false" ] && [ "$use_ffv" = "false" ]; then
+  # steps/make_plp.sh --cmd "$train_cmd" --nj $train_nj data_initial/train exp/make_plp/train plp
+  #elif [ "$use_pitch" = "true" ] && [ "$use_ffv" = "true" ]; then
+  #  cp -rT data_initial/train data_initial/train_plp; cp -rT data_initial/train data_initial/train_pitch; cp -rT data_initial/train data_initial/train_ffv
+  #  steps/make_plp.sh --cmd "$train_cmd" --nj $train_nj data_initial/train_plp exp/make_plp/train plp_tmp_train
+  #  local/make_pitch.sh --cmd "$train_cmd" --nj $train_nj data_initial/train_pitch exp/make_pitch/train pitch_tmp_train
+  #  local/make_ffv.sh --cmd "$train_cmd"  --nj $train_nj data_initial/train_ffv exp/make_ffv/train ffv_tmp_train
+  #  steps/append_feats.sh --cmd "$train_cmd" --nj $train_nj data_initial/train{_plp,_pitch,_plp_pitch} exp/make_pitch/append_train_pitch plp_tmp_train
+  #  steps/append_feats.sh --cmd "$train_cmd" --nj $train_nj data_initial/train{_plp_pitch,_ffv,} exp/make_ffv/append_train_pitch_ffv plp
+  #  rm -rf {plp,pitch,ffv}_tmp_train data_initial/train_{plp,pitch,plp_pitch}
+  #elif [ "$use_pitch" = "true" ]; then
+  #  cp -rT data_initial/train data_initial/train_plp; cp -rT data_initial/train data_initial/train_pitch
+  #  steps/make_plp.sh --cmd "$train_cmd" --nj $train_nj data_initial/train_plp exp/make_plp/train plp_tmp_train
+  #  local/make_pitch.sh --cmd "$train_cmd" --nj $train_nj data_initial/train_pitch exp/make_pitch/train pitch_tmp_train
+  #  steps/append_feats.sh --cmd "$train_cmd" --nj $train_nj data_initial/train{_plp,_pitch,} exp/make_pitch/append_train plp
+  #  rm -rf {plp,pitch}_tmp_train data_initial/train_{plp,pitch}
+  #elif [ "$use_ffv" = "true" ]; then
+  #  cp -rT data_initial/train data_initial/train_plp; cp -rT data_initial/train data_initial/train_ffv
+  #  steps/make_plp.sh --cmd "$train_cmd" --nj $train_nj data_initial/train_plp exp/make_plp/train plp_tmp_train
+  #  local/make_ffv.sh --cmd "$train_cmd" --nj $train_nj data_initial/train_ffv exp/make_ffv/train ffv_tmp_train
+  #  steps/append_feats.sh --cmd "$train_cmd" --nj $train_nj data_initial/train{_plp,_ffv,} exp/make_ffv/append_train plp
+  #  rm -rf {plp,ffv}_tmp_train data_initial/train_{plp,ffv}
+  #fi
+
+  #steps/compute_cmvn_stats.sh \
+  #  data_initial/train exp/make_plp/train plp
+  ## In case plp or pitch extraction failed on some utterances, delist them
+  #utils/fix_data_dir.sh data_initial/train
+  
   touch data_initial/train/.plp.done
 fi
 
@@ -260,49 +280,13 @@ if [ ! -f data_initial/train_sub3/.done ]; then
   touch data_initial/train_sub3/.done
 fi
 
-mandatory_variables="${type}_data_dir ${type}_data_list ${type}_stm_file \
-  ${type}_ecf_file ${type}_kwlist_file ${type}_rttm_file ${type}_nj"
-optional_variables="${type}_subset_ecf "
-
-eval my_data_dir=\$${type}_data_dir
-eval my_data_list=\$${type}_data_list
-eval my_stm_file=\$${type}_stm_file
-
-
-eval my_ecf_file=\$${type}_ecf_file 
-eval my_subset_ecf=\$${type}_subset_ecf 
-eval my_kwlist_file=\$${type}_kwlist_file 
-eval my_rttm_file=\$${type}_rttm_file
-eval my_nj=\$${type}_nj  #for shadow, this will be re-set when appropriate
-
-for variable in $mandatory_variables ; do
-  eval my_variable=\$${variable}
-  if [ $type != "train" ] && [ -z $my_variable ] ; then
-    echo "Mandatory variable $variable is not set! " \
-         "You should probably set the variable in the config file "
-    exit 1
-  else
-    echo "$variable=$my_variable"
-  fi
-done
-
-for variable in $option_variables ; do
-  eval my_variable=\$${variable}
-  echo "$variable=$my_variable"
-done
-
-datadir=data_initial/train
-dirid=train
-
-nj_max=`cat $train_data_list | wc -l`
-if [[ "$nj_max" -lt "$train_nj" ]] ; then
-  echo "The maximum reasonable number of jobs is $nj_max (you have $train_nj)! (The training and decoding process has file-granularity)"
-  exit 1;
-  train_nj=$nj_max
-fi
+###############################################################################
+#
+# Data preparation in data_initial/train_whole
+#
+###############################################################################
 
 train_data_dir=`readlink -f ./data/raw_train_data`
-
 if [[ ! -f data_initial/train_whole/wav.scp || data_initial/train_whole/wav.scp -ot "$train_data_dir" ]]; then
   echo ---------------------------------------------------------------------
   echo "Preparing acoustic training lists in data_initial/train on" `date`
@@ -330,6 +314,7 @@ if [[ ! -f data_initial/train_whole/wav.scp || data_initial/train_whole/wav.scp 
         } else {print $0}\
       }' > data_initial/train_whole/text
   fi
+  rm data_initial/train_whole/text_orig
   utils/fix_data_dir.sh data_initial/train_whole
 fi
 
@@ -345,7 +330,8 @@ echo "Starting plp feature extraction for data_initial/train_whole in plp_whole 
 echo ---------------------------------------------------------------------
 
 if [ ! -f data_initial/train_whole/.plp.done ]; then
-  make_plp train_whole data_initial exp/plp_whole
+  mkdir -p exp/plp_initial_whole
+  make_plp train_whole data_initial exp/plp_initial_whole
   touch data_initial/train_whole/.plp.done
 fi
 
@@ -461,42 +447,21 @@ if [ ! -f exp/tri5_initial_ali/.done ]; then
 fi
 
 echo ---------------------------------------------------------------------
-echo "Resegment data in data_reseg on " `date`
+echo "Resegment data in data_initial/train.seg on " `date`
 echo ---------------------------------------------------------------------
 
-sh -x local/run_resegment.sh --train-nj $train_nj --nj $my_nj --type train --data data_initial --segmentation_opts "$segmentation_opts" --initial true || exit 1
+local/run_segmentation_train.sh --train-nj $train_nj --nj $train_nj --initial true data_initial data_initial/lang || exit 1
 
-datadir=data_initial/train.seg
+local/run_segmentation.sh --segmentation_opts "$segmentation_opts" --initial true data_initial/train data_initial/lang || exit 1
+
+#local/run_resegment.sh --train-nj $train_nj --nj $train_nj --type train --data data_initial --segmentation_opts "$segmentation_opts" --initial true || exit 1
 
 ####################################################################
 ##
-## FMLLR decoding 
+## Baseline SGMM training. Disabled by default. Only to get models
+## without adding artificial fillers
 ##
 ####################################################################
-tri5=tri5_initial
-decode=exp/${tri5}/decode_${dirid}.seg
-
-if [ ! -f ${decode}/.done ]; then
-  echo ---------------------------------------------------------------------
-  echo "Spawning decoding with SAT models  on" `date`
-  echo ---------------------------------------------------------------------
-  utils/mkgraph.sh \
-    data_initial/lang exp/$tri5 exp/$tri5/graph |tee exp/$tri5/mkgraph.log
-
-  mkdir -p $decode
-  #By default, we do not care about the lattices for this step -- we just want the transforms
-  #Therefore, we will reduce the beam sizes, to reduce the decoding times
-  steps/decode_fmllr_extra.sh --skip-scoring false \
-    --nj $my_nj --cmd "$decode_cmd" "${decode_extra_opts[@]}"\
-    exp/$tri5/graph ${datadir} ${decode} |tee ${decode}/decode.log
-  
-  local/run_kws_stt_task.sh --cer $cer --max-states $max_states \
-    --cmd "$decode_cmd" --skip-kws $skip_kws --skip-stt $skip_stt --wip $wip \
-    "${shadow_set_extra_opts[@]}" "${lmwt_plp_extra_opts[@]}" \
-    ${datadir} data_initial/lang $decode
-  
-  touch ${decode}/.done
-fi
 
 if $full_initial; then
 
@@ -560,7 +525,193 @@ if $full_initial; then
       exp/sgmm5_initial_mmi_b0.1
     touch exp/sgmm5_initial_mmi_b0.1/.done
   fi
+fi
 
+datadir=data_initial/train.seg
+
+####################################################################
+##
+## FMLLR decoding 
+##
+####################################################################
+tri5=tri5_initial
+decode=exp/${tri5}/decode_train.seg
+
+if [ ! -f ${decode}/.done ]; then
+  echo ---------------------------------------------------------------------
+  echo "Spawning decoding with SAT models  on" `date`
+  echo ---------------------------------------------------------------------
+  utils/mkgraph.sh \
+    data_initial/lang exp/$tri5 exp/$tri5/graph |tee exp/$tri5/mkgraph.log
+
+  mkdir -p $decode
+  steps/decode_fmllr_extra.sh --skip-scoring false \
+    --nj $train_nj --cmd "$decode_cmd" "${decode_extra_opts[@]}"\
+    exp/$tri5/graph ${datadir} ${decode} |tee ${decode}/decode.log
+  
+  local/run_kws_stt_task.sh --cer $cer --max-states $max_states \
+    --cmd "$decode_cmd" --skip-kws true --skip-stt false --wip $wip \
+    "${shadow_set_extra_opts[@]}" "${lmwt_plp_extra_opts[@]}" \
+    ${datadir} data_initial/lang $decode
+  
+  touch ${decode}/.done
+fi
+
+if $full_initial; then
+  ####################################################################
+  ## SGMM2 decoding 
+  ####################################################################
+  sgmm5=sgmm5_initial
+  decode=exp/${sgmm5}/decode_fmllr_train.seg
+
+  if [ ! -f $decode/.done ]; then
+    echo ---------------------------------------------------------------------
+    echo "Spawning $decode on" `date`
+    echo ---------------------------------------------------------------------
+    utils/mkgraph.sh \
+      data_initial/lang exp/$sgmm5 exp/$sgmm5/graph |tee exp/$sgmm5/mkgraph.log
+
+    mkdir -p $decode
+    steps/decode_sgmm2.sh --skip-scoring true --use-fmllr true --nj $train_nj \
+      --cmd "$decode_cmd" --transform-dir exp/${tri5}/decode_train.seg "${decode_extra_opts[@]}"\
+      exp/$sgmm5/graph ${datadir} $decode |tee $decode/decode.log
+    touch $decode/.done
+
+    if ! $fast_path ; then
+      local/run_kws_stt_task.sh --cer $cer --max-states $max_states \
+        --cmd "$decode_cmd" --skip-kws true --skip-stt false --wip $wip \
+        "${shadow_set_extra_opts[@]}" "${lmwt_plp_extra_opts[@]}" \
+        ${datadir} data_initial/lang ${decode}
+    fi
+  fi
+
+  ####################################################################
+  ##
+  ## SGMM_MMI rescoring
+  ##
+  ####################################################################
+
+  for iter in 1 2 3 4; do
+    # Decode SGMM+MMI (via rescoring).
+    sgmm5_mmi_b0_1=sgmm5_initial_mmi_b0.1
+    decode=exp/${sgmm5_mmi_b0_1}/decode_fmllr_train.seg_it${iter}
+    if [ ! -f $decode/.done ]; then
+
+      mkdir -p $decode
+      steps/decode_sgmm2_rescore.sh  --skip-scoring true \
+        --cmd "$decode_cmd" --iter $iter --transform-dir exp/$tri5/decode_train.seg \
+        data_initial/lang ${datadir} exp/$sgmm5/decode_fmllr_train.seg $decode | tee ${decode}/decode.log
+
+      #We are done -- all lattices has been generated. We have to
+      #a)Run MBR decoding
+      #b)Run KW search
+      local/run_kws_stt_task.sh --cer $cer --max-states $max_states \
+        --cmd "$decode_cmd" --skip-kws true --skip-stt false --wip $wip \
+        "${shadow_set_extra_opts[@]}" "${lmwt_plp_extra_opts[@]}" \
+        ${datadir} data_initial/lang $decode
+      
+      touch $decode/.done
+    fi
+  done
+fi
+
+####################################################################
+##
+## Data preparation with artificial fillers added
+##
+####################################################################
+
+if [ -z $train_decode_dir ]; then
+  train_decode_dir=`dirname $(for x in exp/*/decode*train*; do [ -d $x ] && grep Sum $x/score_*/*.sys | utils/best_wer.sh; done 2>/dev/null | sort | head -1 | awk '{print $NF}')`
+fi
+
+echo "Retranscribe using decode directory $train_decode_dir"
+
+local/run_retranscribe.sh --clean-insertions $clean_insertions --extract-insertions-opts "$extract_insertions_opts" --add-fillers-opts "$add_fillers_opts" --get-whole-transcripts false data_initial $train_decode_dir $train_ali_dir data/train || exit 1
+make_plp train data exp/plp
+utils/fix_data_dir.sh data/train
+
+local/run_retranscribe.sh --clean-insertions $clean_insertions --extract-insertions-opts "$extract_insertions_opts" --add-fillers-opts "$add_fillers_opts" --get-whole-transcripts true data_initial $train_decode_dir $train_ali_dir data/train_whole || exit 1
+make_plp train_whole data exp/plp_whole
+utils/fix_data_dir.sh data/train_whole
+
+mkdir -p data/local
+cat data/train/text | tr ' ' '\n' | \
+  sed -n '/<.*>/p' | sed '/'$oovSymbol'/d' | \
+  sort -u > data/local/fillers.list
+
+if [[ ! -f data/local/lexicon.txt || data/local/lexicon.txt -ot "$lexicon_file" ]]; then
+  echo ---------------------------------------------------------------------
+  echo "Preparing lexicon in data/local on" `date`
+  echo ---------------------------------------------------------------------
+  local/prepare_lexicon_separate_fillers.pl --nonshared-noise $nonshared_noise --add data/local/fillers.list --phonemap "$phoneme_mapping" \
+    $lexiconFlags $lexicon_file data/local
+fi
+
+mkdir -p data/lang
+if [[ ! -f data/lang/L.fst || data/lang/L.fst -ot data/local/lexicon.txt ]]; then
+  echo ---------------------------------------------------------------------
+  echo "Creating L.fst etc in data/lang on" `date`
+  echo ---------------------------------------------------------------------
+  utils/prepare_lang.sh \
+    --share-silence-phones $share_silence_phones \
+    data/local $oovSymbol data/local/tmp.lang data/lang
+fi
+
+# We will simply override the default G.fst by the G.fst generated using SRILM
+if [[ ! -f data/srilm/lm.gz || data/srilm/lm.gz -ot data/train/text ]]; then
+  echo ---------------------------------------------------------------------
+  echo "Training SRILM language models on" `date`
+  echo ---------------------------------------------------------------------
+  local/train_lms_srilm.sh --dev-text data_initial/dev2h/text \
+    --train-text data/train/text data data/srilm 
+fi
+
+if [[ ! -f data/lang/G.fst || data/lang/G.fst -ot data/srilm/lm.gz ]]; then
+  echo ---------------------------------------------------------------------
+  echo "Creating G.fst on " `date`
+  echo ---------------------------------------------------------------------
+  local/arpa2G.sh data/srilm/lm.gz data/lang data/lang
+fi
+  
+if [ ! -f data/train_sub1/.done ]; then
+  echo ---------------------------------------------------------------------
+  echo "Subsetting monophone training data in data/train_sub[123] on" `date`
+  echo ---------------------------------------------------------------------
+  numutt=`cat data/train/feats.scp | wc -l`;
+  utils/subset_data_dir.sh data/train  5000 data/train_sub1
+  if [ $numutt -gt 10000 ] ; then
+    utils/subset_data_dir.sh data/train 10000 data/train_sub2
+  else
+    (cd data; ln -s train train_sub2 )
+  fi
+  if [ $numutt -gt 20000 ] ; then
+    utils/subset_data_dir.sh data/train 20000 data/train_sub3
+  else
+    (cd data; ln -s train train_sub3 )
+  fi
+
+  touch data/train_sub1/.done
+fi
+
+if [ ! -f data/train_whole_sub1/.done ]; then
+  echo ---------------------------------------------------------------------
+  echo "Subsetting monophone training data in data/train_whole_sub[123] on" `date`
+  echo ---------------------------------------------------------------------
+  numutt=`cat data/train_whole/feats.scp | wc -l`;
+  utils/subset_data_dir.sh data/train_whole  5000 data/train_whole_sub1
+  if [ $numutt -gt 10000 ] ; then
+    utils/subset_data_dir.sh data/train_whole 10000 data/train_whole_sub2
+  else
+    (cd data; ln -s train_whole train_whole_sub2 )
+  fi
+  if [ $numutt -gt 20000 ] ; then
+    utils/subset_data_dir.sh data/train_whole 20000 data/train_whole_sub3
+  else
+    (cd data; ln -s train_whole train_whole_sub3 )
+  fi
+
+  touch data/train_whole_sub1/.done
 fi
 
 exit 0

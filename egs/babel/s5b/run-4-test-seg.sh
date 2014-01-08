@@ -125,7 +125,7 @@ for variable in $option_variables ; do
   echo "$variable=$my_variable"
 done
 
-datadir=${data}/${type}.whole
+datadir=${data}/${type}
 dirid=${type}
 
 if [[ $type == shadow ]] ; then
@@ -187,13 +187,15 @@ else
     else
       local/prepare_stm.pl --fragmentMarkers \-\*\~ ${datadir}
     fi
-    echo ---------------------------------------------------------------------
-    echo "Resegment data in ${data}/$type.seg on " `date`
-    echo ---------------------------------------------------------------------
-
-    sh -x local/run_resegment.sh --data ${data} --type $type --train-nj $train_nj --nj $my_nj --segmentation_opts "$segmentation_opts" || exit 1
   fi
 fi
+
+echo ---------------------------------------------------------------------
+echo "Resegment data in ${data}/$type.seg on " `date`
+echo ---------------------------------------------------------------------
+
+local/run_segmentation.sh --segmentation_opts "$segmentation_opts" --initial false $datadir $data/lang || exit 1
+#local/run_resegment.sh --data ${data} --type $type --train-nj $train_nj --nj $my_nj --segmentation_opts "$segmentation_opts" || exit 1
 
 datadir=${data}/${type}.seg
 dirid=${type}.seg

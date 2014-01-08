@@ -15,7 +15,12 @@ skip_kws=false
 skip_stt=false
 max_states=150000
 wip=0.5
+tri5_only=false
 . utils/parse_options.sh
+
+if $tri5_only; then
+  fast_path=false
+fi
 
 if [ $# -ne 0 ]; then
   echo "Usage: $(basename $0) --type (dev10h|dev2h|eval|shadow)"
@@ -40,19 +45,13 @@ function make_plp {
   if [ "$use_pitch" = "false" ] && [ "$use_ffv" = "false" ]; then
    steps/make_plp.sh --cmd "$decode_cmd" --nj $my_nj data/${t} exp/make_plp/${t} plp
   elif [ "$use_pitch" = "true" ] && [ "$use_ffv" = "true" ]; then
-    cp -rT data/${t} data/${t}_plp; cp -rT data/${t} data/${t}_pitch; cp -rT data/${t} data/${t}_ffv
-    steps/make_plp.sh --cmd "$decode_cmd" --nj $my_nj data/${t}_plp exp/make_plp/${t} plp_tmp_${t}
-    steps/make_pitch_kaldi.sh --cmd "$decode_cmd" --nj $my_nj data/${t}_pitch exp/make_pitch/${t} pitch_tmp_${t}
+    cp -rT data/${t} data/${t}_plp_pitch; cp -rT data/${t} data/${t}_ffv
+    steps/make_plp_pitch.sh --cmd "$decode_cmd" --nj $my_nj data/${t}_plp_pitch exp/make_plp_pitch/${t} plp_pitch_tmp_${t}
     local/make_ffv.sh --cmd "$decode_cmd"  --nj $my_nj data/${t}_ffv exp/make_ffv/${t} ffv_tmp_${t}
-    steps/append_feats.sh --cmd "$decode_cmd" --nj $my_nj data/${t}{_plp,_pitch,_plp_pitch} exp/make_pitch/append_${t}_pitch plp_tmp_${t}
     steps/append_feats.sh --cmd "$decode_cmd" --nj $my_nj data/${t}{_plp_pitch,_ffv,} exp/make_ffv/append_${t}_pitch_ffv plp
-    rm -rf {plp,pitch,ffv}_tmp_${t} data/${t}_{plp,pitch,plp_pitch}
+    rm -rf {plp_pitch,ffv}_tmp_${t} data/${t}_{plp_pitch,ffv}
   elif [ "$use_pitch" = "true" ]; then
-    cp -rT data/${t} data/${t}_plp; cp -rT data/${t} data/${t}_pitch
-    steps/make_plp.sh --cmd "$decode_cmd" --nj $my_nj data/${t}_plp exp/make_plp/${t} plp_tmp_${t}
-    steps/make_pitch_kaldi.sh --cmd "$decode_cmd" --nj $my_nj data/${t}_pitch exp/make_pitch/${t} pitch_tmp_${t}
-    steps/append_feats.sh --cmd "$decode_cmd" --nj $my_nj data/${t}{_plp,_pitch,} exp/make_pitch/append_${t} plp
-    rm -rf {plp,pitch}_tmp_${t} data/${t}_{plp,pitch}
+    steps/make_plp_pitch.sh --cmd "$decode_cmd" --nj $my_nj data/${t} exp/make_plp_pitch/${t} plp
   elif [ "$use_ffv" = "true" ]; then
     cp -rT data/${t} data/${t}_plp; cp -rT data/${t} data/${t}_ffv
     steps/make_plp.sh --cmd "$decode_cmd" --nj $my_nj data/${t}_plp exp/make_plp/${t} plp_tmp_${t}
@@ -260,6 +259,10 @@ if ! $fast_path ; then
     ${datadir} data/lang ${decode}.si
 fi
 
+if $tri5_only; then
+  exit 0
+fi
+
 ####################################################################
 ## SGMM2 decoding 
 ####################################################################
@@ -327,9 +330,10 @@ if [ -f exp/tri6_nnet/.done ]; then
   if [ ! -f $decode/.done ]; then
     mkdir -p $decode
     steps/nnet2/decode.sh --cmd "$decode_cmd" --nj $my_nj \
+      --beam $dnn_beam --lat-beam $dnn_lat_beam \
       --skip-scoring true "${decode_extra_opts[@]}" \
       --transform-dir exp/tri5/decode_${dirid} \
-      exp/tri5/graph ${datadir} $decode |tee $decode/decode.log
+      exp/tri5/graph ${datadir} $decode | tee $decode/decode.log
 
     touch $decode/.done
   fi
@@ -338,6 +342,33 @@ if [ -f exp/tri6_nnet/.done ]; then
     --cmd "$decode_cmd" --skip-kws $skip_kws --skip-stt $skip_stt --wip $wip \
     "${shadow_set_extra_opts[@]}" "${lmwt_plp_extra_opts[@]}" \
     ${datadir} data/lang $decode
+fi
+
+####################################################################
+##
+## DNN_MPE decoding
+##
+####################################################################
+if [ -f exp/tri6_nnet_mpe/.done ]; then
+  for epoch in 1 2 3 4; do
+    decode=exp/tri6_nnet_mpe/decode_${dirid}_epoch$epoch
+    if [ ! -f $decode/.done ]; then
+      mkdir -p $decode
+      steps/nnet2/decode.sh \
+        --cmd "$decode_cmd" --nj $my_nj --iter epoch$epoch \
+        --beam $dnn_beam --lat-beam $dnn_lat_beam \
+        --skip-scoring true "${decode_extra_opts[@]}" \
+        --transform-dir exp/tri5/decode_${dirid} \
+        exp/tri5/graph ${datadir} $decode | tee $decode/decode.log
+
+      touch $decode/.done
+    fi
+
+    local/run_kws_stt_task.sh --cer $cer --max-states $max_states \
+      --cmd "$decode_cmd" --skip-kws $skip_kws --skip-stt $skip_stt --wip $wip \
+      "${shadow_set_extra_opts[@]}" "${lmwt_dnn_extra_opts[@]}" \
+      ${datadir} data/lang $decode
+  done
 fi
 
 echo "Everything looking good...." 
