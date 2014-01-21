@@ -55,7 +55,9 @@ decode_ctm=$train_decode_dir/train.ctm
 [ ! -f $decode_ctm ] && exit 1
 
 if [ ! -f $data_out/.done ]; then
-  utils/extract_insertions.py $extract_insertions_opts $decode_ctm.sgml > exp/tri4b_augment_train/insertions.txt 2> exp/tri4b_augment_train/log/extract_insertions.log || exit 1
+  utils/extract_word_lengths_from_ctm.py $decode_ctm > exp/tri4b_augment_train/word_lengths
+
+  utils/extract_insertions.py --lengths-file exp/tri4b_augment_train/word_lengths $extract_insertions_opts $decode_ctm.sgml > exp/tri4b_augment_train/insertions.txt 2> exp/tri4b_augment_train/log/extract_insertions.log || exit 1
   
   utils/add_fillers_to_transcription.py $add_fillers_opts $human_ctm $decode_ctm exp/tri4b_augment_train/insertions.txt $human_segments_file > exp/tri4b_augment_train/ctm.augmented 2> exp/tri4b_augment_train/log/add_fillers.log || exit 1
 

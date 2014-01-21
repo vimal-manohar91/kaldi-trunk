@@ -10,6 +10,7 @@ word_ins_penalty=0.5
 min_lmwt=7
 max_lmwt=17
 model=
+keep_fillers=false  # Set to true while decoding training data for the purpose of augmenting it
 
 #end configuration section.
 
@@ -63,34 +64,35 @@ if [ $stage -le 0 ]; then
 fi
 
 if [ $stage -le 1 ]; then
-  # Remove some stuff we don't want to score, from the ctm.
-  for x in $dir/score_*/$name.ctm; do
-    cp $x $x.bkup1;
-    cat $x.bkup1 | grep -v -E '\[NOISE|LAUGHTER|VOCALIZED-NOISE\]' | \
-      grep -v -E '<UNK>|%HESITATION|\(\(\)\)' | \
-      grep -v -E '<eps>' | \
-      grep -v -E '<noise>' | \
-      grep -v -E '<silence>' | \
-      grep -v -E '<unk>' | \
-      grep -v -E '<v-noise>' | \
-      grep -v -E '<.*[^ ]>' | \
-      perl -e '@list = (); %list = ();
-      while(<>) {
-        chomp; 
-        @col = split(" ", $_); 
-        push(@list, $_);
-        $key = "$col[0]" . " $col[1]"; 
-        $list{$key} = 1;
-      } 
-      foreach(sort keys %list) {
-        $key = $_;
-        foreach(grep(/$key/, @list)) {
-          print "$_\n";
-        }
-      }' > $x;
-  done
+  if ! $keep_fillers; then
+    # Remove some stuff we don't want to score, from the ctm.
+    for x in $dir/score_*/$name.ctm; do
+      cp $x $x.bkup1;
+      cat $x.bkup1 | grep -v -E '\[NOISE|LAUGHTER|VOCALIZED-NOISE\]' | \
+        grep -v -E '<UNK>|%HESITATION|\(\(\)\)' | \
+        grep -v -E '<eps>' | \
+        grep -v -E '<noise>' | \
+        grep -v -E '<silence>' | \
+        grep -v -E '<unk>' | \
+        grep -v -E '<v-noise>' | \
+        grep -v -E '<.*[^ ]>' | \
+        perl -e '@list = (); %list = ();
+        while(<>) {
+          chomp; 
+          @col = split(" ", $_); 
+          push(@list, $_);
+          $key = "$col[0]" . " $col[1]"; 
+          $list{$key} = 1;
+        } 
+        foreach(sort keys %list) {
+          $key = $_;
+          foreach(grep(/$key/, @list)) {
+            print "$_\n";
+          }
+        }' > $x;
+    done
+  fi
 fi
-
 
 echo "Lattice2CTM finished on " `date`
 exit 0

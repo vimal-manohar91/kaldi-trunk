@@ -32,6 +32,7 @@ max_states=150000
 dev2shadow=
 eval2shadow=
 wip=0.5 #Word insertion penalty
+keep_fillers=false  # Set to true while decoding training data for the purpose of augmenting it
 #End of options
 
 echo $0 "$@"
@@ -60,6 +61,7 @@ fi
 if [ ! -f $decode_dir/.score.done ]; then 
   local/lattice_to_ctm.sh --cmd "$cmd" --word-ins-penalty $wip \
     --min-lmwt ${min_lmwt} --max-lmwt ${max_lmwt} \
+    --keep-fillers $keep_fillers \
     $data_dir $lang_dir $decode_dir
 
   if [[ "$type" == shadow* ]]; then
