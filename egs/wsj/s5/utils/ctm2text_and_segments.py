@@ -1,17 +1,26 @@
 #!/usr/bin/python
+# Author: Vimal Manohar
+#
+# This file takes an augmented CTM file that includes artificially added
+# fillers and creates a segments file and text file.
+# It uses the original segments file as reference and adds new segments
+# wherever there is an inserted filler.
 
 import argparse, sys
 from argparse import ArgumentParser
 
 def main():
   parser = ArgumentParser(description='Convert a CTM file to text file ande segments file')
-  parser.add_argument('ctm_file', help='CTM file typically after adding additional fillers')
-  parser.add_argument('segments_file', help='The segments file corresponding to which we need the text file')
-  parser.add_argument('--get-whole-transcripts', dest='get_whole_transcripts', \
-      default='false', \
-      help='If true then do not remove empty transcripts')
+  parser.add_argument('--get-whole-transcripts', \
+      dest='get_whole_transcripts', default='false', \
+      choices=['true', 'false'], \
+      help='If true, then do not remove empty transcripts (default: $(default)s)')
+  parser.add_argument('ctm_file', \
+      help='CTM file typically after adding additional fillers')
+  parser.add_argument('segments_file', \
+      help='The segments file corresponding to which we need the text file')
   parser.add_argument('out_segments_file', help='Output segments file')
-
+  parser.usage=':'.join(parser.format_usage().split(':')[1:]) + 'e.g. :  %(prog)s exp/tri4b_augment_train/ctm_per_reco data/train/segments.orig data/train/segments > data/train/text'
   options = parser.parse_args()
 
   if not (options.get_whole_transcripts == "true" or
@@ -94,22 +103,30 @@ def main():
 
     # Browse the ctm ptr to the location where the file_id matches
     # and the start of the ctm word (ctm_lines[ctm_ptr][1]) is within the segment
-    # segment
     text = []
     while ctm_ptr < len(ctm_lines) and (((ctm_lines[ctm_ptr][0] < file_id)
         or (ctm_lines[ctm_ptr][0] == file_id
           and ctm_lines[ctm_ptr][1] <= seg_end))):
       if ctm_lines[ctm_ptr][1] - seg_st < -0.01:
-        st = max(ctm_lines[ctm_ptr][1]-0.5, segments_lines[seg_ptr-1][2])
-        end = min(ctm_lines[ctm_ptr][2]+0.5, segments_lines[seg_ptr][1])
+        # Inserted filler outside the segments. So add a new segment
+        # that covers just the interval of the hypothesis +- 0.3s
+        # on either side if it does not extend beyond the
+        # adjacent segment
+        st = max(ctm_lines[ctm_ptr][1]-0.3, segments_lines[seg_ptr-1][2])
+        end = min(ctm_lines[ctm_ptr][2]+0.3, segments_lines[seg_ptr][1])
         utt = "%s-%06d-%06d" % (file_id, st*100, end*100);
+
+        # Write new segment to the segments file
         out_segments_file.write("%s %s %.3f %.3f\n" % (utt, file_id, st, end))
+
+        # Write the inserted filler to the text file
         sys.stdout.write("%s %s\n" % (utt, ctm_lines[ctm_ptr][-1]))
       else:
         # Append the word to the text
         text.append(ctm_lines[ctm_ptr][-1])
       ctm_ptr += 1
 
+    # Write transcription of the utterance to the text file
     if len(text) == 0 and get_whole_transcripts:
       print("%s" % utt_id)
       out_segments_file.write("%s-%06d-%06d %s %.3f %.3f\n" % (file_id, seg_st*100, seg_end*100, file_id, seg_st, seg_end))

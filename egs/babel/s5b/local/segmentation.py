@@ -20,7 +20,7 @@ def mean(l):
 class Analysis:
   def __init__(self, file_id, frame_shift, prefix):
     self.confusion_matrix = [0] * 9
-    self.type_counts = [ [[] for j in range(0,9)] for i in range(0,3)]
+    self.type_counts = [ [[] for j in range(0,9)] for i in range(0,3) ]
     self.state_count = [ [] for i in range(0,9) ]
     self.markers = [ [] for i in range(0,9) ]
     self.phones = [ [] for i in range(0,9) ]
@@ -851,9 +851,6 @@ class JointResegmenter:
           p += 1
         segment_length = p - n
         if segment_length > self.hard_max_frames:
-          if (not any([ i in self.THIS_SILENCE_OR_NOISE for i in self.A[n:p]])):
-            continue
-
           # Count the number of times long segments are split
           self.stats.split_segments += 1
 
@@ -1275,7 +1272,7 @@ def main():
       dest='max_segment_length', default=10.0, \
       help="Maximum segment length while we are marging segments (default: %(default)s)")
   parser.add_argument('--hard-max-segment-length', type=float, \
-      dest='hard_max_segment_length', default=10.0, \
+      dest='hard_max_segment_length', default=15.0, \
       help="Hard maximum on the segment length above which the segment " \
       + "will be broken even if in the middle of speech (default: %(default)s)")
   parser.add_argument('--first-separator', type=str, \

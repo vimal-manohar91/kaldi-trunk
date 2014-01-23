@@ -16,13 +16,10 @@ initial=false   # Set to true, if using models without adding
                 # artificial fillers as trained using run-0-fillers.sh
 get_text=false  # Get text corresponding to new segments in $data/$type.seg
                 # Assuming text is in $data/$type directory.
-segmentation2=false
-noise_oov=false 
 use_word_lm=false
-train_mpe=false
 beam=7.0
 max_active=1000
-posterior_decode=false
+segmentation2=false
 
 #debugging stuff
 echo $0 $@
@@ -107,14 +104,18 @@ if [ ! -f $data/${dirid}.orig/.done ]; then
   mkdir -p $data/${dirid}
   cp -rT $data/${type} $data/${dirid}.orig; rm -r $data/${dirid}.orig/split*
   for f in text utt2spk spk2utt feats.scp cmvn.scp segments; do rm $data/${dirid}.orig/$f; done
-  cat $data/${dirid}.orig/wav.scp  | awk '{print $1, $1;}' | \
-    tee $data/${dirid}.orig/spk2utt > $data/${dirid}.orig/utt2spk
+  wav-to-duration scp:$data/${dirid}.orig/wav.scp ark,t:$data/${dirid}.orig/durations.scp || exit 1
+  utils/durations2segments.py $data/${dirid}.orig/durations.scp | sort > $data/${dirid}.orig/segments || exit 1
+  cat $data/${dirid}.orig/segments | cut -d ' ' -f 1,2 > $data/${dirid}.orig/utt2reco || exit 1
+  utt2spk_to_spk2utt.pl $data/${dirid}.orig/utt2reco > $data/${dirid}.orig/reco2utt || exit 1
+  cp $data/${dirid}.orig/utt2reco $data/${dirid}.orig/utt2spk
+  utt2spk_to_spk2utt.pl $data/${dirid}.orig/utt2spk > $data/${dirid}.orig/spk2utt || exit 1
+
   plpdir=exp/plp.seg.orig # don't use plp because of the way names are assigned within that
   # dir, we'll overwrite the old data.
   mkdir -p $plpdir
-
   make_plp ${dirid}.orig $data $plpdir || exit 1
-
+  
   touch $data/${dirid}.orig/.done
 fi
 
@@ -129,37 +130,25 @@ temp_dir=exp/${tri4b}_whole_resegment_${type}
 
 mkdir -p $temp_dir
 
-if $train_mpe; then
-  model_dir=exp/${tri4b}_whole_mpe_seg
-  (cd $model_dir; [ -L final.mdl ] && rm final.mdl; ln -s 1.mdl final.mdl)
-fi
-
 total_time=0
 t1=$(date +%s)
-if ! $use_word_lm && ! $posterior_decode; then
-  if [ ! -f $model_dir/decode_${dirid}.orig/.done ]; then
-    steps/decode_nolats.sh --write-words false --write-alignments true \
-      --cmd "$cmd" --nj $my_nj --beam $beam --max-active $max_active \
-      $model_dir/phone_graph $data/${dirid}.orig $model_dir/decode_${dirid}.orig || exit 1
-    touch $model_dir/decode_${dirid}.orig/.done
-    t2=$(date +%s)
-    total_time=$((total_time + t2 - t1))
-    echo "Phone decoding done in $((t2-t1)) seconds" 
-  fi
-elif $posterior_decode; then
-  if [ ! -f $model_dir/decode_${dirid}.orig/.done ]; then
-    [ ! -f $model_dir/final.mdl ] && echo "$model_dir/final.mdl not found" && exit 1
-    steps/decode.sh --skip-scoring true \
-      --nj $my_nj --cmd "$cmd" "${decode_extra_opts[@]}" --beam $beam --max-active $max_active \
-      $model_dir/phone_graph $data/${dirid}.orig $model_dir/decode_${dirid}.orig | tee $model_dir/decode_${dirid}.orig/decode.log
-    touch $model_dir/decode_${dirid}.orig/.done
-  fi
+if [ ! -f $model_dir/decode_${dirid}.orig/.done ]; then
+  [ ! -f $model_dir/final.mdl ] && echo "$model_dir/final.mdl not found" && exit 1
+  steps/decode.sh --skip-scoring true \
+    --nj $my_nj --cmd "$cmd" "${decode_extra_opts[@]}" --beam $beam --max-active $max_active \
+    $model_dir/phone_graph $data/${dirid}.orig $model_dir/decode_${dirid}.orig
+  touch $model_dir/decode_${dirid}.orig/.done
+fi
 
+if [ ! -f $model_dir/decode_${dirid}.orig/.phone_post.done ]; then
   $cmd JOB=1:$my_nj $model_dir/decode_${dirid}.orig/log/get_phone_post.JOB.log \
     lattice-to-post --acoustic-scale=0.1 \
     "ark:gunzip -c $model_dir/decode_${dirid}.orig/lat.JOB.gz|" ark:- \| \
     post-to-phone-post $model_dir/final.mdl ark:- "ark,t:|gzip -c > $model_dir/decode_${dirid}.orig/phone_post.JOB.gz" || exit 1
-  
+  touch $model_dir/decode_${dirid}.orig/.phone_post.done
+fi
+
+if [ ! -f $temp_dir/.post_decode.done ]; then
   $cmd JOB=1:$my_nj $model_dir/decode_${dirid}.orig/log/post_decode.JOB.log \
     gunzip -c $model_dir/decode_${dirid}.orig/phone_post.JOB.gz \| \
     python -c "import sys
@@ -181,20 +170,26 @@ for line in sys.stdin.readlines():
   sys.stdout.write(\"\n\")" \| \
     utils/int2sym.pl -f 2- $lang/phones.txt \| \
     gzip -c '>' $temp_dir/pred.JOB.gz || exit 1
+  
+  mkdir -p $temp_dir/pred_temp
+
+  for n in `seq $my_nj`; do gunzip -c $temp_dir/pred.$n.gz; done | \
+    python -c "import sys
+for l in sys.stdin.readlines():
+  splits = l.strip().split()
+  file_handle = open(\""$temp_dir"/pred_temp/%s.pred\" % splits[0], 'w')
+  file_handle.write(\" \".join(splits[1:]))
+  file_handle.write(\"\n\")
+  file_handle.close()" || exit 1
+
   echo $my_nj > $temp_dir/num_jobs
+  touch $temp_dir/.post_decode.done
+fi
 
-else
-  if [ ! -f $model_dir/decode_${dirid}.orig/.done ]; then
-    steps/decode.sh --skip-scoring true \
-      --nj $my_nj --cmd "$cmd" "${decode_extra_opts[@]}"\
-      $model_dir/graph $data/${dirid}.orig $model_dir/decode_${dirid}.orig | tee $model_dir/decode_${dirid}.orig/decode.log
-    touch $model_dir/decode_${dirid}.orig/.done
-  fi
-
-  $cmd JOB=1:$my_nj $model_dir/decode_${dirid}.orig/log/best_path.JOB.log \
-    lattice-best-path --acoustic-scale=0.1 \
-    "ark:gunzip -c $model_dir/decode_${dirid}.orig/lat.JOB.gz|" \
-    "ark:/dev/null" "ark:|gzip -c > $model_dir/decode_${dirid}.orig/ali.JOB.gz" || exit 1
+if [ ! -f $temp_dir/.pred.done ]; then
+  mkdir -p $temp_dir/pred
+  local/merge_pred.py $data/${dirid}.orig/segments $temp_dir/pred_temp $temp_dir/pred || exit 1
+  touch $temp_dir/.pred.done
 fi
 
 t2=$(date +%s)
@@ -207,19 +202,85 @@ echo "SI decoding done in $((t2-t1)) seconds"
 #
 ###############################################################################
 
+if ! [ `cat $lang/phones/optional_silence.txt | wc -w` -eq 1 ]; then
+  echo "Error: this script only works if $lang/phones/optional_silence.txt contains exactly one entry.";
+  echo "You'd have to modify the script to handle other cases."
+  exit 1;
+fi
+
+silphone=`cat $lang/phones/optional_silence.txt` 
+# silphone will typically be "sil" or "SIL". 
+
+# 3 sets of phones: 0 is silence, 1 is noise, 2 is speech.,
+if $rttm_based_map; then
+  (
+  echo "$silphone 0"
+  if ! $noise_oov; then
+    grep -v -w $silphone $lang/phones/silence.txt \
+      | awk '{print $1, 1;}' \
+      | sed 's/SIL\(.*\)1/SIL\10/' \
+      | sed 's/<oov>\(.*\)1/<oov>\12/'
+  else
+    grep -v -w $silphone $lang/phones/silence.txt \
+      | awk '{print $1, 1;}' \
+      | sed 's/SIL\(.*\)1/SIL\10/'
+  fi
+  cat $lang/phones/nonsilence.txt | awk '{print $1, 2;}' | sed 's/\(<.*>.*\)2/\11/' | sed 's/<oov>\(.*\)1/<oov>\12/'
+  ) > $temp_dir/phone_map.txt
+else
+  (
+  echo "$silphone 0"
+  grep -v -w $silphone $lang/phones/silence.txt \
+    | awk '{print $1, 1;}'
+  cat $lang/phones/nonsilence.txt | awk '{print $1, 2;}'
+  ) > $temp_dir/phone_map.txt
+fi
+
+mkdir -p $data/$type.seg
+
 if [ ! -s $data/$type.seg/segments ] ; then
   t1=$(date +%s)
-  [ -f $data/$dirid/segments ] && rm $data/$dirid/segments
-  steps/resegment_data.sh --noise_oov $noise_oov --segmentation2 $segmentation2 --segmentation_opts "$segmentation_opts" --cmd "$cmd" $data/${dirid}.orig $lang \
-    $model_dir/decode_${dirid}.orig $data/$dirid $temp_dir || exit 1
+  mkdir -p $temp_dir/log
+  if $segmentation2; then
+    local/segmentation2.py --verbose 2 $segmentation_opts $temp_dir/pred $temp_dir/phone_map.txt \
+      2> $temp_dir/log/resegment.log | sort > $data/$type.seg/segments || exit 1
+  else 
+    local/segmentation.py --verbose 2 $segmentation_opts $temp_dir/pred $temp_dir/phone_map.txt \
+      2> $temp_dir/log/resegment.log | sort > $data/$type.seg/segments || exit 1
+  fi
   [ ! -f $data/$type.seg/segments ] && exit 1
   cp $data/$type.seg/segments $temp_dir
+  
   t2=$(date +%s)
   total_time=$((total_time + t2 - t1))
   echo "Resegment data done in $((t2-t1)) seconds" 
 
   [ -f ${data}/$type/segments ] && local/evaluate_segmentation.pl ${data}/$type/segments ${data}/$dirid/segments &> $temp_dir/segment_evaluation.log
 fi
+  
+if [ -s $data/$type/reco2file_and_channel ]; then
+  cp $data/$type/reco2file_and_channel $data/$type.seg/reco2file_and_channel
+fi
+
+if [ -s $data/$type/wav.scp ]; then
+  cp $data/$type/wav.scp $data/$type.seg/wav.scp
+else
+  echo "Expected file $data/$type/wav.scp to exist" # or there is really nothing to copy.
+  exit 1
+fi
+
+for f in glm stm; do 
+  if [ -f $data/$type/$f ]; then
+    cp $data/$type/$f $data/$type.seg/$f
+  fi
+done
+
+# We'll make the speaker-ids be the same as the recording-ids (e.g. conversation
+# sides).  This will normally be OK for telephone data.
+cat $data/$type.seg/segments | awk '{print $1, $2}' > $data/$type.seg/utt2spk || exit 1
+utils/utt2spk_to_spk2utt.pl $data/$type.seg/utt2spk > $data/$type.seg/spk2utt || exit 1
+
+cat $data/$type.seg/segments | awk '{num_secs += $4 - $3;} END{print "Number of hours of data is " (num_secs/3600);}'
 
 plpdir=exp/plp.seg # don't use plp because of the way names are assigned within that
 # dir, we'll overwrite the old data.

@@ -67,6 +67,7 @@ egs_dir=
 lda_opts=
 egs_opts=
 # End configuration section.
+get_egs_only=false
 
 
 echo "$0 $@"  # Print the command line for logging
@@ -183,6 +184,11 @@ num_jobs_nnet=`cat $egs_dir/num_jobs_nnet` || exit 1;
 if ! [ $num_hidden_layers -ge 1 ]; then
   echo "Invalid num-hidden-layers $num_hidden_layers"
   exit 1
+fi
+
+if $get_egs_only; then
+  echo "Only getting examples."
+  exit 0
 fi
 
 if [ $stage -le -2 ]; then
@@ -343,8 +349,16 @@ if [ $stage -le $num_iters ]; then
   num_egs=`nnet-copy-egs ark:$egs_dir/combine.egs ark:/dev/null 2>&1 | tail -n 1 | awk '{print $NF}'`
   mb=$[($num_egs+$this_num_threads-1)/$this_num_threads]
   [ $mb -gt 512 ] && mb=512
+  # Setting --initial-model to a large value makes it initialize the combination
+  # with the average of all the models.  It's important not to start with a
+  # single model, or, due to the invariance to scaling that these nonlinearities
+  # give us, we get zero diagonal entries in the fisher matrix that
+  # nnet-combine-fast uses for scaling, which after flooring and inversion, has
+  # the effect that the initial model chosen gets much higher learning rates
+  # than the others.  This prevents the optimization from working well.
   $cmd $parallel_opts $dir/log/combine.log \
-    nnet-combine-fast --use-gpu=no --num-threads=$this_num_threads --regularizer=$combine_regularizer \
+    nnet-combine-fast --initial-model=100000 --num-lbfgs-iters=40 --use-gpu=no \
+      --num-threads=$this_num_threads --regularizer=$combine_regularizer \
       --verbose=3 --minibatch-size=$mb "${nnets_list[@]}" ark:$egs_dir/combine.egs \
       $dir/final.mdl || exit 1;
 fi

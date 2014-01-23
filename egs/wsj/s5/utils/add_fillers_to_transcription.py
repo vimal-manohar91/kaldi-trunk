@@ -38,19 +38,17 @@ def main():
       help='Original train segments file')
   parser.add_argument('-s', '--frame-shift', \
       dest='frame_shift', default=0.01, type=float, \
-      help="Frame shift in seconds")
+      help="Frame shift in seconds (default: %(default)s)")
   parser.add_argument('--num-fillers', type=int, \
       dest='num_fillers', default=10, \
-      help="Number of artificial fillers to be added")
+      help="Number of artificial fillers to be added (default: %(default)s)")
   parser.add_argument('--count-threshold', type=int, \
       dest='count_threshold', default=10, \
-      help="Minimum count of filler for a separate model to be added")
+      help="Minimum count of filler for a separate model to be added (default: %(default)s)")
+  parser.usage=':'.join(parser.format_usage().split(':')[1:]) \
+      + 'e.g. :  %(prog)s data_initial/train/ctm exp/tri5_initial/decode_train.seg/score_14/train.seg.ctm exp/tri4b_augment_train/insertions.txt data_initial/train/segments > exp/tri4b_augment_train/ctm.augmented'
 
-  try:
-    options = parser.parse_args()
-  except Exception:
-    parser.print_help()
-    sys.exit(1)
+  options = parser.parse_args()
 
   human_ctm = options.human_ctm
   reseg_ctm = options.reseg_ctm
@@ -183,17 +181,17 @@ def main():
   while len(line) > 0:
     splits = line.strip().split()
 
-    if len(splits) == 6:
+    if splits[0] == "INSERTION":
       # This is an insertion
       stats.insertions += 1
-      file_id, channel, s, e, conf, w = splits
+      file_id, channel, s, e, conf, w = splits[1:7]
       s = float(s)
       e = float(e)
       sub_w = None
-    elif len(splits) == 7:
+    elif splits[0] == "SUBSTITUTION":
       # This is a substitution
       stats.substitutions += 1
-      file_id, channel, s, e, conf, w, sub_w = splits
+      file_id, channel, s, e, conf, w, sub_w = splits[1:8]
       s = float(s)
       e = float(e)
       assert (re.match(r"\"<.*>\"", sub_w))
@@ -224,7 +222,7 @@ def main():
     if reseg_ptr == len(reseg_lines):
       break
 
-    # Move seg_ptr to the line in the segmentes file
+    # Move seg_ptr to the line in the segments file
     # whose segment end is just after the start
     # of the hypothesis
     while (seg_ptr < len(seg_lines)
@@ -270,6 +268,7 @@ def main():
             filler = "<unk>"
           stats.insertions_added_outside += 1
           out_lines.append(reseg_lines[reseg_ptr][0:-1]+(filler,))
+          sys.stderr.write("OUTSIDE %s" % line)
         # End if
       else:
         # This insertion is in the segments. Add it
@@ -286,15 +285,19 @@ def main():
                 for x in (reseg_lines[reseg_ptr-1:reseg_ptr]
                   + reseg_lines[reseg_ptr+1:reseg_ptr+2])]))):
 
-          # If the frequency of the inserted word
-          # is more than a threshold then add a separate
-          # filler. Otherwise add <unk> as a filler
-          if top_insertions[w] > options.count_threshold:
-            filler = "<"+re.search(r"\"(?P<word>.*)\"",w).group('word')+">"
-          else:
-            filler = "<unk>"
-          stats.insertions_added_inside += 1
-          out_lines.append(reseg_lines[reseg_ptr][0:-1]+(filler,))
+          if (not (human_lines[human_ptr][-1] == reseg_lines[reseg_ptr][-1]
+            and ((e >= human_lines[human_ptr][2] and e <= human_lines[human_ptr][2] + human_lines[human_ptr][3])
+              or (s >= human_lines[human_ptr][2] and s <= human_lines[human_ptr][2] + human_lines[human_ptr][3])))):
+            # If the frequency of the inserted word
+            # is more than a threshold then add a separate
+            # filler. Otherwise add <unk> as a filler
+            if top_insertions[w] > options.count_threshold:
+              filler = "<"+re.search(r"\"(?P<word>.*)\"",w).group('word')+">"
+            else:
+              filler = "<unk>"
+            stats.insertions_added_inside += 1
+            out_lines.append(reseg_lines[reseg_ptr][0:-1]+(filler,))
+            sys.stderr.write("INSIDE %s" % line)
         # End if
       # End if
     else:
