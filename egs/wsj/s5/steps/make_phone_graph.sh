@@ -71,7 +71,8 @@ if [ $stage -le 0 ]; then
     awk '{for (x=2; x <= NF; x++) printf("%s ", $x); printf("\n"); }' | \
     utils/int2sym.pl $lang/phones.txt > $dir/phone_graph/train_phones.txt
   mv $dir/phone_graph/train_phones.txt $dir/phone_graph/train_phones.txt.orig
-  cat $dir/phone_graph/train_phones.txt.orig | sed 's/^/SIL /' | sed 's/$/SIL /' | sed 's/^SIL SIL/SIL/' | sed 's/SIL SIL $/SIL /' > $dir/phone_graph/train_phones.txt
+  optional_silence=`cat $lang/phones/optional_silence.txt | head -1`
+  cat $dir/phone_graph/train_phones.txt.orig | sed 's/^/'$optional_silence' /' | sed 's/$/'$optional_silence' /' | sed 's/^'$optional_silence' '$optional_silence'/'$optional_silence'/' | sed 's/'$optional_silence' '$optional_silence' $/'$optional_silence' /' > $dir/phone_graph/train_phones.txt
 fi
 
 if [ $stage -le 1 ]; then

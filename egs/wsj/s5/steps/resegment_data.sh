@@ -14,7 +14,7 @@ set -o pipefail
 stage=0
 cmd=run.pl
 cleanup=true
-segmentation_opts="--isolated-resegmentation --min-inter-utt-silence-length 1.0 --silence-proportion 0.05" 
+segmentation_opts="--isolated-resegmentation --min-inter-utt-silence-length 1.0 --silence-proportion 0.05"
 rttm_based_map=true
 segmentation2=false
 noise_oov=false

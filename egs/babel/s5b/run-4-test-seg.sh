@@ -25,8 +25,22 @@ skip_kws=false
 skip_stt=false
 max_states=150000
 wip=0.5
-segmentation_opts="--remove-noise-only-segments false --max-length-diff 0.4 --min-inter-utt-silence-length 1.0"
+segmentation_opts="--isolated-resegmentation --min-inter-utt-silence-length 1.0 --silence-proportion 0.05"
 tri5_only=false
+use_word_lm=false
+train_mpe=false
+posterior_decode=false
+penalize_long_phones=false
+dm_scale=0.1
+beam=7.0
+max_active=1000
+segment_length=60.0
+use_viterbi_decode=false
+allow_partial=true
+
+use_vad=false
+vad_boost=0.1
+vad_threshold=1.5
 
 . utils/parse_options.sh
 . ./path.sh
@@ -38,7 +52,7 @@ fi
 
 if [[ "$type" == "dev10h" || "$type" == "dev2h" ]] ; then
   eval reference_rttm=\$${type}_rttm_file
-  [ -f $reference_rttm ] && segmentation_opts="$segmentation_opts --reference-rttm $reference_rttm" 
+  [ -f $reference_rttm ] && segmentation_opts="$segmentation_opts --reference-rttm $reference_rttm"
 fi
 
 if [ $# -ne 0 ]; then
@@ -60,32 +74,28 @@ fi
 function make_plp {
   t=$1
   data=$2
+  plpdir=$3
 
   if [ "$use_pitch" = "false" ] && [ "$use_ffv" = "false" ]; then
-   steps/make_plp.sh --cmd "$decode_cmd" --nj $my_nj ${data}/${t} exp/make_plp/${t} plp
+   steps/make_plp.sh --cmd "$decode_cmd" --nj $my_nj ${data}/${t} exp/make_plp/${t} ${plpdir}
   elif [ "$use_pitch" = "true" ] && [ "$use_ffv" = "true" ]; then
     cp -rT ${data}/${t} ${data}/${t}_plp; cp -rT ${data}/${t} ${data}/${t}_pitch; cp -rT ${data}/${t} ${data}/${t}_ffv
-    steps/make_plp.sh --cmd "$decode_cmd" --nj $my_nj ${data}/${t}_plp exp/make_plp/${t} plp_tmp_${t}
-    local/make_pitch.sh --cmd "$decode_cmd" --nj $my_nj ${data}/${t}_pitch exp/make_pitch/${t} pitch_tmp_${t}
+    steps/make_plp_pitch.sh --cmd "$decode_cmd" --nj $my_nj ${data}/${t}_plp_pitch exp/make_plp_pitch/${t} plp_tmp_${t}
     local/make_ffv.sh --cmd "$decode_cmd"  --nj $my_nj ${data}/${t}_ffv exp/make_ffv/${t} ffv_tmp_${t}
-    steps/append_feats.sh --cmd "$decode_cmd" --nj $my_nj ${data}/${t}{_plp,_pitch,_plp_pitch} exp/make_pitch/append_${t}_pitch plp_tmp_${t}
-    steps/append_feats.sh --cmd "$decode_cmd" --nj $my_nj ${data}/${t}{_plp_pitch,_ffv,} exp/make_ffv/append_${t}_pitch_ffv plp
-    rm -rf {plp,pitch,ffv}_tmp_${t} ${data}/${t}_{plp,pitch,plp_pitch}
+    steps/append_feats.sh --cmd "$decode_cmd" --nj $my_nj ${data}/${t}{_plp_pitch,_ffv,} exp/make_ffv/append_${t}_pitch_ffv ${plpdir}
+    rm -rf {plp_pitch,ffv}_tmp_${t} ${data}/${t}_{plp_pitch,ffv}
   elif [ "$use_pitch" = "true" ]; then
-    cp -rT ${data}/${t} ${data}/${t}_plp; cp -rT ${data}/${t} ${data}/${t}_pitch
-    steps/make_plp.sh --cmd "$decode_cmd" --nj $my_nj ${data}/${t}_plp exp/make_plp/${t} plp_tmp_${t}
-    local/make_pitch.sh --cmd "$decode_cmd" --nj $my_nj ${data}/${t}_pitch exp/make_pitch/${t} pitch_tmp_${t}
-    steps/append_feats.sh --cmd "$decode_cmd" --nj $my_nj ${data}/${t}{_plp,_pitch,} exp/make_pitch/append_${t} plp
-    rm -rf {plp,pitch}_tmp_${t} ${data}/${t}_{plp,pitch}
+    steps/make_plp_pitch.sh --cmd "$decode_cmd" --nj $my_nj ${data}/${t} exp/make_plp_pitch/${t} $plpdir
   elif [ "$use_ffv" = "true" ]; then
     cp -rT ${data}/${t} ${data}/${t}_plp; cp -rT ${data}/${t} ${data}/${t}_ffv
     steps/make_plp.sh --cmd "$decode_cmd" --nj $my_nj ${data}/${t}_plp exp/make_plp/${t} plp_tmp_${t}
     local/make_ffv.sh --cmd "$decode_cmd" --nj $my_nj ${data}/${t}_ffv exp/make_ffv/${t} ffv_tmp_${t}
-    steps/append_feats.sh --cmd "$decode_cmd" --nj $my_nj ${data}/${t}{_plp,_ffv,} exp/make_ffv/append_${t} plp
+    steps/append_feats.sh --cmd "$decode_cmd" --nj $my_nj ${data}/${t}{_plp,_ffv,} exp/make_ffv/append_${t} $plpdir
     rm -rf {plp,ffv}_tmp_${t} ${data}/${t}_{plp,ffv}
   fi
 
-  steps/compute_cmvn_stats.sh ${data}/${t} exp/make_plp/${t} plp
+  utils/fix_data_dir.sh ${data}/${t}
+  steps/compute_cmvn_stats.sh ${data}/${t} exp/make_plp/${t} $plpdir
   utils/fix_data_dir.sh ${data}/${t}
 }
 
@@ -111,12 +121,14 @@ eval my_nj=\$${type}_nj  #for shadow, this will be re-set when appropriate
 
 for variable in $mandatory_variables ; do
   eval my_variable=\$${variable}
-  if [ $type != "train" ] && [ -z $my_variable ] ; then
-    echo "Mandatory variable $variable is not set! " \
-         "You should probably set the variable in the config file "
-    exit 1
-  else
-    echo "$variable=$my_variable"
+  if [ $type == "dev10h" ] || [ $type == "dev2h" ] || [ $type == "eval" ]; then
+    if [ -z $my_variable ] ; then
+      echo "Mandatory variable $variable is not set! " \
+        "You should probably set the variable in the config file "
+      exit 1
+    else
+      echo "$variable=$my_variable"
+    fi
   fi
 done
 
@@ -194,8 +206,26 @@ echo ---------------------------------------------------------------------
 echo "Resegment data in ${data}/$type.seg on " `date`
 echo ---------------------------------------------------------------------
 
-local/run_segmentation.sh --segmentation_opts "$segmentation_opts" --initial false $datadir $data/lang || exit 1
-#local/run_resegment.sh --data ${data} --type $type --train-nj $train_nj --nj $my_nj --segmentation_opts "$segmentation_opts" || exit 1
+if [ ! -s ${data}/${type}.seg/feats.scp ]; then
+  if $use_vad; then
+    rm -rf exp/tri4b_seg
+    [ ! -f exp/tri4b_seg/final.mdl ] && local/run_segmentation_train.sh exp/tri4 data/train data/lang
+    steps/train_vad_gmm.sh 400 100 data/train data/lang exp/tri4_ali exp/gmm_vad4 || exit 1
+    local/run_vad_segmentation.sh --segmentation-opts "$segmentation_opts" \
+      --beam $beam --max-active $max_active --vad-boost $vad_boost --vad-threshold $vad_threshold \
+      $datadir $data/lang exp/gmm_vad4 \
+      exp/tri4b_seg exp/tri4b_resegment_$type || exit 1
+  else
+    if $posterior_decode; then
+      local/run_segmentation_post.sh --segmentation_opts "$segmentation_opts" --initial false --penalize_long_phones $penalize_long_phones --dm-scale $dm_scale --beam $beam --max-active $max_active --segment-length $segment_length --use-viterbi-decode $use_viterbi_decode --allow-partial $allow_partial --use-word-lm $use_word_lm $datadir $data/lang || exit 1
+    else
+      local/run_segmentation.sh --noise_oov false --use-word-lm $use_word_lm \
+        --segmentation_opts "$segmentation_opts" \
+        $datadir $data/lang exp/tri4b_seg \
+        exp/tri4b_resegment_$type || exit 1
+    fi
+  fi
+fi
 
 datadir=${data}/${type}.seg
 dirid=${type}.seg
@@ -282,12 +312,16 @@ if ! $fast_path ; then
     "${shadow_set_extra_opts[@]}" "${lmwt_plp_extra_opts[@]}" \
     ${datadir} ${data}/lang ${decode}
 
+  if $tri5_only; then
+    exit 0
+  fi
+
   local/run_kws_stt_task.sh --cer $cer --max-states $max_states \
     --cmd "$decode_cmd" --skip-kws $skip_kws --skip-stt $skip_stt --wip $wip \
     "${shadow_set_extra_opts[@]}" "${lmwt_plp_extra_opts[@]}" \
     ${datadir} ${data}/lang ${decode}.si
 fi
-
+  
 if $tri5_only; then
   exit 0
 fi
@@ -330,23 +364,25 @@ for iter in 1 2 3 4; do
   sgmm5_mmi_b0_1=sgmm5_mmi_b0.1
   decode=exp/${sgmm5_mmi_b0_1}/decode_fmllr_${dirid}_it${iter}
   if [ ! -f $decode/.done ]; then
-
     mkdir -p $decode
     steps/decode_sgmm2_rescore.sh  --skip-scoring true \
       --cmd "$decode_cmd" --iter $iter --transform-dir exp/$tri5/decode_${dirid} \
       ${data}/lang ${datadir} exp/$sgmm5/decode_fmllr_${dirid} $decode | tee ${decode}/decode.log
 
-    #We are done -- all lattices has been generated. We have to
-    #a)Run MBR decoding
-    #b)Run KW search
-    local/run_kws_stt_task.sh --cer $cer --max-states $max_states \
-      --cmd "$decode_cmd" --skip-kws $skip_kws --skip-stt $skip_stt --wip $wip \
-      "${shadow_set_extra_opts[@]}" "${lmwt_plp_extra_opts[@]}" \
-      ${datadir} ${data}/lang $decode
-    
     touch $decode/.done
   fi
+  
+  #We are done -- all lattices has been generated. We have to
+  #a)Run MBR decoding
+  #b)Run KW search
+  local/run_kws_stt_task.sh --cer $cer --max-states $max_states \
+    --cmd "$decode_cmd" --skip-kws $skip_kws --skip-stt $skip_stt --wip $wip \
+    "${shadow_set_extra_opts[@]}" "${lmwt_plp_extra_opts[@]}" \
+    ${datadir} ${data}/lang $decode
+    
 done
+
+exit 0
 
 ####################################################################
 ##

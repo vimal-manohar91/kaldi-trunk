@@ -16,12 +16,13 @@ set -o pipefail  #Exit if any of the commands in the pipeline will
                  #return non-zero return code
 #set -u           #Fail on an undefined variable
 
-use_full_train_set=false
+use_full_train_set=true
 data_only=false
 share_silence_phones=true   # If set to true, silence phones 
                             # share same root in context dependency tree
 nonshared_noise=false       # If set to true, pdf is not 
                             # shared across the noise phones
+make_individual_noise_phones=true   # Have separate GMMs for the noise phones
 
 . ./path.sh
 . utils/parse_options.sh
@@ -42,18 +43,12 @@ function make_plp {
    steps/make_plp.sh --cmd "$train_cmd" --nj $train_nj ${data}/${t} exp/make_plp/${t} ${plpdir}
   elif [ "$use_pitch" = "true" ] && [ "$use_ffv" = "true" ]; then
     cp -rT ${data}/${t} ${data}/${t}_plp; cp -rT ${data}/${t} ${data}/${t}_pitch; cp -rT ${data}/${t} ${data}/${t}_ffv
-    steps/make_plp.sh --cmd "$train_cmd" --nj $train_nj ${data}/${t}_plp exp/make_plp/${t} plp_tmp_${t}
-    local/make_pitch.sh --cmd "$train_cmd" --nj $train_nj ${data}/${t}_pitch exp/make_pitch/${t} pitch_tmp_${t}
+    steps/make_plp_pitch.sh --cmd "$train_cmd" --nj $train_nj ${data}/${t}_plp_pitch exp/make_plp_pitch/${t} plp_pitch_tmp_${t}
     local/make_ffv.sh --cmd "$train_cmd"  --nj $train_nj ${data}/${t}_ffv exp/make_ffv/${t} ffv_tmp_${t}
-    steps/append_feats.sh --cmd "$train_cmd" --nj $train_nj ${data}/${t}{_plp,_pitch,_plp_pitch} exp/make_pitch/append_${t}_pitch plp_tmp_${t}
     steps/append_feats.sh --cmd "$train_cmd" --nj $train_nj ${data}/${t}{_plp_pitch,_ffv,} exp/make_ffv/append_${t}_pitch_ffv ${plpdir}
-    rm -rf {plp,pitch,ffv}_tmp_${t} ${data}/${t}_{plp,pitch,plp_pitch}
+    rm -rf {plp_pitch,ffv}_tmp_${t} ${data}/${t}_{plp_pitch,ffv}
   elif [ "$use_pitch" = "true" ]; then
-    cp -rT ${data}/${t} ${data}/${t}_plp; cp -rT ${data}/${t} ${data}/${t}_pitch
-    steps/make_plp.sh --cmd "$train_cmd" --nj $train_nj ${data}/${t}_plp exp/make_plp/${t} plp_tmp_${t}
-    local/make_pitch.sh --cmd "$train_cmd" --nj $train_nj ${data}/${t}_pitch exp/make_pitch/${t} pitch_tmp_${t}
-    steps/append_feats.sh --cmd "$train_cmd" --nj $train_nj ${data}/${t}{_plp,_pitch,} exp/make_pitch/append_${t} ${plpdir}
-    rm -rf {plp,pitch}_tmp_${t} ${data}/${t}_{plp,pitch}
+    steps/make_plp_pitch.sh --cmd "$train_cmd" --nj $train_nj ${data}/${t} exp/make_plp_pitch/${t} ${plpdir}
   elif [ "$use_ffv" = "true" ]; then
     cp -rT ${data}/${t} ${data}/${t}_plp; cp -rT ${data}/${t} ${data}/${t}_ffv
     steps/make_plp.sh --cmd "$train_cmd" --nj $train_nj ${data}/${t}_plp exp/make_plp/${t} plp_tmp_${t}
@@ -61,9 +56,12 @@ function make_plp {
     steps/append_feats.sh --cmd "$train_cmd" --nj $train_nj ${data}/${t}{_plp,_ffv,} exp/make_ffv/append_${t} ${plpdir}
     rm -rf {plp,ffv}_tmp_${t} ${data}/${t}_{plp,ffv}
   fi
+  
+  utils/fix_data_dir.sh ${data}/${t}
   steps/compute_cmvn_stats.sh ${data}/${t} exp/make_plp/${t} ${plpdir}
   utils/fix_data_dir.sh ${data}/${t}
 }
+
 
 
 mkdir -p data
@@ -128,7 +126,7 @@ if [[ ! -f data/train/wav.scp || data/train/wav.scp -ot "$train_data_dir" ]]; th
   mv data/train/text data/train/text_orig
   cat data/train/text_orig | sed 's/<silence>\ //g' | sed 's/\ <silence>//g' | awk '{if (NF > 1) {print $0}}' > data/train/text
   cat data/train/text | tr ' ' '\n' | \
-    sed -n '/<.*>/p' | sed '/'$oovSymbol'/d' | \
+    sed -n '/<.*>/p' | sed '/'$oovSymbol'/d' | sed '/<hes>/d' | \
     sort -u > data/local/fillers.list
   rm data/local/lexicon.txt
 fi
@@ -147,7 +145,7 @@ if [[ ! -f data/lang/L.fst || data/lang/L.fst -ot data/local/lexicon.txt ]]; the
   echo "Creating L.fst etc in data/lang on" `date`
   echo ---------------------------------------------------------------------
   utils/prepare_lang.sh \
-    --share-silence-phones $share_silence_phones \
+    --share-silence-phones $share_silence_phones --make-individual-sil-phones $make_individual_sil_phones \
     data/local $oovSymbol data/local/tmp.lang data/lang
 fi
 
@@ -408,7 +406,13 @@ if [ ! -f exp/tri5/.done ]; then
   touch exp/tri5/.done
 fi
 
-local/run_segmentation_train.sh --use-full-train-set $use_full_train_set --train-nj $train_nj --nj $train_nj --initial false data data/lang || exit 1
+local/run_segmentation_train.sh --train-nj $train_nj --nj $train_nj --boost-sil $boost_sil exp/tri4 data/train data/lang || exit 1
+
+if $tri5_only ; then
+  echo "Exiting after stage TRI5, as requested. "
+  echo "Everything went fine. Done"
+  exit 0;
+fi
 
 if [ ! -f exp/tri5_ali/.done ]; then
   echo ---------------------------------------------------------------------
@@ -475,10 +479,15 @@ if [ ! -f exp/sgmm5_mmi_b0.1/.done ]; then
   echo ---------------------------------------------------------------------
   steps/train_mmi_sgmm2.sh \
     --cmd "$train_cmd" "${sgmm_mmi_extra_opts[@]}" \
-    --transform-dir exp/tri5_ali --boost 0.1 \
+    --drop-frames true --transform-dir exp/tri5_ali --boost 0.1 \
     data/train data/lang exp/sgmm5_ali exp/sgmm5_denlats \
     exp/sgmm5_mmi_b0.1
   touch exp/sgmm5_mmi_b0.1/.done
 fi
+
+
+echo ---------------------------------------------------------------------
+echo "Finished successfully on" `date`
+echo ---------------------------------------------------------------------
 
 exit 0

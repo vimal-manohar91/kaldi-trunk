@@ -2,7 +2,7 @@
 # Author: Vimal Manohar
 
 set -o pipefail
-set -x 
+
 # set -e
 
 . path.sh
@@ -20,6 +20,12 @@ use_word_lm=false
 beam=7.0
 max_active=1000
 segmentation2=false
+penalize_long_phones=false
+dm_scale=0.1
+segment_length=60.0
+allow_partial=true
+use_viterbi_decode=false
+acoustic_scale=0.1
 
 #debugging stuff
 echo $0 $@
@@ -105,7 +111,7 @@ if [ ! -f $data/${dirid}.orig/.done ]; then
   cp -rT $data/${type} $data/${dirid}.orig; rm -r $data/${dirid}.orig/split*
   for f in text utt2spk spk2utt feats.scp cmvn.scp segments; do rm $data/${dirid}.orig/$f; done
   wav-to-duration scp:$data/${dirid}.orig/wav.scp ark,t:$data/${dirid}.orig/durations.scp || exit 1
-  utils/durations2segments.py $data/${dirid}.orig/durations.scp | sort > $data/${dirid}.orig/segments || exit 1
+  utils/durations2segments.py --segment-length $segment_length $data/${dirid}.orig/durations.scp | sort > $data/${dirid}.orig/segments || exit 1
   cat $data/${dirid}.orig/segments | cut -d ' ' -f 1,2 > $data/${dirid}.orig/utt2reco || exit 1
   utt2spk_to_spk2utt.pl $data/${dirid}.orig/utt2reco > $data/${dirid}.orig/reco2utt || exit 1
   cp $data/${dirid}.orig/utt2reco $data/${dirid}.orig/utt2spk
@@ -125,8 +131,8 @@ fi
 #
 ###############################################################################
 
-model_dir=exp/${tri4b}_whole_seg
-temp_dir=exp/${tri4b}_whole_resegment_${type}
+model_dir=exp/${tri4b}_seg
+temp_dir=exp/${tri4b}_resegment_${type}
 
 mkdir -p $temp_dir
 
@@ -134,24 +140,66 @@ total_time=0
 t1=$(date +%s)
 if [ ! -f $model_dir/decode_${dirid}.orig/.done ]; then
   [ ! -f $model_dir/final.mdl ] && echo "$model_dir/final.mdl not found" && exit 1
-  steps/decode.sh --skip-scoring true \
-    --nj $my_nj --cmd "$cmd" "${decode_extra_opts[@]}" --beam $beam --max-active $max_active \
-    $model_dir/phone_graph $data/${dirid}.orig $model_dir/decode_${dirid}.orig
+  if ! $use_word_lm; then
+    steps/decode.sh --skip-scoring true \
+      --nj $my_nj --cmd "$cmd" "${decode_extra_opts[@]}" \
+      --beam $beam --max-active $max_active --allow-partial $allow_partial \
+      $model_dir/phone_graph $data/${dirid}.orig $model_dir/decode_${dirid}.orig
+  else
+    steps/decode.sh --skip-scoring true \
+      --nj $my_nj --cmd "$cmd" "${decode_extra_opts[@]}" \
+      --beam $beam --max-active $max_active --allow-partial $allow_partial \
+      $model_dir/graph $data/${dirid}.orig $model_dir/decode_${dirid}.orig
+  fi
+  
+  [ ! -s $model_dir/decode_${dirid}.orig/lat.1.gz ]  && echo "$model_dir/decode_${dirid}.orig/lat.*.gz not found" && exit 1
   touch $model_dir/decode_${dirid}.orig/.done
 fi
 
-if [ ! -f $model_dir/decode_${dirid}.orig/.phone_post.done ]; then
-  $cmd JOB=1:$my_nj $model_dir/decode_${dirid}.orig/log/get_phone_post.JOB.log \
-    lattice-to-post --acoustic-scale=0.1 \
-    "ark:gunzip -c $model_dir/decode_${dirid}.orig/lat.JOB.gz|" ark:- \| \
-    post-to-phone-post $model_dir/final.mdl ark:- "ark,t:|gzip -c > $model_dir/decode_${dirid}.orig/phone_post.JOB.gz" || exit 1
-  touch $model_dir/decode_${dirid}.orig/.phone_post.done
+if $penalize_long_phones; then
+  if [ ! -f $model_dir/phone_lengths.txt ]; then
+    gunzip -c $model_dir/ali.*.gz | ali-to-phones --write-lengths=true $model_dir/final.mdl ark:- ark,t:- | \
+      cut -f 1 -d ' ' --complement | tr ';' '\n' | awk '{if (NF==2) print $1" "$2}' | \
+      python -c "import sys
+import numpy as np
+lengths = {}
+for line in sys.stdin.readlines():
+  splits = line.strip().split()
+  if splits[0] not in lengths:
+    lengths[splits[0]] = []
+  lengths[splits[0]].append(int(splits[1]))
+for x,y in lengths.items():
+  sys.stdout.write(\"%s %f %f\n\" % (x, np.mean(y), np.std(y)))" > $model_dir/phone_lengths.txt || exit 1
+  fi
+
+  if [ ! -f $model_dir/decode_${dirid}.orig/lat.1.gz.temp ]; then
+    for n in `seq 1 $my_nj`; do mv $model_dir/decode_${dirid}.orig/lat.$n.gz $model_dir/decode_${dirid}.orig/lat.$n.gz.temp; done
+  fi
+
+  if [ ! -f $model_dir/decode_${dirid}.orig/.penalize.done ]; then
+    $cmd JOB=1:$my_nj $model_dir/decode_${dirid}.orig/log/penalize.JOB.log \
+      lattice-align-phones --replace-output-symbols=true $model_dir/final.mdl "ark:gunzip -c $model_dir/decode_${dirid}.orig/lat.JOB.gz.temp|" ark,t:- \| \
+      lattice_penalize_long_arcs.py --duration-model-scale $dm_scale $model_dir/phone_lengths.txt \| \
+      lattice-copy ark,t:- "ark:|gzip -c > $model_dir/decode_${dirid}.orig/lat.JOB.gz" || exit 1
+
+    touch $model_dir/decode_${dirid}.orig/.penalize.done
+  fi
 fi
 
-if [ ! -f $temp_dir/.post_decode.done ]; then
-  $cmd JOB=1:$my_nj $model_dir/decode_${dirid}.orig/log/post_decode.JOB.log \
-    gunzip -c $model_dir/decode_${dirid}.orig/phone_post.JOB.gz \| \
-    python -c "import sys
+if ! $use_viterbi_decode; then
+  [ ! -s $model_dir/decode_${dirid}.orig/lat.1.gz ]  && echo "$model_dir/decode_${dirid}.orig/lat.*.gz not found" && exit 1
+  if [ ! -f $model_dir/decode_${dirid}.orig/.phone_post.done ]; then
+    $cmd JOB=1:$my_nj $model_dir/decode_${dirid}.orig/log/get_phone_post.JOB.log \
+      lattice-to-post --acoustic-scale=$acoustic_scale \
+      "ark:gunzip -c $model_dir/decode_${dirid}.orig/lat.JOB.gz|" ark:- \| \
+      post-to-phone-post $model_dir/final.mdl ark:- "ark,t:|gzip -c > $model_dir/decode_${dirid}.orig/phone_post.JOB.gz" || exit 1
+    touch $model_dir/decode_${dirid}.orig/.phone_post.done
+  fi
+
+  if [ ! -f $temp_dir/.post_decode.done ]; then
+    $cmd JOB=1:$my_nj $model_dir/decode_${dirid}.orig/log/post_decode.JOB.log \
+      gunzip -c $model_dir/decode_${dirid}.orig/phone_post.JOB.gz \| \
+      python -c "import sys
 for line in sys.stdin.readlines():
   splits = line.strip().split()
   sys.stdout.write(splits[0])
@@ -168,22 +216,75 @@ for line in sys.stdin.readlines():
       sys.stdout.write(\" \" + max(phones, key=lambda x:float(x[1]))[0])
       i += 1
   sys.stdout.write(\"\n\")" \| \
-    utils/int2sym.pl -f 2- $lang/phones.txt \| \
-    gzip -c '>' $temp_dir/pred.JOB.gz || exit 1
-  
-  mkdir -p $temp_dir/pred_temp
+      utils/int2sym.pl -f 2- $lang/phones.txt \| \
+      gzip -c '>' $temp_dir/pred.JOB.gz || exit 1
+    
+    echo $my_nj > $temp_dir/num_jobs
+    touch $temp_dir/.post_decode.done
+  fi
+else
+  if [ ! -s $temp_dir/pred.1.gz ]; then
+    $cmd JOB=1:$my_nj $model_dir/decode_${dirid}.orig/log/predict.JOB.log \
+      lattice-best-path --acoustic-scale=$acoustic_scale "ark:gunzip -c $model_dir/decode_${dirid}.orig/lat.JOB.gz|" ark:/dev/null ark:- \| \
+      ali-to-phones --per-frame=true $model_dir/final.mdl ark:- ark,t:- \| \
+      utils/int2sym.pl -f 2- $lang/phones.txt \| \
+      gzip -c '>' $temp_dir/pred.JOB.gz || exit 1
+  fi
+fi
 
-  for n in `seq $my_nj`; do gunzip -c $temp_dir/pred.$n.gz; done | \
-    python -c "import sys
+mkdir -p $temp_dir/pred_temp
+
+[ ! -s $temp_dir/pred.1.gz ] && exit 1
+
+for n in `seq $my_nj`; do gunzip -c $temp_dir/pred.$n.gz; done | \
+  python -c "import sys
 for l in sys.stdin.readlines():
   splits = l.strip().split()
+  file_handle = open(\""$temp_dir"/pred_temp/%s.pred\" % splits[0], 'w')
+  print(splits[0])
+  file_handle.write(\" \".join(splits[1:]))
+  file_handle.write(\"\n\")
+  file_handle.close()" > $temp_dir/pred_temp/predicted_uttlist  || exit 1
+    
+[ ! -s $temp_dir/pred_temp/predicted_uttlist ] && exit 1
+
+if ! $allow_partial; then
+  mkdir -p $data/${dirid}.orig.fail
+  cp $data/${dirid}.orig/* $data/${dirid}.orig.fail
+
+  utils/filter_scp.pl --exclude $temp_dir/pred_temp/predicted_uttlist $data/${dirid}.orig/feats.scp > $data/${dirid}.orig.fail/feats.scp || exit 1
+  utils/fix_data_dir.sh $data/${dirid}.orig.fail || exit 1
+
+  num_failed=`wc -l $data/${dirid}.orig.fail/feats.scp 2>/dev/null | cut -d ' ' -f 1`
+
+  if [ "$num_failed" -lt "$my_nj" ]; then
+    fail_nj=$num_failed
+  else
+    fail_nj=$my_nj
+  fi
+
+  if [ ! -f $model_dir/decode_${dirid}.orig.fail/.done ]; then
+    steps/decode_nolats.sh --write-words false --write-alignments true \
+      --cmd "$cmd" --nj $fail_nj --beam $beam --max-active $max_active \
+      $model_dir/phone_graph $data/${dirid}.orig.fail $model_dir/decode_${dirid}.orig.fail || exit 1
+    touch $model_dir/decode_${dirid}.orig.fail/.done
+  fi
+
+  if [ ! -f $temp_dir/pred.fail.1.gz ]; then
+    $cmd JOB=1:$fail_nj $model_dir/decode_${dirid}.orig.fail/log/predict.JOB.log \
+      ali-to-phones --per-frame=true $model_dir/final.mdl "ark:gunzip -c $model_dir/decode_${dirid}.orig.fail/ali.JOB.gz|" ark,t:- \| \
+      utils/int2sym.pl -f 2- $lang/phones.txt \| \
+      gzip -c '>' $temp_dir/pred.fail.JOB.gz || exit 1
+  fi
+    
+  for n in `seq 1 $fail_nj`; do gunzip -c $temp_dir/pred.fail.$n.gz; done \
+    | python -c "import sys 
+for l in sys.stdin.readlines():
+  splits = line = l.strip().split()
   file_handle = open(\""$temp_dir"/pred_temp/%s.pred\" % splits[0], 'w')
   file_handle.write(\" \".join(splits[1:]))
   file_handle.write(\"\n\")
   file_handle.close()" || exit 1
-
-  echo $my_nj > $temp_dir/num_jobs
-  touch $temp_dir/.post_decode.done
 fi
 
 if [ ! -f $temp_dir/.pred.done ]; then
@@ -304,10 +405,10 @@ echo "Resegmentation of $type took $total_time seconds"
 if $get_text && [ -f $data/$type/text ]; then
   # We need all the training data to be aligned, in order
   # to get the resegmented "text".
-  if [ ! -f exp/${tri4}_whole_ali_$type/.done ]; then
+  if [ ! -f exp/${tri4}_ali_$type/.done ]; then
     steps/align_fmllr.sh --nj $my_nj --cmd "$cmd" \
-      $data/$type $lang exp/${tri4} exp/${tri4}_whole_ali_$type || exit 1;
-    touch exp/${tri4}_whole_ali_$type/.done
+      $data/$type $lang exp/${tri4} exp/${tri4}_ali_$type || exit 1;
+    touch exp/${tri4}_ali_$type/.done
   fi
   
   if [ ! -f $data/$type.seg/text ]; then
@@ -315,7 +416,7 @@ if $get_text && [ -f $data/$type/text ]; then
     [ ! -s $data/$type/reco2file_and_channel ] && cat $data/$type/segments | awk '{print $2" "$2" "1}' > $data/$type/reco2file_and_channel
     [ ! -s $data/$type.seg/reco2file_and_channel ] && cat $data/$type.seg/segments | awk '{print $2" "$2" "1}' > $data/$type.seg/reco2file_and_channel
     steps/resegment_text.sh --cmd "$cmd" $data/$type $lang \
-      exp/${tri4}_whole_ali_$type $data/$type.seg exp/${tri4b}_whole_resegment_$type || exit 1
+      exp/${tri4}_ali_$type $data/$type.seg exp/${tri4b}_resegment_$type || exit 1
     [ ! -f $data/$type.seg/text ] && exit 1
     utils/fix_data_dir.sh $data/${dirid}
     utils/validate_data_dir.sh --no-feats --no-text $data/${dirid}

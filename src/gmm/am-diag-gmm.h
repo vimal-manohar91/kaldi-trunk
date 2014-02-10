@@ -210,7 +210,40 @@ void ClusterGaussiansToUbm(const AmDiagGmm &am,
                            UbmClusteringOptions opts,
                            DiagGmm *ubm_out);
 
+struct GaussianMergingOptions{
+  int32 gmm_num_gauss;
+  BaseFloat reduce_state_factor;
+  int32 intermediate_num_gauss;
+  BaseFloat cluster_varfloor;
+  int32 max_num_gauss;
 
+  GaussianMergingOptions()
+    : gmm_num_gauss(400), reduce_state_factor(0.2),
+    intermediate_num_gauss(4000), cluster_varfloor(0.01),
+    max_num_gauss(20000) {}
+
+  GaussianMergingOptions(int32 ncomp, BaseFloat red, int32 interm_gauss,
+      BaseFloat vfloor, int32 max_gauss, 
+      bool merge_gaussians)
+    : gmm_num_gauss(ncomp), reduce_state_factor(red),
+    intermediate_num_gauss(interm_gauss), cluster_varfloor(vfloor),
+    max_num_gauss(max_gauss) {}
+  void Register(OptionsItf *po) {
+    std::string module = "GaussianMergingOptions: ";
+    po->Register("max-num-gauss", &max_num_gauss, module+
+        "We first reduce acoustic model to this max #Gauss before clustering.");
+    po->Register("gmm-num-gauss", &gmm_num_gauss, module+
+        "Number of Gaussians components in the final GMM.");
+    po->Register("reduce-state-factor", &reduce_state_factor, module+
+        "Intermediate number of clustered states (as fraction of total states).");
+    po->Register("intermediate-num-gauss", &intermediate_num_gauss, module+
+        "Intermediate number of merged Gaussian components.");
+    po->Register("cluster-varfloor", &cluster_varfloor, module+
+        "Variance floor used in bottom-up state clustering.");
+  }
+
+  void Check();
+};
 
 
 }  // namespace kaldi

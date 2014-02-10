@@ -132,6 +132,12 @@ typedef RandomAccessTableReader< KaldiObjectHolder<AmDiagGmm> > RandomAccessMapA
 typedef RandomAccessTableReaderMapped< KaldiObjectHolder<AmDiagGmm> > RandomAccessMapAmDiagGmmReaderMapped;
 typedef SequentialTableReader< KaldiObjectHolder<AmDiagGmm> > MapAmDiagGmmSeqReader;
 
+void MergeGaussiansInPdfs(const AmDiagGmm &am, 
+    const AccumAmDiagGmm &gmm_accs,
+    const std::vector<int32> &pdf_list,
+    GaussianMergingOptions opts,
+    DiagGmm *gmm_out);
+
 }  // End namespace kaldi
 
 

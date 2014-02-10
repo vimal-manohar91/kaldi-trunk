@@ -69,6 +69,11 @@ if [ $? -ne 0 ] ; then
   echo "Could not find sph2pipe binary. Add it to PATH"  
   exit 1;
 fi
+sox=`which sox`
+if [ $? -ne 0 ] ; then
+  echo "Could not find sox binary. Add it to PATH"  
+  exit 1;
+fi
 
 echo "Creating the $datadir/wav.scp file"
 (
@@ -91,7 +96,7 @@ echo "Creating the $datadir/wav.scp file"
 
 l1=`wc -l $datadir/wav.scp | cut -f 1 -d ' ' `
 echo "wav.scp contains $l1 files"
-if [ ! -z $filelist ] ; then
+if [ ! -z $filelist ] ; then 
   l2=`wc -l $filelist | cut -f 1 -d ' '`
   echo "filelist `basename $filelist` contains $l2 files"
 

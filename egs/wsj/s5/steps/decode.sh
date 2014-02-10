@@ -21,6 +21,7 @@ scoring_opts=
 # note: there are no more min-lmwt and max-lmwt options, instead use
 # e.g. --scoring-opts "--min-lmwt 1 --max-lmwt 20"
 skip_scoring=false
+allow_partial=true
 # End configuration section.
 
 echo "$0 $@"  # Print the command line for logging
@@ -97,7 +98,7 @@ fi
 if [ $stage -le 0 ]; then
   $cmd $parallel_opts JOB=1:$nj $dir/log/decode.JOB.log \
     gmm-latgen-faster$thread_string --max-arcs=$max_arcs --max-active=$max_active --beam=$beam --lattice-beam=$latbeam \
-    --acoustic-scale=$acwt --allow-partial=true --word-symbol-table=$graphdir/words.txt \
+    --acoustic-scale=$acwt --allow-partial=$allow_partial --word-symbol-table=$graphdir/words.txt \
     $model $graphdir/HCLG.fst "$feats" "ark:|gzip -c > $dir/lat.JOB.gz" || exit 1;
 fi
 

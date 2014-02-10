@@ -31,13 +31,42 @@
 # .
 # .
 
-import argparse, sys, os, re
+import argparse, sys, os, re, textwrap
 from argparse import ArgumentParser
 
 def main():
   segments_file = None
-  parser = ArgumentParser(description='Extract insertions from .ctm.sgml file assuming it is sorted')
-  parser.add_argument('sgml_file', help='.ctm.sgml file generate by NIST SCLITE')
+  parser = ArgumentParser(description=textwrap.dedent('''\
+      This script extracts insertions from a .ctm.sgml file that is generated
+      by the NIST SCLITE program. The extracted insertion list can be
+      used by a script such as add_fillers_to_transcription.py to augment the
+      training transcripts with artificial fillers modeling noise that
+      are not transcribed by humans.
+      The output insertion list contains all the insertions including the start
+      and end times of their hypothesis, the hypothesized word and even whether
+      it is an INSERTION i.e. the word occurs in place of silence or it is
+      a SUBSTITUTION i.e the word occurs in place of some filler like <sta> or
+      <noise> or <laugh> etc. The insertion list also prints some statistics such
+      as the mean length of the inserted word.
+      The format of insertion file is:
+      <Statistics>
+      <Insertions>
+      Word    Number of Occurences
+      .
+      .
+      <Substitutions>
+      Word    Number of Occurences
+      .
+      .
+      <Counts>
+      Word    Number of Occurences
+      .
+      .
+      <Locations>
+      INSERTION/SUBSTITUTION file_id channel_no start_time end_time duration inserted_word [filler that was substituted] mean length of the inserted word
+      .
+      .''', formatter_class=RawDescriptionHelpFormatter)
+      parser.add_argument('sgml_file', help='.ctm.sgml file generate by NIST SCLITE')
   parser.add_argument('--segments', type=str, \
       dest='segments_file', \
       help='Sorted segments file to restrict insertions to outside it')
@@ -56,14 +85,14 @@ def main():
   try:
     sgml_file_handle = open(sgml_file)
   except IOError:
-    sys.stderr.write("ERROR: %s: Cannot open %s\n" % (sys.argv[0], sgml_file))
+    sys.stderr.write("%s: %s: Cannot open file %s\n" % (sys.argv[0], e, ctm_file))
     sys.exit(1)
 
   if segments_file != None:
     try:
       segments_handle = open(segments_file)
     except IOError:
-      sys.stderr.write("WARNING: %s: Cannot open %s\n" % (sys.argv[0], segments_file))
+      sys.stderr.write("%s: %s: Cannot open file %s\n" % (sys.argv[0], e, segments_file))
       sys.exit(1)
     line = segments_handle.readline()
     try:

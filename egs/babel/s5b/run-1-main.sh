@@ -2,6 +2,7 @@
 
 # This is not necessarily the top-level run.sh as it is in other directories.   see README.txt first.
 tri5_only=false
+
 [ ! -f ./lang.conf ] && echo "Language configuration does not exist! Use the configurations in conf/lang/* as a startup" && exit 1
 [ ! -f ./conf/common_vars.sh ] && echo "the file conf/common_vars.sh does not exist!" && exit 1
 
@@ -9,7 +10,7 @@ tri5_only=false
 . ./lang.conf || exit 1;
 
 [ -f local.conf ] && . ./local.conf
-use_full_train_set=false
+use_full_train_set=true
 
 . ./path.sh
 . utils/parse_options.sh
@@ -28,18 +29,12 @@ function make_plp {
    steps/make_plp.sh --cmd "$train_cmd" --nj $train_nj ${data}/${t} exp/make_plp/${t} ${plpdir}
   elif [ "$use_pitch" = "true" ] && [ "$use_ffv" = "true" ]; then
     cp -rT ${data}/${t} ${data}/${t}_plp; cp -rT ${data}/${t} ${data}/${t}_pitch; cp -rT ${data}/${t} ${data}/${t}_ffv
-    steps/make_plp.sh --cmd "$train_cmd" --nj $train_nj ${data}/${t}_plp exp/make_plp/${t} plp_tmp_${t}
-    local/make_pitch.sh --cmd "$train_cmd" --nj $train_nj ${data}/${t}_pitch exp/make_pitch/${t} pitch_tmp_${t}
+    steps/make_plp_pitch.sh --cmd "$train_cmd" --nj $train_nj ${data}/${t}_plp_pitch exp/make_plp_pitch/${t} plp_pitch_tmp_${t}
     local/make_ffv.sh --cmd "$train_cmd"  --nj $train_nj ${data}/${t}_ffv exp/make_ffv/${t} ffv_tmp_${t}
-    steps/append_feats.sh --cmd "$train_cmd" --nj $train_nj ${data}/${t}{_plp,_pitch,_plp_pitch} exp/make_pitch/append_${t}_pitch plp_tmp_${t}
     steps/append_feats.sh --cmd "$train_cmd" --nj $train_nj ${data}/${t}{_plp_pitch,_ffv,} exp/make_ffv/append_${t}_pitch_ffv ${plpdir}
-    rm -rf {plp,pitch,ffv}_tmp_${t} ${data}/${t}_{plp,pitch,plp_pitch}
+    rm -rf {plp_pitch,ffv}_tmp_${t} ${data}/${t}_{plp_pitch,ffv}
   elif [ "$use_pitch" = "true" ]; then
-    cp -rT ${data}/${t} ${data}/${t}_plp; cp -rT ${data}/${t} ${data}/${t}_pitch
-    steps/make_plp.sh --cmd "$train_cmd" --nj $train_nj ${data}/${t}_plp exp/make_plp/${t} plp_tmp_${t}
-    local/make_pitch.sh --cmd "$train_cmd" --nj $train_nj ${data}/${t}_pitch exp/make_pitch/${t} pitch_tmp_${t}
-    steps/append_feats.sh --cmd "$train_cmd" --nj $train_nj ${data}/${t}{_plp,_pitch,} exp/make_pitch/append_${t} ${plpdir}
-    rm -rf {plp,pitch}_tmp_${t} ${data}/${t}_{plp,pitch}
+    steps/make_plp_pitch.sh --cmd "$train_cmd" --nj $train_nj ${data}/${t} exp/make_plp_pitch/${t} ${plpdir}
   elif [ "$use_ffv" = "true" ]; then
     cp -rT ${data}/${t} ${data}/${t}_plp; cp -rT ${data}/${t} ${data}/${t}_ffv
     steps/make_plp.sh --cmd "$train_cmd" --nj $train_nj ${data}/${t}_plp exp/make_plp/${t} plp_tmp_${t}
@@ -47,6 +42,8 @@ function make_plp {
     steps/append_feats.sh --cmd "$train_cmd" --nj $train_nj ${data}/${t}{_plp,_ffv,} exp/make_ffv/append_${t} ${plpdir}
     rm -rf {plp,ffv}_tmp_${t} ${data}/${t}_{plp,ffv}
   fi
+  
+  utils/fix_data_dir.sh ${data}/${t}
   steps/compute_cmvn_stats.sh ${data}/${t} exp/make_plp/${t} ${plpdir}
   utils/fix_data_dir.sh ${data}/${t}
 }
@@ -168,28 +165,8 @@ if [ ! -f data/train/feats.scp ]; then
   echo ---------------------------------------------------------------------
 
   if [ ! -f data/train/.plp.done ]; then
-    if [ "$use_pitch" = "false" ] && [ "$use_ffv" = "false" ]; then
-      steps/make_plp.sh --cmd "$train_cmd" --nj $train_nj data/train exp/make_plp/train plp
-    elif [ "$use_pitch" = "true" ] && [ "$use_ffv" = "true" ]; then
-      cp -rT data/train data/train_plp_pitch; cp -rT data/train data/train_ffv
-      steps/make_plp_pitch.sh --cmd "$train_cmd" --nj $train_nj data/train_plp_pitch exp/make_plp_pitch/train plp_pitch_tmp_train
-      local/make_ffv.sh --cmd "$train_cmd"  --nj $train_nj data/train_ffv exp/make_ffv/train ffv_tmp_train
-      steps/append_feats.sh --cmd "$train_cmd" --nj $train_nj data/train{_plp_pitch,_ffv,} exp/make_ffv/append_train_pitch_ffv plp
-      rm -rf {plp_pitch,ffv}_tmp_train data/train_{plp_pitch,ffv}
-    elif [ "$use_pitch" = "true" ]; then
-      steps/make_plp_pitch.sh --cmd "$train_cmd" --nj $train_nj data/train exp/make_plp_pitch/train plp
-    elif [ "$use_ffv" = "true" ]; then
-      cp -rT data/train data/train_plp; cp -rT data/train data/train_ffv
-      steps/make_plp.sh --cmd "$train_cmd" --nj $train_nj data/train_plp exp/make_plp/train plp_tmp_train
-      local/make_ffv.sh --cleanup false --cmd "$train_cmd" --nj $train_nj data/train_ffv exp/make_ffv/train ffv_tmp_train
-      steps/append_feats.sh --cmd "$train_cmd" --nj $train_nj data/train{_plp,_ffv,} exp/make_ffv/append_train plp
-      rm -rf {plp,ffv}_tmp_train data/train_{plp,ffv}
-    fi
-    utils/fix_data_dir.sh data/train
-    steps/compute_cmvn_stats.sh \
-      data/train exp/make_plp/train plp
-    # In case plp or pitch extraction failed on some utterances, delist them
-    utils/fix_data_dir.sh data/train
+    mkdir -p exp/plp
+    make_plp train data exp/plp
     touch data/train/.plp.done
   fi
 
@@ -361,7 +338,7 @@ if [ ! -f exp/tri5/.done ]; then
   touch exp/tri5/.done
 fi
 
-local/run_segmentation_train.sh --use-full-train-set $use_full_train_set --train-nj $train_nj --nj $train_nj --initial false data data/lang || exit 1
+local/run_segmentation_train.sh --boost-sil $boost_sil --train-nj $train_nj --nj $train_nj exp/tri4 data/train_whole data/lang || exit 1
 
 ################################################################################
 # Ready to start SGMM training
@@ -375,6 +352,12 @@ if [ ! -f exp/tri5_ali/.done ]; then
     --boost-silence $boost_sil --nj $train_nj --cmd "$train_cmd" \
     data/train data/lang exp/tri5 exp/tri5_ali
   touch exp/tri5_ali/.done
+fi
+
+if $tri5_only ; then
+  echo "Exiting after stage TRI5, as requested. "
+  echo "Everything went fine. Done"
+  exit 0;
 fi
 
 if [ ! -f exp/ubm5/.done ]; then
@@ -415,11 +398,6 @@ if [ ! -f exp/sgmm5_ali/.done ]; then
   touch exp/sgmm5_ali/.done
 fi
 
-if $tri5_only ; then
-  echo "Exiting after stage TRI5, as requested. "
-  echo "Everything went fine. Done"
-  exit 0;
-fi
 
 if [ ! -f exp/sgmm5_denlats/.done ]; then
   echo ---------------------------------------------------------------------
@@ -438,7 +416,7 @@ if [ ! -f exp/sgmm5_mmi_b0.1/.done ]; then
   echo ---------------------------------------------------------------------
   steps/train_mmi_sgmm2.sh \
     --cmd "$train_cmd" "${sgmm_mmi_extra_opts[@]}" \
-    --transform-dir exp/tri5_ali --boost 0.1 \
+    --drop-frames true --transform-dir exp/tri5_ali --boost 0.1 \
     data/train data/lang exp/sgmm5_ali exp/sgmm5_denlats \
     exp/sgmm5_mmi_b0.1
   touch exp/sgmm5_mmi_b0.1/.done

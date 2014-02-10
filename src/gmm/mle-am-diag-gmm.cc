@@ -21,6 +21,8 @@
 #include "gmm/am-diag-gmm.h"
 #include "gmm/mle-am-diag-gmm.h"
 #include "util/stl-utils.h"
+#include "tree/clusterable-classes.h"
+#include "tree/cluster-utils.h"
 
 namespace kaldi {
 
@@ -266,6 +268,203 @@ void AccumAmDiagGmm::Add(BaseFloat scale, const AccumAmDiagGmm &other) {
   KALDI_ASSERT(num_accs == other.NumAccs());
   for (int32 i = 0; i < num_accs; i++)
     gmm_accumulators_[i]->Add(scale, *(other.gmm_accumulators_[i]));
+}
+
+void MergeGaussiansInPdfs(const AmDiagGmm &am, 
+    const AccumAmDiagGmm &gmm_accs,
+    const std::vector<int32> &pdf_list,
+    GaussianMergingOptions opts,
+    DiagGmm *gmm_out) {
+  opts.Check();  // Make sure the various # of Gaussians make sense.
+
+  // Get state occs
+  Vector<BaseFloat> pdf_occs;
+  pdf_occs.Resize(gmm_accs.NumAccs());
+
+  // Count # of gaussian in the specified pdf list
+  int32 num_gauss = 0;
+  for (int32 kj = 0, num_pdfs = pdf_list.size(); kj < num_pdfs; kj++) {
+    int32 pdf_index = pdf_list[kj];
+    num_gauss += am.NumGaussInPdf(pdf_index);
+    pdf_occs(pdf_index) = gmm_accs.GetAcc(pdf_index).occupancy().Sum();
+  }
+
+  if (num_gauss > opts.max_num_gauss) {
+    KALDI_LOG << "MergeGaussiansInPdfs: first reducing num-gauss from " << num_gauss
+      << " in " << pdf_list.size() << " pdfs of the pdf-list to " 
+      << opts.max_num_gauss;
+    AmDiagGmm tmp_am;
+    tmp_am.CopyFromAmDiagGmm(am);
+    BaseFloat power = 1.0, min_count = 1.0; // Make the power 1, which I feel
+    // is appropriate to the way we're doing the overall clustering procedure.
+    tmp_am.MergeByCount(pdf_occs, opts.max_num_gauss, power, min_count);
+
+    // Count # of gaussian in the specified pdf list
+    int num_gauss = 0;
+    for (int32 kj = 0, num_pdfs = pdf_list.size(); kj < num_pdfs; kj++) {
+      int32 pdf_index = pdf_list[kj];
+      num_gauss += am.NumGaussInPdf(pdf_index);
+    }
+
+    if (num_gauss > opts.max_num_gauss) {
+      KALDI_LOG << "Clustered down to " << num_gauss
+        << "; will not cluster further";
+      opts.max_num_gauss = num_gauss;
+    }
+    MergeGaussiansInPdfs(tmp_am, gmm_accs, pdf_list, opts, gmm_out);
+    return;
+  } 
+
+  int32 num_pdfs = static_cast<int32>(pdf_list.size()),
+        dim = am.Dim(),
+        num_clust_states = num_pdfs;
+  std::vector< std::vector<Clusterable*> > state_clust_gauss;
+
+  Vector<BaseFloat> tmp_mean(dim);
+  Vector<BaseFloat> tmp_var(dim);
+  DiagGmm tmp_gmm;
+
+  std::vector<int32> state_clusters;
+
+  if (opts.reduce_state_factor != 1.0) {
+    // This is typically done when the number of gaussians is very large. 
+    // For example, in getting the Speech GMM.
+    num_clust_states = static_cast<int32>(opts.reduce_state_factor*num_pdfs);
+
+    std::vector<Clusterable*> states;
+    states.reserve(num_pdfs);  // NOT resize(); uses push_back.
+
+    // Replace the GMM for each state with a single Gaussian.
+    KALDI_VLOG(1) << "Merging densities to 1 Gaussian per state.";
+    for (int32 kj = 0; kj < num_pdfs; kj++) {
+      int32 pdf_index = pdf_list[kj];
+      KALDI_VLOG(3) << "Merging Gausians for state : " << pdf_index;
+      tmp_gmm.CopyFromDiagGmm(am.GetPdf(pdf_index));
+      tmp_gmm.Merge(1);
+      tmp_gmm.GetComponentMean(0, &tmp_mean);
+      tmp_gmm.GetComponentVariance(0, &tmp_var);
+      tmp_var.AddVec2(1.0, tmp_mean);  // make it x^2 stats.
+      BaseFloat this_weight = pdf_occs(pdf_index);
+      tmp_mean.Scale(this_weight);
+      tmp_var.Scale(this_weight);
+      states.push_back(new GaussClusterable(tmp_mean, tmp_var,
+            opts.cluster_varfloor, this_weight));
+    }
+
+    // Bottom-up clustering of the Gaussians corresponding to each state, which
+    // gives a partial clustering of states in the 'state_clusters' vector.
+    KALDI_VLOG(1) << "Creating " << num_clust_states << " clusters of states.";
+    ClusterBottomUp(states, kBaseFloatMax, num_clust_states,
+        NULL /*actual clusters not needed*/,
+        &state_clusters /*get the cluster assignments*/);
+    DeletePointers(&states);
+  } else {
+    state_clusters.resize(num_pdfs);
+    for (int32 kj = 0; kj < num_pdfs; kj++) {
+      state_clusters[kj] = kj;
+    }
+  }
+
+  // For each cluster of states, create a pool of all the Gaussians in those
+  // states, weighted by the state occupancies. This is done so that initially
+  // only the Gaussians corresponding to "similar" states (similarity as
+  // determined by the previous clustering) are merged.
+  {
+    state_clust_gauss.resize(num_clust_states);
+    for (int32 kj = 0; kj < num_pdfs; kj++) {
+      int32 pdf_index = pdf_list[kj];
+      int32 current_cluster = state_clusters[kj];
+      for (int32 num_gauss = am.GetPdf(pdf_index).NumGauss(),
+          gauss_index = 0; gauss_index < num_gauss; ++gauss_index) {
+        am.GetGaussianMean(pdf_index, gauss_index, &tmp_mean);
+        am.GetGaussianVariance(pdf_index, gauss_index, &tmp_var);
+        tmp_var.AddVec2(1.0, tmp_mean);  // make it x^2 stats.
+        /* The naive way is to multiply the state occupation with the 
+         * the gaussian prior. But it is possible to get this weight
+         * as what it actually is as determined by the accumulated stats. */
+        BaseFloat this_weight =  pdf_occs(pdf_index) *
+          (am.GetPdf(pdf_index).weights())(gauss_index);
+        /*
+        BaseFloat this_weight = gmm_accs.GetAcc(pdf_index).occupancy()(pdf_index);
+           */
+        tmp_mean.Scale(this_weight);
+        tmp_var.Scale(this_weight);
+        state_clust_gauss[current_cluster].push_back(new GaussClusterable(
+              tmp_mean, tmp_var,
+              opts.cluster_varfloor, this_weight));
+      }
+    }
+  }
+
+  // This is an unlikely operating scenario, no need to handle this in a more
+  // optimized fashion.
+  if (opts.intermediate_num_gauss > num_gauss) {
+    KALDI_WARN << "Intermediate num_gauss " << opts.intermediate_num_gauss
+      << " is more than num-gauss " << num_gauss
+      << ", reducing it to " << num_gauss;
+    opts.intermediate_num_gauss = num_gauss;
+  }
+
+  // The compartmentalized clusterer used below does not merge compartments.
+  if (opts.intermediate_num_gauss < num_clust_states) {
+    KALDI_WARN << "Intermediate num_gauss " << opts.intermediate_num_gauss
+      << " is less than # of preclustered states " << num_clust_states
+      << ", increasing it to " << num_clust_states;
+    opts.intermediate_num_gauss = num_clust_states;
+  }
+
+  KALDI_VLOG(1) << "Merging from " << num_gauss << " Gaussians in the "
+    << "acoustic model, down to " << opts.intermediate_num_gauss
+    << " Gaussians.";
+  std::vector< std::vector<Clusterable*> > gauss_clusters_out;
+  ClusterBottomUpCompartmentalized(state_clust_gauss, kBaseFloatMax,
+      opts.intermediate_num_gauss,
+      &gauss_clusters_out, NULL);
+
+  for (int32 clust_index = 0; clust_index < num_clust_states; clust_index++)
+    DeletePointers(&state_clust_gauss[clust_index]);
+
+  // Next, put the remaining clustered Gaussians into a single GMM.
+  KALDI_VLOG(1) << "Putting " << opts.intermediate_num_gauss << " Gaussians "
+    << "into a single GMM for final merge step.";
+  Matrix<BaseFloat> tmp_means(opts.intermediate_num_gauss, dim);
+  Matrix<BaseFloat> tmp_vars(opts.intermediate_num_gauss, dim);
+  Vector<BaseFloat> tmp_weights(opts.intermediate_num_gauss);
+  Vector<BaseFloat> tmp_vec(dim);
+  int32 gauss_index = 0;
+  for (int32 clust_index = 0; clust_index < num_clust_states; clust_index++) {
+    for (int32 i = gauss_clusters_out[clust_index].size()-1; i >=0; --i) {
+      GaussClusterable *this_cluster = static_cast<GaussClusterable*>(
+          gauss_clusters_out[clust_index][i]);
+      BaseFloat weight = this_cluster->count();
+      KALDI_ASSERT(weight > 0);
+      tmp_weights(gauss_index) = weight;
+      tmp_vec.CopyFromVec(this_cluster->x_stats());
+      tmp_vec.Scale(1/weight);
+      tmp_means.CopyRowFromVec(tmp_vec, gauss_index);
+      tmp_vec.CopyFromVec(this_cluster->x2_stats());
+      tmp_vec.Scale(1/weight);
+      tmp_vec.AddVec2(-1.0, tmp_means.Row(gauss_index));  // x^2 stats to var.
+      tmp_vars.CopyRowFromVec(tmp_vec, gauss_index);
+      gauss_index++;
+    }
+    DeletePointers(&(gauss_clusters_out[clust_index]));
+  }
+  tmp_gmm.Resize(opts.intermediate_num_gauss, dim);
+  tmp_weights.Scale(1.0/tmp_weights.Sum());
+  tmp_gmm.SetWeights(tmp_weights);
+  tmp_vars.InvertElements();  // need inverse vars...
+  tmp_gmm.SetInvVarsAndMeans(tmp_vars, tmp_means);
+
+  // Finally, cluster to the desired number of Gaussians in the GMM.
+  if (opts.gmm_num_gauss < tmp_gmm.NumGauss()) {
+    tmp_gmm.Merge(opts.gmm_num_gauss);
+    KALDI_VLOG(1) << "Merged down to " << tmp_gmm.NumGauss() << " Gaussians.";
+  } else {
+    KALDI_WARN << "Not merging Gaussians since " << opts.gmm_num_gauss
+      << " < " << tmp_gmm.NumGauss();
+  }
+  gmm_out->CopyFromDiagGmm(tmp_gmm);
 }
 
 }  // namespace kaldi

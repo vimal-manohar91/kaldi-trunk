@@ -526,7 +526,7 @@ class JointResegmenter:
           num_speech_frames += 1
     assert (not in_segment)
     if num_speech_frames == 0:
-      sys.stderr.write("%s: Warning: no segments found for recording %s\n" % (sys.argv[0], self.file_id))
+      sys.stderr.write("%s: Warning: no speech found for recording %s\n" % (sys.argv[0], self.file_id))
 
     # Set the number of non-speech frames to be added depending on the
     # silence proportion. The target number of frames in the segments
@@ -1187,7 +1187,7 @@ def map_prediction(A1, A2, phone_map, speech_cap = None, f = None):
         len_x += 1
       else:
         assert (len_x > 0)
-        sys.stderr.write("PHONE_LENGTH %s %d %s %d\n" % (prev_x, len_x, f, i - len_x))
+        #sys.stderr.write("PHONE_LENGTH %s %d %s %d\n" % (prev_x, len_x, f, i - len_x))
         if phone_map[prev_x] == "0":
           B.extend(["0"] * len_x)
         elif (speech_cap != None and len_x > speech_cap) or phone_map[prev_x] == "1":
@@ -1200,7 +1200,13 @@ def map_prediction(A1, A2, phone_map, speech_cap = None, f = None):
       prev_x = x
       i += 1
     # End for
-    assert (len_x > 0)
+    try:
+      assert (len_x > 0)
+    except AssertionError as e:
+      repr(e)
+      sys.stderr.write("In file %s\n" % f)
+      sys.exit(1)
+
     if phone_map[prev_x] == "0":
       B.extend(["0"] * len_x)
     elif (speech_cap != None and len_x > speech_cap) or phone_map[prev_x] == "1":
@@ -1309,8 +1315,10 @@ def main():
       help='Directory where the predicted phones (.pred files) are found')
   parser.add_argument('phone_map', \
       help='Phone Map file that maps from phones to classes')
+  parser.add_argument('output_segments', nargs='?', default="-", \
+      help='Output segments file')
   parser.usage=':'.join(parser.format_usage().split(':')[1:]) \
-      + 'e.g. :  %(prog)s exp/tri4b_whole_resegment_dev10h/pred exp/tri4b_whole_resegment_dev10h/phone_map.txt > data/dev10h.seg/segments'
+      + 'e.g. :  %(prog)s exp/tri4b_whole_resegment_dev10h/pred exp/tri4b_whole_resegment_dev10h/phone_map.txt data/dev10h.seg/segments'
   options = parser.parse_args()
 
   sys.stderr.write(' '.join(sys.argv) + "\n")
@@ -1324,6 +1332,16 @@ def main():
     sys.stderr.write("%s: Error: Invalid value for remove-noise-only segments %s. Must be true or false.\n" \
         % options.remove_noise_only_segments)
     sys.exit(1)
+
+  if options.output_segments == '-':
+    out_file = sys.stdout
+  else:
+    try:
+      out_file = open(options.output_segments, 'w')
+    except IOError as e:
+      sys.stderr.write("%s: %s: Unable to open file %s\n" % (sys.argv[0], e, options.output_segments))
+      sys.exit(1)
+  # End if
 
   phone_map = {}
   try:
@@ -1400,7 +1418,7 @@ def main():
         reference = None
       r = JointResegmenter(A, B, f, options, phone_map, stats, reference)
       r.resegment()
-      r.print_segments()
+      r.print_segments(out_file)
     else:
       if pred_files[f1] and pred_files[f2]:
         continue
@@ -1447,7 +1465,7 @@ def main():
         reference1 = None
       r1 = JointResegmenter(A1, B1, f1, options, phone_map, stats, reference1)
       r1.resegment()
-      r1.print_segments()
+      r1.print_segments(out_file)
 
       if temp_dir != None:
         try:
@@ -1459,7 +1477,7 @@ def main():
       r2 = JointResegmenter(A1, B2, f2, options, phone_map, stats, reference2)
       r2.resegment()
       r2.restrict(len(A2))
-      r2.print_segments()
+      r2.print_segments(out_file)
     # End if
   # End for loop over files
 

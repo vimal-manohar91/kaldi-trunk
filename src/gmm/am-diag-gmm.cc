@@ -342,4 +342,21 @@ void ClusterGaussiansToUbm(const AmDiagGmm &am,
   ubm_out->CopyFromDiagGmm(tmp_gmm);
 }
 
+void GaussianMergingOptions::Check() {
+  if (gmm_num_gauss > intermediate_num_gauss)
+    KALDI_ERR << "Invalid parameters: --gmm-num_gauss=" << gmm_num_gauss
+      << " > --intermediate-num_gauss=" << intermediate_num_gauss;
+  if (gmm_num_gauss > max_num_gauss)
+    KALDI_ERR << "Invalid parameters: --gmm-num_gauss=" << gmm_num_gauss
+      << " > --max-num-gauss=" << max_num_gauss;
+  if (gmm_num_gauss <= 0)
+    KALDI_ERR << "Invalid parameters: --gmm-num_gauss=" << gmm_num_gauss;
+  if (cluster_varfloor <= 0)
+    KALDI_ERR << "Invalid parameters: --cluster-varfloor="
+      << cluster_varfloor;
+  if (reduce_state_factor <= 0 || reduce_state_factor > 1)
+    KALDI_ERR << "Invalid parameters: --reduce-state-factor="
+      << reduce_state_factor;
+}
+
 }  // namespace kaldi

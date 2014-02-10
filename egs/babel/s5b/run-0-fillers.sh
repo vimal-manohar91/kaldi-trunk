@@ -43,7 +43,7 @@ max_states=150000
 wip=0.5
 
 # Configuration for segmenting train data
-segmentation_opts="--remove-noise-only-segments true --max-length-diff 0.4 --min-inter-utt-silence-length 1.0" 
+segmentation_opts="--max-length-diff 0.4 --min-inter-utt-silence-length 1.0 --silence-proportion 0.5" 
 silence_segment_fraction=1.0      # Fraction of silence segments that are kept as part of whole data
 keep_silence_segments=true       # If true, equivalent to silence_segment_fraction=1.0; otherwise silence_segment_fraction=0.0
 
@@ -61,18 +61,12 @@ function make_plp {
    steps/make_plp.sh --cmd "$train_cmd" --nj $train_nj ${data}/${t} exp/make_plp/${t} ${plpdir}
   elif [ "$use_pitch" = "true" ] && [ "$use_ffv" = "true" ]; then
     cp -rT ${data}/${t} ${data}/${t}_plp; cp -rT ${data}/${t} ${data}/${t}_pitch; cp -rT ${data}/${t} ${data}/${t}_ffv
-    steps/make_plp.sh --cmd "$train_cmd" --nj $train_nj ${data}/${t}_plp exp/make_plp/${t} plp_tmp_${t}
-    local/make_pitch.sh --cmd "$train_cmd" --nj $train_nj ${data}/${t}_pitch exp/make_pitch/${t} pitch_tmp_${t}
+    steps/make_plp_pitch.sh --cmd "$train_cmd" --nj $train_nj ${data}/${t}_plp_pitch exp/make_plp_pitch/${t} plp_pitch_tmp_${t}
     local/make_ffv.sh --cmd "$train_cmd"  --nj $train_nj ${data}/${t}_ffv exp/make_ffv/${t} ffv_tmp_${t}
-    steps/append_feats.sh --cmd "$train_cmd" --nj $train_nj ${data}/${t}{_plp,_pitch,_plp_pitch} exp/make_pitch/append_${t}_pitch plp_tmp_${t}
     steps/append_feats.sh --cmd "$train_cmd" --nj $train_nj ${data}/${t}{_plp_pitch,_ffv,} exp/make_ffv/append_${t}_pitch_ffv ${plpdir}
-    rm -rf {plp,pitch,ffv}_tmp_${t} ${data}/${t}_{plp,pitch,plp_pitch}
+    rm -rf {plp_pitch,ffv}_tmp_${t} ${data}/${t}_{plp_pitch,ffv}
   elif [ "$use_pitch" = "true" ]; then
-    cp -rT ${data}/${t} ${data}/${t}_plp; cp -rT ${data}/${t} ${data}/${t}_pitch
-    steps/make_plp.sh --cmd "$train_cmd" --nj $train_nj ${data}/${t}_plp exp/make_plp/${t} plp_tmp_${t}
-    local/make_pitch.sh --cmd "$train_cmd" --nj $train_nj ${data}/${t}_pitch exp/make_pitch/${t} pitch_tmp_${t}
-    steps/append_feats.sh --cmd "$train_cmd" --nj $train_nj ${data}/${t}{_plp,_pitch,} exp/make_pitch/append_${t} ${plpdir}
-    rm -rf {plp,pitch}_tmp_${t} ${data}/${t}_{plp,pitch}
+    steps/make_plp_pitch.sh --cmd "$train_cmd" --nj $train_nj ${data}/${t} exp/make_plp_pitch/${t} ${plpdir}
   elif [ "$use_ffv" = "true" ]; then
     cp -rT ${data}/${t} ${data}/${t}_plp; cp -rT ${data}/${t} ${data}/${t}_ffv
     steps/make_plp.sh --cmd "$train_cmd" --nj $train_nj ${data}/${t}_plp exp/make_plp/${t} plp_tmp_${t}
@@ -80,6 +74,8 @@ function make_plp {
     steps/append_feats.sh --cmd "$train_cmd" --nj $train_nj ${data}/${t}{_plp,_ffv,} exp/make_ffv/append_${t} ${plpdir}
     rm -rf {plp,ffv}_tmp_${t} ${data}/${t}_{plp,ffv}
   fi
+  
+  utils/fix_data_dir.sh ${data}/${t}
   steps/compute_cmvn_stats.sh ${data}/${t} exp/make_plp/${t} ${plpdir}
   utils/fix_data_dir.sh ${data}/${t}
 }
@@ -150,7 +146,7 @@ if [[ ! -f data_initial/train/wav.scp || data_initial/train/wav.scp -ot "$train_
   mv data_initial/train/text data_initial/train/text_orig
   cat data_initial/train/text_orig | sed 's/<silence>\ //g' | sed 's/\ <silence>//g' | awk '{if (NF > 1) {print $0}}' > data_initial/train/text
   cat data_initial/train/text | tr ' ' '\n' | \
-    sed -n '/<.*>/p' | sed '/'$oovSymbol'/d' | \
+    sed -n '/<.*>/p' | sed '/'$oovSymbol'/d' | sed '/<hes>/d' | \
     sort -u > data_initial/local/fillers.list
   rm data_initial/local/lexicon.txt
 fi
@@ -520,7 +516,7 @@ if $full_initial; then
     echo ---------------------------------------------------------------------
     steps/train_mmi_sgmm2.sh \
       --cmd "$train_cmd" "${sgmm_mmi_extra_opts[@]}" \
-      --transform-dir exp/tri5_initial_ali --boost 0.1 \
+      --drop-frames true --transform-dir exp/tri5_initial_ali --boost 0.1 \
       data_initial/train data_initial/lang exp/sgmm5_initial_ali exp/sgmm5_initial_denlats \
       exp/sgmm5_initial_mmi_b0.1
     touch exp/sgmm5_initial_mmi_b0.1/.done
@@ -549,14 +545,15 @@ if [ ! -f ${decode}/.done ]; then
     --nj $train_nj --cmd "$decode_cmd" "${decode_extra_opts[@]}"\
     exp/$tri5/graph ${datadir} ${decode} |tee ${decode}/decode.log
   
-  local/run_kws_stt_task.sh --cer $cer --max-states $max_states \
-    --cmd "$decode_cmd" --skip-kws true --skip-stt false --wip $wip \
-    "${shadow_set_extra_opts[@]}" "${lmwt_plp_extra_opts[@]}" \
-    ${datadir} data_initial/lang $decode
-  
   touch ${decode}/.done
 fi
 
+local/run_kws_stt_task.sh --cer $cer --max-states $max_states \
+  --cmd "$decode_cmd" --skip-kws true --skip-stt false --wip $wip \
+  --keep-fillers true \
+  "${shadow_set_extra_opts[@]}" "${lmwt_plp_extra_opts[@]}" \
+  ${datadir} data_initial/lang $decode
+  
 if $full_initial; then
   ####################################################################
   ## SGMM2 decoding 
@@ -580,6 +577,7 @@ if $full_initial; then
     if ! $fast_path ; then
       local/run_kws_stt_task.sh --cer $cer --max-states $max_states \
         --cmd "$decode_cmd" --skip-kws true --skip-stt false --wip $wip \
+        --keep-fillers true \
         "${shadow_set_extra_opts[@]}" "${lmwt_plp_extra_opts[@]}" \
         ${datadir} data_initial/lang ${decode}
     fi
@@ -602,16 +600,18 @@ if $full_initial; then
         --cmd "$decode_cmd" --iter $iter --transform-dir exp/$tri5/decode_train.seg \
         data_initial/lang ${datadir} exp/$sgmm5/decode_fmllr_train.seg $decode | tee ${decode}/decode.log
 
-      #We are done -- all lattices has been generated. We have to
-      #a)Run MBR decoding
-      #b)Run KW search
-      local/run_kws_stt_task.sh --cer $cer --max-states $max_states \
-        --cmd "$decode_cmd" --skip-kws true --skip-stt false --wip $wip \
-        "${shadow_set_extra_opts[@]}" "${lmwt_plp_extra_opts[@]}" \
-        ${datadir} data_initial/lang $decode
-      
       touch $decode/.done
     fi
+    
+    #We are done -- all lattices has been generated. We have to
+    #a)Run MBR decoding
+    #b)Run KW search
+    local/run_kws_stt_task.sh --cer $cer --max-states $max_states \
+      --cmd "$decode_cmd" --skip-kws true --skip-stt false --wip $wip \
+      --keep-fillers true \
+      "${shadow_set_extra_opts[@]}" "${lmwt_plp_extra_opts[@]}" \
+      ${datadir} data_initial/lang $decode
+      
   done
 fi
 
@@ -637,7 +637,7 @@ utils/fix_data_dir.sh data/train_whole
 
 mkdir -p data/local
 cat data/train/text | tr ' ' '\n' | \
-  sed -n '/<.*>/p' | sed '/'$oovSymbol'/d' | \
+  sed -n '/<.*>/p' | sed '/'$oovSymbol'/d' | sed '/<hes>/d' | \
   sort -u > data/local/fillers.list
 
 if [[ ! -f data/local/lexicon.txt || data/local/lexicon.txt -ot "$lexicon_file" ]]; then

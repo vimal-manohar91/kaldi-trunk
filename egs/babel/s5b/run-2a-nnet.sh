@@ -13,6 +13,7 @@ echo "Waiting till exp/tri5_ali/.done exists...."
 while [ ! -f exp/tri5_ali/.done ]; do sleep 30; done
 echo "...done waiting for exp/tri5_ali/.done"
 
+. utils/parse_options.sh
 # This parameter will be used when the training dies at a certain point.
 train_stage=-100
 
