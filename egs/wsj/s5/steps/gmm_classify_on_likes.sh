@@ -21,7 +21,7 @@ echo "$0 $@"  # Print the command line for logging
 
 [ -z $silence_phones_list ] && boost_silence=1.0
 
-if [ $# != 3 ]; then
+if [ $# != 2 ]; then
    echo "Usage: $0 [options] <data-dir> <decode-dir>"
    echo "... where <decode-dir> is assumed to be a sub-directory of the directory"
    echo " where the model is.  This will do per-frame classification based "
@@ -59,17 +59,15 @@ if [ -z "$model" ]; then # if --model <mdl> was not specified on the command lin
   else model=$srcdir/$iter.mdl; fi
 fi
 
-for f in $sdata/1/feats.scp $sdata/1/cmvn.scp $model $graphdir/HCLG.fst; do
-  [ ! -f $f ] && echo "decode.sh: no such file $f" && exit 1;
+for f in $sdata/1/feats.scp $sdata/1/cmvn.scp $model; do
+  [ ! -f $f ] && echo "$0: no such file $f" && exit 1;
 done
 
 if [ -f $srcdir/final.mat ]; then feat_type=lda; else feat_type=delta; fi
-echo "decode.sh: feature type is $feat_type";
+echo "$0: feature type is $feat_type";
 
 splice_opts=`cat $srcdir/splice_opts 2>/dev/null`
 norm_vars=`cat $srcdir/norm_vars 2>/dev/null` || norm_vars=false # cmn/cmvn option, default false.
-thread_string=
-[ $num_threads -gt 1 ] && thread_string="-parallel --num-threads=$num_threads" 
 
 case $feat_type in
   delta) feats="ark,s,cs:apply-cmvn --norm-vars=$norm_vars --utt2spk=ark:$sdata/JOB/utt2spk scp:$sdata/JOB/cmvn.scp scp:$sdata/JOB/feats.scp ark:- | add-deltas ark:- ark:- |";;

@@ -1,0 +1,46 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+BuildIndex	bitmap-index.cc	/^void BitmapIndex::BuildIndex(const uint64 *bits, size_t size) {$/;"	f	class:fst::BitmapIndex
+Rank1	bitmap-index.cc	/^size_t BitmapIndex::Rank1(size_t end) const {$/;"	f	class:fst::BitmapIndex
+Select0	bitmap-index.cc	/^size_t BitmapIndex::Select0(size_t bit_index) const {$/;"	f	class:fst::BitmapIndex
+Select1	bitmap-index.cc	/^size_t BitmapIndex::Select1(size_t bit_index) const {$/;"	f	class:fst::BitmapIndex
+begin_	bitmap-index.cc	/^  vector<uint32>::const_iterator begin_;$/;"	m	class:fst::primary_index_inverted	file:
+block_begin_	bitmap-index.cc	/^  vector<uint16>::const_iterator block_begin_;$/;"	m	class:fst::secondary_index_inverted	file:
+find_inverted_primary_block	bitmap-index.cc	/^size_t BitmapIndex::find_inverted_primary_block(size_t bit_index) const {$/;"	f	class:fst::BitmapIndex
+find_inverted_secondary_block	bitmap-index.cc	/^size_t BitmapIndex::find_inverted_secondary_block($/;"	f	class:fst::BitmapIndex
+find_primary_block	bitmap-index.cc	/^inline size_t BitmapIndex::find_primary_block(size_t bit_index) const {$/;"	f	class:fst::BitmapIndex
+find_secondary_block	bitmap-index.cc	/^size_t BitmapIndex::find_secondary_block($/;"	f	class:fst::BitmapIndex
+fst	bitmap-index.cc	/^namespace fst {$/;"	n	file:
+fst::BitmapIndex::BuildIndex	bitmap-index.cc	/^void BitmapIndex::BuildIndex(const uint64 *bits, size_t size) {$/;"	f	class:fst::BitmapIndex
+fst::BitmapIndex::Rank1	bitmap-index.cc	/^size_t BitmapIndex::Rank1(size_t end) const {$/;"	f	class:fst::BitmapIndex
+fst::BitmapIndex::Select0	bitmap-index.cc	/^size_t BitmapIndex::Select0(size_t bit_index) const {$/;"	f	class:fst::BitmapIndex
+fst::BitmapIndex::Select1	bitmap-index.cc	/^size_t BitmapIndex::Select1(size_t bit_index) const {$/;"	f	class:fst::BitmapIndex
+fst::BitmapIndex::find_inverted_primary_block	bitmap-index.cc	/^size_t BitmapIndex::find_inverted_primary_block(size_t bit_index) const {$/;"	f	class:fst::BitmapIndex
+fst::BitmapIndex::find_inverted_secondary_block	bitmap-index.cc	/^size_t BitmapIndex::find_inverted_secondary_block($/;"	f	class:fst::BitmapIndex
+fst::BitmapIndex::find_primary_block	bitmap-index.cc	/^inline size_t BitmapIndex::find_primary_block(size_t bit_index) const {$/;"	f	class:fst::BitmapIndex
+fst::BitmapIndex::find_secondary_block	bitmap-index.cc	/^size_t BitmapIndex::find_secondary_block($/;"	f	class:fst::BitmapIndex
+fst::BitmapIndex::get_index_ones_count	bitmap-index.cc	/^size_t BitmapIndex::get_index_ones_count(size_t array_index) const {$/;"	f	class:fst::BitmapIndex
+fst::primary_index_inverted	bitmap-index.cc	/^class primary_index_inverted : public vector<uint32>::const_iterator {$/;"	c	namespace:fst	file:
+fst::primary_index_inverted::begin_	bitmap-index.cc	/^  vector<uint32>::const_iterator begin_;$/;"	m	class:fst::primary_index_inverted	file:
+fst::primary_index_inverted::operator *	bitmap-index.cc	/^  uint32 operator*() {$/;"	f	class:fst::primary_index_inverted
+fst::primary_index_inverted::primary_index_inverted	bitmap-index.cc	/^  primary_index_inverted() {}$/;"	f	class:fst::primary_index_inverted
+fst::primary_index_inverted::primary_index_inverted	bitmap-index.cc	/^  primary_index_inverted(vector<uint32>::const_iterator loc,$/;"	f	class:fst::primary_index_inverted
+fst::secondary_index_inverted	bitmap-index.cc	/^class secondary_index_inverted : public vector<uint16>::const_iterator {$/;"	c	namespace:fst	file:
+fst::secondary_index_inverted::block_begin_	bitmap-index.cc	/^  vector<uint16>::const_iterator block_begin_;$/;"	m	class:fst::secondary_index_inverted	file:
+fst::secondary_index_inverted::operator *	bitmap-index.cc	/^  uint16 operator*() {$/;"	f	class:fst::secondary_index_inverted
+fst::secondary_index_inverted::secondary_index_inverted	bitmap-index.cc	/^  secondary_index_inverted() : vector<uint16>::const_iterator() {}$/;"	f	class:fst::secondary_index_inverted
+fst::secondary_index_inverted::secondary_index_inverted	bitmap-index.cc	/^  secondary_index_inverted(vector<uint16>::const_iterator loc,$/;"	f	class:fst::secondary_index_inverted
+get_index_ones_count	bitmap-index.cc	/^size_t BitmapIndex::get_index_ones_count(size_t array_index) const {$/;"	f	class:fst::BitmapIndex
+nth_bit_bit_offset	nthbit.cc	/^uint32 nth_bit_bit_offset[] = {$/;"	v
+operator *	bitmap-index.cc	/^  uint16 operator*() {$/;"	f	class:fst::secondary_index_inverted
+operator *	bitmap-index.cc	/^  uint32 operator*() {$/;"	f	class:fst::primary_index_inverted
+primary_index_inverted	bitmap-index.cc	/^  primary_index_inverted() {}$/;"	f	class:fst::primary_index_inverted
+primary_index_inverted	bitmap-index.cc	/^  primary_index_inverted(vector<uint32>::const_iterator loc,$/;"	f	class:fst::primary_index_inverted
+primary_index_inverted	bitmap-index.cc	/^class primary_index_inverted : public vector<uint32>::const_iterator {$/;"	c	namespace:fst	file:
+secondary_index_inverted	bitmap-index.cc	/^  secondary_index_inverted() : vector<uint16>::const_iterator() {}$/;"	f	class:fst::secondary_index_inverted
+secondary_index_inverted	bitmap-index.cc	/^  secondary_index_inverted(vector<uint16>::const_iterator loc,$/;"	f	class:fst::secondary_index_inverted
+secondary_index_inverted	bitmap-index.cc	/^class secondary_index_inverted : public vector<uint16>::const_iterator {$/;"	c	namespace:fst	file:

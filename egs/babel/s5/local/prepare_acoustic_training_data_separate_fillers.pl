@@ -99,7 +99,7 @@ GetOptions("fragmentMarkers=s" => \$fragMarkers,
 "oov=s" => \$OOV_symbol, 
 "vocab=s" => \$vocabFile,
 "icu-transform=s" => \$icu_transform,
-"--get-whole-transcripts=s" => \$get_whole_transcripts
+"get-whole-transcripts=s" => \$get_whole_transcripts
 );
 
 if ($#ARGV == 1) {
@@ -276,7 +276,7 @@ if (-d $TranscriptionDir) {
           }
           $text =~ s:^\s+::; # Remove leading white space, if any
           # Transcriptions must contain real words to be useful in training
-          if (! $get_whole_transcripts) {
+          if ($get_whole_transcripts ne "true") {
             $text =~ s:^(($silence)[ ]{0,1})+$::;
           }
         }

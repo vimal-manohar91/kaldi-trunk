@@ -1,0 +1,251 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ArcSort	arcsort.cc	/^void ArcSort(MutableFstClass *fst, ArcSortType sort_type) {$/;"	f	namespace:fst::script
+ArcTypesMatch	script-impl.cc	/^bool ArcTypesMatch(const FstClass &a, const FstClass &b,$/;"	f	namespace:fst::script
+Closure	closure.cc	/^void Closure(MutableFstClass *fst, ClosureType closure_type) {$/;"	f	namespace:fst::script
+CompileFst	compile.cc	/^void CompileFst(istream &istrm, const string &source, const string &dest,$/;"	f	namespace:fst::script
+Compose	compose.cc	/^void Compose(const FstClass &ifst1, const FstClass &ifst2,$/;"	f	namespace:fst::script
+Concat	concat.cc	/^void Concat(MutableFstClass *ofst, const FstClass &ifst) {$/;"	f	namespace:fst::script
+Concat	concat.cc	/^void Concat(const FstClass &ifst, MutableFstClass *ofst) {$/;"	f	namespace:fst::script
+Connect	connect.cc	/^void Connect(MutableFstClass *fst) {$/;"	f	namespace:fst::script
+Convert	convert.cc	/^FstClass *Convert(const FstClass &ifst, const string &new_type) {$/;"	f	namespace:fst::script
+Decode	decode.cc	/^void Decode(MutableFstClass *ofst, const string &coder_fname) {$/;"	f	namespace:fst::script
+Determinize	determinize.cc	/^void Determinize(const FstClass &ifst,$/;"	f	namespace:fst::script
+Difference	difference.cc	/^void Difference(const FstClass &ifst1, const FstClass &ifst2,$/;"	f	namespace:fst::script
+DrawFst	draw.cc	/^void DrawFst(const FstClass &fst,$/;"	f	namespace:fst::script
+Encode	encode.cc	/^void Encode(MutableFstClass *ofst, uint32 flags, bool reuse_encoder,$/;"	f	namespace:fst::script
+EpsNormalize	epsnormalize.cc	/^void EpsNormalize(const FstClass &ifst, MutableFstClass *ofst,$/;"	f	namespace:fst::script
+Equal	equal.cc	/^bool Equal(const FstClass &fst1, const FstClass &fst2, float kDelta) {$/;"	f	namespace:fst::script
+Equivalent	equivalent.cc	/^bool Equivalent(const FstClass &fst1, const FstClass &fst2,$/;"	f	namespace:fst::script
+GetVFSTRegisterEntry	fst-class.cc	/^IORegistration<VectorFstClass>::Entry GetVFSTRegisterEntry($/;"	f	namespace:fst::script
+Intersect	intersect.cc	/^void Intersect(const FstClass &ifst1, const FstClass &ifst2,$/;"	f	namespace:fst::script
+Invert	invert.cc	/^void Invert(MutableFstClass *fst) {$/;"	f	namespace:fst::script
+Map	map.cc	/^FstClass *Map(const FstClass& ifst, MapType map_type,$/;"	f	namespace:fst::script
+Minimize	minimize.cc	/^void Minimize(MutableFstClass *ofst1, MutableFstClass *ofst2, float delta) {$/;"	f	namespace:fst::script
+PrintFst	print.cc	/^void PrintFst(const FstClass &fst, ostream &ostrm, const string &dest,$/;"	f	namespace:fst::script
+PrintFstInfo	info.cc	/^void PrintFstInfo(const FstClass &f, bool test_properties,$/;"	f	namespace:fst::script
+Project	project.cc	/^void Project(MutableFstClass *ofst, ProjectType project_type) {$/;"	f	namespace:fst::script
+Prune	prune.cc	/^void Prune(MutableFstClass *fst, const PruneOptions &opts) {$/;"	f	namespace:fst::script
+Prune	prune.cc	/^void Prune(MutableFstClass *fst, const WeightClass& weight_threshold,$/;"	f	namespace:fst::script
+Prune	prune.cc	/^void Prune(const FstClass &ifst, MutableFstClass *fst,$/;"	f	namespace:fst::script
+Prune	prune.cc	/^void Prune(const FstClass &ifst,$/;"	f	namespace:fst::script
+Push	push.cc	/^void Push(MutableFstClass *ofst, ReweightType dir, float delta,$/;"	f	namespace:fst::script
+Push	push.cc	/^void Push(const FstClass &ifst, MutableFstClass *ofst, uint32 flags,$/;"	f	namespace:fst::script
+RandEquivalent	randequivalent.cc	/^bool RandEquivalent(const FstClass &fst1, const FstClass &fst2, int32 seed,$/;"	f	namespace:fst::script
+RandEquivalent	randequivalent.cc	/^bool RandEquivalent(const FstClass &fst1, const FstClass &fst2,$/;"	f	namespace:fst::script
+RandGen	randgen.cc	/^void RandGen(const FstClass &ifst, MutableFstClass *ofst, int32 seed,$/;"	f	namespace:fst::script
+Read	fst-class.cc	/^FstClass *FstClass::Read(const string &fname) {$/;"	f	class:fst::script::FstClass
+Read	fst-class.cc	/^FstClass *FstClass::Read(istream &istr, const string &source) {$/;"	f	class:fst::script::FstClass
+Read	fst-class.cc	/^MutableFstClass *MutableFstClass::Read(const string &fname, bool convert) {$/;"	f	class:fst::script::MutableFstClass
+Read	fst-class.cc	/^VectorFstClass *VectorFstClass::Read(const string &fname) {$/;"	f	class:fst::script::VectorFstClass
+ReadFst	fst-class.cc	/^FstT *ReadFst(istream &in, const string &fname) {$/;"	f	namespace:fst::script
+ReadPotentials	text-io.cc	/^bool ReadPotentials(const string &weight_type,$/;"	f	namespace:fst::script
+Relabel	relabel.cc	/^void Relabel(MutableFstClass *fst,$/;"	f	namespace:fst::script
+Relabel	relabel.cc	/^void Relabel(MutableFstClass *ofst,$/;"	f	namespace:fst::script
+Replace	replace.cc	/^void Replace(const vector<pair<int64, const FstClass *> > &tuples,$/;"	f	namespace:fst::script
+Reverse	reverse.cc	/^void Reverse(const FstClass &fst1, MutableFstClass *fst2) {$/;"	f	namespace:fst::script
+Reweight	reweight.cc	/^void Reweight(MutableFstClass *fst, const vector<WeightClass> &potential,$/;"	f	namespace:fst::script
+RmEpsilon	rmepsilon.cc	/^void RmEpsilon(MutableFstClass *fst, bool connect,$/;"	f	namespace:fst::script
+RmEpsilon	rmepsilon.cc	/^void RmEpsilon(MutableFstClass *fst, vector<WeightClass> *distance,$/;"	f	namespace:fst::script
+RmEpsilon	rmepsilon.cc	/^void RmEpsilon(const FstClass &ifst, MutableFstClass *ofst,$/;"	f	namespace:fst::script
+ShortestDistance	shortest-distance.cc	/^WeightClass ShortestDistance(const FstClass &ifst) {$/;"	f	namespace:fst::script
+ShortestDistance	shortest-distance.cc	/^void ShortestDistance(const FstClass &fst, vector<WeightClass> *distance,$/;"	f	namespace:fst::script
+ShortestDistance	shortest-distance.cc	/^void ShortestDistance(const FstClass &ifst, vector<WeightClass> *distance,$/;"	f	namespace:fst::script
+ShortestPath	shortest-path.cc	/^void ShortestPath(const FstClass &ifst, MutableFstClass *ofst,$/;"	f	namespace:fst::script
+Synchronize	synchronize.cc	/^void Synchronize(const FstClass &ifst, MutableFstClass *ofst) {$/;"	f	namespace:fst::script
+TopSort	topsort.cc	/^bool TopSort(MutableFstClass *fst) {$/;"	f	namespace:fst::script
+Union	union.cc	/^void Union(MutableFstClass *fst1, const FstClass &fst2) {$/;"	f	namespace:fst::script
+VectorFstClass	fst-class.cc	/^VectorFstClass::VectorFstClass(const FstClass &other)$/;"	f	class:fst::script::VectorFstClass
+VectorFstClass	fst-class.cc	/^VectorFstClass::VectorFstClass(const string &arc_type)$/;"	f	class:fst::script::VectorFstClass
+Verify	verify.cc	/^bool Verify(const FstClass &fst) {$/;"	f	namespace:fst::script
+WeightClass	weight-class.cc	/^WeightClass::WeightClass(const string &weight_type,$/;"	f	class:fst::script::WeightClass
+WritePotentials	text-io.cc	/^bool WritePotentials(const string& filename,$/;"	f	namespace:fst::script
+fst	arcsort.cc	/^namespace fst {$/;"	n	file:
+fst	closure.cc	/^namespace fst {$/;"	n	file:
+fst	compile.cc	/^namespace fst {$/;"	n	file:
+fst	compose.cc	/^namespace fst {$/;"	n	file:
+fst	concat.cc	/^namespace fst {$/;"	n	file:
+fst	connect.cc	/^namespace fst {$/;"	n	file:
+fst	convert.cc	/^namespace fst {$/;"	n	file:
+fst	decode.cc	/^namespace fst {$/;"	n	file:
+fst	determinize.cc	/^namespace fst {$/;"	n	file:
+fst	difference.cc	/^namespace fst {$/;"	n	file:
+fst	draw.cc	/^namespace fst {$/;"	n	file:
+fst	encode.cc	/^namespace fst {$/;"	n	file:
+fst	epsnormalize.cc	/^namespace fst {$/;"	n	file:
+fst	equal.cc	/^namespace fst {$/;"	n	file:
+fst	equivalent.cc	/^namespace fst {$/;"	n	file:
+fst	fst-class.cc	/^namespace fst {$/;"	n	file:
+fst	info.cc	/^namespace fst {$/;"	n	file:
+fst	intersect.cc	/^namespace fst {$/;"	n	file:
+fst	invert.cc	/^namespace fst {$/;"	n	file:
+fst	map.cc	/^namespace fst {$/;"	n	file:
+fst	minimize.cc	/^namespace fst {$/;"	n	file:
+fst	print.cc	/^namespace fst {$/;"	n	file:
+fst	project.cc	/^namespace fst {$/;"	n	file:
+fst	prune.cc	/^namespace fst {$/;"	n	file:
+fst	push.cc	/^namespace fst {$/;"	n	file:
+fst	randequivalent.cc	/^namespace fst {$/;"	n	file:
+fst	randgen.cc	/^namespace fst {$/;"	n	file:
+fst	relabel.cc	/^namespace fst {$/;"	n	file:
+fst	replace.cc	/^namespace fst {$/;"	n	file:
+fst	reverse.cc	/^namespace fst {$/;"	n	file:
+fst	reweight.cc	/^namespace fst {$/;"	n	file:
+fst	rmepsilon.cc	/^namespace fst {$/;"	n	file:
+fst	script-impl.cc	/^namespace fst {$/;"	n	file:
+fst	shortest-distance.cc	/^namespace fst {$/;"	n	file:
+fst	shortest-path.cc	/^namespace fst {$/;"	n	file:
+fst	synchronize.cc	/^namespace fst {$/;"	n	file:
+fst	text-io.cc	/^namespace fst {$/;"	n	file:
+fst	topsort.cc	/^namespace fst {$/;"	n	file:
+fst	union.cc	/^namespace fst {$/;"	n	file:
+fst	verify.cc	/^namespace fst {$/;"	n	file:
+fst	weight-class.cc	/^namespace fst {$/;"	n	file:
+fst::script	arcsort.cc	/^namespace script {$/;"	n	namespace:fst	file:
+fst::script	closure.cc	/^namespace script {$/;"	n	namespace:fst	file:
+fst::script	compile.cc	/^namespace script {$/;"	n	namespace:fst	file:
+fst::script	compose.cc	/^namespace script {$/;"	n	namespace:fst	file:
+fst::script	concat.cc	/^namespace script {$/;"	n	namespace:fst	file:
+fst::script	connect.cc	/^namespace script {$/;"	n	namespace:fst	file:
+fst::script	convert.cc	/^namespace script {$/;"	n	namespace:fst	file:
+fst::script	decode.cc	/^namespace script {$/;"	n	namespace:fst	file:
+fst::script	determinize.cc	/^namespace script {$/;"	n	namespace:fst	file:
+fst::script	difference.cc	/^namespace script {$/;"	n	namespace:fst	file:
+fst::script	draw.cc	/^namespace script {$/;"	n	namespace:fst	file:
+fst::script	encode.cc	/^namespace script {$/;"	n	namespace:fst	file:
+fst::script	epsnormalize.cc	/^namespace script {$/;"	n	namespace:fst	file:
+fst::script	equal.cc	/^namespace script {$/;"	n	namespace:fst	file:
+fst::script	equivalent.cc	/^namespace script {$/;"	n	namespace:fst	file:
+fst::script	fst-class.cc	/^namespace script {$/;"	n	namespace:fst	file:
+fst::script	info.cc	/^namespace script {$/;"	n	namespace:fst	file:
+fst::script	intersect.cc	/^namespace script {$/;"	n	namespace:fst	file:
+fst::script	invert.cc	/^namespace script {$/;"	n	namespace:fst	file:
+fst::script	map.cc	/^namespace script {$/;"	n	namespace:fst	file:
+fst::script	minimize.cc	/^namespace script {$/;"	n	namespace:fst	file:
+fst::script	print.cc	/^namespace script {$/;"	n	namespace:fst	file:
+fst::script	project.cc	/^namespace script {$/;"	n	namespace:fst	file:
+fst::script	prune.cc	/^namespace script {$/;"	n	namespace:fst	file:
+fst::script	push.cc	/^namespace script {$/;"	n	namespace:fst	file:
+fst::script	randequivalent.cc	/^namespace script {$/;"	n	namespace:fst	file:
+fst::script	randgen.cc	/^namespace script {$/;"	n	namespace:fst	file:
+fst::script	relabel.cc	/^namespace script {$/;"	n	namespace:fst	file:
+fst::script	replace.cc	/^namespace script {$/;"	n	namespace:fst	file:
+fst::script	reverse.cc	/^namespace script {$/;"	n	namespace:fst	file:
+fst::script	reweight.cc	/^namespace script {$/;"	n	namespace:fst	file:
+fst::script	rmepsilon.cc	/^namespace script {$/;"	n	namespace:fst	file:
+fst::script	script-impl.cc	/^namespace script {$/;"	n	namespace:fst	file:
+fst::script	shortest-distance.cc	/^namespace script {$/;"	n	namespace:fst	file:
+fst::script	shortest-path.cc	/^namespace script {$/;"	n	namespace:fst	file:
+fst::script	synchronize.cc	/^namespace script {$/;"	n	namespace:fst	file:
+fst::script	text-io.cc	/^namespace script {$/;"	n	namespace:fst	file:
+fst::script	topsort.cc	/^namespace script {$/;"	n	namespace:fst	file:
+fst::script	union.cc	/^namespace script {$/;"	n	namespace:fst	file:
+fst::script	verify.cc	/^namespace script {$/;"	n	namespace:fst	file:
+fst::script	weight-class.cc	/^namespace script {$/;"	n	namespace:fst	file:
+fst::script::ArcSort	arcsort.cc	/^void ArcSort(MutableFstClass *fst, ArcSortType sort_type) {$/;"	f	namespace:fst::script
+fst::script::ArcTypesMatch	script-impl.cc	/^bool ArcTypesMatch(const FstClass &a, const FstClass &b,$/;"	f	namespace:fst::script
+fst::script::Closure	closure.cc	/^void Closure(MutableFstClass *fst, ClosureType closure_type) {$/;"	f	namespace:fst::script
+fst::script::CompileFst	compile.cc	/^void CompileFst(istream &istrm, const string &source, const string &dest,$/;"	f	namespace:fst::script
+fst::script::Compose	compose.cc	/^void Compose(const FstClass &ifst1, const FstClass &ifst2,$/;"	f	namespace:fst::script
+fst::script::Concat	concat.cc	/^void Concat(MutableFstClass *ofst, const FstClass &ifst) {$/;"	f	namespace:fst::script
+fst::script::Concat	concat.cc	/^void Concat(const FstClass &ifst, MutableFstClass *ofst) {$/;"	f	namespace:fst::script
+fst::script::Connect	connect.cc	/^void Connect(MutableFstClass *fst) {$/;"	f	namespace:fst::script
+fst::script::Convert	convert.cc	/^FstClass *Convert(const FstClass &ifst, const string &new_type) {$/;"	f	namespace:fst::script
+fst::script::Decode	decode.cc	/^void Decode(MutableFstClass *ofst, const string &coder_fname) {$/;"	f	namespace:fst::script
+fst::script::Determinize	determinize.cc	/^void Determinize(const FstClass &ifst,$/;"	f	namespace:fst::script
+fst::script::Difference	difference.cc	/^void Difference(const FstClass &ifst1, const FstClass &ifst2,$/;"	f	namespace:fst::script
+fst::script::DrawFst	draw.cc	/^void DrawFst(const FstClass &fst,$/;"	f	namespace:fst::script
+fst::script::Encode	encode.cc	/^void Encode(MutableFstClass *ofst, uint32 flags, bool reuse_encoder,$/;"	f	namespace:fst::script
+fst::script::EpsNormalize	epsnormalize.cc	/^void EpsNormalize(const FstClass &ifst, MutableFstClass *ofst,$/;"	f	namespace:fst::script
+fst::script::Equal	equal.cc	/^bool Equal(const FstClass &fst1, const FstClass &fst2, float kDelta) {$/;"	f	namespace:fst::script
+fst::script::Equivalent	equivalent.cc	/^bool Equivalent(const FstClass &fst1, const FstClass &fst2,$/;"	f	namespace:fst::script
+fst::script::FstClass::Read	fst-class.cc	/^FstClass *FstClass::Read(const string &fname) {$/;"	f	class:fst::script::FstClass
+fst::script::FstClass::Read	fst-class.cc	/^FstClass *FstClass::Read(istream &istr, const string &source) {$/;"	f	class:fst::script::FstClass
+fst::script::GetVFSTRegisterEntry	fst-class.cc	/^IORegistration<VectorFstClass>::Entry GetVFSTRegisterEntry($/;"	f	namespace:fst::script
+fst::script::Intersect	intersect.cc	/^void Intersect(const FstClass &ifst1, const FstClass &ifst2,$/;"	f	namespace:fst::script
+fst::script::Invert	invert.cc	/^void Invert(MutableFstClass *fst) {$/;"	f	namespace:fst::script
+fst::script::Map	map.cc	/^FstClass *Map(const FstClass& ifst, MapType map_type,$/;"	f	namespace:fst::script
+fst::script::Minimize	minimize.cc	/^void Minimize(MutableFstClass *ofst1, MutableFstClass *ofst2, float delta) {$/;"	f	namespace:fst::script
+fst::script::MutableFstClass::Read	fst-class.cc	/^MutableFstClass *MutableFstClass::Read(const string &fname, bool convert) {$/;"	f	class:fst::script::MutableFstClass
+fst::script::PrintFst	print.cc	/^void PrintFst(const FstClass &fst, ostream &ostrm, const string &dest,$/;"	f	namespace:fst::script
+fst::script::PrintFstInfo	info.cc	/^void PrintFstInfo(const FstClass &f, bool test_properties,$/;"	f	namespace:fst::script
+fst::script::Project	project.cc	/^void Project(MutableFstClass *ofst, ProjectType project_type) {$/;"	f	namespace:fst::script
+fst::script::Prune	prune.cc	/^void Prune(MutableFstClass *fst, const PruneOptions &opts) {$/;"	f	namespace:fst::script
+fst::script::Prune	prune.cc	/^void Prune(MutableFstClass *fst, const WeightClass& weight_threshold,$/;"	f	namespace:fst::script
+fst::script::Prune	prune.cc	/^void Prune(const FstClass &ifst, MutableFstClass *fst,$/;"	f	namespace:fst::script
+fst::script::Prune	prune.cc	/^void Prune(const FstClass &ifst,$/;"	f	namespace:fst::script
+fst::script::Push	push.cc	/^void Push(MutableFstClass *ofst, ReweightType dir, float delta,$/;"	f	namespace:fst::script
+fst::script::Push	push.cc	/^void Push(const FstClass &ifst, MutableFstClass *ofst, uint32 flags,$/;"	f	namespace:fst::script
+fst::script::RandEquivalent	randequivalent.cc	/^bool RandEquivalent(const FstClass &fst1, const FstClass &fst2, int32 seed,$/;"	f	namespace:fst::script
+fst::script::RandEquivalent	randequivalent.cc	/^bool RandEquivalent(const FstClass &fst1, const FstClass &fst2,$/;"	f	namespace:fst::script
+fst::script::RandGen	randgen.cc	/^void RandGen(const FstClass &ifst, MutableFstClass *ofst, int32 seed,$/;"	f	namespace:fst::script
+fst::script::ReadFst	fst-class.cc	/^FstT *ReadFst(istream &in, const string &fname) {$/;"	f	namespace:fst::script
+fst::script::ReadPotentials	text-io.cc	/^bool ReadPotentials(const string &weight_type,$/;"	f	namespace:fst::script
+fst::script::Relabel	relabel.cc	/^void Relabel(MutableFstClass *fst,$/;"	f	namespace:fst::script
+fst::script::Relabel	relabel.cc	/^void Relabel(MutableFstClass *ofst,$/;"	f	namespace:fst::script
+fst::script::Replace	replace.cc	/^void Replace(const vector<pair<int64, const FstClass *> > &tuples,$/;"	f	namespace:fst::script
+fst::script::Reverse	reverse.cc	/^void Reverse(const FstClass &fst1, MutableFstClass *fst2) {$/;"	f	namespace:fst::script
+fst::script::Reweight	reweight.cc	/^void Reweight(MutableFstClass *fst, const vector<WeightClass> &potential,$/;"	f	namespace:fst::script
+fst::script::RmEpsilon	rmepsilon.cc	/^void RmEpsilon(MutableFstClass *fst, bool connect,$/;"	f	namespace:fst::script
+fst::script::RmEpsilon	rmepsilon.cc	/^void RmEpsilon(MutableFstClass *fst, vector<WeightClass> *distance,$/;"	f	namespace:fst::script
+fst::script::RmEpsilon	rmepsilon.cc	/^void RmEpsilon(const FstClass &ifst, MutableFstClass *ofst,$/;"	f	namespace:fst::script
+fst::script::ShortestDistance	shortest-distance.cc	/^WeightClass ShortestDistance(const FstClass &ifst) {$/;"	f	namespace:fst::script
+fst::script::ShortestDistance	shortest-distance.cc	/^void ShortestDistance(const FstClass &fst, vector<WeightClass> *distance,$/;"	f	namespace:fst::script
+fst::script::ShortestDistance	shortest-distance.cc	/^void ShortestDistance(const FstClass &ifst, vector<WeightClass> *distance,$/;"	f	namespace:fst::script
+fst::script::ShortestPath	shortest-path.cc	/^void ShortestPath(const FstClass &ifst, MutableFstClass *ofst,$/;"	f	namespace:fst::script
+fst::script::Synchronize	synchronize.cc	/^void Synchronize(const FstClass &ifst, MutableFstClass *ofst) {$/;"	f	namespace:fst::script
+fst::script::TopSort	topsort.cc	/^bool TopSort(MutableFstClass *fst) {$/;"	f	namespace:fst::script
+fst::script::Union	union.cc	/^void Union(MutableFstClass *fst1, const FstClass &fst2) {$/;"	f	namespace:fst::script
+fst::script::VectorFstClass::Read	fst-class.cc	/^VectorFstClass *VectorFstClass::Read(const string &fname) {$/;"	f	class:fst::script::VectorFstClass
+fst::script::VectorFstClass::VectorFstClass	fst-class.cc	/^VectorFstClass::VectorFstClass(const FstClass &other)$/;"	f	class:fst::script::VectorFstClass
+fst::script::VectorFstClass::VectorFstClass	fst-class.cc	/^VectorFstClass::VectorFstClass(const string &arc_type)$/;"	f	class:fst::script::VectorFstClass
+fst::script::Verify	verify.cc	/^bool Verify(const FstClass &fst) {$/;"	f	namespace:fst::script
+fst::script::WeightClass::WeightClass	weight-class.cc	/^WeightClass::WeightClass(const string &weight_type,$/;"	f	class:fst::script::WeightClass
+fst::script::WritePotentials	text-io.cc	/^bool WritePotentials(const string& filename,$/;"	f	namespace:fst::script
+fst::script::operator <<	weight-class.cc	/^ostream& operator << (ostream &o, const WeightClass &c) {$/;"	f	namespace:fst::script
+operator <<	weight-class.cc	/^ostream& operator << (ostream &o, const WeightClass &c) {$/;"	f	namespace:fst::script
+script	arcsort.cc	/^namespace script {$/;"	n	namespace:fst	file:
+script	closure.cc	/^namespace script {$/;"	n	namespace:fst	file:
+script	compile.cc	/^namespace script {$/;"	n	namespace:fst	file:
+script	compose.cc	/^namespace script {$/;"	n	namespace:fst	file:
+script	concat.cc	/^namespace script {$/;"	n	namespace:fst	file:
+script	connect.cc	/^namespace script {$/;"	n	namespace:fst	file:
+script	convert.cc	/^namespace script {$/;"	n	namespace:fst	file:
+script	decode.cc	/^namespace script {$/;"	n	namespace:fst	file:
+script	determinize.cc	/^namespace script {$/;"	n	namespace:fst	file:
+script	difference.cc	/^namespace script {$/;"	n	namespace:fst	file:
+script	draw.cc	/^namespace script {$/;"	n	namespace:fst	file:
+script	encode.cc	/^namespace script {$/;"	n	namespace:fst	file:
+script	epsnormalize.cc	/^namespace script {$/;"	n	namespace:fst	file:
+script	equal.cc	/^namespace script {$/;"	n	namespace:fst	file:
+script	equivalent.cc	/^namespace script {$/;"	n	namespace:fst	file:
+script	fst-class.cc	/^namespace script {$/;"	n	namespace:fst	file:
+script	info.cc	/^namespace script {$/;"	n	namespace:fst	file:
+script	intersect.cc	/^namespace script {$/;"	n	namespace:fst	file:
+script	invert.cc	/^namespace script {$/;"	n	namespace:fst	file:
+script	map.cc	/^namespace script {$/;"	n	namespace:fst	file:
+script	minimize.cc	/^namespace script {$/;"	n	namespace:fst	file:
+script	print.cc	/^namespace script {$/;"	n	namespace:fst	file:
+script	project.cc	/^namespace script {$/;"	n	namespace:fst	file:
+script	prune.cc	/^namespace script {$/;"	n	namespace:fst	file:
+script	push.cc	/^namespace script {$/;"	n	namespace:fst	file:
+script	randequivalent.cc	/^namespace script {$/;"	n	namespace:fst	file:
+script	randgen.cc	/^namespace script {$/;"	n	namespace:fst	file:
+script	relabel.cc	/^namespace script {$/;"	n	namespace:fst	file:
+script	replace.cc	/^namespace script {$/;"	n	namespace:fst	file:
+script	reverse.cc	/^namespace script {$/;"	n	namespace:fst	file:
+script	reweight.cc	/^namespace script {$/;"	n	namespace:fst	file:
+script	rmepsilon.cc	/^namespace script {$/;"	n	namespace:fst	file:
+script	script-impl.cc	/^namespace script {$/;"	n	namespace:fst	file:
+script	shortest-distance.cc	/^namespace script {$/;"	n	namespace:fst	file:
+script	shortest-path.cc	/^namespace script {$/;"	n	namespace:fst	file:
+script	synchronize.cc	/^namespace script {$/;"	n	namespace:fst	file:
+script	text-io.cc	/^namespace script {$/;"	n	namespace:fst	file:
+script	topsort.cc	/^namespace script {$/;"	n	namespace:fst	file:
+script	union.cc	/^namespace script {$/;"	n	namespace:fst	file:
+script	verify.cc	/^namespace script {$/;"	n	namespace:fst	file:
+script	weight-class.cc	/^namespace script {$/;"	n	namespace:fst	file:

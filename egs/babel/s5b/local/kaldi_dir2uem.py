@@ -1,11 +1,12 @@
-#! /usr/bin/python
+#! /usr/bin/env python
 
 import argparse, sys
 from argparse import ArgumentParser
 import re
 
 def main():
-  parser = ArgumentParser(description='Convert kaldi data directory to uem dat files', formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+  parser = ArgumentParser(description='Convert kaldi data directory to uem dat files',
+      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
   parser.add_argument('--verbose', type=int, \
       dest='verbose', default=0, \
       help='Give higher verbose for more logging')
@@ -17,6 +18,8 @@ def main():
       help='Kaldi data directory')
   parser.add_argument('output_dir', \
       help='Directory to store uem dat files')
+  parser.usage=':'.join(parser.format_usage().split(':')[1:]) \
+      + 'e.g. :  %(prog)s --prefix 203-lao-v0 data/dev10h.seg CMU_db'
   options = parser.parse_args()
 
   if options.get_text:

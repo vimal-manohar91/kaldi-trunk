@@ -153,8 +153,6 @@ system("rm $queue_logfile $syncfile 2>/dev/null");
 open(Q, ">$queue_scriptfile") || die "Failed to write to $queue_scriptfile";
 
 print Q "#!/bin/bash\n";
-print Q "set -e\n";
-print Q "set -o pipefail\n";
 print Q "cd $cwd\n";
 print Q ". ./path.sh\n";
 print Q "( echo '#' Running on \`hostname\`\n";
@@ -287,9 +285,6 @@ if (! $sync) { # We're not submitting with -sync y, so we
           print STDERR "queue.pl: Warning: qstat command returned status $ret (qstat -j $sge_job_id,$!)\n";
         }
       }
-    }
-    if ($ret != 0) {
-      print STDERR "queue.pl: Warning: qstat command returned status $ret. Syncfile  $f.\n";
     }
   }
   $all_syncfiles = join(" ", @syncfiles);

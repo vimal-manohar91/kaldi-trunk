@@ -1,0 +1,36 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+CompactFst_LogArc_AcceptorCompactor_uint16_registerer	compact16_acceptor-fst.cc	/^CompactFst_LogArc_AcceptorCompactor_uint16_registerer;$/;"	v	file:
+CompactFst_LogArc_AcceptorCompactor_uint64_registerer	compact64_acceptor-fst.cc	/^CompactFst_LogArc_AcceptorCompactor_uint64_registerer;$/;"	v	file:
+CompactFst_LogArc_AcceptorCompactor_uint8_registerer	compact8_acceptor-fst.cc	/^CompactFst_LogArc_AcceptorCompactor_uint8_registerer;$/;"	v	file:
+CompactFst_LogArc_StringCompactor_uint16_registerer	compact16_string-fst.cc	/^CompactFst_LogArc_StringCompactor_uint16_registerer;$/;"	v	file:
+CompactFst_LogArc_StringCompactor_uint64_registerer	compact64_string-fst.cc	/^CompactFst_LogArc_StringCompactor_uint64_registerer;$/;"	v	file:
+CompactFst_LogArc_StringCompactor_uint8_registerer	compact8_string-fst.cc	/^CompactFst_LogArc_StringCompactor_uint8_registerer;$/;"	v	file:
+CompactFst_LogArc_UnweightedAcceptorCompactor_uint16_registerer	compact16_unweighted_acceptor-fst.cc	/^CompactFst_LogArc_UnweightedAcceptorCompactor_uint16_registerer;$/;"	v	file:
+CompactFst_LogArc_UnweightedAcceptorCompactor_uint64_registerer	compact64_unweighted_acceptor-fst.cc	/^CompactFst_LogArc_UnweightedAcceptorCompactor_uint64_registerer;$/;"	v	file:
+CompactFst_LogArc_UnweightedAcceptorCompactor_uint8_registerer	compact8_unweighted_acceptor-fst.cc	/^CompactFst_LogArc_UnweightedAcceptorCompactor_uint8_registerer;$/;"	v	file:
+CompactFst_LogArc_UnweightedCompactor_uint16_registerer	compact16_unweighted-fst.cc	/^CompactFst_LogArc_UnweightedCompactor_uint16_registerer;$/;"	v	file:
+CompactFst_LogArc_UnweightedCompactor_uint64_registerer	compact64_unweighted-fst.cc	/^CompactFst_LogArc_UnweightedCompactor_uint64_registerer;$/;"	v	file:
+CompactFst_LogArc_UnweightedCompactor_uint8_registerer	compact8_unweighted-fst.cc	/^CompactFst_LogArc_UnweightedCompactor_uint8_registerer;$/;"	v	file:
+CompactFst_LogArc_WeightedStringCompactor_uint16_registerer	compact16_weighted_string-fst.cc	/^CompactFst_LogArc_WeightedStringCompactor_uint16_registerer;$/;"	v	file:
+CompactFst_LogArc_WeightedStringCompactor_uint64_registerer	compact64_weighted_string-fst.cc	/^CompactFst_LogArc_WeightedStringCompactor_uint64_registerer;$/;"	v	file:
+CompactFst_LogArc_WeightedStringCompactor_uint8_registerer	compact8_weighted_string-fst.cc	/^CompactFst_LogArc_WeightedStringCompactor_uint8_registerer;$/;"	v	file:
+CompactFst_StdArc_AcceptorCompactor_uint16_registerer	compact16_acceptor-fst.cc	/^CompactFst_StdArc_AcceptorCompactor_uint16_registerer;$/;"	v	file:
+CompactFst_StdArc_AcceptorCompactor_uint64_registerer	compact64_acceptor-fst.cc	/^CompactFst_StdArc_AcceptorCompactor_uint64_registerer;$/;"	v	file:
+CompactFst_StdArc_AcceptorCompactor_uint8_registerer	compact8_acceptor-fst.cc	/^CompactFst_StdArc_AcceptorCompactor_uint8_registerer;$/;"	v	file:
+CompactFst_StdArc_StringCompactor_uint16_registerer	compact16_string-fst.cc	/^CompactFst_StdArc_StringCompactor_uint16_registerer;$/;"	v	file:
+CompactFst_StdArc_StringCompactor_uint64_registerer	compact64_string-fst.cc	/^CompactFst_StdArc_StringCompactor_uint64_registerer;$/;"	v	file:
+CompactFst_StdArc_StringCompactor_uint8_registerer	compact8_string-fst.cc	/^CompactFst_StdArc_StringCompactor_uint8_registerer;$/;"	v	file:
+CompactFst_StdArc_UnweightedAcceptorCompactor_uint16_registerer	compact16_unweighted_acceptor-fst.cc	/^CompactFst_StdArc_UnweightedAcceptorCompactor_uint16_registerer;$/;"	v	file:
+CompactFst_StdArc_UnweightedAcceptorCompactor_uint64_registerer	compact64_unweighted_acceptor-fst.cc	/^CompactFst_StdArc_UnweightedAcceptorCompactor_uint64_registerer;$/;"	v	file:
+CompactFst_StdArc_UnweightedAcceptorCompactor_uint8_registerer	compact8_unweighted_acceptor-fst.cc	/^CompactFst_StdArc_UnweightedAcceptorCompactor_uint8_registerer;$/;"	v	file:
+CompactFst_StdArc_UnweightedCompactor_uint16_registerer	compact16_unweighted-fst.cc	/^CompactFst_StdArc_UnweightedCompactor_uint16_registerer;$/;"	v	file:
+CompactFst_StdArc_UnweightedCompactor_uint64_registerer	compact64_unweighted-fst.cc	/^CompactFst_StdArc_UnweightedCompactor_uint64_registerer;$/;"	v	file:
+CompactFst_StdArc_UnweightedCompactor_uint8_registerer	compact8_unweighted-fst.cc	/^CompactFst_StdArc_UnweightedCompactor_uint8_registerer;$/;"	v	file:
+CompactFst_StdArc_WeightedStringCompactor_uint16_registerer	compact16_weighted_string-fst.cc	/^CompactFst_StdArc_WeightedStringCompactor_uint16_registerer;$/;"	v	file:
+CompactFst_StdArc_WeightedStringCompactor_uint64_registerer	compact64_weighted_string-fst.cc	/^CompactFst_StdArc_WeightedStringCompactor_uint64_registerer;$/;"	v	file:
+CompactFst_StdArc_WeightedStringCompactor_uint8_registerer	compact8_weighted_string-fst.cc	/^CompactFst_StdArc_WeightedStringCompactor_uint8_registerer;$/;"	v	file:

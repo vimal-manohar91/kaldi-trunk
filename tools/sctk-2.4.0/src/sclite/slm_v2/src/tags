@@ -1,0 +1,361 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ABSOLUTE	ngram.h	37;"	d
+ALPHA	ngram2mgram.c	44;"	d	file:
+ASCII	ngram2mgram.c	40;"	d	file:
+BBO_FILE_VERSION	load_lm.c	33;"	d	file:
+BBO_FILE_VERSION	write_lms.c	30;"	d	file:
+BINARY	ngram2mgram.c	39;"	d	file:
+BUFFER	ngram.h	42;"	d
+CLOSED_VOCAB	ngram.h	47;"	d
+DEFAULT_COUNT_TABLE_SIZE	ngram.h	28;"	d
+DEFAULT_DISC_RANGE_1	ngram.h	30;"	d
+DEFAULT_DISC_RANGE_REST	ngram.h	31;"	d
+DEFAULT_HASH	text2wfreq.c	33;"	d	file:
+DEFAULT_HASH_SIZE	text2idngram.c	20;"	d	file:
+DEFAULT_HASH_SIZE	wngram2idngram.c	20;"	d	file:
+DEFAULT_MAX_ALPHA	ngram.h	33;"	d
+DEFAULT_MAX_FILES	text2idngram.c	21;"	d	file:
+DEFAULT_MAX_FILES	text2wngram.c	20;"	d	file:
+DEFAULT_MAX_FILES	wngram2idngram.c	21;"	d	file:
+DEFAULT_MAX_RECORDS	wfreq2vocab.c	30;"	d	file:
+DEFAULT_MIN_ALPHA	ngram.h	32;"	d
+DEFAULT_N	toolkit.h	25;"	d
+DEFAULT_OOV_FRACTION	ngram.h	29;"	d
+DEFAULT_OUT_OF_RANGE_ALPHAS	ngram.h	34;"	d
+DEFAULT_TEMP	toolkit.h	36;"	d
+DEFAULT_VERBOSITY	toolkit.h	26;"	d
+GOOD_TURING	ngram.h	36;"	d
+ITEM_FORMAT	interpolate.c	55;"	d	file:
+ITEM_T	interpolate.c	54;"	d	file:
+KEY	ngram.h	45;"	d
+LINEAR	ngram.h	38;"	d
+MAX_ARGS	evallm.c	20;"	d	file:
+MAX_N	text2idngram.c	22;"	d	file:
+MAX_N	wngram2idngram.c	22;"	d	file:
+MAX_STRING_LENGTH	text2wfreq.c	32;"	d	file:
+MAX_VOCAB_SIZE	toolkit.h	27;"	d
+MAX_WORD_LENGTH	ngram2mgram.c	37;"	d	file:
+MCAPTION	interpolate.c	56;"	d	file:
+NUMERIC	ngram2mgram.c	43;"	d	file:
+OPEN_VOCAB_1	ngram.h	48;"	d
+OPEN_VOCAB_2	ngram.h	49;"	d
+SPECIFIED	ngram.h	41;"	d
+STD_MEM	toolkit.h	35;"	d
+TEMP_FILE_ROOT	text2idngram.c	23;"	d	file:
+TEMP_FILE_ROOT	text2wngram.c	21;"	d	file:
+TEMP_FILE_ROOT	wngram2idngram.c	23;"	d	file:
+TWO_PASSES	ngram.h	43;"	d
+VERSION	toolkit.h	38;"	d
+WITTEN_BELL	ngram.h	39;"	d
+WORDS	ngram2mgram.c	41;"	d	file:
+_EVALLM_PROTS_	evallm.h	22;"	d
+_IDNGRAM2LM_H_	idngram2lm.h	23;"	d
+_NGRAM_H_	ngram.h	23;"	d
+_TOOLKIT_H_	toolkit.h	23;"	d
+__anon1::backed_off	evallm.h	/^  flag backed_off;$/;"	m	struct:__anon1
+__anon1::inclusive	evallm.h	/^  flag inclusive;$/;"	m	struct:__anon1
+__anon2::bo_weight	evallm.h	/^  bo_t           **bo_weight;    \/* Pointer to array of back-off weights *\/$/;"	m	struct:__anon2
+__anon2::context_cue	evallm.h	/^  flag           *context_cue;   \/* True if word with this id is$/;"	m	struct:__anon2
+__anon2::first_id	evallm.h	/^  unsigned short first_id;        \/* 0 if we have open vocab, 1 if we have$/;"	m	struct:__anon2
+__anon2::ind	evallm.h	/^  index__t       **ind;          \/* Pointer to array of index lists *\/$/;"	m	struct:__anon2
+__anon2::n	evallm.h	/^  unsigned short n;                \/* n=3 for trigram, n=4 for 4-gram etc. *\/$/;"	m	struct:__anon2
+__anon2::no_of_ccs	evallm.h	/^  int            no_of_ccs;      \/* The number of context cues in the LM *\/$/;"	m	struct:__anon2
+__anon2::num_kgrams	evallm.h	/^  int            *num_kgrams;     \/* Array indicating how many $/;"	m	struct:__anon2
+__anon2::probs	evallm.h	/^  prob_t         **probs;        \/* Pointer to array of probabilities *\/$/;"	m	struct:__anon2
+__anon2::ptr_table	evallm.h	/^  ptr_tab_t      **ptr_table;     \/* Pointer to the tables used for compact $/;"	m	struct:__anon2
+__anon2::ptr_table_size	evallm.h	/^  unsigned short *ptr_table_size; \/* Pointer to array of pointer tables *\/$/;"	m	struct:__anon2
+__anon2::table_sizes	evallm.h	/^  table_size_t   *table_sizes;   \/* Pointer to table size array *\/$/;"	m	struct:__anon2
+__anon2::vocab	evallm.h	/^  char           **vocab;        \/* Array of vocabulary words *\/$/;"	m	struct:__anon2
+__anon2::vocab_ht	evallm.h	/^  sih_t          *vocab_ht;      \/* Vocabulary hash table *\/$/;"	m	struct:__anon2
+__anon2::vocab_size	evallm.h	/^  unsigned short vocab_size;     \/* Vocabulary size *\/$/;"	m	struct:__anon2
+__anon2::vocab_type	evallm.h	/^  unsigned short vocab_type;      \/* see #define stuff at the top *\/$/;"	m	struct:__anon2
+__anon2::word_id	evallm.h	/^  id__t          **word_id;      \/* Pointer to array of id lists *\/$/;"	m	struct:__anon2
+__anon3::count	idngram2stats.c	/^  int            count;$/;"	m	struct:__anon3	file:
+__anon3::id_array	idngram2stats.c	/^  id__t          *id_array;$/;"	m	struct:__anon3	file:
+__anon3::n	idngram2stats.c	/^  unsigned short n;$/;"	m	struct:__anon3	file:
+__anon4::count	mergeidngram.c	/^  int            count;$/;"	m	struct:__anon4	file:
+__anon4::id_array	mergeidngram.c	/^  id__t          *id_array;$/;"	m	struct:__anon4	file:
+__anon4::n	mergeidngram.c	/^  unsigned short n;$/;"	m	struct:__anon4	file:
+__anon5::count	ngram.h	/^  count_t        count;$/;"	m	struct:__anon5
+__anon5::id_array	ngram.h	/^  id__t          *id_array;$/;"	m	struct:__anon5
+__anon5::n	ngram.h	/^  unsigned short n;$/;"	m	struct:__anon5
+__anon6::count_table_size	ngram.h	/^  unsigned short count_table_size;$/;"	m	struct:__anon6
+__anon6::counts_array	ngram.h	/^  int            *counts_array;$/;"	m	struct:__anon6
+__anon7::abs_disc_const	ngram.h	/^  double         *abs_disc_const;        \/* The constant required for$/;"	m	struct:__anon7
+__anon7::alpha_array	ngram.h	/^  double         *alpha_array;$/;"	m	struct:__anon7
+__anon7::arpa_filename	ngram.h	/^  char           *arpa_filename;  \/* The filaname of the arpa format LM *\/$/;"	m	struct:__anon7
+__anon7::arpa_fp	ngram.h	/^  FILE           *arpa_fp;        \/* The file of the arpa format LM *\/$/;"	m	struct:__anon7
+__anon7::bin_filename	ngram.h	/^  char           *bin_filename;   \/* The filaname of the bin format LM *\/$/;"	m	struct:__anon7
+__anon7::bin_fp	ngram.h	/^  FILE           *bin_fp;         \/* The file of the bin format LM *\/$/;"	m	struct:__anon7
+__anon7::bo_weight	ngram.h	/^  bo_weight_t    **bo_weight;    \/* Pointer to array of back-off weights *\/$/;"	m	struct:__anon7
+__anon7::bo_weight4	ngram.h	/^  four_byte_t    **bo_weight4;   \/* Pointer to array of 4 byte$/;"	m	struct:__anon7
+__anon7::context_cue	ngram.h	/^  flag           *context_cue;           \/* True if word with this id is$/;"	m	struct:__anon7
+__anon7::context_cues_filename	ngram.h	/^  char           *context_cues_filename; \/* The filename of the context cues $/;"	m	struct:__anon7
+__anon7::context_cues_fp	ngram.h	/^  FILE           *context_cues_fp;       \/* The file pointer of the context $/;"	m	struct:__anon7
+__anon7::count	ngram.h	/^  count_ind_t    **count;        \/* Pointer to array of count lists $/;"	m	struct:__anon7
+__anon7::count4	ngram.h	/^  int            **count4;       \/* Alternative method of storing the counts,$/;"	m	struct:__anon7
+__anon7::count_table	ngram.h	/^  count_t        **count_table;    \/* Pointer to array of count tables *\/$/;"	m	struct:__anon7
+__anon7::count_table_size	ngram.h	/^  count_ind_t    count_table_size; \/* Have same size for each count table *\/$/;"	m	struct:__anon7
+__anon7::cutoffs	ngram.h	/^  cutoff_t       *cutoffs;               \/* Array of cutoffs *\/$/;"	m	struct:__anon7
+__anon7::disc_range	ngram.h	/^  unsigned short *disc_range;            \/* Pointer to array of discounting $/;"	m	struct:__anon7
+__anon7::discounting_method	ngram.h	/^  unsigned short discounting_method;     \/* See #define stuff at the top of $/;"	m	struct:__anon7
+__anon7::first_id	ngram.h	/^  unsigned short first_id;        \/* 0 if we have open vocab, 1 if we have$/;"	m	struct:__anon7
+__anon7::fof_size	ngram.h	/^  unsigned short *fof_size;              \/* The sizes of the above arrays *\/$/;"	m	struct:__anon7
+__anon7::four_byte_alphas	ngram.h	/^  flag           four_byte_alphas;$/;"	m	struct:__anon7
+__anon7::four_byte_counts	ngram.h	/^  flag           four_byte_counts;$/;"	m	struct:__anon7
+__anon7::freq_of_freq	ngram.h	/^  int            **freq_of_freq;         \/* Array of frequency of frequency $/;"	m	struct:__anon7
+__anon7::gt_disc_ratio	ngram.h	/^  disc_val_t     **gt_disc_ratio;        \/* The discounted values of the $/;"	m	struct:__anon7
+__anon7::id_gram_filename	ngram.h	/^  char           *id_gram_filename;  \/* The filename of the id-gram file *\/$/;"	m	struct:__anon7
+__anon7::id_gram_fp	ngram.h	/^  FILE           *id_gram_fp;        \/* The file pointer of the id-gram file *\/$/;"	m	struct:__anon7
+__anon7::ind	ngram.h	/^  index__t       **ind;          \/* Pointer to array of index lists *\/$/;"	m	struct:__anon7
+__anon7::lin_disc_ratio	ngram.h	/^  disc_val_t     *lin_disc_ratio;        \/* The linear discounting ratio *\/$/;"	m	struct:__anon7
+__anon7::marg_counts	ngram.h	/^  count_ind_t    *marg_counts;   \/* Array of marginal counts for the $/;"	m	struct:__anon7
+__anon7::marg_counts4	ngram.h	/^  int            *marg_counts4;  \/* Ditto *\/$/;"	m	struct:__anon7
+__anon7::max_alpha	ngram.h	/^  double         max_alpha;      \/* The maximum alpha in the table *\/$/;"	m	struct:__anon7
+__anon7::min_alpha	ngram.h	/^  double         min_alpha;      \/* The minimum alpha in the table *\/$/;"	m	struct:__anon7
+__anon7::min_unicount	ngram.h	/^  int            min_unicount;           \/* Count to which infrequent unigrams$/;"	m	struct:__anon7
+__anon7::n	ngram.h	/^  unsigned short n;                \/* n=3 for trigram, n=4 for 4-gram etc. *\/$/;"	m	struct:__anon7
+__anon7::n_unigrams	ngram.h	/^  int            n_unigrams;             \/* Total number of unigrams in$/;"	m	struct:__anon7
+__anon7::no_of_ccs	ngram.h	/^  unsigned short no_of_ccs;      \/* Number of context cues *\/$/;"	m	struct:__anon7
+__anon7::num_kgrams	ngram.h	/^  int            *num_kgrams;     \/* Array indicating how many $/;"	m	struct:__anon7
+__anon7::oov_fraction	ngram.h	/^  double         oov_fraction;$/;"	m	struct:__anon7
+__anon7::out_of_range_alphas	ngram.h	/^  unsigned short out_of_range_alphas;  \/* The maximum number of out of range $/;"	m	struct:__anon7
+__anon7::ptr_table	ngram.h	/^  ptr_tab_t      **ptr_table;     \/* Pointer to the tables used for compact $/;"	m	struct:__anon7
+__anon7::ptr_table_size	ngram.h	/^  unsigned short *ptr_table_size; \/* Pointer to array of pointer tables *\/$/;"	m	struct:__anon7
+__anon7::size_of_alpha_array	ngram.h	/^  unsigned short size_of_alpha_array;$/;"	m	struct:__anon7
+__anon7::table_sizes	ngram.h	/^  table_size_t   *table_sizes;   \/* Pointer to table size array *\/$/;"	m	struct:__anon7
+__anon7::uni_log_probs	ngram.h	/^  uni_probs_t    *uni_log_probs;         \/* Log probs for each unigram *\/$/;"	m	struct:__anon7
+__anon7::uni_probs	ngram.h	/^  uni_probs_t    *uni_probs;             \/* Probs for each unigram *\/$/;"	m	struct:__anon7
+__anon7::version	ngram.h	/^  int            version;$/;"	m	struct:__anon7
+__anon7::vocab	ngram.h	/^  char           **vocab;        \/* Array of vocabulary words *\/$/;"	m	struct:__anon7
+__anon7::vocab_filename	ngram.h	/^  char           *vocab_filename;    \/* The filename of the vocabulary file *\/$/;"	m	struct:__anon7
+__anon7::vocab_ht	ngram.h	/^  sih_t          *vocab_ht;      \/* Vocabulary hash table *\/$/;"	m	struct:__anon7
+__anon7::vocab_size	ngram.h	/^  unsigned short vocab_size;     \/* Vocabulary size *\/$/;"	m	struct:__anon7
+__anon7::vocab_type	ngram.h	/^  unsigned short vocab_type;      \/* see #define stuff at the top *\/$/;"	m	struct:__anon7
+__anon7::word_id	ngram.h	/^  id__t          **word_id;      \/* Pointer to array of id lists *\/$/;"	m	struct:__anon7
+__anon7::write_arpa	ngram.h	/^  flag           write_arpa;      \/* True if the language model is to be $/;"	m	struct:__anon7
+__anon7::write_bin	ngram.h	/^  flag           write_bin;       \/* True if the language model is to be $/;"	m	struct:__anon7
+__anon7::zeroton_fraction	ngram.h	/^  double         zeroton_fraction; \/* cap on prob(zeroton) as fraction of $/;"	m	struct:__anon7
+__anon8::count	wfreq2vocab.c	/^  int count;$/;"	m	struct:__anon8	file:
+__anon8::word	wfreq2vocab.c	/^  char *word;$/;"	m	struct:__anon8	file:
+__anon9::count	wngram2idngram.c	/^  int count;$/;"	m	struct:__anon9	file:
+__anon9::word	wngram2idngram.c	/^  unsigned short *word;$/;"	m	struct:__anon9	file:
+abs_disc_const	ngram.h	/^  double         *abs_disc_const;        \/* The constant required for$/;"	m	struct:__anon7
+add_to_buffer	text2idngram.c	/^void add_to_buffer(unsigned short word_index,$/;"	f
+add_to_hashtable	idngram.h	/^void add_to_hashtable( struct hash_table *table,$/;"	f
+alpha_array	ngram.h	/^  double         *alpha_array;$/;"	m	struct:__anon7
+arpa_bo_ng_prob	arpa_bo_ng_prob.c	/^void arpa_bo_ng_prob(int context_length,$/;"	f
+arpa_filename	ngram.h	/^  char           *arpa_filename;  \/* The filaname of the arpa format LM *\/$/;"	m	struct:__anon7
+arpa_fp	ngram.h	/^  FILE           *arpa_fp;        \/* The file of the arpa format LM *\/$/;"	m	struct:__anon7
+arpa_lm_t	evallm.h	/^} arpa_lm_t;$/;"	t	typeref:struct:__anon2
+ascii_in	mergeidngram.c	/^flag ascii_in;$/;"	v
+ascii_out	mergeidngram.c	/^flag ascii_out;$/;"	v
+backed_off	evallm.h	/^  flag backed_off;$/;"	m	struct:__anon1
+bin_filename	ngram.h	/^  char           *bin_filename;   \/* The filaname of the bin format LM *\/$/;"	m	struct:__anon7
+bin_fp	ngram.h	/^  FILE           *bin_fp;         \/* The file of the bin format LM *\/$/;"	m	struct:__anon7
+bo_ng_prob	bo_ng_prob.c	/^void bo_ng_prob(int context_length,$/;"	f
+bo_t	evallm.h	/^typedef float bo_t;$/;"	t
+bo_weight	evallm.h	/^  bo_t           **bo_weight;    \/* Pointer to array of back-off weights *\/$/;"	m	struct:__anon2
+bo_weight	ngram.h	/^  bo_weight_t    **bo_weight;    \/* Pointer to array of back-off weights *\/$/;"	m	struct:__anon7
+bo_weight4	ngram.h	/^  four_byte_t    **bo_weight4;   \/* Pointer to array of 4 byte$/;"	m	struct:__anon7
+bo_weight_t	ngram.h	/^typedef unsigned short bo_weight_t;$/;"	t
+buffer_contents	text2idngram.c	/^unsigned short buffer_contents(int ypos,$/;"	f
+calc_mem_req	calc_mem_req.c	/^void calc_mem_req(ng_t *ng,flag is_ascii) {$/;"	f
+calc_prob_of	calc_prob_of.c	/^double calc_prob_of(id__t sought_word,$/;"	f
+chain	idngram.h	/^  struct node **chain;$/;"	m	struct:hash_table	typeref:struct:hash_table::node
+chain	text2wfreq.c	/^  struct node **chain;$/;"	m	struct:hash_table	typeref:struct:hash_table::node	file:
+cmp_ngram	mergeidngram.c	/^int cmp_ngram( ngram *ng1, ngram *ng2 )$/;"	f
+cmp_strings	text2wngram.c	/^int cmp_strings(const void *string1,const void *string2) {$/;"	f
+compare_ngrams	idngram.h	/^int compare_ngrams(const void *ngram1,$/;"	f
+compare_ngrams2	wngram2idngram.c	/^int compare_ngrams2(const void *ngram1,$/;"	f
+compute_back_off	compute_back_off.c	/^void compute_back_off(ng_t *ng,int n, int verbosity) {$/;"	f
+compute_gt_discount	compute_discount.c	/^void compute_gt_discount(int n,$/;"	f
+compute_perplexity	perplexity.c	/^void compute_perplexity(ng_t *ng,$/;"	f
+compute_unigram	compute_unigram.c	/^void compute_unigram(ng_t *ng,int verbosity) {$/;"	f
+context_cue	evallm.h	/^  flag           *context_cue;   \/* True if word with this id is$/;"	m	struct:__anon2
+context_cue	ngram.h	/^  flag           *context_cue;           \/* True if word with this id is$/;"	m	struct:__anon7
+context_cues_filename	ngram.h	/^  char           *context_cues_filename; \/* The filename of the context cues $/;"	m	struct:__anon7
+context_cues_fp	ngram.h	/^  FILE           *context_cues_fp;       \/* The file pointer of the context $/;"	m	struct:__anon7
+count	idngram2stats.c	/^  int            count;$/;"	m	struct:__anon3	file:
+count	mergeidngram.c	/^  int            count;$/;"	m	struct:__anon4	file:
+count	ngram.h	/^  count_ind_t    **count;        \/* Pointer to array of count lists $/;"	m	struct:__anon7
+count	ngram.h	/^  count_t        count;$/;"	m	struct:__anon5
+count	text2wfreq.c	/^  int count;$/;"	m	struct:node	file:
+count	wfreq2vocab.c	/^  int count;$/;"	m	struct:__anon8	file:
+count	wngram2idngram.c	/^  int count;$/;"	m	struct:__anon9	file:
+count4	ngram.h	/^  int            **count4;       \/* Alternative method of storing the counts,$/;"	m	struct:__anon7
+count_ind_t	ngram.h	/^typedef unsigned short count_ind_t; \/* The count's index in the count $/;"	t
+count_t	ngram.h	/^typedef int count_t;   \/* The count as read in, rather than its index $/;"	t
+count_table	ngram.h	/^  count_t        **count_table;    \/* Pointer to array of count tables *\/$/;"	m	struct:__anon7
+count_table_size	ngram.h	/^  count_ind_t    count_table_size; \/* Have same size for each count table *\/$/;"	m	struct:__anon7
+count_table_size	ngram.h	/^  unsigned short count_table_size;$/;"	m	struct:__anon6
+count_table_t	ngram.h	/^} count_table_t;$/;"	t	typeref:struct:__anon6
+counts_array	ngram.h	/^  int            *counts_array;$/;"	m	struct:__anon6
+cutoff_t	ngram.h	/^typedef unsigned short cutoff_t;$/;"	t
+cutoffs	ngram.h	/^  cutoff_t       *cutoffs;               \/* Array of cutoffs *\/$/;"	m	struct:__anon7
+decode_bo_case	decode_bo_case.c	/^void decode_bo_case(int bo_case,$/;"	f
+disc_range	ngram.h	/^  unsigned short *disc_range;            \/* Pointer to array of discounting $/;"	m	struct:__anon7
+disc_val_t	ngram.h	/^typedef double disc_val_t;$/;"	t
+discounting_method	ngram.h	/^  unsigned short discounting_method;     \/* See #define stuff at the top of $/;"	m	struct:__anon7
+display_arpa_stats	stats.c	/^void display_arpa_stats(arpa_lm_t *arpa_ng) {$/;"	f
+display_stats	stats.c	/^void display_stats(ng_t *ng) {$/;"	f
+double_alpha	two_byte_alphas.c	/^double double_alpha(unsigned short short_alpha,$/;"	f
+eval	interpolate.c	/^void eval(double *sum_logprobs, double **fractions, int *tag_of, int *n_in_tag,$/;"	f
+fb_info	evallm.h	/^} fb_info;$/;"	t	typeref:struct:__anon1
+first_id	evallm.h	/^  unsigned short first_id;        \/* 0 if we have open vocab, 1 if we have$/;"	m	struct:__anon2
+first_id	ngram.h	/^  unsigned short first_id;        \/* 0 if we have open vocab, 1 if we have$/;"	m	struct:__anon7
+flag	toolkit.h	/^typedef unsigned short flag;$/;"	t
+fof_size	ngram.h	/^  unsigned short *fof_size;              \/* The sizes of the above arrays *\/$/;"	m	struct:__anon7
+four_byte_alphas	ngram.h	/^  flag           four_byte_alphas;$/;"	m	struct:__anon7
+four_byte_counts	ngram.h	/^  flag           four_byte_counts;$/;"	m	struct:__anon7
+four_byte_t	ngram.h	/^typedef float four_byte_t;$/;"	t
+freq_of_freq	ngram.h	/^  int            **freq_of_freq;         \/* Array of frequency of frequency $/;"	m	struct:__anon7
+gen_fb_list	gen_fb_list.c	/^fb_info *gen_fb_list(sih_t *vocab_ht,$/;"	f
+get_full_index	short_indices.c	/^int get_full_index(unsigned short short_index,$/;"	f
+get_ngram	get_ngram.c	/^int get_ngram(FILE *id_ngram_fp, ngram *ng, flag ascii) {  $/;"	f
+get_word	idngram.h	/^int get_word( FILE *fp , char *word ) {$/;"	f
+gt_disc_ratio	ngram.h	/^  disc_val_t     **gt_disc_ratio;        \/* The discounted values of the $/;"	m	struct:__anon7
+guess_mem	guess_mem.c	/^void guess_mem(int total_mem,$/;"	f
+hash	idngram.h	/^int hash( char *key, int M )$/;"	f
+hash	text2wfreq.c	/^int hash( char *key, int M )$/;"	f
+hash_table	idngram.h	/^struct hash_table {$/;"	s
+hash_table	text2wfreq.c	/^struct hash_table {$/;"	s	file:
+hash_table::chain	idngram.h	/^  struct node **chain;$/;"	m	struct:hash_table	typeref:struct:hash_table::node
+hash_table::chain	text2wfreq.c	/^  struct node **chain;$/;"	m	struct:hash_table	typeref:struct:hash_table::node	file:
+hash_table::size	idngram.h	/^  int size;$/;"	m	struct:hash_table
+hash_table::size	text2wfreq.c	/^  int size;$/;"	m	struct:hash_table	file:
+id__t	idngram2stats.c	/^typedef unsigned short id__t;$/;"	t	file:
+id__t	mergeidngram.c	/^typedef unsigned short id__t;$/;"	t	file:
+id__t	ngram.h	/^typedef unsigned short id__t; \/* Double underscore, since id_t is$/;"	t
+id_array	idngram2stats.c	/^  id__t          *id_array;$/;"	m	struct:__anon3	file:
+id_array	mergeidngram.c	/^  id__t          *id_array;$/;"	m	struct:__anon4	file:
+id_array	ngram.h	/^  id__t          *id_array;$/;"	m	struct:__anon5
+id_gram_filename	ngram.h	/^  char           *id_gram_filename;  \/* The filename of the id-gram file *\/$/;"	m	struct:__anon7
+id_gram_fp	ngram.h	/^  FILE           *id_gram_fp;        \/* The file pointer of the id-gram file *\/$/;"	m	struct:__anon7
+inclusive	evallm.h	/^  flag inclusive;$/;"	m	struct:__anon1
+increment_context	increment_context.c	/^void increment_context(ng_t *ng,int k,int verbosity) {$/;"	f
+ind	evallm.h	/^  index__t       **ind;          \/* Pointer to array of index lists *\/$/;"	m	struct:__anon2
+ind	idngram.h	/^  unsigned short ind;$/;"	m	struct:node
+ind	ngram.h	/^  index__t       **ind;          \/* Pointer to array of index lists *\/$/;"	m	struct:__anon7
+index2	idngram.h	/^unsigned short index2(struct hash_table *vocab,$/;"	f
+index__t	ngram.h	/^typedef unsigned short index__t;$/;"	t
+lin_disc_ratio	ngram.h	/^  disc_val_t     *lin_disc_ratio;        \/* The linear discounting ratio *\/$/;"	m	struct:__anon7
+load_arpa_lm	load_lm.c	/^void load_arpa_lm(arpa_lm_t *arpa_lm,$/;"	f
+load_lm	load_lm.c	/^void load_lm(ng_t *ng,$/;"	f
+lookup_index_of	lookup_index_of.c	/^int lookup_index_of(lookup_table, lookup_table_size, intval)$/;"	f
+main	binlm2arpa.c	/^void main (int argc,char **argv) {$/;"	f
+main	evallm.c	/^void main (int argc, char **argv) {$/;"	f
+main	idngram2lm.c	/^void main (int argc, char **argv) {$/;"	f
+main	idngram2stats.c	/^void main (int argc, char **argv) {$/;"	f
+main	interpolate.c	/^void main (int argc, char **argv) {$/;"	f
+main	mergeidngram.c	/^int main( int argc, char **argv )$/;"	f
+main	ngram2mgram.c	/^void main(int argc, char *argv[]) {$/;"	f
+main	text2idngram.c	/^void main(int argc, char *argv[]) {$/;"	f
+main	text2wfreq.c	/^int main( int argc, char **argv )$/;"	f
+main	text2wngram.c	/^void main (int argc, char **argv) {$/;"	f
+main	wfreq2vocab.c	/^void main(int argc, char *argv[]) {$/;"	f
+main	wngram2idngram.c	/^void main(int argc, char *argv[]) {$/;"	f
+marg_counts	ngram.h	/^  count_ind_t    *marg_counts;   \/* Array of marginal counts for the $/;"	m	struct:__anon7
+marg_counts4	ngram.h	/^  int            *marg_counts4;  \/* Ditto *\/$/;"	m	struct:__anon7
+max_alpha	ngram.h	/^  double         max_alpha;      \/* The maximum alpha in the table *\/$/;"	m	struct:__anon7
+merge_tempfiles	idngram.h	/^void merge_tempfiles (int start_file, $/;"	f
+merge_tempfiles	text2wngram.c	/^void merge_tempfiles (int start_file, $/;"	f
+min_alpha	ngram.h	/^  double         min_alpha;      \/* The minimum alpha in the table *\/$/;"	m	struct:__anon7
+min_unicount	ngram.h	/^  int            min_unicount;           \/* Count to which infrequent unigrams$/;"	m	struct:__anon7
+n	evallm.h	/^  unsigned short n;                \/* n=3 for trigram, n=4 for 4-gram etc. *\/$/;"	m	struct:__anon2
+n	idngram.h	/^int n; \/* Declare it globally, so doesn't need to be passed$/;"	v
+n	idngram2stats.c	/^  unsigned short n;$/;"	m	struct:__anon3	file:
+n	mergeidngram.c	/^  unsigned short n;$/;"	m	struct:__anon4	file:
+n	mergeidngram.c	/^int n;$/;"	v
+n	ngram.h	/^  unsigned short n;                \/* n=3 for trigram, n=4 for 4-gram etc. *\/$/;"	m	struct:__anon7
+n	ngram.h	/^  unsigned short n;$/;"	m	struct:__anon5
+n_unigrams	ngram.h	/^  int            n_unigrams;             \/* Total number of unigrams in$/;"	m	struct:__anon7
+nearest_prime	idngram.h	/^int nearest_prime(int num)$/;"	f
+nearest_prime	text2wfreq.c	/^int nearest_prime(int num)$/;"	f
+new_hashtable	idngram.h	/^void new_hashtable( struct hash_table *table, int M )$/;"	f
+new_hashtable	text2wfreq.c	/^void new_hashtable( struct hash_table *table, int M )$/;"	f
+new_index	short_indices.c	/^unsigned short new_index(int full_index,$/;"	f
+new_node	idngram.h	/^struct node *new_node( char *key ,unsigned short ind)$/;"	f
+new_node	text2wfreq.c	/^struct node *new_node( char *key )$/;"	f
+next	idngram.h	/^  struct node *next;$/;"	m	struct:node	typeref:struct:node::node
+next	text2wfreq.c	/^  struct node *next;$/;"	m	struct:node	typeref:struct:node::node	file:
+ng_t	ngram.h	/^} ng_t;$/;"	t	typeref:struct:__anon7
+ngram	idngram2stats.c	/^} ngram;$/;"	t	typeref:struct:__anon3	file:
+ngram	mergeidngram.c	/^} ngram;$/;"	t	typeref:struct:__anon4	file:
+ngram	ngram.h	/^} ngram;$/;"	t	typeref:struct:__anon5
+ngram_rec	wngram2idngram.c	/^} ngram_rec;$/;"	t	typeref:struct:__anon9	file:
+no_of_ccs	evallm.h	/^  int            no_of_ccs;      \/* The number of context cues in the LM *\/$/;"	m	struct:__anon2
+no_of_ccs	ngram.h	/^  unsigned short no_of_ccs;      \/* Number of context cues *\/$/;"	m	struct:__anon7
+node	idngram.h	/^struct node {$/;"	s
+node	text2wfreq.c	/^struct node {$/;"	s	file:
+node::count	text2wfreq.c	/^  int count;$/;"	m	struct:node	file:
+node::ind	idngram.h	/^  unsigned short ind;$/;"	m	struct:node
+node::next	idngram.h	/^  struct node *next;$/;"	m	struct:node	typeref:struct:node::node
+node::next	text2wfreq.c	/^  struct node *next;$/;"	m	struct:node	typeref:struct:node::node	file:
+node::word	idngram.h	/^  char *word;$/;"	m	struct:node
+node::word	text2wfreq.c	/^  char *word;$/;"	m	struct:node	file:
+num_kgrams	evallm.h	/^  int            *num_kgrams;     \/* Array indicating how many $/;"	m	struct:__anon2
+num_kgrams	ngram.h	/^  int            *num_kgrams;     \/* Array indicating how many $/;"	m	struct:__anon7
+num_of_types	num_of_types.c	/^unsigned short num_of_types(int k,$/;"	f
+oov_fraction	ngram.h	/^  double         oov_fraction;$/;"	m	struct:__anon7
+out_of_range_alphas	ngram.h	/^  unsigned short out_of_range_alphas;  \/* The maximum number of out of range $/;"	m	struct:__anon7
+parse_comline	parse_comline.c	/^void parse_comline(char *input_line,$/;"	f
+print	text2wfreq.c	/^void print( struct hash_table *table )$/;"	f
+printUsage	mergeidngram.c	/^void printUsage( char *name )$/;"	f
+print_chain	text2wfreq.c	/^void print_chain( struct node *t )$/;"	f
+prob_t	evallm.h	/^typedef float prob_t;$/;"	t
+probs	evallm.h	/^  prob_t         **probs;        \/* Pointer to array of probabilities *\/$/;"	m	struct:__anon2
+procComLine	mergeidngram.c	/^void procComLine( int *argc, char **argv ) $/;"	f
+ptr_tab_t	ngram.h	/^typedef int ptr_tab_t;$/;"	t
+ptr_table	evallm.h	/^  ptr_tab_t      **ptr_table;     \/* Pointer to the tables used for compact $/;"	m	struct:__anon2
+ptr_table	ngram.h	/^  ptr_tab_t      **ptr_table;     \/* Pointer to the tables used for compact $/;"	m	struct:__anon7
+ptr_table_size	evallm.h	/^  unsigned short *ptr_table_size; \/* Pointer to array of pointer tables *\/$/;"	m	struct:__anon2
+ptr_table_size	ngram.h	/^  unsigned short *ptr_table_size; \/* Pointer to array of pointer tables *\/$/;"	m	struct:__anon7
+return_count	counts.c	/^int return_count(flag four_byte_counts,$/;"	f
+short_alpha	two_byte_alphas.c	/^unsigned short short_alpha(double long_alpha,$/;"	f
+size	idngram.h	/^  int size;$/;"	m	struct:hash_table
+size	text2wfreq.c	/^  int size;$/;"	m	struct:hash_table	file:
+size_of_alpha_array	ngram.h	/^  unsigned short size_of_alpha_array;$/;"	m	struct:__anon7
+sort_alpha	wfreq2vocab.c	/^int sort_alpha(const void *rec1,const void *rec2) {$/;"	f
+sort_by_count	wfreq2vocab.c	/^int sort_by_count(const void *rec1,const void *rec2) {$/;"	f
+store_count	counts.c	/^void store_count(flag four_byte_counts,$/;"	f
+table_size_t	ngram.h	/^typedef int table_size_t;$/;"	t
+table_sizes	evallm.h	/^  table_size_t   *table_sizes;   \/* Pointer to table size array *\/$/;"	m	struct:__anon2
+table_sizes	ngram.h	/^  table_size_t   *table_sizes;   \/* Pointer to table size array *\/$/;"	m	struct:__anon7
+uni_log_probs	ngram.h	/^  uni_probs_t    *uni_log_probs;         \/* Log probs for each unigram *\/$/;"	m	struct:__anon7
+uni_probs	ngram.h	/^  uni_probs_t    *uni_probs;             \/* Probs for each unigram *\/$/;"	m	struct:__anon7
+uni_probs_t	ngram.h	/^typedef double uni_probs_t;$/;"	t
+update	text2wfreq.c	/^void update( struct hash_table *table, char *key, int verbosity )$/;"	f
+updateArgs	interpolate.c	/^void updateArgs( int *pargc, char **argv, int rm_cnt )$/;"	f
+updateArgs	mergeidngram.c	/^void updateArgs( int *pargc, char **argv, int rm_cnt )$/;"	f
+update_chain	idngram.h	/^int update_chain( struct node *t, char *key ,unsigned short ind)$/;"	f
+update_chain	text2wfreq.c	/^int update_chain( struct node *t, char *key )$/;"	f
+validate	validate.c	/^void validate(ng_t *ng,$/;"	f
+version	ngram.h	/^  int            version;$/;"	m	struct:__anon7
+vocab	evallm.h	/^  char           **vocab;        \/* Array of vocabulary words *\/$/;"	m	struct:__anon2
+vocab	ngram.h	/^  char           **vocab;        \/* Array of vocabulary words *\/$/;"	m	struct:__anon7
+vocab_filename	ngram.h	/^  char           *vocab_filename;    \/* The filename of the vocabulary file *\/$/;"	m	struct:__anon7
+vocab_ht	evallm.h	/^  sih_t          *vocab_ht;      \/* Vocabulary hash table *\/$/;"	m	struct:__anon2
+vocab_ht	ngram.h	/^  sih_t          *vocab_ht;      \/* Vocabulary hash table *\/$/;"	m	struct:__anon7
+vocab_size	evallm.h	/^  unsigned short vocab_size;     \/* Vocabulary size *\/$/;"	m	struct:__anon2
+vocab_size	ngram.h	/^  unsigned short vocab_size;     \/* Vocabulary size *\/$/;"	m	struct:__anon7
+vocab_type	evallm.h	/^  unsigned short vocab_type;      \/* see #define stuff at the top *\/$/;"	m	struct:__anon2
+vocab_type	ngram.h	/^  unsigned short vocab_type;      \/* see #define stuff at the top *\/$/;"	m	struct:__anon7
+word	idngram.h	/^  char *word;$/;"	m	struct:node
+word	text2wfreq.c	/^  char *word;$/;"	m	struct:node	file:
+word	wfreq2vocab.c	/^  char *word;$/;"	m	struct:__anon8	file:
+word	wngram2idngram.c	/^  unsigned short *word;$/;"	m	struct:__anon9	file:
+word_id	evallm.h	/^  id__t          **word_id;      \/* Pointer to array of id lists *\/$/;"	m	struct:__anon2
+word_id	ngram.h	/^  id__t          **word_id;      \/* Pointer to array of id lists *\/$/;"	m	struct:__anon7
+word_rec	wfreq2vocab.c	/^} word_rec;$/;"	t	typeref:struct:__anon8	file:
+write_arpa	ngram.h	/^  flag           write_arpa;      \/* True if the language model is to be $/;"	m	struct:__anon7
+write_arpa_lm	write_lms.c	/^void write_arpa_lm(ng_t *ng,int verbosity) {$/;"	f
+write_bin	ngram.h	/^  flag           write_bin;       \/* True if the language model is to be $/;"	m	struct:__anon7
+write_bin_lm	write_lms.c	/^void write_bin_lm(ng_t *ng,int verbosity) {$/;"	f
+write_ngram	mergeidngram.c	/^void write_ngram( FILE *id_ngram_fp, ngram *ng, flag ascii )$/;"	f
+zeroton_fraction	ngram.h	/^  double         zeroton_fraction; \/* cap on prob(zeroton) as fraction of $/;"	m	struct:__anon7

@@ -6,7 +6,7 @@ from argparse import ArgumentParser
 import numpy as np
 
 global_analysis_get_initial_segments = None
-global_analysis_set_nonspeech_proportion = None
+global_analysis_final = None
 
 def mean(l):
   if len(l) > 0:
@@ -19,6 +19,7 @@ class Analysis:
     self.type_counts = [ [[] for j in range(0,9)] for i in range(0,3)]
     self.state_count = [ [] for i in range(0,9) ]
     self.markers = [ [] for i in range(0,9) ]
+    self.phones = [ [] for i in range(0,9) ]
     self.min_length = [0] * 9
     self.max_length = [0] * 9
     self.mean_length = [0] * 9
@@ -32,6 +33,7 @@ class Analysis:
   def add(self, a):
     for i in range(0,9):
       self.confusion_matrix[i] += a.confusion_matrix[i]
+      self.state_count[i] += a.state_count[i]
 
   def write_confusion_matrix(self, write_hours = False, file_handle = sys.stderr):
     sys.stderr.write("Total counts: \n")
@@ -128,7 +130,10 @@ class Analysis:
   def write_markers(self, file_handle = sys.stderr):
     file_handle.write("Start frames of different segments:\n")
     for j in range(0,9):
-      file_handle.write("File %s: %s : Markers: Type %d: %s\n" % (self.file_id, self.prefix, j,  str(sorted([str(self.markers[j][i])+' ('+ str(self.state_count[j][i])+')' for i in range(0, len(self.state_count[j]))],key=lambda x:int(x.split()[0])))))
+      if self.phones[j] == []:
+        file_handle.write("File %s: %s : Markers: Type %d: %s\n" % (self.file_id, self.prefix, j,  str(sorted([str(self.markers[j][i])+' ('+ str(self.state_count[j][i])+ ')' for i in range(0, len(self.state_count[j]))],key=lambda x:int(x.split()[0])))))
+      else:
+        file_handle.write("File %s: %s : Markers: Type %d: %s\n" % (self.file_id, self.prefix, j,  str(sorted([str(self.markers[j][i])+' ('+ str(self.state_count[j][i])+') ( ' + str(self.phones[j][i]) + ')' for i in range(0, len(self.state_count[j]))],key=lambda x:int(x.split()[0])))))
 
 
 def read_rttm_file(rttm_file, temp_dir, frame_shift):
@@ -231,14 +236,16 @@ class Timer:
     self.interval = self.end - self.start
 
 class JointResegmenter:
-  def __init__(self, A, f, options, stats = None, reference = None):
-    self.B = [ i for i in A ]
-    self.A = A
-    self.file_id = f
+  def __init__(self, P, A, f, options, phone_map, stats = None, reference = None):
+    self.P = P                    # Predicted phones
+    self.B = [ i for i in A ]     # Original predicted classes
+    self.A = A                    # Predicted classes
+    self.file_id = f              # File name
     self.N = len(A)
-    self.S = [False] * self.N
-    self.E = [False] * (self.N+1)
+    self.S = [False] * self.N     # Start boundary markers
+    self.E = [False] * (self.N+1) # End boundary markers
 
+    self.phone_map = phone_map
     self.options = options
 
     self.max_frames = int(options.max_segment_length / options.frame_shift)
@@ -315,7 +322,7 @@ class JointResegmenter:
       # This is the typical one with augmented training setup
       self.remove_silence_only_segments()
 
-    if self.options.verbose > 0:
+    if self.options.verbose > 1:
       sys.stderr.write("For file %s\n" % self.file_id)
       self.stats.print_stats()
       sys.stderr.write("\n")
@@ -357,7 +364,7 @@ class JointResegmenter:
     a = Analysis(self.file_id, self.frame_shift,"Analysis after get_initial_segments")
 
     if self.reference != None:
-      count = 1
+      count = 0
       for i in range(0,self.N):
         if   self.reference[i] == "0" and self.A[i] in self.THIS_SILENCE:
           C[i] = "0"
@@ -380,6 +387,7 @@ class JointResegmenter:
         if i > 0 and C[i-1] != C[i]:
           a.state_count[int(C[i-1])].append(count)
           a.markers[int(C[i-1])].append(i - count)
+          a.phones[int(C[i-1])].append(' '.join(set(self.P[i-count:i])))
           count = 1
         else:
           count += 1
@@ -389,10 +397,10 @@ class JointResegmenter:
 
       global_analysis_get_initial_segments.add(a)
 
-      if self.reference != None and self.options.verbose > 1:
+      if self.reference != None and self.options.verbose > 0:
         a.write_confusion_matrix()
         a.write_length_stats()
-        if self.reference != None and self.options.verbose > 2:
+        if self.reference != None and self.options.verbose > 1:
           a.write_markers()
 
   def set_nonspeech_proportion(self):
@@ -515,15 +523,14 @@ class JointResegmenter:
         else:
           count += 1
 
-      global_analysis_set_nonspeech_proportion.add(a)
 
-      if self.reference != None and self.options.verbose > 0:
+      if self.reference != None and self.options.verbose > 3:
         for j in range(0,9):
           a.confusion_matrix[j] = sum([C[i] == str(j) for i in range(0,self.N)])
         a.write_confusion_matrix()
-        if self.reference != None and self.options.verbose > 1:
+        if self.reference != None and self.options.verbose > 4:
           a.write_length_stats()
-        if self.reference != None and self.options.verbose > 2:
+        if self.reference != None and self.options.verbose > 4:
           a.write_markers()
 
 
@@ -534,7 +541,7 @@ class JointResegmenter:
     segment_ends = [i for i, val in enumerate(self.E) if val]
     assert (sum(self.S) == sum(self.E))
 
-    if self.options.verbose > 0:
+    if self.options.verbose > 3:
       sys.stderr.write("Length of segment starts before non-speech adding: %d\n" % len(segment_starts))
 
     if self.min_inter_utt_nonspeech_length > 0.0:
@@ -544,7 +551,7 @@ class JointResegmenter:
       segment_ends= list(set([0] + segment_starts + segment_ends + [self.N]))
       segment_ends.sort()
       segment_ends.pop(0)
-      if self.options.verbose > 0:
+      if self.options.verbose > 3:
         sys.stderr.write("Length of segment starts after non-speech adding: %d\n" % len(segment_starts))
       for i in segment_starts:
         self.S[i] = True
@@ -624,6 +631,7 @@ class JointResegmenter:
         p -= 1
         # End if
       # End while loop
+      p_left = p
       segment_length += b[0] - p
 
       # Count the number of frames in the segment to the
@@ -636,6 +644,7 @@ class JointResegmenter:
       assert (self.min_inter_utt_nonspeech_length == 0 or p == self.N or self.S[p] or self.A[p] in self.THIS_SILENCE_OR_NOISE)
 
       if self.min_inter_utt_nonspeech_length > 0 and self.A[b[0]] in self.THIS_SILENCE_OR_NOISE:
+        assert(b[2] == 6 or b[2] == 7)
         if (p - b[0]) > self.min_inter_utt_nonspeech_length:
           # This is a non-speech segment that is longer than the minimum
           # inter-utterance non-speech length.
@@ -680,6 +689,20 @@ class JointResegmenter:
           self.S[b[0]] = False
           self.E[b[0]] = False
           continue
+        else:
+          # The merged segment length is longer than max_frames.
+          # Therefore treat this non-speech as inter-utterance non-speech and
+          # remove it from the segments
+          self.S[b[0]] = False
+          self.E[p_temp] = False
+          continue
+        # End if
+      elif self.min_inter_utt_nonspeech_length > 0 and (b[2] == 8 or b[2] == 9):
+        assert(p_left == 0)
+        if b[0] - p_left > self.min_inter_utt_nonspeech_length:
+          self.S[p_left] = False
+          self.E[b[0]] = False
+          continue
         # End if
       # End if
       segment_length += p - b[0]
@@ -693,15 +716,15 @@ class JointResegmenter:
 
     assert (sum(self.S) == sum(self.E))
 
-    if self.reference != None and self.options.verbose > 0:
+    if self.reference != None and self.options.verbose > 3:
       a = self.segmentation_analysis("Analysis after merge_segments")
       a.write_confusion_matrix()
 
-      if self.reference != None and self.options.verbose > 1:
+      if self.reference != None and self.options.verbose > 4:
         a.write_type_stats()
       # End if
 
-      if self.reference != None and self.options.verbose > 2:
+      if self.reference != None and self.options.verbose > 4:
         a.write_markers()
       # End if
     # End if
@@ -769,15 +792,15 @@ class JointResegmenter:
           # already processed
           n = p - 1
         # End if
-    if self.reference != None and self.options.verbose > 0:
+    if self.reference != None and self.options.verbose > 3:
       a = self.segmentation_analysis("Analysis after remove_silence_only_segments")
       a.write_confusion_matrix()
 
-      if self.reference != None and self.options.verbose > 1:
+      if self.reference != None and self.options.verbose > 4:
         a.write_type_stats()
       # End if
 
-      if self.reference != None and self.options.verbose > 2:
+      if self.reference != None and self.options.verbose > 4:
         a.write_markers()
       # End if
     # End if
@@ -807,15 +830,15 @@ class JointResegmenter:
       # End if
     # End for loop over frames
 
-    if self.reference != None and self.options.verbose > 0:
+    if self.reference != None and self.options.verbose > 3:
       a = self.segmentation_analysis("Analysis after remove_noise_only_segments")
       a.write_confusion_matrix()
 
-      if self.reference != None and self.options.verbose > 1:
+      if self.reference != None and self.options.verbose > 4:
         a.write_type_stats()
       # End if
 
-      if self.reference != None and self.options.verbose > 2:
+      if self.reference != None and self.options.verbose > 4:
         a.write_markers()
       # End if
     # End if
@@ -871,9 +894,57 @@ class JointResegmenter:
         else:
           n = p
       n += 1
+
     if len(segments) == 0:
       sys.stderr.write("%s: Warning: no segments for recording %s\n" % (sys.argv[0], self.file_id))
       sys.exit(1)
+
+    ###########################################################################
+    self.C = ["0"] * self.N
+    C = self.C
+    a = Analysis(self.file_id, self.frame_shift,"Analysis final")
+
+    if self.reference != None:
+      count = 0
+      in_seg = False
+      for i in range(0,self.N):
+        if in_seg and self.E[i]:
+          in_seg = False
+        if i == 0 and self.S[i]:
+          in_seg = True
+        if not in_seg and self.S[i]:
+          in_seg = True
+        if   self.reference[i] == "0" and not in_seg:
+          C[i] = "0"
+        elif self.reference[i] == "0" and in_seg:
+          C[i] = "2"
+        elif self.reference[i] == "1" and not in_seg:
+          C[i] = "3"
+        elif self.reference[i] == "1" and in_seg:
+          C[i] = "5"
+        elif self.reference[i] == "2" and not in_seg:
+          C[i] = "6"
+        elif self.reference[i] == "2" and in_seg:
+          C[i] = "8"
+        if i > 0 and C[i-1] != C[i]:
+          a.state_count[int(C[i-1])].append(count)
+          a.markers[int(C[i-1])].append(i - count)
+          a.phones[int(C[i-1])].append(' '.join(set(self.P[i-count:i])))
+          count = 1
+        else:
+          count += 1
+
+      for j in range(0,9):
+        a.confusion_matrix[j] = sum([C[i] == str(j) for i in range(0,self.N)])
+
+      if self.options.verbose > 0:
+        a.write_confusion_matrix()
+        a.write_length_stats()
+        if self.options.verbose > 1:
+          a.write_markers()
+
+      global_analysis_final.add(a)
+    ##########################################################################
 
     # we'll be printing the times out in hundredths of a second (regardless of the
     # value of $frame_shift), and first need to know how many digits we need (we'll be
@@ -1036,7 +1107,9 @@ def main():
   parser.add_argument('--reference-rttm', dest='reference_rttm', \
       help="RTTM file to compare and get statistics\n")
   parser.add_argument('prediction_dir', \
-      help='Directory where the predicted classes (.pred files) are found')
+      help='Directory where the predicted phones (.pred files) are found')
+  parser.add_argument('phone_map', \
+      help='Phone Map file that maps from phones to classes')
   options = parser.parse_args()
 
   sys.stderr.write(' '.join(sys.argv) + "\n")
@@ -1049,6 +1122,15 @@ def main():
   if not ( options.remove_noise_only_segments == "false" or options.remove_noise_only_segments == "true" ):
     sys.stderr.write("%s: Error: Invalid value for remove-noise-only segments %s. Must be true or false.\n" \
         % options.remove_noise_only_segments)
+    sys.exit(1)
+
+  phone_map = {}
+  try:
+    for line in open(options.phone_map).readlines():
+      phone, cls = line.strip().split()
+      phone_map[phone] = cls
+  except IOError as e:
+    repr(e)
     sys.exit(1)
 
   prediction_dir = options.prediction_dir
@@ -1070,8 +1152,8 @@ def main():
   global global_analysis_get_initial_segments
   global_analysis_get_initial_segments = Analysis("TOTAL_Get_Initial_Segments", options.frame_shift, "Global Analysis after get_initial_segments")
 
-  global global_analysis_set_nonspeech_proportion
-  global_analysis_set_nonspeech_proportion = Analysis("TOTAL_Set_NonSpeech_Proportion", options.frame_shift, "Global Analysis after set_nonspeech_proportion")
+  global global_analysis_final
+  global_analysis_final= Analysis("TOTAL_Final", options.frame_shift, "Global Analysis Final")
 
   for f in pred_files:
     if pred_files[f]:
@@ -1098,12 +1180,12 @@ def main():
         sys.stderr.write("Incorrect format of file %s/%s.pred\n" % (prediction_dir, f))
         sys.exit(1)
       B = []
-      for i in A:
-        if i == "0":
+      for x in A:
+        if phone_map[x] == "0":
           B.append("0")
-        elif i == "1":
+        elif phone_map[x] == "1":
           B.append("4")
-        elif i == "2":
+        elif phone_map[x] == "2":
           B.append("8")
 
       if temp_dir != None:
@@ -1113,7 +1195,7 @@ def main():
           reference = None
       else:
         reference = None
-      r = JointResegmenter(B, f, options, stats, reference)
+      r = JointResegmenter(A, B, f, options, phone_map, stats, reference)
       r.resegment()
       r.print_segments()
     else:
@@ -1148,57 +1230,57 @@ def main():
             "%s: Warning: Lengths of %s and %s differ by more than %f. " \
             % (sys.argv[0], f1,f2, options.max_length_diff) \
             + "So using isolated resegmentation\n")
-        for i in A1:
-          if i == "0":
+        for x in A1:
+          if phone_map[x] == "0":
             B1.append("0")
-          elif i == "1":
+          elif phone_map[x] == "1":
             B1.append("4")
-          elif i == "2":
+          elif phone_map[x] == "2":
             B1.append("8")
-        for i in A2:
-          if i == "0":
+        for x in A2:
+          if phone_map[x] == "0":
             B2.append("0")
-          elif i == "1":
+          elif phone_map[x] == "1":
             B2.append("4")
-          elif i == "2":
+          elif phone_map[x] == "2":
             B2.append("8")
       else:
         for i in range(0, len(A2)):
-          if A1[i] == "0" and A2[i] == "0":
+          if phone_map[A1[i]] == "0" and phone_map[A2[i]] == "0":
             B1.append("0")
             B2.append("0")
-          if A1[i] == "0" and A2[i] == "1":
+          if phone_map[A1[i]] == "0" and phone_map[A2[i]] == "1":
             B1.append("1")
             B2.append("3")
-          if A1[i] == "0" and A2[i] == "2":
+          if phone_map[A1[i]] == "0" and phone_map[A2[i]] == "2":
             B1.append("2")
             B2.append("6")
-          if A1[i] == "1" and A2[i] == "0":
+          if phone_map[A1[i]] == "1" and phone_map[A2[i]] == "0":
             B1.append("3")
             B2.append("1")
-          if A1[i] == "1" and A2[i] == "1":
+          if phone_map[A1[i]] == "1" and phone_map[A2[i]] == "1":
             B1.append("4")
             B2.append("4")
-          if A1[i] == "1" and A2[i] == "2":
+          if phone_map[A1[i]] == "1" and phone_map[A2[i]] == "2":
             B1.append("5")
             B2.append("7")
-          if A1[i] == "2" and A2[i] == "0":
+          if phone_map[A1[i]] == "2" and phone_map[A2[i]] == "0":
             B1.append("6")
             B2.append("2")
-          if A1[i] == "2" and A2[i] == "1":
+          if phone_map[A1[i]] == "2" and phone_map[A2[i]] == "1":
             B1.append("7")
             B2.append("5")
-          if A1[i] == "2" and A2[i] == "2":
+          if phone_map[A1[i]] == "2" and phone_map[A2[i]] == "2":
             B1.append("8")
             B2.append("8")
         for i in range(len(A2), len(A1)):
-          if A1[i] == "0":
+          if phone_map[A1[i]] == "0":
             B1.append("0")
             B2.append("0")
-          if A1[i] == "1":
+          if phone_map[A1[i]] == "1":
             B1.append("3")
             B2.append("1")
-          if A1[i] == "2":
+          if phone_map[A1[i]] == "2":
             B1.append("6")
             B2.append("2")
 
@@ -1209,7 +1291,7 @@ def main():
           reference1 = None
       else:
         reference1 = None
-      r1 = JointResegmenter(B1, f1, options, stats, reference1)
+      r1 = JointResegmenter(A1, B1, f1, options, phone_map, stats, reference1)
       r1.resegment()
       r1.print_segments()
 
@@ -1220,7 +1302,7 @@ def main():
           reference2= None
       else:
         reference2 = None
-      r2 = JointResegmenter(B2, f2, options, stats, reference2)
+      r2 = JointResegmenter(A1, B2, f2, options, phone_map, stats, reference2)
       r2.resegment()
       r2.restrict(len(A2))
       r2.print_segments()
@@ -1230,8 +1312,10 @@ def main():
   if options.reference_rttm != None:
     global_analysis_get_initial_segments.write_confusion_matrix(True)
     global_analysis_get_initial_segments.write_total_stats(True)
-    #global_analysis_set_nonspeech_proportion.write_confusion_matrix(True)
-    #global_analysis_set_nonspeech_proportion.write_total_stats(True)
+    global_analysis_get_initial_segments.write_length_stats()
+    global_analysis_final.write_confusion_matrix(True)
+    global_analysis_final.write_total_stats(True)
+    global_analysis_final.write_length_stats()
 
 if __name__ == '__main__':
   main()

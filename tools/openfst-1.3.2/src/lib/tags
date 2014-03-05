@@ -1,0 +1,128 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AddSymbol	symbol-table.cc	/^int64 SymbolTableImpl::AddSymbol(const string& symbol, int64 key) {$/;"	f	class:fst::SymbolTableImpl
+AddTable	symbol-table.cc	/^void SymbolTable::AddTable(const SymbolTable& table) {$/;"	f	class:fst::SymbolTable
+AlignInput	util.cc	/^bool AlignInput(istream &strm, int align) {$/;"	f	namespace:fst
+AlignOutput	util.cc	/^bool AlignOutput(ostream &strm, int align) {$/;"	f	namespace:fst
+ClosureProperties	properties.cc	/^uint64 ClosureProperties(uint64 inprops, bool star, bool delayed) {$/;"	f	namespace:fst
+CompactFst_LogArc_AcceptorCompactor_registerer	fst.cc	/^CompactFst_LogArc_AcceptorCompactor_registerer;$/;"	m	namespace:fst	file:
+CompactFst_LogArc_StringCompactor_registerer	fst.cc	/^CompactFst_LogArc_StringCompactor_registerer;$/;"	m	namespace:fst	file:
+CompactFst_LogArc_UnweightedAcceptorCompactor_registerer	fst.cc	/^CompactFst_LogArc_UnweightedAcceptorCompactor_registerer;$/;"	m	namespace:fst	file:
+CompactFst_LogArc_UnweightedCompactor_registerer	fst.cc	/^CompactFst_LogArc_UnweightedCompactor_registerer;$/;"	m	namespace:fst	file:
+CompactFst_LogArc_WeightedStringCompactor_registerer	fst.cc	/^CompactFst_LogArc_WeightedStringCompactor_registerer;$/;"	m	namespace:fst	file:
+CompactFst_StdArc_AcceptorCompactor_registerer	fst.cc	/^CompactFst_StdArc_AcceptorCompactor_registerer;$/;"	m	namespace:fst	file:
+CompactFst_StdArc_StringCompactor_registerer	fst.cc	/^CompactFst_StdArc_StringCompactor_registerer;$/;"	m	namespace:fst	file:
+CompactFst_StdArc_UnweightedAcceptorCompactor_registerer	fst.cc	/^CompactFst_StdArc_UnweightedAcceptorCompactor_registerer;$/;"	m	namespace:fst	file:
+CompactFst_StdArc_UnweightedCompactor_registerer	fst.cc	/^CompactFst_StdArc_UnweightedCompactor_registerer;$/;"	m	namespace:fst	file:
+CompactFst_StdArc_WeightedStringCompactor_registerer	fst.cc	/^CompactFst_StdArc_WeightedStringCompactor_registerer;$/;"	m	namespace:fst	file:
+CompactSymbolTable	symbol-table-ops.cc	/^SymbolTable *CompactSymbolTable(const SymbolTable &syms) {$/;"	f	namespace:fst
+ComplementProperties	properties.cc	/^uint64 ComplementProperties(uint64 inprops) {$/;"	f	namespace:fst
+ComposeProperties	properties.cc	/^uint64 ComposeProperties(uint64 inprops1, uint64 inprops2) {$/;"	f	namespace:fst
+ConcatProperties	properties.cc	/^uint64 ConcatProperties(uint64 inprops1, uint64 inprops2, bool delayed) {$/;"	f	namespace:fst
+ConvertToLegalCSymbol	util.cc	/^void ConvertToLegalCSymbol(string *s) {$/;"	f	namespace:fst
+DeterminizeProperties	properties.cc	/^uint64 DeterminizeProperties(uint64 inprops, bool has_subsequential_label) {$/;"	f	namespace:fst
+FactorWeightProperties	properties.cc	/^uint64 FactorWeightProperties(uint64 inprops) {$/;"	f	namespace:fst
+FailedNewHandler	compat.cc	/^void FailedNewHandler() {$/;"	f
+FstReadSymbols	symbol-table-ops.cc	/^SymbolTable *FstReadSymbols(const string &filename, bool input_symbols) {$/;"	f	namespace:fst
+Int64ToStr	util.cc	/^void Int64ToStr(int64 n, string *s) {$/;"	f	namespace:fst
+InvertProperties	properties.cc	/^uint64 InvertProperties(uint64 inprops) {$/;"	f	namespace:fst
+IsFstHeader	fst.cc	/^bool IsFstHeader(istream &strm, const string &source) {$/;"	f	namespace:fst
+IsInRange	symbol-table.cc	/^static bool IsInRange(const vector<pair<int64, int64> >& ranges,$/;"	f	namespace:fst
+MaybeRecomputeCheckSum	symbol-table.cc	/^void SymbolTableImpl::MaybeRecomputeCheckSum() const {$/;"	f	class:fst::SymbolTableImpl
+MergeSymbolTable	symbol-table-ops.cc	/^SymbolTable *MergeSymbolTable(const SymbolTable &left, const SymbolTable &right,$/;"	f	namespace:fst
+ProjectProperties	properties.cc	/^uint64 ProjectProperties(uint64 inprops, bool project_input) {$/;"	f	namespace:fst
+PropertyNames	properties.cc	/^const char *PropertyNames[] = {$/;"	m	namespace:fst	file:
+RandGenProperties	properties.cc	/^uint64 RandGenProperties(uint64 inprops, bool weighted) {$/;"	f	namespace:fst
+Read	fst.cc	/^bool FstHeader::Read(istream &strm, const string &source, bool rewind) {$/;"	f	class:fst::FstHeader
+Read	symbol-table.cc	/^SymbolTableImpl* SymbolTableImpl::Read(istream &strm,$/;"	f	class:fst::SymbolTableImpl
+ReadText	symbol-table.cc	/^SymbolTableImpl* SymbolTableImpl::ReadText(istream &strm,$/;"	f	class:fst::SymbolTableImpl
+RelabelProperties	properties.cc	/^uint64 RelabelProperties(uint64 inprops) {$/;"	f	namespace:fst
+ReplaceProperties	properties.cc	/^uint64 ReplaceProperties(const vector<uint64>& inprops,$/;"	f	namespace:fst
+ReverseProperties	properties.cc	/^uint64 ReverseProperties(uint64 inprops) {$/;"	f	namespace:fst
+ReweightProperties	properties.cc	/^uint64 ReweightProperties(uint64 inprops) {$/;"	f	namespace:fst
+RmEpsilonProperties	properties.cc	/^uint64 RmEpsilonProperties(uint64 inprops, bool delayed) {$/;"	f	namespace:fst
+SetFlags	flags.cc	/^void SetFlags(const char *usage, int *argc, char ***argv,$/;"	f
+ShortestPathProperties	properties.cc	/^uint64 ShortestPathProperties(uint64 props) {$/;"	f	namespace:fst
+ShowUsage	flags.cc	/^void ShowUsage(bool long_usage) {$/;"	f
+ShowUsageRestrict	flags.cc	/^ShowUsageRestrict(const std::set< pair<string, string> > &usage_set,$/;"	f	file:
+SplitToVector	compat.cc	/^void SplitToVector(char* full, const char* delim, vector<char*>* vec,$/;"	f	namespace:fst
+StrToInt64	util.cc	/^int64 StrToInt64(const string &s, const string &src, size_t nline,$/;"	f	namespace:fst
+SynchronizeProperties	properties.cc	/^uint64 SynchronizeProperties(uint64 inprops) {$/;"	f	namespace:fst
+UnionProperties	properties.cc	/^uint64 UnionProperties(uint64 inprops1, uint64 inprops2, bool delayed) {$/;"	f	namespace:fst
+Write	fst.cc	/^bool FstHeader::Write(ostream &strm, const string &source) const {$/;"	f	class:fst::FstHeader
+Write	symbol-table.cc	/^bool SymbolTableImpl::Write(ostream &strm) const {$/;"	f	class:fst::SymbolTableImpl
+WriteText	symbol-table.cc	/^bool SymbolTable::WriteText(ostream &strm) const {$/;"	f	class:fst::SymbolTable
+arc_lookahead_fst_type	fst.cc	/^extern const char arc_lookahead_fst_type[] = "arc_lookahead";$/;"	m	namespace:fst	file:
+flag_usage	flags.cc	/^static string flag_usage;$/;"	v	file:
+fst	compat.cc	/^namespace fst {$/;"	n	file:
+fst	fst.cc	/^namespace fst {$/;"	n	file:
+fst	properties.cc	/^namespace fst {$/;"	n	file:
+fst	symbol-table-ops.cc	/^namespace fst {$/;"	n	file:
+fst	symbol-table.cc	/^namespace fst {$/;"	n	file:
+fst	util.cc	/^namespace fst {$/;"	n	file:
+fst::AlignInput	util.cc	/^bool AlignInput(istream &strm, int align) {$/;"	f	namespace:fst
+fst::AlignOutput	util.cc	/^bool AlignOutput(ostream &strm, int align) {$/;"	f	namespace:fst
+fst::ClosureProperties	properties.cc	/^uint64 ClosureProperties(uint64 inprops, bool star, bool delayed) {$/;"	f	namespace:fst
+fst::CompactFst_LogArc_AcceptorCompactor_registerer	fst.cc	/^CompactFst_LogArc_AcceptorCompactor_registerer;$/;"	m	namespace:fst	file:
+fst::CompactFst_LogArc_StringCompactor_registerer	fst.cc	/^CompactFst_LogArc_StringCompactor_registerer;$/;"	m	namespace:fst	file:
+fst::CompactFst_LogArc_UnweightedAcceptorCompactor_registerer	fst.cc	/^CompactFst_LogArc_UnweightedAcceptorCompactor_registerer;$/;"	m	namespace:fst	file:
+fst::CompactFst_LogArc_UnweightedCompactor_registerer	fst.cc	/^CompactFst_LogArc_UnweightedCompactor_registerer;$/;"	m	namespace:fst	file:
+fst::CompactFst_LogArc_WeightedStringCompactor_registerer	fst.cc	/^CompactFst_LogArc_WeightedStringCompactor_registerer;$/;"	m	namespace:fst	file:
+fst::CompactFst_StdArc_AcceptorCompactor_registerer	fst.cc	/^CompactFst_StdArc_AcceptorCompactor_registerer;$/;"	m	namespace:fst	file:
+fst::CompactFst_StdArc_StringCompactor_registerer	fst.cc	/^CompactFst_StdArc_StringCompactor_registerer;$/;"	m	namespace:fst	file:
+fst::CompactFst_StdArc_UnweightedAcceptorCompactor_registerer	fst.cc	/^CompactFst_StdArc_UnweightedAcceptorCompactor_registerer;$/;"	m	namespace:fst	file:
+fst::CompactFst_StdArc_UnweightedCompactor_registerer	fst.cc	/^CompactFst_StdArc_UnweightedCompactor_registerer;$/;"	m	namespace:fst	file:
+fst::CompactFst_StdArc_WeightedStringCompactor_registerer	fst.cc	/^CompactFst_StdArc_WeightedStringCompactor_registerer;$/;"	m	namespace:fst	file:
+fst::CompactSymbolTable	symbol-table-ops.cc	/^SymbolTable *CompactSymbolTable(const SymbolTable &syms) {$/;"	f	namespace:fst
+fst::ComplementProperties	properties.cc	/^uint64 ComplementProperties(uint64 inprops) {$/;"	f	namespace:fst
+fst::ComposeProperties	properties.cc	/^uint64 ComposeProperties(uint64 inprops1, uint64 inprops2) {$/;"	f	namespace:fst
+fst::ConcatProperties	properties.cc	/^uint64 ConcatProperties(uint64 inprops1, uint64 inprops2, bool delayed) {$/;"	f	namespace:fst
+fst::ConvertToLegalCSymbol	util.cc	/^void ConvertToLegalCSymbol(string *s) {$/;"	f	namespace:fst
+fst::DeterminizeProperties	properties.cc	/^uint64 DeterminizeProperties(uint64 inprops, bool has_subsequential_label) {$/;"	f	namespace:fst
+fst::FactorWeightProperties	properties.cc	/^uint64 FactorWeightProperties(uint64 inprops) {$/;"	f	namespace:fst
+fst::FstHeader::Read	fst.cc	/^bool FstHeader::Read(istream &strm, const string &source, bool rewind) {$/;"	f	class:fst::FstHeader
+fst::FstHeader::Write	fst.cc	/^bool FstHeader::Write(ostream &strm, const string &source) const {$/;"	f	class:fst::FstHeader
+fst::FstReadSymbols	symbol-table-ops.cc	/^SymbolTable *FstReadSymbols(const string &filename, bool input_symbols) {$/;"	f	namespace:fst
+fst::Int64ToStr	util.cc	/^void Int64ToStr(int64 n, string *s) {$/;"	f	namespace:fst
+fst::InvertProperties	properties.cc	/^uint64 InvertProperties(uint64 inprops) {$/;"	f	namespace:fst
+fst::IsFstHeader	fst.cc	/^bool IsFstHeader(istream &strm, const string &source) {$/;"	f	namespace:fst
+fst::IsInRange	symbol-table.cc	/^static bool IsInRange(const vector<pair<int64, int64> >& ranges,$/;"	f	namespace:fst
+fst::MergeSymbolTable	symbol-table-ops.cc	/^SymbolTable *MergeSymbolTable(const SymbolTable &left, const SymbolTable &right,$/;"	f	namespace:fst
+fst::ProjectProperties	properties.cc	/^uint64 ProjectProperties(uint64 inprops, bool project_input) {$/;"	f	namespace:fst
+fst::PropertyNames	properties.cc	/^const char *PropertyNames[] = {$/;"	m	namespace:fst	file:
+fst::RandGenProperties	properties.cc	/^uint64 RandGenProperties(uint64 inprops, bool weighted) {$/;"	f	namespace:fst
+fst::RelabelProperties	properties.cc	/^uint64 RelabelProperties(uint64 inprops) {$/;"	f	namespace:fst
+fst::ReplaceProperties	properties.cc	/^uint64 ReplaceProperties(const vector<uint64>& inprops,$/;"	f	namespace:fst
+fst::ReverseProperties	properties.cc	/^uint64 ReverseProperties(uint64 inprops) {$/;"	f	namespace:fst
+fst::ReweightProperties	properties.cc	/^uint64 ReweightProperties(uint64 inprops) {$/;"	f	namespace:fst
+fst::RmEpsilonProperties	properties.cc	/^uint64 RmEpsilonProperties(uint64 inprops, bool delayed) {$/;"	f	namespace:fst
+fst::ShortestPathProperties	properties.cc	/^uint64 ShortestPathProperties(uint64 props) {$/;"	f	namespace:fst
+fst::SplitToVector	compat.cc	/^void SplitToVector(char* full, const char* delim, vector<char*>* vec,$/;"	f	namespace:fst
+fst::StrToInt64	util.cc	/^int64 StrToInt64(const string &s, const string &src, size_t nline,$/;"	f	namespace:fst
+fst::SymbolTable::AddTable	symbol-table.cc	/^void SymbolTable::AddTable(const SymbolTable& table) {$/;"	f	class:fst::SymbolTable
+fst::SymbolTable::WriteText	symbol-table.cc	/^bool SymbolTable::WriteText(ostream &strm) const {$/;"	f	class:fst::SymbolTable
+fst::SymbolTable::kNoSymbol	symbol-table.cc	/^const int64 SymbolTable::kNoSymbol;$/;"	m	class:fst::SymbolTable	file:
+fst::SymbolTableImpl::AddSymbol	symbol-table.cc	/^int64 SymbolTableImpl::AddSymbol(const string& symbol, int64 key) {$/;"	f	class:fst::SymbolTableImpl
+fst::SymbolTableImpl::MaybeRecomputeCheckSum	symbol-table.cc	/^void SymbolTableImpl::MaybeRecomputeCheckSum() const {$/;"	f	class:fst::SymbolTableImpl
+fst::SymbolTableImpl::Read	symbol-table.cc	/^SymbolTableImpl* SymbolTableImpl::Read(istream &strm,$/;"	f	class:fst::SymbolTableImpl
+fst::SymbolTableImpl::ReadText	symbol-table.cc	/^SymbolTableImpl* SymbolTableImpl::ReadText(istream &strm,$/;"	f	class:fst::SymbolTableImpl
+fst::SymbolTableImpl::Write	symbol-table.cc	/^bool SymbolTableImpl::Write(ostream &strm) const {$/;"	f	class:fst::SymbolTableImpl
+fst::SynchronizeProperties	properties.cc	/^uint64 SynchronizeProperties(uint64 inprops) {$/;"	f	namespace:fst
+fst::UnionProperties	properties.cc	/^uint64 UnionProperties(uint64 inprops1, uint64 inprops2, bool delayed) {$/;"	f	namespace:fst
+fst::arc_lookahead_fst_type	fst.cc	/^extern const char arc_lookahead_fst_type[] = "arc_lookahead";$/;"	m	namespace:fst	file:
+fst::ilabel_lookahead_fst_type	fst.cc	/^extern const char ilabel_lookahead_fst_type[] = "ilabel_lookahead";$/;"	m	namespace:fst	file:
+fst::kFstMagicNumber	fst.cc	/^static const int32 kFstMagicNumber = 2125659606;$/;"	m	namespace:fst	file:
+fst::kLineLen	symbol-table.cc	/^const int kLineLen = 8096;$/;"	m	namespace:fst	file:
+fst::kSymbolTableMagicNumber	symbol-table.cc	/^static const int32 kSymbolTableMagicNumber = 2125658996;$/;"	m	namespace:fst	file:
+fst::olabel_lookahead_fst_type	fst.cc	/^extern const char olabel_lookahead_fst_type[] = "olabel_lookahead";$/;"	m	namespace:fst	file:
+ilabel_lookahead_fst_type	fst.cc	/^extern const char ilabel_lookahead_fst_type[] = "ilabel_lookahead";$/;"	m	namespace:fst	file:
+kFstMagicNumber	fst.cc	/^static const int32 kFstMagicNumber = 2125659606;$/;"	m	namespace:fst	file:
+kLineLen	symbol-table.cc	/^const int kLineLen = 8096;$/;"	m	namespace:fst	file:
+kNoSymbol	symbol-table.cc	/^const int64 SymbolTable::kNoSymbol;$/;"	m	class:fst::SymbolTable	file:
+kSymbolTableMagicNumber	symbol-table.cc	/^static const int32 kSymbolTableMagicNumber = 2125658996;$/;"	m	namespace:fst	file:
+olabel_lookahead_fst_type	fst.cc	/^extern const char olabel_lookahead_fst_type[] = "olabel_lookahead";$/;"	m	namespace:fst	file:
+prog_src	flags.cc	/^static string prog_src;$/;"	v	file:

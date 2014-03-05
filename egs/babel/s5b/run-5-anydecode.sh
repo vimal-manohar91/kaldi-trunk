@@ -13,6 +13,7 @@ data_only=false
 fast_path=true
 skip_kws=false
 skip_stt=false
+skip_scoring=false
 max_states=150000
 wip=0.5
 fmllr_beam=10
@@ -308,44 +309,45 @@ if [ -f $decode/../.done ] && [ ! -f $decode/.done ]; then
   touch $decode/.done
 
   if ! $fast_path ; then
-    local/run_kws_stt_task.sh --cer $cer --max-states $max_states --skip-scoring $skip_scoring\
+    local/run_kws_stt_task.sh --cer $cer --max-states $max_states \
       --cmd "$decode_cmd" --skip-kws $skip_kws --skip-stt $skip_stt --wip $wip \
       "${shadow_set_extra_opts[@]}" "${lmwt_plp_extra_opts[@]}" \
       ${datadir} data/lang  exp/sgmm5/decode_fmllr_${dirid}
   fi
+fi
 
-  ####################################################################
-  ##
-  ## SGMM_MMI rescoring
-  ##
-  ####################################################################
+####################################################################
+##
+## SGMM_MMI rescoring
+##
+####################################################################
 
-  for iter in 1 2 3 4; do
+for iter in 1 2 3 4; do
     # Decode SGMM+MMI (via rescoring).
-    decode=exp/sgmm5_mmi_b0.1/decode_fmllr_${dirid}_it$iter
-    if [ ! -f $decode/.done ]; then
+  decode=exp/sgmm5_mmi_b0.1/decode_fmllr_${dirid}_it$iter
+  if [ ! -f $decode/.done ]; then
 
-      mkdir -p $decode
-      steps/decode_sgmm2_rescore.sh  --skip-scoring true \
-        --cmd "$decode_cmd" --iter $iter --transform-dir exp/tri5/decode_${dirid} \
-        data/lang ${datadir} exp/sgmm5/decode_fmllr_${dirid} $decode | tee ${decode}/decode.log
+    mkdir -p $decode
+    steps/decode_sgmm2_rescore.sh  --skip-scoring true \
+      --cmd "$decode_cmd" --iter $iter --transform-dir exp/tri5/decode_${dirid} \
+      data/lang ${datadir} exp/sgmm5/decode_fmllr_${dirid} $decode | tee ${decode}/decode.log
 
-      touch $decode/.done
-    fi
-  done
+    touch $decode/.done
+  fi
+done
 
   #We are done -- all lattices has been generated. We have to
   #a)Run MBR decoding
   #b)Run KW search
-  for iter in 1 2 3 4; do
+for iter in 1 2 3 4; do
     # Decode SGMM+MMI (via rescoring).
-    decode=exp/sgmm5_mmi_b0.1/decode_fmllr_${dirid}_it$iter
-    local/run_kws_stt_task.sh --cer $cer --max-states $max_states --skip-scoring $skip_scoring\
+  decode=exp/sgmm5_mmi_b0.1/decode_fmllr_${dirid}_it$iter
+  local/run_kws_stt_task.sh --cer $cer --max-states $max_states \
       --cmd "$decode_cmd" --skip-kws $skip_kws --skip-stt $skip_stt --wip $wip \
-      "${shadow_set_extra_opts[@]}" "${lmwt_plp_extra_opts[@]}" \
-      ${datadir} data/lang $decode
-  done
-fi
+    "${shadow_set_extra_opts[@]}" "${lmwt_plp_extra_opts[@]}" \
+    ${datadir} data/lang $decode
+done
+
 
 ####################################################################
 ##
@@ -356,7 +358,8 @@ decode=exp/tri6_nnet/decode_${dirid}
 if [ -f exp/tri6_nnet/.done ]; then
   if [ ! -f $decode/.done ]; then
     mkdir -p $decode
-    steps/nnet2/decode.sh --cmd "$decode_cmd" --nj $my_nj \
+    steps/nnet2/decode.sh \
+      --minimize $minimize --cmd "$decode_cmd" --nj $my_nj \
       --beam $dnn_beam --lat-beam $dnn_lat_beam \
       --skip-scoring true "${decode_extra_opts[@]}" \
       --transform-dir exp/tri5/decode_${dirid} \
@@ -380,7 +383,8 @@ if [ -f exp/tri6a_nnet/.done ]; then
   decode=exp/tri6a_nnet/decode_${dirid}
   if [ ! -f $decode/.done ]; then
     mkdir -p $decode
-    steps/nnet2/decode.sh --cmd "$decode_cmd" --nj $my_nj \
+    steps/nnet2/decode.sh \
+      --minimize $minimize --cmd "$decode_cmd" --nj $my_nj \
       --beam $dnn_beam --lat-beam $dnn_lat_beam \
       --skip-scoring true "${decode_extra_opts[@]}" \
       --transform-dir exp/tri5/decode_${dirid} \
@@ -389,7 +393,7 @@ if [ -f exp/tri6a_nnet/.done ]; then
     touch $decode/.done
   fi
 
-  local/run_kws_stt_task.sh --cer $cer --max-states $max_states --skip-scoring $skip_scoring\
+  local/run_kws_stt_task.sh --cer $cer --max-states $max_states \
     --cmd "$decode_cmd" --skip-kws $skip_kws --skip-stt $skip_stt --wip $wip \
     "${shadow_set_extra_opts[@]}" "${lmwt_dnn_extra_opts[@]}" \
     ${datadir} data/lang $decode
@@ -404,6 +408,25 @@ if [ -f exp/tri6b_nnet/.done ]; then
   decode=exp/tri6b_nnet/decode_${dirid}
   if [ ! -f $decode/.done ]; then
     mkdir -p $decode
+    steps/nnet2/decode.sh \
+      --minimize $minimize --cmd "$decode_cmd" --nj $my_nj \
+      --beam $dnn_beam --lat-beam $dnn_lat_beam \
+      --skip-scoring true "${decode_extra_opts[@]}" \
+      --transform-dir exp/tri5/decode_${dirid} \
+      exp/tri5/graph ${datadir} $decode | tee $decode/decode.log
+
+    touch $decode/.done
+  fi
+
+  local/run_kws_stt_task.sh --cer $cer --max-states $max_states \
+    --cmd "$decode_cmd" --skip-kws $skip_kws --skip-stt $skip_stt --wip $wip \
+    "${shadow_set_extra_opts[@]}" "${lmwt_dnn_extra_opts[@]}" \
+    ${datadir} data/lang $decode
+fi
+if [ -f exp/tri6_nnet_supervised_tuning/.done ]; then
+  decode=exp/tri6_nnet_supervised_tuning/decode_${dirid}
+  if [ ! -f $decode/.done ]; then
+    mkdir -p $decode
     steps/nnet2/decode.sh --cmd "$decode_cmd" --nj $my_nj \
       --beam $dnn_beam --lat-beam $dnn_lat_beam \
       --skip-scoring true "${decode_extra_opts[@]}" \
@@ -413,7 +436,7 @@ if [ -f exp/tri6b_nnet/.done ]; then
     touch $decode/.done
   fi
 
-  local/run_kws_stt_task.sh --cer $cer --max-states $max_states --skip-scoring $skip_scoring\
+  local/run_kws_stt_task.sh --cer $cer --max-states $max_states \
     --cmd "$decode_cmd" --skip-kws $skip_kws --skip-stt $skip_stt --wip $wip \
     "${shadow_set_extra_opts[@]}" "${lmwt_dnn_extra_opts[@]}" \
     ${datadir} data/lang $decode
@@ -437,24 +460,6 @@ if [ -f exp/tri6_nnet_semi_supervised/.done ]; then
     ${datadir} data/lang $decode
 fi
 
-if [ -f exp/tri6_nnet_supervised_tuning/.done ]; then
-  decode=exp/tri6_nnet_supervised_tuning/decode_${dirid}
-  if [ ! -f $decode/.done ]; then
-    mkdir -p $decode
-    steps/nnet2/decode.sh --cmd "$decode_cmd" --nj $my_nj \
-      --beam $dnn_beam --lat-beam $dnn_lat_beam \
-      --skip-scoring true "${decode_extra_opts[@]}" \
-      --transform-dir exp/tri5/decode_${dirid} \
-      exp/tri5/graph ${datadir} $decode | tee $decode/decode.log
-
-    touch $decode/.done
-  fi
-
-  local/run_kws_stt_task.sh --cer $cer --max-states $max_states \
-    --cmd "$decode_cmd" --skip-kws $skip_kws --skip-stt $skip_stt --wip $wip \
-    "${shadow_set_extra_opts[@]}" "${lmwt_dnn_extra_opts[@]}" \
-    ${datadir} data/lang $decode
-fi
 ####################################################################
 ##
 ## DNN_MPE decoding
@@ -465,7 +470,7 @@ if [ -f exp/tri6_nnet_mpe/.done ]; then
     decode=exp/tri6_nnet_mpe/decode_${dirid}_epoch$epoch
     if [ ! -f $decode/.done ]; then
       mkdir -p $decode
-      steps/nnet2/decode.sh \
+      steps/nnet2/decode.sh --minimize $minimize \
         --cmd "$decode_cmd" --nj $my_nj --iter epoch$epoch \
         --beam $dnn_beam --lat-beam $dnn_lat_beam \
         --skip-scoring true "${decode_extra_opts[@]}" \

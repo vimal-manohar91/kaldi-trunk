@@ -163,11 +163,11 @@ int main(int argc, char *argv[]) {
           alignment_writer.Write(key, alignment);
           num_success ++;
           if (num_success % 50  == 0) {
-            KALDI_LOG << "Processed " << num_success << " utterances, "
-                      << "log-like per frame for " << key << " is "
-                      << (like / features.NumRows()) << " over "
-                      << features.NumRows() << " frames.";
+            KALDI_LOG << "Processed " << num_success << " utterances\n";
           }
+          KALDI_LOG << "Log-like per frame for " << key << " is "
+            << (like / features.NumRows()) << " over "
+            << features.NumRows() << " frames.";
         } else {
           KALDI_WARN << "Did not successfully decode file " << key << ", len = "
                      << (features.NumRows());

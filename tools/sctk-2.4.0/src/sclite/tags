@@ -1,0 +1,1531 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+A0	det.c	245;"	d	file:
+A1	det.c	246;"	d	file:
+A2	det.c	247;"	d	file:
+A3	det.c	248;"	d	file:
+ADJUST_THRESH	anovar.c	23;"	d	file:
+AFTER_ROW	rpg.h	12;"	d
+ALT_BEGIN	text.h	7;"	d
+ALT_END	text.h	8;"	d
+ARB_SSET	sctk.h	/^} ARB_SSET;$/;"	t	typeref:struct:arbitrary_subset_label_struct
+ARC	netstr1.h	/^typedef struct ARC1 ARC;$/;"	t	typeref:struct:ARC1
+ARC1	netstr1.h	/^struct ARC1$/;"	s
+ARC1::data	netstr1.h	/^{void *data;$/;"	m	struct:ARC1
+ARC1::from_node	netstr1.h	/^ struct NODE1 *from_node, *to_node;$/;"	m	struct:ARC1	typeref:struct:ARC1::NODE1
+ARC1::net	netstr1.h	/^ struct NETWORK1 *net;$/;"	m	struct:ARC1	typeref:struct:ARC1::NETWORK1
+ARC1::to_node	netstr1.h	/^ struct NODE1 *from_node, *to_node;$/;"	m	struct:ARC1	typeref:struct:ARC1::
+ARC1::weight	netstr1.h	/^ int weight;$/;"	m	struct:ARC1
+ARCSET	netstr1.h	/^} ARCSET;$/;"	t	typeref:struct:ARCSET_struct
+ARCSET_struct	netstr1.h	/^typedef struct ARCSET_struct {$/;"	s
+ARCSET_struct::arcs	netstr1.h	/^    ARC **arcs;          \/* list of ARC pointers to A NET *\/$/;"	m	struct:ARCSET_struct
+ARCSET_struct::max	netstr1.h	/^    int max;             \/* current size of the data structure *\/$/;"	m	struct:ARCSET_struct
+ARCSET_struct::num	netstr1.h	/^    int num;             \/* current size of the networks being aligned *\/$/;"	m	struct:ARCSET_struct
+ARC_FUNC	netstr1.h	/^typedef struct ARC_FUNCTIONS ARC_FUNC;$/;"	t	typeref:struct:ARC_FUNCTIONS
+ARC_FUNCTIONS	netstr1.h	/^struct ARC_FUNCTIONS$/;"	s
+ARC_FUNCTIONS::copy	netstr1.h	/^    void *(*copy)(void *);        char *copy_name;$/;"	m	struct:ARC_FUNCTIONS
+ARC_FUNCTIONS::copy_name	netstr1.h	/^    void *(*copy)(void *);        char *copy_name;$/;"	m	struct:ARC_FUNCTIONS
+ARC_FUNCTIONS::destroy	netstr1.h	/^    void (*destroy)(void *);      char *destroy_name;$/;"	m	struct:ARC_FUNCTIONS
+ARC_FUNCTIONS::destroy_name	netstr1.h	/^    void (*destroy)(void *);      char *destroy_name;$/;"	m	struct:ARC_FUNCTIONS
+ARC_FUNCTIONS::equal	netstr1.h	/^    int (*equal)(void *, void *); char *equal_name;$/;"	m	struct:ARC_FUNCTIONS
+ARC_FUNCTIONS::equal_name	netstr1.h	/^    int (*equal)(void *, void *); char *equal_name;$/;"	m	struct:ARC_FUNCTIONS
+ARC_FUNCTIONS::is_null_alt	netstr1.h	/^    int (*is_null_alt)(void *);   char *is_null_alt_name;$/;"	m	struct:ARC_FUNCTIONS
+ARC_FUNCTIONS::is_null_alt_name	netstr1.h	/^    int (*is_null_alt)(void *);   char *is_null_alt_name;$/;"	m	struct:ARC_FUNCTIONS
+ARC_FUNCTIONS::is_opt_del	netstr1.h	/^    int (*is_opt_del)(void *);    char *is_opt_del_name;$/;"	m	struct:ARC_FUNCTIONS
+ARC_FUNCTIONS::is_opt_del_name	netstr1.h	/^    int (*is_opt_del)(void *);    char *is_opt_del_name;$/;"	m	struct:ARC_FUNCTIONS
+ARC_FUNCTIONS::make_empty	netstr1.h	/^    void *(*make_empty)(void *);  char *make_empty_name;$/;"	m	struct:ARC_FUNCTIONS
+ARC_FUNCTIONS::make_empty_name	netstr1.h	/^    void *(*make_empty)(void *);  char *make_empty_name;$/;"	m	struct:ARC_FUNCTIONS
+ARC_FUNCTIONS::print	netstr1.h	/^  { void (*print)(void *);        char *print_name;$/;"	m	struct:ARC_FUNCTIONS
+ARC_FUNCTIONS::print_name	netstr1.h	/^  { void (*print)(void *);        char *print_name;$/;"	m	struct:ARC_FUNCTIONS
+ARC_FUNCTIONS::use_count	netstr1.h	/^    int (*use_count)(void *, int); char *use_count_name;$/;"	m	struct:ARC_FUNCTIONS
+ARC_FUNCTIONS::use_count_name	netstr1.h	/^    int (*use_count)(void *, int); char *use_count_name;$/;"	m	struct:ARC_FUNCTIONS
+ARC_LIST_ATOM	netstr1.h	/^typedef struct ARC_LIST_ATOM1 ARC_LIST_ATOM;$/;"	t	typeref:struct:ARC_LIST_ATOM1
+ARC_LIST_ATOM1	netstr1.h	/^struct ARC_LIST_ATOM1$/;"	s
+ARC_LIST_ATOM1::arc	netstr1.h	/^  {ARC *arc; \/* ocontents of this atom *\/$/;"	m	struct:ARC_LIST_ATOM1
+ARC_LIST_ATOM1::next	netstr1.h	/^   struct ARC_LIST_ATOM1 *next, *prev;$/;"	m	struct:ARC_LIST_ATOM1	typeref:struct:ARC_LIST_ATOM1::ARC_LIST_ATOM1
+ARC_LIST_ATOM1::prev	netstr1.h	/^   struct ARC_LIST_ATOM1 *next, *prev;$/;"	m	struct:ARC_LIST_ATOM1	typeref:struct:ARC_LIST_ATOM1::
+ATIS	sctk.h	/^enum id_types {WSJ,RM,ATIS,SWB,SPUID};$/;"	e	enum:id_types
+AUTO_LEX	alex.h	/^} AUTO_LEX;$/;"	t	typeref:struct:AUTO_LEX_struct
+AUTO_LEX_dump	alex.c	/^void AUTO_LEX_dump(AUTO_LEX *alex, FILE *fp){$/;"	f
+AUTO_LEX_find	alex.c	/^int AUTO_LEX_find(AUTO_LEX *alex, TEXT *str){$/;"	f
+AUTO_LEX_free	alex.c	/^void AUTO_LEX_free(AUTO_LEX *alex){$/;"	f
+AUTO_LEX_get	alex.c	/^TEXT *AUTO_LEX_get(AUTO_LEX *alex, int ind){$/;"	f
+AUTO_LEX_get_c	alex.c	/^double AUTO_LEX_get_c(AUTO_LEX *alex, int ind){$/;"	f
+AUTO_LEX_init	alex.c	/^void AUTO_LEX_init(AUTO_LEX *alex, int size){$/;"	f
+AUTO_LEX_insert	alex.c	/^int AUTO_LEX_insert(AUTO_LEX *alex, TEXT *new){$/;"	f
+AUTO_LEX_printout	alex.c	/^void AUTO_LEX_printout(AUTO_LEX *alex, FILE *fp, char *title, int threshhold){$/;"	f
+AUTO_LEX_struct	alex.h	/^typedef struct AUTO_LEX_struct{$/;"	s
+AUTO_LEX_struct::field_a	alex.h	/^    int *field_a;                       \/* pointer to a list if intergers *\/$/;"	m	struct:AUTO_LEX_struct
+AUTO_LEX_struct::field_b	alex.h	/^    int *field_b;                       \/* Same usage as field_a . . . *\/$/;"	m	struct:AUTO_LEX_struct
+AUTO_LEX_struct::field_c	alex.h	/^    double *field_c;                       \/* Same usage as field_a . . . *\/$/;"	m	struct:AUTO_LEX_struct
+AUTO_LEX_struct::max	alex.h	/^    int max,                            \/* total possible tokens *\/$/;"	m	struct:AUTO_LEX_struct
+AUTO_LEX_struct::num	alex.h	/^        num;                            \/* current number of stored tokens *\/$/;"	m	struct:AUTO_LEX_struct
+AUTO_LEX_struct::sort	alex.h	/^    int *sort;                          \/* Sorted list of the texts *\/$/;"	m	struct:AUTO_LEX_struct
+AUTO_LEX_struct::str	alex.h	/^    TEXT **str;                         \/* pointer to the list of texts *\/$/;"	m	struct:AUTO_LEX_struct
+B1	det.c	249;"	d	file:
+B2	det.c	250;"	d	file:
+B3	det.c	251;"	d	file:
+B4	det.c	252;"	d	file:
+BEFORE_ROW	rpg.h	11;"	d
+BF_FLIP	sctk.h	55;"	d
+BF_SET	sctk.h	54;"	d
+BF_UNSET	sctk.h	56;"	d
+BF_isSET	sctk.h	52;"	d
+BF_notSET	sctk.h	53;"	d
+BOOLDEF_HEADER	booldef.h	3;"	d
+C0	det.c	253;"	d	file:
+C1	det.c	254;"	d	file:
+C2	det.c	255;"	d	file:
+C3	det.c	256;"	d	file:
+CALI_DELHYPHEN	sctk.h	83;"	d
+CALI_NOASCII	sctk.h	82;"	d
+CALI_ON	sctk.h	81;"	d
+CATEGORY_ITEM	sctk.h	/^} CATEGORY_ITEM;$/;"	t	typeref:struct:category_item_struct
+CELL	netstr1.h	/^} CELL;$/;"	t	typeref:struct:CELL_struct
+CELL_NULL	netstr1.h	148;"	d
+CELL_struct	netstr1.h	/^typedef struct CELL_struct {$/;"	s
+CELL_struct::back_a	netstr1.h	/^    short back_a,        \/* array r index to CELL with min transition *\/$/;"	m	struct:CELL_struct
+CELL_struct::back_b	netstr1.h	/^          back_b;        \/* array h index to CELL with min transition *\/$/;"	m	struct:CELL_struct
+CELL_struct::min_d	netstr1.h	/^    float min_d;         \/* the current minimum distance *\/$/;"	m	struct:CELL_struct
+CENTER_PAGE	rpg.c	/^static int CENTER_PAGE=0;$/;"	v	file:
+COLUMN_DEFS	rpg.c	/^} COLUMN_DEFS;$/;"	t	typeref:struct:column_definition_struct	file:
+COMMENT_CHAR	text.h	9;"	d
+COMMENT_INFO_CHAR	text.h	10;"	d
+CONF_OUT_BHIST	sclite.c	23;"	d	file:
+CONF_OUT_DET	sclite.c	22;"	d	file:
+CONF_OUT_HIST	sclite.c	24;"	d	file:
+CONF_OUT_NONE	sclite.c	21;"	d	file:
+CONF_OUT_SBHIST	sclite.c	25;"	d	file:
+CORES	cores.h	/^} CORES;$/;"	t	typeref:struct:CORRESP_STRUCT
+CORRESP_STRUCT	cores.h	/^typedef struct CORRESP_STRUCT{$/;"	s
+CORRESP_STRUCT::avg_conf	cores.h	/^  double avg_conf;$/;"	m	struct:CORRESP_STRUCT
+CORRESP_STRUCT::avg_dur	cores.h	/^  double avg_dur;$/;"	m	struct:CORRESP_STRUCT
+CORRESP_STRUCT::avg_time	cores.h	/^  double avg_time;$/;"	m	struct:CORRESP_STRUCT
+CORRESP_STRUCT::bias_nword	cores.h	/^  double bias_nword;$/;"	m	struct:CORRESP_STRUCT
+CORRESP_STRUCT::max_conf	cores.h	/^  double max_conf;$/;"	m	struct:CORRESP_STRUCT
+CORRESP_STRUCT::min_conf	cores.h	/^  double min_conf;$/;"	m	struct:CORRESP_STRUCT
+CORRESP_STRUCT::nword	cores.h	/^  int nword;$/;"	m	struct:CORRESP_STRUCT
+CORRESP_STRUCT::sum_conf	cores.h	/^  double sum_conf;$/;"	m	struct:CORRESP_STRUCT
+CORRESP_STRUCT::use	cores.h	/^  int use;$/;"	m	struct:CORRESP_STRUCT
+CORRESP_STRUCT::words	cores.h	/^  WORD *words[10];$/;"	m	struct:CORRESP_STRUCT
+CORR_REC_STR	rank.h	26;"	d
+Cfa	det.c	182;"	d	file:
+Cmiss	det.c	181;"	d	file:
+Compute_ROC	det.c	/^static void Compute_ROC (double *true_scores, int num_true, double *false_scores, int num_false, double **Pdet){$/;"	f	file:
+D1	det.c	257;"	d	file:
+D2	det.c	258;"	d	file:
+DECREASING	order.h	11;"	d
+DEFAULT_MIN_NUM_GOOD	statdist.h	138;"	d
+DEL	netstr1.h	/^enum edits {DEL=1,SUB,INS}; $/;"	e	enum:edits
+DF1	statdist.h	44;"	d
+DF10	statdist.h	53;"	d
+DF11	statdist.h	54;"	d
+DF12	statdist.h	55;"	d
+DF13	statdist.h	56;"	d
+DF14	statdist.h	57;"	d
+DF15	statdist.h	58;"	d
+DF16	statdist.h	59;"	d
+DF17	statdist.h	60;"	d
+DF18	statdist.h	61;"	d
+DF19	statdist.h	62;"	d
+DF2	statdist.h	45;"	d
+DF20	statdist.h	63;"	d
+DF21	statdist.h	64;"	d
+DF22	statdist.h	65;"	d
+DF23	statdist.h	66;"	d
+DF24	statdist.h	67;"	d
+DF25	statdist.h	68;"	d
+DF26	statdist.h	69;"	d
+DF27	statdist.h	70;"	d
+DF28	statdist.h	71;"	d
+DF29	statdist.h	72;"	d
+DF3	statdist.h	46;"	d
+DF30	statdist.h	73;"	d
+DF4	statdist.h	47;"	d
+DF5	statdist.h	48;"	d
+DF6	statdist.h	49;"	d
+DF7	statdist.h	50;"	d
+DF8	statdist.h	51;"	d
+DF9	statdist.h	52;"	d
+DIFF_ENABLED	sctk.h	238;"	d
+DIFF_ENABLED	sctk.h	241;"	d
+DIFF_PROGRAM	sctk.h	239;"	d
+DIFF_PROGRAM	sctk.h	242;"	d
+Desc_add_row_separation	rpg.c	/^void Desc_add_row_separation(char chr, int row_attach)$/;"	f
+Desc_add_row_values	rpg.c	/^void Desc_add_row_values(char *format , ...)$/;"	f
+Desc_dump_ascii_report	rpg.c	/^int Desc_dump_ascii_report(char *file)$/;"	f
+Desc_dump_report	rpg.c	/^void Desc_dump_report(int space_pad, FILE *fp)$/;"	f
+Desc_erase	rpg.c	/^void Desc_erase(void)$/;"	f
+Desc_flush_iterated_row	rpg.c	/^void Desc_flush_iterated_row(void)$/;"	f
+Desc_rm_lf	rpg.c	/^char *Desc_rm_lf(char *s){$/;"	f
+Desc_set_iterated_format	rpg.c	/^void Desc_set_iterated_format(char *format)$/;"	f
+Desc_set_iterated_value	rpg.c	/^void Desc_set_iterated_value(char *str)$/;"	f
+Desc_set_justification	rpg.c	/^int Desc_set_justification(char *just_str)$/;"	f
+Desc_set_page_center	rpg.c	/^void Desc_set_page_center(int width)$/;"	f
+Desc_set_parse_verbose	rpg.c	/^void Desc_set_parse_verbose(int dbg){$/;"	f
+Desc_set_report_verbose	rpg.c	/^void Desc_set_report_verbose(int dbg){$/;"	f
+F	booldef.h	7;"	d
+FALSE	sctk.h	49;"	d
+FOR_BLOCKS	rank.h	17;"	d
+FOR_TREATMENTS	rank.h	18;"	d
+FRI_TITLE	anovar.c	19;"	d	file:
+FULL_SCREEN	rank.c	167;"	d	file:
+FULL_SCREEN	sctk.h	79;"	d
+F_CEIL	sctk.h	44;"	d
+F_ROUND	sctk.h	43;"	d
+Fnorm	statdist.c	/^static double Fnorm[515] =$/;"	v	file:
+GEN_X2_PER	statdist.h	94;"	d
+GEN_Z_PER	statdist.h	37;"	d
+GRAPH_DET	sc_stats.c	25;"	d	file:
+GRAPH_GRANGE	sc_stats.c	22;"	d	file:
+GRAPH_GRANGE2	sc_stats.c	23;"	d	file:
+GRAPH_RANGE	sc_stats.c	21;"	d	file:
+GRAPH_STDOUT	sc_stats.c	24;"	d	file:
+GRP	sctk.h	/^} GRP;$/;"	t	typeref:struct:grp_score
+H_EXP_PCT_CORR	det.c	312;"	d	file:
+H_FROM	det.c	310;"	d	file:
+H_N_CORR	det.c	313;"	d	file:
+H_N_INCORR	det.c	314;"	d	file:
+H_PCT_CORR	det.c	311;"	d	file:
+H_TO	det.c	309;"	d	file:
+INCREASING	order.h	12;"	d
+INF_ASCII_TOO	sctk.h	80;"	d
+INF_SEG_ALGO1	sctk.h	220;"	d
+INF_SEG_ALGO2	sctk.h	221;"	d
+INS	netstr1.h	/^enum edits {DEL=1,SUB,INS}; $/;"	e	enum:edits
+LABEL	lur.c	/^} LABEL;$/;"	t	typeref:struct:label_struct	file:
+LABEL_SCORES	lur.c	/^} LABEL_SCORES;$/;"	t	typeref:struct:label_stores_struct	file:
+LINE_LENGTH	sctk.h	219;"	d
+LL	det.c	260;"	d	file:
+LL_copy	llist.c	/^void LL_copy (LList **t, LList **f)$/;"	f
+LL_empty	llist.c	/^int LL_empty (LList *s)$/;"	f
+LL_get_first	llist.c	/^int LL_get_first (LList **s, void **apdata)$/;"	f
+LL_init	llist.c	/^void LL_init (LList **s)$/;"	f
+LL_put_front	llist.c	/^int LL_put_front (LList **s, void *pdata)$/;"	f
+LL_put_tail	llist.c	/^int LL_put_tail (LList **s, void *pdata)$/;"	f
+LList	llist.h	/^typedef struct lnode LList;$/;"	t	typeref:struct:lnode
+LOAD_BUFF_LEN	align.c	19;"	d	file:
+LOCKED	rpg.c	15;"	d	file:
+MAIN	mcnemar.c	1;"	d	file:
+MAIN	rover.c	1;"	d	file:
+MAIN	sc_stats.c	1;"	d	file:
+MAIN	sclite.c	1;"	d	file:
+MAIN	sign.c	1;"	d	file:
+MAX	sctk.h	59;"	d
+MAX3	sctk.h	65;"	d
+MAXSTRING	net_adt.c	13;"	d	file:
+MAX_ARCS	netstr1.h	9;"	d
+MAX_ATTRIB	sgml.h	3;"	d
+MAX_BLOCKS	rank.h	15;"	d
+MAX_BUFF_LEN	wwscr_f.c	14;"	d	file:
+MAX_DF	statdist.h	90;"	d
+MAX_HYPS	rover.c	53;"	d	file:
+MAX_HYPS	sc_stats.c	67;"	d	file:
+MAX_HYPS	sclite.c	88;"	d	file:
+MAX_NODES	netstr1.h	8;"	d
+MAX_SEG_ANAL	mtchprs.c	22;"	d	file:
+MAX_TAGS	sgml.h	2;"	d
+MAX_TREATMENTS	rank.h	16;"	d
+MAX_VALUE_LEN	rpg.c	13;"	d	file:
+MAX_W	wwscr_f.h	4;"	d
+MAX_X2	statdist.c	18;"	d	file:
+MAX_X2_PER	statdist.h	92;"	d
+MAX_Z	statdist.c	17;"	d	file:
+MAX_Z_PER	statdist.h	35;"	d
+MEMORY_HEADER	memory.h	16;"	d
+MEMORY_H_VERSION	memory.h	32;"	d
+METH_AVGCONF	rover.c	44;"	d	file:
+METH_MAXCONF	rover.c	40;"	d	file:
+METH_MAXCONFA	rover.c	42;"	d	file:
+METH_METH1	rover.c	38;"	d	file:
+METH_METH1A	rover.c	41;"	d	file:
+METH_NULL	rover.c	37;"	d	file:
+METH_ORACLE	rover.c	39;"	d	file:
+METH_PUTAT	rover.c	43;"	d	file:
+MIN	sctk.h	62;"	d
+MIN_DF	statdist.h	91;"	d
+MIN_NUM_GOOD	mtchprs.c	21;"	d	file:
+MIN_X2_PER	statdist.h	93;"	d
+MIN_Z_PER	statdist.h	36;"	d
+MULTI_COMP_ALPHA	anovar.c	24;"	d	file:
+M_LOG2E	sctk.h	67;"	d
+McNemar_sent	sentmcn.c	/^void McNemar_sent(SCORES *scor[], int nscor, int ***out_winner, char *testname, int print_results, int verbose, char *outroot, int feedback, double ***out_conf)$/;"	f
+NETWORK	netstr1.h	/^ typedef struct NETWORK1 NETWORK;$/;"	t	typeref:struct:NETWORK1
+NETWORK1	netstr1.h	/^ struct NETWORK1$/;"	s
+NETWORK1::arc_count	netstr1.h	/^    int arc_count;$/;"	m	struct:NETWORK1
+NETWORK1::arc_func	netstr1.h	/^    ARC_FUNC arc_func;$/;"	m	struct:NETWORK1
+NETWORK1::highest_nnode_name	netstr1.h	/^    int highest_nnode_name;$/;"	m	struct:NETWORK1
+NETWORK1::name	netstr1.h	/^   {char *name;$/;"	m	struct:NETWORK1
+NETWORK1::node_count	netstr1.h	/^    int node_count;$/;"	m	struct:NETWORK1
+NETWORK1::start_node	netstr1.h	/^    NODE *start_node;$/;"	m	struct:NETWORK1
+NETWORK1::stop_node	netstr1.h	/^    NODE *stop_node;$/;"	m	struct:NETWORK1
+NETWORK_insert_arc_after_node	net_adt.c	/^int NETWORK_insert_arc_after_node(NETWORK *net, NODE *last_node, void *str){$/;"	f
+NETWORK_insert_arc_before_node	net_adt.c	/^int NETWORK_insert_arc_before_node(NETWORK *net, NODE *this_node, void *str){$/;"	f
+NETWORK_insert_arc_between_node	net_adt.c	/^int NETWORK_insert_arc_between_node(NETWORK *net, NODE *from_node, NODE *to_node, void *str){ $/;"	f
+NET_ALIGN	netstr1.h	/^} NET_ALIGN;$/;"	t	typeref:struct:NET_ALIGN_struct
+NET_ALIGN_NULL	netstr1.h	147;"	d
+NET_ALIGN_struct	netstr1.h	/^typedef struct NET_ALIGN_struct {$/;"	s
+NET_ALIGN_struct::arcset_a	netstr1.h	/^    ARCSET arcset_a,     \/* structure or arc list information *\/   $/;"	m	struct:NET_ALIGN_struct
+NET_ALIGN_struct::arcset_b	netstr1.h	/^           arcset_b; $/;"	m	struct:NET_ALIGN_struct
+NET_ALIGN_struct::cell	netstr1.h	/^    CELL **cell;         \/* 2-Dim table, containing Cell structures *\/$/;"	m	struct:NET_ALIGN_struct
+NODE	netstr1.h	/^typedef struct NODE1 NODE;$/;"	t	typeref:struct:NODE1
+NODE1	netstr1.h	/^struct NODE1$/;"	s
+NODE1::flag1	netstr1.h	/^   boolean start_state, stop_state, flag1, flag2;$/;"	m	struct:NODE1
+NODE1::flag2	netstr1.h	/^   boolean start_state, stop_state, flag1, flag2;$/;"	m	struct:NODE1
+NODE1::in_arcs	netstr1.h	/^   ARC_LIST_ATOM *in_arcs, *out_arcs;$/;"	m	struct:NODE1
+NODE1::name	netstr1.h	/^  {char *name;$/;"	m	struct:NODE1
+NODE1::net	netstr1.h	/^   struct NETWORK1 *net;$/;"	m	struct:NODE1	typeref:struct:NODE1::NETWORK1
+NODE1::out_arcs	netstr1.h	/^   ARC_LIST_ATOM *in_arcs, *out_arcs;$/;"	m	struct:NODE1
+NODE1::start_state	netstr1.h	/^   boolean start_state, stop_state, flag1, flag2;$/;"	m	struct:NODE1
+NODE1::stop_state	netstr1.h	/^   boolean start_state, stop_state, flag1, flag2;$/;"	m	struct:NODE1
+NO_DIFF	statdist.h	18;"	d
+NT_Back	netstr1.h	108;"	d
+NT_Breadth	netstr1.h	109;"	d
+NT_CA_Back	netstr1.h	113;"	d
+NT_CA_For	netstr1.h	112;"	d
+NT_Depth	netstr1.h	110;"	d
+NT_For	netstr1.h	107;"	d
+NT_Inorder	netstr1.h	111;"	d
+NT_Verbose	netstr1.h	114;"	d
+NULL_NETWORK	netstr1.h	79;"	d
+NULL_TEXT	text.h	4;"	d
+NULL_WORD	word.h	25;"	d
+NUM_H_ELEM	det.c	316;"	d	file:
+Network_WORD_to_CORES	cores.c	/^NETWORK *Network_WORD_to_CORES(NETWORK *net){$/;"	f
+Network_add_arc_to_head	net_adt.c	/^int Network_add_arc_to_head(NETWORK *net, void *str){$/;"	f
+Network_add_arc_to_tail	net_adt.c	/^int Network_add_arc_to_tail(NETWORK *net, void *str){$/;"	f
+Network_add_net_to_head	net_adt.c	/^int Network_add_net_to_head(NETWORK *net, NETWORK *mnet){$/;"	f
+Network_add_net_to_tail	net_adt.c	/^int Network_add_net_to_tail(NETWORK *net, NETWORK *mnet){$/;"	f
+Network_copy	net_adt.c	/^NETWORK *Network_copy(NETWORK *in_net){$/;"	f
+Network_create_from_TEXT	net_adt.c	/^NETWORK *Network_create_from_TEXT(TEXT *text, char *name, void (*aprn)(void *), int (*aequal)(void *, void *),  void (*adestroy)(void *), int (*is_null_alt)(void *), int (*is_opt_del)(void *), void *(*copy)(void *), void *(*make_empty)(void *), int (*use_count)(void *, int)){$/;"	f
+Network_create_from_WTOKE	net_adt.c	/^NETWORK *Network_create_from_WTOKE(WTOKE_STR1 *wt,int start,int end, char *name, void (*aprn)(void *), int (*aequal)(void *, void *),  void (*adestroy)(void *), int (*is_null_alt)(void *), int (*is_opt_del)(void *), void *(*copy)(void *), void *(*make_empty)(void *), int (*use_count)(void*, int), int left_to_right){$/;"	f
+Network_delete_arc	net_adt.c	/^int Network_delete_arc(ARC *arc){$/;"	f
+Network_delete_null_arcs	net_adt.c	/^void Network_delete_null_arcs(NETWORK *out_net){$/;"	f
+Network_destroy	net_adt.c	/^int Network_destroy(NETWORK *net){$/;"	f
+Network_dpalign	net_dp.c	/^int Network_dpalign(NETWORK *net_a,NETWORK *net_b,float wwd(void *, void *, int (*cmp)(void *, void *)), PATH **out_path, int include_nulls){$/;"	f
+Network_dpalign_n_networks	net_dp.c	/^int Network_dpalign_n_networks(NETWORK **in_nets, int n_nets, float wwd(void *, void *, int (*cmp)(void *, void *)), NETWORK **out_net, void *null_alt){$/;"	f
+Network_fully_connect	net_adt.c	/^int Network_fully_connect(NETWORK *net, int connect_factor, void *(*append)(void *, void *)){$/;"	f
+Network_fully_connect_cond	net_adt.c	/^int Network_fully_connect_cond(NETWORK *net, int connect_factor, void *(*append)(void *, void *), int (*test)(void *, void *), void *test_data){$/;"	f
+Network_init	net_adt.c	/^extern NETWORK *Network_init(void (*arc_data_prn)(void *), int (*arcs_equal)(void *, void *), void arc_data_destroy(void *), int (*is_null_alt)(void *), int (*is_opt_del)(void *), void *(*copy)(void *), void *(*make_empty)(void *), int (*use_count)(void *, int), char *name){$/;"	f
+Network_init_from_net	net_adt.c	/^extern NETWORK *Network_init_from_net(NETWORK *net, char *name){$/;"	f
+Network_merge_network	net_adt.c	/^int Network_merge_network(NODE *from_node, NODE *to_node, NETWORK *from_net){$/;"	f
+Network_sgml_dump	net_adt.c	/^void Network_sgml_dump(NETWORK *net, FILE *fp){$/;"	f
+Network_traverse	net_adt.c	/^void Network_traverse(NETWORK *net, void (*node_op)(NODE *, void *), void *node_data, void (*arc_op)(ARC *, void *), void *arc_data, int mode){$/;"	f
+OUT_DTL	sclite.c	17;"	d	file:
+OUT_LUR	sclite.c	12;"	d	file:
+OUT_PRALIGN	sclite.c	11;"	d	file:
+OUT_PRALIGN_FULL	sclite.c	18;"	d	file:
+OUT_RSUM	sclite.c	10;"	d	file:
+OUT_SENT	sclite.c	15;"	d	file:
+OUT_SGML	sclite.c	13;"	d	file:
+OUT_SPKR	sclite.c	16;"	d	file:
+OUT_STDOUT	sclite.c	14;"	d	file:
+OUT_SUM	sclite.c	9;"	d	file:
+OUT_WWS	sclite.c	19;"	d	file:
+PAGE_WIDTH	rpg.c	/^static int PAGE_WIDTH=80;$/;"	v	file:
+PATH	path.h	/^} PATH;$/;"	t	typeref:struct:PATH_struct
+PATHLABEL_ITEM	sctk.h	/^} PATHLABEL_ITEM;$/;"	t	typeref:struct:pathlabel_item_struct
+PATH_SET	path.h	/^} PATH_SET;$/;"	t	typeref:struct:PATH_SET_struct
+PATH_SET_struct	path.h	/^typedef struct PATH_SET_struct {$/;"	s
+PATH_SET_struct::a_ptr	path.h	/^    void *a_ptr,         \/* pointer to A arc's data *\/$/;"	m	struct:PATH_SET_struct
+PATH_SET_struct::b_ptr	path.h	/^         *b_ptr;         \/* pointer to B arc's data *\/$/;"	m	struct:PATH_SET_struct
+PATH_SET_struct::eval	path.h	/^    char eval;           \/* flag to designated the pair as Corr, Ins, Del, Sub *\/$/;"	m	struct:PATH_SET_struct
+PATH_add_channel	path.c	/^void PATH_add_channel(PATH *path, char *channel){$/;"	f
+PATH_add_file	path.c	/^void PATH_add_file(PATH *path, char *file){$/;"	f
+PATH_add_label	path.c	/^void PATH_add_label(PATH *path, char *label){$/;"	f
+PATH_add_utt_id	path.c	/^void PATH_add_utt_id(PATH *path, char *utt_id){$/;"	f
+PATH_alloc	path.c	/^PATH *PATH_alloc(int s){$/;"	f
+PATH_append	path.c	/^void PATH_append(PATH *path, void *ap, void *bp, int eval)$/;"	f
+PATH_free	path.c	/^void PATH_free(PATH *path){$/;"	f
+PATH_increment_WORD_use	path.c	/^void PATH_increment_WORD_use(PATH *path){$/;"	f
+PATH_multi_print	corresp.c	/^void PATH_multi_print(SCORES **scor, PATH **path_set, int npath, int maxlen, FILE *fp, int *refWord,int *errRefWord, AUTO_LEX *alex){$/;"	f
+PATH_n_print	path.c	/^void PATH_n_print(PATH *path, FILE *fp, int from, int to, int max){$/;"	f
+PATH_n_print_html	path.c	/^void PATH_n_print_html(PATH *path, FILE *fp, int from, int to, int max, int header){$/;"	f
+PATH_print	path.c	/^void PATH_print(PATH *path, FILE *fp, int max){$/;"	f
+PATH_print_html	path.c	/^void PATH_print_html(PATH *path, FILE *fp, int max, int header){$/;"	f
+PATH_print_wt	path.c	/^void PATH_print_wt(PATH *path, FILE *fp){$/;"	f
+PATH_remove	path.c	/^void PATH_remove(PATH *path)$/;"	f
+PATH_sequence_number	path.c	/^static int PATH_sequence_number = 0;$/;"	v	file:
+PATH_set_sequence	path.c	/^void PATH_set_sequence(PATH *path){ $/;"	f
+PATH_struct	path.h	/^typedef struct PATH_struct {$/;"	s
+PATH_struct::attrib	path.h	/^    int attrib;          \/* an attributes of the path *\/$/;"	m	struct:PATH_struct
+PATH_struct::channel	path.h	/^    char *channel;       \/* channel . . . ditto *\/$/;"	m	struct:PATH_struct
+PATH_struct::file	path.h	/^    char *file;          \/* audio from whence the data came, only in place $/;"	m	struct:PATH_struct
+PATH_struct::hyp_t1	path.h	/^    double hyp_t1;        \/* beginning time for the hypothesis *\/$/;"	m	struct:PATH_struct
+PATH_struct::hyp_t2	path.h	/^    double hyp_t2;        \/* ending time for the hypothesis *\/$/;"	m	struct:PATH_struct
+PATH_struct::id	path.h	/^    char *id;            \/* utterance id *\/$/;"	m	struct:PATH_struct
+PATH_struct::labels	path.h	/^    char *labels;        \/* any labels attached to the id's *\/$/;"	m	struct:PATH_struct
+PATH_struct::max	path.h	/^    int max;             \/* maximum number of PATH_set structures in pset*\/$/;"	m	struct:PATH_struct
+PATH_struct::num	path.h	/^    int num;             \/* the current number of used structures in pset*\/$/;"	m	struct:PATH_struct
+PATH_struct::pset	path.h	/^    PATH_SET *pset;      \/* the array of structures *\/$/;"	m	struct:PATH_struct
+PATH_struct::ref_t1	path.h	/^    double ref_t1;        \/* beginning time for the reference *\/$/;"	m	struct:PATH_struct
+PATH_struct::ref_t2	path.h	/^    double ref_t2;        \/* ending time for the reference *\/$/;"	m	struct:PATH_struct
+PATH_struct::sequence	path.h	/^    int sequence;         \/* Sequence number: during alignment *\/$/;"	m	struct:PATH_struct
+PA_CASE_SENSE	path.h	17;"	d
+PA_CHAR_ALIGN	path.h	16;"	d
+PA_HYP_CONF	path.h	22;"	d
+PA_HYP_ISSPKRSUB	path.h	27;"	d
+PA_HYP_SPKR	path.h	26;"	d
+PA_HYP_TIMES	path.h	20;"	d
+PA_HYP_WEIGHT	path.h	24;"	d
+PA_HYP_WTIMES	path.h	18;"	d
+PA_NONE	path.h	15;"	d
+PA_REF_CONF	path.h	23;"	d
+PA_REF_TIMES	path.h	21;"	d
+PA_REF_WEIGHT	path.h	25;"	d
+PA_REF_WTIMES	path.h	19;"	d
+PER90	statdist.h	33;"	d
+PER91	statdist.h	32;"	d
+PER92	statdist.h	31;"	d
+PER93	statdist.h	30;"	d
+PER94	statdist.h	29;"	d
+PER95	statdist.h	28;"	d
+PER96	statdist.h	27;"	d
+PER97	statdist.h	26;"	d
+PER98	statdist.h	25;"	d
+PER99	statdist.h	24;"	d
+PER99	statdist.h	43;"	d
+PER_CORR_REC	rank.h	22;"	d
+PMAX	det.c	178;"	d	file:
+PMIN	det.c	177;"	d	file:
+PROTO	order.h	15;"	d
+PROTO	order.h	17;"	d
+PROTO	proto.h	7;"	d
+PROTO	proto.h	9;"	d
+PROTO	rpg.h	5;"	d
+PROTO	rpg.h	7;"	d
+PROTO	statdist.h	141;"	d
+PROTO	statdist.h	143;"	d
+PROTO_HEADER	proto.h	4;"	d
+P_CORR	path.h	1;"	d
+P_DEL	path.h	4;"	d
+P_INS	path.h	3;"	d
+P_MRG	path.h	5;"	d
+P_SPL	path.h	6;"	d
+P_SUB	path.h	2;"	d
+Pfalse	det.c	184;"	d	file:
+Ptrue	det.c	183;"	d	file:
+RANK	rank.h	/^} RANK;$/;"	t	typeref:struct:rank_struct
+RANK_TITLEA	anovar.c	20;"	d	file:
+RANK_TITLEB	anovar.c	21;"	d	file:
+RANK_TITLE_1	anovar.c	22;"	d	file:
+REDUCE_HYP_WORDS	sclite.c	29;"	d	file:
+REDUCE_NOTHING	sclite.c	27;"	d	file:
+REDUCE_REF_SEGMENTS	sclite.c	28;"	d	file:
+REPORT_DEF_STRUCT	rpg.c	/^} REPORT_DEF_STRUCT;$/;"	t	typeref:struct:report_definition_struct	file:
+REPORT_ESUM	sc_stats.c	31;"	d	file:
+REPORT_LUR	sc_stats.c	30;"	d	file:
+REPORT_NONE	sc_stats.c	27;"	d	file:
+REPORT_PRN	sc_stats.c	33;"	d	file:
+REPORT_RESUM	sc_stats.c	32;"	d	file:
+REPORT_RSUM	sc_stats.c	29;"	d	file:
+REPORT_SUM	sc_stats.c	28;"	d	file:
+RM	sctk.h	/^enum id_types {WSJ,RM,ATIS,SWB,SPUID};$/;"	e	enum:id_types
+ROVER_VERSION	rover.c	4;"	d	file:
+SCLITE_VERSION	sclite.c	4;"	d	file:
+SCORES	sctk.h	/^} SCORES;$/;"	t	typeref:struct:set_score
+SCORES_free	scores.c	/^void SCORES_free(SCORES *scor){$/;"	f
+SCORES_get_grp	scores.c	/^int SCORES_get_grp(SCORES *sc, char *grpname){$/;"	f
+SCORES_init	scores.c	/^SCORES *SCORES_init(char *name, int ngrp){$/;"	f
+SCREEN_WIDTH	sctk.h	78;"	d
+SCSTATS_VERSION	sc_stats.c	4;"	d	file:
+SC_CORRESPONDENCE	corresp.h	/^} SC_CORRESPONDENCE;$/;"	t	typeref:struct:score_correspondence_struct
+SC_COR_GRP	corresp.h	/^} SC_COR_GRP;$/;"	t	typeref:struct:score_group_correspondence_struct
+SEG	mtchprs.c	/^} SEG;$/;"	t	typeref:struct:segment_count_struct	file:
+SGML	sgml.h	/^} SGML;$/;"	t	typeref:struct:sgml_tags
+SGML_LABEL	sgml.h	/^} SGML_LABEL;$/;"	t	typeref:struct:sgml_label_struct
+SILENT	statdist.h	135;"	d
+SMAX	det.c	179;"	d	file:
+SPACES_LEN	rpg.c	347;"	d	file:
+SPLIT	det.c	243;"	d	file:
+SPUID	sctk.h	/^enum id_types {WSJ,RM,ATIS,SWB,SPUID};$/;"	e	enum:id_types
+STATIC_ext_ASCII	text.c	/^static int STATIC_ext_ASCII = 1;$/;"	v	file:
+STAT_ANOVAR	sc_stats.c	17;"	d	file:
+STAT_MAPSSWE	sc_stats.c	14;"	d	file:
+STAT_MAPSSWE_SEG	sc_stats.c	19;"	d	file:
+STAT_MCN	sc_stats.c	13;"	d	file:
+STAT_SIGN	sc_stats.c	15;"	d	file:
+STAT_STDOUT	sc_stats.c	18;"	d	file:
+STAT_WILC	sc_stats.c	16;"	d	file:
+STM	stm.h	/^} STM;$/;"	t	typeref:struct:stm_struct
+STM_SEG	stm.h	/^} STM_SEG;$/;"	t	typeref:struct:stm_seg_struct
+SUB	netstr1.h	/^enum edits {DEL=1,SUB,INS}; $/;"	e	enum:edits
+SW	path.c	616;"	d	file:
+SWB	sctk.h	/^enum id_types {WSJ,RM,ATIS,SWB,SPUID};$/;"	e	enum:id_types
+T	booldef.h	6;"	d
+T1	word.h	/^    double T1,                          \/* beginning word time *\/$/;"	m	struct:WORD_STRUCT
+T2	word.h	/^           T2,                          \/* ending word time *\/$/;"	m	struct:WORD_STRUCT
+TEST_DIFF	statdist.h	17;"	d
+TEXT	text.h	/^typedef unsigned char TEXT;$/;"	t
+TEXT_COLON	text.h	5;"	d
+TEXT_LIST	text.h	/^} TEXT_LIST;$/;"	t	typeref:struct:text_list_struct
+TEXT_add	text.c	/^TEXT *TEXT_add(TEXT *p1, TEXT *p2){$/;"	f
+TEXT_atof	text.c	/^float TEXT_atof(TEXT *p){$/;"	f
+TEXT_chrlen	text.c	/^int TEXT_chrlen(TEXT *text){$/;"	f
+TEXT_delete_chars	text.c	/^void TEXT_delete_chars(TEXT *arr, TEXT *set){ $/;"	f
+TEXT_ensure_fgets	text.c	/^TEXT *TEXT_ensure_fgets(TEXT **arr, int *len, FILE *fp){$/;"	f
+TEXT_fgets	text.c	/^TEXT *TEXT_fgets(TEXT *arr, int len, FILE *fp){$/;"	f
+TEXT_free	text.c	/^void TEXT_free(TEXT *p){$/;"	f
+TEXT_is_comment	text.c	/^int TEXT_is_comment(TEXT *str)$/;"	f
+TEXT_is_comment_info	text.c	/^int TEXT_is_comment_info(TEXT *str)$/;"	f
+TEXT_is_empty	text.c	/^int TEXT_is_empty(TEXT *str)$/;"	f
+TEXT_is_wfrag	text.c	/^int TEXT_is_wfrag(TEXT *text){$/;"	f
+TEXT_nth_field	text.c	/^int TEXT_nth_field(TEXT **to_addr, int *to_len, TEXT *from, int field){$/;"	f
+TEXT_separate_chars	text.c	/^void TEXT_separate_chars(TEXT *from, TEXT **to, int *to_size, int flag){$/;"	f
+TEXT_set_coding	text.c	/^int TEXT_set_coding(char *encoding){$/;"	f
+TEXT_skip_wspace	text.c	/^TEXT *TEXT_skip_wspace(TEXT *ptr) {$/;"	f
+TEXT_str_to_low	text.c	/^void TEXT_str_to_low(TEXT *buf){$/;"	f
+TEXT_str_to_upp	text.c	/^void TEXT_str_to_upp(TEXT *buf){$/;"	f
+TEXT_strcasecmp	text.c	/^int TEXT_strcasecmp(TEXT *p1, TEXT *p2){$/;"	f
+TEXT_strcat	text.c	/^TEXT *TEXT_strcat(TEXT *p, TEXT *p1){$/;"	f
+TEXT_strchr	text.c	/^TEXT *TEXT_strchr(TEXT *p, TEXT t){$/;"	f
+TEXT_strcmp	text.c	/^int TEXT_strcmp(TEXT *p, TEXT *p1){$/;"	f
+TEXT_strcpy	text.c	/^TEXT *TEXT_strcpy(TEXT *p1, TEXT *p2){$/;"	f
+TEXT_strcpy_escaped	text.c	/^TEXT *TEXT_strcpy_escaped(TEXT *p1, TEXT *p2, TEXT chr){$/;"	f
+TEXT_strcspn	text.c	/^size_t TEXT_strcspn(TEXT *str, TEXT *set)$/;"	f
+TEXT_strdup	text.c	/^TEXT *TEXT_strdup(TEXT *p){$/;"	f
+TEXT_strlen	text.c	/^int TEXT_strlen(TEXT *text){$/;"	f
+TEXT_strncasecmp	text.c	/^int TEXT_strncasecmp(TEXT *p1, TEXT *p2, int n){$/;"	f
+TEXT_strncmp	text.c	/^int TEXT_strncmp(TEXT *p, TEXT *p1, int n){$/;"	f
+TEXT_strncpy	text.c	/^TEXT *TEXT_strncpy(TEXT *p, TEXT *p1, int n){$/;"	f
+TEXT_strndup	text.c	/^TEXT *TEXT_strndup(TEXT *p, int n){$/;"	f
+TEXT_strndup_noEscape	text.c	/^TEXT *TEXT_strndup_noEscape(TEXT *p, int n){$/;"	f
+TEXT_strqtok	text.c	/^TEXT *TEXT_strqtok(TEXT *buf, TEXT *set)$/;"	f
+TEXT_strrchr	text.c	/^TEXT *TEXT_strrchr(TEXT *p, TEXT t){$/;"	f
+TEXT_strspn	text.c	/^size_t TEXT_strspn(TEXT *str, TEXT *set)$/;"	f
+TEXT_strstr	text.c	/^TEXT *TEXT_strstr(TEXT *src, TEXT *sub){$/;"	f
+TEXT_strtok	text.c	/^TEXT *TEXT_strtok(TEXT *p, TEXT *t){$/;"	f
+TEXT_xnewline	text.h	15;"	d
+TK_VERSION	sctk.h	4;"	d
+TOTAL_ERROR	rank.h	23;"	d
+TOT_ERR_STR	rank.h	27;"	d
+TRUE	sctk.h	48;"	d
+T_dur	word.h	/^           T_dur;                       \/* word duration time (T2 - T1) *\/$/;"	m	struct:WORD_STRUCT
+UNLOCKED	rpg.c	16;"	d	file:
+VERBOSE	statdist.h	136;"	d
+VTislower	text.c	16;"	d	file:
+VTisspace	text.c	9;"	d	file:
+VTisupper	text.c	10;"	d	file:
+VTtolower	text.c	19;"	d	file:
+VTtoupper	text.c	14;"	d	file:
+Vovr_b_rank	rank.h	91;"	d
+Vovr_t_rank	rank.h	88;"	d
+Vrnk_b_name	rank.h	82;"	d
+Vrnk_b_rank	rank.h	75;"	d
+Vrnk_pcts	rank.h	79;"	d
+Vrnk_t_name	rank.h	85;"	d
+Vrnk_t_rank	rank.h	71;"	d
+Vsrt_b_rank	rank.h	97;"	d
+Vsrt_t_rank	rank.h	94;"	d
+WORD	word.h	/^} WORD;$/;"	t	typeref:struct:WORD_STRUCT
+WORD_ACCURACY	rank.h	24;"	d
+WORD_ACC_STR	rank.h	28;"	d
+WORD_FRAG_CHAR	word.h	31;"	d
+WORD_FRAG_STR	word.h	30;"	d
+WORD_OPT_DEL_POST_CHAR	word.h	29;"	d
+WORD_OPT_DEL_POST_STR	word.h	28;"	d
+WORD_OPT_DEL_PRE_CHAR	word.h	27;"	d
+WORD_OPT_DEL_PRE_STR	word.h	26;"	d
+WORD_SGML_ESCAPE	word.h	34;"	d
+WORD_SGML_SUB_WORD_SEP_CHR	word.h	33;"	d
+WORD_SGML_SUB_WORD_SEP_STR	word.h	32;"	d
+WORD_STRUCT	word.h	/^typedef struct WORD_STRUCT{$/;"	s
+WORD_STRUCT::T1	word.h	/^    double T1,                          \/* beginning word time *\/$/;"	m	struct:WORD_STRUCT
+WORD_STRUCT::T2	word.h	/^           T2,                          \/* ending word time *\/$/;"	m	struct:WORD_STRUCT
+WORD_STRUCT::T_dur	word.h	/^           T_dur;                       \/* word duration time (T2 - T1) *\/$/;"	m	struct:WORD_STRUCT
+WORD_STRUCT::conf	word.h	/^    double conf;                        \/* Opt. confidence value for the word *\/$/;"	m	struct:WORD_STRUCT
+WORD_STRUCT::frag_corr	word.h	/^    int frag_corr;                      \/* boolean flag to identify the word as a$/;"	m	struct:WORD_STRUCT
+WORD_STRUCT::intern_value	word.h	/^    TEXT *intern_value;                 \/* the word text, for internal compares *\/$/;"	m	struct:WORD_STRUCT
+WORD_STRUCT::opt_del	word.h	/^    int opt_del;                        \/* boolean flag to identify $/;"	m	struct:WORD_STRUCT
+WORD_STRUCT::tag1	word.h	/^    TEXT *tag1;                         \/* Optional tag associated with the word *\/$/;"	m	struct:WORD_STRUCT
+WORD_STRUCT::tag2	word.h	/^    TEXT *tag2;                         \/* Optional tag associated with the word *\/$/;"	m	struct:WORD_STRUCT
+WORD_STRUCT::use	word.h	/^    int use;                            \/* number of times this structure *\/$/;"	m	struct:WORD_STRUCT
+WORD_STRUCT::value	word.h	/^    TEXT *value;                        \/* the word text *\/$/;"	m	struct:WORD_STRUCT
+WORD_STRUCT::value_id	word.h	/^    int value_id;                       \/* Dictionary index to word *\/$/;"	m	struct:WORD_STRUCT
+WORD_STRUCT::weight	word.h	/^    double weight;                      \/* The Weight assigned to a word from a WWL list *\/$/;"	m	struct:WORD_STRUCT
+WORD_in_TEXT_LIST	text.c	/^int WORD_in_TEXT_LIST(void *data, void *elem)$/;"	f
+WSJ	sctk.h	/^enum id_types {WSJ,RM,ATIS,SWB,SPUID};$/;"	e	enum:id_types
+WTOKE1	wtokstr1.h	/^   } WTOKE1;$/;"	t	typeref:struct:__anon1
+WTOKE_STR1	wtokstr1.h	/^   } WTOKE_STR1;$/;"	t	typeref:struct:__anon2
+WTOKE_STR1_init	wtokeini.c	/^WTOKE_STR1 *WTOKE_STR1_init(char *filename){$/;"	f
+WW	wwscr_f.h	/^} WW;$/;"	t	typeref:struct:word_weight_struct
+WWL	wwscr_f.h	/^} WWL;$/;"	t	typeref:struct:word_weight_list_struct
+WWL_FUNC	wwscr_f.h	/^} WWL_FUNC;$/;"	t	typeref:struct:WWL_FUNC_struct
+WWL_FUNC_struct	wwscr_f.h	/^typedef struct WWL_FUNC_struct{$/;"	s
+WWL_FUNC_struct::corr	wwscr_f.h	/^    double ref, corr, sub, del, ins, spl, mrg;$/;"	m	struct:WWL_FUNC_struct
+WWL_FUNC_struct::del	wwscr_f.h	/^    double ref, corr, sub, del, ins, spl, mrg;$/;"	m	struct:WWL_FUNC_struct
+WWL_FUNC_struct::ins	wwscr_f.h	/^    double ref, corr, sub, del, ins, spl, mrg;$/;"	m	struct:WWL_FUNC_struct
+WWL_FUNC_struct::mrg	wwscr_f.h	/^    double ref, corr, sub, del, ins, spl, mrg;$/;"	m	struct:WWL_FUNC_struct
+WWL_FUNC_struct::n_spkrs	wwscr_f.h	/^    int n_spkrs;$/;"	m	struct:WWL_FUNC_struct
+WWL_FUNC_struct::ref	wwscr_f.h	/^    double ref, corr, sub, del, ins, spl, mrg;$/;"	m	struct:WWL_FUNC_struct
+WWL_FUNC_struct::spkr	wwscr_f.h	/^    WWL_SPKR *spkr;$/;"	m	struct:WWL_FUNC_struct
+WWL_FUNC_struct::spl	wwscr_f.h	/^    double ref, corr, sub, del, ins, spl, mrg;$/;"	m	struct:WWL_FUNC_struct
+WWL_FUNC_struct::sub	wwscr_f.h	/^    double ref, corr, sub, del, ins, spl, mrg;$/;"	m	struct:WWL_FUNC_struct
+WWL_FUNC_struct::title	wwscr_f.h	/^    TEXT *title;$/;"	m	struct:WWL_FUNC_struct
+WWL_SCORE	wwscr_f.h	/^} WWL_SCORE;$/;"	t	typeref:struct:WWL_score_struct
+WWL_SPKR	wwscr_f.h	/^} WWL_SPKR;$/;"	t	typeref:struct:WWL_spkr_struct
+WWL_score_struct	wwscr_f.h	/^typedef struct WWL_score_struct{$/;"	s
+WWL_score_struct::func	wwscr_f.h	/^    WWL_FUNC *func;$/;"	m	struct:WWL_score_struct
+WWL_score_struct::maxfunc	wwscr_f.h	/^    int maxfunc;$/;"	m	struct:WWL_score_struct
+WWL_score_struct::numfunc	wwscr_f.h	/^    int numfunc;$/;"	m	struct:WWL_score_struct
+WWL_spkr_struct	wwscr_f.h	/^typedef struct WWL_spkr_struct{$/;"	s
+WWL_spkr_struct::corr	wwscr_f.h	/^    double ref, corr, sub, del, ins, spl, mrg;$/;"	m	struct:WWL_spkr_struct
+WWL_spkr_struct::del	wwscr_f.h	/^    double ref, corr, sub, del, ins, spl, mrg;$/;"	m	struct:WWL_spkr_struct
+WWL_spkr_struct::id	wwscr_f.h	/^    TEXT *id;$/;"	m	struct:WWL_spkr_struct
+WWL_spkr_struct::ins	wwscr_f.h	/^    double ref, corr, sub, del, ins, spl, mrg;$/;"	m	struct:WWL_spkr_struct
+WWL_spkr_struct::mrg	wwscr_f.h	/^    double ref, corr, sub, del, ins, spl, mrg;$/;"	m	struct:WWL_spkr_struct
+WWL_spkr_struct::ref	wwscr_f.h	/^    double ref, corr, sub, del, ins, spl, mrg;$/;"	m	struct:WWL_spkr_struct
+WWL_spkr_struct::spl	wwscr_f.h	/^    double ref, corr, sub, del, ins, spl, mrg;$/;"	m	struct:WWL_spkr_struct
+WWL_spkr_struct::sub	wwscr_f.h	/^    double ref, corr, sub, del, ins, spl, mrg;$/;"	m	struct:WWL_spkr_struct
+WWOP	wwscr_f.c	480;"	d	file:
+W_func	slm_intf.c	36;"	d	file:
+Weight_one	wwscr_f.c	/^double Weight_one(TEXT *str, WWL *wwl)$/;"	f
+Weight_wwl	wwscr_f.c	/^double Weight_wwl(TEXT *str, WWL *wwl)$/;"	f
+X2	statdist.c	/^X2_STRUCT X2 = {$/;"	v
+X2PER1	statdist.h	87;"	d
+X2PER10	statdist.h	84;"	d
+X2PER2	statdist.h	86;"	d
+X2PER20	statdist.h	83;"	d
+X2PER30	statdist.h	82;"	d
+X2PER5	statdist.h	85;"	d
+X2PER50	statdist.h	81;"	d
+X2PER70	statdist.h	80;"	d
+X2PER80	statdist.h	79;"	d
+X2PER90	statdist.h	78;"	d
+X2PER95	statdist.h	77;"	d
+X2PER98	statdist.h	76;"	d
+X2PER99	statdist.h	75;"	d
+X2PER_1	statdist.h	88;"	d
+X2_DF	statdist.h	/^} X2_DF;$/;"	t	typeref:struct:X2_df
+X2_STRUCT	statdist.h	/^} X2_STRUCT;$/;"	t	typeref:struct:X2_struct
+X2_df	statdist.h	/^typedef struct X2_df{$/;"	s
+X2_df	statdist.h	127;"	d
+X2_df::level	statdist.h	/^    double  level[MAX_X2_PER+1];$/;"	m	struct:X2_df
+X2_df::str	statdist.h	/^    char *str;$/;"	m	struct:X2_df
+X2_df_str	statdist.h	128;"	d
+X2_neg_pct_str	statdist.h	126;"	d
+X2_pct_str	statdist.h	125;"	d
+X2_score	statdist.h	129;"	d
+X2_struct	statdist.h	/^typedef struct X2_struct{$/;"	s
+X2_struct::df	statdist.h	/^    X2_DF df[MAX_DF+1];$/;"	m	struct:X2_struct
+X2_struct::neg_per_str	statdist.h	/^    char *neg_per_str[MAX_X2_PER+1];$/;"	m	struct:X2_struct
+X2_struct::per	statdist.h	/^    double per[MAX_X2_PER+1];$/;"	m	struct:X2_struct
+X2_struct::per_str	statdist.h	/^    char *per_str[MAX_X2_PER+1];$/;"	m	struct:X2_struct
+Z1tail	statdist.c	/^Z_STRUCT Z1tail[MAX_Z] = {$/;"	v
+Z2tail	statdist.c	/^Z_STRUCT Z2tail[MAX_Z] = {$/;"	v
+Z_STRUCT	statdist.h	/^} Z_STRUCT;$/;"	t	typeref:struct:Z_struct
+Z_ext_str	statdist.h	121;"	d
+Z_exter	statdist.h	123;"	d
+Z_inter	statdist.h	122;"	d
+Z_pass	statdist.c	/^int Z_pass(double Z_stat)$/;"	f
+Z_score	statdist.h	119;"	d
+Z_str	statdist.h	120;"	d
+Z_struct	statdist.h	/^typedef struct Z_struct{$/;"	s
+Z_struct::exterior_str	statdist.h	/^    char *exterior_str;$/;"	m	struct:Z_struct
+Z_struct::perc_interior	statdist.h	/^    double perc_interior;$/;"	m	struct:Z_struct
+Z_struct::str	statdist.h	/^    char *str;$/;"	m	struct:Z_struct
+Z_struct::z	statdist.h	/^    double z;$/;"	m	struct:Z_struct
+_NETWORK_DEF_	netstr1.h	6;"	d
+__anon1::alternate	wtokstr1.h	/^    boolean alternate;$/;"	m	struct:__anon1
+__anon1::bad_marking	wtokstr1.h	/^    boolean bad_marking;$/;"	m	struct:__anon1
+__anon1::comment	wtokstr1.h	/^    boolean comment;$/;"	m	struct:__anon1
+__anon1::confidence	wtokstr1.h	/^    float confidence; \/* confidence factor of toke, OPTIONAL *\/$/;"	m	struct:__anon1
+__anon1::conv	wtokstr1.h	/^    char *conv; \/* the Conversation\/File ID *\/$/;"	m	struct:__anon1
+__anon1::correct	wtokstr1.h	/^    int correct; \/* OPTIONAL flag indicating if the word is correct *\/$/;"	m	struct:__anon1
+__anon1::crosstalk	wtokstr1.h	/^    boolean crosstalk;$/;"	m	struct:__anon1
+__anon1::dur	wtokstr1.h	/^    double dur; \/* duration of token       *\/$/;"	m	struct:__anon1
+__anon1::ignore	wtokstr1.h	/^    boolean ignore;$/;"	m	struct:__anon1
+__anon1::mispronounced	wtokstr1.h	/^    boolean mispronounced;$/;"	m	struct:__anon1
+__anon1::overlapped	wtokstr1.h	/^    boolean overlapped;$/;"	m	struct:__anon1
+__anon1::sp	wtokstr1.h	/^    TEXT *sp;   \/* spelling of token       *\/$/;"	m	struct:__anon1
+__anon1::t1	wtokstr1.h	/^    double t1;  \/* beginning time of token *\/$/;"	m	struct:__anon1
+__anon1::turn	wtokstr1.h	/^   {char *turn; \/* the Channel id *\/$/;"	m	struct:__anon1
+__anon1::unsure	wtokstr1.h	/^    boolean unsure;$/;"	m	struct:__anon1
+__anon2::has_conf	wtokstr1.h	/^    int has_conf;                   \/* boolean flag, 1 if any words have the *\/$/;"	m	struct:__anon2
+__anon2::id	wtokstr1.h	/^    char *id;                       \/* the utterance id of the segement\/file *\/$/;"	m	struct:__anon2
+__anon2::max	wtokstr1.h	/^    int max;                         \/* maximum num of words the the table *\/$/;"	m	struct:__anon2
+__anon2::n	wtokstr1.h	/^   {int n;                           \/* number of word tokens in table *\/$/;"	m	struct:__anon2
+__anon2::s	wtokstr1.h	/^    int s;                           \/* the current beginning of the table $/;"	m	struct:__anon2
+__anon2::word	wtokstr1.h	/^    WTOKE1 *word;                   \/* table of word tokens           *\/$/;"	m	struct:__anon2
+_msz_	memory.h	/^int _msz_;$/;"	v
+a_ptr	path.h	/^    void *a_ptr,         \/* pointer to A arc's data *\/$/;"	m	struct:PATH_SET_struct
+abs	det.c	240;"	d	file:
+add_PATH_score	scores.c	/^void add_PATH_score(SCORES *sc, PATH *path, int g, int keep_path){$/;"	f
+add_SGML_tag	sgml.c	/^int add_SGML_tag(SGML *sg, TEXT *str)$/;"	f
+add_TEXT_LIST	text.c	/^int add_TEXT_LIST(TEXT_LIST *tl, TEXT *str){$/;"	f
+add_header_data	corresp.c	/^static void add_header_data(SCORES **scor, PATH **path_set, int npath, TEXT **outbuf, int *outlen, int maxlen, int continuation){$/;"	f	file:
+add_null_network_heads	net_dp.c	/^static int add_null_network_heads(NETWORK *net, char *proc){$/;"	f	file:
+add_to_arc_list	addarc1.c	/^ARC_LIST_ATOM *add_to_arc_list(ARC_LIST_ATOM *list_atom, ARC *arc, int *perr)$/;"	f
+add_to_arcset	net_dp.c	/^void add_to_arcset(ARC *arc, void *ptr){$/;"	f
+add_to_node_list	cores.c	/^static void add_to_node_list(NODE *node, void *ptr){$/;"	f	file:
+add_to_node_list	net_adt.c	/^static void add_to_node_list(NODE *node, void *ptr){$/;"	f	file:
+add_to_singarr	memory.h	104;"	d
+after_row_separations	rpg.c	/^    char **after_row_separations;       \/* size by max_row X max_line_seps *\/$/;"	m	struct:report_definition_struct	file:
+align_ctm_to_ctm	ctm2ctm.c	/^SCORES *align_ctm_to_ctm(char *hyp_file, char *ref_file, char *set_title, int feedback, int fcorr, int opt_del, int case_sense, int time_align, int left_to_right, WWL *wwl, char *lm_file){$/;"	f
+align_ctm_to_stm_diff	align.c	/^SCORES *align_ctm_to_stm_diff(char *ref_file, char *hyp_file, char *set_title, int keep_path, int case_sense, int feedback, enum id_types idt){$/;"	f
+align_ctm_to_stm_dp	stm2ctm.c	/^SCORES *align_ctm_to_stm_dp(char *ref_file, char *hyp_file, char *set_title, int keep_path, int case_sense, int feedback, int char_align, enum id_types idt, int infer_word_seg, char *lexicon, int fcorr, int opt_del, int inf_no_ascii, int reduce_ref, int reduce_hyp, int left_to_right, WWL *wwl, char *lm_file){$/;"	f
+align_one_channel	stm2ctm.c	/^static int align_one_channel(SCORES *scor, int chan, WTOKE_STR1 *hyp_segs, STM *stm, int h_st, int h_end, int r_st, int r_end, int keep_path, int feedback, char *proc, int case_sense, int char_align, char *lexicon, int infer_word_seg, int inf_no_ascii, int fcorr, int opt_del, int reduce_ref, int reduce_hyp, int left_to_right, WWL *wwl, char *lm_file){$/;"	f	file:
+align_text_to_stm	align.c	/^SCORES *align_text_to_stm(char *ref_file, char *hyp_file, char *set_title, int keep_path, int case_sense, int feedback, enum id_types idt){$/;"	f
+align_trans_mode_diff	align.c	/^SCORES *align_trans_mode_diff(char *ref_file, char *hyp_file, char *set_title, int keep_path, int case_sense, int feedback, enum id_types idt){$/;"	f
+align_trans_mode_dp	align.c	/^SCORES *align_trans_mode_dp(char *ref_file, char *hyp_file, char *set_title, int keep_path, int case_sense, int feedback, int char_align, enum id_types idt, int infer_word_seg, char *lexicon, int fcorr, int opt_del, int inf_no_ascii, WWL *wwl, char *lm_file){$/;"	f
+alloc_1dimZ	memory.h	34;"	d
+alloc_1dimarr	memory.h	33;"	d
+alloc_2dimZ	memory.h	74;"	d
+alloc_2dimarr	memory.h	53;"	d
+alloc_3dimZ	memory.h	81;"	d
+alloc_3dimarr	memory.h	60;"	d
+alloc_ARCSET	net_dp.c	/^void alloc_ARCSET(ARCSET *arcset, int n){$/;"	f
+alloc_LABEL_SCORES	lur.c	/^static LABEL *alloc_LABEL_SCORES(int nscor, SCORES *sc)$/;"	f	file:
+alloc_NET_ALIGN	net_dp.c	/^NET_ALIGN *alloc_NET_ALIGN(NET_ALIGN *net_ali, int na, int nb){$/;"	f
+alloc_SC_CORRESPONDENCE	corresp.c	/^SC_CORRESPONDENCE *alloc_SC_CORRESPONDENCE(SCORES *scor[], int nsc){$/;"	f
+alloc_SEG_LIST	mtchprs.c	39;"	d	file:
+alloc_STM	stm.c	/^STM *alloc_STM(int n){$/;"	f
+alloc_WWL_SCORE	wwscr_f.c	/^static WWL_SCORE *alloc_WWL_SCORE(int num_func, int num_spk)$/;"	f	file:
+alloc_singZ	memory.h	67;"	d
+alloc_singarr	memory.h	38;"	d
+alloc_singarr	memory.h	42;"	d
+alpha	rover.c	/^    double alpha;      \/* the trade off between selection by word count or$/;"	m	struct:mfalign_best_seq_struct	file:
+alternate	wtokstr1.h	/^    boolean alternate;$/;"	m	struct:__anon1
+always_true	net_adt.c	/^int always_true(void *data, void *elem){ return 1; }$/;"	f
+analyze_Z_score	mtchprs.c	/^int analyze_Z_score(SCORES *sys1, SCORES *sys2, double mean, double variance, double std_dev, double Z_stat, int verbose)$/;"	f
+analyze_rank_sum	anovar.c	/^static int analyze_rank_sum(RANK *rank, int trt_num, int blk_num, double *sum_arr, int orient, int verbose,FILE *fp)$/;"	f	file:
+append_WORD	word.c	/^void *append_WORD(void *p1, void *p2){$/;"	f
+append_WORD_no_NULL	word.c	/^void *append_WORD_no_NULL(void *p1, void *p2){$/;"	f
+arbitrary_subset_label_struct	sctk.h	/^typedef struct arbitrary_subset_label_struct{$/;"	s
+arbitrary_subset_label_struct::cat	sctk.h	/^    CATEGORY_ITEM *cat;    \/* list of categories *\/$/;"	m	struct:arbitrary_subset_label_struct
+arbitrary_subset_label_struct::max_cat	sctk.h	/^    int max_cat;           \/* max CATEGORY_ITEMS in 'cat' array *\/$/;"	m	struct:arbitrary_subset_label_struct
+arbitrary_subset_label_struct::max_plab	sctk.h	/^    int max_plab;          \/* max PATHLABEL_ITEMS in 'plab' array *\/$/;"	m	struct:arbitrary_subset_label_struct
+arbitrary_subset_label_struct::num_cat	sctk.h	/^    int num_cat;           \/* current number of items in 'cat' array *\/$/;"	m	struct:arbitrary_subset_label_struct
+arbitrary_subset_label_struct::num_plab	sctk.h	/^    int num_plab;          \/* current number of items in 'plab' array *\/$/;"	m	struct:arbitrary_subset_label_struct
+arbitrary_subset_label_struct::plab	sctk.h	/^    PATHLABEL_ITEM *plab;  \/* list of path labels *\/$/;"	m	struct:arbitrary_subset_label_struct
+arc	netstr1.h	/^  {ARC *arc; \/* ocontents of this atom *\/$/;"	m	struct:ARC_LIST_ATOM1
+arc_count	netstr1.h	/^    int arc_count;$/;"	m	struct:NETWORK1
+arc_func	netstr1.h	/^    ARC_FUNC arc_func;$/;"	m	struct:NETWORK1
+arcs	netstr1.h	/^    ARC **arcs;          \/* list of ARC pointers to A NET *\/$/;"	m	struct:ARCSET_struct
+arcs_equal	arcseq1.c	/^boolean arcs_equal(ARC *arc1, ARC *arc2)                  $/;"	f
+arcset_a	netstr1.h	/^    ARCSET arcset_a,     \/* structure or arc list information *\/   $/;"	m	struct:NET_ALIGN_struct
+arcset_b	netstr1.h	/^           arcset_b; $/;"	m	struct:NET_ALIGN_struct
+aset	sctk.h	/^    ARB_SSET aset;         \/* struct of arbitrary labelling *\/$/;"	m	struct:set_score
+attrib	path.h	/^    int attrib;          \/* an attributes of the path *\/$/;"	m	struct:PATH_struct
+attrib_name	sgml.h	/^    TEXT *attrib_name[MAX_ATTRIB];$/;"	m	struct:sgml_label_struct
+attrib_num	sgml.h	/^    int attrib_num;$/;"	m	struct:sgml_label_struct
+attrib_value	sgml.h	/^    TEXT *attrib_value[MAX_ATTRIB];$/;"	m	struct:sgml_label_struct
+avg_conf	cores.h	/^  double avg_conf;$/;"	m	struct:CORRESP_STRUCT
+avg_dur	cores.h	/^  double avg_dur;$/;"	m	struct:CORRESP_STRUCT
+avg_time	cores.h	/^  double avg_time;$/;"	m	struct:CORRESP_STRUCT
+b_ptr	path.h	/^         *b_ptr;         \/* pointer to B arc's data *\/$/;"	m	struct:PATH_SET_struct
+back_a	netstr1.h	/^    short back_a,        \/* array r index to CELL with min transition *\/$/;"	m	struct:CELL_struct
+back_b	netstr1.h	/^          back_b;        \/* array h index to CELL with min transition *\/$/;"	m	struct:CELL_struct
+bad_marking	wtokstr1.h	/^    boolean bad_marking;$/;"	m	struct:__anon1
+before_row_separations	rpg.c	/^    char **before_row_separations;      \/* size by max_row X max_line_seps *\/$/;"	m	struct:report_definition_struct	file:
+bias_nword	cores.h	/^  double bias_nword;$/;"	m	struct:CORRESP_STRUCT
+binned_confidences	det.c	/^static void binned_confidences(SCORES *scor, double c_from, double c_to, int nbin, double **hist){$/;"	f	file:
+blk_Ovr_ranks	rank.h	/^   double *blk_Ovr_ranks;       \/* ranks after ANOVAR *\/$/;"	m	struct:rank_struct
+blk_name	rank.h	/^   char **blk_name;            \/* string names of blocks *\/$/;"	m	struct:rank_struct
+blk_ranks	rank.h	/^   double **blk_ranks;          \/* 2DIM array for ranks for blocks over trts *\/$/;"	m	struct:rank_struct
+blk_srt_ind	rank.h	/^   int *blk_srt_ind;           \/* indexes that to blocks to sort them *\/$/;"	m	struct:rank_struct
+bool_print	boolpr1.c	/^ char *bool_print(boolean x) {if (x) return "T"; else return "F";}$/;"	f
+boolean	booldef.h	5;"	d
+bsearch_TEXT_strcmp	text.c	/^int bsearch_TEXT_strcmp(const void *p, const void *p1){$/;"	f
+calc_adjust_for_blks	anovar.c	/^static double calc_adjust_for_blks(RANK *rank)$/;"	f	file:
+calc_adjust_for_trt	anovar.c	/^static double calc_adjust_for_trt(RANK *rank)$/;"	f	file:
+calc_comp_value	anovar.c	/^static double calc_comp_value(int trt_num, int blk_num)$/;"	f	file:
+calc_mean_var_std_dev_Zstat	statdist.c	/^void calc_mean_var_std_dev_Zstat(int *Z_list, int num_Z, double *mean, double *variance, double *std_dev, double *median, double *Z_stat)$/;"	f
+calc_mean_var_std_dev_Zstat_double	statdist.c	/^void calc_mean_var_std_dev_Zstat_double(double *Z_list, int num_Z, double *mean, double *variance, double *std_dev, double *median, double *Z_stat)$/;"	f
+calc_minimum_delete	net_dp.c	/^void calc_minimum_delete(NET_ALIGN *net_ali,int a, int b, float *min_arc_d, int *min_ind_a){$/;"	f
+calc_minimum_insert	net_dp.c	/^void calc_minimum_insert(NET_ALIGN *net_ali,int a, int b, float *min_arc_d, int *min_ind_b){$/;"	f
+calc_minimum_substi	net_dp.c	/^void calc_minimum_substi(NET_ALIGN *net_ali,int a, int b, float *min_arc_d, int *min_ind_a, int *min_ind_b){$/;"	f
+calc_stat_ranks	anovar.c	/^static void calc_stat_ranks(int trt_num, int blk_num, int **stat_sum, double *sum_arr)$/;"	f	file:
+calc_two_sample_z_test_double	statdist.c	/^void calc_two_sample_z_test_double(double *l1, double *l2, int num_l1, int num_l2, double *Z)$/;"	f
+calculate_internal_cells	net_dp.c	/^static void calculate_internal_cells(NET_ALIGN *net_ali, NETWORK *net_a,NETWORK *net_b,float wwd(void *, void *, int (*cmp)(void *, void *))){    $/;"	f	file:
+calculate_margin_cells	net_dp.c	/^static void calculate_margin_cells(NET_ALIGN *net_ali, NETWORK *net_a,NETWORK *net_b,float wwd(void *, void *, int (*cmp)(void *, void *))){$/;"	f	file:
+cat	sctk.h	/^    CATEGORY_ITEM *cat;    \/* list of categories *\/$/;"	m	struct:arbitrary_subset_label_struct
+category_item_struct	sctk.h	/^typedef struct category_item_struct{$/;"	s
+category_item_struct::desc	sctk.h	/^    char *desc;            \/* Descriptive text for the catagory *\/$/;"	m	struct:category_item_struct
+category_item_struct::id	sctk.h	/^    char *id;              \/* the category's id code *\/$/;"	m	struct:category_item_struct
+category_item_struct::title	sctk.h	/^    char *title;           \/* Column heading title for the category *\/$/;"	m	struct:category_item_struct
+cell	netstr1.h	/^    CELL **cell;         \/* 2-Dim table, containing Cell structures *\/$/;"	m	struct:NET_ALIGN_struct
+cell_values	rpg.c	/^    char ***cell_values;                \/* size by max_col X max_row X 100 *\/$/;"	m	struct:report_definition_struct	file:
+center	pad.c	/^char *center(char *str, int len)$/;"	f
+chan	rover.c	/^    char *chan;        \/* Channed for the ctm format *\/$/;"	m	struct:mfalign_best_seq_struct	file:
+chan	stm.h	/^    TEXT *chan;$/;"	m	struct:stm_seg_struct
+change_node_name	net_adt.c	/^static void change_node_name(NODE *node, void *ptr){$/;"	f	file:
+channel	path.h	/^    char *channel;       \/* channel . . . ditto *\/$/;"	m	struct:PATH_struct
+char_in_set	rpg.c	/^int char_in_set(char chr, char *set)$/;"	f
+check_space_in_PATH	path.c	/^void check_space_in_PATH(PATH *path){$/;"	f
+chop_WTOKE_2	ctm2ctm.c	/^int chop_WTOKE_2(WTOKE_STR1 *ref, WTOKE_STR1 *hyp, int Rstart, int Hstart, int Rendconv, int Hendconv, int max_words, int *Rret_end, int *Hret_end)$/;"	f
+cleanup_NET_ALIGN	net_dp.c	/^void cleanup_NET_ALIGN(void){$/;"	f
+clear_2dim	memory.h	98;"	d
+clear_sing	memory.h	92;"	d
+col_defs	rpg.c	/^    COLUMN_DEFS *col_defs;              \/* size by max_col *\/$/;"	m	struct:report_definition_struct	file:
+col_inter_space	rpg.c	/^    char *col_inter_space;    \/* size by max_col *\/$/;"	m	struct:column_definition_struct	file:
+col_just	rpg.c	/^    int *col_just;            \/* size by max_col *\/$/;"	m	struct:column_definition_struct	file:
+col_lock	rpg.c	/^    int *col_lock;            \/* size by max_col *\/$/;"	m	struct:column_definition_struct	file:
+column_definition_struct	rpg.c	/^typedef struct column_definition_struct{$/;"	s	file:
+column_definition_struct::col_inter_space	rpg.c	/^    char *col_inter_space;    \/* size by max_col *\/$/;"	m	struct:column_definition_struct	file:
+column_definition_struct::col_just	rpg.c	/^    int *col_just;            \/* size by max_col *\/$/;"	m	struct:column_definition_struct	file:
+column_definition_struct::col_lock	rpg.c	/^    int *col_lock;            \/* size by max_col *\/$/;"	m	struct:column_definition_struct	file:
+column_definition_struct::format_str	rpg.c	/^    char format_str[100];$/;"	m	struct:column_definition_struct	file:
+column_definition_struct::min_just_width	rpg.c	/^    int min_just_width;$/;"	m	struct:column_definition_struct	file:
+column_definition_struct::num_col	rpg.c	/^    int num_col;$/;"	m	struct:column_definition_struct	file:
+column_definition_struct::num_col_chars	rpg.c	/^    int num_col_chars;$/;"	m	struct:column_definition_struct	file:
+column_definition_struct::num_locked	rpg.c	/^    int num_locked;$/;"	m	struct:column_definition_struct	file:
+comment	wtokstr1.h	/^    boolean comment;$/;"	m	struct:__anon1
+compare_WW	wwscr_f.c	/^static int compare_WW(const void *ww1, const void *ww2)$/;"	f	file:
+compute_McNemar	sentmcn.c	/^static int compute_McNemar(int **table, char *treat1_str, char *treat2_str, int verbose, FILE *fp, double *confidence, double alpha)$/;"	f	file:
+compute_SCORE_nce	scores.c	/^void compute_SCORE_nce(SCORES *sc, double *nce_system, double *nce_arr){$/;"	f
+compute_acc_binomial	statdist.c	/^double compute_acc_binomial(int R, int n, double p)$/;"	f
+compute_anovar	anovar.c	/^void compute_anovar(RANK *rank, int verbose, int report, int ***out_sys_winner, char *outroot, int feedback, double ***out_conf)$/;"	f
+compute_label_scores	lur.c	/^static void compute_label_scores(SCORES *sc,int scnum, LABEL *lab){$/;"	f	file:
+compute_signtest_for_treatment	signtest.c	/^int compute_signtest_for_treatment(RANK *rank, int treat1, int treat2, char *block_id, char *formula_str, int verbose, int zero_is_best, FILE *fp, double *confidence)$/;"	f
+compute_wilcoxon_for_treatment	wilcoxon.c	/^int compute_wilcoxon_for_treatment(RANK *rank, int treat1, int treat2, char *block_id, char *formula_str, int verbose, int zero_is_best, FILE *fp, double *conf)$/;"	f
+conf	word.h	/^    double conf;                        \/* Opt. confidence value for the word *\/$/;"	m	struct:WORD_STRUCT
+confidence	wtokstr1.h	/^    float confidence; \/* confidence factor of toke, OPTIONAL *\/$/;"	m	struct:__anon1
+conv	wtokstr1.h	/^    char *conv; \/* the Conversation\/File ID *\/$/;"	m	struct:__anon1
+convert_stm_to_word_list	stm.c	/^void convert_stm_to_word_list(char *file, char *words, int case_sense, int *num_ref){$/;"	f
+convert_text_to_word_list	align.c	/^void convert_text_to_word_list(char *file, char *words,int case_sense){$/;"	f
+copy	netstr1.h	/^    void *(*copy)(void *);        char *copy_name;$/;"	m	struct:ARC_FUNCTIONS
+copy_CORES	cores.c	/^void *copy_CORES(void *p){$/;"	f
+copy_WORD	word.c	/^void *copy_WORD(void *p){$/;"	f
+copy_WORD_via_use_count	word.c	/^void *copy_WORD_via_use_count(void *p){$/;"	f
+copy_name	netstr1.h	/^    void *(*copy)(void *);        char *copy_name;$/;"	m	struct:ARC_FUNCTIONS
+corr	sctk.h	/^    int corr;                 \/* num correct words in sent *\/$/;"	m	struct:grp_score
+corr	wwscr_f.h	/^    double ref, corr, sub, del, ins, spl, mrg;$/;"	m	struct:WWL_FUNC_struct
+corr	wwscr_f.h	/^    double ref, corr, sub, del, ins, spl, mrg;$/;"	m	struct:WWL_spkr_struct
+correct	wtokstr1.h	/^    int correct; \/* OPTIONAL flag indicating if the word is correct *\/$/;"	m	struct:__anon1
+count_seg	mtchprs.c	/^void count_seg(PATH *snt1, PATH *snt2, int beg1, int beg2, int end1, int end2, SEG ***seg_l, int *num_seg, int *max_seg, int dbg)$/;"	f
+create_N_lur_report	lur.c	/^static void create_N_lur_report(LABEL *labels, SCORES *sc[], int nsc, char *test_name, FILE *fp)$/;"	f	file:
+create_alinged_NETWORK	net_dp.c	/^void create_alinged_NETWORK(NET_ALIGN *net_ali, NETWORK *net_a, NETWORK *net_b, void *null_alt, int iteration){$/;"	f
+create_report	lur.c	/^static void create_report(LABEL *labels, SCORES *sc, FILE *fp)$/;"	f	file:
+create_word_lists	align.c	/^void create_word_lists(SCORES *sc, TEXT **reftran, TEXT **refid, int refcnt, char *hyp_file, char *out_ref, char *out_hyp, int *num_hyp, int case_sense){$/;"	f
+creation_date	sctk.h	/^    char *creation_date;   \/* creation date *\/$/;"	m	struct:set_score
+crosstalk	wtokstr1.h	/^    boolean crosstalk;$/;"	m	struct:__anon1
+ctm_format	rover.c	/^    int ctm_format;    \/* boolean to write the records in ctm format *\/$/;"	m	struct:mfalign_best_seq_struct	file:
+curw	wwscr_f.h	/^    int curw;$/;"	m	struct:word_weight_list_struct
+data	llist.h	/^ void *data;  \/* data element            *\/$/;"	m	struct:lnode
+data	netstr1.h	/^{void *data;$/;"	m	struct:ARC1
+db	sctk.h	/^int db=0, db_level;$/;"	v
+db_enter_msg	sctk.h	33;"	d
+db_leave_msg	sctk.h	34;"	d
+db_level	sctk.h	/^int db=0, db_level;$/;"	v
+decode_fragment	align.c	/^void decode_fragment(ARC *arc, void *ptr){$/;"	f
+decode_opt_del	align.c	/^void decode_opt_del(ARC *arc, void *ptr){$/;"	f
+default_weight	wwscr_f.h	/^    double default_weight;$/;"	m	struct:word_weight_list_struct
+del	sctk.h	/^    int del;                  \/* num deleted words in sent *\/$/;"	m	struct:grp_score
+del	wwscr_f.h	/^    double ref, corr, sub, del, ins, spl, mrg;$/;"	m	struct:WWL_FUNC_struct
+del	wwscr_f.h	/^    double ref, corr, sub, del, ins, spl, mrg;$/;"	m	struct:WWL_spkr_struct
+del_from_arc_list	delarc1.c	/^ARC_LIST_ATOM *del_from_arc_list(ARC_LIST_ATOM **plist, ARC *arc, int *perr)$/;"	f
+delete_SGML_tag	sgml.c	/^TEXT *delete_SGML_tag(SGML *sg, TEXT *str)$/;"	f
+desc	sctk.h	/^    char *desc;            \/* Descriptive text for the catagory *\/$/;"	m	struct:category_item_struct
+desc	sctk.h	/^    char *desc;            \/* Descriptive text for the label *\/$/;"	m	struct:pathlabel_item_struct
+destroy	netstr1.h	/^    void (*destroy)(void *);      char *destroy_name;$/;"	m	struct:ARC_FUNCTIONS
+destroy_NET_ALIGN	net_dp.c	/^static void destroy_NET_ALIGN(NET_ALIGN **net_ali){$/;"	f	file:
+destroy_name	netstr1.h	/^    void (*destroy)(void *);      char *destroy_name;$/;"	m	struct:ARC_FUNCTIONS
+df	statdist.h	/^    X2_DF df[MAX_DF+1];$/;"	m	struct:X2_struct
+do_McNemar	sentmcn.c	/^int do_McNemar(int **table, char *name1, char *name2, int verbose, FILE *fp, double *conf)$/;"	f
+do_McNemar_by_sent	sentmcn.c	/^int do_McNemar_by_sent(SCORES *sys1, SCORES *sys2, int verbose, FILE *fp, double *conf)$/;"	f
+do_blk_ranges	range.c	/^static void do_blk_ranges(RANK *rank, int scale, char *p_desc, char *tname, FILE *fp)$/;"	f	file:
+do_exit	rover.c	/^void do_exit(char *desc, char *prog, int ret){$/;"	f
+do_exit	sc_stats.c	/^void do_exit(char *desc, char *prog, int ret){$/;"	f
+do_exit	sclite.c	/^void do_exit(char *desc, char *prog, int ret){$/;"	f
+do_mtch_pairs	mtchprs.c	/^void do_mtch_pairs(SCORES *scor[], int nscor, char *min_num_good_str, char *test_name, int print_report, int verbose, int ***out_winner, char *outroot, int feedback, double ***out_conf)$/;"	f
+do_mtch_pairs_on_sys	mtchprs.c	/^int do_mtch_pairs_on_sys(SCORES *scor[], int nscor, int sys1_ind, int sys2_ind, double *sys1_pct, double *sys2_pct, int *num_seg, int *max_seg, double *Z_stat, double *seg_per_sent, int min_num_good, int verbose,FILE *fp, double *conf)$/;"	f
+do_mtch_pairs_seg_analysis	mtchprs.c	/^void do_mtch_pairs_seg_analysis(SCORES *scor[], int nscor, char *t_name, int seg_ave, int seg_long)$/;"	f
+do_multi_comp_for_anovar	anovar.c	/^static void do_multi_comp_for_anovar(int trt_num, int blk_num, char **trt_names, double *sum_arr, double *ovr_rank_arr, char *title, int *srt_ptr, int **stat_sum, int verbose, FILE *fp)$/;"	f	file:
+do_trt_ranges	range.c	/^static void do_trt_ranges(RANK *rank, int scale, char *p_desc, char *tname, FILE *fp)$/;"	f	file:
+do_weighted_score	wwscr_f.c	/^static void do_weighted_score(SCORES *sc, WWL *wwl, int dbg, double (*Weight) (TEXT *, WWL *), WWL_FUNC *wwscf){$/;"	f	file:
+double_cmp_arr	order.c	/^static double *double_cmp_arr;$/;"	v	file:
+dsum_sqr	anovar.c	/^static double dsum_sqr(double *arr, int len)$/;"	f	file:
+dump_2dimarr	memory.h	118;"	d
+dump_3dimarr	memory.h	124;"	d
+dump_NET_ALIGN	net_dp.c	/^void dump_NET_ALIGN(NET_ALIGN *net_ali,FILE *fp){$/;"	f
+dump_SCORES	scores.c	/^void dump_SCORES(SCORES *sc, FILE *fp){$/;"	f
+dump_SCORES_alignments	scores.c	/^void dump_SCORES_alignments(SCORES *sc, FILE *fp, int lw, int full){$/;"	f
+dump_SCORES_sgml	scores.c	/^void dump_SCORES_sgml(SCORES *sc, FILE *fp){$/;"	f
+dump_SC_CORRESPONDENCE	corresp.c	/^void dump_SC_CORRESPONDENCE(SC_CORRESPONDENCE *corresp, FILE *fp){$/;"	f
+dump_SGML_tag	sgml.c	/^void dump_SGML_tag(SGML *sg, int n, FILE *fp)$/;"	f
+dump_STM	stm.c	/^void dump_STM(STM *stm, int s, int e){$/;"	f
+dump_STM_words	stm.c	/^void dump_STM_words(STM *stm,int s, int e, char *file){$/;"	f
+dump_TEXT_LIST	text.c	/^void dump_TEXT_LIST(TEXT_LIST *tl, FILE *fp)$/;"	f
+dump_WTOKE_words	dwtoke2.c	/^void dump_WTOKE_words(WTOKE_STR1 *word_tokens, int start, int lim, char *file)$/;"	f
+dump_WWL	wwscr_f.c	/^void dump_WWL(WWL *wwl, FILE *fp)$/;"	f
+dump_X2_table	statdist.c	/^void dump_X2_table(void)$/;"	f
+dump_arc_tag	net_adt.c	/^static void dump_arc_tag(ARC *arc, FILE *fp){$/;"	f	file:
+dump_flag2	net_adt.c	/^void dump_flag2(NODE *node) { $/;"	f
+dump_full_RANK_struct	rank.c	/^void dump_full_RANK_struct(RANK *rank, char *t_name, char *b_name, char *blk_label, char *trt_label, char *formula, char *test_name, char *blk_desc, char *trt_desc)$/;"	f
+dump_net_tag	net_adt.c	/^static void dump_net_tag(NETWORK *net, FILE *fp){$/;"	f	file:
+dump_node_tag	net_adt.c	/^static void dump_node_tag(NODE *node, FILE *fp){$/;"	f	file:
+dump_paths_of_SC_CORRESPONDENCE	corresp.c	/^void dump_paths_of_SC_CORRESPONDENCE(SC_CORRESPONDENCE *corresp, int maxlen, FILE *fp, int score_diff){$/;"	f
+dump_singarr	memory.h	111;"	d
+dump_word_tokens2	dwtoke2.c	/^void dump_word_tokens2(WTOKE_STR1 *word_tokens, int start, int lim)$/;"	f
+dur	wtokstr1.h	/^    double dur; \/* duration of token       *\/$/;"	m	struct:__anon1
+edits	netstr1.h	/^enum edits {DEL=1,SUB,INS}; $/;"	g
+elem	text.h	/^    TEXT **elem;$/;"	m	struct:text_list_struct
+end_of_TEXT	text.c	/^int end_of_TEXT(TEXT text){$/;"	f
+eps	det.c	262;"	d	file:
+equal	netstr1.h	/^    int (*equal)(void *, void *); char *equal_name;$/;"	m	struct:ARC_FUNCTIONS
+equal_CORES	cores.c	/^int equal_CORES(void *p1, void *p2){$/;"	f
+equal_WORD	word.c	/^int equal_WORD(void *p1, void *p2){$/;"	f
+equal_WORD2	word.c	/^int equal_WORD2(void *p1, void *p2){$/;"	f
+equal_WORD_wfrag	word.c	/^int equal_WORD_wfrag(void *p1, void *p2){$/;"	f
+equal_name	netstr1.h	/^    int (*equal)(void *, void *); char *equal_name;$/;"	m	struct:ARC_FUNCTIONS
+eval	path.h	/^    char eval;           \/* flag to designated the pair as Corr, Ins, Del, Sub *\/$/;"	m	struct:PATH_SET_struct
+evaluate_SEG	mtchprs.c	/^void evaluate_SEG(char *sys1_str, char *sys2_str, SEG **seg_l, int *num_seg, int sent_cnt, int min_good, double *s1_pct, double *s2_pct, double *seg_per_sent, int verbose,FILE *fp)$/;"	f
+expand_1dim	memory.h	169;"	d
+expand_1dimZ	memory.h	180;"	d
+expand_2dimZ	memory.h	190;"	d
+expand_3dimZ	memory.h	207;"	d
+expand_REPORT_DEF_STRUCT	rpg.c	/^void expand_REPORT_DEF_STRUCT(int targ_col, int targ_row, int targ_linesep){$/;"	f
+expand_SEG_LIST	mtchprs.c	42;"	d	file:
+expand_STM	stm.c	/^void expand_STM(STM *stm){$/;"	f
+expand_WWL_SCORE	wwscr_f.c	/^static void expand_WWL_SCORE(WWL_SCORE *wwlscr)$/;"	f	file:
+expand_alternates	net_adt.c	/^static void expand_alternates(ARC *arc, void *ptr){$/;"	f	file:
+expand_columns	rpg.c	/^void expand_columns(void){$/;"	f
+expand_line_seps	rpg.c	/^void expand_line_seps(void){$/;"	f
+expand_rows	rpg.c	/^void expand_rows(void){$/;"	f
+expand_singarr	memory.h	159;"	d
+expand_words_to_chars	align.c	/^void expand_words_to_chars(ARC *arc, void *ptr){$/;"	f
+exterior_str	statdist.h	/^    char *exterior_str;$/;"	m	struct:Z_struct
+extract_NET_ALIGN_result	net_dp.c	/^PATH *extract_NET_ALIGN_result(NET_ALIGN *net_ali,NETWORK *net_a,NETWORK *net_b, int include_nulls){$/;"	f
+extract_best_NET_ALIGN_result	net_dp.c	/^PATH *extract_best_NET_ALIGN_result(NET_ALIGN *net_ali,NETWORK *net_a,NETWORK *net_b,float wwd(void *, void *, int (*cmp)(void *, void *))){$/;"	f
+extract_speaker	align.c	/^int extract_speaker(TEXT *id, TEXT *sname, enum id_types idt){$/;"	f
+field_a	alex.h	/^    int *field_a;                       \/* pointer to a list if intergers *\/$/;"	m	struct:AUTO_LEX_struct
+field_b	alex.h	/^    int *field_b;                       \/* Same usage as field_a . . . *\/$/;"	m	struct:AUTO_LEX_struct
+field_c	alex.h	/^    double *field_c;                       \/* Same usage as field_a . . . *\/$/;"	m	struct:AUTO_LEX_struct
+file	path.h	/^    char *file;          \/* audio from whence the data came, only in place $/;"	m	struct:PATH_struct
+file	rover.c	/^    char *file;        \/* File name for ctm format, utt id for trn format *\/$/;"	m	struct:mfalign_best_seq_struct	file:
+file	stm.h	/^    TEXT *file;$/;"	m	struct:stm_seg_struct
+file	text.h	/^    char *file; \/* filename read int *\/$/;"	m	struct:text_list_struct
+filename	wwscr_f.h	/^    TEXT *filename;$/;"	m	struct:word_weight_list_struct
+fill_STM	stm.c	/^void fill_STM(FILE *fp, STM *stm, char *fname, boolean *end_of_file, int case_sense, int *perr){$/;"	f
+fill_STM_structure	stm.c	/^void fill_STM_structure(STM *stm, FILE *fp_stm, char *stm_file, int *stm_file_end, int case_sense){ $/;"	f
+fill_WTOKE_structure	fillmrks.c	/^void fill_WTOKE_structure(WTOKE_STR1 *ctm_segs, FILE *fp_ctm, char *ctm_file, int *ctm_eof, int case_sense){$/;"	f
+fill_mark_struct	fillmrks.c	/^ void fill_mark_struct(FILE *fp, WTOKE_STR1 *word_tokens, char *fname, boolean *end_of_file, int *perr, int case_sense)$/;"	f
+find_PATHLABEL_id	scores.c	/^int find_PATHLABEL_id(SCORES *sc, char *id){$/;"	f
+find_arcset_id	net_dp.c	/^int find_arcset_id(ARCSET *arcset, ARC *arc, int from){$/;"	f
+find_common_silence	mfa.c	/^int find_common_silence(WTOKE_STR1 **ctms, int nctm, int *ctm_end, int *sil_end, double silence_dur){$/;"	f
+find_matched_grp	corresp.c	/^void find_matched_grp(SC_CORRESPONDENCE *corresp){$/;"	f
+find_matched_paths	corresp.c	/^void find_matched_paths(SC_CORRESPONDENCE *corresp){$/;"	f
+find_minimal_paths	net_dp.c	/^void find_minimal_paths(NET_ALIGN *net_ali, int a, int b, int *rlev,float wwd(void *, void *, int (*cmp)(void *, void *)),NETWORK *net_a, PATH *path,int *count)$/;"	f
+find_next_TEXT_alternation	text.c	/^int find_next_TEXT_alternation(TEXT **ctext, TEXT *token, int len){$/;"	f
+find_next_TEXT_token	text.c	/^int find_next_TEXT_token(TEXT **ctext, TEXT *token, int len){$/;"	f
+find_null_arcs	net_adt.c	/^void find_null_arcs(ARC *arc, void *ptr){$/;"	f
+flag1	netstr1.h	/^   boolean start_state, stop_state, flag1, flag2;$/;"	m	struct:NODE1
+flag1	stm.h	/^    int  flag1;$/;"	m	struct:stm_seg_struct
+flag2	netstr1.h	/^   boolean start_state, stop_state, flag1, flag2;$/;"	m	struct:NODE1
+flush_text	corresp.c	/^static void flush_text(SCORES **scor, PATH **path_set, int npath, TEXT **outbuf, int *outlen, int maxlen, FILE *fp){$/;"	f	file:
+form_feed	sctk.h	46;"	d
+formatWordForSGML	scores.c	/^TEXT *formatWordForSGML(WORD *word, TEXT *buffer){$/;"	f
+format_str	rpg.c	/^    char format_str[100];$/;"	m	struct:column_definition_struct	file:
+formula_index	rank.c	/^int formula_index(char *str)$/;"	f
+formula_str	rank.c	/^char *formula_str(char *str)$/;"	f
+fpout	rover.c	/^    FILE *fpout;       \/* output file to write the resulting selection *\/$/;"	m	struct:mfalign_best_seq_struct	file:
+frag_corr	sctk.h	/^    int frag_corr;         \/* if the comline fragment correct flag *\/$/;"	m	struct:set_score
+frag_corr	word.h	/^    int frag_corr;                      \/* boolean flag to identify the word as a$/;"	m	struct:WORD_STRUCT
+freeLList	llist.c	/^static void freeLList (LList **p)$/;"	f	file:
+free_1dimarr	memory.h	35;"	d
+free_2dimarr	memory.h	143;"	d
+free_3dimarr	memory.h	150;"	d
+free_ARCSET	net_dp.c	/^void free_ARCSET(ARCSET *arcset){$/;"	f
+free_LABEL_SCORES	lur.c	/^static void free_LABEL_SCORES(LABEL *tlab, SCORES *sc, int nscor)$/;"	f	file:
+free_RANK	rank.c	/^void free_RANK(RANK *rank)$/;"	f
+free_SEG_LIST	mtchprs.c	49;"	d	file:
+free_STM	stm.c	/^void free_STM(STM *stm){$/;"	f
+free_STM_SEG	stm.c	/^void free_STM_SEG(STM_SEG *seg){$/;"	f
+free_TEXT_LIST	text.c	/^void free_TEXT_LIST(TEXT_LIST **tl)$/;"	f
+free_WWL	wwscr_f.c	/^void free_WWL(WWL **wwl)$/;"	f
+free_WWL_SCORE	wwscr_f.c	/^static void free_WWL_SCORE(WWL_SCORE *wwlscr)$/;"	f	file:
+free_mark_file	fillmrks.c	/^ void free_mark_file(WTOKE_STR1 *word_tokens)$/;"	f
+free_refs	align.c	/^void free_refs(TEXT ***rset, TEXT ***ref_id, int refcnt){$/;"	f
+free_singarr	memory.h	138;"	d
+from_node	netstr1.h	/^ struct NODE1 *from_node, *to_node;$/;"	m	struct:ARC1	typeref:struct:ARC1::NODE1
+func	wwscr_f.h	/^    WWL_FUNC *func;$/;"	m	struct:WWL_score_struct
+gap_at_times	mfa.c	/^int gap_at_times(WTOKE_STR1 *ctm, int end, double *mgap_beg, double *mgap_end, int *mgap_s){$/;"	f
+getLList	llist.c	/^static LList *getLList (void *pdata)$/;"	f	file:
+get_CORES	cores.c	/^void *get_CORES(void){$/;"	f
+get_SGML_attrib	sgml.c	/^TEXT *get_SGML_attrib(SGML *sg, int tn, TEXT *sname)$/;"	f
+get_WORD	word.c	/^WORD *get_WORD(void){$/;"	f
+get_date	scores.c	/^char *get_date(void){$/;"	f
+get_next_string_value	rpg.c	/^char *get_next_string_value(char **str, int width)$/;"	f
+get_weight_from_WW	wwscr_f.c	/^static double get_weight_from_WW(WWL *wwl, TEXT *str)$/;"	f	file:
+glob_ties	mfa.c	/^int glob_ties = 0;$/;"	v
+grp	corresp.h	/^  SC_COR_GRP **grp;$/;"	m	struct:score_correspondence_struct
+grp	sctk.h	/^    GRP *grp;              \/* a list of path groups *\/$/;"	m	struct:set_score
+grp_ptr	corresp.h	/^  int *grp_ptr;$/;"	m	struct:score_group_correspondence_struct
+grp_score	sctk.h	/^typedef struct grp_score{$/;"	s
+grp_score::corr	sctk.h	/^    int corr;                 \/* num correct words in sent *\/$/;"	m	struct:grp_score
+grp_score::del	sctk.h	/^    int del;                  \/* num deleted words in sent *\/$/;"	m	struct:grp_score
+grp_score::ins	sctk.h	/^    int ins;                  \/* num inserted words in sent *\/$/;"	m	struct:grp_score
+grp_score::max_path	sctk.h	/^    int max_path;             \/* Size of PATH array *\/$/;"	m	struct:grp_score
+grp_score::merges	sctk.h	/^    int merges;               \/* num of merges *\/$/;"	m	struct:grp_score
+grp_score::name	sctk.h	/^    char *name;$/;"	m	struct:grp_score
+grp_score::nsent	sctk.h	/^    int nsent;                \/* number of sentences, utts, ... *\/$/;"	m	struct:grp_score
+grp_score::num_path	sctk.h	/^    int num_path;             \/* number of PATH's in PATH array *\/$/;"	m	struct:grp_score
+grp_score::path	sctk.h	/^    PATH **path;              \/* array of PATH pointers *\/$/;"	m	struct:grp_score
+grp_score::serr	sctk.h	/^    int serr;                 \/* number of sents with an error *\/$/;"	m	struct:grp_score
+grp_score::splits	sctk.h	/^    int splits;               \/* num of splits *\/$/;"	m	struct:grp_score
+grp_score::sub	sctk.h	/^    int sub;                  \/* num substituted words in sent *\/$/;"	m	struct:grp_score
+grp_score::weight_corr	sctk.h	/^    double weight_corr;       \/* weighted sum of correct words in sent *\/$/;"	m	struct:grp_score
+grp_score::weight_del	sctk.h	/^    double weight_del;        \/* weighted sum of deleted words in sent *\/$/;"	m	struct:grp_score
+grp_score::weight_ins	sctk.h	/^    double weight_ins;        \/* weighted sum of inserted words in sent *\/$/;"	m	struct:grp_score
+grp_score::weight_merges	sctk.h	/^    double weight_merges;     \/* weighted sum of of merges *\/$/;"	m	struct:grp_score
+grp_score::weight_ref	sctk.h	/^    double weight_ref;        \/* weighted sum of reference words in sent *\/$/;"	m	struct:grp_score
+grp_score::weight_splits	sctk.h	/^    double weight_splits;     \/* weighted sum of of splits *\/$/;"	m	struct:grp_score
+grp_score::weight_sub	sctk.h	/^    double weight_sub;        \/* weighted sum of substituted words in sent *\/$/;"	m	struct:grp_score
+has_conf	wtokstr1.h	/^    int has_conf;                   \/* boolean flag, 1 if any words have the *\/$/;"	m	struct:__anon2
+highest_nnode_name	netstr1.h	/^    int highest_nnode_name;$/;"	m	struct:NETWORK1
+hyp_confidences_available	det.c	/^int hyp_confidences_available(SCORES *scor){$/;"	f
+hyp_fname	sctk.h	/^    char *hyp_fname;       \/* filename of the hypothesis file *\/$/;"	m	struct:set_score
+hyp_t1	path.h	/^    double hyp_t1;        \/* beginning time for the hypothesis *\/$/;"	m	struct:PATH_struct
+hyp_t2	path.h	/^    double hyp_t2;        \/* ending time for the hypothesis *\/$/;"	m	struct:PATH_struct
+id	path.h	/^    char *id;            \/* utterance id *\/$/;"	m	struct:PATH_struct
+id	sctk.h	/^    char *id;              \/* the category's id code *\/$/;"	m	struct:category_item_struct
+id	sctk.h	/^    char *id;              \/* the label's id code *\/$/;"	m	struct:pathlabel_item_struct
+id	wtokstr1.h	/^    char *id;                       \/* the utterance id of the segement\/file *\/$/;"	m	struct:__anon2
+id	wwscr_f.h	/^    TEXT *id;$/;"	m	struct:WWL_spkr_struct
+id_types	sctk.h	/^enum id_types {WSJ,RM,ATIS,SWB,SPUID};$/;"	g
+identical_refs	corresp.c	/^static int identical_refs(int npaths,PATH **paths){$/;"	f	file:
+ignore	wtokstr1.h	/^    boolean ignore;$/;"	m	struct:__anon1
+in_TEXT_LIST	text.c	/^int in_TEXT_LIST(TEXT_LIST *tl, TEXT *str)$/;"	f
+in_arcs	netstr1.h	/^   ARC_LIST_ATOM *in_arcs, *out_arcs;$/;"	m	struct:NODE1
+index_search	alex.c	/^static int index_search(AUTO_LEX *alex, TEXT *goal, int *success)$/;"	f	file:
+infer_word_seg_algo1	align.c	/^PATH *infer_word_seg_algo1(TEXT *ref, TEXT *hyp, NETWORK *hnet, int case_sense,char *id, char *lex_fname, int fcorr, int opt_del, int flags)$/;"	f
+infer_word_seg_algo2	align.c	/^PATH *infer_word_seg_algo2(TEXT *ref, TEXT *hyp, NETWORK *hnet, int case_sense,char *id, char *lex_fname, int fcorr, int opt_del, int flags)$/;"	f
+init_RANK_struct_from_SCORES	rank.c	/^void init_RANK_struct_from_SCORES(RANK *rank, SCORES *scor[], int nscor, char *calc_formula)$/;"	f
+init_SGML	sgml.c	/^void init_SGML(SGML *sg)$/;"	f
+init_TEXT_LIST	text.c	/^TEXT_LIST *init_TEXT_LIST(void){$/;"	f
+init_pad_util	pad.c	/^void init_pad_util(int pr_width)$/;"	f
+initialize_REPORT_DEF_STRUCT	rpg.c	/^void initialize_REPORT_DEF_STRUCT(void){$/;"	f
+initialize_lm	slm_intf.c	/^void initialize_lm(ng_t *ng, fb_info **fb_list, char *lm_file, int dbg){$/;"	f
+ins	sctk.h	/^    int ins;                  \/* num inserted words in sent *\/$/;"	m	struct:grp_score
+ins	wwscr_f.h	/^    double ref, corr, sub, del, ins, spl, mrg;$/;"	m	struct:WWL_FUNC_struct
+ins	wwscr_f.h	/^    double ref, corr, sub, del, ins, spl, mrg;$/;"	m	struct:WWL_spkr_struct
+insert_node_in_node_map	net_adt.c	/^static int insert_node_in_node_map(NODE *n1, NODE *n2, int add){$/;"	f	file:
+inserts_exist	corresp.c	/^static int inserts_exist(SCORES **scor, PATH **path_set, int npath, int *psets){$/;"	f	file:
+int_cmp_arr	order.c	/^static int *int_cmp_arr;$/;"	v	file:
+intern_value	word.h	/^    TEXT *intern_value;                 \/* the word text, for internal compares *\/$/;"	m	struct:WORD_STRUCT
+interpelate_y_from_x	sctk.h	75;"	d
+is_2byte	text.c	6;"	d	file:
+is_EXTASC	text.c	7;"	d	file:
+is_last_just_col	rpg.c	/^int is_last_just_col(int just, int col)$/;"	f
+is_last_span_col	rpg.c	/^int is_last_span_col(int just, int col)$/;"	f
+is_null_alt	netstr1.h	/^    int (*is_null_alt)(void *);   char *is_null_alt_name;$/;"	m	struct:ARC_FUNCTIONS
+is_null_alt_name	netstr1.h	/^    int (*is_null_alt)(void *);   char *is_null_alt_name;$/;"	m	struct:ARC_FUNCTIONS
+is_opt_del	netstr1.h	/^    int (*is_opt_del)(void *);    char *is_opt_del_name;$/;"	m	struct:ARC_FUNCTIONS
+is_opt_del_name	netstr1.h	/^    int (*is_opt_del)(void *);    char *is_opt_del_name;$/;"	m	struct:ARC_FUNCTIONS
+iter_fmt	rpg.c	/^static char iter_fmt[MAX_VALUE_LEN];$/;"	v	file:
+iter_max_val	rpg.c	/^static int iter_num_val=(-1), iter_max_val = (-1);$/;"	v	file:
+iter_num_val	rpg.c	/^static int iter_num_val=(-1), iter_max_val = (-1);$/;"	v	file:
+ival	rpg.c	/^static char **ival;$/;"	v	file:
+kill_arc	killarc1.c	/^void kill_arc(ARC *arc1)           $/;"	f
+kill_node2	knode2.c	/^void kill_node2(NODE *node1)             $/;"	f
+label_stores_struct	lur.c	/^typedef struct label_stores_struct{$/;"	s	file:
+label_stores_struct::nerr	lur.c	/^    int nerr;              \/* number of errors *\/$/;"	m	struct:label_stores_struct	file:
+label_stores_struct::nref	lur.c	/^    int nref;              \/* number of reference words *\/$/;"	m	struct:label_stores_struct	file:
+label_struct	lur.c	/^typedef struct label_struct{$/;"	s	file:
+label_struct::location	lur.c	/^    int *location;         \/* array of categories for a label *\/$/;"	m	struct:label_struct	file:
+label_struct::lsc	lur.c	/^    LABEL_SCORES ***lsc;   \/* indexed by sys, label, spkrs *\/$/;"	m	struct:label_struct	file:
+labels	path.h	/^    char *labels;        \/* any labels attached to the id's *\/$/;"	m	struct:PATH_struct
+labels	stm.h	/^    TEXT *labels;$/;"	m	struct:stm_seg_struct
+lattice_error	corresp.c	/^static void lattice_error(int npaths,PATH **paths, int *refWord, int *refErrRefWord, AUTO_LEX *alex){$/;"	f	file:
+level	statdist.h	/^    double  level[MAX_X2_PER+1];$/;"	m	struct:X2_df
+lnode	llist.h	/^struct lnode$/;"	s
+lnode::data	llist.h	/^ void *data;  \/* data element            *\/$/;"	m	struct:lnode
+lnode::next	llist.h	/^ void *next;  \/* pointer to next element *\/$/;"	m	struct:lnode
+load_SCORES_sgml	scores.c	/^int load_SCORES_sgml(FILE *fp, SCORES **scor, int *nscor, int maxn)$/;"	f
+load_TEXT_LIST	text.c	/^TEXT_LIST *load_TEXT_LIST(char *file, int col)$/;"	f
+load_WWL	wwscr_f.c	/^int load_WWL(WWL **wwl, TEXT *filename)$/;"	f
+load_comment_labels_from_file	scores.c	/^void load_comment_labels_from_file(SCORES *scor, char *labfile){$/;"	f
+load_pralign_file	sc_stats.c	/^int load_pralign_file(FILE *fp, SCORES **scor, int *nscor, int maxn){$/;"	f
+load_refs	align.c	/^void load_refs(SCORES *sc, char *hyp_file, char *ref_file, TEXT ***rset, TEXT ***refid, int *refcnt, int case_sense){$/;"	f
+locate_STM_boundary	stm.c	/^void locate_STM_boundary(STM *stm, int start, int by_file, int by_chan, int *end){$/;"	f
+locate_WTOKE_boundary	fillmrks.c	/^void locate_WTOKE_boundary(WTOKE_STR1 *seg, int start, int by_conv, int by_turn, int *end){$/;"	f
+locate_boundary	fillmrks.c	/^void locate_boundary(WTOKE_STR1 *seg, int start, int by_conv, int by_turn, int *end){ $/;"	f
+locate_confusion_pairs	sc_dtl.c	/^static void locate_confusion_pairs(SCORES *scor,int spkr,AUTO_LEX *talex){$/;"	f	file:
+locate_deletions	sc_dtl.c	/^static void locate_deletions(SCORES *scor,int spkr,AUTO_LEX *talex){$/;"	f	file:
+locate_file_boundaries	stm2ctm.c	/^static int locate_file_boundaries(WTOKE_STR1 *hyp_segs, STM *stm, int *hend_chan1, int *hend_chan2, int hyp_file_end, int *rend_chan1, int *rend_chan2, int ref_file_end, int *number_of_channels, char *proc, int feedback){$/;"	f	file:
+locate_insertions	sc_dtl.c	/^static void locate_insertions(SCORES *scor,int spkr,AUTO_LEX *talex){$/;"	f	file:
+locate_matched_data	corresp.c	/^void locate_matched_data(SCORES *scor[], int nscor, SC_CORRESPONDENCE **corresp){$/;"	f
+locate_misrecognized	sc_dtl.c	/^static void locate_misrecognized(SCORES *scor,int spkr,AUTO_LEX *talex){$/;"	f	file:
+locate_next_file_channel	mfa.c	/^void locate_next_file_channel(WTOKE_STR1 **ctms, int nctm, FILE **files, char **hypname, int *eofs, int *conv_end, int case_sense, int feedback){$/;"	f
+locate_substitutions	sc_dtl.c	/^static void locate_substitutions(SCORES *scor,int spkr,AUTO_LEX *talex){$/;"	f	file:
+location	lur.c	/^    int *location;         \/* array of categories for a label *\/$/;"	m	struct:label_struct	file:
+lookup_lm_word_weight	slm_intf.c	/^void lookup_lm_word_weight(ARC *arc, void *ptr){$/;"	f
+lookup_node	cores.c	/^static int lookup_node(NODE **list, int cnt, NODE *node){$/;"	f	file:
+lookup_node	net_adt.c	/^static int lookup_node(NODE **list, int cnt, NODE *node){$/;"	f	file:
+lookup_word_weight	align.c	/^void lookup_word_weight(ARC *arc, void *ptr){$/;"	f
+lsc	lur.c	/^    LABEL_SCORES ***lsc;   \/* indexed by sys, label, spkrs *\/$/;"	m	struct:label_struct	file:
+main	mcnemar.c	/^int main(int argc, char **argv){$/;"	f
+main	rover.c	/^int main(int argc, char **argv){$/;"	f
+main	sc_stats.c	/^int main(int argc, char **argv){$/;"	f
+main	sclite.c	/^int main(int argc, char **argv){$/;"	f
+main	sign.c	/^int main(int argc, char **argv){$/;"	f
+make_SCORES_DET_curve	det.c	/^int make_SCORES_DET_curve(SCORES *scor[], int nscor, char *outroot, int feedback, char *test_name){$/;"	f
+make_arc	marc1.c	/^ARC *make_arc(void *dat, NODE *from_node, NODE *to_node, int *perr)$/;"	f
+make_binned_confidence	det.c	/^int make_binned_confidence(SCORES *scor, char *outroot, int feedback){$/;"	f
+make_confidence_histogram	det.c	/^int make_confidence_histogram(SCORES *scor, char *outroot, int feedback){$/;"	f
+make_empty	netstr1.h	/^    void *(*make_empty)(void *);  char *make_empty_name;$/;"	m	struct:ARC_FUNCTIONS
+make_empty_CORES	cores.c	/^void *make_empty_CORES(void *p){$/;"	f
+make_empty_WORD	word.c	/^void *make_empty_WORD(void *p){$/;"	f
+make_empty_name	netstr1.h	/^    void *(*make_empty)(void *);  char *make_empty_name;$/;"	m	struct:ARC_FUNCTIONS
+make_node	mnode1.c	/^NODE *make_node(char *name, NETWORK *net, ARC *from_arc, ARC *to_arc, int *highest_nnode_name, int *perr)$/;"	f
+make_scaled_binned_confidence	det.c	/^int make_scaled_binned_confidence(SCORES *scor, char *outroot, int bins, int feedback){$/;"	f
+make_speaker_summary	wwscr_f.c	/^static void make_speaker_summary(WWL_SCORE *wwlscore, FILE *fp)$/;"	f	file:
+make_total_summary	wwscr_f.c	/^static void make_total_summary(WWL_SCORE *wwlscore, FILE *fp)$/;"	f	file:
+malloc_died	memory.h	/^void malloc_died (int _len){$/;"	f
+malloc_safe	sctk.h	36;"	d
+max	alex.h	/^    int max,                            \/* total possible tokens *\/$/;"	m	struct:AUTO_LEX_struct
+max	netstr1.h	/^    int max;             \/* current size of the data structure *\/$/;"	m	struct:ARCSET_struct
+max	path.h	/^    int max;             \/* maximum number of PATH_set structures in pset*\/$/;"	m	struct:PATH_struct
+max	stm.h	/^    int max;$/;"	m	struct:stm_struct
+max	text.h	/^    int max;   \/* The max size for elem *\/$/;"	m	struct:text_list_struct
+max	wtokstr1.h	/^    int max;                         \/* maximum num of words the the table *\/$/;"	m	struct:__anon2
+max	wwscr_f.h	/^    int max;$/;"	m	struct:word_weight_list_struct
+max_cat	sctk.h	/^    int max_cat;           \/* max CATEGORY_ITEMS in 'cat' array *\/$/;"	m	struct:arbitrary_subset_label_struct
+max_col	rpg.c	/^    int max_col;       \/* The maximum number of columns in the structure *\/$/;"	m	struct:report_definition_struct	file:
+max_col_sizes	rpg.c	/^    int **max_col_sizes;   \/* this is dependent on the number of columns *\/$/;"	m	struct:report_definition_struct	file:
+max_conf	cores.h	/^  double max_conf;$/;"	m	struct:CORRESP_STRUCT
+max_grp	corresp.h	/^  int max_grp;$/;"	m	struct:score_correspondence_struct
+max_grp	sctk.h	/^    int max_grp;           \/* maximum number of path groups (speakers) *\/$/;"	m	struct:set_score
+max_line_seps	rpg.c	/^    int max_line_seps; \/* The maximum # of line separators between rows *\/$/;"	m	struct:report_definition_struct	file:
+max_node	cores.c	/^static int max_node = 0, num_node = 0;$/;"	v	file:
+max_node	net_adt.c	/^static int max_node = 0, num_node = 0;$/;"	v	file:
+max_path	corresp.h	/^  int max_path;$/;"	m	struct:score_correspondence_struct
+max_path	sctk.h	/^    int max_path;             \/* Size of PATH array *\/$/;"	m	struct:grp_score
+max_plab	sctk.h	/^    int max_plab;          \/* max PATHLABEL_ITEMS in 'plab' array *\/$/;"	m	struct:arbitrary_subset_label_struct
+max_row	rpg.c	/^    int max_row;       \/* The maximum number of rows in the structure *\/$/;"	m	struct:report_definition_struct	file:
+maxfunc	wwscr_f.h	/^    int maxfunc;$/;"	m	struct:WWL_score_struct
+merges	sctk.h	/^    int merges;               \/* num of merges *\/$/;"	m	struct:grp_score
+method	rover.c	/^    int method;        \/* id of the selection method performed *\/$/;"	m	struct:mfalign_best_seq_struct	file:
+mfalign_best_seq_struct	rover.c	/^struct mfalign_best_seq_struct {$/;"	s	file:
+mfalign_best_seq_struct::alpha	rover.c	/^    double alpha;      \/* the trade off between selection by word count or$/;"	m	struct:mfalign_best_seq_struct	file:
+mfalign_best_seq_struct::chan	rover.c	/^    char *chan;        \/* Channed for the ctm format *\/$/;"	m	struct:mfalign_best_seq_struct	file:
+mfalign_best_seq_struct::ctm_format	rover.c	/^    int ctm_format;    \/* boolean to write the records in ctm format *\/$/;"	m	struct:mfalign_best_seq_struct	file:
+mfalign_best_seq_struct::file	rover.c	/^    char *file;        \/* File name for ctm format, utt id for trn format *\/$/;"	m	struct:mfalign_best_seq_struct	file:
+mfalign_best_seq_struct::fpout	rover.c	/^    FILE *fpout;       \/* output file to write the resulting selection *\/$/;"	m	struct:mfalign_best_seq_struct	file:
+mfalign_best_seq_struct::method	rover.c	/^    int method;        \/* id of the selection method performed *\/$/;"	m	struct:mfalign_best_seq_struct	file:
+mfalign_best_seq_struct::null_alt	rover.c	/^    WORD *null_alt;    \/* a NULL word for comparisons in the function *\/$/;"	m	struct:mfalign_best_seq_struct	file:
+mfalign_best_seq_struct::null_conf	rover.c	/^    double null_conf;  \/* Confidence associated with NULL words *\/$/;"	m	struct:mfalign_best_seq_struct	file:
+mfalign_best_seq_struct::putat_format	rover.c	/^    int putat_format;  \/* boolean to the putative hit format *\/$/;"	m	struct:mfalign_best_seq_struct	file:
+mfalign_best_seq_struct::write_to_fp	rover.c	/^    int write_to_fp;   \/* boolean to write the selection to fpout *\/$/;"	m	struct:mfalign_best_seq_struct	file:
+mfalign_ctm_files	mfa.c	/^void mfalign_ctm_files(char **hypname, int nhyps, int time_align, int case_sense, int feedback, void (*callback)(NETWORK *, char *, char *), double silence_dur){$/;"	f
+mfalign_ctm_files_v1	rover.c	/^void mfalign_ctm_files_v1(char **hypname, int nhyps, int time_align, int case_sense, char *outfile, int feedback, char *out_name, double alpha, double null_conf, int method){$/;"	f
+mfdb	mfa.c	/^int mfdb = 0;$/;"	v
+min_conf	cores.h	/^  double min_conf;$/;"	m	struct:CORRESP_STRUCT
+min_d	netstr1.h	/^    float min_d;         \/* the current minimum distance *\/$/;"	m	struct:CELL_struct
+min_just_width	rpg.c	/^    int min_just_width;$/;"	m	struct:column_definition_struct	file:
+mispronounced	wtokstr1.h	/^    boolean mispronounced;$/;"	m	struct:__anon1
+more_data	corresp.c	/^static int more_data(PATH **path_set, int npath, int *psets){$/;"	f	file:
+mrg	wwscr_f.h	/^    double ref, corr, sub, del, ins, spl, mrg;$/;"	m	struct:WWL_FUNC_struct
+mrg	wwscr_f.h	/^    double ref, corr, sub, del, ins, spl, mrg;$/;"	m	struct:WWL_spkr_struct
+n	wtokstr1.h	/^   {int n;                           \/* number of word tokens in table *\/$/;"	m	struct:__anon2
+n_CHOOSE_r	statdist.c	/^double n_CHOOSE_r(int n, int r)$/;"	f
+n_blk	rank.h	/^   int n_blk;                  \/* number of blocks *\/ $/;"	m	struct:rank_struct
+n_node_map	net_adt.c	/^static int n_node_map = 0;$/;"	v	file:
+n_normp	statdist.c	/^  static int n_normp = 515;$/;"	v	file:
+n_spkrs	wwscr_f.h	/^    int n_spkrs;$/;"	m	struct:WWL_FUNC_struct
+n_trt	rank.h	/^   int n_trt;                  \/* number of treatments *\/$/;"	m	struct:rank_struct
+name	netstr1.h	/^   {char *name;$/;"	m	struct:NETWORK1
+name	netstr1.h	/^  {char *name;$/;"	m	struct:NODE1
+name	sctk.h	/^    char *name;$/;"	m	struct:grp_score
+name	sgml.h	/^    TEXT *name;$/;"	m	struct:sgml_label_struct
+neg_per_str	statdist.h	/^    char *neg_per_str[MAX_X2_PER+1];$/;"	m	struct:X2_struct
+nerr	lur.c	/^    int nerr;              \/* number of errors *\/$/;"	m	struct:label_stores_struct	file:
+net	netstr1.h	/^   struct NETWORK1 *net;$/;"	m	struct:NODE1	typeref:struct:NODE1::NETWORK1
+net	netstr1.h	/^ struct NETWORK1 *net;$/;"	m	struct:ARC1	typeref:struct:ARC1::NETWORK1
+net_ali	net_dp.c	/^static NET_ALIGN *net_ali = (NET_ALIGN *)0;$/;"	v	file:
+network_dp_align_texts	align.c	/^PATH *network_dp_align_texts(TEXT *ref, NETWORK *rnet, TEXT *hyp, NETWORK *hnet, int char_align, int case_sense, char *id, int fcorr, int opt_del, int time_align, WWL *wwl, char *lm_file)$/;"	f
+new	sc_stats.c	215;"	d	file:
+new_WORD	word.c	/^WORD *new_WORD(TEXT *t, int id, double t1, double t2, double conf, TEXT *tag1, TEXT *tag2, int fcorr, int odel, double weight){$/;"	f
+new_WORD_parseText	word.c	/^WORD *new_WORD_parseText(TEXT *t, int id, double t1, double t2, double conf, int fcorr, int odel, double weight){$/;"	f
+next	llist.h	/^ void *next;  \/* pointer to next element *\/$/;"	m	struct:lnode
+next	netstr1.h	/^   struct ARC_LIST_ATOM1 *next, *prev;$/;"	m	struct:ARC_LIST_ATOM1	typeref:struct:ARC_LIST_ATOM1::ARC_LIST_ATOM1
+nextColon	word.c	/^TEXT *nextColon(TEXT *t){$/;"	f
+node_count	netstr1.h	/^    int node_count;$/;"	m	struct:NETWORK1
+node_list	cores.c	/^static NODE **node_list;$/;"	v	file:
+node_list	net_adt.c	/^static NODE **node_list;$/;"	v	file:
+node_map	net_adt.c	/^static NODE ***node_map;$/;"	v	file:
+normprob	statdist.c	/^  double normprob(double z)$/;"	f
+nref	lur.c	/^    int nref;              \/* number of reference words *\/$/;"	m	struct:label_stores_struct	file:
+nscor	corresp.h	/^  int nscor;$/;"	m	struct:score_correspondence_struct
+nsent	sctk.h	/^    int nsent;                \/* number of sentences, utts, ... *\/$/;"	m	struct:grp_score
+nt_copy_arc	net_adt.c	/^static void nt_copy_arc(ARC *arc, void *p)          $/;"	f	file:
+null_alt	rover.c	/^    WORD *null_alt;    \/* a NULL word for comparisons in the function *\/$/;"	m	struct:mfalign_best_seq_struct	file:
+null_alt_CORES	cores.c	/^int null_alt_CORES(void *p){$/;"	f
+null_alt_WORD	word.c	/^int null_alt_WORD(void *p){$/;"	f
+null_conf	rover.c	/^    double null_conf;  \/* Confidence associated with NULL words *\/$/;"	m	struct:mfalign_best_seq_struct	file:
+num	alex.h	/^        num;                            \/* current number of stored tokens *\/$/;"	m	struct:AUTO_LEX_struct
+num	netstr1.h	/^    int num;             \/* current size of the networks being aligned *\/$/;"	m	struct:ARCSET_struct
+num	path.h	/^    int num;             \/* the current number of used structures in pset*\/$/;"	m	struct:PATH_struct
+num	stm.h	/^    int num;$/;"	m	struct:stm_struct
+num	text.h	/^    int num;   \/* The current number of elements in elem *\/$/;"	m	struct:text_list_struct
+num	wwscr_f.h	/^    int num;$/;"	m	struct:word_weight_list_struct
+num_cat	sctk.h	/^    int num_cat;           \/* current number of items in 'cat' array *\/$/;"	m	struct:arbitrary_subset_label_struct
+num_col	rpg.c	/^    int num_col;$/;"	m	struct:column_definition_struct	file:
+num_col_chars	rpg.c	/^    int num_col_chars;$/;"	m	struct:column_definition_struct	file:
+num_col_defs	rpg.c	/^    int num_col_defs;$/;"	m	struct:report_definition_struct	file:
+num_grp	corresp.h	/^  int num_grp;$/;"	m	struct:score_correspondence_struct
+num_grp	sctk.h	/^    int num_grp;           \/* current number of path groups *\/$/;"	m	struct:set_score
+num_locked	rpg.c	/^    int num_locked;$/;"	m	struct:column_definition_struct	file:
+num_node	cores.c	/^static int max_node = 0, num_node = 0;$/;"	v	file:
+num_node	net_adt.c	/^static int max_node = 0, num_node = 0;$/;"	v	file:
+num_path	corresp.h	/^  int num_path;$/;"	m	struct:score_group_correspondence_struct
+num_path	sctk.h	/^    int num_path;             \/* number of PATH's in PATH array *\/$/;"	m	struct:grp_score
+num_plab	sctk.h	/^    int num_plab;          \/* current number of items in 'plab' array *\/$/;"	m	struct:arbitrary_subset_label_struct
+num_span_col	rpg.c	/^int num_span_col(int just, int col)$/;"	f
+num_tags	sgml.h	/^    int num_tags;$/;"	m	struct:sgml_tags
+num_w	wwscr_f.h	/^    int num_w;$/;"	m	struct:word_weight_list_struct
+number_errors_for_hyp1	mtchprs.c	/^    int number_errors_for_hyp1;$/;"	m	struct:segment_count_struct	file:
+number_errors_for_hyp2	mtchprs.c	/^    int number_errors_for_hyp2;$/;"	m	struct:segment_count_struct	file:
+number_ref	mtchprs.c	/^    int number_ref;$/;"	m	struct:segment_count_struct	file:
+numfunc	wwscr_f.h	/^    int numfunc;$/;"	m	struct:WWL_score_struct
+nword	cores.h	/^  int nword;$/;"	m	struct:CORRESP_STRUCT
+opt_del	sctk.h	/^    int opt_del;           \/* if the comline opt_del flag set *\/$/;"	m	struct:set_score
+opt_del	word.h	/^    int opt_del;                        \/* boolean flag to identify $/;"	m	struct:WORD_STRUCT
+opt_del_CORES	cores.c	/^int opt_del_CORES (void *p){$/;"	f
+opt_del_WORD	word.c	/^int opt_del_WORD(void *p){$/;"	f
+out_arcs	netstr1.h	/^   ARC_LIST_ATOM *in_arcs, *out_arcs;$/;"	m	struct:NODE1
+out_net	net_adt.c	/^static NETWORK *out_net = (NETWORK *)0;$/;"	v	file:
+overlap	ctm2ctm.c	/^double overlap(double s1_t1, double s1_t2, double s2_t1, double s2_t2)$/;"	f
+overlapped	wtokstr1.h	/^    boolean overlapped;$/;"	m	struct:__anon1
+ovr_b_rank	rank.h	90;"	d
+ovr_t_rank	rank.h	87;"	d
+pad_pr_width	pad.c	/^int pad_pr_width(void)$/;"	f
+pad_print_out_width	pad.c	/^static int pad_print_out_width=SCREEN_WIDTH;$/;"	v	file:
+parse_input_comment_line	scores.c	/^int parse_input_comment_line(SCORES *sc, TEXT *buf){$/;"	f
+parse_stm_line	stm.c	/^void parse_stm_line(STM_SEG *seg,TEXT *buf, int case_sense, int dbg){$/;"	f
+path	sctk.h	/^    PATH **path;              \/* array of PATH pointers *\/$/;"	m	struct:grp_score
+path_ptr	corresp.h	/^  int **path_ptr;$/;"	m	struct:score_group_correspondence_struct
+pathlabel_item_struct	sctk.h	/^typedef struct pathlabel_item_struct{$/;"	s
+pathlabel_item_struct::desc	sctk.h	/^    char *desc;            \/* Descriptive text for the label *\/$/;"	m	struct:pathlabel_item_struct
+pathlabel_item_struct::id	sctk.h	/^    char *id;              \/* the label's id code *\/$/;"	m	struct:pathlabel_item_struct
+pathlabel_item_struct::title	sctk.h	/^    char *title;           \/* Column heading title for the lable *\/$/;"	m	struct:pathlabel_item_struct
+pct	sctk.h	45;"	d
+pcts	rank.h	/^   double **pcts;               \/* the actual percentages for trts and blks *\/$/;"	m	struct:rank_struct
+pdb	sctk.h	/^char *pdb="";$/;"	v
+per	statdist.h	/^    double per[MAX_X2_PER+1];$/;"	m	struct:X2_struct
+per_str	statdist.h	/^    char *per_str[MAX_X2_PER+1];$/;"	m	struct:X2_struct
+perc_interior	statdist.h	/^    double perc_interior;$/;"	m	struct:Z_struct
+perform_mfalign	mfa.c	/^NETWORK *perform_mfalign(WTOKE_STR1 **ctms, int nctm, int *end, int time_align){$/;"	f
+perform_mfalign_v1	rover.c	/^NETWORK *perform_mfalign_v1(WTOKE_STR1 **ctms, int nctm, int *end, int time_align, double null_conf){$/;"	f
+perform_peregoy_method	sentmcn.c	/^static int perform_peregoy_method(int **table, int verbosely,FILE *fp, double *conf)$/;"	f	file:
+perform_signtest	signtest.c	/^void perform_signtest(RANK *rank, int verbose, int report, char *formula_str, char formula_id, int ***out_winner, char *outroot, int feedback, double ***out_confidence)$/;"	f
+perform_wilcoxon	wilcoxon.c	/^void perform_wilcoxon(RANK *rank, int verbose, int report, char *formula_str, char formula_id, int ***out_winner, char *outroot, int feedback, double ***out_conf)$/;"	f
+perform_word_weighted_scoring	wwscr_f.c	/^int perform_word_weighted_scoring(SCORES *sc, TEXT *sys_root_name, int do_weight_one, int n_wwlf, TEXT **wwl_files, int make_sum, int make_ovrall, int dbg, int feedback) {    $/;"	f
+plab	sctk.h	/^    PATHLABEL_ITEM *plab;  \/* list of path labels *\/$/;"	m	struct:arbitrary_subset_label_struct
+populate_tag1	mfa.c	/^void populate_tag1(NODE *node, void *p){$/;"	f
+ppndf	det.c	/^static double ppndf (double p){$/;"	f	file:
+prev	netstr1.h	/^   struct ARC_LIST_ATOM1 *next, *prev;$/;"	m	struct:ARC_LIST_ATOM1	typeref:struct:ARC_LIST_ATOM1::
+print	netstr1.h	/^  { void (*print)(void *);        char *print_name;$/;"	m	struct:ARC_FUNCTIONS
+print_2_WORD_wt	word.c	/^void print_2_WORD_wt(void *p, void *p2, FILE *fp){$/;"	f
+print_ANOVAR_comp_matrix	anovar.c	/^static void print_ANOVAR_comp_matrix(int trt_num, int **stat_sum, char **trt_names, char *title, int *srt_ptr, FILE *fp)$/;"	f	file:
+print_CORES	cores.c	/^void print_CORES(void *p){$/;"	f
+print_N_SCORE	scores.c	/^void print_N_SCORE(SCORES *scor[], int nscor, char *outname, int max, int feedback, int score_diff){$/;"	f
+print_N_lur	lur.c	/^void print_N_lur(SCORES *sc[], int nsc, char *out_root_name, char *test_name, int feedback)$/;"	f
+print_N_system_executive_summary	scores.c	/^void print_N_system_executive_summary(SCORES *sc[], int nsc, char *out_root_name, char *test_name, int do_raw, int feedback)$/;"	f
+print_N_system_summary	scores.c	/^void print_N_system_summary(SCORES *sc[], int nsc, char *out_root_name, char *test_name, int do_raw, int feedback)$/;"	f
+print_WORD	word.c	/^void print_WORD(void *p){$/;"	f
+print_WORD_wt	word.c	/^void print_WORD_wt(void *p){$/;"	f
+print_Z_analysis	statdist.c	/^int print_Z_analysis(double Z_stat)$/;"	f
+print_arc	net_adt.c	/^void print_arc(ARC *arc, void *p)          $/;"	f
+print_blank_line	rpg.c	/^void print_blank_line(int wid, FILE *fp)$/;"	f
+print_compare_matrix_for_sent_M	sentmcn.c	/^static void print_compare_matrix_for_sent_M(SCORES *scor[], int nscor, int **winner, double **conf, char *tname, char *matrix_name,FILE *fp)$/;"	f	file:
+print_compare_matrix_for_sys	mtchprs.c	/^void print_compare_matrix_for_sys(SCORES *scor[], int nscor, int **winner, char *matrix_name, char *tname, char *v_desc, double **sys1_pct_arr, double **sys2_pct_arr, int **num_seg, double **Z_stat, int min_num_good, FILE *fp)$/;"	f
+print_composite_significance	rank.c	/^void print_composite_significance(RANK *rank, int pr_width, int num_win, int ***wins, char **win_desc, char **win_str, int matrix, int report, char *test_name, char *outroot, int feedback, char *outdir)$/;"	f
+print_composite_significance2	rank.c	/^void print_composite_significance2(RANK *rank, int pr_width, int num_win, int ***wins, double ***conf, char **win_desc, char **win_str, int matrix, int report, char *test_name, char *outroot, int feedback, char *outdir)$/;"	f
+print_double_line	rpg.c	/^void print_double_line(int wid, FILE *fp)$/;"	f
+print_final_line	rpg.c	/^void print_final_line(int wid, FILE *fp)$/;"	f
+print_gnu_range_graph	range.c	/^static void print_gnu_range_graph(RANK *rank, char *percent_desc, char *testname, char *base, int for_blks, int feedback)$/;"	f	file:
+print_gnu_range_graph2	range.c	/^static void print_gnu_range_graph2(RANK *rank, char *percent_desc, char *testname, char *base, int for_blks, int feedback)$/;"	f	file:
+print_gnu_rank_ranges	range.c	/^void print_gnu_rank_ranges(RANK *rank, char *percent_desc, char *testname,char *basename, int feedback)$/;"	f
+print_gnu_rank_ranges2	range.c	/^void print_gnu_rank_ranges2(RANK *rank, char *percent_desc, char *testname,char *basename, int feedback)$/;"	f
+print_line	rpg.c	/^void print_line(int wid, FILE *fp)$/;"	f
+print_linear	rover.c	/^void print_linear(NODE *node, void *p){$/;"	f
+print_lur	lur.c	/^void print_lur(SCORES *sc, char *sys_root_name, int feedback)$/;"	f
+print_n_winner_comp_matrix	rank.c	/^void print_n_winner_comp_matrix(RANK *rank, int **wins[], char *win_ids[], int win_cnt, int page_width,FILE *fp)$/;"	f
+print_n_winner_comp_report	rank.c	/^void print_n_winner_comp_report(RANK *rank, int ***wins, char **win_ids, char **win_str, char **win_desc, int win_cnt, int page_width, char *testname, char *outdir)$/;"	f
+print_name	netstr1.h	/^  { void (*print)(void *);        char *print_name;$/;"	m	struct:ARC_FUNCTIONS
+print_node	net_adt.c	/^void print_node(NODE *node, void *p){$/;"	f
+print_range_graph	range.c	/^static void print_range_graph(int scale, double *high, double *low, double *mean, double *std_dev, double *ovr_rank, char **r_names, int num_ranges, char *r_label, int *ptr_arr, FILE *fp)$/;"	f	file:
+print_rank_ranges	range.c	/^void print_rank_ranges(RANK *rank, char *percent_desc, char *testname, char *outroot, int feedback)$/;"	f
+print_result_of_analyze_rank_sum	anovar.c	/^static void print_result_of_analyze_rank_sum(int df, double X2_r, double adjust, char *subject, FILE *fp)$/;"	f	file:
+print_sent_seg_averaged_analysis	mtchprs.c	/^void print_sent_seg_averaged_analysis(SCORES *scor[], int nscor, double ***seg_per_sent, char *tname)$/;"	f
+print_sent_seg_long_analysis	mtchprs.c	/^void print_sent_seg_long_analysis(SCORES *scor[], int nscor, double ***seg_per_sent, char *tname)$/;"	f
+print_spaces	rpg.c	/^void print_spaces(int n, FILE *fp)$/;"	f
+print_start_line	rpg.c	/^void print_start_line(int wid, FILE *fp)$/;"	f
+print_system_summary	scores.c	/^void print_system_summary(SCORES *sc, char *sys_root_name, int do_sm, int do_raw, int do_weighted, int feedback)$/;"	f
+print_trt_comp_matrix_for_RANK_one_winner	rank.c	/^void print_trt_comp_matrix_for_RANK_one_winner(int **winner, RANK *rank, char *title, char *formula_str, char *block_id, FILE *fp)$/;"	f
+proc_arcs	sc_stats.c	/^void proc_arcs(int argc, char **argv, char *prog, char **pralign, int *npralign, int *pipein, int *feedback, char **out_dir, int *stats, int *stats_verbose, int *stats_unified, int *stats_graphs, char **stats_out_name, char **stats_formula, char **stats_test_name, int *reports, int *linewidth){$/;"	f
+proc_args	rover.c	/^void proc_args(int argc, char **argv, char *prog, char **hname, char **hfmt, int *nhyps, int *feedback, int *linewidth, int *time_align, int *case_sense, char **out_name, double *alpha, double *null_conf, int *method){$/;"	f
+proc_args	sclite.c	/^void proc_args(int argc, char **argv, char *prog, char **rname, char **rfmt, char **hname, char **hfmt, int *nhyps, enum id_types *id_type, int *case_sense, int *outputs, char **title, int *feedback, int *linewidth, int *use_diff, char **out_dir, char **out_name, int *char_align, int *pipeout, int *pipein, int *infered_wordseg, char **lexicon, int *frag_correct, int *opt_del, int *inf_flags, int *stm2ctm_reduce, int *time_align, int *conf_outputs, int *left_to_right, char **wwl_file, char **lm_file){$/;"	f
+process_diff_line	align.c	/^void process_diff_line(TEXT *diff_out, PATH *path, TEXT **firsttoken){$/;"	f
+process_inserts	corresp.c	/^static void process_inserts(SCORES **scor, PATH **path_set, int npath, int *psets, TEXT **outbuf, int *outlen, int maxlen, FILE *fp){$/;"	f	file:
+process_rest	corresp.c	/^static void process_rest(SCORES **scor, PATH **path_set, int npath, int *psets, TEXT **outbuf, int *outlen, int maxlen, FILE *fp){$/;"	f	file:
+pset	path.h	/^    PATH_SET *pset;      \/* the array of structures *\/$/;"	m	struct:PATH_struct
+putat_format	rover.c	/^    int putat_format;  \/* boolean to the putative hit format *\/$/;"	m	struct:mfalign_best_seq_struct	file:
+qsort_TEXT_strcmp	text.c	/^int qsort_TEXT_strcmp(const void *p, const void *p1){$/;"	f
+qsort_double_cmp	order.c	/^int qsort_double_cmp(const void *p, const void *p1){$/;"	f
+qsort_double_compare	order.c	/^int qsort_double_compare(const void *i, const void *j) {$/;"	f
+qsort_double_deccmp	order.c	/^int qsort_double_deccmp(const void *p, const void *p1){$/;"	f
+qsort_int_cmp	order.c	/^int qsort_int_cmp(const void *p, const void *p1){$/;"	f
+qsort_int_compare	order.c	/^int qsort_int_compare(const void *i, const void *j) {$/;"	f
+qsort_int_deccmp	order.c	/^int qsort_int_deccmp(const void *p, const void *p1){$/;"	f
+qsort_short_cmp	order.c	/^int qsort_short_cmp(const void *p, const void *p1){$/;"	f
+qsort_short_deccmp	order.c	/^int qsort_short_deccmp(const void *p, const void *p1){$/;"	f
+rank_double_arr	order.c	/^void rank_double_arr(double *arr, int num, int *ptr_arr, double *rank_arr, int order)$/;"	f
+rank_int_arr	order.c	/^void rank_int_arr(int *arr, int num, int *ptr_arr, double *rank_arr, int order)$/;"	f
+rank_on_pcts	rank.c	/^void rank_on_pcts(RANK *rank, int ordering)$/;"	f
+rank_struct	rank.h	/^typedef struct rank_struct{$/;"	s
+rank_struct::blk_Ovr_ranks	rank.h	/^   double *blk_Ovr_ranks;       \/* ranks after ANOVAR *\/$/;"	m	struct:rank_struct
+rank_struct::blk_name	rank.h	/^   char **blk_name;            \/* string names of blocks *\/$/;"	m	struct:rank_struct
+rank_struct::blk_ranks	rank.h	/^   double **blk_ranks;          \/* 2DIM array for ranks for blocks over trts *\/$/;"	m	struct:rank_struct
+rank_struct::blk_srt_ind	rank.h	/^   int *blk_srt_ind;           \/* indexes that to blocks to sort them *\/$/;"	m	struct:rank_struct
+rank_struct::n_blk	rank.h	/^   int n_blk;                  \/* number of blocks *\/ $/;"	m	struct:rank_struct
+rank_struct::n_trt	rank.h	/^   int n_trt;                  \/* number of treatments *\/$/;"	m	struct:rank_struct
+rank_struct::pcts	rank.h	/^   double **pcts;               \/* the actual percentages for trts and blks *\/$/;"	m	struct:rank_struct
+rank_struct::trt_Ovr_ranks	rank.h	/^   double *trt_Ovr_ranks;       \/* ranks after ANOVAR *\/$/;"	m	struct:rank_struct
+rank_struct::trt_name	rank.h	/^   char **trt_name;            \/* string names of treatments *\/$/;"	m	struct:rank_struct
+rank_struct::trt_ranks	rank.h	/^   double **trt_ranks;          \/* 2DIM array for ranks for trts over blocks *\/$/;"	m	struct:rank_struct
+rank_struct::trt_srt_ind	rank.h	/^   int *trt_srt_ind;           \/* indexes that sorts trts into orders *\/$/;"	m	struct:rank_struct
+read_stm_line	stm.c	/^void read_stm_line(TEXT **buf, int *len, FILE *fp){$/;"	f
+readpipe	readpipe.c	/^readpipe (char *progname, ...)$/;"	f
+recur	llist.c	/^void recur(LList **t, LList *f){ $/;"	f
+recursive_connect	net_adt.c	/^void recursive_connect(NETWORK *net, int connect_factor, void *(*append)(void *, void *), int (*test)(void *, void *), void *test_data, ARC *base_arc, ARC *cur_arc, void *value)$/;"	f
+ref	wwscr_f.h	/^    double ref, corr, sub, del, ins, spl, mrg;$/;"	m	struct:WWL_FUNC_struct
+ref	wwscr_f.h	/^    double ref, corr, sub, del, ins, spl, mrg;$/;"	m	struct:WWL_spkr_struct
+ref_fname	sctk.h	/^    char *ref_fname;       \/* filename of the reference file *\/$/;"	m	struct:set_score
+ref_t1	path.h	/^    double ref_t1;        \/* beginning time for the reference *\/$/;"	m	struct:PATH_struct
+ref_t2	path.h	/^    double ref_t2;        \/* ending time for the reference *\/$/;"	m	struct:PATH_struct
+release_CORES	cores.c	/^void release_CORES(void *p){$/;"	f
+release_WORD	word.c	/^void release_WORD(void *p){$/;"	f
+remove_id	align.c	/^void remove_id(TEXT *utt, TEXT **id, int *id_len){$/;"	f
+report_definition_struct	rpg.c	/^typedef struct report_definition_struct{$/;"	s	file:
+report_definition_struct::after_row_separations	rpg.c	/^    char **after_row_separations;       \/* size by max_row X max_line_seps *\/$/;"	m	struct:report_definition_struct	file:
+report_definition_struct::before_row_separations	rpg.c	/^    char **before_row_separations;      \/* size by max_row X max_line_seps *\/$/;"	m	struct:report_definition_struct	file:
+report_definition_struct::cell_values	rpg.c	/^    char ***cell_values;                \/* size by max_col X max_row X 100 *\/$/;"	m	struct:report_definition_struct	file:
+report_definition_struct::col_defs	rpg.c	/^    COLUMN_DEFS *col_defs;              \/* size by max_col *\/$/;"	m	struct:report_definition_struct	file:
+report_definition_struct::max_col	rpg.c	/^    int max_col;       \/* The maximum number of columns in the structure *\/$/;"	m	struct:report_definition_struct	file:
+report_definition_struct::max_col_sizes	rpg.c	/^    int **max_col_sizes;   \/* this is dependent on the number of columns *\/$/;"	m	struct:report_definition_struct	file:
+report_definition_struct::max_line_seps	rpg.c	/^    int max_line_seps; \/* The maximum # of line separators between rows *\/$/;"	m	struct:report_definition_struct	file:
+report_definition_struct::max_row	rpg.c	/^    int max_row;       \/* The maximum number of rows in the structure *\/$/;"	m	struct:report_definition_struct	file:
+report_definition_struct::num_col_defs	rpg.c	/^    int num_col_defs;$/;"	m	struct:report_definition_struct	file:
+report_definition_struct::row_just	rpg.c	/^    int *row_just;                      \/* size by max_row *\/$/;"	m	struct:report_definition_struct	file:
+report_definition_struct::tot_num_col	rpg.c	/^    int tot_num_col;                    \/* the most # columns to expect *\/$/;"	m	struct:report_definition_struct	file:
+report_definition_struct::tot_num_row	rpg.c	/^    int tot_num_row;$/;"	m	struct:report_definition_struct	file:
+report_definition_struct::width	rpg.c	/^    int width;$/;"	m	struct:report_definition_struct	file:
+reset_WTOKE_flag	fillmrks.c	/^void reset_WTOKE_flag(WTOKE_STR1 *seg,char *flag_name)$/;"	f
+reset_flag2_node_r	net_adt.c	/^static void reset_flag2_node_r(NODE *node, int bits)            $/;"	f	file:
+reset_net_pointer	net_adt.c	/^static void reset_net_pointer(NODE *node, NETWORK *net)            $/;"	f	file:
+rnk_b_name	rank.h	81;"	d
+rnk_b_rank	rank.h	73;"	d
+rnk_b_rank_arr	rank.h	74;"	d
+rnk_blks	rank.h	66;"	d
+rnk_pcts	rank.h	77;"	d
+rnk_pcts_arr	rank.h	78;"	d
+rnk_t_name	rank.h	84;"	d
+rnk_t_rank	rank.h	69;"	d
+rnk_t_rank_arr	rank.h	70;"	d
+rnk_trt	rank.h	67;"	d
+row_just	rpg.c	/^    int *row_just;                      \/* size by max_row *\/$/;"	m	struct:report_definition_struct	file:
+rpgstr	rpg.c	/^static REPORT_DEF_STRUCT *rpgstr = (REPORT_DEF_STRUCT *)0;$/;"	v	file:
+rsprintf	rsprintf.c	/^char *rsprintf(char *format , ...)$/;"	f
+run_multi_sys	sc_stats.c	/^void run_multi_sys(SCORES *scor[],int nscor,char *out_dir,int stats,int stats_verbose,int stats_unified, int stats_graphs, char *stats_out_name, char *stats_formula, char *stats_test_name, int reports, int feedback, int linewidth)$/;"	f
+s	stm.h	/^    int s;$/;"	m	struct:stm_struct
+s	wtokstr1.h	/^    int s;                           \/* the current beginning of the table $/;"	m	struct:__anon2
+scfp	sctk.h	227;"	d
+scor	corresp.h	/^  SCORES **scor;$/;"	m	struct:score_correspondence_struct
+score_correspondence_struct	corresp.h	/^typedef struct score_correspondence_struct{$/;"	s
+score_correspondence_struct::grp	corresp.h	/^  SC_COR_GRP **grp;$/;"	m	struct:score_correspondence_struct
+score_correspondence_struct::max_grp	corresp.h	/^  int max_grp;$/;"	m	struct:score_correspondence_struct
+score_correspondence_struct::max_path	corresp.h	/^  int max_path;$/;"	m	struct:score_correspondence_struct
+score_correspondence_struct::nscor	corresp.h	/^  int nscor;$/;"	m	struct:score_correspondence_struct
+score_correspondence_struct::num_grp	corresp.h	/^  int num_grp;$/;"	m	struct:score_correspondence_struct
+score_correspondence_struct::scor	corresp.h	/^  SCORES **scor;$/;"	m	struct:score_correspondence_struct
+score_dtl_overall	sc_dtl.c	/^int score_dtl_overall(SCORES *scor, char *sys_root_name, int feedback){$/;"	f
+score_dtl_sent	sc_dtl.c	/^int score_dtl_sent(SCORES *scor, char *sys_root_name, int feedback){$/;"	f
+score_dtl_spkr	sc_dtl.c	/^int score_dtl_spkr(SCORES *scor, char *sys_root_name, int feedback){$/;"	f
+score_group_correspondence_struct	corresp.h	/^typedef struct score_group_correspondence_struct{$/;"	s
+score_group_correspondence_struct::grp_ptr	corresp.h	/^  int *grp_ptr;$/;"	m	struct:score_group_correspondence_struct
+score_group_correspondence_struct::num_path	corresp.h	/^  int num_path;$/;"	m	struct:score_group_correspondence_struct
+score_group_correspondence_struct::path_ptr	corresp.h	/^  int **path_ptr;$/;"	m	struct:score_group_correspondence_struct
+scores_are_diff	corresp.c	/^static int scores_are_diff(PATH **path_set,int npath){$/;"	f	file:
+seg	stm.h	/^    STM_SEG *seg;$/;"	m	struct:stm_struct
+seg_count	mtchprs.c	/^void seg_count(PATH *snt, int from, int to, int *err, int *ref)$/;"	f
+seg_hyp1	mtchprs.c	55;"	d	file:
+seg_hyp2	mtchprs.c	56;"	d	file:
+seg_n	mtchprs.c	53;"	d	file:
+seg_ref	mtchprs.c	54;"	d	file:
+segment_count_struct	mtchprs.c	/^typedef struct segment_count_struct{$/;"	s	file:
+segment_count_struct::number_errors_for_hyp1	mtchprs.c	/^    int number_errors_for_hyp1;$/;"	m	struct:segment_count_struct	file:
+segment_count_struct::number_errors_for_hyp2	mtchprs.c	/^    int number_errors_for_hyp2;$/;"	m	struct:segment_count_struct	file:
+segment_count_struct::number_ref	mtchprs.c	/^    int number_ref;$/;"	m	struct:segment_count_struct	file:
+segment_hyp_for_utt	stm2ctm.c	/^void segment_hyp_for_utt(WTOKE_STR1 *hyp_segs, STM *stm, int *curhyp, int *curhend, int h_st, int h_end, int rs, int r_st, int r_end){$/;"	f
+seq_mult	statdist.c	/^double seq_mult(int f, int t)$/;"	f
+sequence	path.h	/^    int sequence;         \/* Sequence number: during alignment *\/$/;"	m	struct:PATH_struct
+serr	sctk.h	/^    int serr;                 \/* number of sents with an error *\/$/;"	m	struct:grp_score
+set_WORD_tag1	word.c	/^void set_WORD_tag1(WORD *w, TEXT *t){$/;"	f
+set_node_flag1_to_inarc_count	net_adt.c	/^static void set_node_flag1_to_inarc_count(NODE *node, void *ptr){$/;"	f	file:
+set_node_flag1_to_outarc_count	net_adt.c	/^static void set_node_flag1_to_outarc_count(NODE *node, void *ptr){$/;"	f	file:
+set_pad	pad.c	/^void set_pad(char *pad, char *str)$/;"	f
+set_pad_cent_n	pad.c	/^void set_pad_cent_n(char *pad, int len)$/;"	f
+set_pad_n	pad.c	/^void set_pad_n(char *pad, int n)$/;"	f
+set_score	sctk.h	/^typedef struct set_score{$/;"	s
+set_score::aset	sctk.h	/^    ARB_SSET aset;         \/* struct of arbitrary labelling *\/$/;"	m	struct:set_score
+set_score::creation_date	sctk.h	/^    char *creation_date;   \/* creation date *\/$/;"	m	struct:set_score
+set_score::frag_corr	sctk.h	/^    int frag_corr;         \/* if the comline fragment correct flag *\/$/;"	m	struct:set_score
+set_score::grp	sctk.h	/^    GRP *grp;              \/* a list of path groups *\/$/;"	m	struct:set_score
+set_score::hyp_fname	sctk.h	/^    char *hyp_fname;       \/* filename of the hypothesis file *\/$/;"	m	struct:set_score
+set_score::max_grp	sctk.h	/^    int max_grp;           \/* maximum number of path groups (speakers) *\/$/;"	m	struct:set_score
+set_score::num_grp	sctk.h	/^    int num_grp;           \/* current number of path groups *\/$/;"	m	struct:set_score
+set_score::opt_del	sctk.h	/^    int opt_del;           \/* if the comline opt_del flag set *\/$/;"	m	struct:set_score
+set_score::ref_fname	sctk.h	/^    char *ref_fname;       \/* filename of the reference file *\/$/;"	m	struct:set_score
+set_score::title	sctk.h	/^    char *title;           \/* the title to call the system in reports *\/$/;"	m	struct:set_score
+set_score::weight_ali	sctk.h	/^    int weight_ali;        \/* if the comline word weight alignment set *\/$/;"	m	struct:set_score
+set_score::weight_file	sctk.h	/^    char *weight_file;     \/* if the comline word weight alignment set, wwl filename *\/$/;"	m	struct:set_score
+set_tag1	rover.c	/^void set_tag1(ARC *arc, void *p)          $/;"	f
+set_temp_files	align.c	/^void set_temp_files(char *refwords, char *hypwords){$/;"	f
+set_word_conf	align.c	/^void set_word_conf(ARC *arc, void *ptr){$/;"	f
+set_word_duration	align.c	/^void set_word_duration(ARC *arc, void *ptr){$/;"	f
+set_word_opt_del	align.c	/^void set_word_opt_del(ARC *arc, void *ptr){$/;"	f
+set_word_start	align.c	/^void set_word_start(ARC *arc, void *ptr){$/;"	f
+setup_NET_ALIGN	net_dp.c	/^static int setup_NET_ALIGN(NET_ALIGN **net_ali,NETWORK *net_a,NETWORK *net_b){$/;"	f	file:
+setup_iterations	rpg.c	/^void setup_iterations(void){$/;"	f
+sgml_dump_WORD	word.c	/^void sgml_dump_WORD(WORD *w, FILE *fp){$/;"	f
+sgml_label_struct	sgml.h	/^typedef struct sgml_label_struct{$/;"	s
+sgml_label_struct::attrib_name	sgml.h	/^    TEXT *attrib_name[MAX_ATTRIB];$/;"	m	struct:sgml_label_struct
+sgml_label_struct::attrib_num	sgml.h	/^    int attrib_num;$/;"	m	struct:sgml_label_struct
+sgml_label_struct::attrib_value	sgml.h	/^    TEXT *attrib_value[MAX_ATTRIB];$/;"	m	struct:sgml_label_struct
+sgml_label_struct::name	sgml.h	/^    TEXT *name;$/;"	m	struct:sgml_label_struct
+sgml_tags	sgml.h	/^typedef struct sgml_tags{$/;"	s
+sgml_tags::num_tags	sgml.h	/^    int num_tags;$/;"	m	struct:sgml_tags
+sgml_tags::tags	sgml.h	/^    SGML_LABEL tags[MAX_TAGS];$/;"	m	struct:sgml_tags
+short_cmp_arr	order.c	/^static short *short_cmp_arr;$/;"	v	file:
+sign_test_analysis	signtest.c	/^int sign_test_analysis(int num_a, int num_b, int num_z, char *str_a, char *str_b, int str_z, double alpha, int verbose, char *treat1_str, char *treat2_str, int *tptr, int zero_is_best, FILE *fp, double *confidence)$/;"	f
+sort	alex.h	/^    int *sort;                          \/* Sorted list of the texts *\/$/;"	m	struct:AUTO_LEX_struct
+sort_PATH_time_marks	path.c	/^void sort_PATH_time_marks(PATH *path)$/;"	f
+sort_double_arr	order.c	/^void sort_double_arr(double *arr, int num, int *ptr_arr, int order)$/;"	f
+sort_int_arr	order.c	/^void sort_int_arr(int *arr, int num, int *ptr_arr, int order)$/;"	f
+sort_short_arr	order.c	/^void sort_short_arr(short int *arr, int num, int *ptr_arr, int order)$/;"	f
+sort_strings_in_place	order.c	/^void sort_strings_in_place(char **arr, int num, int order)$/;"	f
+sort_strings_using_index	order.c	/^void sort_strings_using_index(char **arr, int *ind, int num, int order)$/;"	f
+sp	wtokstr1.h	/^    TEXT *sp;   \/* spelling of token       *\/$/;"	m	struct:__anon1
+spkr	stm.h	/^    TEXT *spkr;$/;"	m	struct:stm_seg_struct
+spkr	wwscr_f.h	/^    WWL_SPKR *spkr;$/;"	m	struct:WWL_FUNC_struct
+spl	wwscr_f.h	/^    double ref, corr, sub, del, ins, spl, mrg;$/;"	m	struct:WWL_FUNC_struct
+spl	wwscr_f.h	/^    double ref, corr, sub, del, ins, spl, mrg;$/;"	m	struct:WWL_spkr_struct
+splits	sctk.h	/^    int splits;               \/* num of splits *\/$/;"	m	struct:grp_score
+srt_b_rank	rank.h	96;"	d
+srt_t_rank	rank.h	93;"	d
+start_node	netstr1.h	/^    NODE *start_node;$/;"	m	struct:NETWORK1
+start_state	netstr1.h	/^   boolean start_state, stop_state, flag1, flag2;$/;"	m	struct:NODE1
+static_message_buffer	rsprintf.c	/^char static_message_buffer[1000];$/;"	v
+static_parse_dbg	rpg.c	/^static int static_parse_dbg=0;$/;"	v	file:
+static_rpt_dbg	rpg.c	/^static int static_rpt_dbg=0;$/;"	v	file:
+stm_seg_struct	stm.h	/^typedef struct stm_seg_struct{$/;"	s
+stm_seg_struct::chan	stm.h	/^    TEXT *chan;$/;"	m	struct:stm_seg_struct
+stm_seg_struct::file	stm.h	/^    TEXT *file;$/;"	m	struct:stm_seg_struct
+stm_seg_struct::flag1	stm.h	/^    int  flag1;$/;"	m	struct:stm_seg_struct
+stm_seg_struct::labels	stm.h	/^    TEXT *labels;$/;"	m	struct:stm_seg_struct
+stm_seg_struct::spkr	stm.h	/^    TEXT *spkr;$/;"	m	struct:stm_seg_struct
+stm_seg_struct::t1	stm.h	/^    double t1;$/;"	m	struct:stm_seg_struct
+stm_seg_struct::t2	stm.h	/^    double t2;$/;"	m	struct:stm_seg_struct
+stm_seg_struct::text	stm.h	/^    TEXT *text;$/;"	m	struct:stm_seg_struct
+stm_struct	stm.h	/^typedef struct stm_struct{$/;"	s
+stm_struct::max	stm.h	/^    int max;$/;"	m	struct:stm_struct
+stm_struct::num	stm.h	/^    int num;$/;"	m	struct:stm_struct
+stm_struct::s	stm.h	/^    int s;$/;"	m	struct:stm_struct
+stm_struct::seg	stm.h	/^    STM_SEG *seg;$/;"	m	struct:stm_struct
+stop_node	netstr1.h	/^    NODE *stop_node;$/;"	m	struct:NETWORK1
+stop_state	netstr1.h	/^   boolean start_state, stop_state, flag1, flag2;$/;"	m	struct:NODE1
+str	alex.h	/^    TEXT **str;                         \/* pointer to the list of texts *\/$/;"	m	struct:AUTO_LEX_struct
+str	statdist.h	/^    char *str;$/;"	m	struct:X2_df
+str	statdist.h	/^    char *str;$/;"	m	struct:Z_struct
+str	wwscr_f.h	/^    TEXT *str;$/;"	m	struct:word_weight_struct
+strdup_safe	sctk.h	35;"	d
+streq	sctk.h	37;"	d
+strncpy_pad	pad.c	/^void strncpy_pad(char *to, char *from, int len, char chr)$/;"	f
+sub	sctk.h	/^    int sub;                  \/* num substituted words in sent *\/$/;"	m	struct:grp_score
+sub	wwscr_f.h	/^    double ref, corr, sub, del, ins, spl, mrg;$/;"	m	struct:WWL_FUNC_struct
+sub	wwscr_f.h	/^    double ref, corr, sub, del, ins, spl, mrg;$/;"	m	struct:WWL_spkr_struct
+sum_conf	cores.h	/^  double sum_conf;$/;"	m	struct:CORRESP_STRUCT
+t1	stm.h	/^    double t1;$/;"	m	struct:stm_seg_struct
+t1	wtokstr1.h	/^    double t1;  \/* beginning time of token *\/$/;"	m	struct:__anon1
+t2	stm.h	/^    double t2;$/;"	m	struct:stm_seg_struct
+tag1	word.h	/^    TEXT *tag1;                         \/* Optional tag associated with the word *\/$/;"	m	struct:WORD_STRUCT
+tag2	word.h	/^    TEXT *tag2;                         \/* Optional tag associated with the word *\/$/;"	m	struct:WORD_STRUCT
+tags	sgml.h	/^    SGML_LABEL tags[MAX_TAGS];$/;"	m	struct:sgml_tags
+test_comp_sents	mtchprs.c	/^void test_comp_sents(PATH *snt1, PATH *snt2, SEG ***seg_l, int *num_seg, int *max_seg, int min_good)$/;"	f
+text	stm.h	/^    TEXT *text;$/;"	m	struct:stm_seg_struct
+text_list_struct	text.h	/^typedef struct text_list_struct{$/;"	s
+text_list_struct::elem	text.h	/^    TEXT **elem;$/;"	m	struct:text_list_struct
+text_list_struct::file	text.h	/^    char *file; \/* filename read int *\/$/;"	m	struct:text_list_struct
+text_list_struct::max	text.h	/^    int max;   \/* The max size for elem *\/$/;"	m	struct:text_list_struct
+text_list_struct::num	text.h	/^    int num;   \/* The current number of elements in elem *\/$/;"	m	struct:text_list_struct
+tg_lookup	slm_intf.c	/^int tg_lookup(WORD *w, WORD *w_m1, WORD *w_m2, ng_t *ng, fb_info *fb_list, double *prob, int dbg){$/;"	f
+title	sctk.h	/^    char *title;           \/* Column heading title for the category *\/$/;"	m	struct:category_item_struct
+title	sctk.h	/^    char *title;           \/* Column heading title for the lable *\/$/;"	m	struct:pathlabel_item_struct
+title	sctk.h	/^    char *title;           \/* the title to call the system in reports *\/$/;"	m	struct:set_score
+title	wwscr_f.h	/^    TEXT *title;$/;"	m	struct:WWL_FUNC_struct
+to_node	netstr1.h	/^ struct NODE1 *from_node, *to_node;$/;"	m	struct:ARC1	typeref:struct:ARC1::
+tokenize_TEXT_first_alt	text.c	/^TEXT *tokenize_TEXT_first_alt(TEXT *p, TEXT *set){$/;"	f
+tot_num_col	rpg.c	/^    int tot_num_col;                    \/* the most # columns to expect *\/$/;"	m	struct:report_definition_struct	file:
+tot_num_row	rpg.c	/^    int tot_num_row;$/;"	m	struct:report_definition_struct	file:
+trt_Ovr_ranks	rank.h	/^   double *trt_Ovr_ranks;       \/* ranks after ANOVAR *\/$/;"	m	struct:rank_struct
+trt_name	rank.h	/^   char **trt_name;            \/* string names of treatments *\/$/;"	m	struct:rank_struct
+trt_ranks	rank.h	/^   double **trt_ranks;          \/* 2DIM array for ranks for trts over blocks *\/$/;"	m	struct:rank_struct
+trt_srt_ind	rank.h	/^   int *trt_srt_ind;           \/* indexes that sorts trts into orders *\/$/;"	m	struct:rank_struct
+turn	wtokstr1.h	/^   {char *turn; \/* the Channel id *\/$/;"	m	struct:__anon1
+unsure	wtokstr1.h	/^    boolean unsure;$/;"	m	struct:__anon1
+usage	rover.c	/^char *usage = "%s: <OPTIONS>\\n" $/;"	v
+usage	sc_stats.c	/^char *usage = "%s: <OPTIONS>\\n" $/;"	v
+usage	sclite.c	/^char *usage = "%s: <OPTIONS>\\n" $/;"	v
+use	cores.h	/^  int use;$/;"	m	struct:CORRESP_STRUCT
+use	word.h	/^    int use;                            \/* number of times this structure *\/$/;"	m	struct:WORD_STRUCT
+use_count	netstr1.h	/^    int (*use_count)(void *, int); char *use_count_name;$/;"	m	struct:ARC_FUNCTIONS
+use_count_CORES	cores.c	/^int use_count_CORES(void *p, int i){$/;"	f
+use_count_WORD	word.c	/^int use_count_WORD(void *p, int i){$/;"	f
+use_count_name	netstr1.h	/^    int (*use_count)(void *, int); char *use_count_name;$/;"	m	struct:ARC_FUNCTIONS
+value	word.h	/^    TEXT *value;                        \/* the word text *\/$/;"	m	struct:WORD_STRUCT
+value_id	word.h	/^    int value_id;                       \/* Dictionary index to word *\/$/;"	m	struct:WORD_STRUCT
+was_initialized	rpg.c	/^static int was_initialized = 0;$/;"	v	file:
+weight	netstr1.h	/^ int weight;$/;"	m	struct:ARC1
+weight	word.h	/^    double weight;                      \/* The Weight assigned to a word from a WWL list *\/$/;"	m	struct:WORD_STRUCT
+weight	wwscr_f.h	/^    double weight[MAX_W];$/;"	m	struct:word_weight_struct
+weight_ali	sctk.h	/^    int weight_ali;        \/* if the comline word weight alignment set *\/$/;"	m	struct:set_score
+weight_corr	sctk.h	/^    double weight_corr;       \/* weighted sum of correct words in sent *\/$/;"	m	struct:grp_score
+weight_del	sctk.h	/^    double weight_del;        \/* weighted sum of deleted words in sent *\/$/;"	m	struct:grp_score
+weight_desc	wwscr_f.h	/^    TEXT *weight_desc[MAX_W];$/;"	m	struct:word_weight_list_struct
+weight_file	sctk.h	/^    char *weight_file;     \/* if the comline word weight alignment set, wwl filename *\/$/;"	m	struct:set_score
+weight_ins	sctk.h	/^    double weight_ins;        \/* weighted sum of inserted words in sent *\/$/;"	m	struct:grp_score
+weight_merges	sctk.h	/^    double weight_merges;     \/* weighted sum of of merges *\/$/;"	m	struct:grp_score
+weight_ref	sctk.h	/^    double weight_ref;        \/* weighted sum of reference words in sent *\/$/;"	m	struct:grp_score
+weight_splits	sctk.h	/^    double weight_splits;     \/* weighted sum of of splits *\/$/;"	m	struct:grp_score
+weight_sub	sctk.h	/^    double weight_sub;        \/* weighted sum of substituted words in sent *\/$/;"	m	struct:grp_score
+width	rpg.c	/^    int width;$/;"	m	struct:report_definition_struct	file:
+wilcoxon_test_analysis	wilcoxon.c	/^static int wilcoxon_test_analysis(int num_a, int num_b, double sum_a, double sum_b, char *treat1_str, char *treat2_str, double alpha, int verbose, int zero_is_best, double *conf, FILE *fp)$/;"	f	file:
+word	wtokstr1.h	/^    WTOKE1 *word;                   \/* table of word tokens           *\/$/;"	m	struct:__anon2
+word_weight_list_struct	wwscr_f.h	/^typedef struct word_weight_list_struct{$/;"	s
+word_weight_list_struct::curw	wwscr_f.h	/^    int curw;$/;"	m	struct:word_weight_list_struct
+word_weight_list_struct::default_weight	wwscr_f.h	/^    double default_weight;$/;"	m	struct:word_weight_list_struct
+word_weight_list_struct::filename	wwscr_f.h	/^    TEXT *filename;$/;"	m	struct:word_weight_list_struct
+word_weight_list_struct::max	wwscr_f.h	/^    int max;$/;"	m	struct:word_weight_list_struct
+word_weight_list_struct::num	wwscr_f.h	/^    int num;$/;"	m	struct:word_weight_list_struct
+word_weight_list_struct::num_w	wwscr_f.h	/^    int num_w;$/;"	m	struct:word_weight_list_struct
+word_weight_list_struct::weight_desc	wwscr_f.h	/^    TEXT *weight_desc[MAX_W];$/;"	m	struct:word_weight_list_struct
+word_weight_list_struct::words	wwscr_f.h	/^    WW **words;$/;"	m	struct:word_weight_list_struct
+word_weight_struct	wwscr_f.h	/^typedef struct word_weight_struct{$/;"	s
+word_weight_struct::str	wwscr_f.h	/^    TEXT *str;$/;"	m	struct:word_weight_struct
+word_weight_struct::weight	wwscr_f.h	/^    double weight[MAX_W];$/;"	m	struct:word_weight_struct
+words	cores.h	/^  WORD *words[10];$/;"	m	struct:CORRESP_STRUCT
+words	wwscr_f.h	/^    WW **words;$/;"	m	struct:word_weight_list_struct
+write_to_fp	rover.c	/^    int write_to_fp;   \/* boolean to write the selection to fpout *\/$/;"	m	struct:mfalign_best_seq_struct	file:
+wwd_WORD	word.c	/^float wwd_WORD(void *p1, void *p2, int (*cmp)(void *p1, void *p2)){$/;"	f
+wwd_WORD_rover	word.c	/^float wwd_WORD_rover(void *p1, void *p2, int (*cmp)(void *p1, void *p2)){$/;"	f
+wwd_time_WORD	word.c	/^float wwd_time_WORD(void *p1, void *p2, int (*cmp)(void *p1, void *p2)){$/;"	f
+wwd_weight_WORD	word.c	/^float wwd_weight_WORD(void *p1, void *p2, int (*cmp)(void *p1, void *p2)){$/;"	f
+z	statdist.h	/^    double z;$/;"	m	struct:Z_struct
+znorm	statdist.c	/^static double znorm[515] =$/;"	v	file:

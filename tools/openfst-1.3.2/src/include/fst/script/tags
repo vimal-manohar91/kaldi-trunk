@@ -1,0 +1,1219 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ANY_ARC_FILTER	shortest-distance.h	/^enum ArcFilterType { ANY_ARC_FILTER, EPSILON_ARC_FILTER,$/;"	e	enum:fst::script::ArcFilterType
+ARC_SUM_MAPPER	map.h	/^enum MapType { ARC_SUM_MAPPER, IDENTITY_MAPPER, INVERT_MAPPER, PLUS_MAPPER,$/;"	e	enum:fst::script::MapType
+AllFstOperationsRegisterer	fstscript.h	/^  AllFstOperationsRegisterer() {$/;"	f	class:fst::script::AllFstOperationsRegisterer
+AllFstOperationsRegisterer	fstscript.h	/^class AllFstOperationsRegisterer {$/;"	c	namespace:fst::script
+Apply	script-impl.h	/^void Apply(const string &op_name, const string &arc_type,$/;"	f	namespace:fst::script
+Arc	compile-impl.h	/^  typedef A Arc;$/;"	t	class:fst::FstCompiler
+Arc	draw-impl.h	/^  typedef A Arc;$/;"	t	class:fst::FstDrawer
+Arc	info-impl.h	/^  typedef A Arc;$/;"	t	class:fst::FstInfo
+Arc	print-impl.h	/^  typedef A Arc;$/;"	t	class:fst::FstPrinter
+ArcFilterType	info-impl.h	/^  const string& ArcFilterType() const { return arc_filter_type_; }$/;"	f	class:fst::FstInfo
+ArcFilterType	shortest-distance.h	/^enum ArcFilterType { ANY_ARC_FILTER, EPSILON_ARC_FILTER,$/;"	g	namespace:fst::script
+ArcMap	map.h	/^Fst<typename M::ToArc> *ArcMap(const Fst<typename M::FromArc> &fst,$/;"	f	namespace:fst::script
+ArcSort	arcsort.h	/^void ArcSort(ArcSortArgs *args) {$/;"	f	namespace:fst::script
+ArcSortArgs	arcsort.h	/^typedef args::Package<MutableFstClass*, const ArcSortType> ArcSortArgs;$/;"	t	namespace:fst::script
+ArcSortType	arcsort.h	/^enum ArcSortType { ILABEL_COMPARE, OLABEL_COMPARE };$/;"	g	namespace:fst::script
+ArcType	fst-class.h	/^  virtual const string &ArcType() const {$/;"	f	class:fst::script::FstClass
+ArcType	fst-class.h	/^  virtual const string &ArcType() const {$/;"	f	class:fst::script::FstClassImpl
+ArcType	info-impl.h	/^  const string& ArcType() const { return A::Type(); }$/;"	f	class:fst::FstInfo
+Args	script-impl.h	/^  typedef ArgPack Args;$/;"	t	struct:fst::script::Operation
+CheckLong	info-impl.h	/^  void CheckLong() const {$/;"	f	class:fst::FstInfo
+Closure	closure.h	/^void Closure(ClosureArgs *args) {$/;"	f	namespace:fst::script
+ClosureArgs	closure.h	/^typedef args::Package<MutableFstClass*, const ClosureType> ClosureArgs;$/;"	t	namespace:fst::script
+CompileFst	compile.h	/^void CompileFst(FstCompileArgs *args) {$/;"	f	namespace:fst::script
+Compose	compose.h	/^void Compose(ComposeArgs1 *args) {$/;"	f	namespace:fst::script
+Compose	compose.h	/^void Compose(ComposeArgs2 *args) {$/;"	f	namespace:fst::script
+ComposeArgs1	compose.h	/^                      MutableFstClass*, ComposeFilter> ComposeArgs1;$/;"	t	namespace:fst::script
+ComposeArgs2	compose.h	/^                      MutableFstClass*, const ComposeOptions &> ComposeArgs2;$/;"	t	namespace:fst::script
+ComposeOptions	compose.h	/^typedef fst::ComposeOptions ComposeOptions;$/;"	t	namespace:fst::script
+Concat	concat.h	/^void Concat(ConcatArgs1 *args) {$/;"	f	namespace:fst::script
+Concat	concat.h	/^void Concat(ConcatArgs2 *args) {$/;"	f	namespace:fst::script
+ConcatArgs1	concat.h	/^typedef args::Package<MutableFstClass*, const FstClass&> ConcatArgs1;$/;"	t	namespace:fst::script
+ConcatArgs2	concat.h	/^typedef args::Package<const FstClass&, MutableFstClass*> ConcatArgs2;$/;"	t	namespace:fst::script
+Connect	connect.h	/^void Connect(MutableFstClass *fst) {$/;"	f	namespace:fst::script
+Construct	shortest-distance.h	/^  *Construct(const Fst<Arc> &fst,$/;"	f	struct:fst::script::QueueConstructor
+Construct	shortest-distance.h	/^  static AutoQueue<typename Arc::StateId> *Construct($/;"	f	struct:fst::script::QueueConstructor
+Construct	shortest-distance.h	/^  static Queue *Construct(const Fst<Arc> &,$/;"	f	struct:fst::script::QueueConstructor
+Construct	shortest-distance.h	/^  static TopOrderQueue<typename Arc::StateId> *Construct($/;"	f	struct:fst::script::QueueConstructor
+Convert	convert.h	/^%newobject Convert;$/;"	m	namespace:fst::script
+Convert	convert.h	/^void Convert(ConvertArgs *args) {$/;"	f	namespace:fst::script
+Convert	fst-class.h	/^  static FstClassImplBase *Convert(const FstClass &other) {$/;"	f	class:fst::script::FstClass
+Convert	fst-class.h	/^  static FstClassImplBase *Convert(const FstClass &other) {$/;"	f	class:fst::script::MutableFstClass
+Convert	fst-class.h	/^  static FstClassImplBase *Convert(const FstClass &other) {$/;"	f	class:fst::script::VectorFstClass
+ConvertArgs	convert.h	/^typedef args::WithReturnValue<FstClass*, ConvertInnerArgs> ConvertArgs;$/;"	t	namespace:fst::script
+ConvertInnerArgs	convert.h	/^typedef args::Package<const FstClass&, const string&> ConvertInnerArgs;$/;"	t	namespace:fst::script
+ConvertKeyToSoFilename	register.h	/^  virtual string ConvertKeyToSoFilename($/;"	f	class:fst::script::FstClassIORegister
+ConvertKeyToSoFilename	script-impl.h	/^  virtual string ConvertKeyToSoFilename($/;"	f	class:fst::script::GenericOperationRegister
+ConvertKeyToSoFilename	weight-class.h	/^  virtual string ConvertKeyToSoFilename(const string &key) const {$/;"	f	class:fst::script::WeightClassRegister
+ConvertPruneOptions	prune.h	/^fst::PruneOptions<A, AnyArcFilter<A> > ConvertPruneOptions($/;"	f	namespace:fst::script
+Converter	register.h	/^  typedef FstClassImplBase *(*Converter)(const FstClass &other);$/;"	t	struct:fst::script::IORegistration
+Copy	fst-class.h	/^  virtual FstClassImpl *Copy() {$/;"	f	class:fst::script::FstClassImpl
+Copy	weight-class.h	/^  virtual WeightClassImpl<W> *Copy() const {$/;"	f	struct:fst::script::WeightClassImpl
+Create	fst-class.h	/^  static FstClassImplBase *Create() {$/;"	f	class:fst::script::FstClass
+Create	fst-class.h	/^  static FstClassImplBase *Create() {$/;"	f	class:fst::script::MutableFstClass
+Create	fst-class.h	/^  static FstClassImplBase *Create() {$/;"	f	class:fst::script::VectorFstClass
+Creator	register.h	/^  typedef FstClassImplBase *(*Creator)();$/;"	t	struct:fst::script::IORegistration
+Decode	decode.h	/^void Decode(DecodeArgs *args) {$/;"	f	namespace:fst::script
+DecodeArgs	decode.h	/^typedef args::Package<MutableFstClass*, const string&> DecodeArgs;$/;"	t	namespace:fst::script
+Determinize	determinize.h	/^void Determinize(DeterminizeArgs *args) {$/;"	f	namespace:fst::script
+DeterminizeArgs	determinize.h	/^                      const DeterminizeOptions &> DeterminizeArgs;$/;"	t	namespace:fst::script
+DeterminizeOptions	determinize.h	/^  explicit DeterminizeOptions(float d = fst::kDelta,$/;"	f	struct:fst::script::DeterminizeOptions
+DeterminizeOptions	determinize.h	/^struct DeterminizeOptions {$/;"	s	namespace:fst::script
+Difference	difference.h	/^void Difference(DifferenceArgs1 *args) {$/;"	f	namespace:fst::script
+Difference	difference.h	/^void Difference(DifferenceArgs2  *args) {$/;"	f	namespace:fst::script
+DifferenceArgs1	difference.h	/^                      MutableFstClass*, ComposeFilter> DifferenceArgs1;$/;"	t	namespace:fst::script
+DifferenceArgs2	difference.h	/^                      MutableFstClass*, const ComposeOptions &> DifferenceArgs2;$/;"	t	namespace:fst::script
+Draw	draw-impl.h	/^  void Draw(ostream *strm, const string &dest) {$/;"	f	class:fst::FstDrawer
+DrawFst	draw.h	/^void DrawFst(FstDrawerArgs *args) {$/;"	f	namespace:fst::script
+DrawState	draw-impl.h	/^  void DrawState(StateId s) const {$/;"	f	class:fst::FstDrawer
+EPSILON_ARC_FILTER	shortest-distance.h	/^enum ArcFilterType { ANY_ARC_FILTER, EPSILON_ARC_FILTER,$/;"	e	enum:fst::script::ArcFilterType
+ElementType	weight-class.h	/^  enum ElementType { ZERO, ONE, OTHER };$/;"	g	class:fst::script::WeightClass
+Encode	encode.h	/^void Encode(EncodeArgs *args) {$/;"	f	namespace:fst::script
+EncodeArgs	encode.h	/^                      const string &> EncodeArgs;$/;"	t	namespace:fst::script
+Entry	register.h	/^  typedef FstClassRegEntry<Reader, Creator, Converter> Entry;$/;"	t	struct:fst::script::IORegistration
+EpsNormalize	epsnormalize.h	/^void EpsNormalize(EpsNormalizeArgs  *args) {$/;"	f	namespace:fst::script
+EpsNormalizeArgs	epsnormalize.h	/^                      EpsNormalizeType> EpsNormalizeArgs;$/;"	t	namespace:fst::script
+Equal	equal.h	/^void Equal(EqualArgs *args) {$/;"	f	namespace:fst::script
+EqualArgs	equal.h	/^typedef args::WithReturnValue<bool, EqualInnerArgs> EqualArgs;$/;"	t	namespace:fst::script
+EqualInnerArgs	equal.h	/^typedef args::Package<const FstClass&, const FstClass&, float> EqualInnerArgs;$/;"	t	namespace:fst::script
+Equivalent	equivalent.h	/^void Equivalent(EquivalentArgs *args) {$/;"	f	namespace:fst::script
+EquivalentArgs	equivalent.h	/^typedef args::WithReturnValue<bool, EquivalentInnerArgs> EquivalentArgs;$/;"	t	namespace:fst::script
+EquivalentInnerArgs	equivalent.h	/^                      float> EquivalentInnerArgs;$/;"	t	namespace:fst::script
+EscapeChars	draw-impl.h	/^  inline void EscapeChars(const string &s, string* ns) const {$/;"	f	class:fst::FstDrawer
+FAST_LOG_PROB_ARC_SELECTOR	randgen.h	/^  FAST_LOG_PROB_ARC_SELECTOR$/;"	e	enum:fst::script::RandArcSelection
+FST_SCRIPT_ARCSORT_H_	arcsort.h	18;"	d
+FST_SCRIPT_ARG_PACKS_H_	arg-packs.h	33;"	d
+FST_SCRIPT_CLOSURE_H_	closure.h	18;"	d
+FST_SCRIPT_COMPILE_H_	compile.h	18;"	d
+FST_SCRIPT_COMPILE_IMPL_H_	compile-impl.h	22;"	d
+FST_SCRIPT_COMPOSE_H_	compose.h	18;"	d
+FST_SCRIPT_CONCAT_H_	concat.h	18;"	d
+FST_SCRIPT_CONNECT_H_	connect.h	18;"	d
+FST_SCRIPT_CONVERT_H_	convert.h	18;"	d
+FST_SCRIPT_DECODE_H_	decode.h	18;"	d
+FST_SCRIPT_DETERMINIZE_H_	determinize.h	18;"	d
+FST_SCRIPT_DIFFERENCE_H_	difference.h	18;"	d
+FST_SCRIPT_DRAW_H_	draw.h	18;"	d
+FST_SCRIPT_DRAW_IMPL_H_	draw-impl.h	23;"	d
+FST_SCRIPT_ENCODE_H_	encode.h	18;"	d
+FST_SCRIPT_EPSNORMALIZE_H_	epsnormalize.h	18;"	d
+FST_SCRIPT_EQUAL_H_	equal.h	18;"	d
+FST_SCRIPT_EQUIVALENT_H_	equivalent.h	18;"	d
+FST_SCRIPT_FSTSCRIPT_DECL_H_	fstscript-decl.h	20;"	d
+FST_SCRIPT_FSTSCRIPT_H_	fstscript.h	20;"	d
+FST_SCRIPT_FST_CLASS_H_	fst-class.h	18;"	d
+FST_SCRIPT_INFO_H_	info.h	18;"	d
+FST_SCRIPT_INFO_IMPL_H_	info-impl.h	22;"	d
+FST_SCRIPT_INTERSECT_H_	intersect.h	18;"	d
+FST_SCRIPT_INVERT_H_	invert.h	18;"	d
+FST_SCRIPT_MAP_H_	map.h	18;"	d
+FST_SCRIPT_MINIMIZE_H_	minimize.h	18;"	d
+FST_SCRIPT_PRINT_H_	print.h	18;"	d
+FST_SCRIPT_PRINT_IMPL_H_	print-impl.h	23;"	d
+FST_SCRIPT_PROJECT_H_	project.h	18;"	d
+FST_SCRIPT_PRUNE_H_	prune.h	18;"	d
+FST_SCRIPT_PUSH_H_	push.h	18;"	d
+FST_SCRIPT_RANDEQUIVALENT_H_	randequivalent.h	18;"	d
+FST_SCRIPT_RANDGEN_H_	randgen.h	18;"	d
+FST_SCRIPT_REGISTER_H_	register.h	18;"	d
+FST_SCRIPT_RELABEL_H_	relabel.h	18;"	d
+FST_SCRIPT_REPLACE_H_	replace.h	18;"	d
+FST_SCRIPT_REVERSE_H_	reverse.h	18;"	d
+FST_SCRIPT_REWEIGHT_H_	reweight.h	18;"	d
+FST_SCRIPT_RMEPSILON_H_	rmepsilon.h	18;"	d
+FST_SCRIPT_SCRIPT_IMPL_H_	script-impl.h	92;"	d
+FST_SCRIPT_SHORTEST_DISTANCE_H_	shortest-distance.h	18;"	d
+FST_SCRIPT_SHORTEST_PATH_H_	shortest-path.h	18;"	d
+FST_SCRIPT_SYMBOLS_H_	symbols.h	18;"	d
+FST_SCRIPT_SYNCHRONIZE_H_	synchronize.h	18;"	d
+FST_SCRIPT_TEXT_IO_H__	text-io.h	26;"	d
+FST_SCRIPT_TOPSORT_H_	topsort.h	18;"	d
+FST_SCRIPT_UNION_H_	union.h	18;"	d
+FST_SCRIPT_VERIFY_H_	verify.h	18;"	d
+FST_SCRIPT_WEIGHT_CLASS_H_	weight-class.h	22;"	d
+Fst	compile-impl.h	/^  const VectorFst<A> &Fst() const {$/;"	f	class:fst::FstCompiler
+FstClass	fst-class.h	/^  FstClass() : impl_(NULL) {$/;"	f	class:fst::script::FstClass
+FstClass	fst-class.h	/^  explicit FstClass(Fst<Arc> *fst) : impl_(new FstClassImpl<Arc>(fst)) {$/;"	f	class:fst::script::FstClass
+FstClass	fst-class.h	/^  explicit FstClass(FstClassImplBase *impl) : impl_(impl) { }$/;"	f	class:fst::script::FstClass
+FstClass	fst-class.h	/^  explicit FstClass(const FstClass &other) : impl_(other.impl_->Copy()) { }$/;"	f	class:fst::script::FstClass
+FstClass	fst-class.h	/^class FstClass : public FstClassBase {$/;"	c	namespace:fst::script
+FstClassBase	fst-class.h	/^class FstClassBase {$/;"	c	namespace:fst::script
+FstClassIORegister	register.h	/^class FstClassIORegister$/;"	c	namespace:fst::script
+FstClassImpl	fst-class.h	/^  explicit FstClassImpl(Fst<Arc> *impl,$/;"	f	class:fst::script::FstClassImpl
+FstClassImpl	fst-class.h	/^class FstClassImpl : public FstClassImplBase {$/;"	c	namespace:fst::script
+FstClassImplBase	fst-class.h	/^class FstClassImplBase : public FstClassBase {$/;"	c	namespace:fst::script
+FstClassRegEntry	register.h	/^  FstClassRegEntry() : reader(0), creator(0), converter(0) { }$/;"	f	struct:fst::script::FstClassRegEntry
+FstClassRegEntry	register.h	/^  FstClassRegEntry(Reader r, Creator cr, Converter co) :$/;"	f	struct:fst::script::FstClassRegEntry
+FstClassRegEntry	register.h	/^struct FstClassRegEntry {$/;"	s	namespace:fst::script
+FstCompileArgs	compile.h	/^  FstCompileArgs(istream &istrm, const string &source, const string &dest,$/;"	f	struct:fst::script::FstCompileArgs
+FstCompileArgs	compile.h	/^struct FstCompileArgs {$/;"	s	namespace:fst::script
+FstCompiler	compile-impl.h	/^  FstCompiler(istream &istrm, const string &source,$/;"	f	class:fst::FstCompiler
+FstCompiler	compile-impl.h	/^template <class A> class FstCompiler {$/;"	c	namespace:fst
+FstDrawer	draw-impl.h	/^  FstDrawer(const Fst<A> &fst,$/;"	f	class:fst::FstDrawer
+FstDrawer	draw-impl.h	/^template <class A> class FstDrawer {$/;"	c	namespace:fst
+FstDrawerArgs	draw.h	/^  FstDrawerArgs(const FstClass &fst,$/;"	f	struct:fst::script::FstDrawerArgs
+FstDrawerArgs	draw.h	/^struct FstDrawerArgs {$/;"	s	namespace:fst::script
+FstInfo	info-impl.h	/^  FstInfo(const Fst<A> &fst, bool test_properties,$/;"	f	class:fst::FstInfo
+FstInfo	info-impl.h	/^template <class A> class FstInfo {$/;"	c	namespace:fst
+FstPrinter	print-impl.h	/^  FstPrinter(const Fst<A> &fst,$/;"	f	class:fst::FstPrinter
+FstPrinter	print-impl.h	/^template <class A> class FstPrinter {$/;"	c	namespace:fst
+FstPrinterArgs	print.h	/^  FstPrinterArgs(const FstClass &fst,$/;"	f	struct:fst::script::FstPrinterArgs
+FstPrinterArgs	print.h	/^struct FstPrinterArgs {$/;"	s	namespace:fst::script
+FstType	fst-class.h	/^  virtual const string &FstType() const {$/;"	f	class:fst::script::FstClassImpl
+FstType	fst-class.h	/^  virtual const string& FstType() const {$/;"	f	class:fst::script::FstClass
+FstType	info-impl.h	/^  const string& FstType() const { return fst_type_; }$/;"	f	class:fst::FstInfo
+GenericOperationRegister	script-impl.h	/^class GenericOperationRegister$/;"	c	namespace:fst::script
+GetConverter	register.h	/^  Converter GetConverter(const string &arc_type) const {$/;"	f	class:fst::script::FstClassIORegister
+GetCreator	register.h	/^  Creator GetCreator(const string &arc_type) const {$/;"	f	class:fst::script::FstClassIORegister
+GetFst	fst-class.h	/^  const Fst<Arc> *GetFst() const {$/;"	f	class:fst::script::FstClass
+GetImpl	fst-class.h	/^  Fst<Arc> *GetImpl() const { return impl_; }$/;"	f	class:fst::script::FstClassImpl
+GetImpl	fst-class.h	/^  Fst<Arc> *GetImpl() { return impl_; }$/;"	f	class:fst::script::FstClassImpl
+GetImpl	fst-class.h	/^  FstClassImplBase *GetImpl() const { return impl_; }$/;"	f	class:fst::script::FstClass
+GetImpl	fst-class.h	/^  FstClassImplBase *GetImpl() { return impl_; }$/;"	f	class:fst::script::FstClass
+GetMutableFst	fst-class.h	/^  MutableFst<Arc> *GetMutableFst() {$/;"	f	class:fst::script::MutableFstClass
+GetOperation	script-impl.h	/^  OperationSignature GetOperation($/;"	f	class:fst::script::GenericOperationRegister
+GetReader	register.h	/^  Reader GetReader(const string &arc_type) const {$/;"	f	class:fst::script::FstClassIORegister
+GetWeight	weight-class.h	/^const W* WeightClass::GetWeight() const {$/;"	f	class:fst::script::WeightClass
+IDENTITY_MAPPER	map.h	/^enum MapType { ARC_SUM_MAPPER, IDENTITY_MAPPER, INVERT_MAPPER, PLUS_MAPPER,$/;"	e	enum:fst::script::MapType
+ILABEL_COMPARE	arcsort.h	/^enum ArcSortType { ILABEL_COMPARE, OLABEL_COMPARE };$/;"	e	enum:fst::script::ArcSortType
+INPUT_EPSILON_ARC_FILTER	shortest-distance.h	/^                     INPUT_EPSILON_ARC_FILTER, OUTPUT_EPSILON_ARC_FILTER };$/;"	e	enum:fst::script::ArcFilterType
+INVERT_MAPPER	map.h	/^enum MapType { ARC_SUM_MAPPER, IDENTITY_MAPPER, INVERT_MAPPER, PLUS_MAPPER,$/;"	e	enum:fst::script::MapType
+IORegistration	register.h	/^struct IORegistration {$/;"	s	namespace:fst::script
+InfoArgs	info.h	/^                      const string&, bool, bool> InfoArgs;$/;"	t	namespace:fst::script
+InputLookAhead	info-impl.h	/^  bool InputLookAhead() const { CheckLong(); return input_lookahead_; }$/;"	f	class:fst::FstInfo
+InputMatchType	info-impl.h	/^  MatchType InputMatchType() const { CheckLong(); return input_match_type_; }$/;"	f	class:fst::FstInfo
+InputSymbols	fst-class.h	/^  virtual const SymbolTable *InputSymbols() const {$/;"	f	class:fst::script::FstClass
+InputSymbols	fst-class.h	/^  virtual const SymbolTable *InputSymbols() const {$/;"	f	class:fst::script::FstClassImpl
+InputSymbols	info-impl.h	/^  const string& InputSymbols() const { return input_symbols_; }$/;"	f	class:fst::FstInfo
+Intersect	intersect.h	/^void Intersect(IntersectArgs1 *args) {$/;"	f	namespace:fst::script
+Intersect	intersect.h	/^void Intersect(IntersectArgs2 *args) {$/;"	f	namespace:fst::script
+IntersectArgs1	intersect.h	/^                      MutableFstClass*, ComposeFilter> IntersectArgs1;$/;"	t	namespace:fst::script
+IntersectArgs2	intersect.h	/^                      MutableFstClass*, const ComposeOptions &> IntersectArgs2;$/;"	t	namespace:fst::script
+Invert	invert.h	/^void Invert(MutableFstClass *fst) {$/;"	f	namespace:fst::script
+LOG_PROB_ARC_SELECTOR	randgen.h	/^  LOG_PROB_ARC_SELECTOR,$/;"	e	enum:fst::script::RandArcSelection
+Label	compile-impl.h	/^  typedef typename A::Label Label;$/;"	t	class:fst::FstCompiler
+Label	draw-impl.h	/^  typedef typename A::Label Label;$/;"	t	class:fst::FstDrawer
+Label	info-impl.h	/^  typedef typename A::Label Label;$/;"	t	class:fst::FstInfo
+Label	print-impl.h	/^  typedef typename A::Label Label;$/;"	t	class:fst::FstPrinter
+LongInfo	info-impl.h	/^  const bool LongInfo() const { return long_info_; }$/;"	f	class:fst::FstInfo
+Map	map.h	/^%newobject Map;$/;"	m	namespace:fst::script
+Map	map.h	/^void Map(MapArgs *args) {$/;"	f	namespace:fst::script
+MapArgs	map.h	/^typedef args::WithReturnValue<FstClass*, MapInnerArgs> MapArgs;$/;"	t	namespace:fst::script
+MapInnerArgs	map.h	/^                      const WeightClass &> MapInnerArgs;$/;"	t	namespace:fst::script
+MapType	map.h	/^enum MapType { ARC_SUM_MAPPER, IDENTITY_MAPPER, INVERT_MAPPER, PLUS_MAPPER,$/;"	g	namespace:fst::script
+Minimize	minimize.h	/^void Minimize(MinimizeArgs *args) {$/;"	f	namespace:fst::script
+MinimizeArgs	minimize.h	/^typedef args::Package<MutableFstClass*, MutableFstClass*, float> MinimizeArgs;$/;"	t	namespace:fst::script
+MutableFstClass	fst-class.h	/^  explicit MutableFstClass(FstClassImplBase *impl) : FstClass(impl) { }$/;"	f	class:fst::script::MutableFstClass
+MutableFstClass	fst-class.h	/^  explicit MutableFstClass(MutableFst<Arc> *fst) :$/;"	f	class:fst::script::MutableFstClass
+MutableFstClass	fst-class.h	/^class MutableFstClass : public FstClass {$/;"	c	namespace:fst::script
+NumAccessible	info-impl.h	/^  int64 NumAccessible() const { CheckLong(); return naccess_; }$/;"	f	class:fst::FstInfo
+NumArcs	info-impl.h	/^  int64 NumArcs() const { CheckLong();  return narcs_; }$/;"	f	class:fst::FstInfo
+NumCc	info-impl.h	/^  int64 NumCc() const { CheckLong(); return ncc_; }$/;"	f	class:fst::FstInfo
+NumCoAccessible	info-impl.h	/^  int64 NumCoAccessible() const { CheckLong(); return ncoaccess_; }$/;"	f	class:fst::FstInfo
+NumConnected	info-impl.h	/^  int64 NumConnected() const { CheckLong(); return nconnect_; }$/;"	f	class:fst::FstInfo
+NumEpsilons	info-impl.h	/^  int64 NumEpsilons() const { CheckLong();  return nepsilons_; }$/;"	f	class:fst::FstInfo
+NumFinal	info-impl.h	/^  int64 NumFinal() const { CheckLong();  return nfinal_; }$/;"	f	class:fst::FstInfo
+NumInputEpsilons	info-impl.h	/^  int64 NumInputEpsilons() const { CheckLong(); return niepsilons_; }$/;"	f	class:fst::FstInfo
+NumOutputEpsilons	info-impl.h	/^  int64 NumOutputEpsilons() const { CheckLong(); return noepsilons_; }$/;"	f	class:fst::FstInfo
+NumScc	info-impl.h	/^  int64 NumScc() const { CheckLong(); return nscc_; }$/;"	f	class:fst::FstInfo
+NumStates	info-impl.h	/^  int64 NumStates() const { CheckLong();  return nstates_; }$/;"	f	class:fst::FstInfo
+OLABEL_COMPARE	arcsort.h	/^enum ArcSortType { ILABEL_COMPARE, OLABEL_COMPARE };$/;"	e	enum:fst::script::ArcSortType
+ONE	weight-class.h	/^  enum ElementType { ZERO, ONE, OTHER };$/;"	e	enum:fst::script::WeightClass::ElementType
+OTHER	weight-class.h	/^  enum ElementType { ZERO, ONE, OTHER };$/;"	e	enum:fst::script::WeightClass::ElementType
+OUTPUT_EPSILON_ARC_FILTER	shortest-distance.h	/^                     INPUT_EPSILON_ARC_FILTER, OUTPUT_EPSILON_ARC_FILTER };$/;"	e	enum:fst::script::ArcFilterType
+One	weight-class.h	/^  static const WeightClass &One() {$/;"	f	class:fst::script::WeightClass
+OpType	script-impl.h	/^  typedef void (*OpType)(ArgPack *args);$/;"	t	struct:fst::script::Operation
+Operation	script-impl.h	/^struct Operation {$/;"	s	namespace:fst::script
+OutputLookAhead	info-impl.h	/^  bool OutputLookAhead() const { CheckLong();  return output_lookahead_; }$/;"	f	class:fst::FstInfo
+OutputMatchType	info-impl.h	/^  MatchType OutputMatchType() const { CheckLong(); return output_match_type_; }$/;"	f	class:fst::FstInfo
+OutputSymbols	fst-class.h	/^  virtual const SymbolTable *OutputSymbols() const {$/;"	f	class:fst::script::FstClass
+OutputSymbols	fst-class.h	/^  virtual const SymbolTable *OutputSymbols() const {$/;"	f	class:fst::script::FstClassImpl
+OutputSymbols	info-impl.h	/^  const string& OutputSymbols() const { return output_symbols_; }$/;"	f	class:fst::FstInfo
+PLUS_MAPPER	map.h	/^enum MapType { ARC_SUM_MAPPER, IDENTITY_MAPPER, INVERT_MAPPER, PLUS_MAPPER,$/;"	e	enum:fst::script::MapType
+Package	arg-packs.h	/^  Package(T1 arg1, T2 arg2) :$/;"	f	struct:fst::script::args::Package
+Package	arg-packs.h	/^  Package(T1 arg1, T2 arg2, T3 arg3) :$/;"	f	struct:fst::script::args::Package
+Package	arg-packs.h	/^  Package(T1 arg1, T2 arg2, T3 arg3, T4 arg4) :$/;"	f	struct:fst::script::args::Package
+Package	arg-packs.h	/^  Package(T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5) :$/;"	f	struct:fst::script::args::Package
+Package	arg-packs.h	/^  Package(T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6) :$/;"	f	struct:fst::script::args::Package
+Package	arg-packs.h	/^  Package(T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6,$/;"	f	struct:fst::script::args::Package
+Package	arg-packs.h	/^struct Package {$/;"	s	namespace:fst::script::args
+Package	arg-packs.h	/^struct Package<T1, T2, T3, T4, T5, T6, T7, T8, none_type> {$/;"	s	namespace:fst::script::args
+Package	arg-packs.h	/^struct Package<T1, T2, T3, T4, T5, T6, T7,$/;"	s	namespace:fst::script::args
+Package	arg-packs.h	/^struct Package<T1, T2, T3, T4, T5, T6, none_type,$/;"	s	namespace:fst::script::args
+Package	arg-packs.h	/^struct Package<T1, T2, T3, T4, T5, none_type, none_type,$/;"	s	namespace:fst::script::args
+Package	arg-packs.h	/^struct Package<T1, T2, T3, T4, none_type, none_type,$/;"	s	namespace:fst::script::args
+Package	arg-packs.h	/^struct Package<T1, T2, T3, none_type, none_type,$/;"	s	namespace:fst::script::args
+Package	arg-packs.h	/^struct Package<T1, T2, none_type, none_type,$/;"	s	namespace:fst::script::args
+Print	draw-impl.h	/^  void Print(T t) const {$/;"	f	class:fst::FstDrawer
+Print	print-impl.h	/^  void Print(ostream *ostrm, const string &dest) {$/;"	f	class:fst::FstPrinter
+Print	weight-class.h	/^  virtual void Print(ostream *o) const {$/;"	f	struct:fst::script::WeightClassImpl
+PrintFst	print.h	/^void PrintFst(FstPrinterArgs *args) {$/;"	f	namespace:fst::script
+PrintFst	print.h	/^void PrintFst(const Fst<Arc> &fst, ostream &os, const string dest = "",$/;"	f	namespace:fst::script
+PrintFstInfo	info-impl.h	/^void PrintFstInfo(const FstInfo<A> &fstinfo, bool pipe = false) {$/;"	f	namespace:fst
+PrintFstInfo	info.h	/^void PrintFstInfo(InfoArgs *args) {$/;"	f	namespace:fst::script
+PrintILabel	draw-impl.h	/^  void PrintILabel(Label l) const {$/;"	f	class:fst::FstDrawer
+PrintILabel	print-impl.h	/^  void PrintILabel(Label l) const {$/;"	f	class:fst::FstPrinter
+PrintId	draw-impl.h	/^  void PrintId(int64 id, const SymbolTable *syms,$/;"	f	class:fst::FstDrawer
+PrintId	print-impl.h	/^  void PrintId(int64 id, const SymbolTable *syms,$/;"	f	class:fst::FstPrinter
+PrintOLabel	draw-impl.h	/^  void PrintOLabel(Label l) const {$/;"	f	class:fst::FstDrawer
+PrintOLabel	print-impl.h	/^  void PrintOLabel(Label l) const {$/;"	f	class:fst::FstPrinter
+PrintState	print-impl.h	/^  void PrintState(StateId s) const {$/;"	f	class:fst::FstPrinter
+PrintStateId	draw-impl.h	/^  void PrintStateId(StateId s) const {$/;"	f	class:fst::FstDrawer
+PrintStateId	print-impl.h	/^  void PrintStateId(StateId s) const {$/;"	f	class:fst::FstPrinter
+PrintString	draw-impl.h	/^  void PrintString(const string &s) const {$/;"	f	class:fst::FstDrawer
+Project	project.h	/^void Project(ProjectArgs *args) {$/;"	f	namespace:fst::script
+ProjectArgs	project.h	/^typedef args::Package<MutableFstClass*, ProjectType> ProjectArgs;$/;"	t	namespace:fst::script
+Properties	fst-class.h	/^  virtual uint64 Properties(uint64 mask, bool test) const {$/;"	f	class:fst::script::FstClass
+Properties	fst-class.h	/^  virtual uint64 Properties(uint64 mask, bool test) const {$/;"	f	class:fst::script::FstClassImpl
+Properties	info-impl.h	/^  uint64 Properties() const { CheckLong(); return properties_; }$/;"	f	class:fst::FstInfo
+Prune	prune.h	/^void Prune(PruneArgs1 *args) {$/;"	f	namespace:fst::script
+Prune	prune.h	/^void Prune(PruneArgs2 *args) {$/;"	f	namespace:fst::script
+Prune	prune.h	/^void Prune(PruneArgs3 *args) {$/;"	f	namespace:fst::script
+Prune	prune.h	/^void Prune(PruneArgs4 *args) {$/;"	f	namespace:fst::script
+PruneArgs1	prune.h	/^typedef args::Package<MutableFstClass *, const PruneOptions &> PruneArgs1;$/;"	t	namespace:fst::script
+PruneArgs2	prune.h	/^                      const PruneOptions &> PruneArgs2;$/;"	t	namespace:fst::script
+PruneArgs3	prune.h	/^                      const WeightClass &, int64, float> PruneArgs3;$/;"	t	namespace:fst::script
+PruneArgs4	prune.h	/^                      int64, float> PruneArgs4;$/;"	t	namespace:fst::script
+PruneOptions	prune.h	/^  explicit PruneOptions(const WeightClass& w, int64 s,$/;"	f	struct:fst::script::PruneOptions
+PruneOptions	prune.h	/^struct PruneOptions {$/;"	s	namespace:fst::script
+Push	push.h	/^void Push(PushArgs1 *args) {$/;"	f	namespace:fst::script
+Push	push.h	/^void Push(PushArgs2 *args) {$/;"	f	namespace:fst::script
+PushArgs1	push.h	/^typedef args::Package<MutableFstClass*, ReweightType, float, bool> PushArgs1;$/;"	t	namespace:fst::script
+PushArgs2	push.h	/^                      ReweightType, float> PushArgs2;$/;"	t	namespace:fst::script
+QUANTIZE_MAPPER	map.h	/^               QUANTIZE_MAPPER, RMWEIGHT_MAPPER, SUPERFINAL_MAPPER,$/;"	e	enum:fst::script::MapType
+QueueConstructor	shortest-distance.h	/^struct QueueConstructor {$/;"	s	namespace:fst::script
+QueueConstructor	shortest-distance.h	/^struct QueueConstructor<AutoQueue<typename Arc::StateId>, Arc, ArcFilter> {$/;"	s	namespace:fst::script
+QueueConstructor	shortest-distance.h	/^struct QueueConstructor<NaturalShortestFirstQueue<typename Arc::StateId,$/;"	s	namespace:fst::script
+QueueConstructor	shortest-distance.h	/^struct QueueConstructor<TopOrderQueue<typename Arc::StateId>, Arc, ArcFilter> {$/;"	s	namespace:fst::script
+REGISTER_FST_CLASS	register.h	105;"	d
+REGISTER_FST_CLASSES	register.h	112;"	d
+REGISTER_FST_OPERATION	script-impl.h	171;"	d
+REGISTER_FST_OPERATIONS	fstscript.h	151;"	d
+REGISTER_FST_WEIGHT	weight-class.h	210;"	d
+REGISTER_FST_WEIGHT_EXPANDER	weight-class.h	204;"	d
+REGISTER_FST_WEIGHT__	weight-class.h	198;"	d
+RMWEIGHT_MAPPER	map.h	/^               QUANTIZE_MAPPER, RMWEIGHT_MAPPER, SUPERFINAL_MAPPER,$/;"	e	enum:fst::script::MapType
+RandArcSelection	randgen.h	/^enum RandArcSelection {$/;"	g	namespace:fst::script
+RandEquivalent	randequivalent.h	/^void RandEquivalent(RandEquivalentArgs1 *args) {$/;"	f	namespace:fst::script
+RandEquivalent	randequivalent.h	/^void RandEquivalent(RandEquivalentArgs2 *args) {$/;"	f	namespace:fst::script
+RandEquivalentArgs1	randequivalent.h	/^                              RandEquivalentInnerArgs1> RandEquivalentArgs1;$/;"	t	namespace:fst::script
+RandEquivalentArgs2	randequivalent.h	/^                              RandEquivalentInnerArgs2> RandEquivalentArgs2;$/;"	t	namespace:fst::script
+RandEquivalentInnerArgs1	randequivalent.h	/^                      int32, float, int, int> RandEquivalentInnerArgs1;$/;"	t	namespace:fst::script
+RandEquivalentInnerArgs2	randequivalent.h	/^  RandEquivalentInnerArgs2;$/;"	t	namespace:fst::script
+RandGen	randgen.h	/^void RandGen(RandGenArgs *args) {$/;"	f	namespace:fst::script
+RandGenArgs	randgen.h	/^                      const RandGenOptions<RandArcSelection> &> RandGenArgs;$/;"	t	namespace:fst::script
+Read	fst-class.h	/^  static FstClass *Read(istream &stream,$/;"	f	class:fst::script::FstClass
+Read	fst-class.h	/^  static MutableFstClass *Read(istream &stream,$/;"	f	class:fst::script::MutableFstClass
+Read	fst-class.h	/^  static VectorFstClass *Read(istream &stream,$/;"	f	class:fst::script::VectorFstClass
+ReadTypedFst	fst-class.h	/^  static FstClassT* ReadTypedFst(istream &stream,$/;"	f	class:fst::script::FstClass
+Reader	register.h	/^  typedef FstClassType *(*Reader)(istream &stream,$/;"	t	struct:fst::script::IORegistration
+Register	register.h	/^  typedef FstClassIORegister<Reader, Creator, Converter> Register;$/;"	t	struct:fst::script::IORegistration
+Register	script-impl.h	/^  typedef GenericOperationRegister<OpType> Register;$/;"	t	struct:fst::script::Operation
+RegisterBatch1	fstscript.h	/^  void RegisterBatch1() {$/;"	f	class:fst::script::AllFstOperationsRegisterer
+RegisterBatch2	fstscript.h	/^  void RegisterBatch2() {$/;"	f	class:fst::script::AllFstOperationsRegisterer
+RegisterOperation	script-impl.h	/^  void RegisterOperation(const string &operation_name,$/;"	f	class:fst::script::GenericOperationRegister
+Registerer	register.h	/^    Registerer;$/;"	t	struct:fst::script::IORegistration
+Registerer	script-impl.h	/^  typedef GenericRegisterer<Register> Registerer;$/;"	t	struct:fst::script::Operation
+Relabel	relabel.h	/^void Relabel(RelabelArgs1 *args) {$/;"	f	namespace:fst::script
+Relabel	relabel.h	/^void Relabel(RelabelArgs2 *args) {$/;"	f	namespace:fst::script
+Relabel	relabel.h	/^void Relabel(args::Package<MutableFstClass*, const SymbolTable*,$/;"	f	namespace:fst::script
+RelabelArgs1	relabel.h	/^                      bool> RelabelArgs1;$/;"	t	namespace:fst::script
+RelabelArgs2	relabel.h	/^                      const vector<pair<int64, int64> > > RelabelArgs2;$/;"	t	namespace:fst::script
+RelabelArgs3	relabel.h	/^                      const SymbolTable*> RelabelArgs3;$/;"	t	namespace:fst::script
+Replace	replace.h	/^void Replace(ReplaceArgs *args) {$/;"	f	namespace:fst::script
+ReplaceArgs	replace.h	/^                      MutableFstClass *, const int64, bool> ReplaceArgs;$/;"	t	namespace:fst::script
+Reverse	reverse.h	/^void Reverse(ReverseArgs *args) {$/;"	f	namespace:fst::script
+ReverseArgs	reverse.h	/^typedef args::Package<const FstClass &, MutableFstClass *> ReverseArgs;$/;"	t	namespace:fst::script
+Reweight	reweight.h	/^void Reweight(ReweightArgs *args) {$/;"	f	namespace:fst::script
+ReweightArgs	reweight.h	/^                      ReweightType> ReweightArgs;$/;"	t	namespace:fst::script
+RmEpsilon	rmepsilon.h	/^void RmEpsilon(RmEpsilonArgs1 *args) {$/;"	f	namespace:fst::script
+RmEpsilon	rmepsilon.h	/^void RmEpsilon(RmEpsilonArgs2 *args) {$/;"	f	namespace:fst::script
+RmEpsilon	rmepsilon.h	/^void RmEpsilon(RmEpsilonArgs3 *args) {$/;"	f	namespace:fst::script
+RmEpsilonArgs1	rmepsilon.h	/^                      bool, const RmEpsilonOptions &> RmEpsilonArgs1;$/;"	t	namespace:fst::script
+RmEpsilonArgs2	rmepsilon.h	/^                      float> RmEpsilonArgs2;$/;"	t	namespace:fst::script
+RmEpsilonArgs3	rmepsilon.h	/^                      const RmEpsilonOptions &> RmEpsilonArgs3;$/;"	t	namespace:fst::script
+RmEpsilonHelper	rmepsilon.h	/^void RmEpsilonHelper(MutableFst<Arc> *fst,$/;"	f	namespace:fst::script
+RmEpsilonOptions	rmepsilon.h	/^  RmEpsilonOptions(QueueType qt = AUTO_QUEUE, float d = kDelta, bool c = true,$/;"	f	struct:fst::script::RmEpsilonOptions
+RmEpsilonOptions	rmepsilon.h	/^struct RmEpsilonOptions : public fst::script::ShortestDistanceOptions {$/;"	s	namespace:fst::script
+SUPERFINAL_MAPPER	map.h	/^               QUANTIZE_MAPPER, RMWEIGHT_MAPPER, SUPERFINAL_MAPPER,$/;"	e	enum:fst::script::MapType
+SetInputSymbols	fst-class.h	/^  virtual void SetInputSymbols(SymbolTable *is) {$/;"	f	class:fst::script::FstClassImpl
+SetInputSymbols	fst-class.h	/^  virtual void SetInputSymbols(SymbolTable *is) {$/;"	f	class:fst::script::MutableFstClass
+SetOutputSymbols	fst-class.h	/^  virtual void SetOutputSymbols(SymbolTable *os) {$/;"	f	class:fst::script::FstClassImpl
+SetOutputSymbols	fst-class.h	/^  virtual void SetOutputSymbols(SymbolTable *os) {$/;"	f	class:fst::script::MutableFstClass
+ShortestDistance	shortest-distance.h	/^void ShortestDistance(ShortestDistanceArgs1 *args) {$/;"	f	namespace:fst::script
+ShortestDistance	shortest-distance.h	/^void ShortestDistance(ShortestDistanceArgs2 *args) {$/;"	f	namespace:fst::script
+ShortestDistance	shortest-distance.h	/^void ShortestDistance(ShortestDistanceArgs3 *args) {$/;"	f	namespace:fst::script
+ShortestDistanceArgs1	shortest-distance.h	/^                      const ShortestDistanceOptions &> ShortestDistanceArgs1;$/;"	t	namespace:fst::script
+ShortestDistanceArgs2	shortest-distance.h	/^                      bool, double> ShortestDistanceArgs2;$/;"	t	namespace:fst::script
+ShortestDistanceArgs3	shortest-distance.h	/^                              const FstClass &> ShortestDistanceArgs3;$/;"	t	namespace:fst::script
+ShortestDistanceHelper	shortest-distance.h	/^void ShortestDistanceHelper(ShortestDistanceArgs1 *args) {$/;"	f	namespace:fst::script
+ShortestDistanceOptions	shortest-distance.h	/^  ShortestDistanceOptions(QueueType qt, ArcFilterType aft, int64 s,$/;"	f	struct:fst::script::ShortestDistanceOptions
+ShortestDistanceOptions	shortest-distance.h	/^struct ShortestDistanceOptions {$/;"	s	namespace:fst::script
+ShortestPath	shortest-path.h	/^void ShortestPath(ShortestPathArgs1 *args) {$/;"	f	namespace:fst::script
+ShortestPath	shortest-path.h	/^void ShortestPath(ShortestPathArgs2 *args) {$/;"	f	namespace:fst::script
+ShortestPathArgs1	shortest-path.h	/^  ShortestPathArgs1;$/;"	t	namespace:fst::script
+ShortestPathArgs2	shortest-path.h	/^                      int64> ShortestPathArgs2;$/;"	t	namespace:fst::script
+ShortestPathOptions	shortest-path.h	/^  ShortestPathOptions(QueueType qt, size_t n = 1,$/;"	f	struct:fst::script::ShortestPathOptions
+ShortestPathOptions	shortest-path.h	/^struct ShortestPathOptions$/;"	s	namespace:fst::script
+Start	info-impl.h	/^  int64 Start() const { CheckLong();  return start_; }$/;"	f	class:fst::FstInfo
+StateId	compile-impl.h	/^  typedef typename A::StateId StateId;$/;"	t	class:fst::FstCompiler
+StateId	draw-impl.h	/^  typedef typename A::StateId StateId;$/;"	t	class:fst::FstDrawer
+StateId	info-impl.h	/^  typedef typename A::StateId StateId;$/;"	t	class:fst::FstInfo
+StateId	print-impl.h	/^  typedef typename A::StateId StateId;$/;"	t	class:fst::FstPrinter
+StateMap	map.h	/^Fst<typename M::ToArc> *StateMap(const Fst<typename M::FromArc> &fst,$/;"	f	namespace:fst::script
+StrToILabel	compile-impl.h	/^  StateId StrToILabel(const char *s) const {$/;"	f	class:fst::FstCompiler
+StrToId	compile-impl.h	/^  int64 StrToId(const char *s, const SymbolTable *syms,$/;"	f	class:fst::FstCompiler
+StrToOLabel	compile-impl.h	/^  StateId StrToOLabel(const char *s) const {$/;"	f	class:fst::FstCompiler
+StrToStateId	compile-impl.h	/^  StateId StrToStateId(const char *s) {$/;"	f	class:fst::FstCompiler
+StrToWeight	compile-impl.h	/^  Weight StrToWeight(const char *s, bool allow_zero) const {$/;"	f	class:fst::FstCompiler
+StrToWeightImplBase	weight-class.h	/^WeightImplBase* StrToWeightImplBase(const string &str,$/;"	f	namespace:fst::script
+StrToWeightImplBaseT	weight-class.h	/^typedef WeightImplBase* (*StrToWeightImplBaseT)(const string &str,$/;"	t	namespace:fst::script
+Synchronize	synchronize.h	/^void Synchronize(SynchronizeArgs *args) {$/;"	f	namespace:fst::script
+SynchronizeArgs	synchronize.h	/^typedef args::Package<const FstClass &, MutableFstClass *> SynchronizeArgs;$/;"	t	namespace:fst::script
+TIMES_MAPPER	map.h	/^               TIMES_MAPPER, TO_LOG_MAPPER, TO_LOG64_MAPPER, TO_STD_MAPPER };$/;"	e	enum:fst::script::MapType
+TO_LOG64_MAPPER	map.h	/^               TIMES_MAPPER, TO_LOG_MAPPER, TO_LOG64_MAPPER, TO_STD_MAPPER };$/;"	e	enum:fst::script::MapType
+TO_LOG_MAPPER	map.h	/^               TIMES_MAPPER, TO_LOG_MAPPER, TO_LOG64_MAPPER, TO_STD_MAPPER };$/;"	e	enum:fst::script::MapType
+TO_STD_MAPPER	map.h	/^               TIMES_MAPPER, TO_LOG_MAPPER, TO_LOG64_MAPPER, TO_STD_MAPPER };$/;"	e	enum:fst::script::MapType
+TopSort	topsort.h	/^void TopSort(TopSortArgs *args) {$/;"	f	namespace:fst::script
+TopSortArgs	topsort.h	/^typedef args::WithReturnValue<bool, MutableFstClass*> TopSortArgs;$/;"	t	namespace:fst::script
+Type	weight-class.h	/^  virtual const string &Type() const { return W::Type(); }$/;"	f	struct:fst::script::WeightClassImpl
+UNIFORM_ARC_SELECTOR	randgen.h	/^  UNIFORM_ARC_SELECTOR,$/;"	e	enum:fst::script::RandArcSelection
+Union	union.h	/^void Union(UnionArgs *args) {$/;"	f	namespace:fst::script
+UnionArgs	union.h	/^typedef args::Package<MutableFstClass *, const FstClass &> UnionArgs;$/;"	t	namespace:fst::script
+VectorFstClass	fst-class.h	/^  explicit VectorFstClass(VectorFst<Arc> *fst) :$/;"	f	class:fst::script::VectorFstClass
+VectorFstClass	fst-class.h	/^class VectorFstClass : public MutableFstClass {$/;"	c	namespace:fst::script
+Verify	verify.h	/^void Verify(VerifyArgs *args) {$/;"	f	namespace:fst::script
+VerifyArgs	verify.h	/^typedef args::WithReturnValue<bool, const FstClass *> VerifyArgs;$/;"	t	namespace:fst::script
+Weight	compile-impl.h	/^  typedef typename A::Weight Weight;$/;"	t	class:fst::FstCompiler
+Weight	draw-impl.h	/^  typedef typename A::Weight Weight;$/;"	t	class:fst::FstDrawer
+Weight	info-impl.h	/^  typedef typename A::Weight Weight;$/;"	t	class:fst::FstInfo
+Weight	print-impl.h	/^  typedef typename A::Weight Weight;$/;"	t	class:fst::FstPrinter
+WeightClass	weight-class.h	/^  WeightClass() : element_type_(ZERO), impl_(0) { }$/;"	f	class:fst::script::WeightClass
+WeightClass	weight-class.h	/^  WeightClass(const WeightClass &other) :$/;"	f	class:fst::script::WeightClass
+WeightClass	weight-class.h	/^  explicit WeightClass(ElementType et) : element_type_(et), impl_(0) { }$/;"	f	class:fst::script::WeightClass
+WeightClass	weight-class.h	/^  explicit WeightClass(const W& weight)$/;"	f	class:fst::script::WeightClass
+WeightClass	weight-class.h	/^class WeightClass {$/;"	c	namespace:fst::script
+WeightClassImpl	weight-class.h	/^  explicit WeightClassImpl(const W& weight) : weight(weight) { }$/;"	f	struct:fst::script::WeightClassImpl
+WeightClassImpl	weight-class.h	/^struct WeightClassImpl : public WeightImplBase {$/;"	s	namespace:fst::script
+WeightClassRegister	weight-class.h	/^class WeightClassRegister : public GenericRegister<string,$/;"	c	namespace:fst::script
+WeightClassRegisterer	weight-class.h	/^typedef GenericRegisterer<WeightClassRegister> WeightClassRegisterer;$/;"	t	namespace:fst::script
+WeightImplBase	weight-class.h	/^class WeightImplBase {$/;"	c	namespace:fst::script
+WeightType	fst-class.h	/^  virtual const string &WeightType() const {$/;"	f	class:fst::script::FstClassImpl
+WeightType	fst-class.h	/^  virtual const string& WeightType() const {$/;"	f	class:fst::script::FstClass
+WithReturnValue	arg-packs.h	/^  explicit WithReturnValue(const ArgPackage &args) : args(args) { }$/;"	f	struct:fst::script::args::WithReturnValue
+WithReturnValue	arg-packs.h	/^struct WithReturnValue {$/;"	s	namespace:fst::script::args
+WithReturnValue	arg-packs.h	/^struct WithReturnValue<Retval, ArgPackage&> {$/;"	s	namespace:fst::script::args
+Write	fst-class.h	/^  virtual void Write(const string &fname) const {$/;"	f	class:fst::script::FstClass
+Write	fst-class.h	/^  virtual void Write(const string &fname) const {$/;"	f	class:fst::script::FstClassImpl
+Write	fst-class.h	/^  virtual void Write(const string &fname) const {$/;"	f	class:fst::script::MutableFstClass
+Write	fst-class.h	/^  virtual void Write(ostream &ostr, const FstWriteOptions &opts) const {$/;"	f	class:fst::script::FstClass
+Write	fst-class.h	/^  virtual void Write(ostream &ostr, const FstWriteOptions &opts) const {$/;"	f	class:fst::script::FstClassImpl
+Write	fst-class.h	/^  virtual void Write(ostream &ostr, const FstWriteOptions &opts) const {$/;"	f	class:fst::script::MutableFstClass
+ZERO	weight-class.h	/^  enum ElementType { ZERO, ONE, OTHER };$/;"	e	enum:fst::script::WeightClass::ElementType
+Zero	weight-class.h	/^  static const WeightClass &Zero() {$/;"	f	class:fst::script::WeightClass
+accep	compile.h	/^  const bool accep;$/;"	m	struct:fst::script::FstCompileArgs
+accep	draw.h	/^  const bool accep;$/;"	m	struct:fst::script::FstDrawerArgs
+accep_	draw-impl.h	/^  bool accep_;                   \/\/ print as acceptor when possible$/;"	m	class:fst::FstDrawer
+accep_	print-impl.h	/^  bool accep_;                   \/\/ print as acceptor when possible$/;"	m	class:fst::FstPrinter
+accept	print.h	/^  const bool accept;$/;"	m	struct:fst::script::FstPrinterArgs
+allow_negative_labels	compile.h	/^  const bool allow_negative_labels;$/;"	m	struct:fst::script::FstCompileArgs
+allow_negative_labels_	compile-impl.h	/^  bool allow_negative_labels_;         \/\/ not recommended; may cause conflicts$/;"	m	class:fst::FstCompiler
+arc_filter_type	shortest-distance.h	/^  const ArcFilterType arc_filter_type;$/;"	m	struct:fst::script::ShortestDistanceOptions
+arc_filter_type_	info-impl.h	/^  string arc_filter_type_;$/;"	m	class:fst::FstInfo
+arg1	arg-packs.h	/^  T1 arg1;$/;"	m	struct:fst::script::args::Package
+arg2	arg-packs.h	/^  T2 arg2;$/;"	m	struct:fst::script::args::Package
+arg3	arg-packs.h	/^  T3 arg3;$/;"	m	struct:fst::script::args::Package
+arg4	arg-packs.h	/^  T4 arg4;$/;"	m	struct:fst::script::args::Package
+arg5	arg-packs.h	/^  T5 arg5;$/;"	m	struct:fst::script::args::Package
+arg6	arg-packs.h	/^  T6 arg6;$/;"	m	struct:fst::script::args::Package
+arg7	arg-packs.h	/^  T7 arg7;$/;"	m	struct:fst::script::args::Package
+arg8	arg-packs.h	/^  T8 arg8;$/;"	m	struct:fst::script::args::Package
+arg9	arg-packs.h	/^  T9 arg9;$/;"	m	struct:fst::script::args::Package
+args	arg-packs.h	/^  const ArgPackage &args;$/;"	m	struct:fst::script::args::WithReturnValue
+args	arg-packs.h	/^namespace args {$/;"	n	namespace:fst::script
+connect	rmepsilon.h	/^  bool connect;$/;"	m	struct:fst::script::RmEpsilonOptions
+converter	register.h	/^  Converter converter;$/;"	m	struct:fst::script::FstClassRegEntry
+creator	register.h	/^  Creator creator;$/;"	m	struct:fst::script::FstClassRegEntry
+delta	determinize.h	/^  float delta;$/;"	m	struct:fst::script::DeterminizeOptions
+delta	prune.h	/^  float delta;$/;"	m	struct:fst::script::PruneOptions
+delta	shortest-distance.h	/^  const float delta;$/;"	m	struct:fst::script::ShortestDistanceOptions
+dest	compile.h	/^  const string &dest;$/;"	m	struct:fst::script::FstCompileArgs
+dest	draw.h	/^  const string &dest;$/;"	m	struct:fst::script::FstDrawerArgs
+dest	print.h	/^  const string &dest;$/;"	m	struct:fst::script::FstPrinterArgs
+dest_	draw-impl.h	/^  string dest_;                  \/\/ drawn FST destination name$/;"	m	class:fst::FstDrawer
+dest_	print-impl.h	/^  string dest_;                  \/\/ text FST destination name$/;"	m	class:fst::FstPrinter
+distance	prune.h	/^  const vector<WeightClass> *distance;$/;"	m	struct:fst::script::PruneOptions
+element_type_	weight-class.h	/^  ElementType element_type_;$/;"	m	class:fst::script::WeightClass
+first_path	shortest-distance.h	/^  const bool first_path;$/;"	m	struct:fst::script::ShortestDistanceOptions
+first_path	shortest-path.h	/^  const bool first_path;$/;"	m	struct:fst::script::ShortestPathOptions
+fontsize	draw.h	/^  const int fontsize;$/;"	m	struct:fst::script::FstDrawerArgs
+fontsize_	draw-impl.h	/^  int fontsize_;$/;"	m	class:fst::FstDrawer
+fst	arcsort.h	/^namespace fst {$/;"	n
+fst	arg-packs.h	/^namespace fst {$/;"	n
+fst	closure.h	/^namespace fst {$/;"	n
+fst	compile-impl.h	/^namespace fst {$/;"	n
+fst	compile.h	/^namespace fst {$/;"	n
+fst	compose.h	/^namespace fst {$/;"	n
+fst	concat.h	/^namespace fst {$/;"	n
+fst	connect.h	/^namespace fst {$/;"	n
+fst	convert.h	/^namespace fst {$/;"	n
+fst	decode.h	/^namespace fst {$/;"	n
+fst	determinize.h	/^namespace fst {$/;"	n
+fst	difference.h	/^namespace fst {$/;"	n
+fst	draw-impl.h	/^namespace fst {$/;"	n
+fst	draw.h	/^  const FstClass &fst;$/;"	m	struct:fst::script::FstDrawerArgs
+fst	draw.h	/^namespace fst {$/;"	n
+fst	encode.h	/^namespace fst {$/;"	n
+fst	epsnormalize.h	/^namespace fst {$/;"	n
+fst	equal.h	/^namespace fst {$/;"	n
+fst	equivalent.h	/^namespace fst {$/;"	n
+fst	fst-class.h	/^namespace fst {$/;"	n
+fst	fstscript-decl.h	/^namespace fst {$/;"	n
+fst	fstscript.h	/^namespace fst {$/;"	n
+fst	info-impl.h	/^namespace fst {$/;"	n
+fst	info.h	/^namespace fst {$/;"	n
+fst	intersect.h	/^namespace fst {$/;"	n
+fst	invert.h	/^namespace fst {$/;"	n
+fst	map.h	/^namespace fst {$/;"	n
+fst	minimize.h	/^namespace fst {$/;"	n
+fst	print-impl.h	/^namespace fst {$/;"	n
+fst	print.h	/^  const FstClass &fst;$/;"	m	struct:fst::script::FstPrinterArgs
+fst	print.h	/^namespace fst {$/;"	n
+fst	project.h	/^namespace fst {$/;"	n
+fst	prune.h	/^namespace fst {$/;"	n
+fst	push.h	/^namespace fst {$/;"	n
+fst	randequivalent.h	/^namespace fst {$/;"	n
+fst	randgen.h	/^namespace fst {$/;"	n
+fst	register.h	/^namespace fst {$/;"	n
+fst	relabel.h	/^namespace fst {$/;"	n
+fst	replace.h	/^namespace fst {$/;"	n
+fst	reverse.h	/^namespace fst {$/;"	n
+fst	reweight.h	/^namespace fst {$/;"	n
+fst	rmepsilon.h	/^namespace fst {$/;"	n
+fst	script-impl.h	/^namespace fst {$/;"	n
+fst	shortest-distance.h	/^namespace fst {$/;"	n
+fst	shortest-path.h	/^namespace fst {$/;"	n
+fst	synchronize.h	/^namespace fst {$/;"	n
+fst	text-io.h	/^namespace fst {$/;"	n
+fst	topsort.h	/^namespace fst {$/;"	n
+fst	union.h	/^namespace fst {$/;"	n
+fst	verify.h	/^namespace fst {$/;"	n
+fst	weight-class.h	/^namespace fst {$/;"	n
+fst::FstCompiler	compile-impl.h	/^template <class A> class FstCompiler {$/;"	c	namespace:fst
+fst::FstCompiler::Arc	compile-impl.h	/^  typedef A Arc;$/;"	t	class:fst::FstCompiler
+fst::FstCompiler::Fst	compile-impl.h	/^  const VectorFst<A> &Fst() const {$/;"	f	class:fst::FstCompiler
+fst::FstCompiler::FstCompiler	compile-impl.h	/^  FstCompiler(istream &istrm, const string &source,$/;"	f	class:fst::FstCompiler
+fst::FstCompiler::Label	compile-impl.h	/^  typedef typename A::Label Label;$/;"	t	class:fst::FstCompiler
+fst::FstCompiler::StateId	compile-impl.h	/^  typedef typename A::StateId StateId;$/;"	t	class:fst::FstCompiler
+fst::FstCompiler::StrToILabel	compile-impl.h	/^  StateId StrToILabel(const char *s) const {$/;"	f	class:fst::FstCompiler
+fst::FstCompiler::StrToId	compile-impl.h	/^  int64 StrToId(const char *s, const SymbolTable *syms,$/;"	f	class:fst::FstCompiler
+fst::FstCompiler::StrToOLabel	compile-impl.h	/^  StateId StrToOLabel(const char *s) const {$/;"	f	class:fst::FstCompiler
+fst::FstCompiler::StrToStateId	compile-impl.h	/^  StateId StrToStateId(const char *s) {$/;"	f	class:fst::FstCompiler
+fst::FstCompiler::StrToWeight	compile-impl.h	/^  Weight StrToWeight(const char *s, bool allow_zero) const {$/;"	f	class:fst::FstCompiler
+fst::FstCompiler::Weight	compile-impl.h	/^  typedef typename A::Weight Weight;$/;"	t	class:fst::FstCompiler
+fst::FstCompiler::allow_negative_labels_	compile-impl.h	/^  bool allow_negative_labels_;         \/\/ not recommended; may cause conflicts$/;"	m	class:fst::FstCompiler
+fst::FstCompiler::fst_	compile-impl.h	/^  mutable VectorFst<A> fst_;$/;"	m	class:fst::FstCompiler
+fst::FstCompiler::isyms_	compile-impl.h	/^  const SymbolTable *isyms_;           \/\/ ilabel symbol table$/;"	m	class:fst::FstCompiler
+fst::FstCompiler::kLineLen	compile-impl.h	/^  static const int kLineLen = 8096;$/;"	m	class:fst::FstCompiler
+fst::FstCompiler::keep_state_numbering_	compile-impl.h	/^  bool keep_state_numbering_;$/;"	m	class:fst::FstCompiler
+fst::FstCompiler::nline_	compile-impl.h	/^  size_t nline_;$/;"	m	class:fst::FstCompiler
+fst::FstCompiler::nstates_	compile-impl.h	/^  StateId nstates_;                    \/\/ number of seen states$/;"	m	class:fst::FstCompiler
+fst::FstCompiler::osyms_	compile-impl.h	/^  const SymbolTable *osyms_;           \/\/ olabel symbol table$/;"	m	class:fst::FstCompiler
+fst::FstCompiler::source_	compile-impl.h	/^  string source_;                      \/\/ text FST source name$/;"	m	class:fst::FstCompiler
+fst::FstCompiler::ssyms_	compile-impl.h	/^  const SymbolTable *ssyms_;           \/\/ slabel symbol table$/;"	m	class:fst::FstCompiler
+fst::FstCompiler::states_	compile-impl.h	/^  unordered_map<StateId, StateId> states_;  \/\/ state ID map$/;"	m	class:fst::FstCompiler
+fst::FstDrawer	draw-impl.h	/^template <class A> class FstDrawer {$/;"	c	namespace:fst
+fst::FstDrawer::Arc	draw-impl.h	/^  typedef A Arc;$/;"	t	class:fst::FstDrawer
+fst::FstDrawer::Draw	draw-impl.h	/^  void Draw(ostream *strm, const string &dest) {$/;"	f	class:fst::FstDrawer
+fst::FstDrawer::DrawState	draw-impl.h	/^  void DrawState(StateId s) const {$/;"	f	class:fst::FstDrawer
+fst::FstDrawer::EscapeChars	draw-impl.h	/^  inline void EscapeChars(const string &s, string* ns) const {$/;"	f	class:fst::FstDrawer
+fst::FstDrawer::FstDrawer	draw-impl.h	/^  FstDrawer(const Fst<A> &fst,$/;"	f	class:fst::FstDrawer
+fst::FstDrawer::Label	draw-impl.h	/^  typedef typename A::Label Label;$/;"	t	class:fst::FstDrawer
+fst::FstDrawer::Print	draw-impl.h	/^  void Print(T t) const {$/;"	f	class:fst::FstDrawer
+fst::FstDrawer::PrintILabel	draw-impl.h	/^  void PrintILabel(Label l) const {$/;"	f	class:fst::FstDrawer
+fst::FstDrawer::PrintId	draw-impl.h	/^  void PrintId(int64 id, const SymbolTable *syms,$/;"	f	class:fst::FstDrawer
+fst::FstDrawer::PrintOLabel	draw-impl.h	/^  void PrintOLabel(Label l) const {$/;"	f	class:fst::FstDrawer
+fst::FstDrawer::PrintStateId	draw-impl.h	/^  void PrintStateId(StateId s) const {$/;"	f	class:fst::FstDrawer
+fst::FstDrawer::PrintString	draw-impl.h	/^  void PrintString(const string &s) const {$/;"	f	class:fst::FstDrawer
+fst::FstDrawer::StateId	draw-impl.h	/^  typedef typename A::StateId StateId;$/;"	t	class:fst::FstDrawer
+fst::FstDrawer::Weight	draw-impl.h	/^  typedef typename A::Weight Weight;$/;"	t	class:fst::FstDrawer
+fst::FstDrawer::accep_	draw-impl.h	/^  bool accep_;                   \/\/ print as acceptor when possible$/;"	m	class:fst::FstDrawer
+fst::FstDrawer::dest_	draw-impl.h	/^  string dest_;                  \/\/ drawn FST destination name$/;"	m	class:fst::FstDrawer
+fst::FstDrawer::fontsize_	draw-impl.h	/^  int fontsize_;$/;"	m	class:fst::FstDrawer
+fst::FstDrawer::fst_	draw-impl.h	/^  const Fst<A> &fst_;$/;"	m	class:fst::FstDrawer
+fst::FstDrawer::height_	draw-impl.h	/^  float height_;$/;"	m	class:fst::FstDrawer
+fst::FstDrawer::isyms_	draw-impl.h	/^  const SymbolTable *isyms_;     \/\/ ilabel symbol table$/;"	m	class:fst::FstDrawer
+fst::FstDrawer::kLineLen	draw-impl.h	/^  static const int kLineLen = 8096;$/;"	m	class:fst::FstDrawer
+fst::FstDrawer::nodesep_	draw-impl.h	/^  float nodesep_;$/;"	m	class:fst::FstDrawer
+fst::FstDrawer::ostrm_	draw-impl.h	/^  ostream *ostrm_;               \/\/ drawn FST destination$/;"	m	class:fst::FstDrawer
+fst::FstDrawer::osyms_	draw-impl.h	/^  const SymbolTable *osyms_;     \/\/ olabel symbol table$/;"	m	class:fst::FstDrawer
+fst::FstDrawer::portrait_	draw-impl.h	/^  bool portrait_;$/;"	m	class:fst::FstDrawer
+fst::FstDrawer::precision_	draw-impl.h	/^  int precision_;$/;"	m	class:fst::FstDrawer
+fst::FstDrawer::ranksep_	draw-impl.h	/^  float ranksep_;$/;"	m	class:fst::FstDrawer
+fst::FstDrawer::show_weight_one_	draw-impl.h	/^  bool show_weight_one_;$/;"	m	class:fst::FstDrawer
+fst::FstDrawer::ssyms_	draw-impl.h	/^  const SymbolTable *ssyms_;     \/\/ slabel symbol table$/;"	m	class:fst::FstDrawer
+fst::FstDrawer::title_	draw-impl.h	/^  string title_;$/;"	m	class:fst::FstDrawer
+fst::FstDrawer::vertical_	draw-impl.h	/^  bool vertical_;$/;"	m	class:fst::FstDrawer
+fst::FstDrawer::width_	draw-impl.h	/^  float width_;$/;"	m	class:fst::FstDrawer
+fst::FstInfo	info-impl.h	/^template <class A> class FstInfo {$/;"	c	namespace:fst
+fst::FstInfo::Arc	info-impl.h	/^  typedef A Arc;$/;"	t	class:fst::FstInfo
+fst::FstInfo::ArcFilterType	info-impl.h	/^  const string& ArcFilterType() const { return arc_filter_type_; }$/;"	f	class:fst::FstInfo
+fst::FstInfo::ArcType	info-impl.h	/^  const string& ArcType() const { return A::Type(); }$/;"	f	class:fst::FstInfo
+fst::FstInfo::CheckLong	info-impl.h	/^  void CheckLong() const {$/;"	f	class:fst::FstInfo
+fst::FstInfo::FstInfo	info-impl.h	/^  FstInfo(const Fst<A> &fst, bool test_properties,$/;"	f	class:fst::FstInfo
+fst::FstInfo::FstType	info-impl.h	/^  const string& FstType() const { return fst_type_; }$/;"	f	class:fst::FstInfo
+fst::FstInfo::InputLookAhead	info-impl.h	/^  bool InputLookAhead() const { CheckLong(); return input_lookahead_; }$/;"	f	class:fst::FstInfo
+fst::FstInfo::InputMatchType	info-impl.h	/^  MatchType InputMatchType() const { CheckLong(); return input_match_type_; }$/;"	f	class:fst::FstInfo
+fst::FstInfo::InputSymbols	info-impl.h	/^  const string& InputSymbols() const { return input_symbols_; }$/;"	f	class:fst::FstInfo
+fst::FstInfo::Label	info-impl.h	/^  typedef typename A::Label Label;$/;"	t	class:fst::FstInfo
+fst::FstInfo::LongInfo	info-impl.h	/^  const bool LongInfo() const { return long_info_; }$/;"	f	class:fst::FstInfo
+fst::FstInfo::NumAccessible	info-impl.h	/^  int64 NumAccessible() const { CheckLong(); return naccess_; }$/;"	f	class:fst::FstInfo
+fst::FstInfo::NumArcs	info-impl.h	/^  int64 NumArcs() const { CheckLong();  return narcs_; }$/;"	f	class:fst::FstInfo
+fst::FstInfo::NumCc	info-impl.h	/^  int64 NumCc() const { CheckLong(); return ncc_; }$/;"	f	class:fst::FstInfo
+fst::FstInfo::NumCoAccessible	info-impl.h	/^  int64 NumCoAccessible() const { CheckLong(); return ncoaccess_; }$/;"	f	class:fst::FstInfo
+fst::FstInfo::NumConnected	info-impl.h	/^  int64 NumConnected() const { CheckLong(); return nconnect_; }$/;"	f	class:fst::FstInfo
+fst::FstInfo::NumEpsilons	info-impl.h	/^  int64 NumEpsilons() const { CheckLong();  return nepsilons_; }$/;"	f	class:fst::FstInfo
+fst::FstInfo::NumFinal	info-impl.h	/^  int64 NumFinal() const { CheckLong();  return nfinal_; }$/;"	f	class:fst::FstInfo
+fst::FstInfo::NumInputEpsilons	info-impl.h	/^  int64 NumInputEpsilons() const { CheckLong(); return niepsilons_; }$/;"	f	class:fst::FstInfo
+fst::FstInfo::NumOutputEpsilons	info-impl.h	/^  int64 NumOutputEpsilons() const { CheckLong(); return noepsilons_; }$/;"	f	class:fst::FstInfo
+fst::FstInfo::NumScc	info-impl.h	/^  int64 NumScc() const { CheckLong(); return nscc_; }$/;"	f	class:fst::FstInfo
+fst::FstInfo::NumStates	info-impl.h	/^  int64 NumStates() const { CheckLong();  return nstates_; }$/;"	f	class:fst::FstInfo
+fst::FstInfo::OutputLookAhead	info-impl.h	/^  bool OutputLookAhead() const { CheckLong();  return output_lookahead_; }$/;"	f	class:fst::FstInfo
+fst::FstInfo::OutputMatchType	info-impl.h	/^  MatchType OutputMatchType() const { CheckLong(); return output_match_type_; }$/;"	f	class:fst::FstInfo
+fst::FstInfo::OutputSymbols	info-impl.h	/^  const string& OutputSymbols() const { return output_symbols_; }$/;"	f	class:fst::FstInfo
+fst::FstInfo::Properties	info-impl.h	/^  uint64 Properties() const { CheckLong(); return properties_; }$/;"	f	class:fst::FstInfo
+fst::FstInfo::Start	info-impl.h	/^  int64 Start() const { CheckLong();  return start_; }$/;"	f	class:fst::FstInfo
+fst::FstInfo::StateId	info-impl.h	/^  typedef typename A::StateId StateId;$/;"	t	class:fst::FstInfo
+fst::FstInfo::Weight	info-impl.h	/^  typedef typename A::Weight Weight;$/;"	t	class:fst::FstInfo
+fst::FstInfo::arc_filter_type_	info-impl.h	/^  string arc_filter_type_;$/;"	m	class:fst::FstInfo
+fst::FstInfo::fst_type_	info-impl.h	/^  string fst_type_;$/;"	m	class:fst::FstInfo
+fst::FstInfo::input_lookahead_	info-impl.h	/^  bool input_lookahead_;$/;"	m	class:fst::FstInfo
+fst::FstInfo::input_match_type_	info-impl.h	/^  MatchType input_match_type_;$/;"	m	class:fst::FstInfo
+fst::FstInfo::input_symbols_	info-impl.h	/^  string input_symbols_;$/;"	m	class:fst::FstInfo
+fst::FstInfo::long_info_	info-impl.h	/^  bool long_info_;$/;"	m	class:fst::FstInfo
+fst::FstInfo::naccess_	info-impl.h	/^  int64 naccess_;$/;"	m	class:fst::FstInfo
+fst::FstInfo::narcs_	info-impl.h	/^  int64 narcs_;$/;"	m	class:fst::FstInfo
+fst::FstInfo::ncc_	info-impl.h	/^  int64 ncc_;$/;"	m	class:fst::FstInfo
+fst::FstInfo::ncoaccess_	info-impl.h	/^  int64 ncoaccess_;$/;"	m	class:fst::FstInfo
+fst::FstInfo::nconnect_	info-impl.h	/^  int64 nconnect_;$/;"	m	class:fst::FstInfo
+fst::FstInfo::nepsilons_	info-impl.h	/^  int64 nepsilons_;$/;"	m	class:fst::FstInfo
+fst::FstInfo::nfinal_	info-impl.h	/^  int64 nfinal_;$/;"	m	class:fst::FstInfo
+fst::FstInfo::niepsilons_	info-impl.h	/^  int64 niepsilons_;$/;"	m	class:fst::FstInfo
+fst::FstInfo::noepsilons_	info-impl.h	/^  int64 noepsilons_;$/;"	m	class:fst::FstInfo
+fst::FstInfo::nscc_	info-impl.h	/^  int64 nscc_;$/;"	m	class:fst::FstInfo
+fst::FstInfo::nstates_	info-impl.h	/^  int64 nstates_;$/;"	m	class:fst::FstInfo
+fst::FstInfo::output_lookahead_	info-impl.h	/^  bool output_lookahead_;$/;"	m	class:fst::FstInfo
+fst::FstInfo::output_match_type_	info-impl.h	/^  MatchType output_match_type_;$/;"	m	class:fst::FstInfo
+fst::FstInfo::output_symbols_	info-impl.h	/^  string output_symbols_;$/;"	m	class:fst::FstInfo
+fst::FstInfo::properties_	info-impl.h	/^  uint64 properties_;$/;"	m	class:fst::FstInfo
+fst::FstInfo::start_	info-impl.h	/^  int64 start_;$/;"	m	class:fst::FstInfo
+fst::FstPrinter	print-impl.h	/^template <class A> class FstPrinter {$/;"	c	namespace:fst
+fst::FstPrinter::Arc	print-impl.h	/^  typedef A Arc;$/;"	t	class:fst::FstPrinter
+fst::FstPrinter::FstPrinter	print-impl.h	/^  FstPrinter(const Fst<A> &fst,$/;"	f	class:fst::FstPrinter
+fst::FstPrinter::Label	print-impl.h	/^  typedef typename A::Label Label;$/;"	t	class:fst::FstPrinter
+fst::FstPrinter::Print	print-impl.h	/^  void Print(ostream *ostrm, const string &dest) {$/;"	f	class:fst::FstPrinter
+fst::FstPrinter::PrintILabel	print-impl.h	/^  void PrintILabel(Label l) const {$/;"	f	class:fst::FstPrinter
+fst::FstPrinter::PrintId	print-impl.h	/^  void PrintId(int64 id, const SymbolTable *syms,$/;"	f	class:fst::FstPrinter
+fst::FstPrinter::PrintOLabel	print-impl.h	/^  void PrintOLabel(Label l) const {$/;"	f	class:fst::FstPrinter
+fst::FstPrinter::PrintState	print-impl.h	/^  void PrintState(StateId s) const {$/;"	f	class:fst::FstPrinter
+fst::FstPrinter::PrintStateId	print-impl.h	/^  void PrintStateId(StateId s) const {$/;"	f	class:fst::FstPrinter
+fst::FstPrinter::StateId	print-impl.h	/^  typedef typename A::StateId StateId;$/;"	t	class:fst::FstPrinter
+fst::FstPrinter::Weight	print-impl.h	/^  typedef typename A::Weight Weight;$/;"	t	class:fst::FstPrinter
+fst::FstPrinter::accep_	print-impl.h	/^  bool accep_;                   \/\/ print as acceptor when possible$/;"	m	class:fst::FstPrinter
+fst::FstPrinter::dest_	print-impl.h	/^  string dest_;                  \/\/ text FST destination name$/;"	m	class:fst::FstPrinter
+fst::FstPrinter::fst_	print-impl.h	/^  const Fst<A> &fst_;$/;"	m	class:fst::FstPrinter
+fst::FstPrinter::isyms_	print-impl.h	/^  const SymbolTable *isyms_;     \/\/ ilabel symbol table$/;"	m	class:fst::FstPrinter
+fst::FstPrinter::kLineLen	print-impl.h	/^  static const int kLineLen = 8096;$/;"	m	class:fst::FstPrinter
+fst::FstPrinter::ostrm_	print-impl.h	/^  ostream *ostrm_;               \/\/ text FST destination$/;"	m	class:fst::FstPrinter
+fst::FstPrinter::osyms_	print-impl.h	/^  const SymbolTable *osyms_;     \/\/ olabel symbol table$/;"	m	class:fst::FstPrinter
+fst::FstPrinter::show_weight_one_	print-impl.h	/^  bool show_weight_one_;         \/\/ print weights equal to Weight::One()$/;"	m	class:fst::FstPrinter
+fst::FstPrinter::ssyms_	print-impl.h	/^  const SymbolTable *ssyms_;     \/\/ slabel symbol table$/;"	m	class:fst::FstPrinter
+fst::PrintFstInfo	info-impl.h	/^void PrintFstInfo(const FstInfo<A> &fstinfo, bool pipe = false) {$/;"	f	namespace:fst
+fst::script	arcsort.h	/^namespace script {$/;"	n	namespace:fst
+fst::script	arg-packs.h	/^namespace script {$/;"	n	namespace:fst
+fst::script	closure.h	/^namespace script {$/;"	n	namespace:fst
+fst::script	compile.h	/^namespace script {$/;"	n	namespace:fst
+fst::script	compose.h	/^namespace script {$/;"	n	namespace:fst
+fst::script	concat.h	/^namespace script {$/;"	n	namespace:fst
+fst::script	connect.h	/^namespace script {$/;"	n	namespace:fst
+fst::script	convert.h	/^namespace script {$/;"	n	namespace:fst
+fst::script	decode.h	/^namespace script {$/;"	n	namespace:fst
+fst::script	determinize.h	/^namespace script {$/;"	n	namespace:fst
+fst::script	difference.h	/^namespace script {$/;"	n	namespace:fst
+fst::script	draw.h	/^namespace script {$/;"	n	namespace:fst
+fst::script	encode.h	/^namespace script {$/;"	n	namespace:fst
+fst::script	epsnormalize.h	/^namespace script {$/;"	n	namespace:fst
+fst::script	equal.h	/^namespace script {$/;"	n	namespace:fst
+fst::script	equivalent.h	/^namespace script {$/;"	n	namespace:fst
+fst::script	fst-class.h	/^namespace script {$/;"	n	namespace:fst
+fst::script	fstscript-decl.h	/^namespace script {$/;"	n	namespace:fst
+fst::script	fstscript.h	/^namespace script {$/;"	n	namespace:fst
+fst::script	info.h	/^namespace script {$/;"	n	namespace:fst
+fst::script	intersect.h	/^namespace script {$/;"	n	namespace:fst
+fst::script	invert.h	/^namespace script {$/;"	n	namespace:fst
+fst::script	map.h	/^namespace script {$/;"	n	namespace:fst
+fst::script	minimize.h	/^namespace script {$/;"	n	namespace:fst
+fst::script	print.h	/^namespace script {$/;"	n	namespace:fst
+fst::script	project.h	/^namespace script {$/;"	n	namespace:fst
+fst::script	prune.h	/^namespace script {$/;"	n	namespace:fst
+fst::script	push.h	/^namespace script {$/;"	n	namespace:fst
+fst::script	randequivalent.h	/^namespace script {$/;"	n	namespace:fst
+fst::script	randgen.h	/^namespace script {$/;"	n	namespace:fst
+fst::script	register.h	/^namespace script {$/;"	n	namespace:fst
+fst::script	relabel.h	/^namespace script {$/;"	n	namespace:fst
+fst::script	replace.h	/^namespace script {$/;"	n	namespace:fst
+fst::script	reverse.h	/^namespace script {$/;"	n	namespace:fst
+fst::script	reweight.h	/^namespace script {$/;"	n	namespace:fst
+fst::script	rmepsilon.h	/^namespace script {$/;"	n	namespace:fst
+fst::script	script-impl.h	/^namespace script {$/;"	n	namespace:fst
+fst::script	shortest-distance.h	/^namespace script {$/;"	n	namespace:fst
+fst::script	shortest-path.h	/^namespace script {$/;"	n	namespace:fst
+fst::script	synchronize.h	/^namespace script {$/;"	n	namespace:fst
+fst::script	text-io.h	/^namespace script {$/;"	n	namespace:fst
+fst::script	topsort.h	/^namespace script {$/;"	n	namespace:fst
+fst::script	union.h	/^namespace script {$/;"	n	namespace:fst
+fst::script	verify.h	/^namespace script {$/;"	n	namespace:fst
+fst::script	weight-class.h	/^namespace script {$/;"	n	namespace:fst
+fst::script::ANY_ARC_FILTER	shortest-distance.h	/^enum ArcFilterType { ANY_ARC_FILTER, EPSILON_ARC_FILTER,$/;"	e	enum:fst::script::ArcFilterType
+fst::script::ARC_SUM_MAPPER	map.h	/^enum MapType { ARC_SUM_MAPPER, IDENTITY_MAPPER, INVERT_MAPPER, PLUS_MAPPER,$/;"	e	enum:fst::script::MapType
+fst::script::AllFstOperationsRegisterer	fstscript.h	/^class AllFstOperationsRegisterer {$/;"	c	namespace:fst::script
+fst::script::AllFstOperationsRegisterer::AllFstOperationsRegisterer	fstscript.h	/^  AllFstOperationsRegisterer() {$/;"	f	class:fst::script::AllFstOperationsRegisterer
+fst::script::AllFstOperationsRegisterer::RegisterBatch1	fstscript.h	/^  void RegisterBatch1() {$/;"	f	class:fst::script::AllFstOperationsRegisterer
+fst::script::AllFstOperationsRegisterer::RegisterBatch2	fstscript.h	/^  void RegisterBatch2() {$/;"	f	class:fst::script::AllFstOperationsRegisterer
+fst::script::Apply	script-impl.h	/^void Apply(const string &op_name, const string &arc_type,$/;"	f	namespace:fst::script
+fst::script::ArcFilterType	shortest-distance.h	/^enum ArcFilterType { ANY_ARC_FILTER, EPSILON_ARC_FILTER,$/;"	g	namespace:fst::script
+fst::script::ArcMap	map.h	/^Fst<typename M::ToArc> *ArcMap(const Fst<typename M::FromArc> &fst,$/;"	f	namespace:fst::script
+fst::script::ArcSort	arcsort.h	/^void ArcSort(ArcSortArgs *args) {$/;"	f	namespace:fst::script
+fst::script::ArcSortArgs	arcsort.h	/^typedef args::Package<MutableFstClass*, const ArcSortType> ArcSortArgs;$/;"	t	namespace:fst::script
+fst::script::ArcSortType	arcsort.h	/^enum ArcSortType { ILABEL_COMPARE, OLABEL_COMPARE };$/;"	g	namespace:fst::script
+fst::script::Closure	closure.h	/^void Closure(ClosureArgs *args) {$/;"	f	namespace:fst::script
+fst::script::ClosureArgs	closure.h	/^typedef args::Package<MutableFstClass*, const ClosureType> ClosureArgs;$/;"	t	namespace:fst::script
+fst::script::CompileFst	compile.h	/^void CompileFst(FstCompileArgs *args) {$/;"	f	namespace:fst::script
+fst::script::Compose	compose.h	/^void Compose(ComposeArgs1 *args) {$/;"	f	namespace:fst::script
+fst::script::Compose	compose.h	/^void Compose(ComposeArgs2 *args) {$/;"	f	namespace:fst::script
+fst::script::ComposeArgs1	compose.h	/^                      MutableFstClass*, ComposeFilter> ComposeArgs1;$/;"	t	namespace:fst::script
+fst::script::ComposeArgs2	compose.h	/^                      MutableFstClass*, const ComposeOptions &> ComposeArgs2;$/;"	t	namespace:fst::script
+fst::script::ComposeOptions	compose.h	/^typedef fst::ComposeOptions ComposeOptions;$/;"	t	namespace:fst::script
+fst::script::Concat	concat.h	/^void Concat(ConcatArgs1 *args) {$/;"	f	namespace:fst::script
+fst::script::Concat	concat.h	/^void Concat(ConcatArgs2 *args) {$/;"	f	namespace:fst::script
+fst::script::ConcatArgs1	concat.h	/^typedef args::Package<MutableFstClass*, const FstClass&> ConcatArgs1;$/;"	t	namespace:fst::script
+fst::script::ConcatArgs2	concat.h	/^typedef args::Package<const FstClass&, MutableFstClass*> ConcatArgs2;$/;"	t	namespace:fst::script
+fst::script::Connect	connect.h	/^void Connect(MutableFstClass *fst) {$/;"	f	namespace:fst::script
+fst::script::Convert	convert.h	/^%newobject Convert;$/;"	m	namespace:fst::script
+fst::script::Convert	convert.h	/^void Convert(ConvertArgs *args) {$/;"	f	namespace:fst::script
+fst::script::ConvertArgs	convert.h	/^typedef args::WithReturnValue<FstClass*, ConvertInnerArgs> ConvertArgs;$/;"	t	namespace:fst::script
+fst::script::ConvertInnerArgs	convert.h	/^typedef args::Package<const FstClass&, const string&> ConvertInnerArgs;$/;"	t	namespace:fst::script
+fst::script::ConvertPruneOptions	prune.h	/^fst::PruneOptions<A, AnyArcFilter<A> > ConvertPruneOptions($/;"	f	namespace:fst::script
+fst::script::Decode	decode.h	/^void Decode(DecodeArgs *args) {$/;"	f	namespace:fst::script
+fst::script::DecodeArgs	decode.h	/^typedef args::Package<MutableFstClass*, const string&> DecodeArgs;$/;"	t	namespace:fst::script
+fst::script::Determinize	determinize.h	/^void Determinize(DeterminizeArgs *args) {$/;"	f	namespace:fst::script
+fst::script::DeterminizeArgs	determinize.h	/^                      const DeterminizeOptions &> DeterminizeArgs;$/;"	t	namespace:fst::script
+fst::script::DeterminizeOptions	determinize.h	/^struct DeterminizeOptions {$/;"	s	namespace:fst::script
+fst::script::DeterminizeOptions::DeterminizeOptions	determinize.h	/^  explicit DeterminizeOptions(float d = fst::kDelta,$/;"	f	struct:fst::script::DeterminizeOptions
+fst::script::DeterminizeOptions::delta	determinize.h	/^  float delta;$/;"	m	struct:fst::script::DeterminizeOptions
+fst::script::DeterminizeOptions::state_threshold	determinize.h	/^  int64 state_threshold;$/;"	m	struct:fst::script::DeterminizeOptions
+fst::script::DeterminizeOptions::subsequential_label	determinize.h	/^  int64 subsequential_label;$/;"	m	struct:fst::script::DeterminizeOptions
+fst::script::DeterminizeOptions::weight_threshold	determinize.h	/^  WeightClass weight_threshold;$/;"	m	struct:fst::script::DeterminizeOptions
+fst::script::Difference	difference.h	/^void Difference(DifferenceArgs1 *args) {$/;"	f	namespace:fst::script
+fst::script::Difference	difference.h	/^void Difference(DifferenceArgs2  *args) {$/;"	f	namespace:fst::script
+fst::script::DifferenceArgs1	difference.h	/^                      MutableFstClass*, ComposeFilter> DifferenceArgs1;$/;"	t	namespace:fst::script
+fst::script::DifferenceArgs2	difference.h	/^                      MutableFstClass*, const ComposeOptions &> DifferenceArgs2;$/;"	t	namespace:fst::script
+fst::script::DrawFst	draw.h	/^void DrawFst(FstDrawerArgs *args) {$/;"	f	namespace:fst::script
+fst::script::EPSILON_ARC_FILTER	shortest-distance.h	/^enum ArcFilterType { ANY_ARC_FILTER, EPSILON_ARC_FILTER,$/;"	e	enum:fst::script::ArcFilterType
+fst::script::Encode	encode.h	/^void Encode(EncodeArgs *args) {$/;"	f	namespace:fst::script
+fst::script::EncodeArgs	encode.h	/^                      const string &> EncodeArgs;$/;"	t	namespace:fst::script
+fst::script::EpsNormalize	epsnormalize.h	/^void EpsNormalize(EpsNormalizeArgs  *args) {$/;"	f	namespace:fst::script
+fst::script::EpsNormalizeArgs	epsnormalize.h	/^                      EpsNormalizeType> EpsNormalizeArgs;$/;"	t	namespace:fst::script
+fst::script::Equal	equal.h	/^void Equal(EqualArgs *args) {$/;"	f	namespace:fst::script
+fst::script::EqualArgs	equal.h	/^typedef args::WithReturnValue<bool, EqualInnerArgs> EqualArgs;$/;"	t	namespace:fst::script
+fst::script::EqualInnerArgs	equal.h	/^typedef args::Package<const FstClass&, const FstClass&, float> EqualInnerArgs;$/;"	t	namespace:fst::script
+fst::script::Equivalent	equivalent.h	/^void Equivalent(EquivalentArgs *args) {$/;"	f	namespace:fst::script
+fst::script::EquivalentArgs	equivalent.h	/^typedef args::WithReturnValue<bool, EquivalentInnerArgs> EquivalentArgs;$/;"	t	namespace:fst::script
+fst::script::EquivalentInnerArgs	equivalent.h	/^                      float> EquivalentInnerArgs;$/;"	t	namespace:fst::script
+fst::script::FAST_LOG_PROB_ARC_SELECTOR	randgen.h	/^  FAST_LOG_PROB_ARC_SELECTOR$/;"	e	enum:fst::script::RandArcSelection
+fst::script::FstClass	fst-class.h	/^class FstClass : public FstClassBase {$/;"	c	namespace:fst::script
+fst::script::FstClass::ArcType	fst-class.h	/^  virtual const string &ArcType() const {$/;"	f	class:fst::script::FstClass
+fst::script::FstClass::Convert	fst-class.h	/^  static FstClassImplBase *Convert(const FstClass &other) {$/;"	f	class:fst::script::FstClass
+fst::script::FstClass::Create	fst-class.h	/^  static FstClassImplBase *Create() {$/;"	f	class:fst::script::FstClass
+fst::script::FstClass::FstClass	fst-class.h	/^  FstClass() : impl_(NULL) {$/;"	f	class:fst::script::FstClass
+fst::script::FstClass::FstClass	fst-class.h	/^  explicit FstClass(Fst<Arc> *fst) : impl_(new FstClassImpl<Arc>(fst)) {$/;"	f	class:fst::script::FstClass
+fst::script::FstClass::FstClass	fst-class.h	/^  explicit FstClass(FstClassImplBase *impl) : impl_(impl) { }$/;"	f	class:fst::script::FstClass
+fst::script::FstClass::FstClass	fst-class.h	/^  explicit FstClass(const FstClass &other) : impl_(other.impl_->Copy()) { }$/;"	f	class:fst::script::FstClass
+fst::script::FstClass::FstType	fst-class.h	/^  virtual const string& FstType() const {$/;"	f	class:fst::script::FstClass
+fst::script::FstClass::GetFst	fst-class.h	/^  const Fst<Arc> *GetFst() const {$/;"	f	class:fst::script::FstClass
+fst::script::FstClass::GetImpl	fst-class.h	/^  FstClassImplBase *GetImpl() const { return impl_; }$/;"	f	class:fst::script::FstClass
+fst::script::FstClass::GetImpl	fst-class.h	/^  FstClassImplBase *GetImpl() { return impl_; }$/;"	f	class:fst::script::FstClass
+fst::script::FstClass::InputSymbols	fst-class.h	/^  virtual const SymbolTable *InputSymbols() const {$/;"	f	class:fst::script::FstClass
+fst::script::FstClass::OutputSymbols	fst-class.h	/^  virtual const SymbolTable *OutputSymbols() const {$/;"	f	class:fst::script::FstClass
+fst::script::FstClass::Properties	fst-class.h	/^  virtual uint64 Properties(uint64 mask, bool test) const {$/;"	f	class:fst::script::FstClass
+fst::script::FstClass::Read	fst-class.h	/^  static FstClass *Read(istream &stream,$/;"	f	class:fst::script::FstClass
+fst::script::FstClass::ReadTypedFst	fst-class.h	/^  static FstClassT* ReadTypedFst(istream &stream,$/;"	f	class:fst::script::FstClass
+fst::script::FstClass::WeightType	fst-class.h	/^  virtual const string& WeightType() const {$/;"	f	class:fst::script::FstClass
+fst::script::FstClass::Write	fst-class.h	/^  virtual void Write(const string &fname) const {$/;"	f	class:fst::script::FstClass
+fst::script::FstClass::Write	fst-class.h	/^  virtual void Write(ostream &ostr, const FstWriteOptions &opts) const {$/;"	f	class:fst::script::FstClass
+fst::script::FstClass::impl_	fst-class.h	/^  FstClassImplBase *impl_;$/;"	m	class:fst::script::FstClass
+fst::script::FstClass::operator =	fst-class.h	/^  FstClass &operator=(const FstClass &other) {$/;"	f	class:fst::script::FstClass
+fst::script::FstClass::~FstClass	fst-class.h	/^  virtual ~FstClass() { delete impl_; }$/;"	f	class:fst::script::FstClass
+fst::script::FstClassBase	fst-class.h	/^class FstClassBase {$/;"	c	namespace:fst::script
+fst::script::FstClassBase::~FstClassBase	fst-class.h	/^  virtual ~FstClassBase() { }$/;"	f	class:fst::script::FstClassBase
+fst::script::FstClassIORegister	register.h	/^class FstClassIORegister$/;"	c	namespace:fst::script
+fst::script::FstClassIORegister::ConvertKeyToSoFilename	register.h	/^  virtual string ConvertKeyToSoFilename($/;"	f	class:fst::script::FstClassIORegister
+fst::script::FstClassIORegister::GetConverter	register.h	/^  Converter GetConverter(const string &arc_type) const {$/;"	f	class:fst::script::FstClassIORegister
+fst::script::FstClassIORegister::GetCreator	register.h	/^  Creator GetCreator(const string &arc_type) const {$/;"	f	class:fst::script::FstClassIORegister
+fst::script::FstClassIORegister::GetReader	register.h	/^  Reader GetReader(const string &arc_type) const {$/;"	f	class:fst::script::FstClassIORegister
+fst::script::FstClassImpl	fst-class.h	/^class FstClassImpl : public FstClassImplBase {$/;"	c	namespace:fst::script
+fst::script::FstClassImpl::ArcType	fst-class.h	/^  virtual const string &ArcType() const {$/;"	f	class:fst::script::FstClassImpl
+fst::script::FstClassImpl::Copy	fst-class.h	/^  virtual FstClassImpl *Copy() {$/;"	f	class:fst::script::FstClassImpl
+fst::script::FstClassImpl::FstClassImpl	fst-class.h	/^  explicit FstClassImpl(Fst<Arc> *impl,$/;"	f	class:fst::script::FstClassImpl
+fst::script::FstClassImpl::FstType	fst-class.h	/^  virtual const string &FstType() const {$/;"	f	class:fst::script::FstClassImpl
+fst::script::FstClassImpl::GetImpl	fst-class.h	/^  Fst<Arc> *GetImpl() const { return impl_; }$/;"	f	class:fst::script::FstClassImpl
+fst::script::FstClassImpl::GetImpl	fst-class.h	/^  Fst<Arc> *GetImpl() { return impl_; }$/;"	f	class:fst::script::FstClassImpl
+fst::script::FstClassImpl::InputSymbols	fst-class.h	/^  virtual const SymbolTable *InputSymbols() const {$/;"	f	class:fst::script::FstClassImpl
+fst::script::FstClassImpl::OutputSymbols	fst-class.h	/^  virtual const SymbolTable *OutputSymbols() const {$/;"	f	class:fst::script::FstClassImpl
+fst::script::FstClassImpl::Properties	fst-class.h	/^  virtual uint64 Properties(uint64 mask, bool test) const {$/;"	f	class:fst::script::FstClassImpl
+fst::script::FstClassImpl::SetInputSymbols	fst-class.h	/^  virtual void SetInputSymbols(SymbolTable *is) {$/;"	f	class:fst::script::FstClassImpl
+fst::script::FstClassImpl::SetOutputSymbols	fst-class.h	/^  virtual void SetOutputSymbols(SymbolTable *os) {$/;"	f	class:fst::script::FstClassImpl
+fst::script::FstClassImpl::WeightType	fst-class.h	/^  virtual const string &WeightType() const {$/;"	f	class:fst::script::FstClassImpl
+fst::script::FstClassImpl::Write	fst-class.h	/^  virtual void Write(const string &fname) const {$/;"	f	class:fst::script::FstClassImpl
+fst::script::FstClassImpl::Write	fst-class.h	/^  virtual void Write(ostream &ostr, const FstWriteOptions &opts) const {$/;"	f	class:fst::script::FstClassImpl
+fst::script::FstClassImpl::impl_	fst-class.h	/^  Fst<Arc> *impl_;$/;"	m	class:fst::script::FstClassImpl
+fst::script::FstClassImpl::~FstClassImpl	fst-class.h	/^  virtual ~FstClassImpl() { delete impl_; }$/;"	f	class:fst::script::FstClassImpl
+fst::script::FstClassImplBase	fst-class.h	/^class FstClassImplBase : public FstClassBase {$/;"	c	namespace:fst::script
+fst::script::FstClassImplBase::~FstClassImplBase	fst-class.h	/^  virtual ~FstClassImplBase() { }$/;"	f	class:fst::script::FstClassImplBase
+fst::script::FstClassRegEntry	register.h	/^struct FstClassRegEntry {$/;"	s	namespace:fst::script
+fst::script::FstClassRegEntry::FstClassRegEntry	register.h	/^  FstClassRegEntry() : reader(0), creator(0), converter(0) { }$/;"	f	struct:fst::script::FstClassRegEntry
+fst::script::FstClassRegEntry::FstClassRegEntry	register.h	/^  FstClassRegEntry(Reader r, Creator cr, Converter co) :$/;"	f	struct:fst::script::FstClassRegEntry
+fst::script::FstClassRegEntry::converter	register.h	/^  Converter converter;$/;"	m	struct:fst::script::FstClassRegEntry
+fst::script::FstClassRegEntry::creator	register.h	/^  Creator creator;$/;"	m	struct:fst::script::FstClassRegEntry
+fst::script::FstClassRegEntry::reader	register.h	/^  Reader reader;$/;"	m	struct:fst::script::FstClassRegEntry
+fst::script::FstCompileArgs	compile.h	/^struct FstCompileArgs {$/;"	s	namespace:fst::script
+fst::script::FstCompileArgs::FstCompileArgs	compile.h	/^  FstCompileArgs(istream &istrm, const string &source, const string &dest,$/;"	f	struct:fst::script::FstCompileArgs
+fst::script::FstCompileArgs::accep	compile.h	/^  const bool accep;$/;"	m	struct:fst::script::FstCompileArgs
+fst::script::FstCompileArgs::allow_negative_labels	compile.h	/^  const bool allow_negative_labels;$/;"	m	struct:fst::script::FstCompileArgs
+fst::script::FstCompileArgs::dest	compile.h	/^  const string &dest;$/;"	m	struct:fst::script::FstCompileArgs
+fst::script::FstCompileArgs::fst_type	compile.h	/^  const string &fst_type;$/;"	m	struct:fst::script::FstCompileArgs
+fst::script::FstCompileArgs::ikeep	compile.h	/^  const bool ikeep;$/;"	m	struct:fst::script::FstCompileArgs
+fst::script::FstCompileArgs::istrm	compile.h	/^  fst::istream &istrm;$/;"	m	struct:fst::script::FstCompileArgs
+fst::script::FstCompileArgs::isyms	compile.h	/^  const fst::SymbolTable *isyms;$/;"	m	struct:fst::script::FstCompileArgs
+fst::script::FstCompileArgs::nkeep	compile.h	/^  const bool nkeep;$/;"	m	struct:fst::script::FstCompileArgs
+fst::script::FstCompileArgs::okeep	compile.h	/^  const bool okeep;$/;"	m	struct:fst::script::FstCompileArgs
+fst::script::FstCompileArgs::osyms	compile.h	/^  const fst::SymbolTable *osyms;$/;"	m	struct:fst::script::FstCompileArgs
+fst::script::FstCompileArgs::source	compile.h	/^  const string &source;$/;"	m	struct:fst::script::FstCompileArgs
+fst::script::FstCompileArgs::ssyms	compile.h	/^  const fst::SymbolTable *ssyms;$/;"	m	struct:fst::script::FstCompileArgs
+fst::script::FstDrawerArgs	draw.h	/^struct FstDrawerArgs {$/;"	s	namespace:fst::script
+fst::script::FstDrawerArgs::FstDrawerArgs	draw.h	/^  FstDrawerArgs(const FstClass &fst,$/;"	f	struct:fst::script::FstDrawerArgs
+fst::script::FstDrawerArgs::accep	draw.h	/^  const bool accep;$/;"	m	struct:fst::script::FstDrawerArgs
+fst::script::FstDrawerArgs::dest	draw.h	/^  const string &dest;$/;"	m	struct:fst::script::FstDrawerArgs
+fst::script::FstDrawerArgs::fontsize	draw.h	/^  const int fontsize;$/;"	m	struct:fst::script::FstDrawerArgs
+fst::script::FstDrawerArgs::fst	draw.h	/^  const FstClass &fst;$/;"	m	struct:fst::script::FstDrawerArgs
+fst::script::FstDrawerArgs::height	draw.h	/^  const float height;$/;"	m	struct:fst::script::FstDrawerArgs
+fst::script::FstDrawerArgs::isyms	draw.h	/^  const SymbolTable *isyms;$/;"	m	struct:fst::script::FstDrawerArgs
+fst::script::FstDrawerArgs::nodesep	draw.h	/^  const float nodesep;$/;"	m	struct:fst::script::FstDrawerArgs
+fst::script::FstDrawerArgs::ostrm	draw.h	/^  ostream *ostrm;$/;"	m	struct:fst::script::FstDrawerArgs
+fst::script::FstDrawerArgs::osyms	draw.h	/^  const SymbolTable *osyms;$/;"	m	struct:fst::script::FstDrawerArgs
+fst::script::FstDrawerArgs::portrait	draw.h	/^  const bool portrait;$/;"	m	struct:fst::script::FstDrawerArgs
+fst::script::FstDrawerArgs::precision	draw.h	/^  const int precision;$/;"	m	struct:fst::script::FstDrawerArgs
+fst::script::FstDrawerArgs::ranksep	draw.h	/^  const float ranksep;$/;"	m	struct:fst::script::FstDrawerArgs
+fst::script::FstDrawerArgs::show_weight_one	draw.h	/^  const bool show_weight_one;$/;"	m	struct:fst::script::FstDrawerArgs
+fst::script::FstDrawerArgs::ssyms	draw.h	/^  const SymbolTable *ssyms;$/;"	m	struct:fst::script::FstDrawerArgs
+fst::script::FstDrawerArgs::title	draw.h	/^  const string& title;$/;"	m	struct:fst::script::FstDrawerArgs
+fst::script::FstDrawerArgs::vertical	draw.h	/^  const bool vertical;$/;"	m	struct:fst::script::FstDrawerArgs
+fst::script::FstDrawerArgs::width	draw.h	/^  const float width;$/;"	m	struct:fst::script::FstDrawerArgs
+fst::script::FstPrinterArgs	print.h	/^struct FstPrinterArgs {$/;"	s	namespace:fst::script
+fst::script::FstPrinterArgs::FstPrinterArgs	print.h	/^  FstPrinterArgs(const FstClass &fst,$/;"	f	struct:fst::script::FstPrinterArgs
+fst::script::FstPrinterArgs::accept	print.h	/^  const bool accept;$/;"	m	struct:fst::script::FstPrinterArgs
+fst::script::FstPrinterArgs::dest	print.h	/^  const string &dest;$/;"	m	struct:fst::script::FstPrinterArgs
+fst::script::FstPrinterArgs::fst	print.h	/^  const FstClass &fst;$/;"	m	struct:fst::script::FstPrinterArgs
+fst::script::FstPrinterArgs::isyms	print.h	/^  const SymbolTable *isyms;$/;"	m	struct:fst::script::FstPrinterArgs
+fst::script::FstPrinterArgs::ostrm	print.h	/^  ostream *ostrm;$/;"	m	struct:fst::script::FstPrinterArgs
+fst::script::FstPrinterArgs::osyms	print.h	/^  const SymbolTable *osyms;$/;"	m	struct:fst::script::FstPrinterArgs
+fst::script::FstPrinterArgs::show_weight_one	print.h	/^  const bool show_weight_one;$/;"	m	struct:fst::script::FstPrinterArgs
+fst::script::FstPrinterArgs::ssyms	print.h	/^  const SymbolTable *ssyms;$/;"	m	struct:fst::script::FstPrinterArgs
+fst::script::GenericOperationRegister	script-impl.h	/^class GenericOperationRegister$/;"	c	namespace:fst::script
+fst::script::GenericOperationRegister::ConvertKeyToSoFilename	script-impl.h	/^  virtual string ConvertKeyToSoFilename($/;"	f	class:fst::script::GenericOperationRegister
+fst::script::GenericOperationRegister::GetOperation	script-impl.h	/^  OperationSignature GetOperation($/;"	f	class:fst::script::GenericOperationRegister
+fst::script::GenericOperationRegister::RegisterOperation	script-impl.h	/^  void RegisterOperation(const string &operation_name,$/;"	f	class:fst::script::GenericOperationRegister
+fst::script::IDENTITY_MAPPER	map.h	/^enum MapType { ARC_SUM_MAPPER, IDENTITY_MAPPER, INVERT_MAPPER, PLUS_MAPPER,$/;"	e	enum:fst::script::MapType
+fst::script::ILABEL_COMPARE	arcsort.h	/^enum ArcSortType { ILABEL_COMPARE, OLABEL_COMPARE };$/;"	e	enum:fst::script::ArcSortType
+fst::script::INPUT_EPSILON_ARC_FILTER	shortest-distance.h	/^                     INPUT_EPSILON_ARC_FILTER, OUTPUT_EPSILON_ARC_FILTER };$/;"	e	enum:fst::script::ArcFilterType
+fst::script::INVERT_MAPPER	map.h	/^enum MapType { ARC_SUM_MAPPER, IDENTITY_MAPPER, INVERT_MAPPER, PLUS_MAPPER,$/;"	e	enum:fst::script::MapType
+fst::script::IORegistration	register.h	/^struct IORegistration {$/;"	s	namespace:fst::script
+fst::script::IORegistration::Converter	register.h	/^  typedef FstClassImplBase *(*Converter)(const FstClass &other);$/;"	t	struct:fst::script::IORegistration
+fst::script::IORegistration::Creator	register.h	/^  typedef FstClassImplBase *(*Creator)();$/;"	t	struct:fst::script::IORegistration
+fst::script::IORegistration::Entry	register.h	/^  typedef FstClassRegEntry<Reader, Creator, Converter> Entry;$/;"	t	struct:fst::script::IORegistration
+fst::script::IORegistration::Reader	register.h	/^  typedef FstClassType *(*Reader)(istream &stream,$/;"	t	struct:fst::script::IORegistration
+fst::script::IORegistration::Register	register.h	/^  typedef FstClassIORegister<Reader, Creator, Converter> Register;$/;"	t	struct:fst::script::IORegistration
+fst::script::IORegistration::Registerer	register.h	/^    Registerer;$/;"	t	struct:fst::script::IORegistration
+fst::script::InfoArgs	info.h	/^                      const string&, bool, bool> InfoArgs;$/;"	t	namespace:fst::script
+fst::script::Intersect	intersect.h	/^void Intersect(IntersectArgs1 *args) {$/;"	f	namespace:fst::script
+fst::script::Intersect	intersect.h	/^void Intersect(IntersectArgs2 *args) {$/;"	f	namespace:fst::script
+fst::script::IntersectArgs1	intersect.h	/^                      MutableFstClass*, ComposeFilter> IntersectArgs1;$/;"	t	namespace:fst::script
+fst::script::IntersectArgs2	intersect.h	/^                      MutableFstClass*, const ComposeOptions &> IntersectArgs2;$/;"	t	namespace:fst::script
+fst::script::Invert	invert.h	/^void Invert(MutableFstClass *fst) {$/;"	f	namespace:fst::script
+fst::script::LOG_PROB_ARC_SELECTOR	randgen.h	/^  LOG_PROB_ARC_SELECTOR,$/;"	e	enum:fst::script::RandArcSelection
+fst::script::Map	map.h	/^%newobject Map;$/;"	m	namespace:fst::script
+fst::script::Map	map.h	/^void Map(MapArgs *args) {$/;"	f	namespace:fst::script
+fst::script::MapArgs	map.h	/^typedef args::WithReturnValue<FstClass*, MapInnerArgs> MapArgs;$/;"	t	namespace:fst::script
+fst::script::MapInnerArgs	map.h	/^                      const WeightClass &> MapInnerArgs;$/;"	t	namespace:fst::script
+fst::script::MapType	map.h	/^enum MapType { ARC_SUM_MAPPER, IDENTITY_MAPPER, INVERT_MAPPER, PLUS_MAPPER,$/;"	g	namespace:fst::script
+fst::script::Minimize	minimize.h	/^void Minimize(MinimizeArgs *args) {$/;"	f	namespace:fst::script
+fst::script::MinimizeArgs	minimize.h	/^typedef args::Package<MutableFstClass*, MutableFstClass*, float> MinimizeArgs;$/;"	t	namespace:fst::script
+fst::script::MutableFstClass	fst-class.h	/^class MutableFstClass : public FstClass {$/;"	c	namespace:fst::script
+fst::script::MutableFstClass::Convert	fst-class.h	/^  static FstClassImplBase *Convert(const FstClass &other) {$/;"	f	class:fst::script::MutableFstClass
+fst::script::MutableFstClass::Create	fst-class.h	/^  static FstClassImplBase *Create() {$/;"	f	class:fst::script::MutableFstClass
+fst::script::MutableFstClass::GetMutableFst	fst-class.h	/^  MutableFst<Arc> *GetMutableFst() {$/;"	f	class:fst::script::MutableFstClass
+fst::script::MutableFstClass::MutableFstClass	fst-class.h	/^  explicit MutableFstClass(FstClassImplBase *impl) : FstClass(impl) { }$/;"	f	class:fst::script::MutableFstClass
+fst::script::MutableFstClass::MutableFstClass	fst-class.h	/^  explicit MutableFstClass(MutableFst<Arc> *fst) :$/;"	f	class:fst::script::MutableFstClass
+fst::script::MutableFstClass::Read	fst-class.h	/^  static MutableFstClass *Read(istream &stream,$/;"	f	class:fst::script::MutableFstClass
+fst::script::MutableFstClass::SetInputSymbols	fst-class.h	/^  virtual void SetInputSymbols(SymbolTable *is) {$/;"	f	class:fst::script::MutableFstClass
+fst::script::MutableFstClass::SetOutputSymbols	fst-class.h	/^  virtual void SetOutputSymbols(SymbolTable *os) {$/;"	f	class:fst::script::MutableFstClass
+fst::script::MutableFstClass::Write	fst-class.h	/^  virtual void Write(const string &fname) const {$/;"	f	class:fst::script::MutableFstClass
+fst::script::MutableFstClass::Write	fst-class.h	/^  virtual void Write(ostream &ostr, const FstWriteOptions &opts) const {$/;"	f	class:fst::script::MutableFstClass
+fst::script::OLABEL_COMPARE	arcsort.h	/^enum ArcSortType { ILABEL_COMPARE, OLABEL_COMPARE };$/;"	e	enum:fst::script::ArcSortType
+fst::script::OUTPUT_EPSILON_ARC_FILTER	shortest-distance.h	/^                     INPUT_EPSILON_ARC_FILTER, OUTPUT_EPSILON_ARC_FILTER };$/;"	e	enum:fst::script::ArcFilterType
+fst::script::Operation	script-impl.h	/^struct Operation {$/;"	s	namespace:fst::script
+fst::script::Operation::Args	script-impl.h	/^  typedef ArgPack Args;$/;"	t	struct:fst::script::Operation
+fst::script::Operation::OpType	script-impl.h	/^  typedef void (*OpType)(ArgPack *args);$/;"	t	struct:fst::script::Operation
+fst::script::Operation::Register	script-impl.h	/^  typedef GenericOperationRegister<OpType> Register;$/;"	t	struct:fst::script::Operation
+fst::script::Operation::Registerer	script-impl.h	/^  typedef GenericRegisterer<Register> Registerer;$/;"	t	struct:fst::script::Operation
+fst::script::PLUS_MAPPER	map.h	/^enum MapType { ARC_SUM_MAPPER, IDENTITY_MAPPER, INVERT_MAPPER, PLUS_MAPPER,$/;"	e	enum:fst::script::MapType
+fst::script::PrintFst	print.h	/^void PrintFst(FstPrinterArgs *args) {$/;"	f	namespace:fst::script
+fst::script::PrintFst	print.h	/^void PrintFst(const Fst<Arc> &fst, ostream &os, const string dest = "",$/;"	f	namespace:fst::script
+fst::script::PrintFstInfo	info.h	/^void PrintFstInfo(InfoArgs *args) {$/;"	f	namespace:fst::script
+fst::script::Project	project.h	/^void Project(ProjectArgs *args) {$/;"	f	namespace:fst::script
+fst::script::ProjectArgs	project.h	/^typedef args::Package<MutableFstClass*, ProjectType> ProjectArgs;$/;"	t	namespace:fst::script
+fst::script::Prune	prune.h	/^void Prune(PruneArgs1 *args) {$/;"	f	namespace:fst::script
+fst::script::Prune	prune.h	/^void Prune(PruneArgs2 *args) {$/;"	f	namespace:fst::script
+fst::script::Prune	prune.h	/^void Prune(PruneArgs3 *args) {$/;"	f	namespace:fst::script
+fst::script::Prune	prune.h	/^void Prune(PruneArgs4 *args) {$/;"	f	namespace:fst::script
+fst::script::PruneArgs1	prune.h	/^typedef args::Package<MutableFstClass *, const PruneOptions &> PruneArgs1;$/;"	t	namespace:fst::script
+fst::script::PruneArgs2	prune.h	/^                      const PruneOptions &> PruneArgs2;$/;"	t	namespace:fst::script
+fst::script::PruneArgs3	prune.h	/^                      const WeightClass &, int64, float> PruneArgs3;$/;"	t	namespace:fst::script
+fst::script::PruneArgs4	prune.h	/^                      int64, float> PruneArgs4;$/;"	t	namespace:fst::script
+fst::script::PruneOptions	prune.h	/^struct PruneOptions {$/;"	s	namespace:fst::script
+fst::script::PruneOptions::PruneOptions	prune.h	/^  explicit PruneOptions(const WeightClass& w, int64 s,$/;"	f	struct:fst::script::PruneOptions
+fst::script::PruneOptions::delta	prune.h	/^  float delta;$/;"	m	struct:fst::script::PruneOptions
+fst::script::PruneOptions::distance	prune.h	/^  const vector<WeightClass> *distance;$/;"	m	struct:fst::script::PruneOptions
+fst::script::PruneOptions::state_threshold	prune.h	/^  int64 state_threshold;$/;"	m	struct:fst::script::PruneOptions
+fst::script::PruneOptions::weight_threshold	prune.h	/^  WeightClass weight_threshold;$/;"	m	struct:fst::script::PruneOptions
+fst::script::Push	push.h	/^void Push(PushArgs1 *args) {$/;"	f	namespace:fst::script
+fst::script::Push	push.h	/^void Push(PushArgs2 *args) {$/;"	f	namespace:fst::script
+fst::script::PushArgs1	push.h	/^typedef args::Package<MutableFstClass*, ReweightType, float, bool> PushArgs1;$/;"	t	namespace:fst::script
+fst::script::PushArgs2	push.h	/^                      ReweightType, float> PushArgs2;$/;"	t	namespace:fst::script
+fst::script::QUANTIZE_MAPPER	map.h	/^               QUANTIZE_MAPPER, RMWEIGHT_MAPPER, SUPERFINAL_MAPPER,$/;"	e	enum:fst::script::MapType
+fst::script::QueueConstructor	shortest-distance.h	/^struct QueueConstructor {$/;"	s	namespace:fst::script
+fst::script::QueueConstructor	shortest-distance.h	/^struct QueueConstructor<AutoQueue<typename Arc::StateId>, Arc, ArcFilter> {$/;"	s	namespace:fst::script
+fst::script::QueueConstructor	shortest-distance.h	/^struct QueueConstructor<NaturalShortestFirstQueue<typename Arc::StateId,$/;"	s	namespace:fst::script
+fst::script::QueueConstructor	shortest-distance.h	/^struct QueueConstructor<TopOrderQueue<typename Arc::StateId>, Arc, ArcFilter> {$/;"	s	namespace:fst::script
+fst::script::QueueConstructor::Construct	shortest-distance.h	/^  *Construct(const Fst<Arc> &fst,$/;"	f	struct:fst::script::QueueConstructor
+fst::script::QueueConstructor::Construct	shortest-distance.h	/^  static AutoQueue<typename Arc::StateId> *Construct($/;"	f	struct:fst::script::QueueConstructor
+fst::script::QueueConstructor::Construct	shortest-distance.h	/^  static Queue *Construct(const Fst<Arc> &,$/;"	f	struct:fst::script::QueueConstructor
+fst::script::QueueConstructor::Construct	shortest-distance.h	/^  static TopOrderQueue<typename Arc::StateId> *Construct($/;"	f	struct:fst::script::QueueConstructor
+fst::script::RMWEIGHT_MAPPER	map.h	/^               QUANTIZE_MAPPER, RMWEIGHT_MAPPER, SUPERFINAL_MAPPER,$/;"	e	enum:fst::script::MapType
+fst::script::RandArcSelection	randgen.h	/^enum RandArcSelection {$/;"	g	namespace:fst::script
+fst::script::RandEquivalent	randequivalent.h	/^void RandEquivalent(RandEquivalentArgs1 *args) {$/;"	f	namespace:fst::script
+fst::script::RandEquivalent	randequivalent.h	/^void RandEquivalent(RandEquivalentArgs2 *args) {$/;"	f	namespace:fst::script
+fst::script::RandEquivalentArgs1	randequivalent.h	/^                              RandEquivalentInnerArgs1> RandEquivalentArgs1;$/;"	t	namespace:fst::script
+fst::script::RandEquivalentArgs2	randequivalent.h	/^                              RandEquivalentInnerArgs2> RandEquivalentArgs2;$/;"	t	namespace:fst::script
+fst::script::RandEquivalentInnerArgs1	randequivalent.h	/^                      int32, float, int, int> RandEquivalentInnerArgs1;$/;"	t	namespace:fst::script
+fst::script::RandEquivalentInnerArgs2	randequivalent.h	/^  RandEquivalentInnerArgs2;$/;"	t	namespace:fst::script
+fst::script::RandGen	randgen.h	/^void RandGen(RandGenArgs *args) {$/;"	f	namespace:fst::script
+fst::script::RandGenArgs	randgen.h	/^                      const RandGenOptions<RandArcSelection> &> RandGenArgs;$/;"	t	namespace:fst::script
+fst::script::Relabel	relabel.h	/^void Relabel(RelabelArgs1 *args) {$/;"	f	namespace:fst::script
+fst::script::Relabel	relabel.h	/^void Relabel(RelabelArgs2 *args) {$/;"	f	namespace:fst::script
+fst::script::Relabel	relabel.h	/^void Relabel(args::Package<MutableFstClass*, const SymbolTable*,$/;"	f	namespace:fst::script
+fst::script::RelabelArgs1	relabel.h	/^                      bool> RelabelArgs1;$/;"	t	namespace:fst::script
+fst::script::RelabelArgs2	relabel.h	/^                      const vector<pair<int64, int64> > > RelabelArgs2;$/;"	t	namespace:fst::script
+fst::script::RelabelArgs3	relabel.h	/^                      const SymbolTable*> RelabelArgs3;$/;"	t	namespace:fst::script
+fst::script::Replace	replace.h	/^void Replace(ReplaceArgs *args) {$/;"	f	namespace:fst::script
+fst::script::ReplaceArgs	replace.h	/^                      MutableFstClass *, const int64, bool> ReplaceArgs;$/;"	t	namespace:fst::script
+fst::script::Reverse	reverse.h	/^void Reverse(ReverseArgs *args) {$/;"	f	namespace:fst::script
+fst::script::ReverseArgs	reverse.h	/^typedef args::Package<const FstClass &, MutableFstClass *> ReverseArgs;$/;"	t	namespace:fst::script
+fst::script::Reweight	reweight.h	/^void Reweight(ReweightArgs *args) {$/;"	f	namespace:fst::script
+fst::script::ReweightArgs	reweight.h	/^                      ReweightType> ReweightArgs;$/;"	t	namespace:fst::script
+fst::script::RmEpsilon	rmepsilon.h	/^void RmEpsilon(RmEpsilonArgs1 *args) {$/;"	f	namespace:fst::script
+fst::script::RmEpsilon	rmepsilon.h	/^void RmEpsilon(RmEpsilonArgs2 *args) {$/;"	f	namespace:fst::script
+fst::script::RmEpsilon	rmepsilon.h	/^void RmEpsilon(RmEpsilonArgs3 *args) {$/;"	f	namespace:fst::script
+fst::script::RmEpsilonArgs1	rmepsilon.h	/^                      bool, const RmEpsilonOptions &> RmEpsilonArgs1;$/;"	t	namespace:fst::script
+fst::script::RmEpsilonArgs2	rmepsilon.h	/^                      float> RmEpsilonArgs2;$/;"	t	namespace:fst::script
+fst::script::RmEpsilonArgs3	rmepsilon.h	/^                      const RmEpsilonOptions &> RmEpsilonArgs3;$/;"	t	namespace:fst::script
+fst::script::RmEpsilonHelper	rmepsilon.h	/^void RmEpsilonHelper(MutableFst<Arc> *fst,$/;"	f	namespace:fst::script
+fst::script::RmEpsilonOptions	rmepsilon.h	/^struct RmEpsilonOptions : public fst::script::ShortestDistanceOptions {$/;"	s	namespace:fst::script
+fst::script::RmEpsilonOptions::RmEpsilonOptions	rmepsilon.h	/^  RmEpsilonOptions(QueueType qt = AUTO_QUEUE, float d = kDelta, bool c = true,$/;"	f	struct:fst::script::RmEpsilonOptions
+fst::script::RmEpsilonOptions::connect	rmepsilon.h	/^  bool connect;$/;"	m	struct:fst::script::RmEpsilonOptions
+fst::script::RmEpsilonOptions::state_threshold	rmepsilon.h	/^  int64 state_threshold;$/;"	m	struct:fst::script::RmEpsilonOptions
+fst::script::RmEpsilonOptions::weight_threshold	rmepsilon.h	/^  WeightClass weight_threshold;$/;"	m	struct:fst::script::RmEpsilonOptions
+fst::script::SUPERFINAL_MAPPER	map.h	/^               QUANTIZE_MAPPER, RMWEIGHT_MAPPER, SUPERFINAL_MAPPER,$/;"	e	enum:fst::script::MapType
+fst::script::ShortestDistance	shortest-distance.h	/^void ShortestDistance(ShortestDistanceArgs1 *args) {$/;"	f	namespace:fst::script
+fst::script::ShortestDistance	shortest-distance.h	/^void ShortestDistance(ShortestDistanceArgs2 *args) {$/;"	f	namespace:fst::script
+fst::script::ShortestDistance	shortest-distance.h	/^void ShortestDistance(ShortestDistanceArgs3 *args) {$/;"	f	namespace:fst::script
+fst::script::ShortestDistanceArgs1	shortest-distance.h	/^                      const ShortestDistanceOptions &> ShortestDistanceArgs1;$/;"	t	namespace:fst::script
+fst::script::ShortestDistanceArgs2	shortest-distance.h	/^                      bool, double> ShortestDistanceArgs2;$/;"	t	namespace:fst::script
+fst::script::ShortestDistanceArgs3	shortest-distance.h	/^                              const FstClass &> ShortestDistanceArgs3;$/;"	t	namespace:fst::script
+fst::script::ShortestDistanceHelper	shortest-distance.h	/^void ShortestDistanceHelper(ShortestDistanceArgs1 *args) {$/;"	f	namespace:fst::script
+fst::script::ShortestDistanceOptions	shortest-distance.h	/^struct ShortestDistanceOptions {$/;"	s	namespace:fst::script
+fst::script::ShortestDistanceOptions::ShortestDistanceOptions	shortest-distance.h	/^  ShortestDistanceOptions(QueueType qt, ArcFilterType aft, int64 s,$/;"	f	struct:fst::script::ShortestDistanceOptions
+fst::script::ShortestDistanceOptions::arc_filter_type	shortest-distance.h	/^  const ArcFilterType arc_filter_type;$/;"	m	struct:fst::script::ShortestDistanceOptions
+fst::script::ShortestDistanceOptions::delta	shortest-distance.h	/^  const float delta;$/;"	m	struct:fst::script::ShortestDistanceOptions
+fst::script::ShortestDistanceOptions::first_path	shortest-distance.h	/^  const bool first_path;$/;"	m	struct:fst::script::ShortestDistanceOptions
+fst::script::ShortestDistanceOptions::queue_type	shortest-distance.h	/^  const QueueType queue_type;$/;"	m	struct:fst::script::ShortestDistanceOptions
+fst::script::ShortestDistanceOptions::source	shortest-distance.h	/^  const int64 source;$/;"	m	struct:fst::script::ShortestDistanceOptions
+fst::script::ShortestPath	shortest-path.h	/^void ShortestPath(ShortestPathArgs1 *args) {$/;"	f	namespace:fst::script
+fst::script::ShortestPath	shortest-path.h	/^void ShortestPath(ShortestPathArgs2 *args) {$/;"	f	namespace:fst::script
+fst::script::ShortestPathArgs1	shortest-path.h	/^  ShortestPathArgs1;$/;"	t	namespace:fst::script
+fst::script::ShortestPathArgs2	shortest-path.h	/^                      int64> ShortestPathArgs2;$/;"	t	namespace:fst::script
+fst::script::ShortestPathOptions	shortest-path.h	/^struct ShortestPathOptions$/;"	s	namespace:fst::script
+fst::script::ShortestPathOptions::ShortestPathOptions	shortest-path.h	/^  ShortestPathOptions(QueueType qt, size_t n = 1,$/;"	f	struct:fst::script::ShortestPathOptions
+fst::script::ShortestPathOptions::first_path	shortest-path.h	/^  const bool first_path;$/;"	m	struct:fst::script::ShortestPathOptions
+fst::script::ShortestPathOptions::has_distance	shortest-path.h	/^  const bool has_distance;$/;"	m	struct:fst::script::ShortestPathOptions
+fst::script::ShortestPathOptions::nshortest	shortest-path.h	/^  const size_t nshortest;$/;"	m	struct:fst::script::ShortestPathOptions
+fst::script::ShortestPathOptions::state_threshold	shortest-path.h	/^  const int64 state_threshold;$/;"	m	struct:fst::script::ShortestPathOptions
+fst::script::ShortestPathOptions::unique	shortest-path.h	/^  const bool unique;$/;"	m	struct:fst::script::ShortestPathOptions
+fst::script::ShortestPathOptions::weight_threshold	shortest-path.h	/^  const WeightClass weight_threshold;$/;"	m	struct:fst::script::ShortestPathOptions
+fst::script::StateMap	map.h	/^Fst<typename M::ToArc> *StateMap(const Fst<typename M::FromArc> &fst,$/;"	f	namespace:fst::script
+fst::script::StrToWeightImplBase	weight-class.h	/^WeightImplBase* StrToWeightImplBase(const string &str,$/;"	f	namespace:fst::script
+fst::script::StrToWeightImplBaseT	weight-class.h	/^typedef WeightImplBase* (*StrToWeightImplBaseT)(const string &str,$/;"	t	namespace:fst::script
+fst::script::Synchronize	synchronize.h	/^void Synchronize(SynchronizeArgs *args) {$/;"	f	namespace:fst::script
+fst::script::SynchronizeArgs	synchronize.h	/^typedef args::Package<const FstClass &, MutableFstClass *> SynchronizeArgs;$/;"	t	namespace:fst::script
+fst::script::TIMES_MAPPER	map.h	/^               TIMES_MAPPER, TO_LOG_MAPPER, TO_LOG64_MAPPER, TO_STD_MAPPER };$/;"	e	enum:fst::script::MapType
+fst::script::TO_LOG64_MAPPER	map.h	/^               TIMES_MAPPER, TO_LOG_MAPPER, TO_LOG64_MAPPER, TO_STD_MAPPER };$/;"	e	enum:fst::script::MapType
+fst::script::TO_LOG_MAPPER	map.h	/^               TIMES_MAPPER, TO_LOG_MAPPER, TO_LOG64_MAPPER, TO_STD_MAPPER };$/;"	e	enum:fst::script::MapType
+fst::script::TO_STD_MAPPER	map.h	/^               TIMES_MAPPER, TO_LOG_MAPPER, TO_LOG64_MAPPER, TO_STD_MAPPER };$/;"	e	enum:fst::script::MapType
+fst::script::TopSort	topsort.h	/^void TopSort(TopSortArgs *args) {$/;"	f	namespace:fst::script
+fst::script::TopSortArgs	topsort.h	/^typedef args::WithReturnValue<bool, MutableFstClass*> TopSortArgs;$/;"	t	namespace:fst::script
+fst::script::UNIFORM_ARC_SELECTOR	randgen.h	/^  UNIFORM_ARC_SELECTOR,$/;"	e	enum:fst::script::RandArcSelection
+fst::script::Union	union.h	/^void Union(UnionArgs *args) {$/;"	f	namespace:fst::script
+fst::script::UnionArgs	union.h	/^typedef args::Package<MutableFstClass *, const FstClass &> UnionArgs;$/;"	t	namespace:fst::script
+fst::script::VectorFstClass	fst-class.h	/^class VectorFstClass : public MutableFstClass {$/;"	c	namespace:fst::script
+fst::script::VectorFstClass::Convert	fst-class.h	/^  static FstClassImplBase *Convert(const FstClass &other) {$/;"	f	class:fst::script::VectorFstClass
+fst::script::VectorFstClass::Create	fst-class.h	/^  static FstClassImplBase *Create() {$/;"	f	class:fst::script::VectorFstClass
+fst::script::VectorFstClass::Read	fst-class.h	/^  static VectorFstClass *Read(istream &stream,$/;"	f	class:fst::script::VectorFstClass
+fst::script::VectorFstClass::VectorFstClass	fst-class.h	/^  explicit VectorFstClass(VectorFst<Arc> *fst) :$/;"	f	class:fst::script::VectorFstClass
+fst::script::Verify	verify.h	/^void Verify(VerifyArgs *args) {$/;"	f	namespace:fst::script
+fst::script::VerifyArgs	verify.h	/^typedef args::WithReturnValue<bool, const FstClass *> VerifyArgs;$/;"	t	namespace:fst::script
+fst::script::WeightClass	weight-class.h	/^class WeightClass {$/;"	c	namespace:fst::script
+fst::script::WeightClass::ElementType	weight-class.h	/^  enum ElementType { ZERO, ONE, OTHER };$/;"	g	class:fst::script::WeightClass
+fst::script::WeightClass::GetWeight	weight-class.h	/^const W* WeightClass::GetWeight() const {$/;"	f	class:fst::script::WeightClass
+fst::script::WeightClass::ONE	weight-class.h	/^  enum ElementType { ZERO, ONE, OTHER };$/;"	e	enum:fst::script::WeightClass::ElementType
+fst::script::WeightClass::OTHER	weight-class.h	/^  enum ElementType { ZERO, ONE, OTHER };$/;"	e	enum:fst::script::WeightClass::ElementType
+fst::script::WeightClass::One	weight-class.h	/^  static const WeightClass &One() {$/;"	f	class:fst::script::WeightClass
+fst::script::WeightClass::WeightClass	weight-class.h	/^  WeightClass() : element_type_(ZERO), impl_(0) { }$/;"	f	class:fst::script::WeightClass
+fst::script::WeightClass::WeightClass	weight-class.h	/^  WeightClass(const WeightClass &other) :$/;"	f	class:fst::script::WeightClass
+fst::script::WeightClass::WeightClass	weight-class.h	/^  explicit WeightClass(ElementType et) : element_type_(et), impl_(0) { }$/;"	f	class:fst::script::WeightClass
+fst::script::WeightClass::WeightClass	weight-class.h	/^  explicit WeightClass(const W& weight)$/;"	f	class:fst::script::WeightClass
+fst::script::WeightClass::ZERO	weight-class.h	/^  enum ElementType { ZERO, ONE, OTHER };$/;"	e	enum:fst::script::WeightClass::ElementType
+fst::script::WeightClass::Zero	weight-class.h	/^  static const WeightClass &Zero() {$/;"	f	class:fst::script::WeightClass
+fst::script::WeightClass::element_type_	weight-class.h	/^  ElementType element_type_;$/;"	m	class:fst::script::WeightClass
+fst::script::WeightClass::impl_	weight-class.h	/^  WeightImplBase *impl_;$/;"	m	class:fst::script::WeightClass
+fst::script::WeightClass::operator =	weight-class.h	/^  WeightClass &operator = (const WeightClass &other) {$/;"	f	class:fst::script::WeightClass
+fst::script::WeightClass::operator ==	weight-class.h	/^  bool operator == (const WeightClass &other) const {$/;"	f	class:fst::script::WeightClass
+fst::script::WeightClass::to_string	weight-class.h	/^  string to_string() const {$/;"	f	class:fst::script::WeightClass
+fst::script::WeightClass::~WeightClass	weight-class.h	/^  ~WeightClass() { if (impl_) delete impl_; }$/;"	f	class:fst::script::WeightClass
+fst::script::WeightClassImpl	weight-class.h	/^struct WeightClassImpl : public WeightImplBase {$/;"	s	namespace:fst::script
+fst::script::WeightClassImpl::Copy	weight-class.h	/^  virtual WeightClassImpl<W> *Copy() const {$/;"	f	struct:fst::script::WeightClassImpl
+fst::script::WeightClassImpl::Print	weight-class.h	/^  virtual void Print(ostream *o) const {$/;"	f	struct:fst::script::WeightClassImpl
+fst::script::WeightClassImpl::Type	weight-class.h	/^  virtual const string &Type() const { return W::Type(); }$/;"	f	struct:fst::script::WeightClassImpl
+fst::script::WeightClassImpl::WeightClassImpl	weight-class.h	/^  explicit WeightClassImpl(const W& weight) : weight(weight) { }$/;"	f	struct:fst::script::WeightClassImpl
+fst::script::WeightClassImpl::operator ==	weight-class.h	/^  virtual bool operator == (const WeightImplBase &other) const {$/;"	f	struct:fst::script::WeightClassImpl
+fst::script::WeightClassImpl::to_string	weight-class.h	/^  virtual string to_string() const {$/;"	f	struct:fst::script::WeightClassImpl
+fst::script::WeightClassImpl::weight	weight-class.h	/^  W weight;$/;"	m	struct:fst::script::WeightClassImpl
+fst::script::WeightClassRegister	weight-class.h	/^class WeightClassRegister : public GenericRegister<string,$/;"	c	namespace:fst::script
+fst::script::WeightClassRegister::ConvertKeyToSoFilename	weight-class.h	/^  virtual string ConvertKeyToSoFilename(const string &key) const {$/;"	f	class:fst::script::WeightClassRegister
+fst::script::WeightClassRegisterer	weight-class.h	/^typedef GenericRegisterer<WeightClassRegister> WeightClassRegisterer;$/;"	t	namespace:fst::script
+fst::script::WeightImplBase	weight-class.h	/^class WeightImplBase {$/;"	c	namespace:fst::script
+fst::script::WeightImplBase::~WeightImplBase	weight-class.h	/^  virtual ~WeightImplBase() { }$/;"	f	class:fst::script::WeightImplBase
+fst::script::args	arg-packs.h	/^namespace args {$/;"	n	namespace:fst::script
+fst::script::args::Package	arg-packs.h	/^struct Package {$/;"	s	namespace:fst::script::args
+fst::script::args::Package	arg-packs.h	/^struct Package<T1, T2, T3, T4, T5, T6, T7, T8, none_type> {$/;"	s	namespace:fst::script::args
+fst::script::args::Package	arg-packs.h	/^struct Package<T1, T2, T3, T4, T5, T6, T7,$/;"	s	namespace:fst::script::args
+fst::script::args::Package	arg-packs.h	/^struct Package<T1, T2, T3, T4, T5, T6, none_type,$/;"	s	namespace:fst::script::args
+fst::script::args::Package	arg-packs.h	/^struct Package<T1, T2, T3, T4, T5, none_type, none_type,$/;"	s	namespace:fst::script::args
+fst::script::args::Package	arg-packs.h	/^struct Package<T1, T2, T3, T4, none_type, none_type,$/;"	s	namespace:fst::script::args
+fst::script::args::Package	arg-packs.h	/^struct Package<T1, T2, T3, none_type, none_type,$/;"	s	namespace:fst::script::args
+fst::script::args::Package	arg-packs.h	/^struct Package<T1, T2, none_type, none_type,$/;"	s	namespace:fst::script::args
+fst::script::args::Package::Package	arg-packs.h	/^  Package(T1 arg1, T2 arg2) :$/;"	f	struct:fst::script::args::Package
+fst::script::args::Package::Package	arg-packs.h	/^  Package(T1 arg1, T2 arg2, T3 arg3) :$/;"	f	struct:fst::script::args::Package
+fst::script::args::Package::Package	arg-packs.h	/^  Package(T1 arg1, T2 arg2, T3 arg3, T4 arg4) :$/;"	f	struct:fst::script::args::Package
+fst::script::args::Package::Package	arg-packs.h	/^  Package(T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5) :$/;"	f	struct:fst::script::args::Package
+fst::script::args::Package::Package	arg-packs.h	/^  Package(T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6) :$/;"	f	struct:fst::script::args::Package
+fst::script::args::Package::Package	arg-packs.h	/^  Package(T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6,$/;"	f	struct:fst::script::args::Package
+fst::script::args::Package::arg1	arg-packs.h	/^  T1 arg1;$/;"	m	struct:fst::script::args::Package
+fst::script::args::Package::arg2	arg-packs.h	/^  T2 arg2;$/;"	m	struct:fst::script::args::Package
+fst::script::args::Package::arg3	arg-packs.h	/^  T3 arg3;$/;"	m	struct:fst::script::args::Package
+fst::script::args::Package::arg4	arg-packs.h	/^  T4 arg4;$/;"	m	struct:fst::script::args::Package
+fst::script::args::Package::arg5	arg-packs.h	/^  T5 arg5;$/;"	m	struct:fst::script::args::Package
+fst::script::args::Package::arg6	arg-packs.h	/^  T6 arg6;$/;"	m	struct:fst::script::args::Package
+fst::script::args::Package::arg7	arg-packs.h	/^  T7 arg7;$/;"	m	struct:fst::script::args::Package
+fst::script::args::Package::arg8	arg-packs.h	/^  T8 arg8;$/;"	m	struct:fst::script::args::Package
+fst::script::args::Package::arg9	arg-packs.h	/^  T9 arg9;$/;"	m	struct:fst::script::args::Package
+fst::script::args::WithReturnValue	arg-packs.h	/^struct WithReturnValue {$/;"	s	namespace:fst::script::args
+fst::script::args::WithReturnValue	arg-packs.h	/^struct WithReturnValue<Retval, ArgPackage&> {$/;"	s	namespace:fst::script::args
+fst::script::args::WithReturnValue::WithReturnValue	arg-packs.h	/^  explicit WithReturnValue(const ArgPackage &args) : args(args) { }$/;"	f	struct:fst::script::args::WithReturnValue
+fst::script::args::WithReturnValue::args	arg-packs.h	/^  const ArgPackage &args;$/;"	m	struct:fst::script::args::WithReturnValue
+fst::script::args::WithReturnValue::retval	arg-packs.h	/^  Retval retval;$/;"	m	struct:fst::script::args::WithReturnValue
+fst::script::args::none_type	arg-packs.h	/^class none_type { };$/;"	c	namespace:fst::script::args
+fst_	compile-impl.h	/^  mutable VectorFst<A> fst_;$/;"	m	class:fst::FstCompiler
+fst_	draw-impl.h	/^  const Fst<A> &fst_;$/;"	m	class:fst::FstDrawer
+fst_	print-impl.h	/^  const Fst<A> &fst_;$/;"	m	class:fst::FstPrinter
+fst_field_separator	print-impl.h	/^DECLARE_string(fst_field_separator);$/;"	v
+fst_type	compile.h	/^  const string &fst_type;$/;"	m	struct:fst::script::FstCompileArgs
+fst_type_	info-impl.h	/^  string fst_type_;$/;"	m	class:fst::FstInfo
+has_distance	shortest-path.h	/^  const bool has_distance;$/;"	m	struct:fst::script::ShortestPathOptions
+height	draw.h	/^  const float height;$/;"	m	struct:fst::script::FstDrawerArgs
+height_	draw-impl.h	/^  float height_;$/;"	m	class:fst::FstDrawer
+ikeep	compile.h	/^  const bool ikeep;$/;"	m	struct:fst::script::FstCompileArgs
+impl_	fst-class.h	/^  Fst<Arc> *impl_;$/;"	m	class:fst::script::FstClassImpl
+impl_	fst-class.h	/^  FstClassImplBase *impl_;$/;"	m	class:fst::script::FstClass
+impl_	weight-class.h	/^  WeightImplBase *impl_;$/;"	m	class:fst::script::WeightClass
+input_lookahead_	info-impl.h	/^  bool input_lookahead_;$/;"	m	class:fst::FstInfo
+input_match_type_	info-impl.h	/^  MatchType input_match_type_;$/;"	m	class:fst::FstInfo
+input_symbols_	info-impl.h	/^  string input_symbols_;$/;"	m	class:fst::FstInfo
+istrm	compile.h	/^  fst::istream &istrm;$/;"	m	struct:fst::script::FstCompileArgs
+isyms	compile.h	/^  const fst::SymbolTable *isyms;$/;"	m	struct:fst::script::FstCompileArgs
+isyms	draw.h	/^  const SymbolTable *isyms;$/;"	m	struct:fst::script::FstDrawerArgs
+isyms	print.h	/^  const SymbolTable *isyms;$/;"	m	struct:fst::script::FstPrinterArgs
+isyms_	compile-impl.h	/^  const SymbolTable *isyms_;           \/\/ ilabel symbol table$/;"	m	class:fst::FstCompiler
+isyms_	draw-impl.h	/^  const SymbolTable *isyms_;     \/\/ ilabel symbol table$/;"	m	class:fst::FstDrawer
+isyms_	print-impl.h	/^  const SymbolTable *isyms_;     \/\/ ilabel symbol table$/;"	m	class:fst::FstPrinter
+kLineLen	compile-impl.h	/^  static const int kLineLen = 8096;$/;"	m	class:fst::FstCompiler
+kLineLen	draw-impl.h	/^  static const int kLineLen = 8096;$/;"	m	class:fst::FstDrawer
+kLineLen	print-impl.h	/^  static const int kLineLen = 8096;$/;"	m	class:fst::FstPrinter
+keep_state_numbering_	compile-impl.h	/^  bool keep_state_numbering_;$/;"	m	class:fst::FstCompiler
+long_info_	info-impl.h	/^  bool long_info_;$/;"	m	class:fst::FstInfo
+naccess_	info-impl.h	/^  int64 naccess_;$/;"	m	class:fst::FstInfo
+narcs_	info-impl.h	/^  int64 narcs_;$/;"	m	class:fst::FstInfo
+ncc_	info-impl.h	/^  int64 ncc_;$/;"	m	class:fst::FstInfo
+ncoaccess_	info-impl.h	/^  int64 ncoaccess_;$/;"	m	class:fst::FstInfo
+nconnect_	info-impl.h	/^  int64 nconnect_;$/;"	m	class:fst::FstInfo
+nepsilons_	info-impl.h	/^  int64 nepsilons_;$/;"	m	class:fst::FstInfo
+nfinal_	info-impl.h	/^  int64 nfinal_;$/;"	m	class:fst::FstInfo
+niepsilons_	info-impl.h	/^  int64 niepsilons_;$/;"	m	class:fst::FstInfo
+nkeep	compile.h	/^  const bool nkeep;$/;"	m	struct:fst::script::FstCompileArgs
+nline_	compile-impl.h	/^  size_t nline_;$/;"	m	class:fst::FstCompiler
+nodesep	draw.h	/^  const float nodesep;$/;"	m	struct:fst::script::FstDrawerArgs
+nodesep_	draw-impl.h	/^  float nodesep_;$/;"	m	class:fst::FstDrawer
+noepsilons_	info-impl.h	/^  int64 noepsilons_;$/;"	m	class:fst::FstInfo
+none_type	arg-packs.h	/^class none_type { };$/;"	c	namespace:fst::script::args
+nscc_	info-impl.h	/^  int64 nscc_;$/;"	m	class:fst::FstInfo
+nshortest	shortest-path.h	/^  const size_t nshortest;$/;"	m	struct:fst::script::ShortestPathOptions
+nstates_	compile-impl.h	/^  StateId nstates_;                    \/\/ number of seen states$/;"	m	class:fst::FstCompiler
+nstates_	info-impl.h	/^  int64 nstates_;$/;"	m	class:fst::FstInfo
+okeep	compile.h	/^  const bool okeep;$/;"	m	struct:fst::script::FstCompileArgs
+operator =	fst-class.h	/^  FstClass &operator=(const FstClass &other) {$/;"	f	class:fst::script::FstClass
+operator =	weight-class.h	/^  WeightClass &operator = (const WeightClass &other) {$/;"	f	class:fst::script::WeightClass
+operator ==	weight-class.h	/^  bool operator == (const WeightClass &other) const {$/;"	f	class:fst::script::WeightClass
+operator ==	weight-class.h	/^  virtual bool operator == (const WeightImplBase &other) const {$/;"	f	struct:fst::script::WeightClassImpl
+ostrm	draw.h	/^  ostream *ostrm;$/;"	m	struct:fst::script::FstDrawerArgs
+ostrm	print.h	/^  ostream *ostrm;$/;"	m	struct:fst::script::FstPrinterArgs
+ostrm_	draw-impl.h	/^  ostream *ostrm_;               \/\/ drawn FST destination$/;"	m	class:fst::FstDrawer
+ostrm_	print-impl.h	/^  ostream *ostrm_;               \/\/ text FST destination$/;"	m	class:fst::FstPrinter
+osyms	compile.h	/^  const fst::SymbolTable *osyms;$/;"	m	struct:fst::script::FstCompileArgs
+osyms	draw.h	/^  const SymbolTable *osyms;$/;"	m	struct:fst::script::FstDrawerArgs
+osyms	print.h	/^  const SymbolTable *osyms;$/;"	m	struct:fst::script::FstPrinterArgs
+osyms_	compile-impl.h	/^  const SymbolTable *osyms_;           \/\/ olabel symbol table$/;"	m	class:fst::FstCompiler
+osyms_	draw-impl.h	/^  const SymbolTable *osyms_;     \/\/ olabel symbol table$/;"	m	class:fst::FstDrawer
+osyms_	print-impl.h	/^  const SymbolTable *osyms_;     \/\/ olabel symbol table$/;"	m	class:fst::FstPrinter
+output_lookahead_	info-impl.h	/^  bool output_lookahead_;$/;"	m	class:fst::FstInfo
+output_match_type_	info-impl.h	/^  MatchType output_match_type_;$/;"	m	class:fst::FstInfo
+output_symbols_	info-impl.h	/^  string output_symbols_;$/;"	m	class:fst::FstInfo
+portrait	draw.h	/^  const bool portrait;$/;"	m	struct:fst::script::FstDrawerArgs
+portrait_	draw-impl.h	/^  bool portrait_;$/;"	m	class:fst::FstDrawer
+precision	draw.h	/^  const int precision;$/;"	m	struct:fst::script::FstDrawerArgs
+precision_	draw-impl.h	/^  int precision_;$/;"	m	class:fst::FstDrawer
+properties_	info-impl.h	/^  uint64 properties_;$/;"	m	class:fst::FstInfo
+queue_type	shortest-distance.h	/^  const QueueType queue_type;$/;"	m	struct:fst::script::ShortestDistanceOptions
+ranksep	draw.h	/^  const float ranksep;$/;"	m	struct:fst::script::FstDrawerArgs
+ranksep_	draw-impl.h	/^  float ranksep_;$/;"	m	class:fst::FstDrawer
+reader	register.h	/^  Reader reader;$/;"	m	struct:fst::script::FstClassRegEntry
+retval	arg-packs.h	/^  Retval retval;$/;"	m	struct:fst::script::args::WithReturnValue
+script	arcsort.h	/^namespace script {$/;"	n	namespace:fst
+script	arg-packs.h	/^namespace script {$/;"	n	namespace:fst
+script	closure.h	/^namespace script {$/;"	n	namespace:fst
+script	compile.h	/^namespace script {$/;"	n	namespace:fst
+script	compose.h	/^namespace script {$/;"	n	namespace:fst
+script	concat.h	/^namespace script {$/;"	n	namespace:fst
+script	connect.h	/^namespace script {$/;"	n	namespace:fst
+script	convert.h	/^namespace script {$/;"	n	namespace:fst
+script	decode.h	/^namespace script {$/;"	n	namespace:fst
+script	determinize.h	/^namespace script {$/;"	n	namespace:fst
+script	difference.h	/^namespace script {$/;"	n	namespace:fst
+script	draw.h	/^namespace script {$/;"	n	namespace:fst
+script	encode.h	/^namespace script {$/;"	n	namespace:fst
+script	epsnormalize.h	/^namespace script {$/;"	n	namespace:fst
+script	equal.h	/^namespace script {$/;"	n	namespace:fst
+script	equivalent.h	/^namespace script {$/;"	n	namespace:fst
+script	fst-class.h	/^namespace script {$/;"	n	namespace:fst
+script	fstscript-decl.h	/^namespace script {$/;"	n	namespace:fst
+script	fstscript.h	/^namespace script {$/;"	n	namespace:fst
+script	info.h	/^namespace script {$/;"	n	namespace:fst
+script	intersect.h	/^namespace script {$/;"	n	namespace:fst
+script	invert.h	/^namespace script {$/;"	n	namespace:fst
+script	map.h	/^namespace script {$/;"	n	namespace:fst
+script	minimize.h	/^namespace script {$/;"	n	namespace:fst
+script	print.h	/^namespace script {$/;"	n	namespace:fst
+script	project.h	/^namespace script {$/;"	n	namespace:fst
+script	prune.h	/^namespace script {$/;"	n	namespace:fst
+script	push.h	/^namespace script {$/;"	n	namespace:fst
+script	randequivalent.h	/^namespace script {$/;"	n	namespace:fst
+script	randgen.h	/^namespace script {$/;"	n	namespace:fst
+script	register.h	/^namespace script {$/;"	n	namespace:fst
+script	relabel.h	/^namespace script {$/;"	n	namespace:fst
+script	replace.h	/^namespace script {$/;"	n	namespace:fst
+script	reverse.h	/^namespace script {$/;"	n	namespace:fst
+script	reweight.h	/^namespace script {$/;"	n	namespace:fst
+script	rmepsilon.h	/^namespace script {$/;"	n	namespace:fst
+script	script-impl.h	/^namespace script {$/;"	n	namespace:fst
+script	shortest-distance.h	/^namespace script {$/;"	n	namespace:fst
+script	shortest-path.h	/^namespace script {$/;"	n	namespace:fst
+script	synchronize.h	/^namespace script {$/;"	n	namespace:fst
+script	text-io.h	/^namespace script {$/;"	n	namespace:fst
+script	topsort.h	/^namespace script {$/;"	n	namespace:fst
+script	union.h	/^namespace script {$/;"	n	namespace:fst
+script	verify.h	/^namespace script {$/;"	n	namespace:fst
+script	weight-class.h	/^namespace script {$/;"	n	namespace:fst
+show_weight_one	draw.h	/^  const bool show_weight_one;$/;"	m	struct:fst::script::FstDrawerArgs
+show_weight_one	print.h	/^  const bool show_weight_one;$/;"	m	struct:fst::script::FstPrinterArgs
+show_weight_one_	draw-impl.h	/^  bool show_weight_one_;$/;"	m	class:fst::FstDrawer
+show_weight_one_	print-impl.h	/^  bool show_weight_one_;         \/\/ print weights equal to Weight::One()$/;"	m	class:fst::FstPrinter
+source	compile.h	/^  const string &source;$/;"	m	struct:fst::script::FstCompileArgs
+source	shortest-distance.h	/^  const int64 source;$/;"	m	struct:fst::script::ShortestDistanceOptions
+source_	compile-impl.h	/^  string source_;                      \/\/ text FST source name$/;"	m	class:fst::FstCompiler
+ssyms	compile.h	/^  const fst::SymbolTable *ssyms;$/;"	m	struct:fst::script::FstCompileArgs
+ssyms	draw.h	/^  const SymbolTable *ssyms;$/;"	m	struct:fst::script::FstDrawerArgs
+ssyms	print.h	/^  const SymbolTable *ssyms;$/;"	m	struct:fst::script::FstPrinterArgs
+ssyms_	compile-impl.h	/^  const SymbolTable *ssyms_;           \/\/ slabel symbol table$/;"	m	class:fst::FstCompiler
+ssyms_	draw-impl.h	/^  const SymbolTable *ssyms_;     \/\/ slabel symbol table$/;"	m	class:fst::FstDrawer
+ssyms_	print-impl.h	/^  const SymbolTable *ssyms_;     \/\/ slabel symbol table$/;"	m	class:fst::FstPrinter
+start_	info-impl.h	/^  int64 start_;$/;"	m	class:fst::FstInfo
+state_threshold	determinize.h	/^  int64 state_threshold;$/;"	m	struct:fst::script::DeterminizeOptions
+state_threshold	prune.h	/^  int64 state_threshold;$/;"	m	struct:fst::script::PruneOptions
+state_threshold	rmepsilon.h	/^  int64 state_threshold;$/;"	m	struct:fst::script::RmEpsilonOptions
+state_threshold	shortest-path.h	/^  const int64 state_threshold;$/;"	m	struct:fst::script::ShortestPathOptions
+states_	compile-impl.h	/^  unordered_map<StateId, StateId> states_;  \/\/ state ID map$/;"	m	class:fst::FstCompiler
+subsequential_label	determinize.h	/^  int64 subsequential_label;$/;"	m	struct:fst::script::DeterminizeOptions
+title	draw.h	/^  const string& title;$/;"	m	struct:fst::script::FstDrawerArgs
+title_	draw-impl.h	/^  string title_;$/;"	m	class:fst::FstDrawer
+to_string	weight-class.h	/^  string to_string() const {$/;"	f	class:fst::script::WeightClass
+to_string	weight-class.h	/^  virtual string to_string() const {$/;"	f	struct:fst::script::WeightClassImpl
+unique	shortest-path.h	/^  const bool unique;$/;"	m	struct:fst::script::ShortestPathOptions
+vertical	draw.h	/^  const bool vertical;$/;"	m	struct:fst::script::FstDrawerArgs
+vertical_	draw-impl.h	/^  bool vertical_;$/;"	m	class:fst::FstDrawer
+weight	weight-class.h	/^  W weight;$/;"	m	struct:fst::script::WeightClassImpl
+weight_threshold	determinize.h	/^  WeightClass weight_threshold;$/;"	m	struct:fst::script::DeterminizeOptions
+weight_threshold	prune.h	/^  WeightClass weight_threshold;$/;"	m	struct:fst::script::PruneOptions
+weight_threshold	rmepsilon.h	/^  WeightClass weight_threshold;$/;"	m	struct:fst::script::RmEpsilonOptions
+weight_threshold	shortest-path.h	/^  const WeightClass weight_threshold;$/;"	m	struct:fst::script::ShortestPathOptions
+width	draw.h	/^  const float width;$/;"	m	struct:fst::script::FstDrawerArgs
+width_	draw-impl.h	/^  float width_;$/;"	m	class:fst::FstDrawer
+~FstClass	fst-class.h	/^  virtual ~FstClass() { delete impl_; }$/;"	f	class:fst::script::FstClass
+~FstClassBase	fst-class.h	/^  virtual ~FstClassBase() { }$/;"	f	class:fst::script::FstClassBase
+~FstClassImpl	fst-class.h	/^  virtual ~FstClassImpl() { delete impl_; }$/;"	f	class:fst::script::FstClassImpl
+~FstClassImplBase	fst-class.h	/^  virtual ~FstClassImplBase() { }$/;"	f	class:fst::script::FstClassImplBase
+~WeightClass	weight-class.h	/^  ~WeightClass() { if (impl_) delete impl_; }$/;"	f	class:fst::script::WeightClass
+~WeightImplBase	weight-class.h	/^  virtual ~WeightImplBase() { }$/;"	f	class:fst::script::WeightImplBase

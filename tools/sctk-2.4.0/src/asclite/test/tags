@@ -1,0 +1,168 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ALIGNEDSEGMENTTEST_H	alignedsegment_test.h	19;"	d
+ALIGNEDSPEECH_TEST_H	alignedspeech_test.h	19;"	d
+ALIGNMENT_TEST_H	alignment_test.h	19;"	d
+ASCTOOLS_H	asctools.h	19;"	d
+AlignedSegmentTest	alignedsegment_test.h	/^class AlignedSegmentTest {$/;"	c
+AlignedSpeechTest	alignedspeech_test.h	/^class AlignedSpeechTest {$/;"	c
+AlignedSpeechTest::asg1	alignedspeech_test.h	/^		AlignedSegment* asg1;$/;"	m	class:AlignedSpeechTest
+AlignedSpeechTest::asg2	alignedspeech_test.h	/^		AlignedSegment* asg2;$/;"	m	class:AlignedSpeechTest
+AlignedSpeechTest::asg3	alignedspeech_test.h	/^		AlignedSegment* asg3;$/;"	m	class:AlignedSpeechTest
+AlignedSpeechTest::asg4	alignedspeech_test.h	/^		AlignedSegment* asg4;$/;"	m	class:AlignedSpeechTest
+AlignedSpeechTest::asp	alignedspeech_test.h	/^		AlignedSpeech* asp;$/;"	m	class:AlignedSpeechTest
+AlignedSpeechTest::seg1	alignedspeech_test.h	/^		Segment* seg1;	$/;"	m	class:AlignedSpeechTest
+AlignedSpeechTest::seg2	alignedspeech_test.h	/^		Segment* seg2;$/;"	m	class:AlignedSpeechTest
+AlignedSpeechTest::seg3	alignedspeech_test.h	/^		Segment* seg3;$/;"	m	class:AlignedSpeechTest
+AlignedSpeechTest::seg4	alignedspeech_test.h	/^		Segment* seg4;$/;"	m	class:AlignedSpeechTest
+AlignedSpeechTest::speech	alignedspeech_test.h	/^		Speech* speech;$/;"	m	class:AlignedSpeechTest
+AlignedSpeechTest::speechSet	alignedspeech_test.h	/^    SpeechSet* speechSet;$/;"	m	class:AlignedSpeechTest
+AlignmentTest	alignment_test.h	/^class AlignmentTest {$/;"	c
+AlignmentTest::bench	alignment_test.h	/^	StdBenchmark* bench;$/;"	m	class:AlignmentTest
+BENCHMARK_H	benchmark.h	19;"	d
+Benchmark	benchmark.h	/^class Benchmark$/;"	c
+Benchmark::properties	benchmark.h	/^    vector<map<string, string> > properties;$/;"	m	class:Benchmark
+Benchmark::results	benchmark.h	/^    vector<GraphAlignedSegment*> results;$/;"	m	class:Benchmark
+Benchmark::tests	benchmark.h	/^    vector<SegmentsGroup* > tests;$/;"	m	class:Benchmark
+CTMInputParserTest	test_ctm_inputparser.h	/^class CTMInputParserTest$/;"	c
+CTMSTMRTTMSegmentorTest	test_ctmstm_segmentor.h	/^class CTMSTMRTTMSegmentorTest$/;"	c
+EPOCHFILETIME	timeval.h	28;"	d
+EPOCHFILETIME	timeval.h	30;"	d
+GraphAlignedSegmentTest	test_graphalignedsegment.h	/^class GraphAlignedSegmentTest$/;"	c
+GraphAlignedTokenTest	test_graphalignedtoken.h	/^class GraphAlignedTokenTest$/;"	c
+HYP_DIM	std_benchmark.h	/^	static const int HYP_DIM;$/;"	m	class:StdBenchmark
+LevenshteinTest	test_levenshtein.h	/^class LevenshteinTest$/;"	c
+PERF_BENCHMARK_H	perf_benchmark.h	19;"	d
+PerfBenchmark	perf_benchmark.h	/^class PerfBenchmark : public Benchmark$/;"	c
+PerfBenchmark::costs	perf_benchmark.h	/^    map<string, vector<int> > costs;$/;"	m	class:PerfBenchmark
+PerfBenchmark::props	perf_benchmark.h	/^    map<string, string> props;$/;"	m	class:PerfBenchmark
+PropertiesTest	test_properties.h	/^class PropertiesTest$/;"	c
+REF_DIM	std_benchmark.h	/^	static const int REF_DIM;$/;"	m	class:StdBenchmark
+RTTMInputParserTest	test_rttm_inputparser.h	/^class RTTMInputParserTest$/;"	c
+STDBENCHMARK_H	std_benchmark.h	19;"	d
+STMInputParserTest	test_stm_inputparser.h	/^class STMInputParserTest$/;"	c
+SpeechSetTest	test_speechset.h	/^class SpeechSetTest$/;"	c
+StdBenchmark	std_benchmark.h	/^class StdBenchmark : public Benchmark$/;"	c
+StdBenchmark::HYP_DIM	std_benchmark.h	/^	static const int HYP_DIM;$/;"	m	class:StdBenchmark
+StdBenchmark::REF_DIM	std_benchmark.h	/^	static const int REF_DIM;$/;"	m	class:StdBenchmark
+StdBenchmark::a_tok0	std_benchmark.h	/^	GraphAlignedToken* a_tok0;$/;"	m	class:StdBenchmark
+StdBenchmark::a_tok1	std_benchmark.h	/^	GraphAlignedToken* a_tok1;$/;"	m	class:StdBenchmark
+StdBenchmark::a_tok2	std_benchmark.h	/^	GraphAlignedToken* a_tok2;$/;"	m	class:StdBenchmark
+StdBenchmark::a_tok3	std_benchmark.h	/^	GraphAlignedToken* a_tok3;$/;"	m	class:StdBenchmark
+StdBenchmark::a_tok4	std_benchmark.h	/^	GraphAlignedToken* a_tok4;$/;"	m	class:StdBenchmark
+StdBenchmark::a_tok5	std_benchmark.h	/^	GraphAlignedToken* a_tok5;$/;"	m	class:StdBenchmark
+StdBenchmark::a_tok6	std_benchmark.h	/^	GraphAlignedToken* a_tok6;$/;"	m	class:StdBenchmark
+StdBenchmark::a_tok7	std_benchmark.h	/^	GraphAlignedToken* a_tok7;$/;"	m	class:StdBenchmark
+StdBenchmark::a_tok8	std_benchmark.h	/^	GraphAlignedToken* a_tok8;$/;"	m	class:StdBenchmark
+StdBenchmark::a_tok9	std_benchmark.h	/^	GraphAlignedToken* a_tok9;$/;"	m	class:StdBenchmark
+StdBenchmark::costs	std_benchmark.h	/^    map<string, vector<int> > costs;$/;"	m	class:StdBenchmark
+StdBenchmark::g_segs	std_benchmark.h	/^	SegmentsGroup* g_segs;$/;"	m	class:StdBenchmark
+StdBenchmark::props	std_benchmark.h	/^	map<string, string> props;$/;"	m	class:StdBenchmark
+StdBenchmark::speech	std_benchmark.h	/^	Speech* speech;$/;"	m	class:StdBenchmark
+StdBenchmark::t_ali_toks	std_benchmark.h	/^	GraphAlignedSegment* t_ali_toks;$/;"	m	class:StdBenchmark
+StdBenchmark::t_seg	std_benchmark.h	/^	Segment* t_seg;$/;"	m	class:StdBenchmark
+StdBenchmark::t_tok0	std_benchmark.h	/^	Token* t_tok0;$/;"	m	class:StdBenchmark
+StdBenchmark::t_tok1	std_benchmark.h	/^	Token* t_tok1;$/;"	m	class:StdBenchmark
+StdBenchmark::t_tok2	std_benchmark.h	/^	Token* t_tok2;$/;"	m	class:StdBenchmark
+StdBenchmark::t_tok3	std_benchmark.h	/^	Token* t_tok3;$/;"	m	class:StdBenchmark
+StdBenchmark::t_tok4	std_benchmark.h	/^	Token* t_tok4;$/;"	m	class:StdBenchmark
+StdBenchmark::t_tok5	std_benchmark.h	/^	Token* t_tok5;$/;"	m	class:StdBenchmark
+StdBenchmark::t_tok6	std_benchmark.h	/^	Token* t_tok6;$/;"	m	class:StdBenchmark
+TESTSPEECH_H	test_speech.h	19;"	d
+TEST_CTMSTMRTTM_SEGMENTOR_H	test_ctmstm_segmentor.h	19;"	d
+TEST_CTM_INPUTPARSER_H	test_ctm_inputparser.h	19;"	d
+TEST_GRAPHALIGNEDSEGMENT_H	test_graphalignedsegment.h	19;"	d
+TEST_GRAPHALIGNEDTOKEN_H	test_graphalignedtoken.h	19;"	d
+TEST_GRAPH_H	test_graph.h	19;"	d
+TEST_LEVENSHTEIN_H	test_levenshtein.h	19;"	d
+TEST_PROPERTIES_H	test_properties.h	19;"	d
+TEST_RTTM_INPUTPARSER_H	test_rttm_inputparser.h	19;"	d
+TEST_SEGMENT_H	test_segment.h	19;"	d
+TEST_SPEECHSET_H	test_speechset.h	19;"	d
+TEST_STM_INPUTPARSER_H	test_stm_inputparser.h	19;"	d
+TEST_TOKEN_H	test_token.h	19;"	d
+TEST_TRNTRN_SEGMENTOR_H	test_trntrn_segmentor.h	19;"	d
+TEST_TRN_INPUTPARSER_H	test_trn_inputparser.h	19;"	d
+TOKENALIGNMENT_TEST_H	tokenalignment_test.h	19;"	d
+TRNInputParserTest	test_trn_inputparser.h	/^class TRNInputParserTest$/;"	c
+TRNTRNSegmentorTest	test_trntrn_segmentor.h	/^class TRNTRNSegmentorTest$/;"	c
+TestGraph	test_graph.h	/^class TestGraph$/;"	c
+TestGraph::m_pGraph	test_graph.h	/^		Graph* m_pGraph;$/;"	m	class:TestGraph
+TestSegment	test_segment.h	/^class TestSegment$/;"	c
+TestSpeech	test_speech.h	/^class TestSpeech$/;"	c
+TestToken	test_token.h	/^class TestToken$/;"	c
+TokenAlignmentTest	tokenalignment_test.h	/^class TokenAlignmentTest {$/;"	c
+TokenAlignmentTest::m_hyp1	tokenalignment_test.h	/^	Token* m_hyp1;$/;"	m	class:TokenAlignmentTest
+TokenAlignmentTest::m_hyp2	tokenalignment_test.h	/^	Token* m_hyp2;$/;"	m	class:TokenAlignmentTest
+TokenAlignmentTest::m_hyp3	tokenalignment_test.h	/^	Token* m_hyp3;$/;"	m	class:TokenAlignmentTest
+TokenAlignmentTest::m_ref	tokenalignment_test.h	/^	Token* m_ref;$/;"	m	class:TokenAlignmentTest
+TokenAlignmentTest::m_tokenAlignment	tokenalignment_test.h	/^	TokenAlignment* m_tokenAlignment;$/;"	m	class:TokenAlignmentTest
+TokenAlignmentTest::segment	tokenalignment_test.h	/^	Segment* segment;$/;"	m	class:TokenAlignmentTest
+TokenAlignmentTest::speech	tokenalignment_test.h	/^	Speech* speech;$/;"	m	class:TokenAlignmentTest
+TokenAlignmentTest::speechSet	tokenalignment_test.h	/^	SpeechSet* speechSet;$/;"	m	class:TokenAlignmentTest
+WIN32_LEAN_AND_MEAN	timeval.h	23;"	d
+_TIMEVAL_H	timeval.h	19;"	d
+a_tok0	std_benchmark.h	/^	GraphAlignedToken* a_tok0;$/;"	m	class:StdBenchmark
+a_tok1	std_benchmark.h	/^	GraphAlignedToken* a_tok1;$/;"	m	class:StdBenchmark
+a_tok2	std_benchmark.h	/^	GraphAlignedToken* a_tok2;$/;"	m	class:StdBenchmark
+a_tok3	std_benchmark.h	/^	GraphAlignedToken* a_tok3;$/;"	m	class:StdBenchmark
+a_tok4	std_benchmark.h	/^	GraphAlignedToken* a_tok4;$/;"	m	class:StdBenchmark
+a_tok5	std_benchmark.h	/^	GraphAlignedToken* a_tok5;$/;"	m	class:StdBenchmark
+a_tok6	std_benchmark.h	/^	GraphAlignedToken* a_tok6;$/;"	m	class:StdBenchmark
+a_tok7	std_benchmark.h	/^	GraphAlignedToken* a_tok7;$/;"	m	class:StdBenchmark
+a_tok8	std_benchmark.h	/^	GraphAlignedToken* a_tok8;$/;"	m	class:StdBenchmark
+a_tok9	std_benchmark.h	/^	GraphAlignedToken* a_tok9;$/;"	m	class:StdBenchmark
+asg1	alignedspeech_test.h	/^		AlignedSegment* asg1;$/;"	m	class:AlignedSpeechTest
+asg2	alignedspeech_test.h	/^		AlignedSegment* asg2;$/;"	m	class:AlignedSpeechTest
+asg3	alignedspeech_test.h	/^		AlignedSegment* asg3;$/;"	m	class:AlignedSpeechTest
+asg4	alignedspeech_test.h	/^		AlignedSegment* asg4;$/;"	m	class:AlignedSpeechTest
+asp	alignedspeech_test.h	/^		AlignedSpeech* asp;$/;"	m	class:AlignedSpeechTest
+bench	alignment_test.h	/^	StdBenchmark* bench;$/;"	m	class:AlignmentTest
+costs	perf_benchmark.h	/^    map<string, vector<int> > costs;$/;"	m	class:PerfBenchmark
+costs	std_benchmark.h	/^    map<string, vector<int> > costs;$/;"	m	class:StdBenchmark
+g_segs	std_benchmark.h	/^	SegmentsGroup* g_segs;$/;"	m	class:StdBenchmark
+gettimeofday	timeval.h	/^__inline int gettimeofday(struct timeval *tv, struct timezone *tz)$/;"	f
+m_hyp1	tokenalignment_test.h	/^	Token* m_hyp1;$/;"	m	class:TokenAlignmentTest
+m_hyp2	tokenalignment_test.h	/^	Token* m_hyp2;$/;"	m	class:TokenAlignmentTest
+m_hyp3	tokenalignment_test.h	/^	Token* m_hyp3;$/;"	m	class:TokenAlignmentTest
+m_pGraph	test_graph.h	/^		Graph* m_pGraph;$/;"	m	class:TestGraph
+m_ref	tokenalignment_test.h	/^	Token* m_ref;$/;"	m	class:TokenAlignmentTest
+m_tokenAlignment	tokenalignment_test.h	/^	TokenAlignment* m_tokenAlignment;$/;"	m	class:TokenAlignmentTest
+properties	benchmark.h	/^    vector<map<string, string> > properties;$/;"	m	class:Benchmark
+props	perf_benchmark.h	/^    map<string, string> props;$/;"	m	class:PerfBenchmark
+props	std_benchmark.h	/^	map<string, string> props;$/;"	m	class:StdBenchmark
+results	benchmark.h	/^    vector<GraphAlignedSegment*> results;$/;"	m	class:Benchmark
+seg1	alignedspeech_test.h	/^		Segment* seg1;	$/;"	m	class:AlignedSpeechTest
+seg2	alignedspeech_test.h	/^		Segment* seg2;$/;"	m	class:AlignedSpeechTest
+seg3	alignedspeech_test.h	/^		Segment* seg3;$/;"	m	class:AlignedSpeechTest
+seg4	alignedspeech_test.h	/^		Segment* seg4;$/;"	m	class:AlignedSpeechTest
+segment	tokenalignment_test.h	/^	Segment* segment;$/;"	m	class:TokenAlignmentTest
+speech	alignedspeech_test.h	/^		Speech* speech;$/;"	m	class:AlignedSpeechTest
+speech	std_benchmark.h	/^	Speech* speech;$/;"	m	class:StdBenchmark
+speech	tokenalignment_test.h	/^	Speech* speech;$/;"	m	class:TokenAlignmentTest
+speechSet	alignedspeech_test.h	/^    SpeechSet* speechSet;$/;"	m	class:AlignedSpeechTest
+speechSet	tokenalignment_test.h	/^	SpeechSet* speechSet;$/;"	m	class:TokenAlignmentTest
+t_ali_toks	std_benchmark.h	/^	GraphAlignedSegment* t_ali_toks;$/;"	m	class:StdBenchmark
+t_seg	std_benchmark.h	/^	Segment* t_seg;$/;"	m	class:StdBenchmark
+t_tok0	std_benchmark.h	/^	Token* t_tok0;$/;"	m	class:StdBenchmark
+t_tok1	std_benchmark.h	/^	Token* t_tok1;$/;"	m	class:StdBenchmark
+t_tok2	std_benchmark.h	/^	Token* t_tok2;$/;"	m	class:StdBenchmark
+t_tok3	std_benchmark.h	/^	Token* t_tok3;$/;"	m	class:StdBenchmark
+t_tok4	std_benchmark.h	/^	Token* t_tok4;$/;"	m	class:StdBenchmark
+t_tok5	std_benchmark.h	/^	Token* t_tok5;$/;"	m	class:StdBenchmark
+t_tok6	std_benchmark.h	/^	Token* t_tok6;$/;"	m	class:StdBenchmark
+tests	benchmark.h	/^    vector<SegmentsGroup* > tests;$/;"	m	class:Benchmark
+timeval	timeval.h	/^struct timeval$/;"	s
+timeval::tv_sec	timeval.h	/^    long tv_sec;   \/* seconds *\/$/;"	m	struct:timeval
+timeval::tv_usec	timeval.h	/^    long tv_usec;  \/* microseconds *\/$/;"	m	struct:timeval
+timezone	timeval.h	/^struct timezone$/;"	s
+timezone::tz_dsttime	timeval.h	/^    int tz_dsttime;     \/* type of dst correction *\/$/;"	m	struct:timezone
+timezone::tz_minuteswest	timeval.h	/^    int tz_minuteswest; \/* minutes W of Greenwich *\/$/;"	m	struct:timezone
+tv_sec	timeval.h	/^    long tv_sec;   \/* seconds *\/$/;"	m	struct:timeval
+tv_usec	timeval.h	/^    long tv_usec;  \/* microseconds *\/$/;"	m	struct:timeval
+tz_dsttime	timeval.h	/^    int tz_dsttime;     \/* type of dst correction *\/$/;"	m	struct:timezone
+tz_minuteswest	timeval.h	/^    int tz_minuteswest; \/* minutes W of Greenwich *\/$/;"	m	struct:timezone

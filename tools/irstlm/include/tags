@@ -1,0 +1,1025 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ACTION	ngramtable.h	/^} ACTION;$/;"	t	typeref:enum:__anon8
+ArgStr	cmd.h	/^		*ArgStr;$/;"	m	struct:__anon2
+BACKOFF_	ngramtable.h	28;"	d
+BINARY	lmtable.h	/^typedef enum {BINARY,TEXT,YRANIB,NONE} OUTFILE_TYPE;$/;"	e	enum:__anon6
+BOD_	dictionary.h	57;"	d
+BOFF_OFFS	ngramtable.h	/^  int BOFF_OFFS;   \/\/back-off probability$/;"	m	class:tabletype
+BOS_	dictionary.h	46;"	d
+BOUNDSIZE	lmtable.h	60;"	d
+BOUND_EMPTY1	lmtable.h	80;"	d
+BOUND_EMPTY2	lmtable.h	81;"	d
+Bcenters	lmtable.h	/^  float*    Bcenters[LMTMAXLEV+1];$/;"	m	class:lmtable
+BlockSize	htable.h	35;"	d
+BoD	dictionary.h	/^  inline const char *BoD(){return ((char*)BOD_);}$/;"	f	class:dictionary
+BoS	dictionary.h	/^  inline const char *BoS(){return ((char*)BOS_);}$/;"	f	class:dictionary
+CHARSIZE	lmtable.h	55;"	d
+CHARSIZE	ngramtable.h	47;"	d
+CMDBOOLTYPE	cmd.h	36;"	d
+CMDDOUBLETYPE	cmd.h	27;"	d
+CMDENUMTYPE	cmd.h	29;"	d
+CMDFLOATTYPE	cmd.h	28;"	d
+CMDGTETYPE	cmd.h	33;"	d
+CMDINTTYPE	cmd.h	30;"	d
+CMDLTETYPE	cmd.h	34;"	d
+CMDSTRARRAYTYPE	cmd.h	35;"	d
+CMDSTRINGTYPE	cmd.h	31;"	d
+CMDSUBRANGETYPE	cmd.h	32;"	d
+CMD_H	cmd.h	25;"	d
+CODESIZE	ngramtable.h	/^  int CODESIZE;                \/\/sizeof word codes$/;"	m	class:tabletype
+CONT	ngramtable.h	/^	      CONT     \/\/!< scan: continue scan$/;"	e	enum:__anon8
+COUNT	ngramtable.h	/^typedef enum {COUNT,       \/\/!< table: only counters$/;"	e	enum:__anon9
+Cmd_T	cmd.h	/^} Cmd_T;$/;"	t	typeref:struct:__anon2
+DEFCODESIZE	ngramtable.h	39;"	d
+DEFCODESIZE	ngramtable.h	41;"	d
+DELETE	ngramtable.h	/^	      DELETE,  \/\/!< search: find and remove entry$/;"	e	enum:__anon8
+DICTIONARY_LOAD_FACTOR	dictionary.h	33;"	d
+DICT_INITSIZE	dictionary.h	41;"	d
+DUMMY_	ngramtable.h	33;"	d
+END_ENUM	mixture.h	26;"	d
+ENTER	ngramtable.h	/^	      ENTER,   \/\/!< search: enter an entry $/;"	e	enum:__anon8
+EOD_	dictionary.h	62;"	d
+EOS_	dictionary.h	52;"	d
+Enum_T	cmd.h	/^} Enum_T;$/;"	t	typeref:struct:__anon1
+EoD	dictionary.h	/^  inline const char *EoD(){return ((char*)EOD_);}$/;"	f	class:dictionary
+EoS	dictionary.h	/^  inline const char *EoS(){return ((char*)EOS_);}$/;"	f	class:dictionary
+FIND	ngramtable.h	/^typedef enum {FIND,    \/\/!< search: find an entry$/;"	e	enum:__anon8
+FLAGS_OFFS	ngramtable.h	/^  int FLAGS_OFFS;  \/\/flag table$/;"	m	class:tabletype
+FLEAFPROB	ngramtable.h	/^	      FLEAFPROB,    \/\/!< table: only probs on leafs and FROZEN$/;"	e	enum:__anon9
+FREQ1	ngramtable.h	51;"	d
+FREQ2	ngramtable.h	52;"	d
+FREQ3	ngramtable.h	58;"	d
+FREQ4	ngramtable.h	53;"	d
+FREQ6	ngramtable.h	57;"	d
+FULL	ngramtable.h	/^	      FULL,        \/\/!< table: full fledged table$/;"	e	enum:__anon9
+GROWTH_STEP	dictionary.h	37;"	d
+GetDictioanryLoadFactor	lmtable.h	/^  inline float GetDictioanryLoadFactor(){ return  ngramcache_load_factor; }$/;"	f	class:lmtable
+GetNgramcacheLoadFactor	lmtable.h	/^  inline float GetNgramcacheLoadFactor(){ return  ngramcache_load_factor; }$/;"	f	class:lmtable
+H	cplsa.h	/^  float *H;$/;"	m	class:plsa
+HASHTABLE_t	dictionary.h	/^typedef htable<char*> HASHTABLE_t;$/;"	t
+HT_ACTION	htable.h	/^} HT_ACTION;$/;"	t	typeref:enum:__anon4
+HT_CONT	htable.h	/^	      HT_CONT     \/\/!< scan: continue scan$/;"	e	enum:__anon4
+HT_ENTER	htable.h	/^	      HT_ENTER,   \/\/!< search: enter an entry $/;"	e	enum:__anon4
+HT_FIND	htable.h	/^typedef enum {HT_FIND,    \/\/!< search: find an entry$/;"	e	enum:__anon4
+HT_INIT	htable.h	/^	      HT_INIT,    \/\/!< scan: start scan$/;"	e	enum:__anon4
+INIT	ngramtable.h	/^	      INIT,    \/\/!< scan: start scan$/;"	e	enum:__anon8
+INODE	ngramtable.h	54;"	d
+INTERNAL	lmtable.h	/^typedef enum {INTERNAL,QINTERNAL,LEAF,QLEAF} LMT_TYPE;$/;"	e	enum:__anon5
+INTSIZE	lmtable.h	54;"	d
+INTSIZE	ngramtable.h	46;"	d
+IRSTLM_UTIL_H	util.h	4;"	d
+I_FREQ_NUM	ngramtable.h	/^  int I_FREQ_NUM;  \/\/number of internal frequencies$/;"	m	class:tabletype
+I_FREQ_OFFS	ngramtable.h	/^  int I_FREQ_OFFS; \/\/frequency offset$/;"	m	class:tabletype
+Idx	cmd.h	/^	int	Idx;$/;"	m	struct:__anon1
+LEAF	lmtable.h	/^typedef enum {INTERNAL,QINTERNAL,LEAF,QLEAF} LMT_TYPE;$/;"	e	enum:__anon5
+LEAFCODE	ngramtable.h	/^	      LEAFCODE,    \/\/!< table: only codes on leafs$/;"	e	enum:__anon9
+LEAFPROB	ngramtable.h	/^	      LEAFPROB,    \/\/!< table: only probs on leafs$/;"	e	enum:__anon9
+LEAFPROB2	ngramtable.h	/^	      LEAFPROB2,   \/\/!< table: only probs on leafs$/;"	e	enum:__anon9
+LEAFPROB3	ngramtable.h	/^	      LEAFPROB3,   \/\/!< table: only probs on leafs$/;"	e	enum:__anon9
+LEAFPROB4	ngramtable.h	/^	      LEAFPROB4,   \/\/!< table: only probs on leafs$/;"	e	enum:__anon9
+LINEAR_GT	interplm.h	28;"	d
+LINEAR_WB	interplm.h	27;"	d
+LMTCODESIZE	lmtable.h	49;"	d
+LMTMAXLEV	lmtable.h	45;"	d
+LMT_ACTION	lmtable.h	/^} LMT_ACTION;$/;"	t	typeref:enum:__anon7
+LMT_CONT	lmtable.h	/^	      LMT_CONT     \/\/!< scan: continue scan$/;"	e	enum:__anon7
+LMT_ENTER	lmtable.h	/^	      LMT_ENTER,   \/\/!< search: enter an entry $/;"	e	enum:__anon7
+LMT_FIND	lmtable.h	/^typedef enum {LMT_FIND,    \/\/!< search: find an entry$/;"	e	enum:__anon7
+LMT_INIT	lmtable.h	/^	      LMT_INIT,    \/\/!< scan: start scan$/;"	e	enum:__anon7
+LMT_TYPE	lmtable.h	/^typedef enum {INTERNAL,QINTERNAL,LEAF,QLEAF} LMT_TYPE;$/;"	t	typeref:enum:__anon5
+LM_MIXTURE	mixture.h	24;"	d
+LNODE	ngramtable.h	55;"	d
+L_FREQ_NUM	ngramtable.h	/^  int L_FREQ_NUM;  \/\/number of leaf frequencies$/;"	m	class:tabletype
+L_FREQ_OFFS	ngramtable.h	/^  int L_FREQ_OFFS; \/\/frequency offset$/;"	m	class:tabletype
+L_FREQ_SIZE	ngramtable.h	/^  int L_FREQ_SIZE; \/\/minimum size for leaf frequencies$/;"	m	class:tabletype
+MAX	lmtable.h	42;"	d
+MAX_LINE	lmtable.h	46;"	d
+MAX_NGRAM	n_gram.h	35;"	d
+MAX_NGRAM	n_gram.h	37;"	d
+MAX_TOKEN_N_MAP	lmmacro.h	38;"	d
+MAX_WORD	dictionary.h	32;"	d
+MF_DICTIONARY_H	dictionary.h	24;"	d
+MF_HTABLE_H	htable.h	24;"	d
+MF_LMMACRO_H	lmmacro.h	25;"	d
+MF_LMTABLE_H	lmtable.h	25;"	d
+MF_MDIADAPTLM_H	mdiadapt.h	24;"	d
+MF_MEMPOOL_H	mempool.h	28;"	d
+MF_NGRAMCACHE_H	ngramcache.h	24;"	d
+MF_NGRAMTABLE_H	ngramtable.h	24;"	d
+MF_NGRAM_H	n_gram.h	28;"	d
+MF_STREAM_H	mfstream.h	36;"	d
+MIN	lmtable.h	43;"	d
+MIXTURE	interplm.h	29;"	d
+MOD_SHIFT_BETA	interplm.h	30;"	d
+MSHIFTBETA_B	ngramtable.h	/^	      MSHIFTBETA_B,\/\/!< table: backoff modified shiftbeta$/;"	e	enum:__anon9
+MSHIFTBETA_I	ngramtable.h	/^	      MSHIFTBETA_I,\/\/!< table: interp modified shiftbeta$/;"	e	enum:__anon9
+MSUCC_OFFS	ngramtable.h	/^  int MSUCC_OFFS;  \/\/number of successors$/;"	m	class:tabletype
+MTAB_OFFS	ngramtable.h	/^  int MTAB_OFFS;   \/\/pointer to successors$/;"	m	class:tabletype
+N	dictionary.h	/^  long long    N;  \/\/!< total frequency$/;"	m	class:dictionary
+N	doc.h	/^  int* N;      \/\/frequencies in doc$/;"	m	class:doc
+NGRAMCACHE_LOAD_FACTOR	ngramcache.h	32;"	d
+NGRAMCACHE_t	ngramcache.h	30;"	d
+NODETYPE	ngramtable.h	/^typedef unsigned char NODETYPE;$/;"	t
+NONE	lmtable.h	/^typedef enum {BINARY,TEXT,YRANIB,NONE} OUTFILE_TYPE;$/;"	e	enum:__anon6
+NULL	mempool.h	/^const int NULL=0;$/;"	v
+Name	cmd.h	/^	const char	*Name,$/;"	m	struct:__anon2
+Name	cmd.h	/^	const char	*Name;$/;"	m	struct:__anon1
+NumCenters	lmtable.h	/^  int       NumCenters[LMTMAXLEV+1];$/;"	m	class:lmtable
+OOV	dictionary.h	/^  inline const char *OOV(){return ((char*)OOV_);} $/;"	f	class:dictionary
+OOV_	dictionary.h	68;"	d
+OUTFILE_TYPE	lmtable.h	/^typedef enum {BINARY,TEXT,YRANIB,NONE} OUTFILE_TYPE;$/;"	t	typeref:enum:__anon6
+PROBSIZE	lmtable.h	57;"	d
+PROB_AND_STATE_ENTRY	ngramcache.h	/^        PROB_AND_STATE_ENTRY(double lp=0.0, char* st=NULL, unsigned int stsz=0, double bw=0.0, int bl=0): logpr(lp), state(st), statesize(stsz), bow(bw), bol(bl) {}; \/\/initializer$/;"	f	struct:PROB_AND_STATE_ENTRY
+PROB_AND_STATE_ENTRY	ngramcache.h	/^typedef struct PROB_AND_STATE_ENTRY{$/;"	s
+PROB_AND_STATE_ENTRY::PROB_AND_STATE_ENTRY	ngramcache.h	/^        PROB_AND_STATE_ENTRY(double lp=0.0, char* st=NULL, unsigned int stsz=0, double bw=0.0, int bl=0): logpr(lp), state(st), statesize(stsz), bow(bw), bol(bl) {}; \/\/initializer$/;"	f	struct:PROB_AND_STATE_ENTRY
+PROB_AND_STATE_ENTRY::bol	ngramcache.h	/^        int bol;        \/\/!< backoff level$/;"	m	struct:PROB_AND_STATE_ENTRY
+PROB_AND_STATE_ENTRY::bow	ngramcache.h	/^        double bow;     \/\/!< backoff weight$/;"	m	struct:PROB_AND_STATE_ENTRY
+PROB_AND_STATE_ENTRY::logpr	ngramcache.h	/^        double logpr;   \/\/!< probability value of an ngram$/;"	m	struct:PROB_AND_STATE_ENTRY
+PROB_AND_STATE_ENTRY::state	ngramcache.h	/^        char* state;  \/\/!< the largest suffix of an n-gram contained in the LM table.$/;"	m	struct:PROB_AND_STATE_ENTRY
+PROB_AND_STATE_ENTRY::statesize	ngramcache.h	/^        unsigned int statesize; \/\/!< LM statesize of an ngram$/;"	m	struct:PROB_AND_STATE_ENTRY
+PTRSIZE	lmtable.h	53;"	d
+PTRSIZE	ngramtable.h	45;"	d
+Pcenters	lmtable.h	/^  float*    Pcenters[LMTMAXLEV+1];$/;"	m	class:lmtable
+Prime1	htable.h	33;"	d
+Prime2	htable.h	34;"	d
+QINTERNAL	lmtable.h	/^typedef enum {INTERNAL,QINTERNAL,LEAF,QLEAF} LMT_TYPE;$/;"	e	enum:__anon5
+QLEAF	lmtable.h	/^typedef enum {INTERNAL,QINTERNAL,LEAF,QLEAF} LMT_TYPE;$/;"	e	enum:__anon5
+QPROBSIZE	lmtable.h	58;"	d
+SHIFTBETA_B	ngramtable.h	/^	      SHIFTBETA_B, \/\/!< table: backoff shiftbeta$/;"	e	enum:__anon9
+SHIFTBETA_I	ngramtable.h	/^	      SHIFTBETA_I, \/\/!< table: interpolated shiftbeta$/;"	e	enum:__anon9
+SHIFT_BETA	interplm.h	23;"	d
+SHIFT_ONE	interplm.h	24;"	d
+SHIFT_ONE_BETA	interplm.h	26;"	d
+SHIFT_ZERO	interplm.h	25;"	d
+SHORTSIZE	lmtable.h	52;"	d
+SHORTSIZE	ngramtable.h	44;"	d
+SIMPLE_B	ngramtable.h	/^	      SIMPLE_B,    \/\/!< table: simple backoff LM$/;"	e	enum:__anon9
+SIMPLE_I	ngramtable.h	/^	      SIMPLE_I,    \/\/!< table: simple interpolated LM$/;"	e	enum:__anon9
+SNODE	ngramtable.h	56;"	d
+SUCC1_OFFS	ngramtable.h	/^  int SUCC1_OFFS;  \/\/number of successors with freq=1$/;"	m	class:tabletype
+SUCC2_OFFS	ngramtable.h	/^  int SUCC2_OFFS;  \/\/number of successors with freq=2$/;"	m	class:tabletype
+T	cplsa.h	/^  float **T;$/;"	m	class:plsa
+T	doc.h	/^  int* T;      \/\/temporary frequencies$/;"	m	class:doc
+TABLETYPE	ngramtable.h	/^} TABLETYPE;$/;"	t	typeref:enum:__anon9
+TEXT	lmtable.h	/^typedef enum {BINARY,TEXT,YRANIB,NONE} OUTFILE_TYPE;$/;"	e	enum:__anon6
+TIMER_H	timer.h	2;"	d
+Timer	timer.h	/^  Timer() : running(false), start_time(0) { }$/;"	f	class:Timer
+Timer	timer.h	/^class Timer$/;"	c
+Timer::Timer	timer.h	/^  Timer() : running(false), start_time(0) { }$/;"	f	class:Timer
+Timer::running	timer.h	/^  bool running;$/;"	m	class:Timer
+Timer::start_time	timer.h	/^  time_t start_time;$/;"	m	class:Timer
+Type	cmd.h	/^	int	Type;$/;"	m	struct:__anon2
+UNIGRAM_RESOLUTION	lmtable.h	62;"	d
+V	doc.h	/^  int* V;      \/\/words in current doc$/;"	m	class:doc
+Val	cmd.h	/^	void	*Val,$/;"	m	struct:__anon2
+W	cplsa.h	/^  float **W;$/;"	m	class:plsa
+WORD_OFFS	ngramtable.h	/^  int WORD_OFFS;   \/\/word code position$/;"	m	class:tabletype
+YRANIB	lmtable.h	/^typedef enum {BINARY,TEXT,YRANIB,NONE} OUTFILE_TYPE;$/;"	e	enum:__anon6
+_FILE	mfstream.h	/^  FILE* _FILE;$/;"	m	class:mfstream
+_GZFILEBUF_H_	gzfilebuf.h	4;"	d
+_IRSTLM_LMMACRO	lmtable.h	467;"	d
+_IRSTLM_LMTABLE	lmtable.h	466;"	d
+_IRSTLM_LMUNKNOWN	lmtable.h	465;"	d
+__anon1::Idx	cmd.h	/^	int	Idx;$/;"	m	struct:__anon1
+__anon1::Name	cmd.h	/^	const char	*Name;$/;"	m	struct:__anon1
+__anon2::ArgStr	cmd.h	/^		*ArgStr;$/;"	m	struct:__anon2
+__anon2::Name	cmd.h	/^	const char	*Name,$/;"	m	struct:__anon2
+__anon2::Type	cmd.h	/^	int	Type;$/;"	m	struct:__anon2
+__anon2::Val	cmd.h	/^	void	*Val,$/;"	m	struct:__anon2
+__anon2::p	cmd.h	/^		*p;$/;"	m	struct:__anon2
+__anon3::code	dictionary.h	/^  int  code;$/;"	m	struct:__anon3
+__anon3::freq	dictionary.h	/^  long long  freq;$/;"	m	struct:__anon3
+__anon3::word	dictionary.h	/^  const char *word;$/;"	m	struct:__anon3
+_buff	gzfilebuf.h	/^  char _buff[_buffsize];$/;"	m	class:gzfilebuf
+_buffsize	gzfilebuf.h	/^  static const unsigned int _buffsize = 1024;$/;"	m	class:gzfilebuf
+_cmd	mfstream.h	/^  int _cmd;$/;"	m	class:mfstream
+_cmdname	mfstream.h	/^  char _cmdname[500];$/;"	m	class:mfstream
+_good	util.h	/^  bool _good;$/;"	m	class:inputfilestream
+_gzf	gzfilebuf.h	/^  gzFile _gzf;$/;"	m	class:gzfilebuf
+_mode	mfstream.h	/^  openmode _mode;$/;"	m	class:mfstream
+accesses	htable.h	/^  long   accesses;            \/\/!< # of accesses$/;"	m	class:htable
+accesses	ngramcache.h	/^  int accesses;$/;"	m	class:ngramcache
+adapt	interplm.h	/^	virtual void adapt(char* \/* unused parameter: ngtfile *\/, double \/* unused parameter:  w *\/){}$/;"	f	class:interplm
+adaptlev	mdiadapt.h	/^  int adaptlev;$/;"	m	class:mdiadaptlm
+address	htable.h	/^typedef unsigned int address;$/;"	t
+backoff	interplm.h	/^	int backoff; \/\/0 interpolation, 1 Back-off  $/;"	m	class:interplm
+backoff_state	lmtable.h	/^  int     backoff_state; $/;"	m	class:lmtable
+backoff_state	ngramtable.h	/^  int             backoff_state; \/\/used by prob;$/;"	m	class:ngramtable
+backoffcache	mdiadapt.h	/^  NGRAMCACHE_t** backoffcache; $/;"	m	class:mdiadaptlm
+basefname	cplsa.h	/^  char *basefname;$/;"	m	class:plsa
+beta	shiftlm.h	/^  double beta;   $/;"	m	class:shiftone
+beta	shiftlm.h	/^  double beta[3][MAX_NGRAM];$/;"	m	class:mshiftbeta
+beta	shiftlm.h	/^  double* beta;$/;"	m	class:shiftbeta
+binary	doc.h	/^  bool binary;   \/\/is file in binary format?$/;"	m	class:doc
+block	mempool.h	/^  char          *block;   \/\/!< block of memory$/;"	m	class:memnode
+block_list	mempool.h	/^  memnode*   block_list;          \/\/!< list of blocks$/;"	m	class:mempool
+block_size	mempool.h	/^  int         block_size;         \/\/!< number of entries per block$/;"	m	class:mempool
+blocknum	mempool.h	/^  int         blocknum;           \/\/!< number of allocated blocks  $/;"	m	class:mempool
+blocknum	mempool.h	/^  int blocknum;  \/\/!< current number of used blocks$/;"	m	class:strstack
+bo_code	ngramtable.h	/^  int           oov_code,oov_size,du_code, bo_code; \/\/used by prob;$/;"	m	class:ngramtable
+bo_state	ngramtable.h	/^  int bo_state(int value=-1){$/;"	f	class:ngramtable
+boff	ngramtable.h	/^  double boff(node nd)$/;"	f	class:ngramtable
+boff	ngramtable.h	/^  int boff(node nd,double value)$/;"	f	class:ngramtable
+bol	ngramcache.h	/^        int bol;        \/\/!< backoff level$/;"	m	struct:PROB_AND_STATE_ENTRY
+boprob	interplm.h	/^	virtual double boprob(ngram \/* unused parameter: ng *\/,int \/* unused parameter: size *\/){return 0.0;}$/;"	f	class:interplm
+bound	lmtable.h	/^    inline T bound(node nd,LMT_TYPE ndt, T value)$/;"	f	class:lmtable
+bound	lmtable.h	/^  inline table_entry_pos_t bound(node nd,LMT_TYPE ndt)$/;"	f	class:lmtable
+bow	lmtable.h	/^    inline T bow(node nd,LMT_TYPE ndt, T value)$/;"	f	class:lmtable
+bow	lmtable.h	/^  inline float bow(node nd,LMT_TYPE ndt)$/;"	f	class:lmtable
+bow	n_gram.h	/^	float   bow;           \/\/ back-off weight $/;"	m	class:ngram
+bow	ngramcache.h	/^        double bow;     \/\/!< backoff weight$/;"	m	struct:PROB_AND_STATE_ENTRY
+btotfreq	ngramtable.h	/^  inline long long btotfreq(long long v=-1){$/;"	f	class:ngramtable
+buf	mfstream.h	/^  fdbuf* buf;$/;"	m	class:mfstream
+buffer	mfstream.h	/^  char buffer[bufferSize];             \/\/ data buffer$/;"	m	class:fdbuf
+bufferSize	mfstream.h	/^  static const int bufferSize = 10;    \/\/ size of the data buffer$/;"	m	class:fdbuf
+cache	mdiadapt.h	/^  normcache *cache;$/;"	m	class:mdiadaptlm
+cache	normcache.h	/^  double* cache[2];$/;"	m	class:normcache
+cacheout	lmtable.h	/^  std::fstream* cacheout;$/;"	m	class:lmtable
+cachesize	normcache.h	/^  int cachesize[2];$/;"	m	class:normcache
+card	ngramtable.h	/^  long long       card; \/\/entries at maxlev$/;"	m	class:ngramtable
+cd	doc.h	/^  int cd;      \/\/current doc index$/;"	m	class:doc
+check_probcache_levels	lmtable.h	/^  void check_probcache_levels(){ check_prob_and_state_cache_levels(); }; \/\/kept for back compatibility$/;"	f	class:lmtable
+check_statecache_levels	lmtable.h	/^  void check_statecache_levels(){}; \/\/kept for back compatibility$/;"	f	class:lmtable
+ckhisto	n_gram.h	/^	inline int ckhisto(int sz){$/;"	f	class:ngram
+cleanfreq	dictionary.h	/^  void cleanfreq(){$/;"	f	class:dictionary
+code	dictionary.h	/^  int  code;$/;"	m	struct:__anon3
+code_range	ngramtable.h	/^  long long code_range[7]; \/\/max code for each size$/;"	m	class:tabletype
+collapsableMap	lmmacro.h	/^  bool           *collapsableMap;$/;"	m	class:lmmacro
+collapsatorMap	lmmacro.h	/^  bool           *collapsatorMap;$/;"	m	class:lmmacro
+collapseFlag	lmmacro.h	/^  bool            collapseFlag; \/\/flag for the presence of collapse$/;"	m	class:lmmacro
+collisions	htable.h	/^  long collisions;            \/\/!< # of collisions$/;"	m	class:htable
+containsWord	n_gram.h	/^	int containsWord(const char* s,int lev){$/;"	f	class:ngram
+corrcounts	ngramtable.h	/^  int         corrcounts; \/\/corrected counters flag$/;"	m	class:ngramtable
+cursize	lmtable.h	/^  table_entry_pos_t       cursize[LMTMAXLEV+1];  \/\/current size of levels$/;"	m	class:lmtable
+cursize	ngramcache.h	/^  int cursize(){return entries;}$/;"	f	class:ngramcache
+debug	lmtable.h	/^  static const bool debug=true;$/;"	m	class:lmtable
+debug	ngramcache.h	/^  static const bool debug=true;$/;"	m	class:ngramcache
+decay	ngramtable.h	/^  double         decay; \/\/decay constant $/;"	m	class:ngramtable
+delete_probcache	lmtable.h	/^  void delete_probcache(){ delete_prob_and_state_cache(); }; \/\/kept for back compatibility$/;"	f	class:lmtable
+delete_statecache	lmtable.h	/^  void delete_statecache(){}; \/\/kept for back compatibility$/;"	f	class:lmtable
+df	doc.h	/^  mfstream* df; \/\/doc file descriptor$/;"	m	class:doc
+dfname	doc.h	/^  char* dfname; \/\/doc file name$/;"	m	class:doc
+dict	cplsa.h	/^  dictionary* dict;$/;"	m	class:plsa
+dict	doc.h	/^  dictionary* dict;$/;"	m	class:doc
+dict	lmmacro.h	/^  dictionary     *dict;$/;"	m	class:lmmacro
+dict	lmtable.h	/^  dictionary     *dict; \/\/ dictionary (words - macro tags)$/;"	m	class:lmtable
+dict	n_gram.h	/^	dictionary *dict;      \/\/dictionary$/;"	m	class:ngram
+dict	ngramtable.h	/^  dictionary     *dict; \/\/ dictionary$/;"	m	class:ngramtable
+dict	normcache.h	/^  dictionary* dict;$/;"	m	class:normcache
+dict_entry	dictionary.h	/^}dict_entry;$/;"	t	typeref:struct:__anon3
+dictionary	dictionary.h	/^class dictionary{$/;"	c
+dictionary::BoD	dictionary.h	/^  inline const char *BoD(){return ((char*)BOD_);}$/;"	f	class:dictionary
+dictionary::BoS	dictionary.h	/^  inline const char *BoS(){return ((char*)BOS_);}$/;"	f	class:dictionary
+dictionary::EoD	dictionary.h	/^  inline const char *EoD(){return ((char*)EOD_);}$/;"	f	class:dictionary
+dictionary::EoS	dictionary.h	/^  inline const char *EoS(){return ((char*)EOS_);}$/;"	f	class:dictionary
+dictionary::N	dictionary.h	/^  long long    N;  \/\/!< total frequency$/;"	m	class:dictionary
+dictionary::OOV	dictionary.h	/^  inline const char *OOV(){return ((char*)OOV_);} $/;"	f	class:dictionary
+dictionary::cleanfreq	dictionary.h	/^  void cleanfreq(){$/;"	f	class:dictionary
+dictionary::dub	dictionary.h	/^  inline int dub(){return dubv;}$/;"	f	class:dictionary
+dictionary::dub	dictionary.h	/^  inline int dub(int value){return (dubv=value);}$/;"	f	class:dictionary
+dictionary::dubv	dictionary.h	/^  int        dubv; \/\/!< dictionary size upper bound$/;"	m	class:dictionary
+dictionary::freq	dictionary.h	/^  inline long freq(int code,long long value=-1){$/;"	f	class:dictionary
+dictionary::genoovcode	dictionary.h	/^  inline void genoovcode(){$/;"	f	class:dictionary
+dictionary::htb	dictionary.h	/^  HASHTABLE_t  *htb;  \/\/!< hash table$/;"	m	class:dictionary
+dictionary::ifl	dictionary.h	/^  char       ifl;  \/\/!< increment flag$/;"	m	class:dictionary
+dictionary::incflag	dictionary.h	/^  inline int incflag(){return ifl;}$/;"	f	class:dictionary
+dictionary::incflag	dictionary.h	/^  inline int incflag(int v){return ifl=v;}$/;"	f	class:dictionary
+dictionary::incfreq	dictionary.h	/^  inline long long incfreq(int code,long long value){N+=value;return tb[code].freq+=value;}$/;"	f	class:dictionary
+dictionary::isprintable	dictionary.h	/^  int isprintable(char* w){$/;"	f	class:dictionary
+dictionary::lim	dictionary.h	/^  int        lim;  \/\/!< limit of entries$/;"	m	class:dictionary
+dictionary::load_factor	dictionary.h	/^  float        load_factor; \/\/!< dictionary loading factor$/;"	m	class:dictionary
+dictionary::multfreq	dictionary.h	/^  inline long long multfreq(int code,double value){$/;"	f	class:dictionary
+dictionary::n	dictionary.h	/^  int          n;  \/\/!< number of entries$/;"	m	class:dictionary
+dictionary::oov_code	dictionary.h	/^  int   oov_code;  \/\/!< code assigned to oov words$/;"	m	class:dictionary
+dictionary::oov_str	dictionary.h	/^  char* oov_str;    \/\/!< oov string$/;"	m	class:dictionary
+dictionary::oovcode	dictionary.h	/^  inline int oovcode(int v=-1){return oov_code=(v>=0?v:oov_code);}$/;"	f	class:dictionary
+dictionary::oovlex	dictionary.h	/^  dictionary* oovlex; \/\/<! additional dictionary $/;"	m	class:dictionary
+dictionary::scan	dictionary.h	/^  inline dict_entry* scan(HT_ACTION action){$/;"	f	class:dictionary
+dictionary::set_load_factor	dictionary.h	/^  inline float set_load_factor(float value){ return load_factor=value; }$/;"	f	class:dictionary
+dictionary::setoovrate	dictionary.h	/^  inline int setoovrate(double oovrate){ $/;"	f	class:dictionary
+dictionary::size	dictionary.h	/^  int size(){return n;}$/;"	f	class:dictionary
+dictionary::st	dictionary.h	/^  strstack   *st;  \/\/!< stack of strings$/;"	m	class:dictionary
+dictionary::tb	dictionary.h	/^  dict_entry *tb;  \/\/!< entry table$/;"	m	class:dictionary
+dictionary::totfreq	dictionary.h	/^  inline long long totfreq(){return N;}$/;"	f	class:dictionary
+dictionary_iter	dictionary.h	/^class dictionary_iter {$/;"	c
+dictionary_iter::m_dict	dictionary.h	/^  dictionary* m_dict;$/;"	m	class:dictionary_iter
+dictionary_load_factor	lmtable.h	/^  float dictionary_load_factor;$/;"	m	class:lmtable
+dictionary_upperbound	lmtable.h	/^  int     dictionary_upperbound; \/\/set by user$/;"	m	class:lmtable
+discount	interplm.h	/^	virtual int discount(ngram \/* unused parameter: ng *\/,int \/* unused parameter: size *\/,double& \/* unused parameter: fstar *\/ ,double& \/* unused parameter: lambda *\/,int \/* unused parameter: cv*\/=0){ return 0;}$/;"	f	class:interplm
+diskid	lmtable.h	/^  int diskid;$/;"	m	class:lmtable
+doc	doc.h	/^class doc{$/;"	c
+doc::N	doc.h	/^  int* N;      \/\/frequencies in doc$/;"	m	class:doc
+doc::T	doc.h	/^  int* T;      \/\/temporary frequencies$/;"	m	class:doc
+doc::V	doc.h	/^  int* V;      \/\/words in current doc$/;"	m	class:doc
+doc::binary	doc.h	/^  bool binary;   \/\/is file in binary format?$/;"	m	class:doc
+doc::cd	doc.h	/^  int cd;      \/\/current doc index$/;"	m	class:doc
+doc::df	doc.h	/^  mfstream* df; \/\/doc file descriptor$/;"	m	class:doc
+doc::dfname	doc.h	/^  char* dfname; \/\/doc file name$/;"	m	class:doc
+doc::dict	doc.h	/^  dictionary* dict;$/;"	m	class:doc
+doc::m	doc.h	/^  int  m;      \/\/number of words in the current doc$/;"	m	class:doc
+doc::n	doc.h	/^  int  n;      \/\/number of docs $/;"	m	class:doc
+du_code	ngramtable.h	/^  int           oov_code,oov_size,du_code, bo_code; \/\/used by prob;$/;"	m	class:ngramtable
+dub	dictionary.h	/^  inline int dub(){return dubv;}$/;"	f	class:dictionary
+dub	dictionary.h	/^  inline int dub(int value){return (dubv=value);}$/;"	f	class:dictionary
+dub	interplm.h	/^	virtual int dub(){return dict->dub();}$/;"	f	class:interplm
+dub	interplm.h	/^	virtual int dub(int value){ return (dict->dub(value)); }$/;"	f	class:interplm
+dub	mixture.h	/^  inline int dub(){return dict->dub();}$/;"	f	class:mixture
+dub	mixture.h	/^  inline int dub(int value){$/;"	f	class:mixture
+dubv	dictionary.h	/^  int        dubv; \/\/!< dictionary size upper bound$/;"	m	class:dictionary
+entries	mempool.h	/^  int         entries;            \/\/!< number of stored entries  $/;"	m	class:mempool
+entries	mempool.h	/^  int entries;   \/\/!< current number of stored strings$/;"	m	class:strstack
+entries	ngramcache.h	/^  int entries;$/;"	m	class:ngramcache
+entries	ngramtable.h	/^  inline long long entries(int lev){$/;"	f	class:ngramtable
+entry	htable.h	/^struct entry{$/;"	s
+entry::key	htable.h	/^  T                 key;$/;"	m	struct:entry
+entry::next	htable.h	/^  entry*           next;  \/\/ secret from user$/;"	m	struct:entry
+epsilon	interplm.h	/^	double epsilon; \/\/Bayes smoothing$/;"	m	class:interplm
+fd	mfstream.h	/^  int fd;    \/\/ file descriptor$/;"	m	class:fdbuf
+fdbuf	mfstream.h	/^  fdbuf (int _fd) : fd(_fd) {$/;"	f	class:fdbuf
+fdbuf	mfstream.h	/^class fdbuf : public std::streambuf {$/;"	c
+fdbuf::buffer	mfstream.h	/^  char buffer[bufferSize];             \/\/ data buffer$/;"	m	class:fdbuf
+fdbuf::bufferSize	mfstream.h	/^  static const int bufferSize = 10;    \/\/ size of the data buffer$/;"	m	class:fdbuf
+fdbuf::fd	mfstream.h	/^  int fd;    \/\/ file descriptor$/;"	m	class:fdbuf
+fdbuf::fdbuf	mfstream.h	/^  fdbuf (int _fd) : fd(_fd) {$/;"	f	class:fdbuf
+fdbuf::overflow	mfstream.h	/^  virtual int_type overflow (int_type c) {$/;"	f	class:fdbuf
+fdbuf::seekpos	mfstream.h	/^  virtual streampos seekpos ( streampos \/* unused parameter: sp *\/, ios_base::openmode \/* unused parameter: which *\/= ios_base::in | ios_base::out ){$/;"	f	class:fdbuf
+fdbuf::underflow	mfstream.h	/^  virtual int_type underflow () {$/;"	f	class:fdbuf
+fdbuf::xsgetn	mfstream.h	/^  std::streamsize xsgetn (char* s,$/;"	f	class:fdbuf
+fdbuf::xsputn	mfstream.h	/^  std::streamsize xsputn (const char* s,$/;"	f	class:fdbuf
+featfname	cplsa.h	/^  char *featfname;$/;"	m	class:plsa
+filter	lmtable.h	/^  void filter(const char* \/* unused parameter: lmfile *\/){};$/;"	f	class:lmtable
+filterdict	ngramtable.h	/^  dictionary     *filterdict;$/;"	m	class:ngramtable
+find	htable.h	/^T htable<T>::find(T key){$/;"	f	class:htable
+forelm	mdiadapt.h	/^  interplm* forelm;$/;"	m	class:mdiadaptlm
+free_list	mempool.h	/^  char*       free_list;          \/\/!< free entry list$/;"	m	class:mempool
+freq	dictionary.h	/^  inline long freq(int code,long long value=-1){$/;"	f	class:dictionary
+freq	dictionary.h	/^  long long  freq;$/;"	m	struct:__anon3
+freq	n_gram.h	/^	long long   freq;      \/\/ ngram frequency or integer prob$/;"	m	class:ngram
+freq	ngramtable.h	/^  long long freq(node nd,NODETYPE ndt)$/;"	f	class:ngramtable
+freq	ngramtable.h	/^  long long freq(node nd,NODETYPE ndt,long long value)$/;"	f	class:ngramtable
+genoovcode	dictionary.h	/^  inline void genoovcode(){$/;"	f	class:dictionary
+get	lmtable.h	/^  inline int get(ngram& ng){ return get(ng,ng.size,ng.size); }$/;"	f	class:lmtable
+get	ngramtable.h	/^  inline int get(ngram& ng){ return get(ng,maxlev,maxlev); }$/;"	f	class:ngramtable
+getDict	lmmacro.h	/^  inline dictionary* getDict() const { return dict; }$/;"	f	class:lmmacro
+getDict	lmtable.h	/^  virtual inline dictionary* getDict() const { return dict; };$/;"	f	class:lmtable
+getLanguageModelType	lmtable.h	/^inline int getLanguageModelType(std::string filename){$/;"	f
+get_zetacache	mdiadapt.h	/^  inline normcache* get_zetacache(){ return cache; }$/;"	f	class:mdiadaptlm
+getfreq	ngramtable.h	/^  long long getfreq(node nd,NODETYPE ndt,int index=0)$/;"	f	class:ngramtable
+getlogOOVpenalty	lmtable.h	/^  double getlogOOVpenalty() const { return logOOVpenalty; }$/;"	f	class:lmtable
+getmem	lmtable.h	/^    inline void getmem(char* ptr,T* value,int offs){$/;"	f	class:lmtable
+getmem	lmtable.h	/^  inline void getmem(char* ptr,int* value,int offs,int size){$/;"	f	class:lmtable
+getmem	ngramtable.h	/^  inline int getmem(char* ptr,int* value,int offs,int size){$/;"	f	class:ngramtable
+getmem	ngramtable.h	/^  inline long getmem(char* ptr,long long* value,int offs,int size){$/;"	f	class:ngramtable
+gis_step	mdiadapt.h	/^  double gis_step;$/;"	m	class:mdiadaptlm
+good	util.h	/^  bool good(){return _good;}$/;"	f	class:inputfilestream
+gzfilebuf	gzfilebuf.h	/^  gzfilebuf(const char *filename)$/;"	f	class:gzfilebuf
+gzfilebuf	gzfilebuf.h	/^class gzfilebuf : public std::streambuf {$/;"	c
+gzfilebuf::_buff	gzfilebuf.h	/^  char _buff[_buffsize];$/;"	m	class:gzfilebuf
+gzfilebuf::_buffsize	gzfilebuf.h	/^  static const unsigned int _buffsize = 1024;$/;"	m	class:gzfilebuf
+gzfilebuf::_gzf	gzfilebuf.h	/^  gzFile _gzf;$/;"	m	class:gzfilebuf
+gzfilebuf::gzfilebuf	gzfilebuf.h	/^  gzfilebuf(const char *filename)$/;"	f	class:gzfilebuf
+gzfilebuf::overflow	gzfilebuf.h	/^  virtual int_type overflow (int_type \/* unused parameter: c *\/) {$/;"	f	class:gzfilebuf
+gzfilebuf::seekpos	gzfilebuf.h	/^  virtual std::streampos seekpos ( std::streampos \/* unused parameter: sp *\/, std::ios_base::openmode \/* unused parameter: which *\/= std::ios_base::in | std::ios_base::out ){$/;"	f	class:gzfilebuf
+gzfilebuf::underflow	gzfilebuf.h	/^  virtual int_type underflow () {$/;"	f	class:gzfilebuf
+gzfilebuf::xsgetn	gzfilebuf.h	/^  std::streamsize xsgetn (char* s,$/;"	f	class:gzfilebuf
+gzfilebuf::xsputn	gzfilebuf.h	/^  virtual std::streamsize xsputn (const char* \/* unused parameter: s *\/, std::streamsize \/* unused parameter: num *\/) {$/;"	f	class:gzfilebuf
+gzfilebuf::~gzfilebuf	gzfilebuf.h	/^  ~gzfilebuf() { gzclose(_gzf); }$/;"	f	class:gzfilebuf
+hinfname	cplsa.h	/^  char *hinfname;$/;"	m	class:plsa
+hit	normcache.h	/^  int hit;$/;"	m	class:normcache
+hits	ngramcache.h	/^  int hits;$/;"	m	class:ngramcache
+houtfname	cplsa.h	/^  char *houtfname;$/;"	m	class:plsa
+ht	ngramcache.h	/^  htable<int*>* ht;$/;"	m	class:ngramcache
+htable	htable.h	/^class htable$/;"	c
+htable	htable.h	/^htable<T>::htable(int n,int kl){$/;"	f	class:htable
+htable::accesses	htable.h	/^  long   accesses;            \/\/!< # of accesses$/;"	m	class:htable
+htable::collisions	htable.h	/^  long collisions;            \/\/!< # of collisions$/;"	m	class:htable
+htable::find	htable.h	/^T htable<T>::find(T key){$/;"	f	class:htable
+htable::htable	htable.h	/^htable<T>::htable(int n,int kl){$/;"	f	class:htable
+htable::insert	htable.h	/^T htable<T>::insert(T key){$/;"	f	class:htable
+htable::keylen	htable.h	/^  int      keylen;            \/\/!< key length$/;"	m	class:htable
+htable::keys	htable.h	/^  long       keys;            \/\/!< # of entries $/;"	m	class:htable
+htable::map	htable.h	/^void htable<T>::map(ostream& co,int cols){$/;"	f	class:htable
+htable::memory	htable.h	/^  mempool  *memory;           \/\/!<  memory pool$/;"	m	class:htable
+htable::scan	htable.h	/^T htable<T>::scan(HT_ACTION action){$/;"	f	class:htable
+htable::scan_i	htable.h	/^  int      scan_i;            \/\/!< scan support $/;"	m	class:htable
+htable::scan_p	htable.h	/^  entry<T>   *scan_p;            \/\/!< scan support $/;"	m	class:htable
+htable::size	htable.h	/^  int        size;            \/\/!< table size$/;"	m	class:htable
+htable::stat	htable.h	/^void htable<T>::stat(){$/;"	f	class:htable
+htable::table	htable.h	/^  entry<T>   **table;            \/\/!< hash table  $/;"	m	class:htable
+htable::used	htable.h	/^  int used(){ return size * sizeof(entry<T> **) + memory->used(); }$/;"	f	class:htable
+htable::~htable	htable.h	/^htable<T>::~htable(){$/;"	f	class:htable
+htb	dictionary.h	/^  HASHTABLE_t  *htb;  \/\/!< hash table$/;"	m	class:dictionary
+idx	mempool.h	/^  int    idx;    \/\/!< index of last stored string$/;"	m	class:strstack
+idx	ngramtable.h	/^  int              idx[MAX_NGRAM+1];$/;"	m	class:ngramtable
+ifl	dictionary.h	/^  char       ifl;  \/\/!< increment flag$/;"	m	class:dictionary
+incflag	dictionary.h	/^  inline int incflag(){return ifl;}$/;"	f	class:dictionary
+incflag	dictionary.h	/^  inline int incflag(int v){return ifl=v;}$/;"	f	class:dictionary
+incfreq	dictionary.h	/^  inline long long incfreq(int code,long long value){N+=value;return tb[code].freq+=value;}$/;"	f	class:dictionary
+index	index.h	/^inline const char *index(const char *str, char search)$/;"	f
+info	lmtable.h	/^  char           info[100]; \/\/information put in the header$/;"	m	class:lmtable
+info	n_gram.h	/^	unsigned char info;    \/\/ ngram-tree info flags$/;"	m	class:ngram
+info	ngramtable.h	/^  char       info[100]; \/\/information put in the header$/;"	m	class:ngramtable
+infosize	ngramcache.h	/^  int infosize;$/;"	m	class:ngramcache
+init_probcache	lmtable.h	/^  void init_probcache() { init_prob_and_state_cache(); }; \/\/kept for back compatibility$/;"	f	class:lmtable
+init_statecache	lmtable.h	/^  void init_statecache() {}; \/\/kept for back compatibility$/;"	f	class:lmtable
+inodesize	ngramtable.h	/^  int inodesize(int s){$/;"	f	class:tabletype
+inputfilestream	util.h	/^class inputfilestream : public std::istream$/;"	c
+inputfilestream::_good	util.h	/^  bool _good;$/;"	m	class:inputfilestream
+inputfilestream::good	util.h	/^  bool good(){return _good;}$/;"	f	class:inputfilestream
+inputfilestream::m_streambuf	util.h	/^	std::streambuf *m_streambuf;$/;"	m	class:inputfilestream
+insert	htable.h	/^T htable<T>::insert(T key){$/;"	f	class:htable
+interplm	interplm.h	/^class interplm:public ngramtable{$/;"	c
+interplm::adapt	interplm.h	/^	virtual void adapt(char* \/* unused parameter: ngtfile *\/, double \/* unused parameter:  w *\/){}$/;"	f	class:interplm
+interplm::backoff	interplm.h	/^	int backoff; \/\/0 interpolation, 1 Back-off  $/;"	m	class:interplm
+interplm::boprob	interplm.h	/^	virtual double boprob(ngram \/* unused parameter: ng *\/,int \/* unused parameter: size *\/){return 0.0;}$/;"	f	class:interplm
+interplm::discount	interplm.h	/^	virtual int discount(ngram \/* unused parameter: ng *\/,int \/* unused parameter: size *\/,double& \/* unused parameter: fstar *\/ ,double& \/* unused parameter: lambda *\/,int \/* unused parameter: cv*\/=0){ return 0;}$/;"	f	class:interplm
+interplm::dub	interplm.h	/^	virtual int dub(){return dict->dub();}$/;"	f	class:interplm
+interplm::dub	interplm.h	/^	virtual int dub(int value){ return (dict->dub(value)); }$/;"	f	class:interplm
+interplm::epsilon	interplm.h	/^	double epsilon; \/\/Bayes smoothing$/;"	m	class:interplm
+interplm::lms	interplm.h	/^	int lms;$/;"	m	class:interplm
+interplm::lmsize	interplm.h	/^	inline int lmsize(){return lms;}$/;"	f	class:interplm
+interplm::lmstat	interplm.h	/^	void lmstat(int level){stat(level);}$/;"	f	class:interplm
+interplm::netsize	interplm.h	/^	virtual int netsize(){return 0;}$/;"	f	class:interplm
+interplm::obswrd	interplm.h	/^	inline int obswrd(){return dict->size();}$/;"	f	class:interplm
+interplm::prob	interplm.h	/^	virtual double prob(ngram \/* unused parameter: ng *\/,int \/* unused parameter: size *\/){return 0.0;}$/;"	f	class:interplm
+interplm::prune_singletons	interplm.h	/^	int prune_singletons;$/;"	m	class:interplm
+interplm::prune_top_singletons	interplm.h	/^	int prune_top_singletons;$/;"	m	class:interplm
+interplm::prunesingletons	interplm.h	/^	int prunesingletons(int flag=-1){$/;"	f	class:interplm
+interplm::prunetopsingletons	interplm.h	/^	int prunetopsingletons(int flag=-1){$/;"	f	class:interplm
+interplm::savebin	interplm.h	/^	virtual int savebin(char* \/* unused parameter: filename *\/,int \/* unused parameter: lmsize=2 *\/){ return 0; }$/;"	f	class:interplm
+interplm::setepsilon	interplm.h	/^	double setepsilon(double v=1.0){return epsilon=v;}$/;"	f	class:interplm
+interplm::setusmooth	interplm.h	/^	int setusmooth(int v=0){return unismooth=v;}$/;"	f	class:interplm
+interplm::train	interplm.h	/^	virtual int train(){return 0;}$/;"	f	class:interplm
+interplm::unismooth	interplm.h	/^	int unismooth; \/\/0 Bayes, 1 Witten Bell$/;"	m	class:interplm
+interplm::unitbl	interplm.h	/^	ngramtable *unitbl;$/;"	m	class:interplm
+interplm::~interplm	interplm.h	/^	virtual ~interplm(){}$/;"	f	class:interplm
+ipfname	mixture.h	/^  char *ipfname;$/;"	m	class:mixture
+isInverted	lmtable.h	/^  bool      isInverted;$/;"	m	class:lmtable
+isItable	lmtable.h	/^  bool      isItable;$/;"	m	class:lmtable
+isOrderQuery	lmtable.h	/^  inline bool isOrderQuery() const { return orderQuery; }$/;"	f	class:lmtable
+isPruned	lmtable.h	/^  bool      isPruned; $/;"	m	class:lmtable
+isQtable	lmtable.h	/^  bool      isQtable;$/;"	m	class:lmtable
+isQuantized	lmtable.h	/^  bool isQuantized() const {return isQtable;}$/;"	f	class:lmtable
+is_inverted	lmtable.h	/^  bool is_inverted(){return isInverted;}$/;"	f	class:lmtable
+is_inverted	lmtable.h	/^  bool is_inverted(const bool flag){return isInverted=flag;}$/;"	f	class:lmtable
+is_probcache_active	lmtable.h	/^  bool is_probcache_active() { return are_prob_and_state_cache_active(); }; \/\/kept for back compatibility$/;"	f	class:lmtable
+is_statecache_active	lmtable.h	/^  bool is_statecache_active(){ return are_prob_and_state_cache_active(); }; \/\/kept for back compatibility$/;"	f	class:lmtable
+isfull	ngramcache.h	/^  int isfull(){return (entries >= maxn);}$/;"	f	class:ngramcache
+isprintable	dictionary.h	/^  int isprintable(char* w){$/;"	f	class:dictionary
+isym	n_gram.h	/^	int  isym;             \/\/ last interruption symbol$/;"	m	class:ngram
+item_size	mempool.h	/^  int         item_size;          \/\/!< number of bytes per entry$/;"	m	class:mempool
+k1	mixture.h	/^  int k1,k2; \/\/two thresholds$/;"	m	class:mixture
+k2	mixture.h	/^  int k1,k2; \/\/two thresholds$/;"	m	class:mixture
+key	htable.h	/^  T                 key;$/;"	m	struct:entry
+keylen	htable.h	/^  int      keylen;            \/\/!< key length$/;"	m	class:htable
+keys	htable.h	/^  long       keys;            \/\/!< # of entries $/;"	m	class:htable
+l	mixture.h	/^  double** l[MAX_NGRAM]; \/\/interpolation parameters$/;"	m	class:mixture
+lev	n_gram.h	/^	int    lev;            \/\/ ngram-tree level$/;"	m	class:ngram
+lexicaltoken2classMap	lmmacro.h	/^  int            *lexicaltoken2classMap;$/;"	m	class:lmmacro
+lexicaltoken2classMapN	lmmacro.h	/^  int             lexicaltoken2classMapN;$/;"	m	class:lmmacro
+lim	dictionary.h	/^  int        lim;  \/\/!< limit of entries$/;"	m	class:dictionary
+linearwb	linearlm.h	/^class linearwb: public mdiadaptlm{$/;"	c
+linearwb::minfreqthresh	linearlm.h	/^  int minfreqthresh;$/;"	m	class:linearwb
+linearwb::prunethresh	linearlm.h	/^  int prunethresh;$/;"	m	class:linearwb
+linearwb::~linearwb	linearlm.h	/^  ~linearwb(){}$/;"	f	class:linearwb
+link	n_gram.h	/^	char* link;            \/\/ ngram-tree pointer$/;"	m	class:ngram
+list	mempool.h	/^  memnode* list; \/\/!< list of memory blocks$/;"	m	class:strstack
+lmmacro	lmmacro.h	/^class lmmacro: public lmtable {$/;"	c
+lmmacro::collapsableMap	lmmacro.h	/^  bool           *collapsableMap;$/;"	m	class:lmmacro
+lmmacro::collapsatorMap	lmmacro.h	/^  bool           *collapsatorMap;$/;"	m	class:lmmacro
+lmmacro::collapseFlag	lmmacro.h	/^  bool            collapseFlag; \/\/flag for the presence of collapse$/;"	m	class:lmmacro
+lmmacro::dict	lmmacro.h	/^  dictionary     *dict;$/;"	m	class:lmmacro
+lmmacro::getDict	lmmacro.h	/^  inline dictionary* getDict() const { return dict; }$/;"	f	class:lmmacro
+lmmacro::lexicaltoken2classMap	lmmacro.h	/^  int            *lexicaltoken2classMap;$/;"	m	class:lmmacro
+lmmacro::lexicaltoken2classMapN	lmmacro.h	/^  int             lexicaltoken2classMapN;$/;"	m	class:lmmacro
+lmmacro::mapFlag	lmmacro.h	/^  bool            mapFlag; \/\/flag for the presence of map$/;"	m	class:lmmacro
+lmmacro::maxlev	lmmacro.h	/^  int             maxlev; \/\/max level of table$/;"	m	class:lmmacro
+lmmacro::maxlevel	lmmacro.h	/^  inline int maxlevel() const { return maxlev; };$/;"	f	class:lmmacro
+lmmacro::microMacroMap	lmmacro.h	/^  int            *microMacroMap;$/;"	m	class:lmmacro
+lmmacro::microMacroMapN	lmmacro.h	/^  int             microMacroMapN;$/;"	m	class:lmmacro
+lmmacro::selectedField	lmmacro.h	/^  int             selectedField;$/;"	m	class:lmmacro
+lmmacro::selectedFieldForLexicon	lmmacro.h	/^  int             selectedFieldForLexicon;$/;"	m	class:lmmacro
+lms	interplm.h	/^	int lms;$/;"	m	class:interplm
+lmsize	interplm.h	/^	inline int lmsize(){return lms;}$/;"	f	class:interplm
+lmstat	interplm.h	/^	void lmstat(int level){stat(level);}$/;"	f	class:interplm
+lmtable	lmtable.h	/^class lmtable{$/;"	c
+lmtable::Bcenters	lmtable.h	/^  float*    Bcenters[LMTMAXLEV+1];$/;"	m	class:lmtable
+lmtable::GetDictioanryLoadFactor	lmtable.h	/^  inline float GetDictioanryLoadFactor(){ return  ngramcache_load_factor; }$/;"	f	class:lmtable
+lmtable::GetNgramcacheLoadFactor	lmtable.h	/^  inline float GetNgramcacheLoadFactor(){ return  ngramcache_load_factor; }$/;"	f	class:lmtable
+lmtable::NumCenters	lmtable.h	/^  int       NumCenters[LMTMAXLEV+1];$/;"	m	class:lmtable
+lmtable::Pcenters	lmtable.h	/^  float*    Pcenters[LMTMAXLEV+1];$/;"	m	class:lmtable
+lmtable::backoff_state	lmtable.h	/^  int     backoff_state; $/;"	m	class:lmtable
+lmtable::bound	lmtable.h	/^    inline T bound(node nd,LMT_TYPE ndt, T value)$/;"	f	class:lmtable
+lmtable::bound	lmtable.h	/^  inline table_entry_pos_t bound(node nd,LMT_TYPE ndt)$/;"	f	class:lmtable
+lmtable::bow	lmtable.h	/^    inline T bow(node nd,LMT_TYPE ndt, T value)$/;"	f	class:lmtable
+lmtable::bow	lmtable.h	/^  inline float bow(node nd,LMT_TYPE ndt)$/;"	f	class:lmtable
+lmtable::cacheout	lmtable.h	/^  std::fstream* cacheout;$/;"	m	class:lmtable
+lmtable::check_probcache_levels	lmtable.h	/^  void check_probcache_levels(){ check_prob_and_state_cache_levels(); }; \/\/kept for back compatibility$/;"	f	class:lmtable
+lmtable::check_statecache_levels	lmtable.h	/^  void check_statecache_levels(){}; \/\/kept for back compatibility$/;"	f	class:lmtable
+lmtable::cursize	lmtable.h	/^  table_entry_pos_t       cursize[LMTMAXLEV+1];  \/\/current size of levels$/;"	m	class:lmtable
+lmtable::debug	lmtable.h	/^  static const bool debug=true;$/;"	m	class:lmtable
+lmtable::delete_probcache	lmtable.h	/^  void delete_probcache(){ delete_prob_and_state_cache(); }; \/\/kept for back compatibility$/;"	f	class:lmtable
+lmtable::delete_statecache	lmtable.h	/^  void delete_statecache(){}; \/\/kept for back compatibility$/;"	f	class:lmtable
+lmtable::dict	lmtable.h	/^  dictionary     *dict; \/\/ dictionary (words - macro tags)$/;"	m	class:lmtable
+lmtable::dictionary_load_factor	lmtable.h	/^  float dictionary_load_factor;$/;"	m	class:lmtable
+lmtable::dictionary_upperbound	lmtable.h	/^  int     dictionary_upperbound; \/\/set by user$/;"	m	class:lmtable
+lmtable::diskid	lmtable.h	/^  int diskid;$/;"	m	class:lmtable
+lmtable::filter	lmtable.h	/^  void filter(const char* \/* unused parameter: lmfile *\/){};$/;"	f	class:lmtable
+lmtable::get	lmtable.h	/^  inline int get(ngram& ng){ return get(ng,ng.size,ng.size); }$/;"	f	class:lmtable
+lmtable::getDict	lmtable.h	/^  virtual inline dictionary* getDict() const { return dict; };$/;"	f	class:lmtable
+lmtable::getlogOOVpenalty	lmtable.h	/^  double getlogOOVpenalty() const { return logOOVpenalty; }$/;"	f	class:lmtable
+lmtable::getmem	lmtable.h	/^    inline void getmem(char* ptr,T* value,int offs){$/;"	f	class:lmtable
+lmtable::getmem	lmtable.h	/^  inline void getmem(char* ptr,int* value,int offs,int size){$/;"	f	class:lmtable
+lmtable::info	lmtable.h	/^  char           info[100]; \/\/information put in the header$/;"	m	class:lmtable
+lmtable::init_probcache	lmtable.h	/^  void init_probcache() { init_prob_and_state_cache(); }; \/\/kept for back compatibility$/;"	f	class:lmtable
+lmtable::init_statecache	lmtable.h	/^  void init_statecache() {}; \/\/kept for back compatibility$/;"	f	class:lmtable
+lmtable::isInverted	lmtable.h	/^  bool      isInverted;$/;"	m	class:lmtable
+lmtable::isItable	lmtable.h	/^  bool      isItable;$/;"	m	class:lmtable
+lmtable::isOrderQuery	lmtable.h	/^  inline bool isOrderQuery() const { return orderQuery; }$/;"	f	class:lmtable
+lmtable::isPruned	lmtable.h	/^  bool      isPruned; $/;"	m	class:lmtable
+lmtable::isQtable	lmtable.h	/^  bool      isQtable;$/;"	m	class:lmtable
+lmtable::isQuantized	lmtable.h	/^  bool isQuantized() const {return isQtable;}$/;"	f	class:lmtable
+lmtable::is_inverted	lmtable.h	/^  bool is_inverted(){return isInverted;}$/;"	f	class:lmtable
+lmtable::is_inverted	lmtable.h	/^  bool is_inverted(const bool flag){return isInverted=flag;}$/;"	f	class:lmtable
+lmtable::is_probcache_active	lmtable.h	/^  bool is_probcache_active() { return are_prob_and_state_cache_active(); }; \/\/kept for back compatibility$/;"	f	class:lmtable
+lmtable::is_statecache_active	lmtable.h	/^  bool is_statecache_active(){ return are_prob_and_state_cache_active(); }; \/\/kept for back compatibility$/;"	f	class:lmtable
+lmtable::lmtcache	lmtable.h	/^  NGRAMCACHE_t* lmtcache[LMTMAXLEV+1];$/;"	m	class:lmtable
+lmtable::logOOVpenalty	lmtable.h	/^  double  logOOVpenalty; \/\/penalty for OOV words (default 0)$/;"	m	class:lmtable
+lmtable::max_cache_lev	lmtable.h	/^  int max_cache_lev;$/;"	m	class:lmtable
+lmtable::maxlev	lmtable.h	/^  int               maxlev; \/\/max level of table$/;"	m	class:lmtable
+lmtable::maxlevel	lmtable.h	/^  virtual int maxlevel() const {return maxlev;};$/;"	f	class:lmtable
+lmtable::maxsize	lmtable.h	/^  table_entry_pos_t       maxsize[LMTMAXLEV+1];  \/\/max size of levels$/;"	m	class:lmtable
+lmtable::memmap	lmtable.h	/^  int memmap;  \/\/level from which n-grams are accessed via mmap$/;"	m	class:lmtable
+lmtable::ngramcache_load_factor	lmtable.h	/^  float ngramcache_load_factor;$/;"	m	class:lmtable
+lmtable::nodesize	lmtable.h	/^  int nodesize(LMT_TYPE ndt){$/;"	f	class:lmtable
+lmtable::orderQuery	lmtable.h	/^  bool      orderQuery;$/;"	m	class:lmtable
+lmtable::prob	lmtable.h	/^    inline float prob(node nd,LMT_TYPE \/* unused parameter: ndt *\/, T value)$/;"	f	class:lmtable
+lmtable::prob	lmtable.h	/^  inline float prob(node nd,LMT_TYPE ndt)$/;"	f	class:lmtable
+lmtable::prob_and_state_cache	lmtable.h	/^  NGRAMCACHE_t* prob_and_state_cache;$/;"	m	class:lmtable
+lmtable::putmem	lmtable.h	/^    inline void putmem(char* ptr,T value,int offs){$/;"	f	class:lmtable
+lmtable::putmem	lmtable.h	/^  inline void putmem(char* ptr,int value,int offs,int size){$/;"	f	class:lmtable
+lmtable::reset_probcache	lmtable.h	/^  void reset_probcache(){ reset_prob_and_state_cache(); }; \/\/kept for back compatibility$/;"	f	class:lmtable
+lmtable::reset_statecache	lmtable.h	/^  void reset_statecache(){}; \/\/kept for back compatibility$/;"	f	class:lmtable
+lmtable::sentence_id	lmtable.h	/^  int sentence_id;$/;"	m	class:lmtable
+lmtable::setDict	lmtable.h	/^  virtual inline void setDict(dictionary* d) { dict=d; };$/;"	f	class:lmtable
+lmtable::setOrderQuery	lmtable.h	/^  inline void setOrderQuery(bool v){ orderQuery = v; }	$/;"	f	class:lmtable
+lmtable::setlogOOVpenalty	lmtable.h	/^  double setlogOOVpenalty(int dub){ $/;"	f	class:lmtable
+lmtable::setlogOOVpenalty2	lmtable.h	/^  double setlogOOVpenalty2(double oovp){ $/;"	f	class:lmtable
+lmtable::startpos	lmtable.h	/^  table_entry_pos_t*     startpos[LMTMAXLEV+1];  \/\/support vector to store start positions$/;"	m	class:lmtable
+lmtable::table	lmtable.h	/^  char*       table[LMTMAXLEV+1];  \/\/storage of all levels$/;"	m	class:lmtable
+lmtable::tableGaps	lmtable.h	/^  off_t tableGaps[LMTMAXLEV+1];$/;"	m	class:lmtable
+lmtable::tableOffs	lmtable.h	/^  off_t tableOffs[LMTMAXLEV+1];$/;"	m	class:lmtable
+lmtable::tbltype	lmtable.h	/^  LMT_TYPE    tbltype[LMTMAXLEV+1];  \/\/table type for each levels$/;"	m	class:lmtable
+lmtable::totbsearch	lmtable.h	/^  int    totbsearch[LMTMAXLEV+1];$/;"	m	class:lmtable
+lmtable::totget	lmtable.h	/^  int    totget[LMTMAXLEV+1];$/;"	m	class:lmtable
+lmtable::word	lmtable.h	/^  inline int word(node nd,int value=-1)$/;"	f	class:lmtable
+lmtcache	lmtable.h	/^  NGRAMCACHE_t* lmtcache[LMTMAXLEV+1];$/;"	m	class:lmtable
+lnodesize	ngramtable.h	/^  int lnodesize(int s){$/;"	f	class:tabletype
+load_factor	dictionary.h	/^  float        load_factor; \/\/!< dictionary loading factor$/;"	m	class:dictionary
+load_factor	ngramcache.h	/^  float load_factor; \/\/!< ngramcache loading factor$/;"	m	class:ngramcache
+logOOVpenalty	lmtable.h	/^  double  logOOVpenalty; \/\/penalty for OOV words (default 0)$/;"	m	class:lmtable
+logpr	ngramcache.h	/^        double logpr;   \/\/!< probability value of an ngram$/;"	m	struct:PROB_AND_STATE_ENTRY
+m	doc.h	/^  int  m;      \/\/number of words in the current doc$/;"	m	class:doc
+m_dict	dictionary.h	/^  dictionary* m_dict;$/;"	m	class:dictionary_iter
+m_streambuf	util.h	/^	std::streambuf *m_streambuf;$/;"	m	class:inputfilestream
+map	htable.h	/^void htable<T>::map(ostream& co,int cols){$/;"	f	class:htable
+mapFlag	lmmacro.h	/^  bool            mapFlag; \/\/flag for the presence of map$/;"	m	class:lmmacro
+max_cache_lev	lmtable.h	/^  int max_cache_lev;$/;"	m	class:lmtable
+max_caching_level	mdiadapt.h	/^  int max_caching_level;$/;"	m	class:mdiadaptlm
+maxcache	normcache.h	/^  int maxcache[2];$/;"	m	class:normcache
+maxdocs	cplsa.h	/^  int maxdocs;     \/\/max number of docs$/;"	m	class:plsa
+maxlev	lmmacro.h	/^  int             maxlev; \/\/max level of table$/;"	m	class:lmmacro
+maxlev	lmtable.h	/^  int               maxlev; \/\/max level of table$/;"	m	class:lmtable
+maxlev	ngramtable.h	/^  int           maxlev; \/\/ max storable n-gram$/;"	m	class:ngramtable
+maxlevel	lmmacro.h	/^  inline int maxlevel() const { return maxlev; };$/;"	f	class:lmmacro
+maxlevel	lmtable.h	/^  virtual int maxlevel() const {return maxlev;};$/;"	f	class:lmtable
+maxlevel	ngramtable.h	/^  int maxlevel(){return maxlev;}$/;"	f	class:ngramtable
+maxn	ngramcache.h	/^  int maxn;$/;"	m	class:ngramcache
+maxsize	lmtable.h	/^  table_entry_pos_t       maxsize[LMTMAXLEV+1];  \/\/max size of levels$/;"	m	class:lmtable
+maxsize	ngramcache.h	/^  int maxsize(){return maxn;}$/;"	f	class:ngramcache
+mdiadaptlm	mdiadapt.h	/^class mdiadaptlm:public interplm{$/;"	c
+mdiadaptlm::adaptlev	mdiadapt.h	/^  int adaptlev;$/;"	m	class:mdiadaptlm
+mdiadaptlm::backoffcache	mdiadapt.h	/^  NGRAMCACHE_t** backoffcache; $/;"	m	class:mdiadaptlm
+mdiadaptlm::cache	mdiadapt.h	/^  normcache *cache;$/;"	m	class:mdiadaptlm
+mdiadaptlm::forelm	mdiadapt.h	/^  interplm* forelm;$/;"	m	class:mdiadaptlm
+mdiadaptlm::get_zetacache	mdiadapt.h	/^  inline normcache* get_zetacache(){ return cache; }$/;"	f	class:mdiadaptlm
+mdiadaptlm::gis_step	mdiadapt.h	/^  double gis_step;$/;"	m	class:mdiadaptlm
+mdiadaptlm::max_caching_level	mdiadapt.h	/^  int max_caching_level;$/;"	m	class:mdiadaptlm
+mdiadaptlm::myround	mdiadapt.h	/^  double myround(double x){$/;"	f	class:mdiadaptlm
+mdiadaptlm::oovscaling	mdiadapt.h	/^  double oovscaling;$/;"	m	class:mdiadaptlm
+mdiadaptlm::probcache	mdiadapt.h	/^  NGRAMCACHE_t** probcache;$/;"	m	class:mdiadaptlm
+mdiadaptlm::zeta0	mdiadapt.h	/^  double zeta0;$/;"	m	class:mdiadaptlm
+mem	ngramtable.h	/^  storage*         mem; \/\/memory storage class$/;"	m	class:ngramtable
+memmap	lmtable.h	/^  int memmap;  \/\/level from which n-grams are accessed via mmap$/;"	m	class:lmtable
+memnode	mempool.h	/^class memnode{$/;"	c
+memnode::block	mempool.h	/^  char          *block;   \/\/!< block of memory$/;"	m	class:memnode
+memnode::next	mempool.h	/^  memnode        *next;   \/\/!< next block ptr    $/;"	m	class:memnode
+memory	htable.h	/^  mempool  *memory;           \/\/!<  memory pool$/;"	m	class:htable
+memory	mempool.h	/^  int memory;    \/\/!< current use of memory$/;"	m	class:strstack
+memory	ngramtable.h	/^  int*          memory; \/\/ memory load per level$/;"	m	class:ngramtable
+mempool	mempool.h	/^class mempool{$/;"	c
+mempool::block_list	mempool.h	/^  memnode*   block_list;          \/\/!< list of blocks$/;"	m	class:mempool
+mempool::block_size	mempool.h	/^  int         block_size;         \/\/!< number of entries per block$/;"	m	class:mempool
+mempool::blocknum	mempool.h	/^  int         blocknum;           \/\/!< number of allocated blocks  $/;"	m	class:mempool
+mempool::entries	mempool.h	/^  int         entries;            \/\/!< number of stored entries  $/;"	m	class:mempool
+mempool::free_list	mempool.h	/^  char*       free_list;          \/\/!< free entry list$/;"	m	class:mempool
+mempool::item_size	mempool.h	/^  int         item_size;          \/\/!< number of bytes per entry$/;"	m	class:mempool
+mempool::true_size	mempool.h	/^  int         true_size;          \/\/!< number of bytes per block$/;"	m	class:mempool
+mempool::used	mempool.h	/^  int used(){return blocknum * (true_size + 8);} $/;"	f	class:mempool
+mempool::wasted	mempool.h	/^  int wasted(){return used()-(entries * item_size);}$/;"	f	class:mempool
+mentr	ngramtable.h	/^  long long*     mentr; \/\/ multiple entries per level$/;"	m	class:ngramtable
+mfreq	shiftlm.h	/^  int mfreq(ngram& ng,int l){return (l<lmsize()?getfreq(ng.link,ng.pinfo,1):ng.freq);}$/;"	f	class:mshiftbeta
+mfstream	mfstream.h	/^  mfstream (const char* name,openmode mode) : std::fstream() {$/;"	f	class:mfstream
+mfstream	mfstream.h	/^class mfstream : public std::fstream{$/;"	c
+mfstream::_FILE	mfstream.h	/^  FILE* _FILE;$/;"	m	class:mfstream
+mfstream::_cmd	mfstream.h	/^  int _cmd;$/;"	m	class:mfstream
+mfstream::_cmdname	mfstream.h	/^  char _cmdname[500];$/;"	m	class:mfstream
+mfstream::_mode	mfstream.h	/^  openmode _mode;$/;"	m	class:mfstream
+mfstream::buf	mfstream.h	/^  fdbuf* buf;$/;"	m	class:mfstream
+mfstream::mfstream	mfstream.h	/^  mfstream (const char* name,openmode mode) : std::fstream() {$/;"	f	class:mfstream
+mfstream::reopen	mfstream.h	/^  mfstream& reopen(){$/;"	f	class:mfstream
+mfstream::seekp	mfstream.h	/^  mfstream& seekp(streampos loc){$/;"	f	class:mfstream
+mfstream::tellp	mfstream.h	/^  streampos tellp(){$/;"	f	class:mfstream
+mfstream::~mfstream	mfstream.h	/^  ~mfstream(){$/;"	f	class:mfstream
+microMacroMap	lmmacro.h	/^  int            *microMacroMap;$/;"	m	class:lmmacro
+microMacroMapN	lmmacro.h	/^  int             microMacroMapN;$/;"	m	class:lmmacro
+midx	n_gram.h	/^	int  midx[MAX_NGRAM];  \/\/ ngram-tree scan pointer$/;"	m	class:ngram
+minfreqthresh	linearlm.h	/^  int minfreqthresh;$/;"	m	class:linearwb
+miss	normcache.h	/^  int miss;$/;"	m	class:normcache
+mixture	mixture.h	/^class mixture: public mdiadaptlm{$/;"	c
+mixture::dub	mixture.h	/^  inline int dub(){return dict->dub();}$/;"	f	class:mixture
+mixture::dub	mixture.h	/^  inline int dub(int value){$/;"	f	class:mixture
+mixture::ipfname	mixture.h	/^  char *ipfname;$/;"	m	class:mixture
+mixture::k1	mixture.h	/^  int k1,k2; \/\/two thresholds$/;"	m	class:mixture
+mixture::k2	mixture.h	/^  int k1,k2; \/\/two thresholds$/;"	m	class:mixture
+mixture::l	mixture.h	/^  double** l[MAX_NGRAM]; \/\/interpolation parameters$/;"	m	class:mixture
+mixture::numslm	mixture.h	/^  int  numslm;$/;"	m	class:mixture
+mixture::opfname	mixture.h	/^  char *opfname;$/;"	m	class:mixture
+mixture::pm	mixture.h	/^  int* pm; \/\/parameter mappings$/;"	m	class:mixture
+mixture::pmax	mixture.h	/^  int  pmax; \/\/#parameters $/;"	m	class:mixture
+mixture::prunethresh	mixture.h	/^  int prunethresh;$/;"	m	class:mixture
+mixture::settying	mixture.h	/^  void settying(int a,int b){k1=a;k2=b;}$/;"	f	class:mixture
+mixture::sublm	mixture.h	/^  interplm** sublm;$/;"	m	class:mixture
+mixture::~mixture	mixture.h	/^  ~mixture(){}$/;"	f	class:mixture
+mp	ngramcache.h	/^  mempool *mp;$/;"	m	class:ngramcache
+mshiftbeta	shiftlm.h	/^class mshiftbeta: public mdiadaptlm{$/;"	c
+mshiftbeta::beta	shiftlm.h	/^  double beta[3][MAX_NGRAM];$/;"	m	class:mshiftbeta
+mshiftbeta::mfreq	shiftlm.h	/^  int mfreq(ngram& ng,int l){return (l<lmsize()?getfreq(ng.link,ng.pinfo,1):ng.freq);}$/;"	f	class:mshiftbeta
+mshiftbeta::oovsum	shiftlm.h	/^  double oovsum;$/;"	m	class:mshiftbeta
+mshiftbeta::prunethresh	shiftlm.h	/^  int prunethresh;$/;"	m	class:mshiftbeta
+mshiftbeta::tb	shiftlm.h	/^  ngramtable* tb[MAX_NGRAM];$/;"	m	class:mshiftbeta
+mshiftbeta::~mshiftbeta	shiftlm.h	/^  ~mshiftbeta(){}$/;"	f	class:mshiftbeta
+msucc	ngramtable.h	/^  int msucc(node nd)$/;"	f	class:ngramtable
+msucc	ngramtable.h	/^  int msucc(node nd,int value)$/;"	f	class:ngramtable
+mtable	ngramtable.h	/^  table mtable(node nd)$/;"	f	class:ngramtable
+mtable	ngramtable.h	/^  table mtable(node nd,table value)$/;"	f	class:ngramtable
+mtablesz	ngramtable.h	/^  int mtablesz(node nd)$/;"	f	class:ngramtable
+mtflags	ngramtable.h	/^  unsigned char mtflags(node nd){$/;"	f	class:ngramtable
+mtflags	ngramtable.h	/^  unsigned char mtflags(node nd,unsigned char value){$/;"	f	class:ngramtable
+multfreq	dictionary.h	/^  inline long long multfreq(int code,double value){$/;"	f	class:dictionary
+myround	mdiadapt.h	/^  double myround(double x){$/;"	f	class:mdiadaptlm
+myround	ngramtable.h	/^  double myround(double x){$/;"	f	class:ngramtable
+n	dictionary.h	/^  int          n;  \/\/!< number of entries$/;"	m	class:dictionary
+n	doc.h	/^  int  n;      \/\/number of docs $/;"	m	class:doc
+netsize	interplm.h	/^	virtual int netsize(){return 0;}$/;"	f	class:interplm
+newcalls	mempool.h	/^  int newcalls;       \/\/!< stores number of allocated blocks$/;"	m	class:storage
+newmemory	mempool.h	/^  int newmemory;      \/\/!< stores amount of used memory$/;"	m	class:storage
+next	htable.h	/^  entry*           next;  \/\/ secret from user$/;"	m	struct:entry
+next	mempool.h	/^  memnode        *next;   \/\/!< next block ptr    $/;"	m	class:memnode
+ng2tbcpy	ngramtable.h	/^  inline void ng2tbcpy(char* tablep,int* wordp,int n=1){$/;"	f	class:ngramtable
+ngram	n_gram.h	/^class ngram{$/;"	c
+ngram::bow	n_gram.h	/^	float   bow;           \/\/ back-off weight $/;"	m	class:ngram
+ngram::ckhisto	n_gram.h	/^	inline int ckhisto(int sz){$/;"	f	class:ngram
+ngram::containsWord	n_gram.h	/^	int containsWord(const char* s,int lev){$/;"	f	class:ngram
+ngram::dict	n_gram.h	/^	dictionary *dict;      \/\/dictionary$/;"	m	class:ngram
+ngram::freq	n_gram.h	/^	long long   freq;      \/\/ ngram frequency or integer prob$/;"	m	class:ngram
+ngram::info	n_gram.h	/^	unsigned char info;    \/\/ ngram-tree info flags$/;"	m	class:ngram
+ngram::isym	n_gram.h	/^	int  isym;             \/\/ last interruption symbol$/;"	m	class:ngram
+ngram::lev	n_gram.h	/^	int    lev;            \/\/ ngram-tree level$/;"	m	class:ngram
+ngram::link	n_gram.h	/^	char* link;            \/\/ ngram-tree pointer$/;"	m	class:ngram
+ngram::midx	n_gram.h	/^	int  midx[MAX_NGRAM];  \/\/ ngram-tree scan pointer$/;"	m	class:ngram
+ngram::operator !=	n_gram.h	/^	inline bool operator!=(const ngram &compare) const$/;"	f	class:ngram
+ngram::operator ==	n_gram.h	/^	inline bool operator==(const ngram &compare) const$/;"	f	class:ngram
+ngram::path	n_gram.h	/^	char* path[MAX_NGRAM]; \/\/path in the ngram-tree$/;"	m	class:ngram
+ngram::pinfo	n_gram.h	/^	unsigned char pinfo;   \/\/ ngram-tree parent info flags$/;"	m	class:ngram
+ngram::prob	n_gram.h	/^	float   prob;          \/\/ probability$/;"	m	class:ngram
+ngram::size	n_gram.h	/^	int   size;            \/\/ ngram size$/;"	m	class:ngram
+ngram::succ	n_gram.h	/^	int   succ;            \/\/ number of successors$/;"	m	class:ngram
+ngram::succlink	n_gram.h	/^	char* succlink;        \/\/ pointer to the first successor$/;"	m	class:ngram
+ngram::word	n_gram.h	/^	int  word[MAX_NGRAM];  \/\/encoded ngram$/;"	m	class:ngram
+ngram::wordp	n_gram.h	/^	const int *wordp() const \/\/ n-gram pointer$/;"	f	class:ngram
+ngram::wordp	n_gram.h	/^	const int *wordp(int k) const \/\/ n-gram pointer$/;"	f	class:ngram
+ngram::wordp	n_gram.h	/^	int *wordp()\/\/ n-gram pointer$/;"	f	class:ngram
+ngram::wordp	n_gram.h	/^	int *wordp(int k) \/\/ n-gram pointer$/;"	f	class:ngram
+ngramcache	ngramcache.h	/^class ngramcache{$/;"	c
+ngramcache::accesses	ngramcache.h	/^  int accesses;$/;"	m	class:ngramcache
+ngramcache::cursize	ngramcache.h	/^  int cursize(){return entries;}$/;"	f	class:ngramcache
+ngramcache::debug	ngramcache.h	/^  static const bool debug=true;$/;"	m	class:ngramcache
+ngramcache::entries	ngramcache.h	/^  int entries;$/;"	m	class:ngramcache
+ngramcache::hits	ngramcache.h	/^  int hits;$/;"	m	class:ngramcache
+ngramcache::ht	ngramcache.h	/^  htable<int*>* ht;$/;"	m	class:ngramcache
+ngramcache::infosize	ngramcache.h	/^  int infosize;$/;"	m	class:ngramcache
+ngramcache::isfull	ngramcache.h	/^  int isfull(){return (entries >= maxn);}$/;"	f	class:ngramcache
+ngramcache::load_factor	ngramcache.h	/^  float load_factor; \/\/!< ngramcache loading factor$/;"	m	class:ngramcache
+ngramcache::maxn	ngramcache.h	/^  int maxn;$/;"	m	class:ngramcache
+ngramcache::maxsize	ngramcache.h	/^  int maxsize(){return maxn;}$/;"	f	class:ngramcache
+ngramcache::mp	ngramcache.h	/^  mempool *mp;$/;"	m	class:ngramcache
+ngramcache::ngsize	ngramcache.h	/^  int ngsize;$/;"	m	class:ngramcache
+ngramcache::set_load_factor	ngramcache.h	/^  inline float set_load_factor(float value){ return load_factor=value; }$/;"	f	class:ngramcache
+ngramcache::used	ngramcache.h	/^  inline void used(){ stat(); };$/;"	f	class:ngramcache
+ngramcache_load_factor	lmtable.h	/^  float ngramcache_load_factor;$/;"	m	class:lmtable
+ngramtable	ngramtable.h	/^class ngramtable:tabletype{$/;"	c
+ngramtable::backoff_state	ngramtable.h	/^  int             backoff_state; \/\/used by prob;$/;"	m	class:ngramtable
+ngramtable::bo_code	ngramtable.h	/^  int           oov_code,oov_size,du_code, bo_code; \/\/used by prob;$/;"	m	class:ngramtable
+ngramtable::bo_state	ngramtable.h	/^  int bo_state(int value=-1){$/;"	f	class:ngramtable
+ngramtable::boff	ngramtable.h	/^  double boff(node nd)$/;"	f	class:ngramtable
+ngramtable::boff	ngramtable.h	/^  int boff(node nd,double value)$/;"	f	class:ngramtable
+ngramtable::btotfreq	ngramtable.h	/^  inline long long btotfreq(long long v=-1){$/;"	f	class:ngramtable
+ngramtable::card	ngramtable.h	/^  long long       card; \/\/entries at maxlev$/;"	m	class:ngramtable
+ngramtable::corrcounts	ngramtable.h	/^  int         corrcounts; \/\/corrected counters flag$/;"	m	class:ngramtable
+ngramtable::decay	ngramtable.h	/^  double         decay; \/\/decay constant $/;"	m	class:ngramtable
+ngramtable::dict	ngramtable.h	/^  dictionary     *dict; \/\/ dictionary$/;"	m	class:ngramtable
+ngramtable::du_code	ngramtable.h	/^  int           oov_code,oov_size,du_code, bo_code; \/\/used by prob;$/;"	m	class:ngramtable
+ngramtable::entries	ngramtable.h	/^  inline long long entries(int lev){$/;"	f	class:ngramtable
+ngramtable::filterdict	ngramtable.h	/^  dictionary     *filterdict;$/;"	m	class:ngramtable
+ngramtable::freq	ngramtable.h	/^  long long freq(node nd,NODETYPE ndt)$/;"	f	class:ngramtable
+ngramtable::freq	ngramtable.h	/^  long long freq(node nd,NODETYPE ndt,long long value)$/;"	f	class:ngramtable
+ngramtable::get	ngramtable.h	/^  inline int get(ngram& ng){ return get(ng,maxlev,maxlev); }$/;"	f	class:ngramtable
+ngramtable::getfreq	ngramtable.h	/^  long long getfreq(node nd,NODETYPE ndt,int index=0)$/;"	f	class:ngramtable
+ngramtable::getmem	ngramtable.h	/^  inline int getmem(char* ptr,int* value,int offs,int size){$/;"	f	class:ngramtable
+ngramtable::getmem	ngramtable.h	/^  inline long getmem(char* ptr,long long* value,int offs,int size){$/;"	f	class:ngramtable
+ngramtable::idx	ngramtable.h	/^  int              idx[MAX_NGRAM+1];$/;"	m	class:ngramtable
+ngramtable::info	ngramtable.h	/^  char       info[100]; \/\/information put in the header$/;"	m	class:ngramtable
+ngramtable::maxlev	ngramtable.h	/^  int           maxlev; \/\/ max storable n-gram$/;"	m	class:ngramtable
+ngramtable::maxlevel	ngramtable.h	/^  int maxlevel(){return maxlev;}$/;"	f	class:ngramtable
+ngramtable::mem	ngramtable.h	/^  storage*         mem; \/\/memory storage class$/;"	m	class:ngramtable
+ngramtable::memory	ngramtable.h	/^  int*          memory; \/\/ memory load per level$/;"	m	class:ngramtable
+ngramtable::mentr	ngramtable.h	/^  long long*     mentr; \/\/ multiple entries per level$/;"	m	class:ngramtable
+ngramtable::msucc	ngramtable.h	/^  int msucc(node nd)$/;"	f	class:ngramtable
+ngramtable::msucc	ngramtable.h	/^  int msucc(node nd,int value)$/;"	f	class:ngramtable
+ngramtable::mtable	ngramtable.h	/^  table mtable(node nd)$/;"	f	class:ngramtable
+ngramtable::mtable	ngramtable.h	/^  table mtable(node nd,table value)$/;"	f	class:ngramtable
+ngramtable::mtablesz	ngramtable.h	/^  int mtablesz(node nd)$/;"	f	class:ngramtable
+ngramtable::mtflags	ngramtable.h	/^  unsigned char mtflags(node nd){$/;"	f	class:ngramtable
+ngramtable::mtflags	ngramtable.h	/^  unsigned char mtflags(node nd,unsigned char value){$/;"	f	class:ngramtable
+ngramtable::myround	ngramtable.h	/^  double myround(double x){$/;"	f	class:ngramtable
+ngramtable::ng2tbcpy	ngramtable.h	/^  inline void ng2tbcpy(char* tablep,int* wordp,int n=1){$/;"	f	class:ngramtable
+ngramtable::ngtbcmp	ngramtable.h	/^  inline int ngtbcmp(int* wordp,char* tablep,int n=1){$/;"	f	class:ngramtable
+ngramtable::ngtype	ngramtable.h	/^	inline char* ngtype(char *str=NULL){if (str!=NULL) strcpy(info,str);return info;}$/;"	f	class:ngramtable
+ngramtable::occupancy	ngramtable.h	/^  int*       occupancy; \/\/ memory occupied per level$/;"	m	class:ngramtable
+ngramtable::oov_code	ngramtable.h	/^  int           oov_code,oov_size,du_code, bo_code; \/\/used by prob;$/;"	m	class:ngramtable
+ngramtable::oov_size	ngramtable.h	/^  int           oov_code,oov_size,du_code, bo_code; \/\/used by prob;$/;"	m	class:ngramtable
+ngramtable::putmem	ngramtable.h	/^  inline int putmem(char* ptr,int value,int offs,int size){$/;"	f	class:ngramtable
+ngramtable::putmem	ngramtable.h	/^  inline long putmem(char* ptr,long long value,int offs,int size){$/;"	f	class:ngramtable
+ngramtable::resolution	ngramtable.h	/^  int       resolution; \/\/max resolution for probabilities$/;"	m	class:ngramtable
+ngramtable::scan	ngramtable.h	/^  int scan(ngram& ng,ACTION action=CONT,int maxlev=-1){$/;"	f	class:ngramtable
+ngramtable::setfreq	ngramtable.h	/^  long long setfreq(node nd,NODETYPE ndt,long long value,int index=0)$/;"	f	class:ngramtable
+ngramtable::succ1	ngramtable.h	/^  int succ1(node nd)$/;"	f	class:ngramtable
+ngramtable::succ1	ngramtable.h	/^  int succ1(node nd,int value)$/;"	f	class:ngramtable
+ngramtable::succ2	ngramtable.h	/^  int succ2(node nd)$/;"	f	class:ngramtable
+ngramtable::succ2	ngramtable.h	/^  int succ2(node nd,int value)$/;"	f	class:ngramtable
+ngramtable::succscan	ngramtable.h	/^  int succscan(ngram& h,ngram& ng,ACTION action,int lev){$/;"	f	class:ngramtable
+ngramtable::tb2ngcpy	ngramtable.h	/^  inline void tb2ngcpy(int* wordp,char* tablep,int n=1){$/;"	f	class:ngramtable
+ngramtable::totfreq	ngramtable.h	/^  inline long long totfreq(long long v=-1){$/;"	f	class:ngramtable
+ngramtable::tree	ngramtable.h	/^  node            tree; \/\/ ngram table root$/;"	m	class:ngramtable
+ngramtable::treeflags	ngramtable.h	/^  NODETYPE   treeflags;$/;"	m	class:ngramtable
+ngramtable::update	ngramtable.h	/^  int update(ngram ng){$/;"	f	class:ngramtable
+ngramtable::word	ngramtable.h	/^  inline int word(node nd)$/;"	f	class:ngramtable
+ngramtable::word	ngramtable.h	/^  inline int word(node nd,int value)$/;"	f	class:ngramtable
+ngsize	ngramcache.h	/^  int ngsize;$/;"	m	class:ngramcache
+ngt	normcache.h	/^  ngramtable *ngt;$/;"	m	class:normcache
+ngtbcmp	ngramtable.h	/^  inline int ngtbcmp(int* wordp,char* tablep,int n=1){$/;"	f	class:ngramtable
+ngtype	ngramtable.h	/^	inline char* ngtype(char *str=NULL){if (str!=NULL) strcpy(info,str);return info;}$/;"	f	class:ngramtable
+node	lmtable.h	/^typedef char* node;$/;"	t
+node	ngramtable.h	/^typedef char* node;  \/\/inodes, lnodes, snodes$/;"	t
+nodesize	lmtable.h	/^  int nodesize(LMT_TYPE ndt){$/;"	f	class:lmtable
+normcache	normcache.h	/^class normcache{$/;"	c
+normcache::cache	normcache.h	/^  double* cache[2];$/;"	m	class:normcache
+normcache::cachesize	normcache.h	/^  int cachesize[2];$/;"	m	class:normcache
+normcache::dict	normcache.h	/^  dictionary* dict;$/;"	m	class:normcache
+normcache::hit	normcache.h	/^  int hit;$/;"	m	class:normcache
+normcache::maxcache	normcache.h	/^  int maxcache[2];$/;"	m	class:normcache
+normcache::miss	normcache.h	/^  int miss;$/;"	m	class:normcache
+normcache::ngt	normcache.h	/^  ngramtable *ngt;$/;"	m	class:normcache
+normcache::~normcache	normcache.h	/^  ~normcache(){$/;"	f	class:normcache
+numslm	mixture.h	/^  int  numslm;$/;"	m	class:mixture
+obswrd	interplm.h	/^	inline int obswrd(){return dict->size();}$/;"	f	class:interplm
+occupancy	ngramtable.h	/^  int*       occupancy; \/\/ memory occupied per level$/;"	m	class:ngramtable
+oov_code	dictionary.h	/^  int   oov_code;  \/\/!< code assigned to oov words$/;"	m	class:dictionary
+oov_code	ngramtable.h	/^  int           oov_code,oov_size,du_code, bo_code; \/\/used by prob;$/;"	m	class:ngramtable
+oov_size	ngramtable.h	/^  int           oov_code,oov_size,du_code, bo_code; \/\/used by prob;$/;"	m	class:ngramtable
+oov_str	dictionary.h	/^  char* oov_str;    \/\/!< oov string$/;"	m	class:dictionary
+oovcode	dictionary.h	/^  inline int oovcode(int v=-1){return oov_code=(v>=0?v:oov_code);}$/;"	f	class:dictionary
+oovlex	dictionary.h	/^  dictionary* oovlex; \/\/<! additional dictionary $/;"	m	class:dictionary
+oovscaling	mdiadapt.h	/^  double oovscaling;$/;"	m	class:mdiadaptlm
+oovsum	shiftlm.h	/^  double oovsum;$/;"	m	class:mshiftbeta
+operator !=	n_gram.h	/^	inline bool operator!=(const ngram &compare) const$/;"	f	class:ngram
+operator ==	n_gram.h	/^	inline bool operator==(const ngram &compare) const$/;"	f	class:ngram
+opfname	mixture.h	/^  char *opfname;$/;"	m	class:mixture
+orderQuery	lmtable.h	/^  bool      orderQuery;$/;"	m	class:lmtable
+overflow	gzfilebuf.h	/^  virtual int_type overflow (int_type \/* unused parameter: c *\/) {$/;"	f	class:gzfilebuf
+overflow	mfstream.h	/^  virtual int_type overflow (int_type c) {$/;"	f	class:fdbuf
+p	cmd.h	/^		*p;$/;"	m	struct:__anon2
+path	n_gram.h	/^	char* path[MAX_NGRAM]; \/\/path in the ngram-tree$/;"	m	class:ngram
+pinfo	n_gram.h	/^	unsigned char pinfo;   \/\/ ngram-tree parent info flags$/;"	m	class:ngram
+plsa	cplsa.h	/^class plsa{$/;"	c
+plsa::H	cplsa.h	/^  float *H;$/;"	m	class:plsa
+plsa::T	cplsa.h	/^  float **T;$/;"	m	class:plsa
+plsa::W	cplsa.h	/^  float **W;$/;"	m	class:plsa
+plsa::basefname	cplsa.h	/^  char *basefname;$/;"	m	class:plsa
+plsa::dict	cplsa.h	/^  dictionary* dict;$/;"	m	class:plsa
+plsa::featfname	cplsa.h	/^  char *featfname;$/;"	m	class:plsa
+plsa::hinfname	cplsa.h	/^  char *hinfname;$/;"	m	class:plsa
+plsa::houtfname	cplsa.h	/^  char *houtfname;$/;"	m	class:plsa
+plsa::maxdocs	cplsa.h	/^  int maxdocs;     \/\/max number of docs$/;"	m	class:plsa
+plsa::tfname	cplsa.h	/^  char *tfname;$/;"	m	class:plsa
+plsa::topics	cplsa.h	/^  int topics;      \/\/number of topics$/;"	m	class:plsa
+plsa::wfname	cplsa.h	/^  char *wfname;$/;"	m	class:plsa
+plsa::~plsa	cplsa.h	/^  ~plsa(){$/;"	f	class:plsa
+pm	mixture.h	/^  int* pm; \/\/parameter mappings$/;"	m	class:mixture
+pmax	mixture.h	/^  int  pmax; \/\/#parameters $/;"	m	class:mixture
+poolset	mempool.h	/^  mempool **poolset;  \/\/!< array of memory pools$/;"	m	class:storage
+poolsize	mempool.h	/^  int poolsize;       \/\/!< size of each block$/;"	m	class:storage
+prob	interplm.h	/^	virtual double prob(ngram \/* unused parameter: ng *\/,int \/* unused parameter: size *\/){return 0.0;}$/;"	f	class:interplm
+prob	lmtable.h	/^    inline float prob(node nd,LMT_TYPE \/* unused parameter: ndt *\/, T value)$/;"	f	class:lmtable
+prob	lmtable.h	/^  inline float prob(node nd,LMT_TYPE ndt)$/;"	f	class:lmtable
+prob	n_gram.h	/^	float   prob;          \/\/ probability$/;"	m	class:ngram
+prob_and_state_cache	lmtable.h	/^  NGRAMCACHE_t* prob_and_state_cache;$/;"	m	class:lmtable
+prob_and_state_t	ngramcache.h	/^} prob_and_state_t;$/;"	t	typeref:struct:PROB_AND_STATE_ENTRY
+probcache	mdiadapt.h	/^  NGRAMCACHE_t** probcache;$/;"	m	class:mdiadaptlm
+prune_singletons	interplm.h	/^	int prune_singletons;$/;"	m	class:interplm
+prune_top_singletons	interplm.h	/^	int prune_top_singletons;$/;"	m	class:interplm
+prunesingletons	interplm.h	/^	int prunesingletons(int flag=-1){$/;"	f	class:interplm
+prunethresh	linearlm.h	/^  int prunethresh;$/;"	m	class:linearwb
+prunethresh	mixture.h	/^  int prunethresh;$/;"	m	class:mixture
+prunethresh	shiftlm.h	/^  int prunethresh;$/;"	m	class:mshiftbeta
+prunethresh	shiftlm.h	/^  int prunethresh;$/;"	m	class:shiftbeta
+prunethresh	shiftlm.h	/^  int prunethresh;$/;"	m	class:shiftone
+prunetopsingletons	interplm.h	/^	int prunetopsingletons(int flag=-1){$/;"	f	class:interplm
+putmem	lmtable.h	/^    inline void putmem(char* ptr,T value,int offs){$/;"	f	class:lmtable
+putmem	lmtable.h	/^  inline void putmem(char* ptr,int value,int offs,int size){$/;"	f	class:lmtable
+putmem	ngramtable.h	/^  inline int putmem(char* ptr,int value,int offs,int size){$/;"	f	class:ngramtable
+putmem	ngramtable.h	/^  inline long putmem(char* ptr,long long value,int offs,int size){$/;"	f	class:ngramtable
+qfloat_t	lmtable.h	/^typedef unsigned char qfloat_t; \/\/type for quantized probabilities$/;"	t
+reopen	mfstream.h	/^  mfstream& reopen(){$/;"	f	class:mfstream
+reset_probcache	lmtable.h	/^  void reset_probcache(){ reset_prob_and_state_cache(); }; \/\/kept for back compatibility$/;"	f	class:lmtable
+reset_statecache	lmtable.h	/^  void reset_statecache(){}; \/\/kept for back compatibility$/;"	f	class:lmtable
+resolution	ngramtable.h	/^  int       resolution; \/\/max resolution for probabilities$/;"	m	class:ngramtable
+running	timer.h	/^  bool running;$/;"	m	class:Timer
+savebin	interplm.h	/^	virtual int savebin(char* \/* unused parameter: filename *\/,int \/* unused parameter: lmsize=2 *\/){ return 0; }$/;"	f	class:interplm
+scan	dictionary.h	/^  inline dict_entry* scan(HT_ACTION action){$/;"	f	class:dictionary
+scan	htable.h	/^T htable<T>::scan(HT_ACTION action){$/;"	f	class:htable
+scan	ngramtable.h	/^  int scan(ngram& ng,ACTION action=CONT,int maxlev=-1){$/;"	f	class:ngramtable
+scan_i	htable.h	/^  int      scan_i;            \/\/!< scan support $/;"	m	class:htable
+scan_p	htable.h	/^  entry<T>   *scan_p;            \/\/!< scan support $/;"	m	class:htable
+seekp	mfstream.h	/^  mfstream& seekp(streampos loc){$/;"	f	class:mfstream
+seekpos	gzfilebuf.h	/^  virtual std::streampos seekpos ( std::streampos \/* unused parameter: sp *\/, std::ios_base::openmode \/* unused parameter: which *\/= std::ios_base::in | std::ios_base::out ){$/;"	f	class:gzfilebuf
+seekpos	mfstream.h	/^  virtual streampos seekpos ( streampos \/* unused parameter: sp *\/, ios_base::openmode \/* unused parameter: which *\/= ios_base::in | ios_base::out ){$/;"	f	class:fdbuf
+selectedField	lmmacro.h	/^  int             selectedField;$/;"	m	class:lmmacro
+selectedFieldForLexicon	lmmacro.h	/^  int             selectedFieldForLexicon;$/;"	m	class:lmmacro
+sentence_id	lmtable.h	/^  int sentence_id;$/;"	m	class:lmtable
+setDict	lmtable.h	/^  virtual inline void setDict(dictionary* d) { dict=d; };$/;"	f	class:lmtable
+setOrderQuery	lmtable.h	/^  inline void setOrderQuery(bool v){ orderQuery = v; }	$/;"	f	class:lmtable
+set_load_factor	dictionary.h	/^  inline float set_load_factor(float value){ return load_factor=value; }$/;"	f	class:dictionary
+set_load_factor	ngramcache.h	/^  inline float set_load_factor(float value){ return load_factor=value; }$/;"	f	class:ngramcache
+setepsilon	interplm.h	/^	double setepsilon(double v=1.0){return epsilon=v;}$/;"	f	class:interplm
+setfreq	ngramtable.h	/^  long long setfreq(node nd,NODETYPE ndt,long long value,int index=0)$/;"	f	class:ngramtable
+setlogOOVpenalty	lmtable.h	/^  double setlogOOVpenalty(int dub){ $/;"	f	class:lmtable
+setlogOOVpenalty2	lmtable.h	/^  double setlogOOVpenalty2(double oovp){ $/;"	f	class:lmtable
+setoovrate	dictionary.h	/^  inline int setoovrate(double oovrate){ $/;"	f	class:dictionary
+setsize	mempool.h	/^  int setsize;        \/\/!< number of memory pools\/maximum elem size $/;"	m	class:storage
+settying	mixture.h	/^  void settying(int a,int b){k1=a;k2=b;}$/;"	f	class:mixture
+setusmooth	interplm.h	/^	int setusmooth(int v=0){return unismooth=v;}$/;"	f	class:interplm
+shiftbeta	shiftlm.h	/^class shiftbeta: public mdiadaptlm{$/;"	c
+shiftbeta::beta	shiftlm.h	/^  double* beta;$/;"	m	class:shiftbeta
+shiftbeta::prunethresh	shiftlm.h	/^  int prunethresh;$/;"	m	class:shiftbeta
+shiftbeta::~shiftbeta	shiftlm.h	/^  ~shiftbeta(){delete [] beta;}$/;"	f	class:shiftbeta
+shiftone	shiftlm.h	/^class shiftone: public mdiadaptlm{$/;"	c
+shiftone::beta	shiftlm.h	/^  double beta;   $/;"	m	class:shiftone
+shiftone::prunethresh	shiftlm.h	/^  int prunethresh;$/;"	m	class:shiftone
+shiftone::~shiftone	shiftlm.h	/^  ~shiftone(){}$/;"	f	class:shiftone
+size	dictionary.h	/^  int size(){return n;}$/;"	f	class:dictionary
+size	htable.h	/^  int        size;            \/\/!< table size$/;"	m	class:htable
+size	mempool.h	/^  int   size;    \/\/!< size of each block$/;"	m	class:strstack
+size	n_gram.h	/^	int   size;            \/\/ ngram size$/;"	m	class:ngram
+st	dictionary.h	/^  strstack   *st;  \/\/!< stack of strings$/;"	m	class:dictionary
+start_time	timer.h	/^  time_t start_time;$/;"	m	class:Timer
+startpos	lmtable.h	/^  table_entry_pos_t*     startpos[LMTMAXLEV+1];  \/\/support vector to store start positions$/;"	m	class:lmtable
+stat	htable.h	/^void htable<T>::stat(){$/;"	f	class:htable
+state	ngramcache.h	/^        char* state;  \/\/!< the largest suffix of an n-gram contained in the LM table.$/;"	m	struct:PROB_AND_STATE_ENTRY
+statesize	ngramcache.h	/^        unsigned int statesize; \/\/!< LM statesize of an ngram$/;"	m	struct:PROB_AND_STATE_ENTRY
+storage	mempool.h	/^class storage{$/;"	c
+storage::newcalls	mempool.h	/^  int newcalls;       \/\/!< stores number of allocated blocks$/;"	m	class:storage
+storage::newmemory	mempool.h	/^  int newmemory;      \/\/!< stores amount of used memory$/;"	m	class:storage
+storage::poolset	mempool.h	/^  mempool **poolset;  \/\/!< array of memory pools$/;"	m	class:storage
+storage::poolsize	mempool.h	/^  int poolsize;       \/\/!< size of each block$/;"	m	class:storage
+storage::setsize	mempool.h	/^  int setsize;        \/\/!< number of memory pools\/maximum elem size $/;"	m	class:storage
+strstack	mempool.h	/^class strstack{$/;"	c
+strstack::blocknum	mempool.h	/^  int blocknum;  \/\/!< current number of used blocks$/;"	m	class:strstack
+strstack::entries	mempool.h	/^  int entries;   \/\/!< current number of stored strings$/;"	m	class:strstack
+strstack::idx	mempool.h	/^  int    idx;    \/\/!< index of last stored string$/;"	m	class:strstack
+strstack::list	mempool.h	/^  memnode* list; \/\/!< list of memory blocks$/;"	m	class:strstack
+strstack::memory	mempool.h	/^  int memory;    \/\/!< current use of memory$/;"	m	class:strstack
+strstack::size	mempool.h	/^  int   size;    \/\/!< size of each block$/;"	m	class:strstack
+strstack::used	mempool.h	/^  int used(){return memory;}$/;"	f	class:strstack
+strstack::waste	mempool.h	/^  int  waste;    \/\/!< current waste of memory$/;"	m	class:strstack
+strstack::wasted	mempool.h	/^  int wasted(){return waste;}$/;"	f	class:strstack
+sublm	mixture.h	/^  interplm** sublm;$/;"	m	class:mixture
+succ	n_gram.h	/^	int   succ;            \/\/ number of successors$/;"	m	class:ngram
+succ1	ngramtable.h	/^  int succ1(node nd)$/;"	f	class:ngramtable
+succ1	ngramtable.h	/^  int succ1(node nd,int value)$/;"	f	class:ngramtable
+succ2	ngramtable.h	/^  int succ2(node nd)$/;"	f	class:ngramtable
+succ2	ngramtable.h	/^  int succ2(node nd,int value)$/;"	f	class:ngramtable
+succlink	n_gram.h	/^	char* succlink;        \/\/ pointer to the first successor$/;"	m	class:ngram
+succscan	ngramtable.h	/^  int succscan(ngram& h,ngram& ng,ACTION action,int lev){$/;"	f	class:ngramtable
+symshiftbeta	shiftlm.h	/^  symshiftbeta(char* ngtfile,int depth=0,int prunefreq=0,double beta=-1):$/;"	f	class:symshiftbeta
+symshiftbeta	shiftlm.h	/^class symshiftbeta: public shiftbeta{$/;"	c
+symshiftbeta::symshiftbeta	shiftlm.h	/^  symshiftbeta(char* ngtfile,int depth=0,int prunefreq=0,double beta=-1):$/;"	f	class:symshiftbeta
+table	htable.h	/^  entry<T>   **table;            \/\/!< hash table  $/;"	m	class:htable
+table	lmtable.h	/^  char*       table[LMTMAXLEV+1];  \/\/storage of all levels$/;"	m	class:lmtable
+table	ngramtable.h	/^typedef char* table; \/\/inode table, lnode table, singleton table$/;"	t
+tableGaps	lmtable.h	/^  off_t tableGaps[LMTMAXLEV+1];$/;"	m	class:lmtable
+tableOffs	lmtable.h	/^  off_t tableOffs[LMTMAXLEV+1];$/;"	m	class:lmtable
+table_entry_pos_t	lmtable.h	/^typedef unsigned int  table_entry_pos_t; \/\/type for pointing to a full ngram in the table$/;"	t
+table_pos_t	lmtable.h	/^typedef unsigned long table_pos_t; \/\/ type for pointing to a single char in the table$/;"	t
+tabletype	ngramtable.h	/^  tabletype(TABLETYPE tt,int codesize=DEFCODESIZE){$/;"	f	class:tabletype
+tabletype	ngramtable.h	/^class tabletype{$/;"	c
+tabletype::BOFF_OFFS	ngramtable.h	/^  int BOFF_OFFS;   \/\/back-off probability$/;"	m	class:tabletype
+tabletype::CODESIZE	ngramtable.h	/^  int CODESIZE;                \/\/sizeof word codes$/;"	m	class:tabletype
+tabletype::FLAGS_OFFS	ngramtable.h	/^  int FLAGS_OFFS;  \/\/flag table$/;"	m	class:tabletype
+tabletype::I_FREQ_NUM	ngramtable.h	/^  int I_FREQ_NUM;  \/\/number of internal frequencies$/;"	m	class:tabletype
+tabletype::I_FREQ_OFFS	ngramtable.h	/^  int I_FREQ_OFFS; \/\/frequency offset$/;"	m	class:tabletype
+tabletype::L_FREQ_NUM	ngramtable.h	/^  int L_FREQ_NUM;  \/\/number of leaf frequencies$/;"	m	class:tabletype
+tabletype::L_FREQ_OFFS	ngramtable.h	/^  int L_FREQ_OFFS; \/\/frequency offset$/;"	m	class:tabletype
+tabletype::L_FREQ_SIZE	ngramtable.h	/^  int L_FREQ_SIZE; \/\/minimum size for leaf frequencies$/;"	m	class:tabletype
+tabletype::MSUCC_OFFS	ngramtable.h	/^  int MSUCC_OFFS;  \/\/number of successors$/;"	m	class:tabletype
+tabletype::MTAB_OFFS	ngramtable.h	/^  int MTAB_OFFS;   \/\/pointer to successors$/;"	m	class:tabletype
+tabletype::SUCC1_OFFS	ngramtable.h	/^  int SUCC1_OFFS;  \/\/number of successors with freq=1$/;"	m	class:tabletype
+tabletype::SUCC2_OFFS	ngramtable.h	/^  int SUCC2_OFFS;  \/\/number of successors with freq=2$/;"	m	class:tabletype
+tabletype::WORD_OFFS	ngramtable.h	/^  int WORD_OFFS;   \/\/word code position$/;"	m	class:tabletype
+tabletype::code_range	ngramtable.h	/^  long long code_range[7]; \/\/max code for each size$/;"	m	class:tabletype
+tabletype::inodesize	ngramtable.h	/^  int inodesize(int s){$/;"	f	class:tabletype
+tabletype::lnodesize	ngramtable.h	/^  int lnodesize(int s){$/;"	f	class:tabletype
+tabletype::tabletype	ngramtable.h	/^  tabletype(TABLETYPE tt,int codesize=DEFCODESIZE){$/;"	f	class:tabletype
+tabletype::tbtype	ngramtable.h	/^  TABLETYPE tbtype(){return ttype;}$/;"	f	class:tabletype
+tabletype::ttype	ngramtable.h	/^  TABLETYPE ttype;$/;"	m	class:tabletype
+tb	dictionary.h	/^  dict_entry *tb;  \/\/!< entry table$/;"	m	class:dictionary
+tb	shiftlm.h	/^  ngramtable* tb[MAX_NGRAM];$/;"	m	class:mshiftbeta
+tb2ngcpy	ngramtable.h	/^  inline void tb2ngcpy(int* wordp,char* tablep,int n=1){$/;"	f	class:ngramtable
+tbltype	lmtable.h	/^  LMT_TYPE    tbltype[LMTMAXLEV+1];  \/\/table type for each levels$/;"	m	class:lmtable
+tbtype	ngramtable.h	/^  TABLETYPE tbtype(){return ttype;}$/;"	f	class:tabletype
+tellp	mfstream.h	/^  streampos tellp(){$/;"	f	class:mfstream
+tfname	cplsa.h	/^  char *tfname;$/;"	m	class:plsa
+topics	cplsa.h	/^  int topics;      \/\/number of topics$/;"	m	class:plsa
+totbsearch	lmtable.h	/^  int    totbsearch[LMTMAXLEV+1];$/;"	m	class:lmtable
+totfreq	dictionary.h	/^  inline long long totfreq(){return N;}$/;"	f	class:dictionary
+totfreq	ngramtable.h	/^  inline long long totfreq(long long v=-1){$/;"	f	class:ngramtable
+totget	lmtable.h	/^  int    totget[LMTMAXLEV+1];$/;"	m	class:lmtable
+train	interplm.h	/^	virtual int train(){return 0;}$/;"	f	class:interplm
+tree	ngramtable.h	/^  node            tree; \/\/ ngram table root$/;"	m	class:ngramtable
+treeflags	ngramtable.h	/^  NODETYPE   treeflags;$/;"	m	class:ngramtable
+true_size	mempool.h	/^  int         true_size;          \/\/!< number of bytes per block$/;"	m	class:mempool
+ttype	ngramtable.h	/^  TABLETYPE ttype;$/;"	m	class:tabletype
+underflow	gzfilebuf.h	/^  virtual int_type underflow () {$/;"	f	class:gzfilebuf
+underflow	mfstream.h	/^  virtual int_type underflow () {$/;"	f	class:fdbuf
+unismooth	interplm.h	/^	int unismooth; \/\/0 Bayes, 1 Witten Bell$/;"	m	class:interplm
+unitbl	interplm.h	/^	ngramtable *unitbl;$/;"	m	class:interplm
+update	ngramtable.h	/^  int update(ngram ng){$/;"	f	class:ngramtable
+used	htable.h	/^  int used(){ return size * sizeof(entry<T> **) + memory->used(); }$/;"	f	class:htable
+used	mempool.h	/^  int used(){return blocknum * (true_size + 8);} $/;"	f	class:mempool
+used	mempool.h	/^  int used(){return memory;}$/;"	f	class:strstack
+used	ngramcache.h	/^  inline void used(){ stat(); };$/;"	f	class:ngramcache
+waste	mempool.h	/^  int  waste;    \/\/!< current waste of memory$/;"	m	class:strstack
+wasted	mempool.h	/^  int wasted(){return used()-(entries * item_size);}$/;"	f	class:mempool
+wasted	mempool.h	/^  int wasted(){return waste;}$/;"	f	class:strstack
+wfname	cplsa.h	/^  char *wfname;$/;"	m	class:plsa
+word	dictionary.h	/^  const char *word;$/;"	m	struct:__anon3
+word	lmtable.h	/^  inline int word(node nd,int value=-1)$/;"	f	class:lmtable
+word	n_gram.h	/^	int  word[MAX_NGRAM];  \/\/encoded ngram$/;"	m	class:ngram
+word	ngramtable.h	/^  inline int word(node nd)$/;"	f	class:ngramtable
+word	ngramtable.h	/^  inline int word(node nd,int value)$/;"	f	class:ngramtable
+wordp	n_gram.h	/^	const int *wordp() const \/\/ n-gram pointer$/;"	f	class:ngram
+wordp	n_gram.h	/^	const int *wordp(int k) const \/\/ n-gram pointer$/;"	f	class:ngram
+wordp	n_gram.h	/^	int *wordp()\/\/ n-gram pointer$/;"	f	class:ngram
+wordp	n_gram.h	/^	int *wordp(int k) \/\/ n-gram pointer$/;"	f	class:ngram
+xsgetn	gzfilebuf.h	/^  std::streamsize xsgetn (char* s,$/;"	f	class:gzfilebuf
+xsgetn	mfstream.h	/^  std::streamsize xsgetn (char* s,$/;"	f	class:fdbuf
+xsputn	gzfilebuf.h	/^  virtual std::streamsize xsputn (const char* \/* unused parameter: s *\/, std::streamsize \/* unused parameter: num *\/) {$/;"	f	class:gzfilebuf
+xsputn	mfstream.h	/^  std::streamsize xsputn (const char* s,$/;"	f	class:fdbuf
+zeta0	mdiadapt.h	/^  double zeta0;$/;"	m	class:mdiadaptlm
+~gzfilebuf	gzfilebuf.h	/^  ~gzfilebuf() { gzclose(_gzf); }$/;"	f	class:gzfilebuf
+~htable	htable.h	/^htable<T>::~htable(){$/;"	f	class:htable
+~interplm	interplm.h	/^	virtual ~interplm(){}$/;"	f	class:interplm
+~linearwb	linearlm.h	/^  ~linearwb(){}$/;"	f	class:linearwb
+~mfstream	mfstream.h	/^  ~mfstream(){$/;"	f	class:mfstream
+~mixture	mixture.h	/^  ~mixture(){}$/;"	f	class:mixture
+~mshiftbeta	shiftlm.h	/^  ~mshiftbeta(){}$/;"	f	class:mshiftbeta
+~normcache	normcache.h	/^  ~normcache(){$/;"	f	class:normcache
+~plsa	cplsa.h	/^  ~plsa(){$/;"	f	class:plsa
+~shiftbeta	shiftlm.h	/^  ~shiftbeta(){delete [] beta;}$/;"	f	class:shiftbeta
+~shiftone	shiftlm.h	/^  ~shiftone(){}$/;"	f	class:shiftone

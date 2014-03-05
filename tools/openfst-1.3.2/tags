@@ -1,0 +1,28 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+HAVE_DLFCN_H	config.h	5;"	d
+HAVE_INTTYPES_H	config.h	11;"	d
+HAVE_MEMORY_H	config.h	14;"	d
+HAVE_STDINT_H	config.h	17;"	d
+HAVE_STDLIB_H	config.h	20;"	d
+HAVE_STD__TR1__HASH_LONG_LONG_UNSIGNED_	config.h	24;"	d
+HAVE_STRINGS_H	config.h	27;"	d
+HAVE_STRING_H	config.h	30;"	d
+HAVE_SYS_STAT_H	config.h	33;"	d
+HAVE_SYS_TYPES_H	config.h	36;"	d
+HAVE_UNISTD_H	config.h	39;"	d
+HAVE___GNU_CXX__SLIST_INT_	config.h	42;"	d
+LT_OBJDIR	config.h	46;"	d
+PACKAGE	config.h	49;"	d
+PACKAGE_BUGREPORT	config.h	52;"	d
+PACKAGE_NAME	config.h	55;"	d
+PACKAGE_STRING	config.h	58;"	d
+PACKAGE_TARNAME	config.h	61;"	d
+PACKAGE_URL	config.h	64;"	d
+PACKAGE_VERSION	config.h	67;"	d
+STDC_HEADERS	config.h	70;"	d
+VERSION	config.h	73;"	d

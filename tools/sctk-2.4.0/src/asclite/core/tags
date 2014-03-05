@@ -1,0 +1,1147 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ALIGNED	recording.h	/^        static const int ALIGNED = 2;$/;"	m	class:Recording
+ALIGNEDSEGMENT_H	alignedsegment.h	19;"	d
+ALIGNEDSPEECH_H	alignedspeech.h	19;"	d
+ALIGNED_SEGMENT_ITERATOR_H	alignedsegmentiterator.h	19;"	d
+ALIGNED_SPEECH_ITERATOR_H	alignedspeechiterator.h	19;"	d
+ALIGNER_H	aligner.h	19;"	d
+ALIGNMENT_H	alignment.h	19;"	d
+ARRAYLEVENSHTEINMATRIX_H	arraylevenshteinmatrix.h	19;"	d
+AddEndToken	linestyle_inputparser.h	/^                void AddEndToken(Token* tok) { a_endTokens.push_back(tok); }$/;"	f	class:LineStyleInputParser::VirtualSegment
+AddFrontGraphAlignedToken	graphalignedsegment.h	/^		void AddFrontGraphAlignedToken(GraphAlignedToken* _pGToken) { m_vGraphAlignedTokens.push_back(_pGToken); }$/;"	f	class:GraphAlignedSegment
+AddGraphAlignSegment	sgml_generic_reportgenerator.h	/^		void AddGraphAlignSegment(GraphAlignedSegment* gas) { m_vGAS.push_back(gas); }$/;"	f	class:SGMLGenericReportGenerator
+AddHypothesis	segmentsgroup.h	/^		void AddHypothesis(const vector<Segment*> & hypothesis) { hypothesiss.push_back(hypothesis); }$/;"	f	class:SegmentsGroup
+AddNextToken	token.h	/^		void AddNextToken(Token* token) { next.push_back(token); } \/\/add a "next" token indexed$/;"	f	class:Token
+AddPrecToken	token.h	/^		void AddPrecToken(Token* token) { prec.push_back(token); } \/\/add a "prec" token indexed     $/;"	f	class:Token
+AddReference	segmentsgroup.h	/^		void AddReference(const vector<Segment*> & reference) { references.push_back(reference); }$/;"	f	class:SegmentsGroup
+AddSegment	sgml_reportgenerator.h	/^		void AddSegment(AlignedSegment* segment)$/;"	f	class:Speaker
+AddSegment	speech.h	/^		virtual void AddSegment(Segment* segment) { m_segments.push_back(segment); }$/;"	f	class:Speech
+AddSpeech	speechset.h	/^		void AddSpeech(Speech* speech) { speeches.push_back(speech); }$/;"	f	class:SpeechSet
+AddStartToken	linestyle_inputparser.h	/^                void AddStartToken(Token* tok) { a_startTokens.push_back(tok); }$/;"	f	class:LineStyleInputParser::VirtualSegment
+AddSystem	alignment.h	/^        void AddSystem(const string& filename, const string& system) { systemFilenames.push_back(filename); systems.push_back(system); }$/;"	f	class:Alignment
+AddTitleAndFilename	sgml_generic_reportgenerator.h	/^		void AddTitleAndFilename(const string& _filename, const string& _title) { m_vFilename.push_back(_filename); m_vTitle.push_back(_title); }$/;"	f	class:SGMLGenericReportGenerator
+AddUEMElement	uemfilter.h	/^		void    AddUEMElement(UEMElement* _pUEMElement) { m_VectUEMElements.push_back(_pUEMElement); }$/;"	f	class:UEMFilter
+Align	levenshtein.h	/^		virtual void Align() { graph->FillGraph(); }$/;"	f	class:Levenshtein
+Align	recording.h	/^        void Align() { m_bGenericAlignment ? AlignGeneric() : AlignHypRef(); };$/;"	f	class:Recording
+AlignedSegment	alignedsegment.h	/^class AlignedSegment$/;"	c
+AlignedSegment::GetReferenceSegment	alignedsegment.h	/^        Segment* GetReferenceSegment() { return m_referenceSegment; }$/;"	f	class:AlignedSegment
+AlignedSegment::GetSegGrpID	alignedsegment.h	/^		ulint GetSegGrpID() { return m_SegGrpID; };$/;"	f	class:AlignedSegment
+AlignedSegment::GetTokenAlignmentAt	alignedsegment.h	/^        TokenAlignment* GetTokenAlignmentAt(size_t index) { return m_tokenAlignments[index]; }$/;"	f	class:AlignedSegment
+AlignedSegment::GetTokenAlignmentCount	alignedsegment.h	/^        size_t GetTokenAlignmentCount() { return m_tokenAlignments.size(); }$/;"	f	class:AlignedSegment
+AlignedSegment::GetTokenAlignmentFor	alignedsegment.h	/^        TokenAlignment* GetTokenAlignmentFor(Token* reference) { return GetTokenAlignmentFor(reference, false); }$/;"	f	class:AlignedSegment
+AlignedSegment::SetSegGrpID	alignedsegment.h	/^		void SetSegGrpID(ulint _id) { m_SegGrpID = _id; }$/;"	f	class:AlignedSegment
+AlignedSegment::m_SegGrpID	alignedsegment.h	/^        ulint m_SegGrpID;$/;"	m	class:AlignedSegment
+AlignedSegment::m_refToAlignments	alignedsegment.h	/^        map< Token*, TokenAlignment* > m_refToAlignments;$/;"	m	class:AlignedSegment
+AlignedSegment::m_referenceSegment	alignedsegment.h	/^        Segment* m_referenceSegment;$/;"	m	class:AlignedSegment
+AlignedSegment::m_tokenAlignments	alignedsegment.h	/^        vector< TokenAlignment* > m_tokenAlignments;$/;"	m	class:AlignedSegment
+AlignedSegmentIterator	alignedsegmentiterator.h	/^class AlignedSegmentIterator$/;"	c
+AlignedSegmentIterator::m_current	alignedsegmentiterator.h	/^		map<Segment*, AlignedSegment*>::iterator m_current, m_end;$/;"	m	class:AlignedSegmentIterator
+AlignedSegmentIterator::m_end	alignedsegmentiterator.h	/^		map<Segment*, AlignedSegment*>::iterator m_current, m_end;$/;"	m	class:AlignedSegmentIterator
+AlignedSegmentIterator::~AlignedSegmentIterator	alignedsegmentiterator.h	/^		~AlignedSegmentIterator() {}$/;"	f	class:AlignedSegmentIterator
+AlignedSegmentSequenceComparator	sgml_reportgenerator.h	/^struct AlignedSegmentSequenceComparator$/;"	s
+AlignedSegmentSequenceComparator::operator ()	sgml_reportgenerator.h	/^	inline bool operator() (AlignedSegment* first, AlignedSegment* second) const$/;"	f	struct:AlignedSegmentSequenceComparator
+AlignedSpeech	alignedspeech.h	/^class AlignedSpeech$/;"	c
+AlignedSpeech::GetReferenceSpeech	alignedspeech.h	/^        Speech* GetReferenceSpeech() { return m_speech; }$/;"	f	class:AlignedSpeech
+AlignedSpeech::m_segments	alignedspeech.h	/^            map< Segment*,  AlignedSegment* > m_segments;$/;"	m	class:AlignedSpeech
+AlignedSpeech::m_speech	alignedspeech.h	/^            Speech* m_speech;$/;"	m	class:AlignedSpeech
+AlignedSpeechIterator	alignedspeechiterator.h	/^class AlignedSpeechIterator {$/;"	c
+AlignedSpeechIterator::m_current	alignedspeechiterator.h	/^	map< Speech*, AlignedSpeech* >::iterator m_current, m_end;$/;"	m	class:AlignedSpeechIterator
+AlignedSpeechIterator::m_end	alignedspeechiterator.h	/^	map< Speech*, AlignedSpeech* >::iterator m_current, m_end;$/;"	m	class:AlignedSpeechIterator
+AlignedSpeechIterator::~AlignedSpeechIterator	alignedspeechiterator.h	/^	~AlignedSpeechIterator() {};$/;"	f	class:AlignedSpeechIterator
+Aligner	aligner.h	/^class Aligner$/;"	c
+Alignment	alignment.h	/^class Alignment$/;"	c
+Alignment::AddSystem	alignment.h	/^        void AddSystem(const string& filename, const string& system) { systemFilenames.push_back(filename); systems.push_back(system); }$/;"	f	class:Alignment
+Alignment::GetNbOfSystems	alignment.h	/^        size_t GetNbOfSystems() const { return systems.size(); }$/;"	f	class:Alignment
+Alignment::GetSystem	alignment.h	/^        string GetSystem(const size_t& index) const { return systems[index]; }$/;"	f	class:Alignment
+Alignment::GetSystemFilename	alignment.h	/^        string GetSystemFilename(const size_t& index) const { return systemFilenames[index]; }$/;"	f	class:Alignment
+Alignment::logger	alignment.h	/^        static Logger* logger;$/;"	m	class:Alignment
+Alignment::m_references	alignment.h	/^        map< Speech* , AlignedSpeech* > m_references;$/;"	m	class:Alignment
+Alignment::systemFilenames	alignment.h	/^        vector<string> systemFilenames;$/;"	m	class:Alignment
+Alignment::systems	alignment.h	/^        vector<string> systems;$/;"	m	class:Alignment
+AlignmentEvaluation	tokenalignment.h	/^        class AlignmentEvaluation $/;"	c	class:TokenAlignment
+AlignmentResult	tokenalignment.h	/^        class AlignmentResult $/;"	c	class:TokenAlignment
+AreStartTimeAndDurationValid	segment.h	/^        virtual bool AreStartTimeAndDurationValid(const int& _startTime, const int& _duration) { return AreStartTimeAndEndTimeValid(_startTime, _startTime + _duration); }$/;"	f	class:Segment
+ArrayLevenshteinMatrix	arraylevenshteinmatrix.h	/^class ArrayLevenshteinMatrix : public LevenshteinMatrix$/;"	c
+ArrayLevenshteinMatrix::GetCostFor	arraylevenshteinmatrix.h	/^		int GetCostFor(size_t* coordinates) { return m_TabCost[CoordinatesToSize(coordinates)]; }$/;"	f	class:ArrayLevenshteinMatrix
+ArrayLevenshteinMatrix::GetMaxSize	arraylevenshteinmatrix.h	/^        size_t GetMaxSize() { return m_MaxSize; }$/;"	f	class:ArrayLevenshteinMatrix
+ArrayLevenshteinMatrix::GetNumberOfCalculatedCosts	arraylevenshteinmatrix.h	/^		size_t GetNumberOfCalculatedCosts() { return m_SizeOfArray; }$/;"	f	class:ArrayLevenshteinMatrix
+ArrayLevenshteinMatrix::IsCostCalculatedFor	arraylevenshteinmatrix.h	/^		bool IsCostCalculatedFor(size_t* coordinates) { return(GetCostFor(coordinates) != C_UNCALCULATED); }	$/;"	f	class:ArrayLevenshteinMatrix
+ArrayLevenshteinMatrix::m_MaxSize	arraylevenshteinmatrix.h	/^		size_t m_MaxSize;$/;"	m	class:ArrayLevenshteinMatrix
+ArrayLevenshteinMatrix::m_MultiplicatorDimension	arraylevenshteinmatrix.h	/^		size_t* m_MultiplicatorDimension;$/;"	m	class:ArrayLevenshteinMatrix
+ArrayLevenshteinMatrix::m_NbrDimensions	arraylevenshteinmatrix.h	/^		size_t m_NbrDimensions;$/;"	m	class:ArrayLevenshteinMatrix
+ArrayLevenshteinMatrix::m_SizeOfArray	arraylevenshteinmatrix.h	/^		size_t m_SizeOfArray;$/;"	m	class:ArrayLevenshteinMatrix
+ArrayLevenshteinMatrix::m_TabCost	arraylevenshteinmatrix.h	/^		int* m_TabCost;$/;"	m	class:ArrayLevenshteinMatrix
+ArrayLevenshteinMatrix::m_pLogger	arraylevenshteinmatrix.h	/^		static Logger* m_pLogger;$/;"	m	class:ArrayLevenshteinMatrix
+BEGIN_FRAGMENT	token.h	/^		static const int BEGIN_FRAGMENT = 1;$/;"	m	class:Token
+BEGIN_OPTIONAL_MARKER	token.h	/^		static const char BEGIN_OPTIONAL_MARKER;$/;"	m	class:Token
+BUFFER_SIZE	stdinc.h	/^const size_t BUFFER_SIZE = 255;$/;"	v
+BecomeOptionallyDeletable	token.h	/^		void BecomeOptionallyDeletable() { SetSourceText(Token::BEGIN_OPTIONAL_MARKER + GetSourceText() + Token::END_OPTIONAL_MARKER); }$/;"	f	class:Token
+CATEGORYLABEL	speechset.h	/^typedef struct CATEGORYLABEL$/;"	s
+CATEGORYLABEL::desc	speechset.h	/^	string type, id, title, desc;$/;"	m	struct:CATEGORYLABEL
+CATEGORYLABEL::id	speechset.h	/^	string type, id, title, desc;$/;"	m	struct:CATEGORYLABEL
+CATEGORYLABEL::title	speechset.h	/^	string type, id, title, desc;$/;"	m	struct:CATEGORYLABEL
+CATEGORYLABEL::type	speechset.h	/^	string type, id, title, desc;$/;"	m	struct:CATEGORYLABEL
+CHECKER_H	checker.h	19;"	d
+COMPRESSEDLEVENSHTEINMATRIX_H	compressedlevenshteinmatrix.h	19;"	d
+CORRECT	tokenalignment.h	/^        static const AlignmentResult CORRECT;$/;"	m	class:TokenAlignment
+CTMInputParser	ctm_inputparser.h	/^		CTMInputParser() {}$/;"	f	class:CTMInputParser
+CTMInputParser	ctm_inputparser.h	/^class CTMInputParser : public InputParser$/;"	c
+CTMInputParser::CTMInputParser	ctm_inputparser.h	/^		CTMInputParser() {}$/;"	f	class:CTMInputParser
+CTMInputParser::logger	ctm_inputparser.h	/^		static Logger* logger;$/;"	m	class:CTMInputParser
+CTMInputParser::~CTMInputParser	ctm_inputparser.h	/^		~CTMInputParser() {}$/;"	f	class:CTMInputParser
+CTMSTMRTTMSegmentor	ctmstmrttm_segmentor.h	/^		CTMSTMRTTMSegmentor() {}$/;"	f	class:CTMSTMRTTMSegmentor
+CTMSTMRTTMSegmentor	ctmstmrttm_segmentor.h	/^class CTMSTMRTTMSegmentor : public Segmentor$/;"	c
+CTMSTMRTTMSegmentor::CTMSTMRTTMSegmentor	ctmstmrttm_segmentor.h	/^		CTMSTMRTTMSegmentor() {}$/;"	f	class:CTMSTMRTTMSegmentor
+CTMSTMRTTMSegmentor::HasNext	ctmstmrttm_segmentor.h	/^		bool HasNext() { return(currentSegmentRef != NULL); }$/;"	f	class:CTMSTMRTTMSegmentor
+CTMSTMRTTMSegmentor::channelList	ctmstmrttm_segmentor.h	/^        map<string, set<string> > channelList;$/;"	m	class:CTMSTMRTTMSegmentor
+CTMSTMRTTMSegmentor::currentChannel	ctmstmrttm_segmentor.h	/^        string currentChannel;$/;"	m	class:CTMSTMRTTMSegmentor
+CTMSTMRTTMSegmentor::currentSegmentRef	ctmstmrttm_segmentor.h	/^        Segment* currentSegmentRef;$/;"	m	class:CTMSTMRTTMSegmentor
+CTMSTMRTTMSegmentor::currentSource	ctmstmrttm_segmentor.h	/^        string currentSource;$/;"	m	class:CTMSTMRTTMSegmentor
+CTMSTMRTTMSegmentor::logger	ctmstmrttm_segmentor.h	/^        static Logger* logger;$/;"	m	class:CTMSTMRTTMSegmentor
+CTMSTMRTTMSegmentor::sourceList	ctmstmrttm_segmentor.h	/^        set<string> sourceList;$/;"	m	class:CTMSTMRTTMSegmentor
+CTMSTMRTTM_SEGMENTOR_H	ctmstmrttm_segmentor.h	19;"	d
+CTM_INPUTPARSER_H	ctm_inputparser.h	19;"	d
+C_UNCALCULATED	levenshteinmatrix.h	/^const int C_UNCALCULATED = -1;$/;"	v
+Checker	checker.h	/^class Checker : public Filter$/;"	c
+ClearEndToken	linestyle_inputparser.h	/^                void ClearEndToken() { a_endTokens.clear(); }$/;"	f	class:LineStyleInputParser::VirtualSegment
+CompressedLevenshteinMatrix	compressedlevenshteinmatrix.h	/^class CompressedLevenshteinMatrix : public LevenshteinMatrix$/;"	c
+CompressedLevenshteinMatrix::GetMaxSize	compressedlevenshteinmatrix.h	/^        size_t GetMaxSize() { return m_MaxSize; }$/;"	f	class:CompressedLevenshteinMatrix
+CompressedLevenshteinMatrix::GetNumberOfCalculatedCosts	compressedlevenshteinmatrix.h	/^		size_t GetNumberOfCalculatedCosts() { return m_SizeOfArray; }$/;"	f	class:CompressedLevenshteinMatrix
+CompressedLevenshteinMatrix::IsCostCalculatedFor	compressedlevenshteinmatrix.h	/^		bool IsCostCalculatedFor(size_t* coordinates) { return(GetCostFor(coordinates) != C_UNCALCULATED); }$/;"	f	class:CompressedLevenshteinMatrix
+CompressedLevenshteinMatrix::MemoryUsedKB	compressedlevenshteinmatrix.h	/^		double MemoryUsedKB() { return( (static_cast<double>(m_CurrentMemorySize))\/1024.0 ); }$/;"	f	class:CompressedLevenshteinMatrix
+CompressedLevenshteinMatrix::TouchBlock	compressedlevenshteinmatrix.h	/^		void TouchBlock(const size_t& block_index) { m_TabHitsTimer[block_index] = m_Accesses++; }$/;"	f	class:CompressedLevenshteinMatrix
+CompressedLevenshteinMatrix::isBlockCreated	compressedlevenshteinmatrix.h	/^		bool isBlockCreated(const size_t& block_index) { return m_TabIsCreated[block_index]; }$/;"	f	class:CompressedLevenshteinMatrix
+CompressedLevenshteinMatrix::isCallGarbageCollector	compressedlevenshteinmatrix.h	/^		bool isCallGarbageCollector() { return( (MemoryUsedKB()+(static_cast<double>(m_BaseLengthIn))\/1024.0) >= m_UsableMemoryKB*(1.0-m_PercentageMemoryTriggerStart) ); }$/;"	f	class:CompressedLevenshteinMatrix
+CompressedLevenshteinMatrix::isStopGarbageCollector	compressedlevenshteinmatrix.h	/^		bool isStopGarbageCollector() { return( MemoryUsedKB() <= m_UsableMemoryKB*(1.0-m_PercentageMemoryTriggerStop) ); }$/;"	f	class:CompressedLevenshteinMatrix
+CompressedLevenshteinMatrix::m_Accesses	compressedlevenshteinmatrix.h	/^		ulint m_Accesses;$/;"	m	class:CompressedLevenshteinMatrix
+CompressedLevenshteinMatrix::m_BaseLengthIn	compressedlevenshteinmatrix.h	/^		size_t m_BaseLengthIn;$/;"	m	class:CompressedLevenshteinMatrix
+CompressedLevenshteinMatrix::m_BaseLengthOut	compressedlevenshteinmatrix.h	/^		size_t m_BaseLengthOut;$/;"	m	class:CompressedLevenshteinMatrix
+CompressedLevenshteinMatrix::m_BlockSizeElts	compressedlevenshteinmatrix.h	/^		size_t m_BlockSizeElts;$/;"	m	class:CompressedLevenshteinMatrix
+CompressedLevenshteinMatrix::m_BlockSizeKB	compressedlevenshteinmatrix.h	/^		uint m_BlockSizeKB;$/;"	m	class:CompressedLevenshteinMatrix
+CompressedLevenshteinMatrix::m_Compressions	compressedlevenshteinmatrix.h	/^		ulint m_Compressions;$/;"	m	class:CompressedLevenshteinMatrix
+CompressedLevenshteinMatrix::m_CurrentMemorySize	compressedlevenshteinmatrix.h	/^		size_t m_CurrentMemorySize;$/;"	m	class:CompressedLevenshteinMatrix
+CompressedLevenshteinMatrix::m_Decompressions	compressedlevenshteinmatrix.h	/^		ulint m_Decompressions;$/;"	m	class:CompressedLevenshteinMatrix
+CompressedLevenshteinMatrix::m_MaxMemoryKBProp	compressedlevenshteinmatrix.h	/^		size_t m_MaxMemoryKBProp;$/;"	m	class:CompressedLevenshteinMatrix
+CompressedLevenshteinMatrix::m_MaxSize	compressedlevenshteinmatrix.h	/^		ullint  m_MaxSize;$/;"	m	class:CompressedLevenshteinMatrix
+CompressedLevenshteinMatrix::m_MultiplicatorBlockDimension	compressedlevenshteinmatrix.h	/^		size_t* m_MultiplicatorBlockDimension;$/;"	m	class:CompressedLevenshteinMatrix
+CompressedLevenshteinMatrix::m_MultiplicatorDimension	compressedlevenshteinmatrix.h	/^		ullint* m_MultiplicatorDimension;$/;"	m	class:CompressedLevenshteinMatrix
+CompressedLevenshteinMatrix::m_MultiplicatorDivider	compressedlevenshteinmatrix.h	/^		size_t* m_MultiplicatorDivider;$/;"	m	class:CompressedLevenshteinMatrix
+CompressedLevenshteinMatrix::m_NbrCompressedBlocks	compressedlevenshteinmatrix.h	/^		ulint m_NbrCompressedBlocks;$/;"	m	class:CompressedLevenshteinMatrix
+CompressedLevenshteinMatrix::m_NbrCompressedTabs	compressedlevenshteinmatrix.h	/^		size_t m_NbrCompressedTabs;$/;"	m	class:CompressedLevenshteinMatrix
+CompressedLevenshteinMatrix::m_NbrCreatedBlocks	compressedlevenshteinmatrix.h	/^		size_t  m_NbrCreatedBlocks;$/;"	m	class:CompressedLevenshteinMatrix
+CompressedLevenshteinMatrix::m_NbrDecompressedBlocks	compressedlevenshteinmatrix.h	/^		ulint m_NbrDecompressedBlocks;$/;"	m	class:CompressedLevenshteinMatrix
+CompressedLevenshteinMatrix::m_NbrDimensions	compressedlevenshteinmatrix.h	/^		size_t  m_NbrDimensions;$/;"	m	class:CompressedLevenshteinMatrix
+CompressedLevenshteinMatrix::m_PercentageMemoryTriggerStart	compressedlevenshteinmatrix.h	/^		double m_PercentageMemoryTriggerStart;$/;"	m	class:CompressedLevenshteinMatrix
+CompressedLevenshteinMatrix::m_PercentageMemoryTriggerStop	compressedlevenshteinmatrix.h	/^		double m_PercentageMemoryTriggerStop;$/;"	m	class:CompressedLevenshteinMatrix
+CompressedLevenshteinMatrix::m_SizeOfArray	compressedlevenshteinmatrix.h	/^		ullint  m_SizeOfArray;$/;"	m	class:CompressedLevenshteinMatrix
+CompressedLevenshteinMatrix::m_TabBlockDimensionDeep	compressedlevenshteinmatrix.h	/^		size_t* m_TabBlockDimensionDeep;$/;"	m	class:CompressedLevenshteinMatrix
+CompressedLevenshteinMatrix::m_TabBlockDivider	compressedlevenshteinmatrix.h	/^		size_t* m_TabBlockDivider;$/;"	m	class:CompressedLevenshteinMatrix
+CompressedLevenshteinMatrix::m_TabDimensionDeep	compressedlevenshteinmatrix.h	/^		size_t* m_TabDimensionDeep;$/;"	m	class:CompressedLevenshteinMatrix
+CompressedLevenshteinMatrix::m_TabHitsTimer	compressedlevenshteinmatrix.h	/^		ulint*  m_TabHitsTimer;$/;"	m	class:CompressedLevenshteinMatrix
+CompressedLevenshteinMatrix::m_TabIsCreated	compressedlevenshteinmatrix.h	/^		bool*   m_TabIsCreated;$/;"	m	class:CompressedLevenshteinMatrix
+CompressedLevenshteinMatrix::m_TabSizes	compressedlevenshteinmatrix.h	/^		uint* m_TabSizes;$/;"	m	class:CompressedLevenshteinMatrix
+CompressedLevenshteinMatrix::m_TabStartByte	compressedlevenshteinmatrix.h	/^		int** m_TabStartByte;$/;"	m	class:CompressedLevenshteinMatrix
+CompressedLevenshteinMatrix::m_TabStartByteCompressed	compressedlevenshteinmatrix.h	/^		int** m_TabStartByteCompressed;$/;"	m	class:CompressedLevenshteinMatrix
+CompressedLevenshteinMatrix::m_TabbIsCompressed	compressedlevenshteinmatrix.h	/^		bool*   m_TabbIsCompressed;$/;"	m	class:CompressedLevenshteinMatrix
+CompressedLevenshteinMatrix::m_UsableMemoryKB	compressedlevenshteinmatrix.h	/^		double m_UsableMemoryKB;$/;"	m	class:CompressedLevenshteinMatrix
+CompressedLevenshteinMatrix::m_lzmaDictionarySize	compressedlevenshteinmatrix.h	/^		unsigned m_lzmaDictionarySize;$/;"	m	class:CompressedLevenshteinMatrix
+CompressedLevenshteinMatrix::m_lzmaFb	compressedlevenshteinmatrix.h	/^		int m_lzmaFb;$/;"	m	class:CompressedLevenshteinMatrix
+CompressedLevenshteinMatrix::m_lzmaLc	compressedlevenshteinmatrix.h	/^		int m_lzmaLc;$/;"	m	class:CompressedLevenshteinMatrix
+CompressedLevenshteinMatrix::m_lzmaLevel	compressedlevenshteinmatrix.h	/^		int m_lzmaLevel;$/;"	m	class:CompressedLevenshteinMatrix
+CompressedLevenshteinMatrix::m_lzmaLp	compressedlevenshteinmatrix.h	/^		int m_lzmaLp;$/;"	m	class:CompressedLevenshteinMatrix
+CompressedLevenshteinMatrix::m_lzmaNumberThreads	compressedlevenshteinmatrix.h	/^		int m_lzmaNumberThreads;$/;"	m	class:CompressedLevenshteinMatrix
+CompressedLevenshteinMatrix::m_lzmaPb	compressedlevenshteinmatrix.h	/^		int m_lzmaPb;$/;"	m	class:CompressedLevenshteinMatrix
+CompressedLevenshteinMatrix::m_lzmaPropertiesSize	compressedlevenshteinmatrix.h	/^		size_t m_lzmaPropertiesSize;$/;"	m	class:CompressedLevenshteinMatrix
+CompressedLevenshteinMatrix::m_pLogger	compressedlevenshteinmatrix.h	/^		static Logger* m_pLogger;$/;"	m	class:CompressedLevenshteinMatrix
+DATE_UTILS	dateutils.h	19;"	d
+DELETION	tokenalignment.h	/^        static const AlignmentResult DELETION;$/;"	m	class:TokenAlignment
+DateUtils	dateutils.h	/^class DateUtils $/;"	c
+DateUtils::GetDateString	dateutils.h	/^	inline static string GetDateString()$/;"	f	class:DateUtils
+END_FRAGMENT	token.h	/^		static const int END_FRAGMENT = 2;$/;"	m	class:Token
+END_OPTIONAL_MARKER	token.h	/^		static const char END_OPTIONAL_MARKER;$/;"	m	class:Token
+E_ARGS	logger.h	/^const int E_ARGS     = 4;$/;"	v
+E_COND	logger.h	/^const int E_COND     = 2;$/;"	v
+E_FILTER	logger.h	/^const int E_FILTER   = 3;$/;"	v
+E_INVALID	logger.h	/^const int E_INVALID  = 6;$/;"	v
+E_LOAD	logger.h	/^const int E_LOAD     = 1;$/;"	v
+E_LZO	logger.h	/^const int E_LZO      = 7;$/;"	v
+E_MISSINFO	logger.h	/^const int E_MISSINFO = 5;$/;"	v
+E_OK	logger.h	/^const int E_OK       = 0;$/;"	v
+Equals	tokenalignment.h	/^        bool Equals(TokenAlignment* other) { return (this == other); }$/;"	f	class:TokenAlignment
+FILTER_H	filter.h	19;"	d
+FRAGMENT_MARKER	token.h	/^		static const char FRAGMENT_MARKER;$/;"	m	class:Token
+F_ROUND	rawsys_reportgenerator.h	/^inline double F_ROUND(const double& _n, const double& _p)$/;"	f
+Filter	filter.h	/^class Filter$/;"	c
+GRAPHALIGNEDSEGMENT_H	graphalignedsegment.h	19;"	d
+GRAPHALIGNEDTOKEN_H	graphalignedtoken.h	19;"	d
+GRAPH_COORDINATE_H	graph_coordinate.h	23;"	d
+GRAPH_H	graph.h	19;"	d
+GetAlignmentFor	tokenalignment.h	/^        AlignmentEvaluation* GetAlignmentFor(const string & system) { return m_alignmentEvaluations[system]; }$/;"	f	class:TokenAlignment
+GetBeginPosition	graph_coordinate.h	/^		GraphCoordinateListPosition GetBeginPosition() { return m_ListCoordinates.begin(); }$/;"	f	class:GraphCoordinateList
+GetCategoryLabelDesc	speechset.h	/^		string GetCategoryLabelDesc(const size_t& ind) { return m_VectCategoryLabel[ind].desc; }$/;"	f	class:SpeechSet
+GetCategoryLabelID	speechset.h	/^		string GetCategoryLabelID(const size_t& ind) { return m_VectCategoryLabel[ind].id; }$/;"	f	class:SpeechSet
+GetCategoryLabelTitle	speechset.h	/^		string GetCategoryLabelTitle(const size_t& ind) { return m_VectCategoryLabel[ind].title; }$/;"	f	class:SpeechSet
+GetCategoryLabelType	speechset.h	/^		string GetCategoryLabelType(const size_t& ind) { return m_VectCategoryLabel[ind].type; }$/;"	f	class:SpeechSet
+GetChannel	segment.h	/^		string GetChannel() { return channel; }$/;"	f	class:Segment
+GetChannel	uemfilter.h	/^		string GetChannel() { return m_Channel; }$/;"	f	class:UEMElement
+GetConfidence	token.h	/^		float GetConfidence() { return confidence; } \/\/ returns the value of confidence$/;"	f	class:Token
+GetCost	levenshtein.h	/^        int GetCost() { return graph->GetBestCost(); }$/;"	f	class:Levenshtein
+GetCostFor	arraylevenshteinmatrix.h	/^		int GetCostFor(size_t* coordinates) { return m_TabCost[CoordinatesToSize(coordinates)]; }$/;"	f	class:ArrayLevenshteinMatrix
+GetCostInsertion	graph.h	/^		int GetCostInsertion(const bool& optionally) { return optionally ? m_CostOptionally : m_CostInsertion; }$/;"	f	class:Graph
+GetCostTransition	graph.h	/^		int GetCostTransition() { return m_CostTransition; }$/;"	f	class:Graph
+GetDateString	dateutils.h	/^	inline static string GetDateString()$/;"	f	class:DateUtils
+GetDescription	tokenalignment.h	/^                string GetDescription() { return m_description; }$/;"	f	class:TokenAlignment::AlignmentResult
+GetDimension	graph.h	/^		size_t GetDimension() { return m_Dimension; }$/;"	f	class:Graph
+GetDimension	graphalignedtoken.h	/^		size_t GetDimension() { return m_Dimension; }$/;"	f	class:GraphAlignedToken
+GetDimensionDeep	graph.h	/^		size_t GetDimensionDeep(const size_t& d) { return m_TabDimensionDeep[d]; }$/;"	f	class:Graph
+GetDuration	timedobject.h	/^        int GetDuration() { return endTime - startTime; } \/\/ returns the value of duration$/;"	f	class:TimedObject
+GetEndPosition	graph_coordinate.h	/^		GraphCoordinateListPosition GetEndPosition() { return m_ListCoordinates.end(); }$/;"	f	class:GraphCoordinateList
+GetEndTime	timedobject.h	/^        int GetEndTime() { return endTime; } \/\/ returns the value of endTime$/;"	f	class:TimedObject
+GetEndTime	uemfilter.h	/^		int    GetEndTime() { return m_EndTime; }$/;"	f	class:UEMElement
+GetEndToken	linestyle_inputparser.h	/^                Token* GetEndToken(const size_t& index) { return a_endTokens[index]; }$/;"	f	class:LineStyleInputParser::VirtualSegment
+GetEndTokenVector	linestyle_inputparser.h	/^				vector<Token *> GetEndTokenVector() { return a_endTokens; }$/;"	f	class:LineStyleInputParser::VirtualSegment
+GetFile	uemfilter.h	/^		string GetFile() { return m_File; }$/;"	f	class:UEMElement
+GetFilename	sgml_generic_reportgenerator.h	/^		string GetFilename(const size_t& i) { return m_vFilename[i]; }$/;"	f	class:SGMLGenericReportGenerator
+GetFirstToken	segment.h	/^		Token* GetFirstToken(const size_t& index) { return f_token->GetNextToken(index); }$/;"	f	class:Segment
+GetHypothesis	segmentsgroup.h	/^		vector<Segment*> GetHypothesis(const size_t& index) { return hypothesiss[index]; }$/;"	f	class:SegmentsGroup
+GetId	segment.h	/^		string GetId() { return id; }$/;"	f	class:Segment
+GetLabel	segment.h	/^		string GetLabel() { return m_Label; }$/;"	f	class:Segment
+GetLastToken	segment.h	/^		Token* GetLastToken(const size_t& index) { return l_token->GetNextToken(index); }$/;"	f	class:Segment
+GetMaxSize	arraylevenshteinmatrix.h	/^        size_t GetMaxSize() { return m_MaxSize; }$/;"	f	class:ArrayLevenshteinMatrix
+GetMaxSize	compressedlevenshteinmatrix.h	/^        size_t GetMaxSize() { return m_MaxSize; }$/;"	f	class:CompressedLevenshteinMatrix
+GetMaxSizeString	statistics.h	/^		int GetMaxSizeString() { return m_MaxSize; }$/;"	f	class:Statistics
+GetMean	statistics.h	/^		double GetMean(const bool& safe = false) { return(((m_Mean == 0.0) && safe) ? 1.0 : m_Mean); }$/;"	f	class:Statistics
+GetMedian	statistics.h	/^		double GetMedian(const bool& safe = false) { return(((m_Median == 0.0) && safe) ? 1.0 : m_Median); }$/;"	f	class:Statistics
+GetName	sgml_reportgenerator.h	/^		string GetName()$/;"	f	class:Speaker
+GetNbEndToken	linestyle_inputparser.h	/^                size_t GetNbEndToken() { return a_endTokens.size(); }$/;"	f	class:LineStyleInputParser::VirtualSegment
+GetNbOfGraphAlignedToken	graphalignedsegment.h	/^		size_t GetNbOfGraphAlignedToken() { return m_vGraphAlignedTokens.size(); }$/;"	f	class:GraphAlignedSegment
+GetNbOfNextTokens	token.h	/^		size_t GetNbOfNextTokens() { return next.size(); }$/;"	f	class:Token
+GetNbOfPrecTokens	token.h	/^		size_t GetNbOfPrecTokens() { return prec.size(); }$/;"	f	class:Token
+GetNbOfSystems	alignment.h	/^        size_t GetNbOfSystems() const { return systems.size(); }$/;"	f	class:Alignment
+GetNbOfSystems	sgml_generic_reportgenerator.h	/^		size_t GetNbOfSystems() { return m_vTitle.size(); }$/;"	f	class:SGMLGenericReportGenerator
+GetNbStartToken	linestyle_inputparser.h	/^                size_t GetNbStartToken() { return a_startTokens.size(); }$/;"	f	class:LineStyleInputParser::VirtualSegment
+GetNextToken	token.h	/^        Token* GetNextToken(const size_t& i) { return next[i]; } \/\/retrieve the next token indexed$/;"	f	class:Token
+GetNumSpeakers	rawsys_reportgenerator.h	/^		size_t GetNumSpeakers() { return m_MapDatas.size(); }$/;"	f	class:RAWSYSReportGenerator
+GetNumberCategoryLabel	speechset.h	/^		size_t GetNumberCategoryLabel() { return m_VectCategoryLabel.size(); }$/;"	f	class:SpeechSet
+GetNumberCorrectWords	rawsys_reportgenerator.h	/^		uint GetNumberCorrectWords() { return(m_NumberCorrectWords); }$/;"	f	class:RAWSYS_Datas
+GetNumberDeletions	rawsys_reportgenerator.h	/^		uint GetNumberDeletions() { return(m_NumberDeletions); }$/;"	f	class:RAWSYS_Datas
+GetNumberElement	uemfilter.h	/^		size_t 	GetNumberElement() { return m_VectUEMElements.size(); }$/;"	f	class:UEMFilter
+GetNumberErrors	rawsys_reportgenerator.h	/^		uint GetNumberErrors() { return(m_NumberSubstitutions+m_NumberInsertions+m_NumberDeletions+m_NumberSpeakerErrors); }$/;"	f	class:RAWSYS_Datas
+GetNumberInsertions	rawsys_reportgenerator.h	/^		uint GetNumberInsertions() { return(m_NumberInsertions); }$/;"	f	class:RAWSYS_Datas
+GetNumberOfCalculatedCosts	arraylevenshteinmatrix.h	/^		size_t GetNumberOfCalculatedCosts() { return m_SizeOfArray; }$/;"	f	class:ArrayLevenshteinMatrix
+GetNumberOfCalculatedCosts	compressedlevenshteinmatrix.h	/^		size_t GetNumberOfCalculatedCosts() { return m_SizeOfArray; }$/;"	f	class:CompressedLevenshteinMatrix
+GetNumberOfFirstToken	segment.h	/^		size_t GetNumberOfFirstToken() { return f_token->GetNbOfNextTokens(); }$/;"	f	class:Segment
+GetNumberOfHypothesis	segmentsgroup.h	/^        size_t GetNumberOfHypothesis() { return hypothesiss.size(); }$/;"	f	class:SegmentsGroup
+GetNumberOfLastToken	segment.h	/^		size_t GetNumberOfLastToken() { return l_token->GetNbOfNextTokens(); }$/;"	f	class:Segment
+GetNumberOfReferences	segmentsgroup.h	/^        size_t GetNumberOfReferences() { return references.size(); }$/;"	f	class:SegmentsGroup
+GetNumberOfSpeech	speechset.h	/^		size_t GetNumberOfSpeech() { return speeches.size(); }$/;"	f	class:SpeechSet
+GetNumberRefWords	rawsys_reportgenerator.h	/^		uint GetNumberRefWords() { return(m_NumberRefWords); }$/;"	f	class:RAWSYS_Datas
+GetNumberSegments	rawsys_reportgenerator.h	/^		uint GetNumberSegments() { return(m_NumberSegments); }$/;"	f	class:RAWSYS_Datas
+GetNumberSegmentsErrors	rawsys_reportgenerator.h	/^		uint GetNumberSegmentsErrors() { return(m_NumberSegmentsErrors); }$/;"	f	class:RAWSYS_Datas
+GetNumberSpeakerErrors	rawsys_reportgenerator.h	/^		uint GetNumberSpeakerErrors() { return(m_NumberSpeakerErrors); }$/;"	f	class:RAWSYS_Datas
+GetNumberSubstitutions	rawsys_reportgenerator.h	/^		uint GetNumberSubstitutions() { return(m_NumberSubstitutions); }$/;"	f	class:RAWSYS_Datas
+GetParentSegment	token.h	/^		Segment* GetParentSegment() { return segment; }$/;"	f	class:Token
+GetPercentCorrectWords	rawsys_reportgenerator.h	/^		double GetPercentCorrectWords() { return( 100.0*static_cast<double>(m_NumberCorrectWords)\/static_cast<double>(m_NumberRefWords) ); }$/;"	f	class:RAWSYS_Datas
+GetPercentDeletions	rawsys_reportgenerator.h	/^		double GetPercentDeletions() { return( 100.0*static_cast<double>(m_NumberDeletions)\/static_cast<double>(m_NumberRefWords) ); }$/;"	f	class:RAWSYS_Datas
+GetPercentErrors	rawsys_reportgenerator.h	/^		double GetPercentErrors() { return( 100.0*static_cast<double>(GetNumberErrors())\/static_cast<double>(m_NumberRefWords) ); }$/;"	f	class:RAWSYS_Datas
+GetPercentInsertions	rawsys_reportgenerator.h	/^		double GetPercentInsertions() { return( 100.0*static_cast<double>(m_NumberInsertions)\/static_cast<double>(m_NumberRefWords) ); }$/;"	f	class:RAWSYS_Datas
+GetPercentSegmentsErrors	rawsys_reportgenerator.h	/^		double GetPercentSegmentsErrors() { return( 100.0*static_cast<double>(m_NumberSegmentsErrors)\/static_cast<double>(m_NumberSegments) ); }$/;"	f	class:RAWSYS_Datas
+GetPercentSpeakerErrors	rawsys_reportgenerator.h	/^		double GetPercentSpeakerErrors() { return( 100.0*static_cast<double>(m_NumberSpeakerErrors)\/static_cast<double>(m_NumberRefWords) ); }$/;"	f	class:RAWSYS_Datas
+GetPercentSubstitutions	rawsys_reportgenerator.h	/^		double GetPercentSubstitutions() { return( 100.0*static_cast<double>(m_NumberSubstitutions)\/static_cast<double>(m_NumberRefWords) ); }$/;"	f	class:RAWSYS_Datas
+GetPrecToken	token.h	/^		Token* GetPrecToken(const size_t& i) { return prec[i]; } \/\/retrieve the next token indexed$/;"	f	class:Token
+GetReference	segmentsgroup.h	/^		vector<Segment*> GetReference(const size_t& index) { return references[index]; }$/;"	f	class:SegmentsGroup
+GetReferenceSegment	alignedsegment.h	/^        Segment* GetReferenceSegment() { return m_referenceSegment; }$/;"	f	class:AlignedSegment
+GetReferenceSpeech	alignedspeech.h	/^        Speech* GetReferenceSpeech() { return m_speech; }$/;"	f	class:AlignedSpeech
+GetResult	tokenalignment.h	/^                TokenAlignment::AlignmentResult GetResult() { return m_result; }$/;"	f	class:TokenAlignment::AlignmentEvaluation
+GetResults	levenshtein.h	/^        virtual GraphAlignedSegment* GetResults() { return graph->RetrieveAlignment(); }$/;"	f	class:Levenshtein
+GetSD	statistics.h	/^		double GetSD(const bool& safe = false) { return(((m_SD == 0.0) && safe) ? 1.0 : m_SD); }$/;"	f	class:Statistics
+GetSegGrpID	alignedsegment.h	/^		ulint GetSegGrpID() { return m_SegGrpID; };$/;"	f	class:AlignedSegment
+GetSegment	speech.h	/^		Segment* GetSegment(const size_t& index) { return m_segments[index]; }$/;"	f	class:Speech
+GetSegments	sgml_reportgenerator.h	/^		vector < AlignedSegment* > GetSegments() const$/;"	f	class:Speaker
+GetSequence	sgml_reportgenerator.h	/^		int GetSequence()$/;"	f	class:Speaker
+GetShortName	tokenalignment.h	/^                string GetShortName() { return m_shortName; }$/;"	f	class:TokenAlignment::AlignmentResult
+GetSize	graph_coordinate.h	/^		size_t GetSize() {return m_ListCoordinates.size(); }$/;"	f	class:GraphCoordinateList
+GetSize	statistics.h	/^		int GetSize(const bool& safe = false) { return(((m_VecValues.size() == 0) && safe) ? 1 : m_VecValues.size()); }$/;"	f	class:Statistics
+GetSource	segment.h	/^		string GetSource() { return source; }$/;"	f	class:Segment
+GetSourceElementNum	segment.h	/^		long int GetSourceElementNum() { return sourceElementNum; }$/;"	f	class:Segment
+GetSourceFileName	speechset.h	/^		string GetSourceFileName() { return fileName; }$/;"	f	class:SpeechSet
+GetSourceLineNum	segment.h	/^		long int GetSourceLineNum() { return sourceLineNum; }$/;"	f	class:Segment
+GetSourceText	token.h	/^		string GetSourceText() { return sourceText; }$/;"	f	class:Token
+GetSpeakerId	segment.h	/^		string GetSpeakerId() { return speakerId; }$/;"	f	class:Segment
+GetSpeech	speechset.h	/^		Speech* GetSpeech(const size_t& index) {  return speeches[index]; }$/;"	f	class:SpeechSet
+GetStartTime	timedobject.h	/^        int GetStartTime() { return startTime; } \/\/ returns the value of startTime$/;"	f	class:TimedObject
+GetStartTime	uemfilter.h	/^		int    GetStartTime() { return m_StartTime; }$/;"	f	class:UEMElement
+GetStartToken	linestyle_inputparser.h	/^                Token* GetStartToken(const size_t& index) { return a_startTokens[index]; }$/;"	f	class:LineStyleInputParser::VirtualSegment
+GetStartTokenVector	linestyle_inputparser.h	/^				vector<Token *> GetStartTokenVector() { return a_startTokens; }$/;"	f	class:LineStyleInputParser::VirtualSegment
+GetSum	statistics.h	/^		double GetSum(const bool& safe = false) { return(((m_Sum == 0.0) && safe) ? 1.0 : m_Sum); }$/;"	f	class:Statistics
+GetSystem	alignment.h	/^        string GetSystem(const size_t& index) const { return systems[index]; }$/;"	f	class:Alignment
+GetSystemFilename	alignment.h	/^        string GetSystemFilename(const size_t& index) const { return systemFilenames[index]; }$/;"	f	class:Alignment
+GetTitle	sgml_generic_reportgenerator.h	/^		string GetTitle(const size_t& i) { return m_vTitle[i]; }$/;"	f	class:SGMLGenericReportGenerator
+GetTitle	speechset.h	/^		string GetTitle() { return titleName; }$/;"	f	class:SpeechSet
+GetToken	graphalignedtoken.h	/^		Token* GetToken(const size_t& dim) { return m_TabAlignedTokens[dim]; }$/;"	f	class:GraphAlignedToken
+GetToken	tokenalignment.h	/^                Token* GetToken() { return m_token; }$/;"	f	class:TokenAlignment::AlignmentEvaluation
+GetTokenAlignmentAt	alignedsegment.h	/^        TokenAlignment* GetTokenAlignmentAt(size_t index) { return m_tokenAlignments[index]; }$/;"	f	class:AlignedSegment
+GetTokenAlignmentCount	alignedsegment.h	/^        size_t GetTokenAlignmentCount() { return m_tokenAlignments.size(); }$/;"	f	class:AlignedSegment
+GetTokenAlignmentFor	alignedsegment.h	/^        TokenAlignment* GetTokenAlignmentFor(Token* reference) { return GetTokenAlignmentFor(reference, false); }$/;"	f	class:AlignedSegment
+GetTransitionCost	graph.h	/^		int GetTransitionCost(size_t* coordcurr, size_t* coordprev) { return m_HypRefStatus ? GetTransitionCostHypRef(coordcurr, coordprev) : GetTransitionCostGeneric(coordcurr, coordprev); }$/;"	f	class:Graph
+GetsID	segmentsgroup.h	/^		ulint GetsID() { return s_id; }$/;"	f	class:SegmentsGroup
+GetsID	timedobject.h	/^		ulint GetsID() { return s_id; }$/;"	f	class:TimedObject
+Graph	graph.h	/^		Graph() {}$/;"	f	class:Graph
+Graph	graph.h	/^class Graph$/;"	c
+Graph::GetCostInsertion	graph.h	/^		int GetCostInsertion(const bool& optionally) { return optionally ? m_CostOptionally : m_CostInsertion; }$/;"	f	class:Graph
+Graph::GetCostTransition	graph.h	/^		int GetCostTransition() { return m_CostTransition; }$/;"	f	class:Graph
+Graph::GetDimension	graph.h	/^		size_t GetDimension() { return m_Dimension; }$/;"	f	class:Graph
+Graph::GetDimensionDeep	graph.h	/^		size_t GetDimensionDeep(const size_t& d) { return m_TabDimensionDeep[d]; }$/;"	f	class:Graph
+Graph::GetTransitionCost	graph.h	/^		int GetTransitionCost(size_t* coordcurr, size_t* coordprev) { return m_HypRefStatus ? GetTransitionCostHypRef(coordcurr, coordprev) : GetTransitionCostGeneric(coordcurr, coordprev); }$/;"	f	class:Graph
+Graph::Graph	graph.h	/^		Graph() {}$/;"	f	class:Graph
+Graph::IsHypothesis	graph.h	/^		bool IsHypothesis(const size_t& dim) { return(dim < m_IndexRef); }$/;"	f	class:Graph
+Graph::IsReference	graph.h	/^		bool IsReference(const size_t& dim) { return(dim >= m_IndexRef); }$/;"	f	class:Graph
+Graph::PreviousCoordinates	graph.h	/^		void PreviousCoordinates(GraphCoordinateList& listPrev, size_t* coord) { m_HypRefStatus ? PreviousCoordinatesHypRef(listPrev, coord) : PreviousCoordinatesGeneric(listPrev, coord); }$/;"	f	class:Graph
+Graph::SizeMap	graph.h	/^		size_t SizeMap() { return m_MapCost->GetNumberOfCalculatedCosts(); }$/;"	f	class:Graph
+Graph::isHypRefEmpty	graph.h	/^		bool isHypRefEmpty(const size_t& hr) { return(m_TabLastTokens[hr].empty()); }$/;"	f	class:Graph
+Graph::logger	graph.h	/^		static Logger* logger;$/;"	m	class:Graph
+Graph::m_CostAdaptive	graph.h	/^        int m_CostAdaptive;$/;"	m	class:Graph
+Graph::m_CostCorrectNonSpeaker	graph.h	/^        int m_CostCorrectNonSpeaker;$/;"	m	class:Graph
+Graph::m_CostInsertion	graph.h	/^        int m_CostInsertion;$/;"	m	class:Graph
+Graph::m_CostOptionally	graph.h	/^        int m_CostOptionally;$/;"	m	class:Graph
+Graph::m_CostTransition	graph.h	/^        int m_CostTransition;		$/;"	m	class:Graph
+Graph::m_Dimension	graph.h	/^		size_t m_Dimension;$/;"	m	class:Graph
+Graph::m_EstimatedMaxCost	graph.h	/^		int m_EstimatedMaxCost;$/;"	m	class:Graph
+Graph::m_HypRefStatus	graph.h	/^		bool m_HypRefStatus;$/;"	m	class:Graph
+Graph::m_IndexRef	graph.h	/^		size_t m_IndexRef;$/;"	m	class:Graph
+Graph::m_MapCost	graph.h	/^		LevenshteinMatrix* m_MapCost;$/;"	m	class:Graph
+Graph::m_MaxDurationSegmentGroup	graph.h	/^		int m_MaxDurationSegmentGroup;$/;"	m	class:Graph
+Graph::m_NbThreads	graph.h	/^		size_t m_NbThreads;$/;"	m	class:Graph
+Graph::m_PruneOptimizationThreshold	graph.h	/^		int m_PruneOptimizationThreshold;$/;"	m	class:Graph
+Graph::m_TabCacheDimPreviousIndex	graph.h	/^        list<size_t>*** m_TabCacheDimPreviousIndex;$/;"	m	class:Graph
+Graph::m_TabDimensionDeep	graph.h	/^		size_t* m_TabDimensionDeep;$/;"	m	class:Graph
+Graph::m_TabFirstTokens	graph.h	/^		list<Token*>* m_TabFirstTokens;$/;"	m	class:Graph
+Graph::m_TabLastTokens	graph.h	/^		list<Token*>* m_TabLastTokens;$/;"	m	class:Graph
+Graph::m_TabMapTokenIndex	graph.h	/^		map<Token*, size_t>* m_TabMapTokenIndex;$/;"	m	class:Graph
+Graph::m_TabVecHypRef	graph.h	/^		vector<Token*>* m_TabVecHypRef;$/;"	m	class:Graph
+Graph::m_TimeBasedSafeDivider	graph.h	/^		int m_TimeBasedSafeDivider;$/;"	m	class:Graph
+Graph::m_WordOptimizationThreshold	graph.h	/^		int m_WordOptimizationThreshold;$/;"	m	class:Graph
+Graph::m_bAdaptiveCostOptimization	graph.h	/^		bool m_bAdaptiveCostOptimization;$/;"	m	class:Graph
+Graph::m_bCompressedArray	graph.h	/^        bool m_bCompressedArray;$/;"	m	class:Graph
+Graph::m_bPruneOptimization	graph.h	/^		bool m_bPruneOptimization;$/;"	m	class:Graph
+Graph::m_bSpeakerOptimization	graph.h	/^		bool m_bSpeakerOptimization;$/;"	m	class:Graph
+Graph::m_bWordAlignCostOptimization	graph.h	/^		bool m_bWordAlignCostOptimization;$/;"	m	class:Graph
+Graph::m_bWordOptimization	graph.h	/^		bool m_bWordOptimization;$/;"	m	class:Graph
+Graph::m_pSpeakerMatch	graph.h	/^		SpeakerMatch* m_pSpeakerMatch;$/;"	m	class:Graph
+Graph::m_typeCostModel	graph.h	/^		int m_typeCostModel; \/\/ 1: regular levenshtein$/;"	m	class:Graph
+Graph::m_useOptForHyp	graph.h	/^        bool m_useOptForHyp;$/;"	m	class:Graph
+Graph::m_useOptForRef	graph.h	/^        bool m_useOptForRef;$/;"	m	class:Graph
+GraphAlignedSegment	graphalignedsegment.h	/^class GraphAlignedSegment$/;"	c
+GraphAlignedSegment::AddFrontGraphAlignedToken	graphalignedsegment.h	/^		void AddFrontGraphAlignedToken(GraphAlignedToken* _pGToken) { m_vGraphAlignedTokens.push_back(_pGToken); }$/;"	f	class:GraphAlignedSegment
+GraphAlignedSegment::GetNbOfGraphAlignedToken	graphalignedsegment.h	/^		size_t GetNbOfGraphAlignedToken() { return m_vGraphAlignedTokens.size(); }$/;"	f	class:GraphAlignedSegment
+GraphAlignedSegment::m_HypRefIndex	graphalignedsegment.h	/^		size_t m_HypRefIndex;$/;"	m	class:GraphAlignedSegment
+GraphAlignedSegment::m_pLogger	graphalignedsegment.h	/^		static Logger* m_pLogger;$/;"	m	class:GraphAlignedSegment
+GraphAlignedSegment::m_vGraphAlignedTokens	graphalignedsegment.h	/^		vector<GraphAlignedToken*> m_vGraphAlignedTokens;$/;"	m	class:GraphAlignedSegment
+GraphAlignedToken	graphalignedtoken.h	/^		GraphAlignedToken() {}$/;"	f	class:GraphAlignedToken
+GraphAlignedToken	graphalignedtoken.h	/^class GraphAlignedToken$/;"	c
+GraphAlignedToken::GetDimension	graphalignedtoken.h	/^		size_t GetDimension() { return m_Dimension; }$/;"	f	class:GraphAlignedToken
+GraphAlignedToken::GetToken	graphalignedtoken.h	/^		Token* GetToken(const size_t& dim) { return m_TabAlignedTokens[dim]; }$/;"	f	class:GraphAlignedToken
+GraphAlignedToken::GraphAlignedToken	graphalignedtoken.h	/^		GraphAlignedToken() {}$/;"	f	class:GraphAlignedToken
+GraphAlignedToken::m_Dimension	graphalignedtoken.h	/^		size_t m_Dimension;$/;"	m	class:GraphAlignedToken
+GraphAlignedToken::m_TabAlignedTokens	graphalignedtoken.h	/^		Token** m_TabAlignedTokens;$/;"	m	class:GraphAlignedToken
+GraphCoordinateList	graph_coordinate.h	/^		GraphCoordinateList(const size_t& _CoordinateDimension) { m_CoordinateDimension = _CoordinateDimension; }$/;"	f	class:GraphCoordinateList
+GraphCoordinateList	graph_coordinate.h	/^class GraphCoordinateList$/;"	c
+GraphCoordinateList::GetBeginPosition	graph_coordinate.h	/^		GraphCoordinateListPosition GetBeginPosition() { return m_ListCoordinates.begin(); }$/;"	f	class:GraphCoordinateList
+GraphCoordinateList::GetEndPosition	graph_coordinate.h	/^		GraphCoordinateListPosition GetEndPosition() { return m_ListCoordinates.end(); }$/;"	f	class:GraphCoordinateList
+GraphCoordinateList::GetSize	graph_coordinate.h	/^		size_t GetSize() {return m_ListCoordinates.size(); }$/;"	f	class:GraphCoordinateList
+GraphCoordinateList::GraphCoordinateList	graph_coordinate.h	/^		GraphCoordinateList(const size_t& _CoordinateDimension) { m_CoordinateDimension = _CoordinateDimension; }$/;"	f	class:GraphCoordinateList
+GraphCoordinateList::NextPosition	graph_coordinate.h	/^		void NextPosition(GraphCoordinateListPosition& GCPosition) { ++GCPosition; }$/;"	f	class:GraphCoordinateList
+GraphCoordinateList::isEmpty	graph_coordinate.h	/^		bool isEmpty() { return m_ListCoordinates.empty(); }$/;"	f	class:GraphCoordinateList
+GraphCoordinateList::m_CoordinateDimension	graph_coordinate.h	/^		size_t m_CoordinateDimension;$/;"	m	class:GraphCoordinateList
+GraphCoordinateList::m_ListCoordinates	graph_coordinate.h	/^		list<size_t*> m_ListCoordinates;$/;"	m	class:GraphCoordinateList
+GraphCoordinateList::~GraphCoordinateList	graph_coordinate.h	/^		~GraphCoordinateList() { RemoveAll(); }$/;"	f	class:GraphCoordinateList
+GraphCoordinateListPosition	graph_coordinate.h	/^typedef list<size_t*>::iterator GraphCoordinateListPosition;$/;"	t
+HasNext	ctmstmrttm_segmentor.h	/^		bool HasNext() { return(currentSegmentRef != NULL); }$/;"	f	class:CTMSTMRTTMSegmentor
+HasNext	trntrn_segmentor.h	/^		bool HasNext() { return (currentUterance != ""); }$/;"	f	class:TRNTRNSegmentor
+ID	id.h	/^class ID$/;"	c
+ID::id	id.h	/^        static ulint id;$/;"	m	class:ID
+ID_H	id.h	19;"	d
+IGNORE_TIME_SEGMENT_IN_SCORING	rttm_inputparser.h	/^        static const string IGNORE_TIME_SEGMENT_IN_SCORING;$/;"	m	class:RTTMInputParser
+IGNORE_TIME_SEGMENT_IN_SCORING	stm_inputparser.h	/^        static const string IGNORE_TIME_SEGMENT_IN_SCORING;$/;"	m	class:STMInputParser
+INITIALIZED	recording.h	/^        static const int INITIALIZED = 0;$/;"	m	class:Recording
+INPUTPARSER_H	inputparser.h	19;"	d
+INSERTION	tokenalignment.h	/^        static const AlignmentResult INSERTION;$/;"	m	class:TokenAlignment
+INVALID_SYSTEM	tokenalignment.h	/^        static const AlignmentResult INVALID_SYSTEM;$/;"	m	class:TokenAlignment
+InputParser	inputparser.h	/^		InputParser() {	m_bOneTokenPerSegment = false; }$/;"	f	class:InputParser
+InputParser	inputparser.h	/^class InputParser$/;"	c
+InputParser::InputParser	inputparser.h	/^		InputParser() {	m_bOneTokenPerSegment = false; }$/;"	f	class:InputParser
+InputParser::ParseString	inputparser.h	/^		int ParseString(const string& chaine)  { return static_cast<int>(floor( ( atof(chaine.c_str()) * 1000 ) + 0.5)); }$/;"	f	class:InputParser
+InputParser::SetOneTokenPerSegment	inputparser.h	/^		void SetOneTokenPerSegment(const bool& _bool) { m_bOneTokenPerSegment = _bool; }$/;"	f	class:InputParser
+InputParser::isOneTokenPerSegment	inputparser.h	/^		bool isOneTokenPerSegment() { return m_bOneTokenPerSegment; }$/;"	f	class:InputParser
+InputParser::m_bOneTokenPerSegment	inputparser.h	/^		bool m_bOneTokenPerSegment;$/;"	m	class:InputParser
+InputParser::~InputParser	inputparser.h	/^		virtual ~InputParser() { }$/;"	f	class:InputParser
+IsConfidenceSet	token.h	/^		bool IsConfidenceSet() { return hasConfidence; }$/;"	f	class:Token
+IsCostCalculatedFor	arraylevenshteinmatrix.h	/^		bool IsCostCalculatedFor(size_t* coordinates) { return(GetCostFor(coordinates) != C_UNCALCULATED); }	$/;"	f	class:ArrayLevenshteinMatrix
+IsCostCalculatedFor	compressedlevenshteinmatrix.h	/^		bool IsCostCalculatedFor(size_t* coordinates) { return(GetCostFor(coordinates) != C_UNCALCULATED); }$/;"	f	class:CompressedLevenshteinMatrix
+IsDirty	properties.h	/^		static bool IsDirty() { return dirty; }$/;"	f	class:Properties
+IsGen	speechset.h	/^		bool IsGen() { return gen; }$/;"	f	class:SpeechSet
+IsHyp	speechset.h	/^		bool IsHyp() { return hyp; }$/;"	f	class:SpeechSet
+IsHypothesis	graph.h	/^		bool IsHypothesis(const size_t& dim) { return(dim < m_IndexRef); }$/;"	f	class:Graph
+IsRef	speechset.h	/^		bool IsRef() { return ref; }$/;"	f	class:SpeechSet
+IsReference	graph.h	/^		bool IsReference(const size_t& dim) { return(dim >= m_IndexRef); }$/;"	f	class:Graph
+IsTimeReal	timedobject.h	/^        bool IsTimeReal() { return (startTime >= 0 && endTime >= 0); }$/;"	f	class:TimedObject
+IsTraversable	linestyle_inputparser.h	/^                bool IsTraversable() { return traversable; }$/;"	f	class:LineStyleInputParser::VirtualSegment
+LEVENSHTEINMATRIX_H	levenshteinmatrix.h	19;"	d
+LEVENSHTEIN_H	levenshtein.h	19;"	d
+LINESTYLE_INPUTPARSER_H	linestyle_inputparser.h	19;"	d
+LOADED	recording.h	/^        static const int LOADED = 1;$/;"	m	class:Recording
+LOGGER_H	logger.h	23;"	d
+LOG_ALIGN	logger.h	90;"	d
+LOG_DEBUG	logger.h	94;"	d
+LOG_ERR	logger.h	106;"	d
+LOG_FATAL	logger.h	110;"	d
+LOG_INFO	logger.h	98;"	d
+LOG_WARN	logger.h	102;"	d
+Levenshtein	levenshtein.h	/^class Levenshtein : public Aligner$/;"	c
+Levenshtein::Align	levenshtein.h	/^		virtual void Align() { graph->FillGraph(); }$/;"	f	class:Levenshtein
+Levenshtein::GetCost	levenshtein.h	/^        int GetCost() { return graph->GetBestCost(); }$/;"	f	class:Levenshtein
+Levenshtein::GetResults	levenshtein.h	/^        virtual GraphAlignedSegment* GetResults() { return graph->RetrieveAlignment(); }$/;"	f	class:Levenshtein
+Levenshtein::graph	levenshtein.h	/^        Graph* graph;$/;"	m	class:Levenshtein
+Levenshtein::logger	levenshtein.h	/^        static Logger* logger;$/;"	m	class:Levenshtein
+Levenshtein::refSepIndex	levenshtein.h	/^        size_t refSepIndex;$/;"	m	class:Levenshtein
+LevenshteinMatrix	levenshteinmatrix.h	/^class LevenshteinMatrix$/;"	c
+LineStyleInputParser	linestyle_inputparser.h	/^		LineStyleInputParser() {}$/;"	f	class:LineStyleInputParser
+LineStyleInputParser	linestyle_inputparser.h	/^class LineStyleInputParser : public InputParser$/;"	c
+LineStyleInputParser::LineStyleInputParser	linestyle_inputparser.h	/^		LineStyleInputParser() {}$/;"	f	class:LineStyleInputParser
+LineStyleInputParser::VirtualSegment	linestyle_inputparser.h	/^        class VirtualSegment$/;"	c	class:LineStyleInputParser
+LineStyleInputParser::VirtualSegment::AddEndToken	linestyle_inputparser.h	/^                void AddEndToken(Token* tok) { a_endTokens.push_back(tok); }$/;"	f	class:LineStyleInputParser::VirtualSegment
+LineStyleInputParser::VirtualSegment::AddStartToken	linestyle_inputparser.h	/^                void AddStartToken(Token* tok) { a_startTokens.push_back(tok); }$/;"	f	class:LineStyleInputParser::VirtualSegment
+LineStyleInputParser::VirtualSegment::ClearEndToken	linestyle_inputparser.h	/^                void ClearEndToken() { a_endTokens.clear(); }$/;"	f	class:LineStyleInputParser::VirtualSegment
+LineStyleInputParser::VirtualSegment::GetEndToken	linestyle_inputparser.h	/^                Token* GetEndToken(const size_t& index) { return a_endTokens[index]; }$/;"	f	class:LineStyleInputParser::VirtualSegment
+LineStyleInputParser::VirtualSegment::GetEndTokenVector	linestyle_inputparser.h	/^				vector<Token *> GetEndTokenVector() { return a_endTokens; }$/;"	f	class:LineStyleInputParser::VirtualSegment
+LineStyleInputParser::VirtualSegment::GetNbEndToken	linestyle_inputparser.h	/^                size_t GetNbEndToken() { return a_endTokens.size(); }$/;"	f	class:LineStyleInputParser::VirtualSegment
+LineStyleInputParser::VirtualSegment::GetNbStartToken	linestyle_inputparser.h	/^                size_t GetNbStartToken() { return a_startTokens.size(); }$/;"	f	class:LineStyleInputParser::VirtualSegment
+LineStyleInputParser::VirtualSegment::GetStartToken	linestyle_inputparser.h	/^                Token* GetStartToken(const size_t& index) { return a_startTokens[index]; }$/;"	f	class:LineStyleInputParser::VirtualSegment
+LineStyleInputParser::VirtualSegment::GetStartTokenVector	linestyle_inputparser.h	/^				vector<Token *> GetStartTokenVector() { return a_startTokens; }$/;"	f	class:LineStyleInputParser::VirtualSegment
+LineStyleInputParser::VirtualSegment::IsTraversable	linestyle_inputparser.h	/^                bool IsTraversable() { return traversable; }$/;"	f	class:LineStyleInputParser::VirtualSegment
+LineStyleInputParser::VirtualSegment::SetTraversable	linestyle_inputparser.h	/^                void SetTraversable(const bool& trav) { traversable = trav; }$/;"	f	class:LineStyleInputParser::VirtualSegment
+LineStyleInputParser::VirtualSegment::VirtualSegment	linestyle_inputparser.h	/^                VirtualSegment() { SetTraversable(false); }$/;"	f	class:LineStyleInputParser::VirtualSegment
+LineStyleInputParser::VirtualSegment::a_endTokens	linestyle_inputparser.h	/^                vector<Token*> a_endTokens;$/;"	m	class:LineStyleInputParser::VirtualSegment
+LineStyleInputParser::VirtualSegment::a_startTokens	linestyle_inputparser.h	/^                vector<Token*> a_startTokens;$/;"	m	class:LineStyleInputParser::VirtualSegment
+LineStyleInputParser::VirtualSegment::traversable	linestyle_inputparser.h	/^                bool traversable;$/;"	m	class:LineStyleInputParser::VirtualSegment
+LineStyleInputParser::m_Confidence	linestyle_inputparser.h	/^        float m_Confidence;$/;"	m	class:LineStyleInputParser
+LineStyleInputParser::m_bUseConfidence	linestyle_inputparser.h	/^        bool m_bUseConfidence;$/;"	m	class:LineStyleInputParser
+LineStyleInputParser::m_bUseExtended	linestyle_inputparser.h	/^        bool m_bUseExtended;$/;"	m	class:LineStyleInputParser
+LineStyleInputParser::m_endtime	linestyle_inputparser.h	/^        int m_endtime;$/;"	m	class:LineStyleInputParser
+LineStyleInputParser::m_starttime	linestyle_inputparser.h	/^        int m_starttime;$/;"	m	class:LineStyleInputParser
+LineStyleInputParser::~LineStyleInputParser	linestyle_inputparser.h	/^		virtual ~LineStyleInputParser() {}$/;"	f	class:LineStyleInputParser
+LoadFile	spkrautooverlap.h	/^		void LoadFile(const string& filename) { }$/;"	f	class:SpkrAutoOverlap
+Logger	logger.h	/^        Logger() {}$/;"	f	class:Logger
+Logger	logger.h	/^class Logger$/;"	c
+Logger::Logger	logger.h	/^        Logger() {}$/;"	f	class:Logger
+Logger::getLogLevel	logger.h	/^		int getLogLevel() { return log_level; }$/;"	f	class:Logger
+Logger::isAlignLogON	logger.h	/^		bool isAlignLogON() { return ( (log_level == 6) || (log_level == 7) );  }$/;"	f	class:Logger
+Logger::log_level	logger.h	/^        static int log_level;$/;"	m	class:Logger
+Logger::rootLogger	logger.h	/^        static Logger* rootLogger;$/;"	m	class:Logger
+Logger::where	logger.h	/^        static ostream* where;$/;"	m	class:Logger
+Logger::~Logger	logger.h	/^        ~Logger() {}$/;"	f	class:Logger
+MemoryUsedKB	compressedlevenshteinmatrix.h	/^		double MemoryUsedKB() { return( (static_cast<double>(m_CurrentMemorySize))\/1024.0 ); }$/;"	f	class:CompressedLevenshteinMatrix
+NOT_FRAGMENT	token.h	/^		static const int NOT_FRAGMENT = 0;$/;"	m	class:Token
+NbOfSegments	speech.h	/^		size_t NbOfSegments() { return m_segments.size(); }$/;"	f	class:Speech
+NextGeneric	trntrn_segmentor.h	/^		SegmentsGroup* NextGeneric() { return NULL; }$/;"	f	class:TRNTRNSegmentor
+NextPosition	graph_coordinate.h	/^		void NextPosition(GraphCoordinateListPosition& GCPosition) { ++GCPosition; }$/;"	f	class:GraphCoordinateList
+PROPERTIES_H	properties.h	19;"	d
+ParseString	inputparser.h	/^		int ParseString(const string& chaine)  { return static_cast<int>(floor( ( atof(chaine.c_str()) * 1000 ) + 0.5)); }$/;"	f	class:InputParser
+ParseString	uemfilter.h	/^		int ParseString(const string& chaine) { return static_cast<int>(floor( ( atof(chaine.c_str()) * 1000 ) + 0.5)); }$/;"	f	class:UEMFilter
+PreviousCoordinates	graph.h	/^		void PreviousCoordinates(GraphCoordinateList& listPrev, size_t* coord) { m_HypRefStatus ? PreviousCoordinatesHypRef(listPrev, coord) : PreviousCoordinatesGeneric(listPrev, coord); }$/;"	f	class:Graph
+ProcessSpeechSet	spkrautooverlap.h	/^		unsigned long int ProcessSpeechSet(SpeechSet* ref, map<string, SpeechSet*> &hyp) { return 0; }$/;"	f	class:SpkrAutoOverlap
+Properties	properties.h	/^class Properties$/;"	c
+Properties::IsDirty	properties.h	/^		static bool IsDirty() { return dirty; }$/;"	f	class:Properties
+Properties::dirty	properties.h	/^		static bool dirty;$/;"	m	class:Properties
+Properties::properties	properties.h	/^		static map<string, string> properties;$/;"	m	class:Properties
+RAWSYSReportGenerator	rawsys_reportgenerator.h	/^class RAWSYSReportGenerator : public ReportGenerator$/;"	c
+RAWSYSReportGenerator::GetNumSpeakers	rawsys_reportgenerator.h	/^		size_t GetNumSpeakers() { return m_MapDatas.size(); }$/;"	f	class:RAWSYSReportGenerator
+RAWSYSReportGenerator::logger	rawsys_reportgenerator.h	/^		static Logger* logger;$/;"	m	class:RAWSYSReportGenerator
+RAWSYSReportGenerator::m_MapDatas	rawsys_reportgenerator.h	/^		map<string, RAWSYS_Datas*> m_MapDatas;$/;"	m	class:RAWSYSReportGenerator
+RAWSYSReportGenerator::m_RawSys	rawsys_reportgenerator.h	/^		int m_RawSys;$/;"	m	class:RAWSYSReportGenerator
+RAWSYSReportGenerator::m_SumTotConfidenceCorrect	rawsys_reportgenerator.h	/^		double m_SumTotConfidenceCorrect;$/;"	m	class:RAWSYSReportGenerator
+RAWSYSReportGenerator::m_SumTotConfidenceIncorrect	rawsys_reportgenerator.h	/^		double m_SumTotConfidenceIncorrect;$/;"	m	class:RAWSYSReportGenerator
+RAWSYS_Datas	rawsys_reportgenerator.h	/^class RAWSYS_Datas$/;"	c
+RAWSYS_Datas::GetNumberCorrectWords	rawsys_reportgenerator.h	/^		uint GetNumberCorrectWords() { return(m_NumberCorrectWords); }$/;"	f	class:RAWSYS_Datas
+RAWSYS_Datas::GetNumberDeletions	rawsys_reportgenerator.h	/^		uint GetNumberDeletions() { return(m_NumberDeletions); }$/;"	f	class:RAWSYS_Datas
+RAWSYS_Datas::GetNumberErrors	rawsys_reportgenerator.h	/^		uint GetNumberErrors() { return(m_NumberSubstitutions+m_NumberInsertions+m_NumberDeletions+m_NumberSpeakerErrors); }$/;"	f	class:RAWSYS_Datas
+RAWSYS_Datas::GetNumberInsertions	rawsys_reportgenerator.h	/^		uint GetNumberInsertions() { return(m_NumberInsertions); }$/;"	f	class:RAWSYS_Datas
+RAWSYS_Datas::GetNumberRefWords	rawsys_reportgenerator.h	/^		uint GetNumberRefWords() { return(m_NumberRefWords); }$/;"	f	class:RAWSYS_Datas
+RAWSYS_Datas::GetNumberSegments	rawsys_reportgenerator.h	/^		uint GetNumberSegments() { return(m_NumberSegments); }$/;"	f	class:RAWSYS_Datas
+RAWSYS_Datas::GetNumberSegmentsErrors	rawsys_reportgenerator.h	/^		uint GetNumberSegmentsErrors() { return(m_NumberSegmentsErrors); }$/;"	f	class:RAWSYS_Datas
+RAWSYS_Datas::GetNumberSpeakerErrors	rawsys_reportgenerator.h	/^		uint GetNumberSpeakerErrors() { return(m_NumberSpeakerErrors); }$/;"	f	class:RAWSYS_Datas
+RAWSYS_Datas::GetNumberSubstitutions	rawsys_reportgenerator.h	/^		uint GetNumberSubstitutions() { return(m_NumberSubstitutions); }$/;"	f	class:RAWSYS_Datas
+RAWSYS_Datas::GetPercentCorrectWords	rawsys_reportgenerator.h	/^		double GetPercentCorrectWords() { return( 100.0*static_cast<double>(m_NumberCorrectWords)\/static_cast<double>(m_NumberRefWords) ); }$/;"	f	class:RAWSYS_Datas
+RAWSYS_Datas::GetPercentDeletions	rawsys_reportgenerator.h	/^		double GetPercentDeletions() { return( 100.0*static_cast<double>(m_NumberDeletions)\/static_cast<double>(m_NumberRefWords) ); }$/;"	f	class:RAWSYS_Datas
+RAWSYS_Datas::GetPercentErrors	rawsys_reportgenerator.h	/^		double GetPercentErrors() { return( 100.0*static_cast<double>(GetNumberErrors())\/static_cast<double>(m_NumberRefWords) ); }$/;"	f	class:RAWSYS_Datas
+RAWSYS_Datas::GetPercentInsertions	rawsys_reportgenerator.h	/^		double GetPercentInsertions() { return( 100.0*static_cast<double>(m_NumberInsertions)\/static_cast<double>(m_NumberRefWords) ); }$/;"	f	class:RAWSYS_Datas
+RAWSYS_Datas::GetPercentSegmentsErrors	rawsys_reportgenerator.h	/^		double GetPercentSegmentsErrors() { return( 100.0*static_cast<double>(m_NumberSegmentsErrors)\/static_cast<double>(m_NumberSegments) ); }$/;"	f	class:RAWSYS_Datas
+RAWSYS_Datas::GetPercentSpeakerErrors	rawsys_reportgenerator.h	/^		double GetPercentSpeakerErrors() { return( 100.0*static_cast<double>(m_NumberSpeakerErrors)\/static_cast<double>(m_NumberRefWords) ); }$/;"	f	class:RAWSYS_Datas
+RAWSYS_Datas::GetPercentSubstitutions	rawsys_reportgenerator.h	/^		double GetPercentSubstitutions() { return( 100.0*static_cast<double>(m_NumberSubstitutions)\/static_cast<double>(m_NumberRefWords) ); }$/;"	f	class:RAWSYS_Datas
+RAWSYS_Datas::m_NumberCorrectWords	rawsys_reportgenerator.h	/^		uint m_NumberCorrectWords;$/;"	m	class:RAWSYS_Datas
+RAWSYS_Datas::m_NumberDeletions	rawsys_reportgenerator.h	/^		uint m_NumberDeletions;$/;"	m	class:RAWSYS_Datas
+RAWSYS_Datas::m_NumberInsertions	rawsys_reportgenerator.h	/^		uint m_NumberInsertions;$/;"	m	class:RAWSYS_Datas
+RAWSYS_Datas::m_NumberRefWords	rawsys_reportgenerator.h	/^		uint m_NumberRefWords;$/;"	m	class:RAWSYS_Datas
+RAWSYS_Datas::m_NumberSegments	rawsys_reportgenerator.h	/^		uint m_NumberSegments;$/;"	m	class:RAWSYS_Datas
+RAWSYS_Datas::m_NumberSegmentsErrors	rawsys_reportgenerator.h	/^		uint m_NumberSegmentsErrors;$/;"	m	class:RAWSYS_Datas
+RAWSYS_Datas::m_NumberSpeakerErrors	rawsys_reportgenerator.h	/^		uint m_NumberSpeakerErrors;$/;"	m	class:RAWSYS_Datas
+RAWSYS_Datas::m_NumberSubstitutions	rawsys_reportgenerator.h	/^		uint m_NumberSubstitutions;$/;"	m	class:RAWSYS_Datas
+RAWSYS_Datas::m_SumConfidenceCorrect	rawsys_reportgenerator.h	/^		double m_SumConfidenceCorrect;$/;"	m	class:RAWSYS_Datas
+RAWSYS_Datas::m_SumConfidenceIncorrect	rawsys_reportgenerator.h	/^		double m_SumConfidenceIncorrect;$/;"	m	class:RAWSYS_Datas
+RAWSYS_Datas::~RAWSYS_Datas	rawsys_reportgenerator.h	/^		~RAWSYS_Datas() {}$/;"	f	class:RAWSYS_Datas
+RAWSYS_REPORTGENERATOR_H	rawsys_reportgenerator.h	19;"	d
+RECORDING_H	recording.h	19;"	d
+REFERENCE	tokenalignment.h	/^        static const AlignmentResult REFERENCE;$/;"	m	class:TokenAlignment
+REFERENCE_KEY	tokenalignment.h	/^        static const string REFERENCE_KEY;$/;"	m	class:TokenAlignment
+REPORTGENERATOR_H	reportgenerator.h	19;"	d
+RTTMInputParser	rttm_inputparser.h	/^		RTTMInputParser() {}$/;"	f	class:RTTMInputParser
+RTTMInputParser	rttm_inputparser.h	/^class RTTMInputParser : public LineStyleInputParser$/;"	c
+RTTMInputParser::IGNORE_TIME_SEGMENT_IN_SCORING	rttm_inputparser.h	/^        static const string IGNORE_TIME_SEGMENT_IN_SCORING;$/;"	m	class:RTTMInputParser
+RTTMInputParser::RTTMInputParser	rttm_inputparser.h	/^		RTTMInputParser() {}$/;"	f	class:RTTMInputParser
+RTTMInputParser::logger	rttm_inputparser.h	/^        static Logger* logger;$/;"	m	class:RTTMInputParser
+RTTMInputParser::~RTTMInputParser	rttm_inputparser.h	/^		virtual ~RTTMInputParser() {}$/;"	f	class:RTTMInputParser
+RTTM_INPUTPARSER_H	rttm_inputparser.h	19;"	d
+Recording	recording.h	/^class Recording$/;"	c
+Recording::ALIGNED	recording.h	/^        static const int ALIGNED = 2;$/;"	m	class:Recording
+Recording::Align	recording.h	/^        void Align() { m_bGenericAlignment ? AlignGeneric() : AlignHypRef(); };$/;"	f	class:Recording
+Recording::INITIALIZED	recording.h	/^        static const int INITIALIZED = 0;$/;"	m	class:Recording
+Recording::LOADED	recording.h	/^        static const int LOADED = 1;$/;"	m	class:Recording
+Recording::SCORED	recording.h	/^        static const int SCORED = 3;		$/;"	m	class:Recording
+Recording::aligner	recording.h	/^        map<string, Aligner*> aligner;$/;"	m	class:Recording
+Recording::alignments	recording.h	/^		Alignment* alignments;$/;"	m	class:Recording
+Recording::filters	recording.h	/^        map<string, ::Filter*> filters;$/;"	m	class:Recording
+Recording::hypothesis	recording.h	/^		map<string, SpeechSet*> hypothesis;$/;"	m	class:Recording
+Recording::inputParsers	recording.h	/^        map<string, InputParser*> inputParsers;$/;"	m	class:Recording
+Recording::logger	recording.h	/^        static Logger* logger;$/;"	m	class:Recording
+Recording::m_bGenericAlignment	recording.h	/^		bool m_bGenericAlignment;$/;"	m	class:Recording
+Recording::m_pSpeakerMatch	recording.h	/^		SpeakerMatch* m_pSpeakerMatch;$/;"	m	class:Recording
+Recording::pSGMLGenericReportGenerator	recording.h	/^		SGMLGenericReportGenerator* pSGMLGenericReportGenerator;$/;"	m	class:Recording
+Recording::references	recording.h	/^		SpeechSet* references;$/;"	m	class:Recording
+Recording::reportGenerators	recording.h	/^        map<string, ReportGenerator*> reportGenerators;$/;"	m	class:Recording
+Recording::scorer	recording.h	/^        map<string, Scorer*> scorer;$/;"	m	class:Recording
+Recording::segmentor	recording.h	/^        Segmentor* segmentor;$/;"	m	class:Recording
+Recording::segmentors	recording.h	/^        map<string, Segmentor*> segmentors;$/;"	m	class:Recording
+Recording::state	recording.h	/^        int state;$/;"	m	class:Recording
+ReportGenerator	reportgenerator.h	/^		ReportGenerator() {}$/;"	f	class:ReportGenerator
+ReportGenerator	reportgenerator.h	/^class ReportGenerator$/;"	c
+ReportGenerator::ReportGenerator	reportgenerator.h	/^		ReportGenerator() {}$/;"	f	class:ReportGenerator
+ReportGenerator::~ReportGenerator	reportgenerator.h	/^		virtual ~ReportGenerator() {}$/;"	f	class:ReportGenerator
+ResetGeneric	trntrn_segmentor.h	/^		void ResetGeneric(map<string, SpeechSet*> &mapspeechSet) { }$/;"	f	class:TRNTRNSegmentor
+SCORED	recording.h	/^        static const int SCORED = 3;		$/;"	m	class:Recording
+SCORER_H	scorer.h	19;"	d
+SEGMENTOR_H	segmentor.h	19;"	d
+SEGMENTSGROUP_H	segmentsgroup.h	19;"	d
+SEGMENT_H	segment.h	19;"	d
+SGMLGenericReportGenerator	sgml_generic_reportgenerator.h	/^		SGMLGenericReportGenerator() {}$/;"	f	class:SGMLGenericReportGenerator
+SGMLGenericReportGenerator	sgml_generic_reportgenerator.h	/^class SGMLGenericReportGenerator$/;"	c
+SGMLGenericReportGenerator::AddGraphAlignSegment	sgml_generic_reportgenerator.h	/^		void AddGraphAlignSegment(GraphAlignedSegment* gas) { m_vGAS.push_back(gas); }$/;"	f	class:SGMLGenericReportGenerator
+SGMLGenericReportGenerator::AddTitleAndFilename	sgml_generic_reportgenerator.h	/^		void AddTitleAndFilename(const string& _filename, const string& _title) { m_vFilename.push_back(_filename); m_vTitle.push_back(_title); }$/;"	f	class:SGMLGenericReportGenerator
+SGMLGenericReportGenerator::GetFilename	sgml_generic_reportgenerator.h	/^		string GetFilename(const size_t& i) { return m_vFilename[i]; }$/;"	f	class:SGMLGenericReportGenerator
+SGMLGenericReportGenerator::GetNbOfSystems	sgml_generic_reportgenerator.h	/^		size_t GetNbOfSystems() { return m_vTitle.size(); }$/;"	f	class:SGMLGenericReportGenerator
+SGMLGenericReportGenerator::GetTitle	sgml_generic_reportgenerator.h	/^		string GetTitle(const size_t& i) { return m_vTitle[i]; }$/;"	f	class:SGMLGenericReportGenerator
+SGMLGenericReportGenerator::SGMLGenericReportGenerator	sgml_generic_reportgenerator.h	/^		SGMLGenericReportGenerator() {}$/;"	f	class:SGMLGenericReportGenerator
+SGMLGenericReportGenerator::m_pLogger	sgml_generic_reportgenerator.h	/^		static Logger* m_pLogger;$/;"	m	class:SGMLGenericReportGenerator
+SGMLGenericReportGenerator::m_vFilename	sgml_generic_reportgenerator.h	/^		vector<string> m_vFilename;$/;"	m	class:SGMLGenericReportGenerator
+SGMLGenericReportGenerator::m_vGAS	sgml_generic_reportgenerator.h	/^		vector<GraphAlignedSegment*> m_vGAS;$/;"	m	class:SGMLGenericReportGenerator
+SGMLGenericReportGenerator::m_vTitle	sgml_generic_reportgenerator.h	/^		vector<string> m_vTitle;$/;"	m	class:SGMLGenericReportGenerator
+SGMLReportGenerator	sgml_reportgenerator.h	/^		SGMLReportGenerator() {}$/;"	f	class:SGMLReportGenerator
+SGMLReportGenerator	sgml_reportgenerator.h	/^class SGMLReportGenerator : public ReportGenerator$/;"	c
+SGMLReportGenerator::SGMLReportGenerator	sgml_reportgenerator.h	/^		SGMLReportGenerator() {}$/;"	f	class:SGMLReportGenerator
+SGMLReportGenerator::m_bCaseSensitive	sgml_reportgenerator.h	/^		bool m_bCaseSensitive;$/;"	m	class:SGMLReportGenerator
+SGMLReportGenerator::m_bHypHasConf	sgml_reportgenerator.h	/^		bool m_bHypHasConf;$/;"	m	class:SGMLReportGenerator
+SGMLReportGenerator::m_bHypHasTimes	sgml_reportgenerator.h	/^		bool m_bHypHasTimes;$/;"	m	class:SGMLReportGenerator
+SGMLReportGenerator::m_bRefHasConf	sgml_reportgenerator.h	/^		bool m_bRefHasConf;$/;"	m	class:SGMLReportGenerator
+SGMLReportGenerator::m_bRefHasTimes	sgml_reportgenerator.h	/^		bool m_bRefHasTimes;$/;"	m	class:SGMLReportGenerator
+SGMLReportGenerator::m_pLogger	sgml_reportgenerator.h	/^		static Logger* m_pLogger;$/;"	m	class:SGMLReportGenerator
+SGMLReportGenerator::~SGMLReportGenerator	sgml_reportgenerator.h	/^		virtual ~SGMLReportGenerator() {}$/;"	f	class:SGMLReportGenerator
+SGML_GENERIC_REPORTGENERATOR_H	sgml_generic_reportgenerator.h	19;"	d
+SGML_REPORTGENERATOR_H	sgml_reportgenerator.h	19;"	d
+SPEAKERMATCH_H	speakermatch.h	23;"	d
+SPEAKERSUB	tokenalignment.h	/^        static const AlignmentResult SPEAKERSUB;$/;"	m	class:TokenAlignment
+SPEECHSET_H	speechset.h	19;"	d
+SPEECH_H	speech.h	19;"	d
+SPKRAUTOOVERLAP_H	spkrautooverlap.h	19;"	d
+STATISTICS_H	statistics.h	19;"	d
+STDINC_H	stdinc.h	19;"	d
+STMInputParser	stm_inputparser.h	/^		STMInputParser() {}$/;"	f	class:STMInputParser
+STMInputParser	stm_inputparser.h	/^class STMInputParser : public LineStyleInputParser$/;"	c
+STMInputParser::IGNORE_TIME_SEGMENT_IN_SCORING	stm_inputparser.h	/^        static const string IGNORE_TIME_SEGMENT_IN_SCORING;$/;"	m	class:STMInputParser
+STMInputParser::STMInputParser	stm_inputparser.h	/^		STMInputParser() {}$/;"	f	class:STMInputParser
+STMInputParser::logger	stm_inputparser.h	/^        static Logger* logger;$/;"	m	class:STMInputParser
+STMInputParser::~STMInputParser	stm_inputparser.h	/^		virtual ~STMInputParser() {}$/;"	f	class:STMInputParser
+STM_INPUTPARSER_H	stm_inputparser.h	19;"	d
+STTScorer	stt_scorer.h	/^		STTScorer() {}$/;"	f	class:STTScorer
+STTScorer	stt_scorer.h	/^class STTScorer : public Scorer$/;"	c
+STTScorer::STTScorer	stt_scorer.h	/^		STTScorer() {}$/;"	f	class:STTScorer
+STTScorer::logger	stt_scorer.h	/^        static Logger* logger;$/;"	m	class:STTScorer
+STTScorer::~STTScorer	stt_scorer.h	/^		virtual ~STTScorer() {}$/;"	f	class:STTScorer
+STT_SCORER_H	stt_scorer.h	19;"	d
+SUBSTITUTION	tokenalignment.h	/^        static const AlignmentResult SUBSTITUTION;$/;"	m	class:TokenAlignment
+Scorer	scorer.h	/^class Scorer$/;"	c
+Segment	segment.h	/^class Segment : public TimedObject$/;"	c
+Segment::AreStartTimeAndDurationValid	segment.h	/^        virtual bool AreStartTimeAndDurationValid(const int& _startTime, const int& _duration) { return AreStartTimeAndEndTimeValid(_startTime, _startTime + _duration); }$/;"	f	class:Segment
+Segment::GetChannel	segment.h	/^		string GetChannel() { return channel; }$/;"	f	class:Segment
+Segment::GetFirstToken	segment.h	/^		Token* GetFirstToken(const size_t& index) { return f_token->GetNextToken(index); }$/;"	f	class:Segment
+Segment::GetId	segment.h	/^		string GetId() { return id; }$/;"	f	class:Segment
+Segment::GetLabel	segment.h	/^		string GetLabel() { return m_Label; }$/;"	f	class:Segment
+Segment::GetLastToken	segment.h	/^		Token* GetLastToken(const size_t& index) { return l_token->GetNextToken(index); }$/;"	f	class:Segment
+Segment::GetNumberOfFirstToken	segment.h	/^		size_t GetNumberOfFirstToken() { return f_token->GetNbOfNextTokens(); }$/;"	f	class:Segment
+Segment::GetNumberOfLastToken	segment.h	/^		size_t GetNumberOfLastToken() { return l_token->GetNbOfNextTokens(); }$/;"	f	class:Segment
+Segment::GetSource	segment.h	/^		string GetSource() { return source; }$/;"	f	class:Segment
+Segment::GetSourceElementNum	segment.h	/^		long int GetSourceElementNum() { return sourceElementNum; }$/;"	f	class:Segment
+Segment::GetSourceLineNum	segment.h	/^		long int GetSourceLineNum() { return sourceLineNum; }$/;"	f	class:Segment
+Segment::GetSpeakerId	segment.h	/^		string GetSpeakerId() { return speakerId; }$/;"	f	class:Segment
+Segment::SetAsSegmentExcludeFromScoring	segment.h	/^        void SetAsSegmentExcludeFromScoring() { ignoreSegmentInScoring = true; }$/;"	f	class:Segment
+Segment::SetChannel	segment.h	/^		void SetChannel(const string& x) { channel = x; }$/;"	f	class:Segment
+Segment::SetEndTime	segment.h	/^		void SetEndTime(const int& _newEndTime) { endTime = _newEndTime; }$/;"	f	class:Segment
+Segment::SetId	segment.h	/^		void SetId(const string& _id) { id = _id; }$/;"	f	class:Segment
+Segment::SetLabel	segment.h	/^		void SetLabel(const string& _label) { m_Label = _label; }$/;"	f	class:Segment
+Segment::SetSource	segment.h	/^		void SetSource(const string& x) { source = x; }$/;"	f	class:Segment
+Segment::SetSourceElementNum	segment.h	/^		void SetSourceElementNum(const long int& _ln) { sourceElementNum = _ln; }$/;"	f	class:Segment
+Segment::SetSourceLineNum	segment.h	/^		void SetSourceLineNum(long int _ln) { sourceLineNum = _ln; }$/;"	f	class:Segment
+Segment::SetSpeakerId	segment.h	/^		void SetSpeakerId(const string& x) { speakerId = x; }$/;"	f	class:Segment
+Segment::channel	segment.h	/^		string channel;$/;"	m	class:Segment
+Segment::f_token	segment.h	/^		Token* f_token;$/;"	m	class:Segment
+Segment::id	segment.h	/^		string id;$/;"	m	class:Segment
+Segment::ignoreSegmentInScoring	segment.h	/^		bool ignoreSegmentInScoring;$/;"	m	class:Segment
+Segment::isEmpty	segment.h	/^		bool isEmpty() { return (f_token->GetNbOfNextTokens() == 0 || l_token->GetNbOfNextTokens() == 0); }$/;"	f	class:Segment
+Segment::isSegmentExcludeFromScoring	segment.h	/^		bool isSegmentExcludeFromScoring() { return ignoreSegmentInScoring; }$/;"	f	class:Segment
+Segment::l_token	segment.h	/^		Token* l_token;$/;"	m	class:Segment
+Segment::logger	segment.h	/^		static Logger* logger;$/;"	m	class:Segment
+Segment::m_Label	segment.h	/^		string m_Label;$/;"	m	class:Segment
+Segment::source	segment.h	/^		string source;$/;"	m	class:Segment
+Segment::sourceElementNum	segment.h	/^		long int sourceElementNum;$/;"	m	class:Segment
+Segment::sourceLineNum	segment.h	/^		long int sourceLineNum;$/;"	m	class:Segment
+Segment::speakerId	segment.h	/^		string speakerId;$/;"	m	class:Segment
+Segment::speech	segment.h	/^        Speech* speech;$/;"	m	class:Segment
+Segmentor	segmentor.h	/^class Segmentor$/;"	c
+Segmentor::hyps	segmentor.h	/^        SpeechSet* hyps;$/;"	m	class:Segmentor
+Segmentor::m_VectSpeechSet	segmentor.h	/^        vector<SpeechSet*> m_VectSpeechSet;$/;"	m	class:Segmentor
+Segmentor::refs	segmentor.h	/^        SpeechSet* refs;$/;"	m	class:Segmentor
+Segmentor::~Segmentor	segmentor.h	/^		virtual ~Segmentor() {}$/;"	f	class:Segmentor
+SegmentsGroup	segmentsgroup.h	/^		SegmentsGroup() { s_id = ID::GetID(); }$/;"	f	class:SegmentsGroup
+SegmentsGroup	segmentsgroup.h	/^class SegmentsGroup$/;"	c
+SegmentsGroup::AddHypothesis	segmentsgroup.h	/^		void AddHypothesis(const vector<Segment*> & hypothesis) { hypothesiss.push_back(hypothesis); }$/;"	f	class:SegmentsGroup
+SegmentsGroup::AddReference	segmentsgroup.h	/^		void AddReference(const vector<Segment*> & reference) { references.push_back(reference); }$/;"	f	class:SegmentsGroup
+SegmentsGroup::GetHypothesis	segmentsgroup.h	/^		vector<Segment*> GetHypothesis(const size_t& index) { return hypothesiss[index]; }$/;"	f	class:SegmentsGroup
+SegmentsGroup::GetNumberOfHypothesis	segmentsgroup.h	/^        size_t GetNumberOfHypothesis() { return hypothesiss.size(); }$/;"	f	class:SegmentsGroup
+SegmentsGroup::GetNumberOfReferences	segmentsgroup.h	/^        size_t GetNumberOfReferences() { return references.size(); }$/;"	f	class:SegmentsGroup
+SegmentsGroup::GetReference	segmentsgroup.h	/^		vector<Segment*> GetReference(const size_t& index) { return references[index]; }$/;"	f	class:SegmentsGroup
+SegmentsGroup::GetsID	segmentsgroup.h	/^		ulint GetsID() { return s_id; }$/;"	f	class:SegmentsGroup
+SegmentsGroup::SegmentsGroup	segmentsgroup.h	/^		SegmentsGroup() { s_id = ID::GetID(); }$/;"	f	class:SegmentsGroup
+SegmentsGroup::hypothesiss	segmentsgroup.h	/^		vector<vector<Segment*> > hypothesiss;$/;"	m	class:SegmentsGroup
+SegmentsGroup::logger	segmentsgroup.h	/^        static Logger* logger;$/;"	m	class:SegmentsGroup
+SegmentsGroup::references	segmentsgroup.h	/^		vector<vector<Segment*> > references;$/;"	m	class:SegmentsGroup
+SegmentsGroup::s_id	segmentsgroup.h	/^		ulint s_id;$/;"	m	class:SegmentsGroup
+SetAsSegmentExcludeFromScoring	segment.h	/^        void SetAsSegmentExcludeFromScoring() { ignoreSegmentInScoring = true; }$/;"	f	class:Segment
+SetChannel	segment.h	/^		void SetChannel(const string& x) { channel = x; }$/;"	f	class:Segment
+SetEndTime	segment.h	/^		void SetEndTime(const int& _newEndTime) { endTime = _newEndTime; }$/;"	f	class:Segment
+SetId	segment.h	/^		void SetId(const string& _id) { id = _id; }$/;"	f	class:Segment
+SetLabel	segment.h	/^		void SetLabel(const string& _label) { m_Label = _label; }$/;"	f	class:Segment
+SetOneTokenPerSegment	inputparser.h	/^		void SetOneTokenPerSegment(const bool& _bool) { m_bOneTokenPerSegment = _bool; }$/;"	f	class:InputParser
+SetResult	tokenalignment.h	/^                void SetResult(const TokenAlignment::AlignmentResult & result) { m_result = result; }$/;"	f	class:TokenAlignment::AlignmentEvaluation
+SetSegGrpID	alignedsegment.h	/^		void SetSegGrpID(ulint _id) { m_SegGrpID = _id; }$/;"	f	class:AlignedSegment
+SetSource	segment.h	/^		void SetSource(const string& x) { source = x; }$/;"	f	class:Segment
+SetSourceElementNum	segment.h	/^		void SetSourceElementNum(const long int& _ln) { sourceElementNum = _ln; }$/;"	f	class:Segment
+SetSourceLineNum	segment.h	/^		void SetSourceLineNum(long int _ln) { sourceLineNum = _ln; }$/;"	f	class:Segment
+SetSpeakerId	segment.h	/^		void SetSpeakerId(const string& x) { speakerId = x; }$/;"	f	class:Segment
+SetTitle	speechset.h	/^		void SetTitle(const string& title) { titleName = title; }$/;"	f	class:SpeechSet
+SetTraversable	linestyle_inputparser.h	/^                void SetTraversable(const bool& trav) { traversable = trav; }$/;"	f	class:LineStyleInputParser::VirtualSegment
+SetWantedName	sgml_reportgenerator.h	/^		void SetWantedName(const string& name)$/;"	f	class:SpeakerNamePredicate
+SizeMap	graph.h	/^		size_t SizeMap() { return m_MapCost->GetNumberOfCalculatedCosts(); }$/;"	f	class:Graph
+SortSegments	sgml_reportgenerator.h	/^		void SortSegments()$/;"	f	class:Speaker
+Speaker	sgml_reportgenerator.h	/^		Speaker(const string& _name, const int& seq)$/;"	f	class:Speaker
+Speaker	sgml_reportgenerator.h	/^class Speaker$/;"	c
+Speaker::AddSegment	sgml_reportgenerator.h	/^		void AddSegment(AlignedSegment* segment)$/;"	f	class:Speaker
+Speaker::GetName	sgml_reportgenerator.h	/^		string GetName()$/;"	f	class:Speaker
+Speaker::GetSegments	sgml_reportgenerator.h	/^		vector < AlignedSegment* > GetSegments() const$/;"	f	class:Speaker
+Speaker::GetSequence	sgml_reportgenerator.h	/^		int GetSequence()$/;"	f	class:Speaker
+Speaker::SortSegments	sgml_reportgenerator.h	/^		void SortSegments()$/;"	f	class:Speaker
+Speaker::Speaker	sgml_reportgenerator.h	/^		Speaker(const string& _name, const int& seq)$/;"	f	class:Speaker
+Speaker::name	sgml_reportgenerator.h	/^		string name;$/;"	m	class:Speaker
+Speaker::segments	sgml_reportgenerator.h	/^		vector< AlignedSegment* > segments; $/;"	m	class:Speaker
+Speaker::sequence	sgml_reportgenerator.h	/^		int sequence;$/;"	m	class:Speaker
+Speaker::~Speaker	sgml_reportgenerator.h	/^		~Speaker()$/;"	f	class:Speaker
+SpeakerMatch	speakermatch.h	/^class SpeakerMatch$/;"	c
+SpeakerMatch::logger	speakermatch.h	/^        static Logger* logger;$/;"	m	class:SpeakerMatch
+SpeakerMatch::m_pMapSourceChannelSysRef	speakermatch.h	/^		map < string, string > * m_pMapSourceChannelSysRef;  $/;"	m	class:SpeakerMatch
+SpeakerNamePredicate	sgml_reportgenerator.h	/^		SpeakerNamePredicate(const string& _wantedName = "")$/;"	f	class:SpeakerNamePredicate
+SpeakerNamePredicate	sgml_reportgenerator.h	/^class SpeakerNamePredicate$/;"	c
+SpeakerNamePredicate::SetWantedName	sgml_reportgenerator.h	/^		void SetWantedName(const string& name)$/;"	f	class:SpeakerNamePredicate
+SpeakerNamePredicate::SpeakerNamePredicate	sgml_reportgenerator.h	/^		SpeakerNamePredicate(const string& _wantedName = "")$/;"	f	class:SpeakerNamePredicate
+SpeakerNamePredicate::operator ()	sgml_reportgenerator.h	/^		inline bool operator() (Speaker* speaker)$/;"	f	class:SpeakerNamePredicate
+SpeakerNamePredicate::wantedName	sgml_reportgenerator.h	/^		string wantedName;$/;"	m	class:SpeakerNamePredicate
+SpeakerNamePredicate::~SpeakerNamePredicate	sgml_reportgenerator.h	/^		~SpeakerNamePredicate()$/;"	f	class:SpeakerNamePredicate
+SpeakerSequenceComparator	sgml_reportgenerator.h	/^struct SpeakerSequenceComparator$/;"	s
+SpeakerSequenceComparator::operator ()	sgml_reportgenerator.h	/^	inline bool operator() (Speaker* key1, Speaker* key2) const$/;"	f	struct:SpeakerSequenceComparator
+Speech	speech.h	/^class Speech$/;"	c
+Speech::AddSegment	speech.h	/^		virtual void AddSegment(Segment* segment) { m_segments.push_back(segment); }$/;"	f	class:Speech
+Speech::GetSegment	speech.h	/^		Segment* GetSegment(const size_t& index) { return m_segments[index]; }$/;"	f	class:Speech
+Speech::NbOfSegments	speech.h	/^		size_t NbOfSegments() { return m_segments.size(); }$/;"	f	class:Speech
+Speech::m_pLogger	speech.h	/^		static Logger* m_pLogger;$/;"	m	class:Speech
+Speech::m_segments	speech.h	/^		vector<Segment*> m_segments;		$/;"	m	class:Speech
+Speech::parentSet	speech.h	/^		SpeechSet* parentSet;$/;"	m	class:Speech
+SpeechSet	speechset.h	/^class SpeechSet$/;"	c
+SpeechSet::AddSpeech	speechset.h	/^		void AddSpeech(Speech* speech) { speeches.push_back(speech); }$/;"	f	class:SpeechSet
+SpeechSet::GetCategoryLabelDesc	speechset.h	/^		string GetCategoryLabelDesc(const size_t& ind) { return m_VectCategoryLabel[ind].desc; }$/;"	f	class:SpeechSet
+SpeechSet::GetCategoryLabelID	speechset.h	/^		string GetCategoryLabelID(const size_t& ind) { return m_VectCategoryLabel[ind].id; }$/;"	f	class:SpeechSet
+SpeechSet::GetCategoryLabelTitle	speechset.h	/^		string GetCategoryLabelTitle(const size_t& ind) { return m_VectCategoryLabel[ind].title; }$/;"	f	class:SpeechSet
+SpeechSet::GetCategoryLabelType	speechset.h	/^		string GetCategoryLabelType(const size_t& ind) { return m_VectCategoryLabel[ind].type; }$/;"	f	class:SpeechSet
+SpeechSet::GetNumberCategoryLabel	speechset.h	/^		size_t GetNumberCategoryLabel() { return m_VectCategoryLabel.size(); }$/;"	f	class:SpeechSet
+SpeechSet::GetNumberOfSpeech	speechset.h	/^		size_t GetNumberOfSpeech() { return speeches.size(); }$/;"	f	class:SpeechSet
+SpeechSet::GetSourceFileName	speechset.h	/^		string GetSourceFileName() { return fileName; }$/;"	f	class:SpeechSet
+SpeechSet::GetSpeech	speechset.h	/^		Speech* GetSpeech(const size_t& index) {  return speeches[index]; }$/;"	f	class:SpeechSet
+SpeechSet::GetTitle	speechset.h	/^		string GetTitle() { return titleName; }$/;"	f	class:SpeechSet
+SpeechSet::IsGen	speechset.h	/^		bool IsGen() { return gen; }$/;"	f	class:SpeechSet
+SpeechSet::IsHyp	speechset.h	/^		bool IsHyp() { return hyp; }$/;"	f	class:SpeechSet
+SpeechSet::IsRef	speechset.h	/^		bool IsRef() { return ref; }$/;"	f	class:SpeechSet
+SpeechSet::SetTitle	speechset.h	/^		void SetTitle(const string& title) { titleName = title; }$/;"	f	class:SpeechSet
+SpeechSet::case_sensitive	speechset.h	/^		bool case_sensitive;$/;"	m	class:SpeechSet
+SpeechSet::fileName	speechset.h	/^		string fileName;$/;"	m	class:SpeechSet
+SpeechSet::fragments_are_correct	speechset.h	/^		bool fragments_are_correct;$/;"	m	class:SpeechSet
+SpeechSet::gen	speechset.h	/^        bool gen;$/;"	m	class:SpeechSet
+SpeechSet::hyp	speechset.h	/^        bool hyp;$/;"	m	class:SpeechSet
+SpeechSet::logger	speechset.h	/^        static Logger* logger;$/;"	m	class:SpeechSet
+SpeechSet::m_VectCategoryLabel	speechset.h	/^		vector<stcCategoryLabel> m_VectCategoryLabel;$/;"	m	class:SpeechSet
+SpeechSet::optionally_deletable	speechset.h	/^		bool optionally_deletable;		$/;"	m	class:SpeechSet
+SpeechSet::ref	speechset.h	/^        bool ref;$/;"	m	class:SpeechSet
+SpeechSet::speeches	speechset.h	/^        vector<Speech*> speeches;$/;"	m	class:SpeechSet
+SpeechSet::titleName	speechset.h	/^		string titleName;$/;"	m	class:SpeechSet
+SpkrAutoOverlap	spkrautooverlap.h	/^		SpkrAutoOverlap() {}$/;"	f	class:SpkrAutoOverlap
+SpkrAutoOverlap	spkrautooverlap.h	/^class SpkrAutoOverlap : public Checker$/;"	c
+SpkrAutoOverlap::LoadFile	spkrautooverlap.h	/^		void LoadFile(const string& filename) { }$/;"	f	class:SpkrAutoOverlap
+SpkrAutoOverlap::ProcessSpeechSet	spkrautooverlap.h	/^		unsigned long int ProcessSpeechSet(SpeechSet* ref, map<string, SpeechSet*> &hyp) { return 0; }$/;"	f	class:SpkrAutoOverlap
+SpkrAutoOverlap::SpkrAutoOverlap	spkrautooverlap.h	/^		SpkrAutoOverlap() {}$/;"	f	class:SpkrAutoOverlap
+SpkrAutoOverlap::isProcessAllSpeechSet	spkrautooverlap.h	/^		bool isProcessAllSpeechSet() { return false; }$/;"	f	class:SpkrAutoOverlap
+SpkrAutoOverlap::logger	spkrautooverlap.h	/^        static Logger* logger;$/;"	m	class:SpkrAutoOverlap
+SpkrAutoOverlap::~SpkrAutoOverlap	spkrautooverlap.h	/^		~SpkrAutoOverlap() {}$/;"	f	class:SpkrAutoOverlap
+Statistics	statistics.h	/^class Statistics$/;"	c
+Statistics::GetMaxSizeString	statistics.h	/^		int GetMaxSizeString() { return m_MaxSize; }$/;"	f	class:Statistics
+Statistics::GetMean	statistics.h	/^		double GetMean(const bool& safe = false) { return(((m_Mean == 0.0) && safe) ? 1.0 : m_Mean); }$/;"	f	class:Statistics
+Statistics::GetMedian	statistics.h	/^		double GetMedian(const bool& safe = false) { return(((m_Median == 0.0) && safe) ? 1.0 : m_Median); }$/;"	f	class:Statistics
+Statistics::GetSD	statistics.h	/^		double GetSD(const bool& safe = false) { return(((m_SD == 0.0) && safe) ? 1.0 : m_SD); }$/;"	f	class:Statistics
+Statistics::GetSize	statistics.h	/^		int GetSize(const bool& safe = false) { return(((m_VecValues.size() == 0) && safe) ? 1 : m_VecValues.size()); }$/;"	f	class:Statistics
+Statistics::GetSum	statistics.h	/^		double GetSum(const bool& safe = false) { return(((m_Sum == 0.0) && safe) ? 1.0 : m_Sum); }$/;"	f	class:Statistics
+Statistics::m_MaxSize	statistics.h	/^		int m_MaxSize;$/;"	m	class:Statistics
+Statistics::m_Mean	statistics.h	/^		double m_Mean;$/;"	m	class:Statistics
+Statistics::m_Median	statistics.h	/^		double m_Median;$/;"	m	class:Statistics
+Statistics::m_SD	statistics.h	/^		double m_SD;$/;"	m	class:Statistics
+Statistics::m_Sum	statistics.h	/^		double m_Sum;$/;"	m	class:Statistics
+Statistics::m_VecValues	statistics.h	/^		vector<double> m_VecValues;$/;"	m	class:Statistics
+Statistics::~Statistics	statistics.h	/^		~Statistics() { m_VecValues.clear(); }$/;"	f	class:Statistics
+TIMEDOBJECT_H	timedobject.h	19;"	d
+TOKENALIGNMENT_H	tokenalignment.h	19;"	d
+TOKEN_H	token.h	19;"	d
+TRNInputParser	trn_inputparser.h	/^		TRNInputParser() {}$/;"	f	class:TRNInputParser
+TRNInputParser	trn_inputparser.h	/^class TRNInputParser : public LineStyleInputParser$/;"	c
+TRNInputParser::TRNInputParser	trn_inputparser.h	/^		TRNInputParser() {}$/;"	f	class:TRNInputParser
+TRNInputParser::logger	trn_inputparser.h	/^        static Logger* logger;$/;"	m	class:TRNInputParser
+TRNInputParser::~TRNInputParser	trn_inputparser.h	/^		virtual ~TRNInputParser() {}$/;"	f	class:TRNInputParser
+TRNTRNSegmentor	trntrn_segmentor.h	/^		TRNTRNSegmentor() {}$/;"	f	class:TRNTRNSegmentor
+TRNTRNSegmentor	trntrn_segmentor.h	/^class TRNTRNSegmentor : public Segmentor$/;"	c
+TRNTRNSegmentor::HasNext	trntrn_segmentor.h	/^		bool HasNext() { return (currentUterance != ""); }$/;"	f	class:TRNTRNSegmentor
+TRNTRNSegmentor::NextGeneric	trntrn_segmentor.h	/^		SegmentsGroup* NextGeneric() { return NULL; }$/;"	f	class:TRNTRNSegmentor
+TRNTRNSegmentor::ResetGeneric	trntrn_segmentor.h	/^		void ResetGeneric(map<string, SpeechSet*> &mapspeechSet) { }$/;"	f	class:TRNTRNSegmentor
+TRNTRNSegmentor::TRNTRNSegmentor	trntrn_segmentor.h	/^		TRNTRNSegmentor() {}$/;"	f	class:TRNTRNSegmentor
+TRNTRNSegmentor::currentUterance	trntrn_segmentor.h	/^    string currentUterance;$/;"	m	class:TRNTRNSegmentor
+TRNTRNSegmentor::logger	trntrn_segmentor.h	/^    static Logger* logger;$/;"	m	class:TRNTRNSegmentor
+TRNTRNSegmentor::uteranceList	trntrn_segmentor.h	/^    set<string> uteranceList;$/;"	m	class:TRNTRNSegmentor
+TRNTRNSegmentor::~TRNTRNSegmentor	trntrn_segmentor.h	/^		~TRNTRNSegmentor() { uteranceList.clear(); }$/;"	f	class:TRNTRNSegmentor
+TRNTRN_SEGMENTOR_H	trntrn_segmentor.h	19;"	d
+TRN_INPUTPARSER_H	trn_inputparser.h	19;"	d
+TimedObject	timedobject.h	/^        TimedObject() { s_id = ID::GetID(); }$/;"	f	class:TimedObject
+TimedObject	timedobject.h	/^class TimedObject$/;"	c
+TimedObject::GetDuration	timedobject.h	/^        int GetDuration() { return endTime - startTime; } \/\/ returns the value of duration$/;"	f	class:TimedObject
+TimedObject::GetEndTime	timedobject.h	/^        int GetEndTime() { return endTime; } \/\/ returns the value of endTime$/;"	f	class:TimedObject
+TimedObject::GetStartTime	timedobject.h	/^        int GetStartTime() { return startTime; } \/\/ returns the value of startTime$/;"	f	class:TimedObject
+TimedObject::GetsID	timedobject.h	/^		ulint GetsID() { return s_id; }$/;"	f	class:TimedObject
+TimedObject::IsTimeReal	timedobject.h	/^        bool IsTimeReal() { return (startTime >= 0 && endTime >= 0); }$/;"	f	class:TimedObject
+TimedObject::TimedObject	timedobject.h	/^        TimedObject() { s_id = ID::GetID(); }$/;"	f	class:TimedObject
+TimedObject::endTime	timedobject.h	/^        int endTime;$/;"	m	class:TimedObject
+TimedObject::s_id	timedobject.h	/^		ulint s_id;$/;"	m	class:TimedObject
+TimedObject::startTime	timedobject.h	/^        int startTime;$/;"	m	class:TimedObject
+TimedObject::~TimedObject	timedobject.h	/^        virtual ~TimedObject() {}$/;"	f	class:TimedObject
+Token	token.h	/^class Token : public TimedObject$/;"	c
+Token::AddNextToken	token.h	/^		void AddNextToken(Token* token) { next.push_back(token); } \/\/add a "next" token indexed$/;"	f	class:Token
+Token::AddPrecToken	token.h	/^		void AddPrecToken(Token* token) { prec.push_back(token); } \/\/add a "prec" token indexed     $/;"	f	class:Token
+Token::BEGIN_FRAGMENT	token.h	/^		static const int BEGIN_FRAGMENT = 1;$/;"	m	class:Token
+Token::BEGIN_OPTIONAL_MARKER	token.h	/^		static const char BEGIN_OPTIONAL_MARKER;$/;"	m	class:Token
+Token::BecomeOptionallyDeletable	token.h	/^		void BecomeOptionallyDeletable() { SetSourceText(Token::BEGIN_OPTIONAL_MARKER + GetSourceText() + Token::END_OPTIONAL_MARKER); }$/;"	f	class:Token
+Token::END_FRAGMENT	token.h	/^		static const int END_FRAGMENT = 2;$/;"	m	class:Token
+Token::END_OPTIONAL_MARKER	token.h	/^		static const char END_OPTIONAL_MARKER;$/;"	m	class:Token
+Token::FRAGMENT_MARKER	token.h	/^		static const char FRAGMENT_MARKER;$/;"	m	class:Token
+Token::GetConfidence	token.h	/^		float GetConfidence() { return confidence; } \/\/ returns the value of confidence$/;"	f	class:Token
+Token::GetNbOfNextTokens	token.h	/^		size_t GetNbOfNextTokens() { return next.size(); }$/;"	f	class:Token
+Token::GetNbOfPrecTokens	token.h	/^		size_t GetNbOfPrecTokens() { return prec.size(); }$/;"	f	class:Token
+Token::GetNextToken	token.h	/^        Token* GetNextToken(const size_t& i) { return next[i]; } \/\/retrieve the next token indexed$/;"	f	class:Token
+Token::GetParentSegment	token.h	/^		Segment* GetParentSegment() { return segment; }$/;"	f	class:Token
+Token::GetPrecToken	token.h	/^		Token* GetPrecToken(const size_t& i) { return prec[i]; } \/\/retrieve the next token indexed$/;"	f	class:Token
+Token::GetSourceText	token.h	/^		string GetSourceText() { return sourceText; }$/;"	f	class:Token
+Token::IsConfidenceSet	token.h	/^		bool IsConfidenceSet() { return hasConfidence; }$/;"	f	class:Token
+Token::NOT_FRAGMENT	token.h	/^		static const int NOT_FRAGMENT = 0;$/;"	m	class:Token
+Token::confidence	token.h	/^		float confidence;$/;"	m	class:Token
+Token::fragment	token.h	/^		int fragment;$/;"	m	class:Token
+Token::hasConfidence	token.h	/^		bool hasConfidence;$/;"	m	class:Token
+Token::logger	token.h	/^        static Logger* logger;$/;"	m	class:Token
+Token::next	token.h	/^        vector<Token*> next;$/;"	m	class:Token
+Token::optional	token.h	/^		bool optional;$/;"	m	class:Token
+Token::prec	token.h	/^        vector<Token*> prec;$/;"	m	class:Token
+Token::segment	token.h	/^        Segment* segment;$/;"	m	class:Token
+Token::size	token.h	/^		short size;$/;"	m	class:Token
+Token::sourceText	token.h	/^		string sourceText;$/;"	m	class:Token
+Token::start	token.h	/^		short start;$/;"	m	class:Token
+TokenAlignment	tokenalignment.h	/^class TokenAlignment $/;"	c
+TokenAlignment::AlignmentEvaluation	tokenalignment.h	/^        class AlignmentEvaluation $/;"	c	class:TokenAlignment
+TokenAlignment::AlignmentEvaluation::GetResult	tokenalignment.h	/^                TokenAlignment::AlignmentResult GetResult() { return m_result; }$/;"	f	class:TokenAlignment::AlignmentEvaluation
+TokenAlignment::AlignmentEvaluation::GetToken	tokenalignment.h	/^                Token* GetToken() { return m_token; }$/;"	f	class:TokenAlignment::AlignmentEvaluation
+TokenAlignment::AlignmentEvaluation::SetResult	tokenalignment.h	/^                void SetResult(const TokenAlignment::AlignmentResult & result) { m_result = result; }$/;"	f	class:TokenAlignment::AlignmentEvaluation
+TokenAlignment::AlignmentEvaluation::m_result	tokenalignment.h	/^                TokenAlignment::AlignmentResult m_result;$/;"	m	class:TokenAlignment::AlignmentEvaluation
+TokenAlignment::AlignmentEvaluation::m_token	tokenalignment.h	/^                Token* m_token;$/;"	m	class:TokenAlignment::AlignmentEvaluation
+TokenAlignment::AlignmentEvaluation::~AlignmentEvaluation	tokenalignment.h	/^                ~AlignmentEvaluation() {}$/;"	f	class:TokenAlignment::AlignmentEvaluation
+TokenAlignment::AlignmentResult	tokenalignment.h	/^        class AlignmentResult $/;"	c	class:TokenAlignment
+TokenAlignment::AlignmentResult::GetDescription	tokenalignment.h	/^                string GetDescription() { return m_description; }$/;"	f	class:TokenAlignment::AlignmentResult
+TokenAlignment::AlignmentResult::GetShortName	tokenalignment.h	/^                string GetShortName() { return m_shortName; }$/;"	f	class:TokenAlignment::AlignmentResult
+TokenAlignment::AlignmentResult::m_description	tokenalignment.h	/^                string m_description;$/;"	m	class:TokenAlignment::AlignmentResult
+TokenAlignment::AlignmentResult::m_shortName	tokenalignment.h	/^                string m_shortName;$/;"	m	class:TokenAlignment::AlignmentResult
+TokenAlignment::AlignmentResult::operator ==	tokenalignment.h	/^                inline bool operator==(const AlignmentResult & rh) const { return m_shortName == rh.m_shortName; }$/;"	f	class:TokenAlignment::AlignmentResult
+TokenAlignment::CORRECT	tokenalignment.h	/^        static const AlignmentResult CORRECT;$/;"	m	class:TokenAlignment
+TokenAlignment::DELETION	tokenalignment.h	/^        static const AlignmentResult DELETION;$/;"	m	class:TokenAlignment
+TokenAlignment::Equals	tokenalignment.h	/^        bool Equals(TokenAlignment* other) { return (this == other); }$/;"	f	class:TokenAlignment
+TokenAlignment::GetAlignmentFor	tokenalignment.h	/^        AlignmentEvaluation* GetAlignmentFor(const string & system) { return m_alignmentEvaluations[system]; }$/;"	f	class:TokenAlignment
+TokenAlignment::INSERTION	tokenalignment.h	/^        static const AlignmentResult INSERTION;$/;"	m	class:TokenAlignment
+TokenAlignment::INVALID_SYSTEM	tokenalignment.h	/^        static const AlignmentResult INVALID_SYSTEM;$/;"	m	class:TokenAlignment
+TokenAlignment::REFERENCE	tokenalignment.h	/^        static const AlignmentResult REFERENCE;$/;"	m	class:TokenAlignment
+TokenAlignment::REFERENCE_KEY	tokenalignment.h	/^        static const string REFERENCE_KEY;$/;"	m	class:TokenAlignment
+TokenAlignment::SPEAKERSUB	tokenalignment.h	/^        static const AlignmentResult SPEAKERSUB;$/;"	m	class:TokenAlignment
+TokenAlignment::SUBSTITUTION	tokenalignment.h	/^        static const AlignmentResult SUBSTITUTION;$/;"	m	class:TokenAlignment
+TokenAlignment::UNAVAILABLE	tokenalignment.h	/^        static const AlignmentResult UNAVAILABLE;$/;"	m	class:TokenAlignment
+TokenAlignment::m_alignmentEvaluations	tokenalignment.h	/^        map< string, AlignmentEvaluation* > m_alignmentEvaluations; $/;"	m	class:TokenAlignment
+TokenAlignment::operator ==	tokenalignment.h	/^        inline bool operator==(const TokenAlignment &rh) { return (this->m_alignmentEvaluations == rh.m_alignmentEvaluations); }$/;"	f	class:TokenAlignment
+TouchBlock	compressedlevenshteinmatrix.h	/^		void TouchBlock(const size_t& block_index) { m_TabHitsTimer[block_index] = m_Accesses++; }$/;"	f	class:CompressedLevenshteinMatrix
+UEMElement	uemfilter.h	/^        UEMElement() {}$/;"	f	class:UEMElement
+UEMElement	uemfilter.h	/^class UEMElement$/;"	c
+UEMElement::GetChannel	uemfilter.h	/^		string GetChannel() { return m_Channel; }$/;"	f	class:UEMElement
+UEMElement::GetEndTime	uemfilter.h	/^		int    GetEndTime() { return m_EndTime; }$/;"	f	class:UEMElement
+UEMElement::GetFile	uemfilter.h	/^		string GetFile() { return m_File; }$/;"	f	class:UEMElement
+UEMElement::GetStartTime	uemfilter.h	/^		int    GetStartTime() { return m_StartTime; }$/;"	f	class:UEMElement
+UEMElement::UEMElement	uemfilter.h	/^        UEMElement() {}$/;"	f	class:UEMElement
+UEMElement::m_Channel	uemfilter.h	/^		string m_Channel;$/;"	m	class:UEMElement
+UEMElement::m_EndTime	uemfilter.h	/^		int    m_EndTime;$/;"	m	class:UEMElement
+UEMElement::m_File	uemfilter.h	/^		string m_File;$/;"	m	class:UEMElement
+UEMElement::m_StartTime	uemfilter.h	/^		int    m_StartTime;$/;"	m	class:UEMElement
+UEMElement::m_pLogger	uemfilter.h	/^        static Logger* m_pLogger;$/;"	m	class:UEMElement
+UEMElement::~UEMElement	uemfilter.h	/^        ~UEMElement() {}$/;"	f	class:UEMElement
+UEMFILTER_H	uemfilter.h	19;"	d
+UEMFilter	uemfilter.h	/^		UEMFilter() { m_bUseFile = false; }$/;"	f	class:UEMFilter
+UEMFilter	uemfilter.h	/^class UEMFilter : public Checker$/;"	c
+UEMFilter::AddUEMElement	uemfilter.h	/^		void    AddUEMElement(UEMElement* _pUEMElement) { m_VectUEMElements.push_back(_pUEMElement); }$/;"	f	class:UEMFilter
+UEMFilter::GetNumberElement	uemfilter.h	/^		size_t 	GetNumberElement() { return m_VectUEMElements.size(); }$/;"	f	class:UEMFilter
+UEMFilter::ParseString	uemfilter.h	/^		int ParseString(const string& chaine) { return static_cast<int>(floor( ( atof(chaine.c_str()) * 1000 ) + 0.5)); }$/;"	f	class:UEMFilter
+UEMFilter::UEMFilter	uemfilter.h	/^		UEMFilter() { m_bUseFile = false; }$/;"	f	class:UEMFilter
+UEMFilter::isEmpty	uemfilter.h	/^		bool isEmpty() { return m_VectUEMElements.empty(); }$/;"	f	class:UEMFilter
+UEMFilter::m_VectUEMElements	uemfilter.h	/^		vector<UEMElement*> m_VectUEMElements;$/;"	m	class:UEMFilter
+UEMFilter::m_bUseFile	uemfilter.h	/^		bool m_bUseFile;$/;"	m	class:UEMFilter
+UEMFilter::m_pLogger	uemfilter.h	/^        static Logger* m_pLogger;$/;"	m	class:UEMFilter
+UNAVAILABLE	tokenalignment.h	/^        static const AlignmentResult UNAVAILABLE;$/;"	m	class:TokenAlignment
+VirtualSegment	linestyle_inputparser.h	/^                VirtualSegment() { SetTraversable(false); }$/;"	f	class:LineStyleInputParser::VirtualSegment
+VirtualSegment	linestyle_inputparser.h	/^        class VirtualSegment$/;"	c	class:LineStyleInputParser
+a_endTokens	linestyle_inputparser.h	/^                vector<Token*> a_endTokens;$/;"	m	class:LineStyleInputParser::VirtualSegment
+a_startTokens	linestyle_inputparser.h	/^                vector<Token*> a_startTokens;$/;"	m	class:LineStyleInputParser::VirtualSegment
+aligner	recording.h	/^        map<string, Aligner*> aligner;$/;"	m	class:Recording
+alignments	recording.h	/^		Alignment* alignments;$/;"	m	class:Recording
+case_sensitive	speechset.h	/^		bool case_sensitive;$/;"	m	class:SpeechSet
+channel	segment.h	/^		string channel;$/;"	m	class:Segment
+channelList	ctmstmrttm_segmentor.h	/^        map<string, set<string> > channelList;$/;"	m	class:CTMSTMRTTMSegmentor
+confidence	token.h	/^		float confidence;$/;"	m	class:Token
+currentChannel	ctmstmrttm_segmentor.h	/^        string currentChannel;$/;"	m	class:CTMSTMRTTMSegmentor
+currentSegmentRef	ctmstmrttm_segmentor.h	/^        Segment* currentSegmentRef;$/;"	m	class:CTMSTMRTTMSegmentor
+currentSource	ctmstmrttm_segmentor.h	/^        string currentSource;$/;"	m	class:CTMSTMRTTMSegmentor
+currentUterance	trntrn_segmentor.h	/^    string currentUterance;$/;"	m	class:TRNTRNSegmentor
+desc	speechset.h	/^	string type, id, title, desc;$/;"	m	struct:CATEGORYLABEL
+dirty	properties.h	/^		static bool dirty;$/;"	m	class:Properties
+endTime	timedobject.h	/^        int endTime;$/;"	m	class:TimedObject
+f_token	segment.h	/^		Token* f_token;$/;"	m	class:Segment
+fileName	speechset.h	/^		string fileName;$/;"	m	class:SpeechSet
+filters	recording.h	/^        map<string, ::Filter*> filters;$/;"	m	class:Recording
+fragment	token.h	/^		int fragment;$/;"	m	class:Token
+fragments_are_correct	speechset.h	/^		bool fragments_are_correct;$/;"	m	class:SpeechSet
+gen	speechset.h	/^        bool gen;$/;"	m	class:SpeechSet
+getLogLevel	logger.h	/^		int getLogLevel() { return log_level; }$/;"	f	class:Logger
+graph	levenshtein.h	/^        Graph* graph;$/;"	m	class:Levenshtein
+hasConfidence	token.h	/^		bool hasConfidence;$/;"	m	class:Token
+hyp	speechset.h	/^        bool hyp;$/;"	m	class:SpeechSet
+hypothesis	recording.h	/^		map<string, SpeechSet*> hypothesis;$/;"	m	class:Recording
+hypothesiss	segmentsgroup.h	/^		vector<vector<Segment*> > hypothesiss;$/;"	m	class:SegmentsGroup
+hyps	segmentor.h	/^        SpeechSet* hyps;$/;"	m	class:Segmentor
+id	id.h	/^        static ulint id;$/;"	m	class:ID
+id	segment.h	/^		string id;$/;"	m	class:Segment
+id	speechset.h	/^	string type, id, title, desc;$/;"	m	struct:CATEGORYLABEL
+ignoreSegmentInScoring	segment.h	/^		bool ignoreSegmentInScoring;$/;"	m	class:Segment
+inputParsers	recording.h	/^        map<string, InputParser*> inputParsers;$/;"	m	class:Recording
+isAlignLogON	logger.h	/^		bool isAlignLogON() { return ( (log_level == 6) || (log_level == 7) );  }$/;"	f	class:Logger
+isBlockCreated	compressedlevenshteinmatrix.h	/^		bool isBlockCreated(const size_t& block_index) { return m_TabIsCreated[block_index]; }$/;"	f	class:CompressedLevenshteinMatrix
+isCallGarbageCollector	compressedlevenshteinmatrix.h	/^		bool isCallGarbageCollector() { return( (MemoryUsedKB()+(static_cast<double>(m_BaseLengthIn))\/1024.0) >= m_UsableMemoryKB*(1.0-m_PercentageMemoryTriggerStart) ); }$/;"	f	class:CompressedLevenshteinMatrix
+isEmpty	graph_coordinate.h	/^		bool isEmpty() { return m_ListCoordinates.empty(); }$/;"	f	class:GraphCoordinateList
+isEmpty	segment.h	/^		bool isEmpty() { return (f_token->GetNbOfNextTokens() == 0 || l_token->GetNbOfNextTokens() == 0); }$/;"	f	class:Segment
+isEmpty	uemfilter.h	/^		bool isEmpty() { return m_VectUEMElements.empty(); }$/;"	f	class:UEMFilter
+isHypRefEmpty	graph.h	/^		bool isHypRefEmpty(const size_t& hr) { return(m_TabLastTokens[hr].empty()); }$/;"	f	class:Graph
+isOneTokenPerSegment	inputparser.h	/^		bool isOneTokenPerSegment() { return m_bOneTokenPerSegment; }$/;"	f	class:InputParser
+isProcessAllSpeechSet	spkrautooverlap.h	/^		bool isProcessAllSpeechSet() { return false; }$/;"	f	class:SpkrAutoOverlap
+isSegmentExcludeFromScoring	segment.h	/^		bool isSegmentExcludeFromScoring() { return ignoreSegmentInScoring; }$/;"	f	class:Segment
+isStopGarbageCollector	compressedlevenshteinmatrix.h	/^		bool isStopGarbageCollector() { return( MemoryUsedKB() <= m_UsableMemoryKB*(1.0-m_PercentageMemoryTriggerStop) ); }$/;"	f	class:CompressedLevenshteinMatrix
+l_token	segment.h	/^		Token* l_token;$/;"	m	class:Segment
+log2e	rawsys_reportgenerator.h	/^const double log2e = 1.442695041;$/;"	v
+log_level	logger.h	/^        static int log_level;$/;"	m	class:Logger
+logger	alignment.h	/^        static Logger* logger;$/;"	m	class:Alignment
+logger	ctm_inputparser.h	/^		static Logger* logger;$/;"	m	class:CTMInputParser
+logger	ctmstmrttm_segmentor.h	/^        static Logger* logger;$/;"	m	class:CTMSTMRTTMSegmentor
+logger	graph.h	/^		static Logger* logger;$/;"	m	class:Graph
+logger	levenshtein.h	/^        static Logger* logger;$/;"	m	class:Levenshtein
+logger	rawsys_reportgenerator.h	/^		static Logger* logger;$/;"	m	class:RAWSYSReportGenerator
+logger	recording.h	/^        static Logger* logger;$/;"	m	class:Recording
+logger	rttm_inputparser.h	/^        static Logger* logger;$/;"	m	class:RTTMInputParser
+logger	segment.h	/^		static Logger* logger;$/;"	m	class:Segment
+logger	segmentsgroup.h	/^        static Logger* logger;$/;"	m	class:SegmentsGroup
+logger	speakermatch.h	/^        static Logger* logger;$/;"	m	class:SpeakerMatch
+logger	speechset.h	/^        static Logger* logger;$/;"	m	class:SpeechSet
+logger	spkrautooverlap.h	/^        static Logger* logger;$/;"	m	class:SpkrAutoOverlap
+logger	stm_inputparser.h	/^        static Logger* logger;$/;"	m	class:STMInputParser
+logger	stt_scorer.h	/^        static Logger* logger;$/;"	m	class:STTScorer
+logger	token.h	/^        static Logger* logger;$/;"	m	class:Token
+logger	trn_inputparser.h	/^        static Logger* logger;$/;"	m	class:TRNInputParser
+logger	trntrn_segmentor.h	/^    static Logger* logger;$/;"	m	class:TRNTRNSegmentor
+m_Accesses	compressedlevenshteinmatrix.h	/^		ulint m_Accesses;$/;"	m	class:CompressedLevenshteinMatrix
+m_BaseLengthIn	compressedlevenshteinmatrix.h	/^		size_t m_BaseLengthIn;$/;"	m	class:CompressedLevenshteinMatrix
+m_BaseLengthOut	compressedlevenshteinmatrix.h	/^		size_t m_BaseLengthOut;$/;"	m	class:CompressedLevenshteinMatrix
+m_BlockSizeElts	compressedlevenshteinmatrix.h	/^		size_t m_BlockSizeElts;$/;"	m	class:CompressedLevenshteinMatrix
+m_BlockSizeKB	compressedlevenshteinmatrix.h	/^		uint m_BlockSizeKB;$/;"	m	class:CompressedLevenshteinMatrix
+m_Channel	uemfilter.h	/^		string m_Channel;$/;"	m	class:UEMElement
+m_Compressions	compressedlevenshteinmatrix.h	/^		ulint m_Compressions;$/;"	m	class:CompressedLevenshteinMatrix
+m_Confidence	linestyle_inputparser.h	/^        float m_Confidence;$/;"	m	class:LineStyleInputParser
+m_CoordinateDimension	graph_coordinate.h	/^		size_t m_CoordinateDimension;$/;"	m	class:GraphCoordinateList
+m_CostAdaptive	graph.h	/^        int m_CostAdaptive;$/;"	m	class:Graph
+m_CostCorrectNonSpeaker	graph.h	/^        int m_CostCorrectNonSpeaker;$/;"	m	class:Graph
+m_CostInsertion	graph.h	/^        int m_CostInsertion;$/;"	m	class:Graph
+m_CostOptionally	graph.h	/^        int m_CostOptionally;$/;"	m	class:Graph
+m_CostTransition	graph.h	/^        int m_CostTransition;		$/;"	m	class:Graph
+m_CurrentMemorySize	compressedlevenshteinmatrix.h	/^		size_t m_CurrentMemorySize;$/;"	m	class:CompressedLevenshteinMatrix
+m_Decompressions	compressedlevenshteinmatrix.h	/^		ulint m_Decompressions;$/;"	m	class:CompressedLevenshteinMatrix
+m_Dimension	graph.h	/^		size_t m_Dimension;$/;"	m	class:Graph
+m_Dimension	graphalignedtoken.h	/^		size_t m_Dimension;$/;"	m	class:GraphAlignedToken
+m_EndTime	uemfilter.h	/^		int    m_EndTime;$/;"	m	class:UEMElement
+m_EstimatedMaxCost	graph.h	/^		int m_EstimatedMaxCost;$/;"	m	class:Graph
+m_File	uemfilter.h	/^		string m_File;$/;"	m	class:UEMElement
+m_HypRefIndex	graphalignedsegment.h	/^		size_t m_HypRefIndex;$/;"	m	class:GraphAlignedSegment
+m_HypRefStatus	graph.h	/^		bool m_HypRefStatus;$/;"	m	class:Graph
+m_IndexRef	graph.h	/^		size_t m_IndexRef;$/;"	m	class:Graph
+m_Label	segment.h	/^		string m_Label;$/;"	m	class:Segment
+m_ListCoordinates	graph_coordinate.h	/^		list<size_t*> m_ListCoordinates;$/;"	m	class:GraphCoordinateList
+m_MapCost	graph.h	/^		LevenshteinMatrix* m_MapCost;$/;"	m	class:Graph
+m_MapDatas	rawsys_reportgenerator.h	/^		map<string, RAWSYS_Datas*> m_MapDatas;$/;"	m	class:RAWSYSReportGenerator
+m_MaxDurationSegmentGroup	graph.h	/^		int m_MaxDurationSegmentGroup;$/;"	m	class:Graph
+m_MaxMemoryKBProp	compressedlevenshteinmatrix.h	/^		size_t m_MaxMemoryKBProp;$/;"	m	class:CompressedLevenshteinMatrix
+m_MaxSize	arraylevenshteinmatrix.h	/^		size_t m_MaxSize;$/;"	m	class:ArrayLevenshteinMatrix
+m_MaxSize	compressedlevenshteinmatrix.h	/^		ullint  m_MaxSize;$/;"	m	class:CompressedLevenshteinMatrix
+m_MaxSize	statistics.h	/^		int m_MaxSize;$/;"	m	class:Statistics
+m_Mean	statistics.h	/^		double m_Mean;$/;"	m	class:Statistics
+m_Median	statistics.h	/^		double m_Median;$/;"	m	class:Statistics
+m_MultiplicatorBlockDimension	compressedlevenshteinmatrix.h	/^		size_t* m_MultiplicatorBlockDimension;$/;"	m	class:CompressedLevenshteinMatrix
+m_MultiplicatorDimension	arraylevenshteinmatrix.h	/^		size_t* m_MultiplicatorDimension;$/;"	m	class:ArrayLevenshteinMatrix
+m_MultiplicatorDimension	compressedlevenshteinmatrix.h	/^		ullint* m_MultiplicatorDimension;$/;"	m	class:CompressedLevenshteinMatrix
+m_MultiplicatorDivider	compressedlevenshteinmatrix.h	/^		size_t* m_MultiplicatorDivider;$/;"	m	class:CompressedLevenshteinMatrix
+m_NbThreads	graph.h	/^		size_t m_NbThreads;$/;"	m	class:Graph
+m_NbrCompressedBlocks	compressedlevenshteinmatrix.h	/^		ulint m_NbrCompressedBlocks;$/;"	m	class:CompressedLevenshteinMatrix
+m_NbrCompressedTabs	compressedlevenshteinmatrix.h	/^		size_t m_NbrCompressedTabs;$/;"	m	class:CompressedLevenshteinMatrix
+m_NbrCreatedBlocks	compressedlevenshteinmatrix.h	/^		size_t  m_NbrCreatedBlocks;$/;"	m	class:CompressedLevenshteinMatrix
+m_NbrDecompressedBlocks	compressedlevenshteinmatrix.h	/^		ulint m_NbrDecompressedBlocks;$/;"	m	class:CompressedLevenshteinMatrix
+m_NbrDimensions	arraylevenshteinmatrix.h	/^		size_t m_NbrDimensions;$/;"	m	class:ArrayLevenshteinMatrix
+m_NbrDimensions	compressedlevenshteinmatrix.h	/^		size_t  m_NbrDimensions;$/;"	m	class:CompressedLevenshteinMatrix
+m_NumberCorrectWords	rawsys_reportgenerator.h	/^		uint m_NumberCorrectWords;$/;"	m	class:RAWSYS_Datas
+m_NumberDeletions	rawsys_reportgenerator.h	/^		uint m_NumberDeletions;$/;"	m	class:RAWSYS_Datas
+m_NumberInsertions	rawsys_reportgenerator.h	/^		uint m_NumberInsertions;$/;"	m	class:RAWSYS_Datas
+m_NumberRefWords	rawsys_reportgenerator.h	/^		uint m_NumberRefWords;$/;"	m	class:RAWSYS_Datas
+m_NumberSegments	rawsys_reportgenerator.h	/^		uint m_NumberSegments;$/;"	m	class:RAWSYS_Datas
+m_NumberSegmentsErrors	rawsys_reportgenerator.h	/^		uint m_NumberSegmentsErrors;$/;"	m	class:RAWSYS_Datas
+m_NumberSpeakerErrors	rawsys_reportgenerator.h	/^		uint m_NumberSpeakerErrors;$/;"	m	class:RAWSYS_Datas
+m_NumberSubstitutions	rawsys_reportgenerator.h	/^		uint m_NumberSubstitutions;$/;"	m	class:RAWSYS_Datas
+m_PercentageMemoryTriggerStart	compressedlevenshteinmatrix.h	/^		double m_PercentageMemoryTriggerStart;$/;"	m	class:CompressedLevenshteinMatrix
+m_PercentageMemoryTriggerStop	compressedlevenshteinmatrix.h	/^		double m_PercentageMemoryTriggerStop;$/;"	m	class:CompressedLevenshteinMatrix
+m_PruneOptimizationThreshold	graph.h	/^		int m_PruneOptimizationThreshold;$/;"	m	class:Graph
+m_RawSys	rawsys_reportgenerator.h	/^		int m_RawSys;$/;"	m	class:RAWSYSReportGenerator
+m_SD	statistics.h	/^		double m_SD;$/;"	m	class:Statistics
+m_SegGrpID	alignedsegment.h	/^        ulint m_SegGrpID;$/;"	m	class:AlignedSegment
+m_SizeOfArray	arraylevenshteinmatrix.h	/^		size_t m_SizeOfArray;$/;"	m	class:ArrayLevenshteinMatrix
+m_SizeOfArray	compressedlevenshteinmatrix.h	/^		ullint  m_SizeOfArray;$/;"	m	class:CompressedLevenshteinMatrix
+m_StartTime	uemfilter.h	/^		int    m_StartTime;$/;"	m	class:UEMElement
+m_Sum	statistics.h	/^		double m_Sum;$/;"	m	class:Statistics
+m_SumConfidenceCorrect	rawsys_reportgenerator.h	/^		double m_SumConfidenceCorrect;$/;"	m	class:RAWSYS_Datas
+m_SumConfidenceIncorrect	rawsys_reportgenerator.h	/^		double m_SumConfidenceIncorrect;$/;"	m	class:RAWSYS_Datas
+m_SumTotConfidenceCorrect	rawsys_reportgenerator.h	/^		double m_SumTotConfidenceCorrect;$/;"	m	class:RAWSYSReportGenerator
+m_SumTotConfidenceIncorrect	rawsys_reportgenerator.h	/^		double m_SumTotConfidenceIncorrect;$/;"	m	class:RAWSYSReportGenerator
+m_TabAlignedTokens	graphalignedtoken.h	/^		Token** m_TabAlignedTokens;$/;"	m	class:GraphAlignedToken
+m_TabBlockDimensionDeep	compressedlevenshteinmatrix.h	/^		size_t* m_TabBlockDimensionDeep;$/;"	m	class:CompressedLevenshteinMatrix
+m_TabBlockDivider	compressedlevenshteinmatrix.h	/^		size_t* m_TabBlockDivider;$/;"	m	class:CompressedLevenshteinMatrix
+m_TabCacheDimPreviousIndex	graph.h	/^        list<size_t>*** m_TabCacheDimPreviousIndex;$/;"	m	class:Graph
+m_TabCost	arraylevenshteinmatrix.h	/^		int* m_TabCost;$/;"	m	class:ArrayLevenshteinMatrix
+m_TabDimensionDeep	compressedlevenshteinmatrix.h	/^		size_t* m_TabDimensionDeep;$/;"	m	class:CompressedLevenshteinMatrix
+m_TabDimensionDeep	graph.h	/^		size_t* m_TabDimensionDeep;$/;"	m	class:Graph
+m_TabFirstTokens	graph.h	/^		list<Token*>* m_TabFirstTokens;$/;"	m	class:Graph
+m_TabHitsTimer	compressedlevenshteinmatrix.h	/^		ulint*  m_TabHitsTimer;$/;"	m	class:CompressedLevenshteinMatrix
+m_TabIsCreated	compressedlevenshteinmatrix.h	/^		bool*   m_TabIsCreated;$/;"	m	class:CompressedLevenshteinMatrix
+m_TabLastTokens	graph.h	/^		list<Token*>* m_TabLastTokens;$/;"	m	class:Graph
+m_TabMapTokenIndex	graph.h	/^		map<Token*, size_t>* m_TabMapTokenIndex;$/;"	m	class:Graph
+m_TabSizes	compressedlevenshteinmatrix.h	/^		uint* m_TabSizes;$/;"	m	class:CompressedLevenshteinMatrix
+m_TabStartByte	compressedlevenshteinmatrix.h	/^		int** m_TabStartByte;$/;"	m	class:CompressedLevenshteinMatrix
+m_TabStartByteCompressed	compressedlevenshteinmatrix.h	/^		int** m_TabStartByteCompressed;$/;"	m	class:CompressedLevenshteinMatrix
+m_TabVecHypRef	graph.h	/^		vector<Token*>* m_TabVecHypRef;$/;"	m	class:Graph
+m_TabbIsCompressed	compressedlevenshteinmatrix.h	/^		bool*   m_TabbIsCompressed;$/;"	m	class:CompressedLevenshteinMatrix
+m_TimeBasedSafeDivider	graph.h	/^		int m_TimeBasedSafeDivider;$/;"	m	class:Graph
+m_UsableMemoryKB	compressedlevenshteinmatrix.h	/^		double m_UsableMemoryKB;$/;"	m	class:CompressedLevenshteinMatrix
+m_VecValues	statistics.h	/^		vector<double> m_VecValues;$/;"	m	class:Statistics
+m_VectCategoryLabel	speechset.h	/^		vector<stcCategoryLabel> m_VectCategoryLabel;$/;"	m	class:SpeechSet
+m_VectSpeechSet	segmentor.h	/^        vector<SpeechSet*> m_VectSpeechSet;$/;"	m	class:Segmentor
+m_VectUEMElements	uemfilter.h	/^		vector<UEMElement*> m_VectUEMElements;$/;"	m	class:UEMFilter
+m_WordOptimizationThreshold	graph.h	/^		int m_WordOptimizationThreshold;$/;"	m	class:Graph
+m_alignmentEvaluations	tokenalignment.h	/^        map< string, AlignmentEvaluation* > m_alignmentEvaluations; $/;"	m	class:TokenAlignment
+m_bAdaptiveCostOptimization	graph.h	/^		bool m_bAdaptiveCostOptimization;$/;"	m	class:Graph
+m_bCaseSensitive	sgml_reportgenerator.h	/^		bool m_bCaseSensitive;$/;"	m	class:SGMLReportGenerator
+m_bCompressedArray	graph.h	/^        bool m_bCompressedArray;$/;"	m	class:Graph
+m_bGenericAlignment	recording.h	/^		bool m_bGenericAlignment;$/;"	m	class:Recording
+m_bHypHasConf	sgml_reportgenerator.h	/^		bool m_bHypHasConf;$/;"	m	class:SGMLReportGenerator
+m_bHypHasTimes	sgml_reportgenerator.h	/^		bool m_bHypHasTimes;$/;"	m	class:SGMLReportGenerator
+m_bOneTokenPerSegment	inputparser.h	/^		bool m_bOneTokenPerSegment;$/;"	m	class:InputParser
+m_bPruneOptimization	graph.h	/^		bool m_bPruneOptimization;$/;"	m	class:Graph
+m_bRefHasConf	sgml_reportgenerator.h	/^		bool m_bRefHasConf;$/;"	m	class:SGMLReportGenerator
+m_bRefHasTimes	sgml_reportgenerator.h	/^		bool m_bRefHasTimes;$/;"	m	class:SGMLReportGenerator
+m_bSpeakerOptimization	graph.h	/^		bool m_bSpeakerOptimization;$/;"	m	class:Graph
+m_bUseConfidence	linestyle_inputparser.h	/^        bool m_bUseConfidence;$/;"	m	class:LineStyleInputParser
+m_bUseExtended	linestyle_inputparser.h	/^        bool m_bUseExtended;$/;"	m	class:LineStyleInputParser
+m_bUseFile	uemfilter.h	/^		bool m_bUseFile;$/;"	m	class:UEMFilter
+m_bWordAlignCostOptimization	graph.h	/^		bool m_bWordAlignCostOptimization;$/;"	m	class:Graph
+m_bWordOptimization	graph.h	/^		bool m_bWordOptimization;$/;"	m	class:Graph
+m_current	alignedsegmentiterator.h	/^		map<Segment*, AlignedSegment*>::iterator m_current, m_end;$/;"	m	class:AlignedSegmentIterator
+m_current	alignedspeechiterator.h	/^	map< Speech*, AlignedSpeech* >::iterator m_current, m_end;$/;"	m	class:AlignedSpeechIterator
+m_description	tokenalignment.h	/^                string m_description;$/;"	m	class:TokenAlignment::AlignmentResult
+m_end	alignedsegmentiterator.h	/^		map<Segment*, AlignedSegment*>::iterator m_current, m_end;$/;"	m	class:AlignedSegmentIterator
+m_end	alignedspeechiterator.h	/^	map< Speech*, AlignedSpeech* >::iterator m_current, m_end;$/;"	m	class:AlignedSpeechIterator
+m_endtime	linestyle_inputparser.h	/^        int m_endtime;$/;"	m	class:LineStyleInputParser
+m_lzmaDictionarySize	compressedlevenshteinmatrix.h	/^		unsigned m_lzmaDictionarySize;$/;"	m	class:CompressedLevenshteinMatrix
+m_lzmaFb	compressedlevenshteinmatrix.h	/^		int m_lzmaFb;$/;"	m	class:CompressedLevenshteinMatrix
+m_lzmaLc	compressedlevenshteinmatrix.h	/^		int m_lzmaLc;$/;"	m	class:CompressedLevenshteinMatrix
+m_lzmaLevel	compressedlevenshteinmatrix.h	/^		int m_lzmaLevel;$/;"	m	class:CompressedLevenshteinMatrix
+m_lzmaLp	compressedlevenshteinmatrix.h	/^		int m_lzmaLp;$/;"	m	class:CompressedLevenshteinMatrix
+m_lzmaNumberThreads	compressedlevenshteinmatrix.h	/^		int m_lzmaNumberThreads;$/;"	m	class:CompressedLevenshteinMatrix
+m_lzmaPb	compressedlevenshteinmatrix.h	/^		int m_lzmaPb;$/;"	m	class:CompressedLevenshteinMatrix
+m_lzmaPropertiesSize	compressedlevenshteinmatrix.h	/^		size_t m_lzmaPropertiesSize;$/;"	m	class:CompressedLevenshteinMatrix
+m_pLogger	arraylevenshteinmatrix.h	/^		static Logger* m_pLogger;$/;"	m	class:ArrayLevenshteinMatrix
+m_pLogger	compressedlevenshteinmatrix.h	/^		static Logger* m_pLogger;$/;"	m	class:CompressedLevenshteinMatrix
+m_pLogger	graphalignedsegment.h	/^		static Logger* m_pLogger;$/;"	m	class:GraphAlignedSegment
+m_pLogger	sgml_generic_reportgenerator.h	/^		static Logger* m_pLogger;$/;"	m	class:SGMLGenericReportGenerator
+m_pLogger	sgml_reportgenerator.h	/^		static Logger* m_pLogger;$/;"	m	class:SGMLReportGenerator
+m_pLogger	speech.h	/^		static Logger* m_pLogger;$/;"	m	class:Speech
+m_pLogger	uemfilter.h	/^        static Logger* m_pLogger;$/;"	m	class:UEMElement
+m_pLogger	uemfilter.h	/^        static Logger* m_pLogger;$/;"	m	class:UEMFilter
+m_pMapSourceChannelSysRef	speakermatch.h	/^		map < string, string > * m_pMapSourceChannelSysRef;  $/;"	m	class:SpeakerMatch
+m_pSpeakerMatch	graph.h	/^		SpeakerMatch* m_pSpeakerMatch;$/;"	m	class:Graph
+m_pSpeakerMatch	recording.h	/^		SpeakerMatch* m_pSpeakerMatch;$/;"	m	class:Recording
+m_refToAlignments	alignedsegment.h	/^        map< Token*, TokenAlignment* > m_refToAlignments;$/;"	m	class:AlignedSegment
+m_referenceSegment	alignedsegment.h	/^        Segment* m_referenceSegment;$/;"	m	class:AlignedSegment
+m_references	alignment.h	/^        map< Speech* , AlignedSpeech* > m_references;$/;"	m	class:Alignment
+m_result	tokenalignment.h	/^                TokenAlignment::AlignmentResult m_result;$/;"	m	class:TokenAlignment::AlignmentEvaluation
+m_segments	alignedspeech.h	/^            map< Segment*,  AlignedSegment* > m_segments;$/;"	m	class:AlignedSpeech
+m_segments	speech.h	/^		vector<Segment*> m_segments;		$/;"	m	class:Speech
+m_shortName	tokenalignment.h	/^                string m_shortName;$/;"	m	class:TokenAlignment::AlignmentResult
+m_speech	alignedspeech.h	/^            Speech* m_speech;$/;"	m	class:AlignedSpeech
+m_starttime	linestyle_inputparser.h	/^        int m_starttime;$/;"	m	class:LineStyleInputParser
+m_token	tokenalignment.h	/^                Token* m_token;$/;"	m	class:TokenAlignment::AlignmentEvaluation
+m_tokenAlignments	alignedsegment.h	/^        vector< TokenAlignment* > m_tokenAlignments;$/;"	m	class:AlignedSegment
+m_typeCostModel	graph.h	/^		int m_typeCostModel; \/\/ 1: regular levenshtein$/;"	m	class:Graph
+m_useOptForHyp	graph.h	/^        bool m_useOptForHyp;$/;"	m	class:Graph
+m_useOptForRef	graph.h	/^        bool m_useOptForRef;$/;"	m	class:Graph
+m_vFilename	sgml_generic_reportgenerator.h	/^		vector<string> m_vFilename;$/;"	m	class:SGMLGenericReportGenerator
+m_vGAS	sgml_generic_reportgenerator.h	/^		vector<GraphAlignedSegment*> m_vGAS;$/;"	m	class:SGMLGenericReportGenerator
+m_vGraphAlignedTokens	graphalignedsegment.h	/^		vector<GraphAlignedToken*> m_vGraphAlignedTokens;$/;"	m	class:GraphAlignedSegment
+m_vTitle	sgml_generic_reportgenerator.h	/^		vector<string> m_vTitle;$/;"	m	class:SGMLGenericReportGenerator
+name	sgml_reportgenerator.h	/^		string name;$/;"	m	class:Speaker
+next	token.h	/^        vector<Token*> next;$/;"	m	class:Token
+operator ()	sgml_reportgenerator.h	/^		inline bool operator() (Speaker* speaker)$/;"	f	class:SpeakerNamePredicate
+operator ()	sgml_reportgenerator.h	/^	inline bool operator() (AlignedSegment* first, AlignedSegment* second) const$/;"	f	struct:AlignedSegmentSequenceComparator
+operator ()	sgml_reportgenerator.h	/^	inline bool operator() (Speaker* key1, Speaker* key2) const$/;"	f	struct:SpeakerSequenceComparator
+operator ==	tokenalignment.h	/^                inline bool operator==(const AlignmentResult & rh) const { return m_shortName == rh.m_shortName; }$/;"	f	class:TokenAlignment::AlignmentResult
+operator ==	tokenalignment.h	/^        inline bool operator==(const TokenAlignment &rh) { return (this->m_alignmentEvaluations == rh.m_alignmentEvaluations); }$/;"	f	class:TokenAlignment
+optional	token.h	/^		bool optional;$/;"	m	class:Token
+optionally_deletable	speechset.h	/^		bool optionally_deletable;		$/;"	m	class:SpeechSet
+pSGMLGenericReportGenerator	recording.h	/^		SGMLGenericReportGenerator* pSGMLGenericReportGenerator;$/;"	m	class:Recording
+parentSet	speech.h	/^		SpeechSet* parentSet;$/;"	m	class:Speech
+prec	token.h	/^        vector<Token*> prec;$/;"	m	class:Token
+properties	properties.h	/^		static map<string, string> properties;$/;"	m	class:Properties
+ref	speechset.h	/^        bool ref;$/;"	m	class:SpeechSet
+refSepIndex	levenshtein.h	/^        size_t refSepIndex;$/;"	m	class:Levenshtein
+references	recording.h	/^		SpeechSet* references;$/;"	m	class:Recording
+references	segmentsgroup.h	/^		vector<vector<Segment*> > references;$/;"	m	class:SegmentsGroup
+refs	segmentor.h	/^        SpeechSet* refs;$/;"	m	class:Segmentor
+reportGenerators	recording.h	/^        map<string, ReportGenerator*> reportGenerators;$/;"	m	class:Recording
+rootLogger	logger.h	/^        static Logger* rootLogger;$/;"	m	class:Logger
+s_id	segmentsgroup.h	/^		ulint s_id;$/;"	m	class:SegmentsGroup
+s_id	timedobject.h	/^		ulint s_id;$/;"	m	class:TimedObject
+scorer	recording.h	/^        map<string, Scorer*> scorer;$/;"	m	class:Recording
+segment	token.h	/^        Segment* segment;$/;"	m	class:Token
+segmentor	recording.h	/^        Segmentor* segmentor;$/;"	m	class:Recording
+segmentors	recording.h	/^        map<string, Segmentor*> segmentors;$/;"	m	class:Recording
+segments	sgml_reportgenerator.h	/^		vector< AlignedSegment* > segments; $/;"	m	class:Speaker
+sequence	sgml_reportgenerator.h	/^		int sequence;$/;"	m	class:Speaker
+size	token.h	/^		short size;$/;"	m	class:Token
+source	segment.h	/^		string source;$/;"	m	class:Segment
+sourceElementNum	segment.h	/^		long int sourceElementNum;$/;"	m	class:Segment
+sourceLineNum	segment.h	/^		long int sourceLineNum;$/;"	m	class:Segment
+sourceList	ctmstmrttm_segmentor.h	/^        set<string> sourceList;$/;"	m	class:CTMSTMRTTMSegmentor
+sourceText	token.h	/^		string sourceText;$/;"	m	class:Token
+speakerId	segment.h	/^		string speakerId;$/;"	m	class:Segment
+speech	segment.h	/^        Speech* speech;$/;"	m	class:Segment
+speeches	speechset.h	/^        vector<Speech*> speeches;$/;"	m	class:SpeechSet
+start	token.h	/^		short start;$/;"	m	class:Token
+startTime	timedobject.h	/^        int startTime;$/;"	m	class:TimedObject
+state	recording.h	/^        int state;$/;"	m	class:Recording
+stcCategoryLabel	speechset.h	/^} stcCategoryLabel;$/;"	t	typeref:struct:CATEGORYLABEL
+systemFilenames	alignment.h	/^        vector<string> systemFilenames;$/;"	m	class:Alignment
+systems	alignment.h	/^        vector<string> systems;$/;"	m	class:Alignment
+t_alignmentMap	tokenalignment.h	/^typedef map< string, TokenAlignment::AlignmentEvaluation* > t_alignmentMap;$/;"	t
+title	speechset.h	/^	string type, id, title, desc;$/;"	m	struct:CATEGORYLABEL
+titleName	speechset.h	/^		string titleName;$/;"	m	class:SpeechSet
+traversable	linestyle_inputparser.h	/^                bool traversable;$/;"	m	class:LineStyleInputParser::VirtualSegment
+type	speechset.h	/^	string type, id, title, desc;$/;"	m	struct:CATEGORYLABEL
+uint	stdinc.h	/^typedef unsigned int uint;$/;"	t
+ulint	stdinc.h	/^typedef unsigned long int ulint;$/;"	t
+ullint	stdinc.h	/^typedef unsigned long long int ullint;$/;"	t
+ulong	stdinc.h	/^typedef unsigned long ulong;$/;"	t
+uteranceList	trntrn_segmentor.h	/^    set<string> uteranceList;$/;"	m	class:TRNTRNSegmentor
+wantedName	sgml_reportgenerator.h	/^		string wantedName;$/;"	m	class:SpeakerNamePredicate
+where	logger.h	/^        static ostream* where;$/;"	m	class:Logger
+~AlignedSegmentIterator	alignedsegmentiterator.h	/^		~AlignedSegmentIterator() {}$/;"	f	class:AlignedSegmentIterator
+~AlignedSpeechIterator	alignedspeechiterator.h	/^	~AlignedSpeechIterator() {};$/;"	f	class:AlignedSpeechIterator
+~AlignmentEvaluation	tokenalignment.h	/^                ~AlignmentEvaluation() {}$/;"	f	class:TokenAlignment::AlignmentEvaluation
+~CTMInputParser	ctm_inputparser.h	/^		~CTMInputParser() {}$/;"	f	class:CTMInputParser
+~GraphCoordinateList	graph_coordinate.h	/^		~GraphCoordinateList() { RemoveAll(); }$/;"	f	class:GraphCoordinateList
+~InputParser	inputparser.h	/^		virtual ~InputParser() { }$/;"	f	class:InputParser
+~LineStyleInputParser	linestyle_inputparser.h	/^		virtual ~LineStyleInputParser() {}$/;"	f	class:LineStyleInputParser
+~Logger	logger.h	/^        ~Logger() {}$/;"	f	class:Logger
+~RAWSYS_Datas	rawsys_reportgenerator.h	/^		~RAWSYS_Datas() {}$/;"	f	class:RAWSYS_Datas
+~RTTMInputParser	rttm_inputparser.h	/^		virtual ~RTTMInputParser() {}$/;"	f	class:RTTMInputParser
+~ReportGenerator	reportgenerator.h	/^		virtual ~ReportGenerator() {}$/;"	f	class:ReportGenerator
+~SGMLReportGenerator	sgml_reportgenerator.h	/^		virtual ~SGMLReportGenerator() {}$/;"	f	class:SGMLReportGenerator
+~STMInputParser	stm_inputparser.h	/^		virtual ~STMInputParser() {}$/;"	f	class:STMInputParser
+~STTScorer	stt_scorer.h	/^		virtual ~STTScorer() {}$/;"	f	class:STTScorer
+~Segmentor	segmentor.h	/^		virtual ~Segmentor() {}$/;"	f	class:Segmentor
+~Speaker	sgml_reportgenerator.h	/^		~Speaker()$/;"	f	class:Speaker
+~SpeakerNamePredicate	sgml_reportgenerator.h	/^		~SpeakerNamePredicate()$/;"	f	class:SpeakerNamePredicate
+~SpkrAutoOverlap	spkrautooverlap.h	/^		~SpkrAutoOverlap() {}$/;"	f	class:SpkrAutoOverlap
+~Statistics	statistics.h	/^		~Statistics() { m_VecValues.clear(); }$/;"	f	class:Statistics
+~TRNInputParser	trn_inputparser.h	/^		virtual ~TRNInputParser() {}$/;"	f	class:TRNInputParser
+~TRNTRNSegmentor	trntrn_segmentor.h	/^		~TRNTRNSegmentor() { uteranceList.clear(); }$/;"	f	class:TRNTRNSegmentor
+~TimedObject	timedobject.h	/^        virtual ~TimedObject() {}$/;"	f	class:TimedObject
+~UEMElement	uemfilter.h	/^        ~UEMElement() {}$/;"	f	class:UEMElement

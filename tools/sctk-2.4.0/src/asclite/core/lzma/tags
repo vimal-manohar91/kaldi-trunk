@@ -1,0 +1,836 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Align	LzmaDec.c	102;"	d	file:
+Alloc	Types.h	/^  void *(*Alloc)(void *p, size_t size);$/;"	m	struct:__anon17
+AllocRefs	LzFind.c	/^static CLzRef* AllocRefs(UInt32 num, ISzAlloc *alloc)$/;"	f	file:
+BSR2_RET	LzmaEnc.c	122;"	d	file:
+BSR2_RET	LzmaEnc.c	91;"	d	file:
+Backward	LzmaEnc.c	/^static UInt32 Backward(CLzmaEnc *p, UInt32 *backRes, UInt32 cur)$/;"	f	file:
+BigAlloc	Alloc.c	/^void *BigAlloc(size_t size)$/;"	f
+BigAlloc	Alloc.h	27;"	d
+BigFree	Alloc.c	/^void BigFree(void *address)$/;"	f
+BigFree	Alloc.h	28;"	d
+Bool	Types.h	/^typedef int Bool;$/;"	t
+Bt2_MatchFinder_GetMatches	LzFind.c	/^static UInt32 Bt2_MatchFinder_GetMatches(CMatchFinder *p, UInt32 *distances)$/;"	f	file:
+Bt2_MatchFinder_Skip	LzFind.c	/^static void Bt2_MatchFinder_Skip(CMatchFinder *p, UInt32 num)$/;"	f	file:
+Bt3Zip_MatchFinder_GetMatches	LzFind.c	/^UInt32 Bt3Zip_MatchFinder_GetMatches(CMatchFinder *p, UInt32 *distances)$/;"	f
+Bt3Zip_MatchFinder_Skip	LzFind.c	/^void Bt3Zip_MatchFinder_Skip(CMatchFinder *p, UInt32 num)$/;"	f
+Bt3_MatchFinder_GetMatches	LzFind.c	/^static UInt32 Bt3_MatchFinder_GetMatches(CMatchFinder *p, UInt32 *distances)$/;"	f	file:
+Bt3_MatchFinder_Skip	LzFind.c	/^static void Bt3_MatchFinder_Skip(CMatchFinder *p, UInt32 num)$/;"	f	file:
+Bt4_MatchFinder_GetMatches	LzFind.c	/^static UInt32 Bt4_MatchFinder_GetMatches(CMatchFinder *p, UInt32 *distances)$/;"	f	file:
+Bt4_MatchFinder_Skip	LzFind.c	/^static void Bt4_MatchFinder_Skip(CMatchFinder *p, UInt32 num)$/;"	f	file:
+Byte	Types.h	/^typedef unsigned char Byte;$/;"	t
+CLenEnc	LzmaEnc.c	/^} CLenEnc;$/;"	t	typeref:struct:__anon5	file:
+CLenPriceEnc	LzmaEnc.c	/^} CLenPriceEnc;$/;"	t	typeref:struct:__anon6	file:
+CLookToRead	Types.h	/^} CLookToRead;$/;"	t	typeref:struct:__anon13
+CLzRef	LzFind.h	/^typedef UInt32 CLzRef;$/;"	t
+CLzmaDec	LzmaDec.h	/^} CLzmaDec;$/;"	t	typeref:struct:__anon2
+CLzmaEnc	LzmaEnc.c	/^} CLzmaEnc;$/;"	t	typeref:struct:_CLzmaEnc	file:
+CLzmaEncHandle	LzmaEnc.h	/^typedef void * CLzmaEncHandle;$/;"	t
+CLzmaEncProps	LzmaEnc.h	/^} CLzmaEncProps;$/;"	t	typeref:struct:_CLzmaEncProps
+CLzmaProb	LzmaDec.h	14;"	d
+CLzmaProb	LzmaDec.h	16;"	d
+CLzmaProb	LzmaEnc.c	178;"	d	file:
+CLzmaProb	LzmaEnc.c	180;"	d	file:
+CLzmaProps	LzmaDec.h	/^} CLzmaProps;$/;"	t	typeref:struct:_CLzmaProps
+CMatchFinder	LzFind.h	/^} CMatchFinder;$/;"	t	typeref:struct:_CMatchFinder
+COptimal	LzmaEnc.c	/^} COptimal;$/;"	t	typeref:struct:_COptimal	file:
+CRangeEnc	LzmaEnc.c	/^} CRangeEnc;$/;"	t	typeref:struct:_CRangeEnc	file:
+CSaveState	LzmaEnc.c	/^} CSaveState;$/;"	t	typeref:struct:__anon7	file:
+CSecToLook	Types.h	/^} CSecToLook;$/;"	t	typeref:struct:__anon14
+CSecToRead	Types.h	/^} CSecToRead;$/;"	t	typeref:struct:__anon15
+CSeqInStreamBuf	LzmaEnc.c	/^} CSeqInStreamBuf;$/;"	t	typeref:struct:_CSeqInStreamBuf	file:
+CSeqOutStreamBuf	LzmaEnc.c	/^} CSeqOutStreamBuf;$/;"	t	typeref:struct:_CSeqOutStreamBuf	file:
+CState	LzmaEnc.c	/^typedef unsigned CState;$/;"	t	file:
+ChangePair	LzmaEnc.c	1508;"	d	file:
+CheckErrors	LzmaEnc.c	/^static SRes CheckErrors(CLzmaEnc *p)$/;"	f	file:
+DUMMY_ERROR	LzmaDec.c	/^  DUMMY_ERROR, \/* unexpected end of input stream *\/$/;"	e	enum:__anon1	file:
+DUMMY_LIT	LzmaDec.c	/^  DUMMY_LIT,$/;"	e	enum:__anon1	file:
+DUMMY_MATCH	LzmaDec.c	/^  DUMMY_MATCH,$/;"	e	enum:__anon1	file:
+DUMMY_REP	LzmaDec.c	/^  DUMMY_REP$/;"	e	enum:__anon1	file:
+ELzmaDummy	LzmaDec.c	/^} ELzmaDummy;$/;"	t	typeref:enum:__anon1	file:
+ELzmaFinishMode	LzmaDec.h	/^} ELzmaFinishMode;$/;"	t	typeref:enum:__anon3
+ELzmaStatus	LzmaDec.h	/^} ELzmaStatus;$/;"	t	typeref:enum:__anon4
+ESzSeek	Types.h	/^} ESzSeek;$/;"	t	typeref:enum:__anon10
+False	Types.h	83;"	d
+FillAlignPrices	LzmaEnc.c	/^static void FillAlignPrices(CLzmaEnc *p)$/;"	f	file:
+FillDistancesPrices	LzmaEnc.c	/^static void FillDistancesPrices(CLzmaEnc *p)$/;"	f	file:
+Flush	LzmaEnc.c	/^static SRes Flush(CLzmaEnc *p, UInt32 nowPos)$/;"	f	file:
+Free	Types.h	/^  void (*Free)(void *p, void *address); \/* address can be 0 *\/$/;"	m	struct:__anon17
+GET_BIT	LzmaDec.c	25;"	d	file:
+GET_BIT2	LzmaDec.c	22;"	d	file:
+GET_BIT2_CHECK	LzmaDec.c	52;"	d	file:
+GET_BIT_CHECK	LzmaDec.c	55;"	d	file:
+GET_MATCHES_FOOTER	LzFind.c	467;"	d	file:
+GET_MATCHES_HEADER	LzFind.c	462;"	d	file:
+GET_MATCHES_HEADER2	LzFind.c	457;"	d	file:
+GET_PRICE	LzmaEnc.c	645;"	d	file:
+GET_PRICE_0	LzmaEnc.c	651;"	d	file:
+GET_PRICE_0a	LzmaEnc.c	654;"	d	file:
+GET_PRICE_1	LzmaEnc.c	652;"	d	file:
+GET_PRICE_1a	LzmaEnc.c	655;"	d	file:
+GET_PRICEa	LzmaEnc.c	648;"	d	file:
+GetIndexByte	LzFind.h	/^  Mf_GetIndexByte_Func GetIndexByte;$/;"	m	struct:_IMatchFinder
+GetLargePageMinimumP	Alloc.c	/^typedef SIZE_T (WINAPI *GetLargePageMinimumP)();$/;"	t	file:
+GetLenToPosState	LzmaEnc.c	473;"	d	file:
+GetMatches	LzFind.h	/^  Mf_GetMatches_Func GetMatches;$/;"	m	struct:_IMatchFinder
+GetMatchesSpec1	LzFind.c	/^UInt32 * GetMatchesSpec1(UInt32 lenLimit, UInt32 curMatch, UInt32 pos, const Byte *cur, CLzRef *son,$/;"	f
+GetNumAvailableBytes	LzFind.h	/^  Mf_GetNumAvailableBytes_Func GetNumAvailableBytes;$/;"	m	struct:_IMatchFinder
+GetOptimum	LzmaEnc.c	/^static UInt32 GetOptimum(CLzmaEnc *p, UInt32 position, UInt32 *backRes)$/;"	f	file:
+GetOptimumFast	LzmaEnc.c	/^static UInt32 GetOptimumFast(CLzmaEnc *p, UInt32 *backRes)$/;"	f	file:
+GetPointerToCurrentPos	LzFind.h	/^  Mf_GetPointerToCurrentPos_Func GetPointerToCurrentPos;$/;"	m	struct:_IMatchFinder
+GetPosSlot	LzmaEnc.c	100;"	d	file:
+GetPosSlot	LzmaEnc.c	133;"	d	file:
+GetPosSlot1	LzmaEnc.c	/^UInt32 GetPosSlot1(UInt32 pos)$/;"	f
+GetPosSlot1	LzmaEnc.c	131;"	d	file:
+GetPosSlot2	LzmaEnc.c	132;"	d	file:
+GetPosSlot2	LzmaEnc.c	99;"	d	file:
+GetPureRepPrice	LzmaEnc.c	/^static UInt32 GetPureRepPrice(CLzmaEnc *p, UInt32 repIndex, UInt32 state, UInt32 posState)$/;"	f	file:
+GetRepLen1Price	LzmaEnc.c	/^static UInt32 GetRepLen1Price(CLzmaEnc *p, UInt32 state, UInt32 posState)$/;"	f	file:
+GetRepPrice	LzmaEnc.c	/^static UInt32 GetRepPrice(CLzmaEnc *p, UInt32 repIndex, UInt32 len, UInt32 state, UInt32 posState)$/;"	f	file:
+HASH2_CALC	LzHash.h	15;"	d
+HASH3_CALC	LzHash.h	17;"	d
+HASH4_CALC	LzHash.h	22;"	d
+HASH5_CALC	LzHash.h	28;"	d
+HASH_ZIP_CALC	LzHash.h	37;"	d
+Hc3Zip_MatchFinder_GetMatches	LzFind.c	/^UInt32 Hc3Zip_MatchFinder_GetMatches(CMatchFinder *p, UInt32 *distances)$/;"	f
+Hc3Zip_MatchFinder_Skip	LzFind.c	/^void Hc3Zip_MatchFinder_Skip(CMatchFinder *p, UInt32 num)$/;"	f
+Hc4_MatchFinder_GetMatches	LzFind.c	/^static UInt32 Hc4_MatchFinder_GetMatches(CMatchFinder *p, UInt32 *distances)$/;"	f	file:
+Hc4_MatchFinder_Skip	LzFind.c	/^static void Hc4_MatchFinder_Skip(CMatchFinder *p, UInt32 num)$/;"	f	file:
+Hc_GetMatchesSpec	LzFind.c	/^static UInt32 * Hc_GetMatchesSpec(UInt32 lenLimit, UInt32 curMatch, UInt32 pos, const Byte *cur, CLzRef *son,$/;"	f	file:
+IAlloc_Alloc	Types.h	205;"	d
+IAlloc_Free	Types.h	206;"	d
+ICompressProgress	Types.h	/^} ICompressProgress;$/;"	t	typeref:struct:__anon16
+IF_BIT_0	LzmaDec.c	19;"	d	file:
+IF_BIT_0_CHECK	LzmaDec.c	49;"	d	file:
+ILookInStream	Types.h	/^} ILookInStream;$/;"	t	typeref:struct:__anon12
+IMatchFinder	LzFind.h	/^} IMatchFinder;$/;"	t	typeref:struct:_IMatchFinder
+ISeekInStream	Types.h	/^} ISeekInStream;$/;"	t	typeref:struct:__anon11
+ISeqInStream	Types.h	/^} ISeqInStream;$/;"	t	typeref:struct:__anon8
+ISeqOutStream	Types.h	/^} ISeqOutStream;$/;"	t	typeref:struct:__anon9
+ISzAlloc	Types.h	/^} ISzAlloc;$/;"	t	typeref:struct:__anon17
+Init	LzFind.h	/^  Mf_Init_Func Init;$/;"	m	struct:_IMatchFinder
+Inline_MatchFinder_GetIndexByte	LzFind.h	50;"	d
+Inline_MatchFinder_GetNumAvailableBytes	LzFind.h	52;"	d
+Inline_MatchFinder_GetPointerToCurrentPos	LzFind.h	49;"	d
+Int16	Types.h	/^typedef short Int16;$/;"	t
+Int32	Types.h	/^typedef int Int32;$/;"	t
+Int32	Types.h	/^typedef long Int32;$/;"	t
+Int64	Types.h	/^typedef __int64 Int64;$/;"	t
+Int64	Types.h	/^typedef long Int64;$/;"	t
+Int64	Types.h	/^typedef long long int Int64;$/;"	t
+IsCharState	LzmaEnc.c	471;"	d	file:
+IsMatch	LzmaDec.c	94;"	d	file:
+IsRep	LzmaDec.c	95;"	d	file:
+IsRep0Long	LzmaDec.c	99;"	d	file:
+IsRepG0	LzmaDec.c	96;"	d	file:
+IsRepG1	LzmaDec.c	97;"	d	file:
+IsRepG2	LzmaDec.c	98;"	d	file:
+IsShortRep	LzmaEnc.c	875;"	d	file:
+LIT_PROBS	LzmaEnc.c	948;"	d	file:
+LZMA_BASE_SIZE	LzmaDec.c	107;"	d	file:
+LZMA_DIC_MIN	LzmaDec.c	122;"	d	file:
+LZMA_FINISH_ANY	LzmaDec.h	/^  LZMA_FINISH_ANY,   \/* finish at any point *\/$/;"	e	enum:__anon3
+LZMA_FINISH_END	LzmaDec.h	/^  LZMA_FINISH_END    \/* block must be finished at the end *\/$/;"	e	enum:__anon3
+LZMA_LC_MAX	LzmaEnc.c	184;"	d	file:
+LZMA_LIT_SIZE	LzmaDec.c	108;"	d	file:
+LZMA_LP_MAX	LzmaEnc.c	185;"	d	file:
+LZMA_MATCH_LEN_MAX	LzmaEnc.c	200;"	d	file:
+LZMA_MATCH_LEN_MIN	LzmaEnc.c	199;"	d	file:
+LZMA_NUM_PB_STATES_MAX	LzmaEnc.c	187;"	d	file:
+LZMA_NUM_REPS	LzmaEnc.c	138;"	d	file:
+LZMA_PB_MAX	LzmaEnc.c	183;"	d	file:
+LZMA_PROPS_SIZE	LzmaDec.h	22;"	d
+LZMA_PROPS_SIZE	LzmaEnc.h	9;"	d
+LZMA_PROPS_SIZE	LzmaLib.h	19;"	d
+LZMA_REQUIRED_INPUT_MAX	LzmaDec.h	44;"	d
+LZMA_STATUS_FINISHED_WITH_MARK	LzmaDec.h	/^  LZMA_STATUS_FINISHED_WITH_MARK,          \/* stream was finished with end mark. *\/$/;"	e	enum:__anon4
+LZMA_STATUS_MAYBE_FINISHED_WITHOUT_MARK	LzmaDec.h	/^  LZMA_STATUS_MAYBE_FINISHED_WITHOUT_MARK  \/* there is probability that stream was finished without end mark *\/$/;"	e	enum:__anon4
+LZMA_STATUS_NEEDS_MORE_INPUT	LzmaDec.h	/^  LZMA_STATUS_NEEDS_MORE_INPUT,            \/* you must provide more input bytes *\/$/;"	e	enum:__anon4
+LZMA_STATUS_NOT_FINISHED	LzmaDec.h	/^  LZMA_STATUS_NOT_FINISHED,                \/* stream was not finished *\/$/;"	e	enum:__anon4
+LZMA_STATUS_NOT_SPECIFIED	LzmaDec.h	/^  LZMA_STATUS_NOT_SPECIFIED,               \/* use main error code instead *\/$/;"	e	enum:__anon4
+LenChoice	LzmaDec.c	70;"	d	file:
+LenChoice2	LzmaDec.c	71;"	d	file:
+LenCoder	LzmaDec.c	103;"	d	file:
+LenEnc_Encode	LzmaEnc.c	/^static void LenEnc_Encode(CLenEnc *p, CRangeEnc *rc, UInt32 symbol, UInt32 posState)$/;"	f	file:
+LenEnc_Encode2	LzmaEnc.c	/^static void LenEnc_Encode2(CLenPriceEnc *p, CRangeEnc *rc, UInt32 symbol, UInt32 posState, Bool updatePrice, UInt32 *ProbPrices)$/;"	f	file:
+LenEnc_Init	LzmaEnc.c	/^static void LenEnc_Init(CLenEnc *p)$/;"	f	file:
+LenEnc_SetPrices	LzmaEnc.c	/^static void LenEnc_SetPrices(CLenEnc *p, UInt32 posState, UInt32 numSymbols, UInt32 *prices, UInt32 *ProbPrices)$/;"	f	file:
+LenHigh	LzmaDec.c	74;"	d	file:
+LenLow	LzmaDec.c	72;"	d	file:
+LenMid	LzmaDec.c	73;"	d	file:
+LenPriceEnc_UpdateTable	LzmaEnc.c	/^static void MY_FAST_CALL LenPriceEnc_UpdateTable(CLenPriceEnc *p, UInt32 posState, UInt32 *ProbPrices)$/;"	f	file:
+LenPriceEnc_UpdateTables	LzmaEnc.c	/^static void LenPriceEnc_UpdateTables(CLenPriceEnc *p, UInt32 numPosStates, UInt32 *ProbPrices)$/;"	f	file:
+LitEnc_Encode	LzmaEnc.c	/^static void LitEnc_Encode(CRangeEnc *p, CLzmaProb *probs, UInt32 symbol)$/;"	f	file:
+LitEnc_EncodeMatched	LzmaEnc.c	/^static void LitEnc_EncodeMatched(CRangeEnc *p, CLzmaProb *probs, UInt32 symbol, UInt32 matchByte)$/;"	f	file:
+LitEnc_GetPrice	LzmaEnc.c	/^static UInt32 LitEnc_GetPrice(const CLzmaProb *probs, UInt32 symbol, UInt32 *ProbPrices)$/;"	f	file:
+LitEnc_GetPriceMatched	LzmaEnc.c	/^static UInt32 LitEnc_GetPriceMatched(const CLzmaProb *probs, UInt32 symbol, UInt32 matchByte, UInt32 *ProbPrices)$/;"	f	file:
+Literal	LzmaDec.c	105;"	d	file:
+Look	Types.h	/^  SRes (*Look)(void *p, void **buf, size_t *size);$/;"	m	struct:__anon12
+LookToRead_BUF_SIZE	Types.h	162;"	d
+LzInWindow_Create	LzFind.c	/^static int LzInWindow_Create(CMatchFinder *p, UInt32 keepSizeReserv, ISzAlloc *alloc)$/;"	f	file:
+LzInWindow_Free	LzFind.c	/^static void LzInWindow_Free(CMatchFinder *p, ISzAlloc *alloc)$/;"	f	file:
+LzmaCompress	LzmaLib.c	/^MY_STDAPI LzmaCompress(unsigned char *dest, size_t  *destLen, const unsigned char *src, size_t  srcLen,$/;"	f
+LzmaDec_Allocate	LzmaDec.c	/^SRes LzmaDec_Allocate(CLzmaDec *p, const Byte *props, unsigned propsSize, ISzAlloc *alloc)$/;"	f
+LzmaDec_AllocateProbs	LzmaDec.c	/^SRes LzmaDec_AllocateProbs(CLzmaDec *p, const Byte *props, unsigned propsSize, ISzAlloc *alloc)$/;"	f
+LzmaDec_AllocateProbs2	LzmaDec.c	/^static SRes LzmaDec_AllocateProbs2(CLzmaDec *p, const CLzmaProps *propNew, ISzAlloc *alloc)$/;"	f	file:
+LzmaDec_Construct	LzmaDec.h	67;"	d
+LzmaDec_DecodeReal	LzmaDec.c	/^static int MY_FAST_CALL LzmaDec_DecodeReal(CLzmaDec *p, SizeT limit, const Byte *bufLimit)$/;"	f	file:
+LzmaDec_DecodeReal2	LzmaDec.c	/^static int MY_FAST_CALL LzmaDec_DecodeReal2(CLzmaDec *p, SizeT limit, const Byte *bufLimit)$/;"	f	file:
+LzmaDec_DecodeToBuf	LzmaDec.c	/^SRes LzmaDec_DecodeToBuf(CLzmaDec *p, Byte *dest, SizeT *destLen, const Byte *src, SizeT *srcLen, ELzmaFinishMode finishMode, ELzmaStatus *status)$/;"	f
+LzmaDec_DecodeToDic	LzmaDec.c	/^SRes LzmaDec_DecodeToDic(CLzmaDec *p, SizeT dicLimit, const Byte *src, SizeT *srcLen,$/;"	f
+LzmaDec_Free	LzmaDec.c	/^void LzmaDec_Free(CLzmaDec *p, ISzAlloc *alloc)$/;"	f
+LzmaDec_FreeDict	LzmaDec.c	/^static void LzmaDec_FreeDict(CLzmaDec *p, ISzAlloc *alloc)$/;"	f	file:
+LzmaDec_FreeProbs	LzmaDec.c	/^void LzmaDec_FreeProbs(CLzmaDec *p, ISzAlloc *alloc)$/;"	f
+LzmaDec_Init	LzmaDec.c	/^void LzmaDec_Init(CLzmaDec *p)$/;"	f
+LzmaDec_InitDicAndState	LzmaDec.c	/^void LzmaDec_InitDicAndState(CLzmaDec *p, Bool initDic, Bool initState)$/;"	f
+LzmaDec_InitRc	LzmaDec.c	/^static void LzmaDec_InitRc(CLzmaDec *p, const Byte *data)$/;"	f	file:
+LzmaDec_InitStateReal	LzmaDec.c	/^static void LzmaDec_InitStateReal(CLzmaDec *p)$/;"	f	file:
+LzmaDec_TryDummy	LzmaDec.c	/^static ELzmaDummy LzmaDec_TryDummy(const CLzmaDec *p, const Byte *buf, SizeT inSize)$/;"	f	file:
+LzmaDec_WriteRem	LzmaDec.c	/^static void MY_FAST_CALL LzmaDec_WriteRem(CLzmaDec *p, SizeT limit)$/;"	f	file:
+LzmaDecode	LzmaDec.c	/^SRes LzmaDecode(Byte *dest, SizeT *destLen, const Byte *src, SizeT *srcLen,$/;"	f
+LzmaEncProps_GetDictSize	LzmaEnc.c	/^UInt32 LzmaEncProps_GetDictSize(const CLzmaEncProps *props2)$/;"	f
+LzmaEncProps_Init	LzmaEnc.c	/^void LzmaEncProps_Init(CLzmaEncProps *p)$/;"	f
+LzmaEncProps_Normalize	LzmaEnc.c	/^void LzmaEncProps_Normalize(CLzmaEncProps *p)$/;"	f
+LzmaEnc_Alloc	LzmaEnc.c	/^static SRes LzmaEnc_Alloc(CLzmaEnc *p, UInt32 keepWindowSize, ISzAlloc *alloc, ISzAlloc *allocBig)$/;"	f	file:
+LzmaEnc_AllocAndInit	LzmaEnc.c	/^static SRes LzmaEnc_AllocAndInit(CLzmaEnc *p, UInt32 keepWindowSize, ISzAlloc *alloc, ISzAlloc *allocBig)$/;"	f	file:
+LzmaEnc_CodeOneBlock	LzmaEnc.c	/^static SRes LzmaEnc_CodeOneBlock(CLzmaEnc *p, Bool useLimits, UInt32 maxPackSize, UInt32 maxUnpackSize)$/;"	f	file:
+LzmaEnc_CodeOneMemBlock	LzmaEnc.c	/^SRes LzmaEnc_CodeOneMemBlock(CLzmaEncHandle pp, Bool reInit,$/;"	f
+LzmaEnc_Construct	LzmaEnc.c	/^void LzmaEnc_Construct(CLzmaEnc *p)$/;"	f
+LzmaEnc_Create	LzmaEnc.c	/^CLzmaEncHandle LzmaEnc_Create(ISzAlloc *alloc)$/;"	f
+LzmaEnc_Destroy	LzmaEnc.c	/^void LzmaEnc_Destroy(CLzmaEncHandle p, ISzAlloc *alloc, ISzAlloc *allocBig)$/;"	f
+LzmaEnc_Destruct	LzmaEnc.c	/^void LzmaEnc_Destruct(CLzmaEnc *p, ISzAlloc *alloc, ISzAlloc *allocBig)$/;"	f
+LzmaEnc_Encode	LzmaEnc.c	/^SRes LzmaEnc_Encode(CLzmaEncHandle pp, ISeqOutStream *outStream, ISeqInStream *inStream, ICompressProgress *progress,$/;"	f
+LzmaEnc_FastPosInit	LzmaEnc.c	/^void LzmaEnc_FastPosInit(Byte *g_FastPos)$/;"	f
+LzmaEnc_Finish	LzmaEnc.c	/^void LzmaEnc_Finish(CLzmaEncHandle pp)$/;"	f
+LzmaEnc_FreeLits	LzmaEnc.c	/^void LzmaEnc_FreeLits(CLzmaEnc *p, ISzAlloc *alloc)$/;"	f
+LzmaEnc_GetCurBuf	LzmaEnc.c	/^const Byte *LzmaEnc_GetCurBuf(CLzmaEncHandle pp)$/;"	f
+LzmaEnc_GetNumAvailableBytes	LzmaEnc.c	/^UInt32 LzmaEnc_GetNumAvailableBytes(CLzmaEncHandle pp)$/;"	f
+LzmaEnc_Init	LzmaEnc.c	/^void LzmaEnc_Init(CLzmaEnc *p)$/;"	f
+LzmaEnc_InitPriceTables	LzmaEnc.c	/^void LzmaEnc_InitPriceTables(UInt32 *ProbPrices)$/;"	f
+LzmaEnc_InitPrices	LzmaEnc.c	/^void LzmaEnc_InitPrices(CLzmaEnc *p)$/;"	f
+LzmaEnc_MemEncode	LzmaEnc.c	/^SRes LzmaEnc_MemEncode(CLzmaEncHandle pp, Byte *dest, SizeT *destLen, const Byte *src, SizeT srcLen,$/;"	f
+LzmaEnc_MemPrepare	LzmaEnc.c	/^SRes LzmaEnc_MemPrepare(CLzmaEncHandle pp, const Byte *src, SizeT srcLen,$/;"	f
+LzmaEnc_Prepare	LzmaEnc.c	/^static SRes LzmaEnc_Prepare(CLzmaEncHandle pp, ISeqInStream *inStream, ISeqOutStream *outStream,$/;"	f	file:
+LzmaEnc_PrepareForLzma2	LzmaEnc.c	/^SRes LzmaEnc_PrepareForLzma2(CLzmaEncHandle pp,$/;"	f
+LzmaEnc_RestoreState	LzmaEnc.c	/^void LzmaEnc_RestoreState(CLzmaEncHandle pp)$/;"	f
+LzmaEnc_SaveState	LzmaEnc.c	/^void LzmaEnc_SaveState(CLzmaEncHandle pp)$/;"	f
+LzmaEnc_SetInputBuf	LzmaEnc.c	/^static void LzmaEnc_SetInputBuf(CLzmaEnc *p, const Byte *src, SizeT srcLen)$/;"	f	file:
+LzmaEnc_SetProps	LzmaEnc.c	/^SRes LzmaEnc_SetProps(CLzmaEncHandle pp, const CLzmaEncProps *props2)$/;"	f
+LzmaEnc_WriteProperties	LzmaEnc.c	/^SRes LzmaEnc_WriteProperties(CLzmaEncHandle pp, Byte *props, SizeT *size)$/;"	f
+LzmaEncode	LzmaEnc.c	/^SRes LzmaEncode(Byte *dest, SizeT *destLen, const Byte *src, SizeT srcLen,$/;"	f
+LzmaProps_Decode	LzmaDec.c	/^SRes LzmaProps_Decode(CLzmaProps *p, const Byte *data, unsigned size)$/;"	f
+LzmaProps_GetNumProbs	LzmaDec.c	110;"	d	file:
+LzmaUncompress	LzmaLib.c	/^MY_STDAPI LzmaUncompress(unsigned char *dest, size_t  *destLen, const unsigned char *src, size_t  *srcLen,$/;"	f
+MF_PARAMS	LzFind.c	465;"	d	file:
+MOVE_POS	LzFind.c	448;"	d	file:
+MOVE_POS_RET	LzFind.c	453;"	d	file:
+MT_HASH2_CALC	LzHash.h	40;"	d
+MT_HASH3_CALC	LzHash.h	43;"	d
+MT_HASH4_CALC	LzHash.h	48;"	d
+MY_CDECL	Types.h	100;"	d
+MY_CDECL	Types.h	94;"	d
+MY_EXTERN_C	LzmaLib.h	12;"	d
+MY_EXTERN_C	LzmaLib.h	14;"	d
+MY_FAST_CALL	Types.h	102;"	d
+MY_FAST_CALL	Types.h	96;"	d
+MY_NO_INLINE	Types.h	89;"	d
+MY_NO_INLINE	Types.h	91;"	d
+MY_STDAPI	LzmaLib.h	17;"	d
+MY_STD_CALL	Types.h	101;"	d
+MY_STD_CALL	Types.h	95;"	d
+MakeAsChar	LzmaEnc.c	873;"	d	file:
+MakeAsShortRep	LzmaEnc.c	874;"	d	file:
+MatchFinder_CheckAndMoveAndRead	LzFind.c	/^static void MatchFinder_CheckAndMoveAndRead(CMatchFinder *p)$/;"	f	file:
+MatchFinder_CheckLimits	LzFind.c	/^static void MatchFinder_CheckLimits(CMatchFinder *p)$/;"	f	file:
+MatchFinder_Construct	LzFind.c	/^void MatchFinder_Construct(CMatchFinder *p)$/;"	f
+MatchFinder_Create	LzFind.c	/^int MatchFinder_Create(CMatchFinder *p, UInt32 historySize,$/;"	f
+MatchFinder_CreateVTable	LzFind.c	/^void MatchFinder_CreateVTable(CMatchFinder *p, IMatchFinder *vTable)$/;"	f
+MatchFinder_Free	LzFind.c	/^void MatchFinder_Free(CMatchFinder *p, ISzAlloc *alloc)$/;"	f
+MatchFinder_FreeThisClassMemory	LzFind.c	/^static void MatchFinder_FreeThisClassMemory(CMatchFinder *p, ISzAlloc *alloc)$/;"	f	file:
+MatchFinder_GetIndexByte	LzFind.c	/^Byte MatchFinder_GetIndexByte(CMatchFinder *p, Int32 index) { return p->buffer[index]; }$/;"	f
+MatchFinder_GetNumAvailableBytes	LzFind.c	/^UInt32 MatchFinder_GetNumAvailableBytes(CMatchFinder *p) { return p->streamPos - p->pos; }$/;"	f
+MatchFinder_GetPointerToCurrentPos	LzFind.c	/^Byte *MatchFinder_GetPointerToCurrentPos(CMatchFinder *p) { return p->buffer; }$/;"	f
+MatchFinder_GetSubValue	LzFind.c	/^static UInt32 MatchFinder_GetSubValue(CMatchFinder *p)$/;"	f	file:
+MatchFinder_Init	LzFind.c	/^void MatchFinder_Init(CMatchFinder *p)$/;"	f
+MatchFinder_MoveBlock	LzFind.c	/^void MatchFinder_MoveBlock(CMatchFinder *p)$/;"	f
+MatchFinder_MovePos	LzFind.c	/^static void MatchFinder_MovePos(CMatchFinder *p) { MOVE_POS; }$/;"	f	file:
+MatchFinder_NeedMove	LzFind.c	/^int MatchFinder_NeedMove(CMatchFinder *p)$/;"	f
+MatchFinder_Normalize	LzFind.c	/^static void MatchFinder_Normalize(CMatchFinder *p)$/;"	f	file:
+MatchFinder_Normalize3	LzFind.c	/^void MatchFinder_Normalize3(UInt32 subValue, CLzRef *items, UInt32 numItems)$/;"	f
+MatchFinder_ReadBlock	LzFind.c	/^static void MatchFinder_ReadBlock(CMatchFinder *p)$/;"	f	file:
+MatchFinder_ReadIfRequired	LzFind.c	/^void MatchFinder_ReadIfRequired(CMatchFinder *p)$/;"	f
+MatchFinder_ReduceOffsets	LzFind.c	/^void MatchFinder_ReduceOffsets(CMatchFinder *p, UInt32 subValue)$/;"	f
+MatchFinder_SetDefaultSettings	LzFind.c	/^static void MatchFinder_SetDefaultSettings(CMatchFinder *p)$/;"	f	file:
+MatchFinder_SetLimits	LzFind.c	/^static void MatchFinder_SetLimits(CMatchFinder *p)$/;"	f	file:
+Mf_GetIndexByte_Func	LzFind.h	/^typedef Byte (*Mf_GetIndexByte_Func)(void *object, Int32 index);$/;"	t
+Mf_GetMatches_Func	LzFind.h	/^typedef UInt32 (*Mf_GetMatches_Func)(void *object, UInt32 *distances);$/;"	t
+Mf_GetNumAvailableBytes_Func	LzFind.h	/^typedef UInt32 (*Mf_GetNumAvailableBytes_Func)(void *object);$/;"	t
+Mf_GetPointerToCurrentPos_Func	LzFind.h	/^typedef const Byte * (*Mf_GetPointerToCurrentPos_Func)(void *object);$/;"	t
+Mf_Init_Func	LzFind.h	/^typedef void (*Mf_Init_Func)(void *object);$/;"	t
+Mf_Skip_Func	LzFind.h	/^typedef void (*Mf_Skip_Func)(void *object, UInt32);$/;"	t
+MidAlloc	Alloc.c	/^void *MidAlloc(size_t size)$/;"	f
+MidAlloc	Alloc.h	25;"	d
+MidFree	Alloc.c	/^void MidFree(void *address)$/;"	f
+MidFree	Alloc.h	26;"	d
+MovePos	LzmaEnc.c	/^static void MovePos(CLzmaEnc *p, UInt32 num)$/;"	f	file:
+MyAlloc	Alloc.c	/^void *MyAlloc(size_t size)$/;"	f
+MyFree	Alloc.c	/^void MyFree(void *address)$/;"	f
+MyRead	LzmaEnc.c	/^static SRes MyRead(void *pp, void *data, size_t *size)$/;"	f	file:
+MyWrite	LzmaEnc.c	/^static size_t MyWrite(void *pp, const void *data, size_t size)$/;"	f	file:
+NORMALIZE	LzmaDec.c	17;"	d	file:
+NORMALIZE_CHECK	LzmaDec.c	47;"	d	file:
+PosSlot	LzmaDec.c	100;"	d	file:
+ProbPrices	LzmaEnc.c	/^  UInt32 ProbPrices[kBitModelTotal >> kNumMoveReducingBits];$/;"	m	struct:_CLzmaEnc	file:
+Progress	Types.h	/^  SRes (*Progress)(void *p, UInt64 inSize, UInt64 outSize);$/;"	m	struct:__anon16
+RC_BUF_SIZE	LzmaEnc.c	485;"	d	file:
+RC_INIT_SIZE	LzmaDec.c	15;"	d	file:
+RINOK	Types.h	40;"	d
+RangeEnc_Alloc	LzmaEnc.c	/^static int RangeEnc_Alloc(CRangeEnc *p, ISzAlloc *alloc)$/;"	f	file:
+RangeEnc_Construct	LzmaEnc.c	/^static void RangeEnc_Construct(CRangeEnc *p)$/;"	f	file:
+RangeEnc_EncodeBit	LzmaEnc.c	/^static void RangeEnc_EncodeBit(CRangeEnc *p, CLzmaProb *prob, UInt32 symbol)$/;"	f	file:
+RangeEnc_EncodeDirectBits	LzmaEnc.c	/^static void RangeEnc_EncodeDirectBits(CRangeEnc *p, UInt32 value, int numBits)$/;"	f	file:
+RangeEnc_FlushData	LzmaEnc.c	/^static void RangeEnc_FlushData(CRangeEnc *p)$/;"	f	file:
+RangeEnc_FlushStream	LzmaEnc.c	/^static void RangeEnc_FlushStream(CRangeEnc *p)$/;"	f	file:
+RangeEnc_Free	LzmaEnc.c	/^static void RangeEnc_Free(CRangeEnc *p, ISzAlloc *alloc)$/;"	f	file:
+RangeEnc_GetProcessed	LzmaEnc.c	483;"	d	file:
+RangeEnc_Init	LzmaEnc.c	/^static void RangeEnc_Init(CRangeEnc *p)$/;"	f	file:
+RangeEnc_ShiftLow	LzmaEnc.c	/^static void MY_FAST_CALL RangeEnc_ShiftLow(CRangeEnc *p)$/;"	f	file:
+RcTree_Encode	LzmaEnc.c	/^static void RcTree_Encode(CRangeEnc *rc, CLzmaProb *probs, int numBitLevels, UInt32 symbol)$/;"	f	file:
+RcTree_GetPrice	LzmaEnc.c	/^static UInt32 RcTree_GetPrice(const CLzmaProb *probs, int numBitLevels, UInt32 symbol, UInt32 *ProbPrices)$/;"	f	file:
+RcTree_ReverseEncode	LzmaEnc.c	/^static void RcTree_ReverseEncode(CRangeEnc *rc, CLzmaProb *probs, int numBitLevels, UInt32 symbol)$/;"	f	file:
+RcTree_ReverseGetPrice	LzmaEnc.c	/^static UInt32 RcTree_ReverseGetPrice(const CLzmaProb *probs, int numBitLevels, UInt32 symbol, UInt32 *ProbPrices)$/;"	f	file:
+Read	Types.h	/^  SRes (*Read)(void *p, void *buf, size_t *size);  \/* same as ISeqInStream::Read *\/$/;"	m	struct:__anon11
+Read	Types.h	/^  SRes (*Read)(void *p, void *buf, size_t *size);$/;"	m	struct:__anon12
+Read	Types.h	/^  SRes (*Read)(void *p, void *buf, size_t *size);$/;"	m	struct:__anon8
+ReadMatchDistances	LzmaEnc.c	/^static UInt32 ReadMatchDistances(CLzmaEnc *p, UInt32 *numDistancePairsRes)$/;"	f	file:
+RepLenCoder	LzmaDec.c	104;"	d	file:
+SKIP_FOOTER	LzFind.c	471;"	d	file:
+SKIP_HEADER	LzFind.c	463;"	d	file:
+SRes	Types.h	/^typedef int SRes;$/;"	t
+SZ_ERROR_ARCHIVE	Types.h	28;"	d
+SZ_ERROR_CRC	Types.h	17;"	d
+SZ_ERROR_DATA	Types.h	15;"	d
+SZ_ERROR_FAIL	Types.h	25;"	d
+SZ_ERROR_INPUT_EOF	Types.h	20;"	d
+SZ_ERROR_MEM	Types.h	16;"	d
+SZ_ERROR_NO_ARCHIVE	Types.h	29;"	d
+SZ_ERROR_OUTPUT_EOF	Types.h	21;"	d
+SZ_ERROR_PARAM	Types.h	19;"	d
+SZ_ERROR_PROGRESS	Types.h	24;"	d
+SZ_ERROR_READ	Types.h	22;"	d
+SZ_ERROR_THREAD	Types.h	26;"	d
+SZ_ERROR_UNSUPPORTED	Types.h	18;"	d
+SZ_ERROR_WRITE	Types.h	23;"	d
+SZ_OK	Types.h	13;"	d
+SZ_SEEK_CUR	Types.h	/^  SZ_SEEK_CUR = 1,$/;"	e	enum:__anon10
+SZ_SEEK_END	Types.h	/^  SZ_SEEK_END = 2$/;"	e	enum:__anon10
+SZ_SEEK_SET	Types.h	/^  SZ_SEEK_SET = 0,$/;"	e	enum:__anon10
+Seek	Types.h	/^  SRes (*Seek)(void *p, Int64 *pos, ESzSeek origin);$/;"	m	struct:__anon11
+Seek	Types.h	/^  SRes (*Seek)(void *p, Int64 *pos, ESzSeek origin);$/;"	m	struct:__anon12
+SetLargePageSize	Alloc.c	/^void SetLargePageSize()$/;"	f
+SizeT	Types.h	/^typedef UInt32 SizeT;$/;"	t
+SizeT	Types.h	/^typedef size_t SizeT;$/;"	t
+Skip	LzFind.h	/^  Mf_Skip_Func Skip;$/;"	m	struct:_IMatchFinder
+Skip	Types.h	/^  SRes (*Skip)(void *p, size_t offset);$/;"	m	struct:__anon12
+SkipMatchesSpec	LzFind.c	/^static void SkipMatchesSpec(UInt32 lenLimit, UInt32 curMatch, UInt32 pos, const Byte *cur, CLzRef *son,$/;"	f	file:
+SpecPos	LzmaDec.c	101;"	d	file:
+SzAlloc	LzmaLib.c	/^static void *SzAlloc(void *p, size_t size) { p = p; return MyAlloc(size); }$/;"	f	file:
+SzFree	LzmaLib.c	/^static void SzFree(void *p, void *address) { p = p; MyFree(address); }$/;"	f	file:
+TREE_6_DECODE	LzmaDec.c	34;"	d	file:
+TREE_6_DECODE	LzmaDec.c	36;"	d	file:
+TREE_DECODE	LzmaDec.c	28;"	d	file:
+TREE_DECODE_CHECK	LzmaDec.c	56;"	d	file:
+TREE_GET_BIT	LzmaDec.c	27;"	d	file:
+True	Types.h	82;"	d
+UInt16	Types.h	/^typedef unsigned short UInt16;$/;"	t
+UInt32	Types.h	/^typedef unsigned int UInt32;$/;"	t
+UInt32	Types.h	/^typedef unsigned long UInt32;$/;"	t
+UInt64	Types.h	/^typedef unsigned __int64 UInt64;$/;"	t
+UInt64	Types.h	/^typedef unsigned long UInt64;$/;"	t
+UInt64	Types.h	/^typedef unsigned long long int UInt64;$/;"	t
+UPDATE_0	LzmaDec.c	20;"	d	file:
+UPDATE_0_CHECK	LzmaDec.c	50;"	d	file:
+UPDATE_1	LzmaDec.c	21;"	d	file:
+UPDATE_1_CHECK	LzmaDec.c	51;"	d	file:
+WRes	Types.h	/^typedef DWORD WRes;$/;"	t
+WRes	Types.h	/^typedef int WRes;$/;"	t
+Write	Types.h	/^  size_t (*Write)(void *p, const void *buf, size_t size);$/;"	m	struct:__anon9
+WriteEndMarker	LzmaEnc.c	/^static void WriteEndMarker(CLzmaEnc *p, UInt32 posState)$/;"	f	file:
+_7ZIP_LARGE_PAGES	Alloc.c	71;"	d	file:
+_CLzmaEnc	LzmaEnc.c	/^typedef struct _CLzmaEnc$/;"	s	file:
+_CLzmaEnc::ProbPrices	LzmaEnc.c	/^  UInt32 ProbPrices[kBitModelTotal >> kNumMoveReducingBits];$/;"	m	struct:_CLzmaEnc	file:
+_CLzmaEnc::additionalOffset	LzmaEnc.c	/^  UInt32 additionalOffset;$/;"	m	struct:_CLzmaEnc	file:
+_CLzmaEnc::alignPriceCount	LzmaEnc.c	/^  UInt32 alignPriceCount;$/;"	m	struct:_CLzmaEnc	file:
+_CLzmaEnc::alignPrices	LzmaEnc.c	/^  UInt32 alignPrices[kAlignTableSize];$/;"	m	struct:_CLzmaEnc	file:
+_CLzmaEnc::dictSize	LzmaEnc.c	/^  UInt32 dictSize;$/;"	m	struct:_CLzmaEnc	file:
+_CLzmaEnc::distTableSize	LzmaEnc.c	/^  UInt32 distTableSize;$/;"	m	struct:_CLzmaEnc	file:
+_CLzmaEnc::distancesPrices	LzmaEnc.c	/^  UInt32 distancesPrices[kNumLenToPosStates][kNumFullDistances];$/;"	m	struct:_CLzmaEnc	file:
+_CLzmaEnc::fastMode	LzmaEnc.c	/^  Bool fastMode;$/;"	m	struct:_CLzmaEnc	file:
+_CLzmaEnc::finished	LzmaEnc.c	/^  Bool finished;$/;"	m	struct:_CLzmaEnc	file:
+_CLzmaEnc::g_FastPos	LzmaEnc.c	/^  Byte g_FastPos[1 << kNumLogBits];$/;"	m	struct:_CLzmaEnc	file:
+_CLzmaEnc::inStream	LzmaEnc.c	/^  ISeqInStream *inStream;$/;"	m	struct:_CLzmaEnc	file:
+_CLzmaEnc::isMatch	LzmaEnc.c	/^  CLzmaProb isMatch[kNumStates][LZMA_NUM_PB_STATES_MAX];$/;"	m	struct:_CLzmaEnc	file:
+_CLzmaEnc::isRep	LzmaEnc.c	/^  CLzmaProb isRep[kNumStates];$/;"	m	struct:_CLzmaEnc	file:
+_CLzmaEnc::isRep0Long	LzmaEnc.c	/^  CLzmaProb isRep0Long[kNumStates][LZMA_NUM_PB_STATES_MAX];$/;"	m	struct:_CLzmaEnc	file:
+_CLzmaEnc::isRepG0	LzmaEnc.c	/^  CLzmaProb isRepG0[kNumStates];$/;"	m	struct:_CLzmaEnc	file:
+_CLzmaEnc::isRepG1	LzmaEnc.c	/^  CLzmaProb isRepG1[kNumStates];$/;"	m	struct:_CLzmaEnc	file:
+_CLzmaEnc::isRepG2	LzmaEnc.c	/^  CLzmaProb isRepG2[kNumStates];$/;"	m	struct:_CLzmaEnc	file:
+_CLzmaEnc::lc	LzmaEnc.c	/^  unsigned lc, lp, pb;$/;"	m	struct:_CLzmaEnc	file:
+_CLzmaEnc::lclp	LzmaEnc.c	/^  unsigned lclp;$/;"	m	struct:_CLzmaEnc	file:
+_CLzmaEnc::lenEnc	LzmaEnc.c	/^  CLenPriceEnc lenEnc;$/;"	m	struct:_CLzmaEnc	file:
+_CLzmaEnc::litProbs	LzmaEnc.c	/^  CLzmaProb *litProbs;$/;"	m	struct:_CLzmaEnc	file:
+_CLzmaEnc::longestMatchLength	LzmaEnc.c	/^  UInt32 longestMatchLength;$/;"	m	struct:_CLzmaEnc	file:
+_CLzmaEnc::lp	LzmaEnc.c	/^  unsigned lc, lp, pb;$/;"	m	struct:_CLzmaEnc	file:
+_CLzmaEnc::lpMask	LzmaEnc.c	/^  unsigned lpMask, pbMask;$/;"	m	struct:_CLzmaEnc	file:
+_CLzmaEnc::matchFinder	LzmaEnc.c	/^  IMatchFinder matchFinder;$/;"	m	struct:_CLzmaEnc	file:
+_CLzmaEnc::matchFinderBase	LzmaEnc.c	/^  CMatchFinder matchFinderBase;$/;"	m	struct:_CLzmaEnc	file:
+_CLzmaEnc::matchFinderCycles	LzmaEnc.c	/^  UInt32 matchFinderCycles;$/;"	m	struct:_CLzmaEnc	file:
+_CLzmaEnc::matchFinderMt	LzmaEnc.c	/^  CMatchFinderMt matchFinderMt;$/;"	m	struct:_CLzmaEnc	file:
+_CLzmaEnc::matchFinderObj	LzmaEnc.c	/^  void *matchFinderObj;$/;"	m	struct:_CLzmaEnc	file:
+_CLzmaEnc::matchPriceCount	LzmaEnc.c	/^  UInt32 matchPriceCount;$/;"	m	struct:_CLzmaEnc	file:
+_CLzmaEnc::matches	LzmaEnc.c	/^  UInt32 matches[LZMA_MATCH_LEN_MAX * 2 + 2 + 1];$/;"	m	struct:_CLzmaEnc	file:
+_CLzmaEnc::mtMode	LzmaEnc.c	/^  Bool mtMode;$/;"	m	struct:_CLzmaEnc	file:
+_CLzmaEnc::multiThread	LzmaEnc.c	/^  Bool multiThread;$/;"	m	struct:_CLzmaEnc	file:
+_CLzmaEnc::nowPos64	LzmaEnc.c	/^  UInt64 nowPos64;$/;"	m	struct:_CLzmaEnc	file:
+_CLzmaEnc::numAvail	LzmaEnc.c	/^  UInt32 numAvail;$/;"	m	struct:_CLzmaEnc	file:
+_CLzmaEnc::numFastBytes	LzmaEnc.c	/^  UInt32 numFastBytes;$/;"	m	struct:_CLzmaEnc	file:
+_CLzmaEnc::numPairs	LzmaEnc.c	/^  UInt32 numPairs;$/;"	m	struct:_CLzmaEnc	file:
+_CLzmaEnc::opt	LzmaEnc.c	/^  COptimal opt[kNumOpts];$/;"	m	struct:_CLzmaEnc	file:
+_CLzmaEnc::optimumCurrentIndex	LzmaEnc.c	/^  UInt32 optimumCurrentIndex;$/;"	m	struct:_CLzmaEnc	file:
+_CLzmaEnc::optimumEndIndex	LzmaEnc.c	/^  UInt32 optimumEndIndex;$/;"	m	struct:_CLzmaEnc	file:
+_CLzmaEnc::pad	LzmaEnc.c	/^  Byte pad[128];$/;"	m	struct:_CLzmaEnc	file:
+_CLzmaEnc::pb	LzmaEnc.c	/^  unsigned lc, lp, pb;$/;"	m	struct:_CLzmaEnc	file:
+_CLzmaEnc::pbMask	LzmaEnc.c	/^  unsigned lpMask, pbMask;$/;"	m	struct:_CLzmaEnc	file:
+_CLzmaEnc::posAlignEncoder	LzmaEnc.c	/^  CLzmaProb posAlignEncoder[1 << kNumAlignBits];$/;"	m	struct:_CLzmaEnc	file:
+_CLzmaEnc::posEncoders	LzmaEnc.c	/^  CLzmaProb posEncoders[kNumFullDistances - kEndPosModelIndex];$/;"	m	struct:_CLzmaEnc	file:
+_CLzmaEnc::posSlotEncoder	LzmaEnc.c	/^  CLzmaProb posSlotEncoder[kNumLenToPosStates][1 << kNumPosSlotBits];$/;"	m	struct:_CLzmaEnc	file:
+_CLzmaEnc::posSlotPrices	LzmaEnc.c	/^  UInt32 posSlotPrices[kNumLenToPosStates][kDistTableSizeMax];$/;"	m	struct:_CLzmaEnc	file:
+_CLzmaEnc::rc	LzmaEnc.c	/^  CRangeEnc rc;$/;"	m	struct:_CLzmaEnc	file:
+_CLzmaEnc::repLenEnc	LzmaEnc.c	/^  CLenPriceEnc repLenEnc;$/;"	m	struct:_CLzmaEnc	file:
+_CLzmaEnc::reps	LzmaEnc.c	/^  UInt32 reps[LZMA_NUM_REPS];$/;"	m	struct:_CLzmaEnc	file:
+_CLzmaEnc::result	LzmaEnc.c	/^  SRes result;$/;"	m	struct:_CLzmaEnc	file:
+_CLzmaEnc::saveState	LzmaEnc.c	/^  CSaveState saveState;$/;"	m	struct:_CLzmaEnc	file:
+_CLzmaEnc::seqBufInStream	LzmaEnc.c	/^  CSeqInStreamBuf seqBufInStream;$/;"	m	struct:_CLzmaEnc	file:
+_CLzmaEnc::state	LzmaEnc.c	/^  UInt32 state;$/;"	m	struct:_CLzmaEnc	file:
+_CLzmaEnc::writeEndMark	LzmaEnc.c	/^  Bool writeEndMark;$/;"	m	struct:_CLzmaEnc	file:
+_CLzmaEncProps	LzmaEnc.h	/^typedef struct _CLzmaEncProps$/;"	s
+_CLzmaEncProps::algo	LzmaEnc.h	/^  int algo;        \/* 0 - fast, 1 - normal, default = 1 *\/$/;"	m	struct:_CLzmaEncProps
+_CLzmaEncProps::btMode	LzmaEnc.h	/^  int btMode;      \/* 0 - hashChain Mode, 1 - binTree mode - normal, default = 1 *\/$/;"	m	struct:_CLzmaEncProps
+_CLzmaEncProps::dictSize	LzmaEnc.h	/^  UInt32 dictSize; \/* (1 << 12) <= dictSize <= (1 << 27) for 32-bit version$/;"	m	struct:_CLzmaEncProps
+_CLzmaEncProps::fb	LzmaEnc.h	/^  int fb;          \/* 5 <= fb <= 273, default = 32 *\/$/;"	m	struct:_CLzmaEncProps
+_CLzmaEncProps::lc	LzmaEnc.h	/^  int lc;          \/* 0 <= lc <= 8, default = 3 *\/$/;"	m	struct:_CLzmaEncProps
+_CLzmaEncProps::level	LzmaEnc.h	/^  int level;       \/*  0 <= level <= 9 *\/$/;"	m	struct:_CLzmaEncProps
+_CLzmaEncProps::lp	LzmaEnc.h	/^  int lp;          \/* 0 <= lp <= 4, default = 0 *\/$/;"	m	struct:_CLzmaEncProps
+_CLzmaEncProps::mc	LzmaEnc.h	/^  UInt32 mc;        \/* 1 <= mc <= (1 << 30), default = 32 *\/$/;"	m	struct:_CLzmaEncProps
+_CLzmaEncProps::numHashBytes	LzmaEnc.h	/^  int numHashBytes; \/* 2, 3 or 4, default = 4 *\/$/;"	m	struct:_CLzmaEncProps
+_CLzmaEncProps::numThreads	LzmaEnc.h	/^  int numThreads;  \/* 1 or 2, default = 2 *\/$/;"	m	struct:_CLzmaEncProps
+_CLzmaEncProps::pb	LzmaEnc.h	/^  int pb;          \/* 0 <= pb <= 4, default = 2 *\/$/;"	m	struct:_CLzmaEncProps
+_CLzmaEncProps::writeEndMark	LzmaEnc.h	/^  unsigned writeEndMark;  \/* 0 - do not write EOPM, 1 - write EOPM, default = 0 *\/$/;"	m	struct:_CLzmaEncProps
+_CLzmaProps	LzmaDec.h	/^typedef struct _CLzmaProps$/;"	s
+_CLzmaProps::dicSize	LzmaDec.h	/^  UInt32 dicSize;$/;"	m	struct:_CLzmaProps
+_CLzmaProps::lc	LzmaDec.h	/^  unsigned lc, lp, pb;$/;"	m	struct:_CLzmaProps
+_CLzmaProps::lp	LzmaDec.h	/^  unsigned lc, lp, pb;$/;"	m	struct:_CLzmaProps
+_CLzmaProps::pb	LzmaDec.h	/^  unsigned lc, lp, pb;$/;"	m	struct:_CLzmaProps
+_CMatchFinder	LzFind.h	/^typedef struct _CMatchFinder$/;"	s
+_CMatchFinder::bigHash	LzFind.h	/^  int bigHash;$/;"	m	struct:_CMatchFinder
+_CMatchFinder::blockSize	LzFind.h	/^  UInt32 blockSize;$/;"	m	struct:_CMatchFinder
+_CMatchFinder::btMode	LzFind.h	/^  int btMode;$/;"	m	struct:_CMatchFinder
+_CMatchFinder::buffer	LzFind.h	/^  Byte *buffer;$/;"	m	struct:_CMatchFinder
+_CMatchFinder::bufferBase	LzFind.h	/^  Byte *bufferBase;$/;"	m	struct:_CMatchFinder
+_CMatchFinder::crc	LzFind.h	/^  UInt32 crc[256];$/;"	m	struct:_CMatchFinder
+_CMatchFinder::cutValue	LzFind.h	/^  UInt32 cutValue;$/;"	m	struct:_CMatchFinder
+_CMatchFinder::cyclicBufferPos	LzFind.h	/^  UInt32 cyclicBufferPos;$/;"	m	struct:_CMatchFinder
+_CMatchFinder::cyclicBufferSize	LzFind.h	/^  UInt32 cyclicBufferSize; \/* it must be = (historySize + 1) *\/$/;"	m	struct:_CMatchFinder
+_CMatchFinder::directInput	LzFind.h	/^  int directInput;$/;"	m	struct:_CMatchFinder
+_CMatchFinder::fixedHashSize	LzFind.h	/^  UInt32 fixedHashSize;$/;"	m	struct:_CMatchFinder
+_CMatchFinder::hash	LzFind.h	/^  CLzRef *hash;$/;"	m	struct:_CMatchFinder
+_CMatchFinder::hashMask	LzFind.h	/^  UInt32 hashMask;$/;"	m	struct:_CMatchFinder
+_CMatchFinder::hashSizeSum	LzFind.h	/^  UInt32 hashSizeSum;$/;"	m	struct:_CMatchFinder
+_CMatchFinder::historySize	LzFind.h	/^  UInt32 historySize;$/;"	m	struct:_CMatchFinder
+_CMatchFinder::keepSizeAfter	LzFind.h	/^  UInt32 keepSizeAfter;$/;"	m	struct:_CMatchFinder
+_CMatchFinder::keepSizeBefore	LzFind.h	/^  UInt32 keepSizeBefore;$/;"	m	struct:_CMatchFinder
+_CMatchFinder::lenLimit	LzFind.h	/^  UInt32 lenLimit;$/;"	m	struct:_CMatchFinder
+_CMatchFinder::matchMaxLen	LzFind.h	/^  UInt32 matchMaxLen;$/;"	m	struct:_CMatchFinder
+_CMatchFinder::numHashBytes	LzFind.h	/^  UInt32 numHashBytes;$/;"	m	struct:_CMatchFinder
+_CMatchFinder::numSons	LzFind.h	/^  UInt32 numSons;$/;"	m	struct:_CMatchFinder
+_CMatchFinder::pos	LzFind.h	/^  UInt32 pos;$/;"	m	struct:_CMatchFinder
+_CMatchFinder::posLimit	LzFind.h	/^  UInt32 posLimit;$/;"	m	struct:_CMatchFinder
+_CMatchFinder::result	LzFind.h	/^  SRes result;$/;"	m	struct:_CMatchFinder
+_CMatchFinder::son	LzFind.h	/^  CLzRef *son;$/;"	m	struct:_CMatchFinder
+_CMatchFinder::stream	LzFind.h	/^  ISeqInStream *stream;$/;"	m	struct:_CMatchFinder
+_CMatchFinder::streamEndWasReached	LzFind.h	/^  int streamEndWasReached;$/;"	m	struct:_CMatchFinder
+_CMatchFinder::streamPos	LzFind.h	/^  UInt32 streamPos;$/;"	m	struct:_CMatchFinder
+_COptimal	LzmaEnc.c	/^typedef struct _COptimal$/;"	s	file:
+_COptimal::backPrev	LzmaEnc.c	/^  UInt32 backPrev;$/;"	m	struct:_COptimal	file:
+_COptimal::backPrev2	LzmaEnc.c	/^  UInt32 backPrev2;$/;"	m	struct:_COptimal	file:
+_COptimal::backs	LzmaEnc.c	/^  UInt32 backs[LZMA_NUM_REPS];$/;"	m	struct:_COptimal	file:
+_COptimal::posPrev	LzmaEnc.c	/^  UInt32 posPrev;$/;"	m	struct:_COptimal	file:
+_COptimal::posPrev2	LzmaEnc.c	/^  UInt32 posPrev2;$/;"	m	struct:_COptimal	file:
+_COptimal::prev1IsChar	LzmaEnc.c	/^  int prev1IsChar;$/;"	m	struct:_COptimal	file:
+_COptimal::prev2	LzmaEnc.c	/^  int prev2;$/;"	m	struct:_COptimal	file:
+_COptimal::price	LzmaEnc.c	/^  UInt32 price;$/;"	m	struct:_COptimal	file:
+_COptimal::state	LzmaEnc.c	/^  CState state;$/;"	m	struct:_COptimal	file:
+_CRangeEnc	LzmaEnc.c	/^typedef struct _CRangeEnc$/;"	s	file:
+_CRangeEnc::buf	LzmaEnc.c	/^  Byte *buf;$/;"	m	struct:_CRangeEnc	file:
+_CRangeEnc::bufBase	LzmaEnc.c	/^  Byte *bufBase;$/;"	m	struct:_CRangeEnc	file:
+_CRangeEnc::bufLim	LzmaEnc.c	/^  Byte *bufLim;$/;"	m	struct:_CRangeEnc	file:
+_CRangeEnc::cache	LzmaEnc.c	/^  Byte cache;$/;"	m	struct:_CRangeEnc	file:
+_CRangeEnc::cacheSize	LzmaEnc.c	/^  UInt64 cacheSize;$/;"	m	struct:_CRangeEnc	file:
+_CRangeEnc::low	LzmaEnc.c	/^  UInt64 low;$/;"	m	struct:_CRangeEnc	file:
+_CRangeEnc::outStream	LzmaEnc.c	/^  ISeqOutStream *outStream;$/;"	m	struct:_CRangeEnc	file:
+_CRangeEnc::processed	LzmaEnc.c	/^  UInt64 processed;$/;"	m	struct:_CRangeEnc	file:
+_CRangeEnc::range	LzmaEnc.c	/^  UInt32 range;$/;"	m	struct:_CRangeEnc	file:
+_CRangeEnc::res	LzmaEnc.c	/^  SRes res;$/;"	m	struct:_CRangeEnc	file:
+_CSeqInStreamBuf	LzmaEnc.c	/^typedef struct _CSeqInStreamBuf$/;"	s	file:
+_CSeqInStreamBuf::data	LzmaEnc.c	/^  const Byte *data;$/;"	m	struct:_CSeqInStreamBuf	file:
+_CSeqInStreamBuf::funcTable	LzmaEnc.c	/^  ISeqInStream funcTable;$/;"	m	struct:_CSeqInStreamBuf	file:
+_CSeqInStreamBuf::rem	LzmaEnc.c	/^  SizeT rem;$/;"	m	struct:_CSeqInStreamBuf	file:
+_CSeqOutStreamBuf	LzmaEnc.c	/^typedef struct _CSeqOutStreamBuf$/;"	s	file:
+_CSeqOutStreamBuf::data	LzmaEnc.c	/^  Byte *data;$/;"	m	struct:_CSeqOutStreamBuf	file:
+_CSeqOutStreamBuf::funcTable	LzmaEnc.c	/^  ISeqOutStream funcTable;$/;"	m	struct:_CSeqOutStreamBuf	file:
+_CSeqOutStreamBuf::overflow	LzmaEnc.c	/^  Bool overflow;$/;"	m	struct:_CSeqOutStreamBuf	file:
+_CSeqOutStreamBuf::rem	LzmaEnc.c	/^  SizeT rem;$/;"	m	struct:_CSeqOutStreamBuf	file:
+_IMatchFinder	LzFind.h	/^typedef struct _IMatchFinder$/;"	s
+_IMatchFinder::GetIndexByte	LzFind.h	/^  Mf_GetIndexByte_Func GetIndexByte;$/;"	m	struct:_IMatchFinder
+_IMatchFinder::GetMatches	LzFind.h	/^  Mf_GetMatches_Func GetMatches;$/;"	m	struct:_IMatchFinder
+_IMatchFinder::GetNumAvailableBytes	LzFind.h	/^  Mf_GetNumAvailableBytes_Func GetNumAvailableBytes;$/;"	m	struct:_IMatchFinder
+_IMatchFinder::GetPointerToCurrentPos	LzFind.h	/^  Mf_GetPointerToCurrentPos_Func GetPointerToCurrentPos;$/;"	m	struct:_IMatchFinder
+_IMatchFinder::Init	LzFind.h	/^  Mf_Init_Func Init;$/;"	m	struct:_IMatchFinder
+_IMatchFinder::Skip	LzFind.h	/^  Mf_Skip_Func Skip;$/;"	m	struct:_IMatchFinder
+__7Z_TYPES_H	Types.h	5;"	d
+__COMMON_ALLOC_H	Alloc.h	7;"	d
+__LZFIND_H	LzFind.h	5;"	d
+__LZHASH_H	LzHash.h	5;"	d
+__LZMADEC_H	LzmaDec.h	5;"	d
+__LZMAENC_H	LzmaEnc.h	5;"	d
+__LZMALIB_H	LzmaLib.h	7;"	d
+__anon11::Read	Types.h	/^  SRes (*Read)(void *p, void *buf, size_t *size);  \/* same as ISeqInStream::Read *\/$/;"	m	struct:__anon11
+__anon11::Seek	Types.h	/^  SRes (*Seek)(void *p, Int64 *pos, ESzSeek origin);$/;"	m	struct:__anon11
+__anon12::Look	Types.h	/^  SRes (*Look)(void *p, void **buf, size_t *size);$/;"	m	struct:__anon12
+__anon12::Read	Types.h	/^  SRes (*Read)(void *p, void *buf, size_t *size);$/;"	m	struct:__anon12
+__anon12::Seek	Types.h	/^  SRes (*Seek)(void *p, Int64 *pos, ESzSeek origin);$/;"	m	struct:__anon12
+__anon12::Skip	Types.h	/^  SRes (*Skip)(void *p, size_t offset);$/;"	m	struct:__anon12
+__anon13::buf	Types.h	/^  Byte buf[LookToRead_BUF_SIZE];$/;"	m	struct:__anon13
+__anon13::pos	Types.h	/^  size_t pos;$/;"	m	struct:__anon13
+__anon13::realStream	Types.h	/^  ISeekInStream *realStream;$/;"	m	struct:__anon13
+__anon13::s	Types.h	/^  ILookInStream s;$/;"	m	struct:__anon13
+__anon13::size	Types.h	/^  size_t size;$/;"	m	struct:__anon13
+__anon14::realStream	Types.h	/^  ILookInStream *realStream;$/;"	m	struct:__anon14
+__anon14::s	Types.h	/^  ISeqInStream s;$/;"	m	struct:__anon14
+__anon15::realStream	Types.h	/^  ILookInStream *realStream;$/;"	m	struct:__anon15
+__anon15::s	Types.h	/^  ISeqInStream s;$/;"	m	struct:__anon15
+__anon16::Progress	Types.h	/^  SRes (*Progress)(void *p, UInt64 inSize, UInt64 outSize);$/;"	m	struct:__anon16
+__anon17::Alloc	Types.h	/^  void *(*Alloc)(void *p, size_t size);$/;"	m	struct:__anon17
+__anon17::Free	Types.h	/^  void (*Free)(void *p, void *address); \/* address can be 0 *\/$/;"	m	struct:__anon17
+__anon2::buf	LzmaDec.h	/^  const Byte *buf;$/;"	m	struct:__anon2
+__anon2::checkDicSize	LzmaDec.h	/^  UInt32 checkDicSize;$/;"	m	struct:__anon2
+__anon2::code	LzmaDec.h	/^  UInt32 range, code;$/;"	m	struct:__anon2
+__anon2::dic	LzmaDec.h	/^  Byte *dic;$/;"	m	struct:__anon2
+__anon2::dicBufSize	LzmaDec.h	/^  SizeT dicBufSize;$/;"	m	struct:__anon2
+__anon2::dicPos	LzmaDec.h	/^  SizeT dicPos;$/;"	m	struct:__anon2
+__anon2::needFlush	LzmaDec.h	/^  int needFlush;$/;"	m	struct:__anon2
+__anon2::needInitState	LzmaDec.h	/^  int needInitState;$/;"	m	struct:__anon2
+__anon2::numProbs	LzmaDec.h	/^  UInt32 numProbs;$/;"	m	struct:__anon2
+__anon2::probs	LzmaDec.h	/^  CLzmaProb *probs;$/;"	m	struct:__anon2
+__anon2::processedPos	LzmaDec.h	/^  UInt32 processedPos;$/;"	m	struct:__anon2
+__anon2::prop	LzmaDec.h	/^  CLzmaProps prop;$/;"	m	struct:__anon2
+__anon2::range	LzmaDec.h	/^  UInt32 range, code;$/;"	m	struct:__anon2
+__anon2::remainLen	LzmaDec.h	/^  unsigned remainLen;$/;"	m	struct:__anon2
+__anon2::reps	LzmaDec.h	/^  UInt32 reps[4];$/;"	m	struct:__anon2
+__anon2::state	LzmaDec.h	/^  unsigned state;$/;"	m	struct:__anon2
+__anon2::tempBuf	LzmaDec.h	/^  Byte tempBuf[LZMA_REQUIRED_INPUT_MAX];$/;"	m	struct:__anon2
+__anon2::tempBufSize	LzmaDec.h	/^  unsigned tempBufSize;$/;"	m	struct:__anon2
+__anon5::choice	LzmaEnc.c	/^  CLzmaProb choice;$/;"	m	struct:__anon5	file:
+__anon5::choice2	LzmaEnc.c	/^  CLzmaProb choice2;$/;"	m	struct:__anon5	file:
+__anon5::high	LzmaEnc.c	/^  CLzmaProb high[kLenNumHighSymbols];$/;"	m	struct:__anon5	file:
+__anon5::low	LzmaEnc.c	/^  CLzmaProb low[LZMA_NUM_PB_STATES_MAX << kLenNumLowBits];$/;"	m	struct:__anon5	file:
+__anon5::mid	LzmaEnc.c	/^  CLzmaProb mid[LZMA_NUM_PB_STATES_MAX << kLenNumMidBits];$/;"	m	struct:__anon5	file:
+__anon6::counters	LzmaEnc.c	/^  UInt32 counters[LZMA_NUM_PB_STATES_MAX];$/;"	m	struct:__anon6	file:
+__anon6::p	LzmaEnc.c	/^  CLenEnc p;$/;"	m	struct:__anon6	file:
+__anon6::prices	LzmaEnc.c	/^  UInt32 prices[LZMA_NUM_PB_STATES_MAX][kLenNumSymbolsTotal];$/;"	m	struct:__anon6	file:
+__anon6::tableSize	LzmaEnc.c	/^  UInt32 tableSize;$/;"	m	struct:__anon6	file:
+__anon7::isMatch	LzmaEnc.c	/^  CLzmaProb isMatch[kNumStates][LZMA_NUM_PB_STATES_MAX];$/;"	m	struct:__anon7	file:
+__anon7::isRep	LzmaEnc.c	/^  CLzmaProb isRep[kNumStates];$/;"	m	struct:__anon7	file:
+__anon7::isRep0Long	LzmaEnc.c	/^  CLzmaProb isRep0Long[kNumStates][LZMA_NUM_PB_STATES_MAX];$/;"	m	struct:__anon7	file:
+__anon7::isRepG0	LzmaEnc.c	/^  CLzmaProb isRepG0[kNumStates];$/;"	m	struct:__anon7	file:
+__anon7::isRepG1	LzmaEnc.c	/^  CLzmaProb isRepG1[kNumStates];$/;"	m	struct:__anon7	file:
+__anon7::isRepG2	LzmaEnc.c	/^  CLzmaProb isRepG2[kNumStates];$/;"	m	struct:__anon7	file:
+__anon7::lenEnc	LzmaEnc.c	/^  CLenPriceEnc lenEnc;$/;"	m	struct:__anon7	file:
+__anon7::litProbs	LzmaEnc.c	/^  CLzmaProb *litProbs;$/;"	m	struct:__anon7	file:
+__anon7::posAlignEncoder	LzmaEnc.c	/^  CLzmaProb posAlignEncoder[1 << kNumAlignBits];$/;"	m	struct:__anon7	file:
+__anon7::posEncoders	LzmaEnc.c	/^  CLzmaProb posEncoders[kNumFullDistances - kEndPosModelIndex];$/;"	m	struct:__anon7	file:
+__anon7::posSlotEncoder	LzmaEnc.c	/^  CLzmaProb posSlotEncoder[kNumLenToPosStates][1 << kNumPosSlotBits];$/;"	m	struct:__anon7	file:
+__anon7::repLenEnc	LzmaEnc.c	/^  CLenPriceEnc repLenEnc;$/;"	m	struct:__anon7	file:
+__anon7::reps	LzmaEnc.c	/^  UInt32 reps[LZMA_NUM_REPS];$/;"	m	struct:__anon7	file:
+__anon7::state	LzmaEnc.c	/^  UInt32 state;$/;"	m	struct:__anon7	file:
+__anon8::Read	Types.h	/^  SRes (*Read)(void *p, void *buf, size_t *size);$/;"	m	struct:__anon8
+__anon9::Write	Types.h	/^  size_t (*Write)(void *p, const void *buf, size_t size);$/;"	m	struct:__anon9
+additionalOffset	LzmaEnc.c	/^  UInt32 additionalOffset;$/;"	m	struct:_CLzmaEnc	file:
+algo	LzmaEnc.h	/^  int algo;        \/* 0 - fast, 1 - normal, default = 1 *\/$/;"	m	struct:_CLzmaEncProps
+alignPriceCount	LzmaEnc.c	/^  UInt32 alignPriceCount;$/;"	m	struct:_CLzmaEnc	file:
+alignPrices	LzmaEnc.c	/^  UInt32 alignPrices[kAlignTableSize];$/;"	m	struct:_CLzmaEnc	file:
+backPrev	LzmaEnc.c	/^  UInt32 backPrev;$/;"	m	struct:_COptimal	file:
+backPrev2	LzmaEnc.c	/^  UInt32 backPrev2;$/;"	m	struct:_COptimal	file:
+backs	LzmaEnc.c	/^  UInt32 backs[LZMA_NUM_REPS];$/;"	m	struct:_COptimal	file:
+bigHash	LzFind.h	/^  int bigHash;$/;"	m	struct:_CMatchFinder
+blockSize	LzFind.h	/^  UInt32 blockSize;$/;"	m	struct:_CMatchFinder
+btMode	LzFind.h	/^  int btMode;$/;"	m	struct:_CMatchFinder
+btMode	LzmaEnc.h	/^  int btMode;      \/* 0 - hashChain Mode, 1 - binTree mode - normal, default = 1 *\/$/;"	m	struct:_CLzmaEncProps
+buf	LzmaDec.h	/^  const Byte *buf;$/;"	m	struct:__anon2
+buf	LzmaEnc.c	/^  Byte *buf;$/;"	m	struct:_CRangeEnc	file:
+buf	Types.h	/^  Byte buf[LookToRead_BUF_SIZE];$/;"	m	struct:__anon13
+bufBase	LzmaEnc.c	/^  Byte *bufBase;$/;"	m	struct:_CRangeEnc	file:
+bufLim	LzmaEnc.c	/^  Byte *bufLim;$/;"	m	struct:_CRangeEnc	file:
+buffer	LzFind.h	/^  Byte *buffer;$/;"	m	struct:_CMatchFinder
+bufferBase	LzFind.h	/^  Byte *bufferBase;$/;"	m	struct:_CMatchFinder
+cache	LzmaEnc.c	/^  Byte cache;$/;"	m	struct:_CRangeEnc	file:
+cacheSize	LzmaEnc.c	/^  UInt64 cacheSize;$/;"	m	struct:_CRangeEnc	file:
+checkDicSize	LzmaDec.h	/^  UInt32 checkDicSize;$/;"	m	struct:__anon2
+choice	LzmaEnc.c	/^  CLzmaProb choice;$/;"	m	struct:__anon5	file:
+choice2	LzmaEnc.c	/^  CLzmaProb choice2;$/;"	m	struct:__anon5	file:
+code	LzmaDec.h	/^  UInt32 range, code;$/;"	m	struct:__anon2
+counters	LzmaEnc.c	/^  UInt32 counters[LZMA_NUM_PB_STATES_MAX];$/;"	m	struct:__anon6	file:
+crc	LzFind.h	/^  UInt32 crc[256];$/;"	m	struct:_CMatchFinder
+cutValue	LzFind.h	/^  UInt32 cutValue;$/;"	m	struct:_CMatchFinder
+cyclicBufferPos	LzFind.h	/^  UInt32 cyclicBufferPos;$/;"	m	struct:_CMatchFinder
+cyclicBufferSize	LzFind.h	/^  UInt32 cyclicBufferSize; \/* it must be = (historySize + 1) *\/$/;"	m	struct:_CMatchFinder
+data	LzmaEnc.c	/^  Byte *data;$/;"	m	struct:_CSeqOutStreamBuf	file:
+data	LzmaEnc.c	/^  const Byte *data;$/;"	m	struct:_CSeqInStreamBuf	file:
+dic	LzmaDec.h	/^  Byte *dic;$/;"	m	struct:__anon2
+dicBufSize	LzmaDec.h	/^  SizeT dicBufSize;$/;"	m	struct:__anon2
+dicPos	LzmaDec.h	/^  SizeT dicPos;$/;"	m	struct:__anon2
+dicSize	LzmaDec.h	/^  UInt32 dicSize;$/;"	m	struct:_CLzmaProps
+dictSize	LzmaEnc.c	/^  UInt32 dictSize;$/;"	m	struct:_CLzmaEnc	file:
+dictSize	LzmaEnc.h	/^  UInt32 dictSize; \/* (1 << 12) <= dictSize <= (1 << 27) for 32-bit version$/;"	m	struct:_CLzmaEncProps
+directInput	LzFind.h	/^  int directInput;$/;"	m	struct:_CMatchFinder
+distTableSize	LzmaEnc.c	/^  UInt32 distTableSize;$/;"	m	struct:_CLzmaEnc	file:
+distancesPrices	LzmaEnc.c	/^  UInt32 distancesPrices[kNumLenToPosStates][kNumFullDistances];$/;"	m	struct:_CLzmaEnc	file:
+fastMode	LzmaEnc.c	/^  Bool fastMode;$/;"	m	struct:_CLzmaEnc	file:
+fb	LzmaEnc.h	/^  int fb;          \/* 5 <= fb <= 273, default = 32 *\/$/;"	m	struct:_CLzmaEncProps
+finished	LzmaEnc.c	/^  Bool finished;$/;"	m	struct:_CLzmaEnc	file:
+fixedHashSize	LzFind.h	/^  UInt32 fixedHashSize;$/;"	m	struct:_CMatchFinder
+funcTable	LzmaEnc.c	/^  ISeqInStream funcTable;$/;"	m	struct:_CSeqInStreamBuf	file:
+funcTable	LzmaEnc.c	/^  ISeqOutStream funcTable;$/;"	m	struct:_CSeqOutStreamBuf	file:
+g_Alloc	LzmaLib.c	/^static ISzAlloc g_Alloc = { SzAlloc, SzFree };$/;"	v	file:
+g_FastPos	LzmaEnc.c	/^  Byte g_FastPos[1 << kNumLogBits];$/;"	m	struct:_CLzmaEnc	file:
+g_LargePageSize	Alloc.c	/^SIZE_T g_LargePageSize = 0;$/;"	v
+g_allocCount	Alloc.c	/^int g_allocCount = 0;$/;"	v
+g_allocCountBig	Alloc.c	/^int g_allocCountBig = 0;$/;"	v
+g_allocCountMid	Alloc.c	/^int g_allocCountMid = 0;$/;"	v
+hash	LzFind.h	/^  CLzRef *hash;$/;"	m	struct:_CMatchFinder
+hashMask	LzFind.h	/^  UInt32 hashMask;$/;"	m	struct:_CMatchFinder
+hashSizeSum	LzFind.h	/^  UInt32 hashSizeSum;$/;"	m	struct:_CMatchFinder
+high	LzmaEnc.c	/^  CLzmaProb high[kLenNumHighSymbols];$/;"	m	struct:__anon5	file:
+historySize	LzFind.h	/^  UInt32 historySize;$/;"	m	struct:_CMatchFinder
+inStream	LzmaEnc.c	/^  ISeqInStream *inStream;$/;"	m	struct:_CLzmaEnc	file:
+isMatch	LzmaEnc.c	/^  CLzmaProb isMatch[kNumStates][LZMA_NUM_PB_STATES_MAX];$/;"	m	struct:_CLzmaEnc	file:
+isMatch	LzmaEnc.c	/^  CLzmaProb isMatch[kNumStates][LZMA_NUM_PB_STATES_MAX];$/;"	m	struct:__anon7	file:
+isRep	LzmaEnc.c	/^  CLzmaProb isRep[kNumStates];$/;"	m	struct:_CLzmaEnc	file:
+isRep	LzmaEnc.c	/^  CLzmaProb isRep[kNumStates];$/;"	m	struct:__anon7	file:
+isRep0Long	LzmaEnc.c	/^  CLzmaProb isRep0Long[kNumStates][LZMA_NUM_PB_STATES_MAX];$/;"	m	struct:_CLzmaEnc	file:
+isRep0Long	LzmaEnc.c	/^  CLzmaProb isRep0Long[kNumStates][LZMA_NUM_PB_STATES_MAX];$/;"	m	struct:__anon7	file:
+isRepG0	LzmaEnc.c	/^  CLzmaProb isRepG0[kNumStates];$/;"	m	struct:_CLzmaEnc	file:
+isRepG0	LzmaEnc.c	/^  CLzmaProb isRepG0[kNumStates];$/;"	m	struct:__anon7	file:
+isRepG1	LzmaEnc.c	/^  CLzmaProb isRepG1[kNumStates];$/;"	m	struct:_CLzmaEnc	file:
+isRepG1	LzmaEnc.c	/^  CLzmaProb isRepG1[kNumStates];$/;"	m	struct:__anon7	file:
+isRepG2	LzmaEnc.c	/^  CLzmaProb isRepG2[kNumStates];$/;"	m	struct:_CLzmaEnc	file:
+isRepG2	LzmaEnc.c	/^  CLzmaProb isRepG2[kNumStates];$/;"	m	struct:__anon7	file:
+kAlignMask	LzmaEnc.c	169;"	d	file:
+kAlignTableSize	LzmaDec.c	89;"	d	file:
+kAlignTableSize	LzmaEnc.c	168;"	d	file:
+kBigHashDicLimit	LzmaEnc.c	1917;"	d	file:
+kBitModelTotal	LzmaDec.c	12;"	d	file:
+kBitModelTotal	LzmaEnc.c	37;"	d	file:
+kBitPrice	LzmaEnc.c	43;"	d	file:
+kBlockSize	LzmaEnc.c	26;"	d	file:
+kBlockSizeMax	LzmaEnc.c	24;"	d	file:
+kCrcPoly	LzFind.c	120;"	d	file:
+kDicLogSizeMax	LzmaEnc.c	163;"	d	file:
+kDicLogSizeMaxCompress	LzmaEnc.c	105;"	d	file:
+kDicLogSizeMaxCompress	LzmaEnc.c	89;"	d	file:
+kDicLogSizeMin	LzmaEnc.c	162;"	d	file:
+kDistTableSizeMax	LzmaEnc.c	164;"	d	file:
+kEmptyHashValue	LzFind.c	9;"	d	file:
+kEndPosModelIndex	LzmaDec.c	82;"	d	file:
+kEndPosModelIndex	LzmaEnc.c	172;"	d	file:
+kFix3HashSize	LzHash.h	11;"	d
+kFix4HashSize	LzHash.h	12;"	d
+kFix5HashSize	LzHash.h	13;"	d
+kHash2Size	LzHash.h	7;"	d
+kHash3Size	LzHash.h	8;"	d
+kHash4Size	LzHash.h	9;"	d
+kInfinityPrice	LzmaEnc.c	475;"	d	file:
+kLenNumHighBits	LzmaDec.c	67;"	d	file:
+kLenNumHighBits	LzmaEnc.c	194;"	d	file:
+kLenNumHighSymbols	LzmaDec.c	68;"	d	file:
+kLenNumHighSymbols	LzmaEnc.c	195;"	d	file:
+kLenNumLowBits	LzmaDec.c	63;"	d	file:
+kLenNumLowBits	LzmaEnc.c	190;"	d	file:
+kLenNumLowSymbols	LzmaDec.c	64;"	d	file:
+kLenNumLowSymbols	LzmaEnc.c	191;"	d	file:
+kLenNumMidBits	LzmaDec.c	65;"	d	file:
+kLenNumMidBits	LzmaEnc.c	192;"	d	file:
+kLenNumMidSymbols	LzmaDec.c	66;"	d	file:
+kLenNumMidSymbols	LzmaEnc.c	193;"	d	file:
+kLenNumSymbolsTotal	LzmaEnc.c	197;"	d	file:
+kLiteralNextStates	LzmaDec.c	/^static const Byte kLiteralNextStates[kNumStates * 2] =$/;"	v	file:
+kLiteralNextStates	LzmaEnc.c	/^static const int kLiteralNextStates[kNumStates] = {0, 0, 0, 0, 1, 2, 3, 4,  5,  6,   4, 5};$/;"	v	file:
+kMatchArraySize	LzmaEnc.c	28;"	d	file:
+kMatchMinLen	LzmaDec.c	91;"	d	file:
+kMatchNextStates	LzmaEnc.c	/^static const int kMatchNextStates[kNumStates]   = {7, 7, 7, 7, 7, 7, 7, 10, 10, 10, 10, 10};$/;"	v	file:
+kMatchRecordMaxSize	LzmaEnc.c	29;"	d	file:
+kMatchSpecLenStart	LzmaDec.c	92;"	d	file:
+kMaxHistorySize	LzFind.c	13;"	d	file:
+kMaxValForNormalize	LzFind.c	10;"	d	file:
+kNormalizeMask	LzFind.c	12;"	d	file:
+kNormalizeStepMin	LzFind.c	11;"	d	file:
+kNumAlignBits	LzmaDec.c	88;"	d	file:
+kNumAlignBits	LzmaEnc.c	167;"	d	file:
+kNumBitModelTotalBits	LzmaDec.c	11;"	d	file:
+kNumBitModelTotalBits	LzmaEnc.c	36;"	d	file:
+kNumBitPriceShiftBits	LzmaEnc.c	42;"	d	file:
+kNumFullDistances	LzmaDec.c	83;"	d	file:
+kNumFullDistances	LzmaEnc.c	175;"	d	file:
+kNumLenProbs	LzmaDec.c	75;"	d	file:
+kNumLenToPosStates	LzmaDec.c	86;"	d	file:
+kNumLenToPosStates	LzmaEnc.c	160;"	d	file:
+kNumLitStates	LzmaDec.c	79;"	d	file:
+kNumLogBits	LzmaEnc.c	104;"	d	file:
+kNumMaxDirectBits	LzmaEnc.c	31;"	d	file:
+kNumMoveBits	LzmaDec.c	13;"	d	file:
+kNumMoveBits	LzmaEnc.c	38;"	d	file:
+kNumMoveReducingBits	LzmaEnc.c	41;"	d	file:
+kNumOpts	LzmaEnc.c	158;"	d	file:
+kNumPosBitsMax	LzmaDec.c	60;"	d	file:
+kNumPosModels	LzmaEnc.c	173;"	d	file:
+kNumPosSlotBits	LzmaDec.c	85;"	d	file:
+kNumPosSlotBits	LzmaEnc.c	161;"	d	file:
+kNumPosStatesMax	LzmaDec.c	61;"	d	file:
+kNumStates	LzmaDec.c	78;"	d	file:
+kNumStates	LzmaEnc.c	202;"	d	file:
+kNumTopBits	LzmaDec.c	8;"	d	file:
+kNumTopBits	LzmaEnc.c	33;"	d	file:
+kProbInitValue	LzmaEnc.c	39;"	d	file:
+kRepNextStates	LzmaEnc.c	/^static const int kRepNextStates[kNumStates]     = {8, 8, 8, 8, 8, 8, 8, 11, 11, 11, 11, 11};$/;"	v	file:
+kShortRepNextStates	LzmaEnc.c	/^static const int kShortRepNextStates[kNumStates]= {9, 9, 9, 9, 9, 9, 9, 11, 11, 11, 11, 11};$/;"	v	file:
+kStartMaxLen	LzFind.c	15;"	d	file:
+kStartPosModelIndex	LzmaDec.c	81;"	d	file:
+kStartPosModelIndex	LzmaEnc.c	171;"	d	file:
+kTopValue	LzmaDec.c	9;"	d	file:
+kTopValue	LzmaEnc.c	34;"	d	file:
+kUnpackBlockSize	LzmaEnc.c	27;"	d	file:
+keepSizeAfter	LzFind.h	/^  UInt32 keepSizeAfter;$/;"	m	struct:_CMatchFinder
+keepSizeBefore	LzFind.h	/^  UInt32 keepSizeBefore;$/;"	m	struct:_CMatchFinder
+lc	LzmaDec.h	/^  unsigned lc, lp, pb;$/;"	m	struct:_CLzmaProps
+lc	LzmaEnc.c	/^  unsigned lc, lp, pb;$/;"	m	struct:_CLzmaEnc	file:
+lc	LzmaEnc.h	/^  int lc;          \/* 0 <= lc <= 8, default = 3 *\/$/;"	m	struct:_CLzmaEncProps
+lclp	LzmaEnc.c	/^  unsigned lclp;$/;"	m	struct:_CLzmaEnc	file:
+lenEnc	LzmaEnc.c	/^  CLenPriceEnc lenEnc;$/;"	m	struct:_CLzmaEnc	file:
+lenEnc	LzmaEnc.c	/^  CLenPriceEnc lenEnc;$/;"	m	struct:__anon7	file:
+lenLimit	LzFind.h	/^  UInt32 lenLimit;$/;"	m	struct:_CMatchFinder
+level	LzmaEnc.h	/^  int level;       \/*  0 <= level <= 9 *\/$/;"	m	struct:_CLzmaEncProps
+litProbs	LzmaEnc.c	/^  CLzmaProb *litProbs;$/;"	m	struct:_CLzmaEnc	file:
+litProbs	LzmaEnc.c	/^  CLzmaProb *litProbs;$/;"	m	struct:__anon7	file:
+longestMatchLength	LzmaEnc.c	/^  UInt32 longestMatchLength;$/;"	m	struct:_CLzmaEnc	file:
+low	LzmaEnc.c	/^  CLzmaProb low[LZMA_NUM_PB_STATES_MAX << kLenNumLowBits];$/;"	m	struct:__anon5	file:
+low	LzmaEnc.c	/^  UInt64 low;$/;"	m	struct:_CRangeEnc	file:
+lp	LzmaDec.h	/^  unsigned lc, lp, pb;$/;"	m	struct:_CLzmaProps
+lp	LzmaEnc.c	/^  unsigned lc, lp, pb;$/;"	m	struct:_CLzmaEnc	file:
+lp	LzmaEnc.h	/^  int lp;          \/* 0 <= lp <= 4, default = 0 *\/$/;"	m	struct:_CLzmaEncProps
+lpMask	LzmaEnc.c	/^  unsigned lpMask, pbMask;$/;"	m	struct:_CLzmaEnc	file:
+matchFinder	LzmaEnc.c	/^  IMatchFinder matchFinder;$/;"	m	struct:_CLzmaEnc	file:
+matchFinderBase	LzmaEnc.c	/^  CMatchFinder matchFinderBase;$/;"	m	struct:_CLzmaEnc	file:
+matchFinderCycles	LzmaEnc.c	/^  UInt32 matchFinderCycles;$/;"	m	struct:_CLzmaEnc	file:
+matchFinderMt	LzmaEnc.c	/^  CMatchFinderMt matchFinderMt;$/;"	m	struct:_CLzmaEnc	file:
+matchFinderObj	LzmaEnc.c	/^  void *matchFinderObj;$/;"	m	struct:_CLzmaEnc	file:
+matchMaxLen	LzFind.h	/^  UInt32 matchMaxLen;$/;"	m	struct:_CMatchFinder
+matchPriceCount	LzmaEnc.c	/^  UInt32 matchPriceCount;$/;"	m	struct:_CLzmaEnc	file:
+matches	LzmaEnc.c	/^  UInt32 matches[LZMA_MATCH_LEN_MAX * 2 + 2 + 1];$/;"	m	struct:_CLzmaEnc	file:
+mc	LzmaEnc.h	/^  UInt32 mc;        \/* 1 <= mc <= (1 << 30), default = 32 *\/$/;"	m	struct:_CLzmaEncProps
+mid	LzmaEnc.c	/^  CLzmaProb mid[LZMA_NUM_PB_STATES_MAX << kLenNumMidBits];$/;"	m	struct:__anon5	file:
+mtMode	LzmaEnc.c	/^  Bool mtMode;$/;"	m	struct:_CLzmaEnc	file:
+multiThread	LzmaEnc.c	/^  Bool multiThread;$/;"	m	struct:_CLzmaEnc	file:
+needFlush	LzmaDec.h	/^  int needFlush;$/;"	m	struct:__anon2
+needInitState	LzmaDec.h	/^  int needInitState;$/;"	m	struct:__anon2
+nowPos64	LzmaEnc.c	/^  UInt64 nowPos64;$/;"	m	struct:_CLzmaEnc	file:
+numAvail	LzmaEnc.c	/^  UInt32 numAvail;$/;"	m	struct:_CLzmaEnc	file:
+numFastBytes	LzmaEnc.c	/^  UInt32 numFastBytes;$/;"	m	struct:_CLzmaEnc	file:
+numHashBytes	LzFind.h	/^  UInt32 numHashBytes;$/;"	m	struct:_CMatchFinder
+numHashBytes	LzmaEnc.h	/^  int numHashBytes; \/* 2, 3 or 4, default = 4 *\/$/;"	m	struct:_CLzmaEncProps
+numPairs	LzmaEnc.c	/^  UInt32 numPairs;$/;"	m	struct:_CLzmaEnc	file:
+numProbs	LzmaDec.h	/^  UInt32 numProbs;$/;"	m	struct:__anon2
+numSons	LzFind.h	/^  UInt32 numSons;$/;"	m	struct:_CMatchFinder
+numThreads	LzmaEnc.h	/^  int numThreads;  \/* 1 or 2, default = 2 *\/$/;"	m	struct:_CLzmaEncProps
+opt	LzmaEnc.c	/^  COptimal opt[kNumOpts];$/;"	m	struct:_CLzmaEnc	file:
+optimumCurrentIndex	LzmaEnc.c	/^  UInt32 optimumCurrentIndex;$/;"	m	struct:_CLzmaEnc	file:
+optimumEndIndex	LzmaEnc.c	/^  UInt32 optimumEndIndex;$/;"	m	struct:_CLzmaEnc	file:
+outStream	LzmaEnc.c	/^  ISeqOutStream *outStream;$/;"	m	struct:_CRangeEnc	file:
+overflow	LzmaEnc.c	/^  Bool overflow;$/;"	m	struct:_CSeqOutStreamBuf	file:
+p	LzmaEnc.c	/^  CLenEnc p;$/;"	m	struct:__anon6	file:
+pad	LzmaEnc.c	/^  Byte pad[128];$/;"	m	struct:_CLzmaEnc	file:
+pb	LzmaDec.h	/^  unsigned lc, lp, pb;$/;"	m	struct:_CLzmaProps
+pb	LzmaEnc.c	/^  unsigned lc, lp, pb;$/;"	m	struct:_CLzmaEnc	file:
+pb	LzmaEnc.h	/^  int pb;          \/* 0 <= pb <= 4, default = 2 *\/$/;"	m	struct:_CLzmaEncProps
+pbMask	LzmaEnc.c	/^  unsigned lpMask, pbMask;$/;"	m	struct:_CLzmaEnc	file:
+pos	LzFind.h	/^  UInt32 pos;$/;"	m	struct:_CMatchFinder
+pos	Types.h	/^  size_t pos;$/;"	m	struct:__anon13
+posAlignEncoder	LzmaEnc.c	/^  CLzmaProb posAlignEncoder[1 << kNumAlignBits];$/;"	m	struct:_CLzmaEnc	file:
+posAlignEncoder	LzmaEnc.c	/^  CLzmaProb posAlignEncoder[1 << kNumAlignBits];$/;"	m	struct:__anon7	file:
+posEncoders	LzmaEnc.c	/^  CLzmaProb posEncoders[kNumFullDistances - kEndPosModelIndex];$/;"	m	struct:_CLzmaEnc	file:
+posEncoders	LzmaEnc.c	/^  CLzmaProb posEncoders[kNumFullDistances - kEndPosModelIndex];$/;"	m	struct:__anon7	file:
+posLimit	LzFind.h	/^  UInt32 posLimit;$/;"	m	struct:_CMatchFinder
+posPrev	LzmaEnc.c	/^  UInt32 posPrev;$/;"	m	struct:_COptimal	file:
+posPrev2	LzmaEnc.c	/^  UInt32 posPrev2;$/;"	m	struct:_COptimal	file:
+posSlotEncoder	LzmaEnc.c	/^  CLzmaProb posSlotEncoder[kNumLenToPosStates][1 << kNumPosSlotBits];$/;"	m	struct:_CLzmaEnc	file:
+posSlotEncoder	LzmaEnc.c	/^  CLzmaProb posSlotEncoder[kNumLenToPosStates][1 << kNumPosSlotBits];$/;"	m	struct:__anon7	file:
+posSlotPrices	LzmaEnc.c	/^  UInt32 posSlotPrices[kNumLenToPosStates][kDistTableSizeMax];$/;"	m	struct:_CLzmaEnc	file:
+prev1IsChar	LzmaEnc.c	/^  int prev1IsChar;$/;"	m	struct:_COptimal	file:
+prev2	LzmaEnc.c	/^  int prev2;$/;"	m	struct:_COptimal	file:
+price	LzmaEnc.c	/^  UInt32 price;$/;"	m	struct:_COptimal	file:
+prices	LzmaEnc.c	/^  UInt32 prices[LZMA_NUM_PB_STATES_MAX][kLenNumSymbolsTotal];$/;"	m	struct:__anon6	file:
+probs	LzmaDec.h	/^  CLzmaProb *probs;$/;"	m	struct:__anon2
+processed	LzmaEnc.c	/^  UInt64 processed;$/;"	m	struct:_CRangeEnc	file:
+processedPos	LzmaDec.h	/^  UInt32 processedPos;$/;"	m	struct:__anon2
+prop	LzmaDec.h	/^  CLzmaProps prop;$/;"	m	struct:__anon2
+range	LzmaDec.h	/^  UInt32 range, code;$/;"	m	struct:__anon2
+range	LzmaEnc.c	/^  UInt32 range;$/;"	m	struct:_CRangeEnc	file:
+rc	LzmaEnc.c	/^  CRangeEnc rc;$/;"	m	struct:_CLzmaEnc	file:
+realStream	Types.h	/^  ILookInStream *realStream;$/;"	m	struct:__anon14
+realStream	Types.h	/^  ILookInStream *realStream;$/;"	m	struct:__anon15
+realStream	Types.h	/^  ISeekInStream *realStream;$/;"	m	struct:__anon13
+rem	LzmaEnc.c	/^  SizeT rem;$/;"	m	struct:_CSeqInStreamBuf	file:
+rem	LzmaEnc.c	/^  SizeT rem;$/;"	m	struct:_CSeqOutStreamBuf	file:
+remainLen	LzmaDec.h	/^  unsigned remainLen;$/;"	m	struct:__anon2
+repLenEnc	LzmaEnc.c	/^  CLenPriceEnc repLenEnc;$/;"	m	struct:_CLzmaEnc	file:
+repLenEnc	LzmaEnc.c	/^  CLenPriceEnc repLenEnc;$/;"	m	struct:__anon7	file:
+reps	LzmaDec.h	/^  UInt32 reps[4];$/;"	m	struct:__anon2
+reps	LzmaEnc.c	/^  UInt32 reps[LZMA_NUM_REPS];$/;"	m	struct:_CLzmaEnc	file:
+reps	LzmaEnc.c	/^  UInt32 reps[LZMA_NUM_REPS];$/;"	m	struct:__anon7	file:
+res	LzmaEnc.c	/^  SRes res;$/;"	m	struct:_CRangeEnc	file:
+result	LzFind.h	/^  SRes result;$/;"	m	struct:_CMatchFinder
+result	LzmaEnc.c	/^  SRes result;$/;"	m	struct:_CLzmaEnc	file:
+s	Types.h	/^  ILookInStream s;$/;"	m	struct:__anon13
+s	Types.h	/^  ISeqInStream s;$/;"	m	struct:__anon14
+s	Types.h	/^  ISeqInStream s;$/;"	m	struct:__anon15
+saveState	LzmaEnc.c	/^  CSaveState saveState;$/;"	m	struct:_CLzmaEnc	file:
+seqBufInStream	LzmaEnc.c	/^  CSeqInStreamBuf seqBufInStream;$/;"	m	struct:_CLzmaEnc	file:
+size	Types.h	/^  size_t size;$/;"	m	struct:__anon13
+son	LzFind.h	/^  CLzRef *son;$/;"	m	struct:_CMatchFinder
+state	LzmaDec.h	/^  unsigned state;$/;"	m	struct:__anon2
+state	LzmaEnc.c	/^  CState state;$/;"	m	struct:_COptimal	file:
+state	LzmaEnc.c	/^  UInt32 state;$/;"	m	struct:_CLzmaEnc	file:
+state	LzmaEnc.c	/^  UInt32 state;$/;"	m	struct:__anon7	file:
+stream	LzFind.h	/^  ISeqInStream *stream;$/;"	m	struct:_CMatchFinder
+streamEndWasReached	LzFind.h	/^  int streamEndWasReached;$/;"	m	struct:_CMatchFinder
+streamPos	LzFind.h	/^  UInt32 streamPos;$/;"	m	struct:_CMatchFinder
+tableSize	LzmaEnc.c	/^  UInt32 tableSize;$/;"	m	struct:__anon6	file:
+tempBuf	LzmaDec.h	/^  Byte tempBuf[LZMA_REQUIRED_INPUT_MAX];$/;"	m	struct:__anon2
+tempBufSize	LzmaDec.h	/^  unsigned tempBufSize;$/;"	m	struct:__anon2
+ttt	LzmaEnc.c	/^static int ttt = 0;$/;"	v	file:
+writeEndMark	LzmaEnc.c	/^  Bool writeEndMark;$/;"	m	struct:_CLzmaEnc	file:
+writeEndMark	LzmaEnc.h	/^  unsigned writeEndMark;  \/* 0 - do not write EOPM, 1 - write EOPM, default = 0 *\/$/;"	m	struct:_CLzmaEncProps

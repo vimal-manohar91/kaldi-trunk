@@ -1,6 +1,6 @@
-// nnet2bin/nnet-get-egs.cc
+// nnet2bin/nnet-weighted-get-egs.cc
 
-// Copyright 2012-2013  Johns Hopkins University (author:  Daniel Povey)
+// Copyright 2013-2014  (Author: Vimal Manohar)
 
 // See ../../COPYING for clarification regarding multiple authors
 //

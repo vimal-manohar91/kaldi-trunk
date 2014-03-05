@@ -26,11 +26,14 @@ int main(int argc, char *argv[]) {
       po.PrintUsage();
       exit(1);
     }
-    
+ 
     std::string pdf_post_rspecifier = po.GetArg(1),
       pdf_align_rspecifier = po.GetArg(2),
       align_pdf_post_wspecifier = po.GetArg(3),
-      weights_wspecifier = po.GetArg(4),
+      weights_wspecifier, avg_weights_wspecifier;
+    if (po.NumArgs() >= 4) 
+      weights_wspecifier = po.GetArg(4);
+    if (po.NumArgs() == 5)
       avg_weights_wspecifier = po.GetArg(5);
     
     int32 n_done = 0, n_err = 0, n_no_ali = 0;

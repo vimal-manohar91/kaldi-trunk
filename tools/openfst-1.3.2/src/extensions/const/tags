@@ -1,0 +1,15 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ConstFst_Log64Arc_uint16_registerer	const16-fst.cc	/^        ConstFst_Log64Arc_uint16_registerer;$/;"	v	file:
+ConstFst_Log64Arc_uint64_registerer	const64-fst.cc	/^        ConstFst_Log64Arc_uint64_registerer;$/;"	v	file:
+ConstFst_Log64Arc_uint8_registerer	const8-fst.cc	/^        ConstFst_Log64Arc_uint8_registerer;$/;"	v	file:
+ConstFst_LogArc_uint16_registerer	const16-fst.cc	/^        ConstFst_LogArc_uint16_registerer;$/;"	v	file:
+ConstFst_LogArc_uint64_registerer	const64-fst.cc	/^        ConstFst_LogArc_uint64_registerer;$/;"	v	file:
+ConstFst_LogArc_uint8_registerer	const8-fst.cc	/^        ConstFst_LogArc_uint8_registerer;$/;"	v	file:
+ConstFst_StdArc_uint16_registerer	const16-fst.cc	/^        ConstFst_StdArc_uint16_registerer;$/;"	v	file:
+ConstFst_StdArc_uint64_registerer	const64-fst.cc	/^        ConstFst_StdArc_uint64_registerer;$/;"	v	file:
+ConstFst_StdArc_uint8_registerer	const8-fst.cc	/^        ConstFst_StdArc_uint8_registerer;$/;"	v	file:

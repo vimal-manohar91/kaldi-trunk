@@ -1,0 +1,137 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+BOOLDEF_HEADER	booldef.h	3;"	d
+C	hparstr1.h	/^    int C[HFCN_NPARAMS_MAX];$/;"	m	struct:__anon1
+COMPILE_ENVIRONMENT	stdcenvp.h	6;"	d
+EMPTY_INT_STRING	gdatadef.h	/^ int nstr_empty[1] = {0}, *EMPTY_INT_STRING = &nstr_empty[0];$/;"	v
+EMPTY_STRING	gdatadef.h	/^ char null_char_string[1] = "", *EMPTY_STRING = &null_char_string[0];$/;"	v
+F	booldef.h	7;"	d
+FCNDCLS_HEADER	fcndcls.h	6;"	d
+GDATADEF_HEADER	gdatadef.h	4;"	d
+HASH_PARAMETERS	hparstr1.h	/^   } HASH_PARAMETERS;$/;"	t	typeref:struct:__anon1
+HFCN_NPARAMS_MAX	stdpars.h	24;"	d
+HPARSTR1_HEADER	hparstr1.h	4;"	d
+LINE_LENGTH	stdpars.h	9;"	d
+LONG_LINE	stdpars.h	13;"	d
+MAX_AUX_SYMBOLS	stdpars.h	22;"	d
+MAX_CODE_SETS	stdpars.h	17;"	d
+MAX_FHIST_SAVED_VALUES	stdpars.h	20;"	d
+MAX_PHONES	stdpars.h	19;"	d
+MAX_SMTAB_ENTRIES	stdpars.h	26;"	d
+MAX_WORDS_IN_FILE	stdpars.h	16;"	d
+NIL_STRING	gdatadef.h	/^ char *NIL_STRING = "(nil)";$/;"	v
+RULE2	rulestr2.h	/^   } RULE2;$/;"	t	typeref:struct:__anon2
+RULESET2	rulestr2.h	/^   } RULESET2;$/;"	t	typeref:struct:__anon3
+RULESTR2_HEADER	rulestr2.h	4;"	d
+SSSTR1_HEADER	ssstr1.h	4;"	d
+STDPARS_HEADER	stdpars.h	5;"	d
+STRMACS_HEADER	strmacs.h	13;"	d
+SUBSTRING	ssstr1.h	/^  typedef struct substring SUBSTRING;$/;"	t	typeref:struct:substring
+T	booldef.h	6;"	d
+__anon1::C	hparstr1.h	/^    int C[HFCN_NPARAMS_MAX];$/;"	m	struct:__anon1
+__anon1::hfcn_name	hparstr1.h	/^   {char *hfcn_name;$/;"	m	struct:__anon1
+__anon1::nparams	hparstr1.h	/^    int nparams;$/;"	m	struct:__anon1
+__anon1::recommended_load_factor	hparstr1.h	/^    double recommended_load_factor;$/;"	m	struct:__anon1
+__anon2::lcontext	rulestr2.h	/^   {char *lcontext; int lcontextl; \/* left context, length *\/$/;"	m	struct:__anon2
+__anon2::lcontextl	rulestr2.h	/^   {char *lcontext; int lcontextl; \/* left context, length *\/$/;"	m	struct:__anon2
+__anon2::rcontext	rulestr2.h	/^    char *rcontext; int rcontextl; \/* right context, length *\/$/;"	m	struct:__anon2
+__anon2::rcontextl	rulestr2.h	/^    char *rcontext; int rcontextl; \/* right context, length *\/$/;"	m	struct:__anon2
+__anon2::sin	rulestr2.h	/^    char *sin; int sinl;          \/* string in, length *\/$/;"	m	struct:__anon2
+__anon2::sinl	rulestr2.h	/^    char *sin; int sinl;          \/* string in, length *\/$/;"	m	struct:__anon2
+__anon2::sout	rulestr2.h	/^    char *sout; int soutl;        \/* string out, lenght *\/$/;"	m	struct:__anon2
+__anon2::soutl	rulestr2.h	/^    char *sout; int soutl;        \/* string out, lenght *\/$/;"	m	struct:__anon2
+__anon2::val1	rulestr2.h	/^    int val1; \/* general-purpose numerical value *\/$/;"	m	struct:__anon2
+__anon3::case_sensitive	rulestr2.h	/^    boolean case_sensitive; \/* iff on, match is case-sensitive     *\/$/;"	m	struct:__anon3
+__anon3::copy_no_hit	rulestr2.h	/^    boolean copy_no_hit; \/* if no hit, copy over instead of delete *\/$/;"	m	struct:__anon3
+__anon3::desc	rulestr2.h	/^    char *desc;$/;"	m	struct:__anon3
+__anon3::directory	rulestr2.h	/^    char *directory;$/;"	m	struct:__anon3
+__anon3::first_rule	rulestr2.h	/^    int *first_rule; \/* index to first rule for key char, dynamically allocated *\/$/;"	m	struct:__anon3
+__anon3::format	rulestr2.h	/^    char *format;$/;"	m	struct:__anon3
+__anon3::indexed	rulestr2.h	/^    boolean indexed; \/* uses key character index for speed *\/$/;"	m	struct:__anon3
+__anon3::last_rule	rulestr2.h	/^    int *last_rule; \/* index to last rule for key char, dynamically allocated *\/$/;"	m	struct:__anon3
+__anon3::max_nrules	rulestr2.h	/^    int max_nrules;$/;"	m	struct:__anon3
+__anon3::name	rulestr2.h	/^   {char *name;$/;"	m	struct:__anon3
+__anon3::nrules	rulestr2.h	/^    int nrules;$/;"	m	struct:__anon3
+__anon3::rule	rulestr2.h	/^    RULE2 *rule; \/* RULE table, dynamically allocated *\/$/;"	m	struct:__anon3
+__anon3::rule_index	rulestr2.h	/^    int *rule_index; \/* index to rules in aggregated order, dynamically allocated *\/$/;"	m	struct:__anon3
+apply_rules2	aprules2.c	/^char *apply_rules2(char *pb, char *pa, RULESET2 *rset, int *perr)$/;"	f
+atobool	atobool.c	/^ boolean atobool(char *s)$/;"	f
+bool_print	boolpr1.c	/^ char *bool_print(boolean x) {if (x) return "T"; else return "F";}$/;"	f
+boolean	booldef.h	5;"	d
+calloc_safe	calloc2.c	/^ void *calloc_safe(size_t nobj, size_t size, char *calling_proc)$/;"	f
+case_sensitive	rulestr2.h	/^    boolean case_sensitive; \/* iff on, match is case-sensitive     *\/$/;"	m	struct:__anon3
+char	stdcenvp.h	27;"	d
+copy_no_hit	rulestr2.h	/^    boolean copy_no_hit; \/* if no hit, copy over instead of delete *\/$/;"	m	struct:__anon3
+db	gdatadef.h	/^ char db[272] = "*DB: ", *pdb = &db[0];$/;"	v
+db_enter_msg	dbpkg1.c	/^ void db_enter_msg(char *proc, int level)$/;"	f
+db_leave_msg	dbpkg1.c	/^ void db_leave_msg(char *proc, int level)$/;"	f
+db_level	gdatadef.h	/^ int db_level = 0;$/;"	v
+del_eol	del_eol.c	/^ char *del_eol(char *ps)$/;"	f
+desc	rulestr2.h	/^    char *desc;$/;"	m	struct:__anon3
+detail_level	gdatadef.h	/^ int detail_level = 0;$/;"	v
+directory	rulestr2.h	/^    char *directory;$/;"	m	struct:__anon3
+dump_rules2	drules2.c	/^void dump_rules2(RULESET2 *rset)$/;"	f
+dump_rules3	drules3.c	/^void dump_rules3(RULESET2 *rset, FILE *fp)$/;"	f
+end	ssstr1.h	/^     char *end;$/;"	m	struct:substring
+expenv	expenv.c	/^  char *expenv(char *s, int slength)$/;"	f
+fatal_error	fatalerr.c	/^ void fatal_error(char *reporting_procedure, char *msg, int error_level)$/;"	f
+first_rule	rulestr2.h	/^    int *first_rule; \/* index to first rule for key char, dynamically allocated *\/$/;"	m	struct:__anon3
+format	rulestr2.h	/^    char *format;$/;"	m	struct:__anon3
+free_rules2	frules2.c	/^  void free_rules2(RULESET2 *rset)$/;"	f
+free_str	frstr1.c	/^void free_str(char *s)$/;"	f
+get_comment_flag	gcomflag.c	/^  void get_comment_flag(char *s, char *comment_flag)$/;"	f
+get_rules2	grules2.c	/^  void get_rules2(RULESET2 *rset, char *path, char *fname, int *perr)$/;"	f
+hfcn_name	hparstr1.h	/^   {char *hfcn_name;$/;"	m	struct:__anon1
+indexed	rulestr2.h	/^    boolean indexed; \/* uses key character index for speed *\/$/;"	m	struct:__anon3
+last_rule	rulestr2.h	/^    int *last_rule; \/* index to last rule for key char, dynamically allocated *\/$/;"	m	struct:__anon3
+lcontext	rulestr2.h	/^   {char *lcontext; int lcontextl; \/* left context, length *\/$/;"	m	struct:__anon2
+lcontextl	rulestr2.h	/^   {char *lcontext; int lcontextl; \/* left context, length *\/$/;"	m	struct:__anon2
+make_full_fname	mfname1.c	/^ char *make_full_fname(char *sx, char *path, char *fname)$/;"	f
+make_upper	mupper.c	/^  char *make_upper(char *s)$/;"	f
+max_nrules	rulestr2.h	/^    int max_nrules;$/;"	m	struct:__anon3
+memory_trace	gdatadef.h	/^ boolean memory_trace = F;$/;"	v
+name	rulestr2.h	/^   {char *name;$/;"	m	struct:__anon3
+nparams	hparstr1.h	/^    int nparams;$/;"	m	struct:__anon1
+nrules	rulestr2.h	/^    int nrules;$/;"	m	struct:__anon3
+nstr_empty	gdatadef.h	/^ int nstr_empty[1] = {0}, *EMPTY_INT_STRING = &nstr_empty[0];$/;"	v
+null_char_string	gdatadef.h	/^ char null_char_string[1] = "", *EMPTY_STRING = &null_char_string[0];$/;"	v
+pdb	gdatadef.h	/^ char db[272] = "*DB: ", *pdb = &db[0];$/;"	v
+pltrim	pltrim.c	/^  char *pltrim(char *s)$/;"	f
+pltrimf	pltrimf.c	/^  char *pltrimf(char *s)$/;"	f
+prtrim	prtrim.c	/^  char *prtrim(char *s)$/;"	f
+prtrim2	prtrim2.c	/^  char *prtrim2(char *s)$/;"	f
+r_process_aux_line	grules2.c	/^  static void r_process_aux_line(RULESET2 *rset, char *pline, int *perr)$/;"	f	file:
+r_process_data_line	grules2.c	/^  static void r_process_data_line(RULESET2 *rset, char *pline, int *perr)$/;"	f	file:
+rcontext	rulestr2.h	/^    char *rcontext; int rcontextl; \/* right context, length *\/$/;"	m	struct:__anon2
+rcontextl	rulestr2.h	/^    char *rcontext; int rcontextl; \/* right context, length *\/$/;"	m	struct:__anon2
+recommended_load_factor	hparstr1.h	/^    double recommended_load_factor;$/;"	m	struct:__anon1
+remove_comments	remcomm.c	/^  char *remove_comments(char *s, char *comment_flag)$/;"	f
+rule	rulestr2.h	/^    RULE2 *rule; \/* RULE table, dynamically allocated *\/$/;"	m	struct:__anon3
+rule_index	rulestr2.h	/^    int *rule_index; \/* index to rules in aggregated order, dynamically allocated *\/$/;"	m	struct:__anon3
+sin	rulestr2.h	/^    char *sin; int sinl;          \/* string in, length *\/$/;"	m	struct:__anon2
+sinl	rulestr2.h	/^    char *sin; int sinl;          \/* string in, length *\/$/;"	m	struct:__anon2
+sout	rulestr2.h	/^    char *sout; int soutl;        \/* string out, lenght *\/$/;"	m	struct:__anon2
+soutl	rulestr2.h	/^    char *sout; int soutl;        \/* string out, lenght *\/$/;"	m	struct:__anon2
+sstok2	sstok2.c	/^ SUBSTRING sstok2(char *sx, char *delimiters)$/;"	f
+start	ssstr1.h	/^    {char *start;$/;"	m	struct:substring
+str_greater_than	strmacs.h	18;"	d
+str_less_than	strmacs.h	17;"	d
+strcmpi	strcmpi.c	/^ int strcmpi(char *ps1, char *ps2)$/;"	f
+strcutr	strcutr.c	/^  char *strcutr(char *ps, int n)$/;"	f
+strdup_safe	strdup2.c	/^ char *strdup_safe(char *ps, char *calling_proc)$/;"	f
+streq	strmacs.h	15;"	d
+streqi	strmacs.h	16;"	d
+string_equal	str_eq.c	/^ boolean string_equal(char *cs, char *ct, int ignore_case)$/;"	f
+strncmpi	strncmpi.c	/^ int strncmpi(char *ps1, char *ps2, int n)$/;"	f
+substr_length	ss_len.c	/^ int substr_length(SUBSTRING *substr)$/;"	f
+substr_to_str	ss_to_s.c	/^ char *substr_to_str(SUBSTRING *substr, char *str, int lmax)$/;"	f
+substring	ssstr1.h	/^  struct substring$/;"	s
+substring::end	ssstr1.h	/^     char *end;$/;"	m	struct:substring
+substring::start	ssstr1.h	/^    {char *start;$/;"	m	struct:substring
+textlen	textlen.c	/^  int textlen(char *s) {return (int)(prtrim(s) - pltrimf(s) + 1);}$/;"	f
+val1	rulestr2.h	/^    int val1; \/* general-purpose numerical value *\/$/;"	m	struct:__anon2
+valid_data_line	valdata.c	/^  boolean valid_data_line(char *s, char *comment_flag)$/;"	f

@@ -1,0 +1,88 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ALWAYS_SWAPDOUBLE	mips_swap.h	103;"	d
+ALWAYS_SWAPFIELD	mips_swap.h	83;"	d
+ALWAYS_SWAPHALF	mips_swap.h	89;"	d
+ALWAYS_SWAPWORD	mips_swap.h	94;"	d
+Boolean	general.h	/^typedef char Boolean;$/;"	t
+CMU_SLM_VERSION	general.h	26;"	d
+EXP	general.h	66;"	d
+HASH_VERSION	sih.c	37;"	d	file:
+LOG	general.h	63;"	d
+LOG_BASE	general.h	61;"	d
+MAX	general.h	58;"	d
+MAX_WORDS_PER_DOC	general.h	80;"	d
+MIN	general.h	55;"	d
+MIN_LOG	general.h	62;"	d
+RRi_is_Z	rr_iopen.c	/^char  RRi_is_Z[100];$/;"	v
+RRo_is_Z	rr_oopen.c	/^char  RRo_is_Z[100];$/;"	v
+SIH_KEY	sih.c	38;"	d	file:
+SLM_SWAP_BYTES	general.h	69;"	d
+SWAPDOUBLE	mips_swap.h	46;"	d
+SWAPDOUBLE	mips_swap.h	78;"	d
+SWAPFIELD	mips_swap.h	27;"	d
+SWAPFIELD	mips_swap.h	75;"	d
+SWAPHALF	mips_swap.h	32;"	d
+SWAPHALF	mips_swap.h	76;"	d
+SWAPWORD	mips_swap.h	37;"	d
+SWAPWORD	mips_swap.h	77;"	d
+_GENERAL_H_	general.h	19;"	d
+_MIPS_SWAP_H_	mips_swap.h	19;"	d
+_SIH_H_	sih.h	19;"	d
+__anon1::intval	sih.h	/^	int32 intval;	   \/* Associated int32 value (output of hash function) *\/$/;"	m	struct:__anon1
+__anon1::string	sih.h	/^	char *string;	   \/* string (input to hash function) *\/$/;"	m	struct:__anon1
+__anon2::growth_ratio	sih.h	/^	double  growth_ratio;   \/* ratio of expansion when above is violated *\/$/;"	m	struct:__anon2
+__anon2::max_occupancy	sih.h	/^	double  max_occupancy;  \/* max. allowed occupancy rate *\/$/;"	m	struct:__anon2
+__anon2::nentries	sih.h	/^	int	nentries;	\/* # of actual entries *\/$/;"	m	struct:__anon2
+__anon2::nslots	sih.h	/^	int	nslots;    	\/* # of slots in the hash table *\/$/;"	m	struct:__anon2
+__anon2::slots	sih.h	/^	sih_slot_t *slots;	\/* array of (string,intval) pairs *\/$/;"	m	struct:__anon2
+__anon2::warn_on_update	sih.h	/^	int     warn_on_update; \/* print warning if same string is hashed again *\/$/;"	m	struct:__anon2
+cluster_t	general.h	/^typedef int    cluster_t;$/;"	t
+get_vocab_from_vocab_ht	read_voc.c	/^void get_vocab_from_vocab_ht(sih_t *ht, int vocab_size, int verbosity, char ***p_vocab)$/;"	f
+growth_ratio	sih.h	/^	double  growth_ratio;   \/* ratio of expansion when above is violated *\/$/;"	m	struct:__anon2
+int16	general.h	/^typedef short int16;$/;"	t
+int32	general.h	/^typedef int   int32;$/;"	t
+intval	sih.h	/^	int32 intval;	   \/* Associated int32 value (output of hash function) *\/$/;"	m	struct:__anon1
+max_occupancy	sih.h	/^	double  max_occupancy;  \/* max. allowed occupancy rate *\/$/;"	m	struct:__anon2
+nearest_prime_up	sih.c	/^int nearest_prime_up(int num)$/;"	f
+nentries	sih.h	/^	int	nentries;	\/* # of actual entries *\/$/;"	m	struct:__anon2
+nslots	sih.h	/^	int	nslots;    	\/* # of slots in the hash table *\/$/;"	m	struct:__anon2
+parse_line	parse_line.c	/^void parse_line($/;"	f
+quit	quit.c	/^int quit(int rc, char *msg, ...)$/;"	f
+quit0	general.h	74;"	d
+quit1	general.h	75;"	d
+quit2	general.h	76;"	d
+quit3	general.h	77;"	d
+quit4	general.h	78;"	d
+read_voc	read_voc.c	/^void read_voc(char *filename, int verbosity,   $/;"	f
+read_wlist_into_array	rd_wlist_arry.c	/^void read_wlist_into_array(wlist_filename, verbosity,  p_wlist, p_n_wlist)$/;"	f
+read_wlist_into_siht	read_wlist_si.c	/^void read_wlist_into_siht(char *wlist_filename, int verbosity,  $/;"	f
+rr_calloc	rr_calloc.c	/^char *rr_calloc(size_t nelem, size_t elsize)$/;"	f
+rr_feof	rr_feof.c	/^int rr_feof(FILE *fp)$/;"	f
+rr_fexists	rr_fexists.c	/^int rr_fexists (char *path)$/;"	f
+rr_filesize	rr_filesize.c	/^int rr_filesize (int fd)$/;"	f
+rr_fopen	rr_fopen.c	/^FILE *rr_fopen(char *filename, char *mode)$/;"	f
+rr_fread	rr_fread.c	/^void *rr_fread(char *ptr, int elsize, int n_elem, FILE *fp,$/;"	f
+rr_fseek	rr_fseek.c	/^void *rr_fseek(FILE *fp, int offset, int mode, char *description)$/;"	f
+rr_fwrite	rr_fwrite.c	/^void *rr_fwrite(char *ptr, int elsize, int n_elem, FILE *fp, char *header)$/;"	f
+rr_iclose	rr_iopen.c	/^void *rr_iclose(FILE *fp)$/;"	f
+rr_iopen	rr_iopen.c	/^FILE *rr_iopen(char *path)$/;"	f
+rr_malloc	rr_malloc.c	/^char *rr_malloc(size_t n_bytes)$/;"	f
+rr_oclose	rr_oopen.c	/^void *rr_oclose(FILE *fp)$/;"	f
+rr_oopen	rr_oopen.c	/^FILE *rr_oopen(char *path)$/;"	f
+salloc	salloc.c	/^char *salloc(char *str)$/;"	f
+sih_add	sih.c	/^void sih_add(sih_t *ht, char *string, int32 intval)$/;"	f
+sih_create	sih.c	/^sih_t *sih_create(int initial_size, double max_occupancy, double growth_ratio, int warn_on_update)$/;"	f
+sih_lookup	sih.c	/^char sih_lookup(sih_t *ht, char *string, int32 *p_intval)$/;"	f
+sih_slot_t	sih.h	/^} sih_slot_t;$/;"	t	typeref:struct:__anon1
+sih_t	sih.h	/^} sih_t;$/;"	t	typeref:struct:__anon2
+sih_val_read_from_file	sih.c	/^void *sih_val_read_from_file(sih_t *ht, FILE *fp, char *filename, int verbosity)$/;"	f
+sih_val_write_to_file	sih.c	/^void *sih_val_write_to_file(sih_t *ht, FILE *fp, char *filename, int verbosity)$/;"	f
+slots	sih.h	/^	sih_slot_t *slots;	\/* array of (string,intval) pairs *\/$/;"	m	struct:__anon2
+string	sih.h	/^	char *string;	   \/* string (input to hash function) *\/$/;"	m	struct:__anon1
+warn_on_update	sih.h	/^	int     warn_on_update; \/* print warning if same string is hashed again *\/$/;"	m	struct:__anon2
+wordid_t	general.h	/^typedef unsigned short wordid_t;$/;"	t

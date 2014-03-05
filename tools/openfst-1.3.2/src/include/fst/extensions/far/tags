@@ -1,0 +1,594 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Add	far.h	/^  void Add(const string &key, const Fst<A> &fst) { writer_->Add(key, fst); }$/;"	f	class:fst::STListFarWriter
+Add	far.h	/^  void Add(const string &key, const Fst<A> &fst) { writer_->Add(key, fst); }$/;"	f	class:fst::STTableFarWriter
+Add	far.h	/^  void Add(const string &key, const Fst<A> &fst) {$/;"	f	class:fst::FstFarWriter
+Add	stlist.h	/^  void Add(const string &key, const T &t) {$/;"	f	class:fst::STListWriter
+Add	sttable.h	/^  void Add(const string &key, const T &t) {$/;"	f	class:fst::STTableWriter
+Arc	compile-strings.h	/^  typedef A Arc;$/;"	t	class:fst::StringReader
+Arc	far.h	/^  typedef A Arc;$/;"	t	class:fst::FarWriter
+Arc	far.h	/^  typedef A Arc;$/;"	t	class:fst::FstFarReader
+Arc	far.h	/^  typedef A Arc;$/;"	t	class:fst::FstFarWriter
+Arc	far.h	/^  typedef A Arc;$/;"	t	class:fst::STListFarReader
+Arc	far.h	/^  typedef A Arc;$/;"	t	class:fst::STListFarWriter
+Arc	far.h	/^  typedef A Arc;$/;"	t	class:fst::STTableFarReader
+Arc	far.h	/^  typedef A Arc;$/;"	t	class:fst::STTableFarWriter
+Arc	far.h	/^ typedef A Arc;$/;"	t	class:fst::FarReader
+ArcType	far.h	/^  const string &ArcType() const { return arctype_; }$/;"	f	class:fst::FarHeader
+Compare	sttable.h	/^    Compare(const vector<string> *keys) : keys_(keys) {}$/;"	f	struct:fst::STTableReader::Compare
+Compare	sttable.h	/^  struct Compare {$/;"	s	class:fst::STTableReader
+CountStatesAndArcs	info.h	/^void CountStatesAndArcs(const Fst<Arc> &fst, size_t *nstate, size_t *narc) {$/;"	f	namespace:fst
+Create	far.h	/^  static FstFarWriter *Create(const string &filename) {$/;"	f	class:fst::FstFarWriter
+Create	far.h	/^  static STListFarWriter *Create(const string &filename) {$/;"	f	class:fst::STListFarWriter
+Create	far.h	/^  static STTableFarWriter *Create(const string &filename) {$/;"	f	class:fst::STTableFarWriter
+Create	far.h	/^FarWriter<A> *FarWriter<A>::Create(const string &filename, FarType type) {$/;"	f	class:fst::FarWriter
+Create	stlist.h	/^  static STListWriter<T, W> *Create(const string &filename) {$/;"	f	class:fst::STListWriter
+Create	sttable.h	/^  static STTableWriter<T, W> *Create(const string &filename) {$/;"	f	class:fst::STTableWriter
+Done	compile-strings.h	/^  bool Done() {$/;"	f	class:fst::StringReader
+Done	far.h	/^  bool Done() const { return error_ || pos_ >= keys_.size(); }$/;"	f	class:fst::FstFarReader
+Done	far.h	/^  bool Done() const { return reader_->Done(); }$/;"	f	class:fst::STListFarReader
+Done	far.h	/^  bool Done() const { return reader_->Done(); }$/;"	f	class:fst::STTableFarReader
+Done	stlist.h	/^  bool Done() const {$/;"	f	class:fst::STListReader
+Done	sttable.h	/^  bool Done() const { return error_ || heap_.empty(); }$/;"	f	class:fst::STTableReader
+EntryReader	stlist.h	/^  typedef R EntryReader;$/;"	t	class:fst::STListReader
+EntryReader	sttable.h	/^  typedef R EntryReader;$/;"	t	class:fst::STTableReader
+EntryType	compile-strings.h	/^  enum EntryType { LINE = 1, FILE = 2 };$/;"	g	class:fst::StringReader
+EntryType	stlist.h	/^  typedef T EntryType;$/;"	t	class:fst::STListReader
+EntryType	stlist.h	/^  typedef T EntryType;$/;"	t	class:fst::STListWriter
+EntryType	sttable.h	/^  typedef T EntryType;$/;"	t	class:fst::STTableReader
+EntryType	sttable.h	/^  typedef T EntryType;$/;"	t	class:fst::STTableWriter
+EntryWriter	stlist.h	/^  typedef W EntryWriter;$/;"	t	class:fst::STListWriter
+EntryWriter	sttable.h	/^  typedef W EntryWriter;$/;"	t	class:fst::STTableWriter
+Error	far.h	/^  bool Error() const { return error_; }$/;"	f	class:fst::FstFarReader
+Error	far.h	/^  bool Error() const { return error_; }$/;"	f	class:fst::FstFarWriter
+Error	far.h	/^  bool Error() const { return reader_->Error(); }$/;"	f	class:fst::STListFarReader
+Error	far.h	/^  bool Error() const { return reader_->Error(); }$/;"	f	class:fst::STTableFarReader
+Error	far.h	/^  bool Error() const { return writer_->Error(); }$/;"	f	class:fst::STListFarWriter
+Error	far.h	/^  bool Error() const { return writer_->Error(); }$/;"	f	class:fst::STTableFarWriter
+Error	stlist.h	/^  bool Error() const { return error_; }$/;"	f	class:fst::STListReader
+Error	stlist.h	/^  bool Error() const { return error_; }$/;"	f	class:fst::STListWriter
+Error	sttable.h	/^  bool Error() const { return error_; }$/;"	f	class:fst::STTableReader
+Error	sttable.h	/^  bool Error() const { return error_; }$/;"	f	class:fst::STTableWriter
+FAR_DEFAULT	far.h	/^  FAR_DEFAULT = 0,$/;"	e	enum:fst::FarType
+FAR_FST	far.h	/^  FAR_FST = 3,$/;"	e	enum:fst::FarType
+FAR_STLIST	far.h	/^  FAR_STLIST = 2,$/;"	e	enum:fst::FarType
+FAR_STTABLE	far.h	/^  FAR_STTABLE = 1,$/;"	e	enum:fst::FarType
+FET_FILE	far.h	/^enum FarEntryType { FET_LINE, FET_FILE };$/;"	e	enum:fst::FarEntryType
+FET_LINE	far.h	/^enum FarEntryType { FET_LINE, FET_FILE };$/;"	e	enum:fst::FarEntryType
+FILE	compile-strings.h	/^  enum EntryType { LINE = 1, FILE = 2 };$/;"	e	enum:fst::StringReader::EntryType
+FST_EXTENSIONS_FAR_COMPILE_STRINGS_H_	compile-strings.h	21;"	d
+FST_EXTENSIONS_FAR_CREATE_H__	create.h	26;"	d
+FST_EXTENSIONS_FAR_EQUAL_H_	equal.h	18;"	d
+FST_EXTENSIONS_FAR_EXTRACT_H__	extract.h	24;"	d
+FST_EXTENSIONS_FAR_FARLIB_H_	farlib.h	22;"	d
+FST_EXTENSIONS_FAR_FARSCRIPT_H_	farscript.h	21;"	d
+FST_EXTENSIONS_FAR_FAR_H__	far.h	23;"	d
+FST_EXTENSIONS_FAR_INFO_H_	info.h	19;"	d
+FST_EXTENSIONS_FAR_MAIN_H__	main.h	23;"	d
+FST_EXTENSIONS_FAR_PRINT_STRINGS_H__	print-strings.h	23;"	d
+FST_EXTENSIONS_FAR_STLIST_H_	stlist.h	25;"	d
+FST_EXTENSIONS_FAR_STTABLE_H_	sttable.h	27;"	d
+FTT_BYTE	far.h	/^enum FarTokenType { FTT_SYMBOL, FTT_BYTE, FTT_UTF8 };$/;"	e	enum:fst::FarTokenType
+FTT_SYMBOL	far.h	/^enum FarTokenType { FTT_SYMBOL, FTT_BYTE, FTT_UTF8 };$/;"	e	enum:fst::FarTokenType
+FTT_UTF8	far.h	/^enum FarTokenType { FTT_SYMBOL, FTT_BYTE, FTT_UTF8 };$/;"	e	enum:fst::FarTokenType
+FarCompileStrings	compile-strings.h	/^void FarCompileStrings(const vector<string> &in_fnames,$/;"	f	namespace:fst
+FarCompileStrings	farscript.h	/^void FarCompileStrings(FarCompileStringsArgs *args) {$/;"	f	namespace:fst::script
+FarCompileStringsArgs	farscript.h	/^  FarCompileStringsArgs(const vector<string> &in_fnames,$/;"	f	struct:fst::script::FarCompileStringsArgs
+FarCompileStringsArgs	farscript.h	/^struct FarCompileStringsArgs {$/;"	s	namespace:fst::script
+FarCreate	create.h	/^void FarCreate(const vector<string> &in_fnames,$/;"	f	namespace:fst
+FarCreate	farscript.h	/^void FarCreate(FarCreateArgs *args) {$/;"	f	namespace:fst::script
+FarCreateArgs	farscript.h	/^  FarCreateArgs($/;"	f	struct:fst::script::FarCreateArgs
+FarCreateArgs	farscript.h	/^struct FarCreateArgs {$/;"	s	namespace:fst::script
+FarEntryType	far.h	/^enum FarEntryType { FET_LINE, FET_FILE };$/;"	g	namespace:fst
+FarEqual	equal.h	/^bool FarEqual(const string &filename1,$/;"	f	namespace:fst
+FarEqual	farscript.h	/^void FarEqual(FarEqualArgs *args) {$/;"	f	namespace:fst::script
+FarEqualArgs	farscript.h	/^typedef args::WithReturnValue<bool, FarEqualInnerArgs> FarEqualArgs;$/;"	t	namespace:fst::script
+FarEqualInnerArgs	farscript.h	/^                      const string &, const string &> FarEqualInnerArgs;$/;"	t	namespace:fst::script
+FarExtract	extract.h	/^void FarExtract(const vector<string> &ifilenames,$/;"	f	namespace:fst
+FarExtract	farscript.h	/^void FarExtract(FarExtractArgs *args) {$/;"	f	namespace:fst::script
+FarExtractArgs	farscript.h	/^                      const string&> FarExtractArgs;$/;"	t	namespace:fst::script
+FarHeader	far.h	/^class FarHeader {$/;"	c	namespace:fst
+FarInfo	farscript.h	/^void FarInfo(FarInfoArgs *args) {$/;"	f	namespace:fst::script
+FarInfo	info.h	/^void FarInfo(const vector<string> &filenames, const string &begin_key,$/;"	f	namespace:fst
+FarInfoArgs	farscript.h	/^                      const string &, const bool> FarInfoArgs;$/;"	t	namespace:fst::script
+FarPrintStrings	farscript.h	/^void FarPrintStrings(FarPrintStringsArgs *args) {$/;"	f	namespace:fst::script
+FarPrintStrings	print-strings.h	/^void FarPrintStrings($/;"	f	namespace:fst
+FarPrintStringsArgs	farscript.h	/^  FarPrintStringsArgs($/;"	f	struct:fst::script::FarPrintStringsArgs
+FarPrintStringsArgs	farscript.h	/^struct FarPrintStringsArgs {$/;"	s	namespace:fst::script
+FarReader	far.h	/^  FarReader() {}$/;"	f	class:fst::FarReader
+FarReader	far.h	/^class FarReader {$/;"	c	namespace:fst
+FarTokenType	far.h	/^enum FarTokenType { FTT_SYMBOL, FTT_BYTE, FTT_UTF8 };$/;"	g	namespace:fst
+FarType	far.h	/^  const string &FarType() const { return fartype_; }$/;"	f	class:fst::FarHeader
+FarType	far.h	/^enum FarType {$/;"	g	namespace:fst
+FarWriter	far.h	/^  FarWriter() {}$/;"	f	class:fst::FarWriter
+FarWriter	far.h	/^class FarWriter {$/;"	c	namespace:fst
+Find	far.h	/^  bool Find(const string &key) { return reader_->Find(key); }$/;"	f	class:fst::STListFarReader
+Find	far.h	/^  bool Find(const string &key) { return reader_->Find(key); }$/;"	f	class:fst::STTableFarReader
+Find	far.h	/^  bool Find(const string &key) {$/;"	f	class:fst::FstFarReader
+Find	stlist.h	/^  bool Find(const string &key) {$/;"	f	class:fst::STListReader
+Find	sttable.h	/^  bool Find(const string &key) {$/;"	f	class:fst::STTableReader
+FstFarReader	far.h	/^  FstFarReader(const vector<string> &filenames)$/;"	f	class:fst::FstFarReader
+FstFarReader	far.h	/^class FstFarReader : public FarReader<A> {$/;"	c	namespace:fst
+FstFarWriter	far.h	/^  explicit FstFarWriter(const string &filename)$/;"	f	class:fst::FstFarWriter
+FstFarWriter	far.h	/^class FstFarWriter : public FarWriter<A> {$/;"	c	namespace:fst
+FstReader	far.h	/^class FstReader {$/;"	c	namespace:fst
+FstWriter	far.h	/^class FstWriter {$/;"	c	namespace:fst
+GetCompactFst	compile-strings.h	/^  CompactFst<A, StringCompactor<A> > *GetCompactFst(bool keep_symbols = false) {$/;"	f	class:fst::StringReader
+GetEntry	stlist.h	/^  const EntryType &GetEntry() const {$/;"	f	class:fst::STListReader
+GetEntry	sttable.h	/^  const EntryType &GetEntry() const {$/;"	f	class:fst::STTableReader
+GetFst	far.h	/^  const Fst<A> &GetFst() const { return reader_->GetEntry(); }$/;"	f	class:fst::STListFarReader
+GetFst	far.h	/^  const Fst<A> &GetFst() const { return reader_->GetEntry(); }$/;"	f	class:fst::STTableFarReader
+GetFst	far.h	/^  const Fst<A> &GetFst() const {$/;"	f	class:fst::FstFarReader
+GetKey	far.h	/^  const string &GetKey() const { return reader_->GetKey(); }$/;"	f	class:fst::STListFarReader
+GetKey	far.h	/^  const string &GetKey() const { return reader_->GetKey(); }$/;"	f	class:fst::STTableFarReader
+GetKey	far.h	/^  const string &GetKey() const {$/;"	f	class:fst::FstFarReader
+GetKey	stlist.h	/^  const string &GetKey() const {$/;"	f	class:fst::STListReader
+GetKey	sttable.h	/^  const string &GetKey() const {$/;"	f	class:fst::STTableReader
+GetVectorFst	compile-strings.h	/^  VectorFst<A> *GetVectorFst(bool keep_symbols = false) {$/;"	f	class:fst::StringReader
+IsFst	far.h	/^inline bool IsFst(const string &filename) {$/;"	f	namespace:fst
+KeyInfo	info.h	/^  KeyInfo(string k, string t, int64 ns = 0, int64 na = 0)$/;"	f	struct:fst::KeyInfo
+KeyInfo	info.h	/^struct KeyInfo {$/;"	s	namespace:fst
+LINE	compile-strings.h	/^  enum EntryType { LINE = 1, FILE = 2 };$/;"	e	enum:fst::StringReader::EntryType
+Label	compile-strings.h	/^  typedef typename A::Label Label;$/;"	t	class:fst::StringReader
+LowerBound	sttable.h	/^  void LowerBound(size_t id, const string &find_key) {$/;"	f	class:fst::STTableReader
+MakeHeap	sttable.h	/^  void MakeHeap() {$/;"	f	class:fst::STTableReader
+Next	compile-strings.h	/^  void Next() {$/;"	f	class:fst::StringReader
+Next	far.h	/^  void Next() { return reader_->Next(); }$/;"	f	class:fst::STListFarReader
+Next	far.h	/^  void Next() { return reader_->Next(); }$/;"	f	class:fst::STTableFarReader
+Next	far.h	/^  void Next() {$/;"	f	class:fst::FstFarReader
+Next	stlist.h	/^  void Next() {$/;"	f	class:fst::STListReader
+Next	sttable.h	/^  void Next() {$/;"	f	class:fst::STTableReader
+Open	far.h	/^  static FstFarReader *Open(const string &filename) {$/;"	f	class:fst::FstFarReader
+Open	far.h	/^  static FstFarReader *Open(const vector<string> &filenames) {$/;"	f	class:fst::FstFarReader
+Open	far.h	/^  static STListFarReader *Open(const string &filename) {$/;"	f	class:fst::STListFarReader
+Open	far.h	/^  static STListFarReader *Open(const vector<string> &filenames) {$/;"	f	class:fst::STListFarReader
+Open	far.h	/^  static STTableFarReader *Open(const string &filename) {$/;"	f	class:fst::STTableFarReader
+Open	far.h	/^  static STTableFarReader *Open(const vector<string> &filenames) {$/;"	f	class:fst::STTableFarReader
+Open	far.h	/^FarReader<A> *FarReader<A>::Open(const string &filename) {$/;"	f	class:fst::FarReader
+Open	far.h	/^FarReader<A> *FarReader<A>::Open(const vector<string> &filenames) {$/;"	f	class:fst::FarReader
+Open	stlist.h	/^  static STListReader<T, R> *Open(const string &filename) {$/;"	f	class:fst::STListReader
+Open	stlist.h	/^  static STListReader<T, R> *Open(const vector<string> &filenames) {$/;"	f	class:fst::STListReader
+Open	sttable.h	/^  static STTableReader<T, R> *Open(const string &filename) {$/;"	f	class:fst::STTableReader
+Open	sttable.h	/^  static STTableReader<T, R> *Open(const vector<string> &filenames) {$/;"	f	class:fst::STTableReader
+PopHeap	sttable.h	/^  void PopHeap() {$/;"	f	class:fst::STTableReader
+REGISTER_FST_FAR_OPERATIONS	farscript.h	261;"	d
+Read	far.h	/^  bool Read(const string &filename) {$/;"	f	class:fst::FarHeader
+ReadFst	far.h	/^  void ReadFst() {$/;"	f	class:fst::FstFarReader
+ReadSTListHeader	stlist.h	/^bool ReadSTListHeader(const string &filename, H *header) {$/;"	f	namespace:fst
+ReadSTTableHeader	sttable.h	/^bool ReadSTTableHeader(const string &filename, H *header) {$/;"	f	namespace:fst
+Reset	far.h	/^  void Reset() { reader_->Reset(); }$/;"	f	class:fst::STListFarReader
+Reset	far.h	/^  void Reset() { reader_->Reset(); }$/;"	f	class:fst::STTableFarReader
+Reset	far.h	/^  void Reset() {$/;"	f	class:fst::FstFarReader
+Reset	stlist.h	/^  void Reset() {$/;"	f	class:fst::STListReader
+Reset	sttable.h	/^  void Reset() {$/;"	f	class:fst::STTableReader
+STListFarReader	far.h	/^  explicit STListFarReader(STListReader<Fst<A>, FstReader<A> > *reader)$/;"	f	class:fst::STListFarReader
+STListFarReader	far.h	/^class STListFarReader : public FarReader<A> {$/;"	c	namespace:fst
+STListFarWriter	far.h	/^  explicit STListFarWriter(STListWriter<Fst<A>, FstWriter<A> > *writer)$/;"	f	class:fst::STListFarWriter
+STListFarWriter	far.h	/^class STListFarWriter : public FarWriter<A> {$/;"	c	namespace:fst
+STListReader	stlist.h	/^  explicit STListReader(const vector<string> &filenames)$/;"	f	class:fst::STListReader
+STListReader	stlist.h	/^class STListReader {$/;"	c	namespace:fst
+STListWriter	stlist.h	/^  explicit STListWriter(const string filename)$/;"	f	class:fst::STListWriter
+STListWriter	stlist.h	/^class STListWriter {$/;"	c	namespace:fst
+STTableFarReader	far.h	/^  explicit STTableFarReader(STTableReader<Fst<A>, FstReader<A> > *reader)$/;"	f	class:fst::STTableFarReader
+STTableFarReader	far.h	/^class STTableFarReader : public FarReader<A> {$/;"	c	namespace:fst
+STTableFarWriter	far.h	/^  explicit STTableFarWriter(STTableWriter<Fst<A>, FstWriter<A> > *writer)$/;"	f	class:fst::STTableFarWriter
+STTableFarWriter	far.h	/^class STTableFarWriter : public FarWriter<A> {$/;"	c	namespace:fst
+STTableReader	sttable.h	/^  explicit STTableReader(const vector<string> &filenames)$/;"	f	class:fst::STTableReader
+STTableReader	sttable.h	/^class STTableReader {$/;"	c	namespace:fst
+STTableWriter	sttable.h	/^  explicit STTableWriter(const string &filename)$/;"	f	class:fst::STTableWriter
+STTableWriter	sttable.h	/^class STTableWriter {$/;"	c	namespace:fst
+StringReader	compile-strings.h	/^  StringReader(istream &istrm,$/;"	f	class:fst::StringReader
+StringReader	compile-strings.h	/^class StringReader {$/;"	c	namespace:fst
+TokenType	compile-strings.h	/^  typedef typename StringCompiler<A>::TokenType TokenType;$/;"	t	class:fst::StringReader
+Type	far.h	/^  FarType Type() const { return FAR_FST; }$/;"	f	class:fst::FstFarReader
+Type	far.h	/^  FarType Type() const { return FAR_FST; }$/;"	f	class:fst::FstFarWriter
+Type	far.h	/^  FarType Type() const { return FAR_STLIST; }$/;"	f	class:fst::STListFarReader
+Type	far.h	/^  FarType Type() const { return FAR_STLIST; }$/;"	f	class:fst::STListFarWriter
+Type	far.h	/^  FarType Type() const { return FAR_STTABLE; }$/;"	f	class:fst::STTableFarReader
+Type	far.h	/^  FarType Type() const { return FAR_STTABLE; }$/;"	f	class:fst::STTableFarWriter
+Weight	compile-strings.h	/^  typedef typename A::Weight Weight;$/;"	t	class:fst::StringReader
+allow_negative_labels	farscript.h	/^  const bool allow_negative_labels;$/;"	m	struct:fst::script::FarCompileStringsArgs
+arctype_	far.h	/^  string arctype_;$/;"	m	class:fst::FarHeader
+begin_key	farscript.h	/^  const string &begin_key;$/;"	m	struct:fst::script::FarPrintStringsArgs
+compare_	sttable.h	/^  Compare *compare_;     \/\/ Functor comparing stream IDs for the heap$/;"	m	class:fst::STTableReader
+compiler_	compile-strings.h	/^  StringCompiler<A> compiler_;$/;"	m	class:fst::StringReader
+content_	compile-strings.h	/^  string content_;  \/\/ The actual content of the input stream's next FST.$/;"	m	class:fst::StringReader
+current_	sttable.h	/^  int64 current_;        \/\/ Id of current stream to be read$/;"	m	class:fst::STTableReader
+done_	compile-strings.h	/^  bool done_;$/;"	m	class:fst::StringReader
+end_key	farscript.h	/^  const string &end_key;$/;"	m	struct:fst::script::FarPrintStringsArgs
+entry_	stlist.h	/^  mutable EntryType *entry_;   \/\/ Pointer to the currently read entry$/;"	m	class:fst::STListReader
+entry_	sttable.h	/^  mutable EntryType *entry_;  \/\/ Pointer to the currently read entry$/;"	m	class:fst::STTableReader
+entry_reader_	stlist.h	/^  EntryReader entry_reader_;   \/\/ Read functor for 'EntryType'$/;"	m	class:fst::STListReader
+entry_reader_	sttable.h	/^  EntryReader entry_reader_;   \/\/ Read functor for 'EntryType'$/;"	m	class:fst::STTableReader
+entry_type	farscript.h	/^  const FarEntryType entry_type;$/;"	m	struct:fst::script::FarPrintStringsArgs
+entry_type_	compile-strings.h	/^  EntryType entry_type_;$/;"	m	class:fst::StringReader
+entry_writer_	stlist.h	/^  EntryWriter entry_writer_;  \/\/ Write functor for 'EntryType'$/;"	m	class:fst::STListWriter
+entry_writer_	sttable.h	/^  EntryWriter entry_writer_;  \/\/ Write functor for 'EntryType'$/;"	m	class:fst::STTableWriter
+error_	far.h	/^  bool error_;$/;"	m	class:fst::FstFarWriter
+error_	far.h	/^  mutable bool error_;$/;"	m	class:fst::FstFarReader
+error_	stlist.h	/^  bool error_;$/;"	m	class:fst::STListReader
+error_	stlist.h	/^  bool error_;$/;"	m	class:fst::STListWriter
+error_	sttable.h	/^  bool error_;$/;"	m	class:fst::STTableReader
+error_	sttable.h	/^  bool error_;$/;"	m	class:fst::STTableWriter
+far_type	farscript.h	/^  const FarType &far_type;$/;"	m	struct:fst::script::FarCompileStringsArgs
+far_type	farscript.h	/^  const FarType &far_type;$/;"	m	struct:fst::script::FarCreateArgs
+fartype_	far.h	/^  string fartype_;$/;"	m	class:fst::FarHeader
+fet	farscript.h	/^  const FarEntryType fet;$/;"	m	struct:fst::script::FarCompileStringsArgs
+file_list_input	farscript.h	/^  const bool file_list_input;$/;"	m	struct:fst::script::FarCompileStringsArgs
+file_list_input	farscript.h	/^  const bool file_list_input;$/;"	m	struct:fst::script::FarCreateArgs
+filename_	far.h	/^  string filename_;$/;"	m	class:fst::FstFarWriter
+filename_prefix	farscript.h	/^  const string &filename_prefix;$/;"	m	struct:fst::script::FarPrintStringsArgs
+filename_suffix	farscript.h	/^  const string &filename_suffix;$/;"	m	struct:fst::script::FarPrintStringsArgs
+fst	compile-strings.h	/^namespace fst {$/;"	n
+fst	create.h	/^namespace fst {$/;"	n
+fst	equal.h	/^namespace fst {$/;"	n
+fst	extract.h	/^namespace fst {$/;"	n
+fst	far.h	/^namespace fst {$/;"	n
+fst	farscript.h	/^namespace fst {$/;"	n
+fst	info.h	/^namespace fst {$/;"	n
+fst	main.h	/^namespace fst {$/;"	n
+fst	print-strings.h	/^namespace fst {$/;"	n
+fst	stlist.h	/^namespace fst {$/;"	n
+fst	sttable.h	/^namespace fst {$/;"	n
+fst::CountStatesAndArcs	info.h	/^void CountStatesAndArcs(const Fst<Arc> &fst, size_t *nstate, size_t *narc) {$/;"	f	namespace:fst
+fst::FAR_DEFAULT	far.h	/^  FAR_DEFAULT = 0,$/;"	e	enum:fst::FarType
+fst::FAR_FST	far.h	/^  FAR_FST = 3,$/;"	e	enum:fst::FarType
+fst::FAR_STLIST	far.h	/^  FAR_STLIST = 2,$/;"	e	enum:fst::FarType
+fst::FAR_STTABLE	far.h	/^  FAR_STTABLE = 1,$/;"	e	enum:fst::FarType
+fst::FET_FILE	far.h	/^enum FarEntryType { FET_LINE, FET_FILE };$/;"	e	enum:fst::FarEntryType
+fst::FET_LINE	far.h	/^enum FarEntryType { FET_LINE, FET_FILE };$/;"	e	enum:fst::FarEntryType
+fst::FTT_BYTE	far.h	/^enum FarTokenType { FTT_SYMBOL, FTT_BYTE, FTT_UTF8 };$/;"	e	enum:fst::FarTokenType
+fst::FTT_SYMBOL	far.h	/^enum FarTokenType { FTT_SYMBOL, FTT_BYTE, FTT_UTF8 };$/;"	e	enum:fst::FarTokenType
+fst::FTT_UTF8	far.h	/^enum FarTokenType { FTT_SYMBOL, FTT_BYTE, FTT_UTF8 };$/;"	e	enum:fst::FarTokenType
+fst::FarCompileStrings	compile-strings.h	/^void FarCompileStrings(const vector<string> &in_fnames,$/;"	f	namespace:fst
+fst::FarCreate	create.h	/^void FarCreate(const vector<string> &in_fnames,$/;"	f	namespace:fst
+fst::FarEntryType	far.h	/^enum FarEntryType { FET_LINE, FET_FILE };$/;"	g	namespace:fst
+fst::FarEqual	equal.h	/^bool FarEqual(const string &filename1,$/;"	f	namespace:fst
+fst::FarExtract	extract.h	/^void FarExtract(const vector<string> &ifilenames,$/;"	f	namespace:fst
+fst::FarHeader	far.h	/^class FarHeader {$/;"	c	namespace:fst
+fst::FarHeader::ArcType	far.h	/^  const string &ArcType() const { return arctype_; }$/;"	f	class:fst::FarHeader
+fst::FarHeader::FarType	far.h	/^  const string &FarType() const { return fartype_; }$/;"	f	class:fst::FarHeader
+fst::FarHeader::Read	far.h	/^  bool Read(const string &filename) {$/;"	f	class:fst::FarHeader
+fst::FarHeader::arctype_	far.h	/^  string arctype_;$/;"	m	class:fst::FarHeader
+fst::FarHeader::fartype_	far.h	/^  string fartype_;$/;"	m	class:fst::FarHeader
+fst::FarInfo	info.h	/^void FarInfo(const vector<string> &filenames, const string &begin_key,$/;"	f	namespace:fst
+fst::FarPrintStrings	print-strings.h	/^void FarPrintStrings($/;"	f	namespace:fst
+fst::FarReader	far.h	/^class FarReader {$/;"	c	namespace:fst
+fst::FarReader::Arc	far.h	/^ typedef A Arc;$/;"	t	class:fst::FarReader
+fst::FarReader::FarReader	far.h	/^  FarReader() {}$/;"	f	class:fst::FarReader
+fst::FarReader::Open	far.h	/^FarReader<A> *FarReader<A>::Open(const string &filename) {$/;"	f	class:fst::FarReader
+fst::FarReader::Open	far.h	/^FarReader<A> *FarReader<A>::Open(const vector<string> &filenames) {$/;"	f	class:fst::FarReader
+fst::FarReader::~FarReader	far.h	/^  virtual ~FarReader() {}$/;"	f	class:fst::FarReader
+fst::FarTokenType	far.h	/^enum FarTokenType { FTT_SYMBOL, FTT_BYTE, FTT_UTF8 };$/;"	g	namespace:fst
+fst::FarType	far.h	/^enum FarType {$/;"	g	namespace:fst
+fst::FarWriter	far.h	/^class FarWriter {$/;"	c	namespace:fst
+fst::FarWriter::Arc	far.h	/^  typedef A Arc;$/;"	t	class:fst::FarWriter
+fst::FarWriter::Create	far.h	/^FarWriter<A> *FarWriter<A>::Create(const string &filename, FarType type) {$/;"	f	class:fst::FarWriter
+fst::FarWriter::FarWriter	far.h	/^  FarWriter() {}$/;"	f	class:fst::FarWriter
+fst::FarWriter::~FarWriter	far.h	/^  virtual ~FarWriter() {}$/;"	f	class:fst::FarWriter
+fst::FstFarReader	far.h	/^class FstFarReader : public FarReader<A> {$/;"	c	namespace:fst
+fst::FstFarReader::Arc	far.h	/^  typedef A Arc;$/;"	t	class:fst::FstFarReader
+fst::FstFarReader::Done	far.h	/^  bool Done() const { return error_ || pos_ >= keys_.size(); }$/;"	f	class:fst::FstFarReader
+fst::FstFarReader::Error	far.h	/^  bool Error() const { return error_; }$/;"	f	class:fst::FstFarReader
+fst::FstFarReader::Find	far.h	/^  bool Find(const string &key) {$/;"	f	class:fst::FstFarReader
+fst::FstFarReader::FstFarReader	far.h	/^  FstFarReader(const vector<string> &filenames)$/;"	f	class:fst::FstFarReader
+fst::FstFarReader::GetFst	far.h	/^  const Fst<A> &GetFst() const {$/;"	f	class:fst::FstFarReader
+fst::FstFarReader::GetKey	far.h	/^  const string &GetKey() const {$/;"	f	class:fst::FstFarReader
+fst::FstFarReader::Next	far.h	/^  void Next() {$/;"	f	class:fst::FstFarReader
+fst::FstFarReader::Open	far.h	/^  static FstFarReader *Open(const string &filename) {$/;"	f	class:fst::FstFarReader
+fst::FstFarReader::Open	far.h	/^  static FstFarReader *Open(const vector<string> &filenames) {$/;"	f	class:fst::FstFarReader
+fst::FstFarReader::ReadFst	far.h	/^  void ReadFst() {$/;"	f	class:fst::FstFarReader
+fst::FstFarReader::Reset	far.h	/^  void Reset() {$/;"	f	class:fst::FstFarReader
+fst::FstFarReader::Type	far.h	/^  FarType Type() const { return FAR_FST; }$/;"	f	class:fst::FstFarReader
+fst::FstFarReader::error_	far.h	/^  mutable bool error_;$/;"	m	class:fst::FstFarReader
+fst::FstFarReader::fst_	far.h	/^  mutable Fst<A> *fst_;$/;"	m	class:fst::FstFarReader
+fst::FstFarReader::has_stdin_	far.h	/^  bool has_stdin_;$/;"	m	class:fst::FstFarReader
+fst::FstFarReader::keys_	far.h	/^  vector<string> keys_;$/;"	m	class:fst::FstFarReader
+fst::FstFarReader::pos_	far.h	/^  size_t pos_;$/;"	m	class:fst::FstFarReader
+fst::FstFarReader::streams_	far.h	/^  vector<istream*> streams_;$/;"	m	class:fst::FstFarReader
+fst::FstFarReader::~FstFarReader	far.h	/^  ~FstFarReader() {$/;"	f	class:fst::FstFarReader
+fst::FstFarWriter	far.h	/^class FstFarWriter : public FarWriter<A> {$/;"	c	namespace:fst
+fst::FstFarWriter::Add	far.h	/^  void Add(const string &key, const Fst<A> &fst) {$/;"	f	class:fst::FstFarWriter
+fst::FstFarWriter::Arc	far.h	/^  typedef A Arc;$/;"	t	class:fst::FstFarWriter
+fst::FstFarWriter::Create	far.h	/^  static FstFarWriter *Create(const string &filename) {$/;"	f	class:fst::FstFarWriter
+fst::FstFarWriter::Error	far.h	/^  bool Error() const { return error_; }$/;"	f	class:fst::FstFarWriter
+fst::FstFarWriter::FstFarWriter	far.h	/^  explicit FstFarWriter(const string &filename)$/;"	f	class:fst::FstFarWriter
+fst::FstFarWriter::Type	far.h	/^  FarType Type() const { return FAR_FST; }$/;"	f	class:fst::FstFarWriter
+fst::FstFarWriter::error_	far.h	/^  bool error_;$/;"	m	class:fst::FstFarWriter
+fst::FstFarWriter::filename_	far.h	/^  string filename_;$/;"	m	class:fst::FstFarWriter
+fst::FstFarWriter::written_	far.h	/^  bool written_;$/;"	m	class:fst::FstFarWriter
+fst::FstFarWriter::~FstFarWriter	far.h	/^  ~FstFarWriter() {}$/;"	f	class:fst::FstFarWriter
+fst::FstReader	far.h	/^class FstReader {$/;"	c	namespace:fst
+fst::FstReader::operator ()	far.h	/^  Fst<A> *operator()(istream &strm) const {$/;"	f	class:fst::FstReader
+fst::FstWriter	far.h	/^class FstWriter {$/;"	c	namespace:fst
+fst::FstWriter::operator ()	far.h	/^  void operator()(ostream &strm, const Fst<A> &fst) const {$/;"	f	class:fst::FstWriter
+fst::IsFst	far.h	/^inline bool IsFst(const string &filename) {$/;"	f	namespace:fst
+fst::KeyInfo	info.h	/^struct KeyInfo {$/;"	s	namespace:fst
+fst::KeyInfo::KeyInfo	info.h	/^  KeyInfo(string k, string t, int64 ns = 0, int64 na = 0)$/;"	f	struct:fst::KeyInfo
+fst::KeyInfo::key	info.h	/^  string key;$/;"	m	struct:fst::KeyInfo
+fst::KeyInfo::narc	info.h	/^  size_t narc;$/;"	m	struct:fst::KeyInfo
+fst::KeyInfo::nstate	info.h	/^  size_t nstate;$/;"	m	struct:fst::KeyInfo
+fst::KeyInfo::type	info.h	/^  string type;$/;"	m	struct:fst::KeyInfo
+fst::ReadSTListHeader	stlist.h	/^bool ReadSTListHeader(const string &filename, H *header) {$/;"	f	namespace:fst
+fst::ReadSTTableHeader	sttable.h	/^bool ReadSTTableHeader(const string &filename, H *header) {$/;"	f	namespace:fst
+fst::STListFarReader	far.h	/^class STListFarReader : public FarReader<A> {$/;"	c	namespace:fst
+fst::STListFarReader::Arc	far.h	/^  typedef A Arc;$/;"	t	class:fst::STListFarReader
+fst::STListFarReader::Done	far.h	/^  bool Done() const { return reader_->Done(); }$/;"	f	class:fst::STListFarReader
+fst::STListFarReader::Error	far.h	/^  bool Error() const { return reader_->Error(); }$/;"	f	class:fst::STListFarReader
+fst::STListFarReader::Find	far.h	/^  bool Find(const string &key) { return reader_->Find(key); }$/;"	f	class:fst::STListFarReader
+fst::STListFarReader::GetFst	far.h	/^  const Fst<A> &GetFst() const { return reader_->GetEntry(); }$/;"	f	class:fst::STListFarReader
+fst::STListFarReader::GetKey	far.h	/^  const string &GetKey() const { return reader_->GetKey(); }$/;"	f	class:fst::STListFarReader
+fst::STListFarReader::Next	far.h	/^  void Next() { return reader_->Next(); }$/;"	f	class:fst::STListFarReader
+fst::STListFarReader::Open	far.h	/^  static STListFarReader *Open(const string &filename) {$/;"	f	class:fst::STListFarReader
+fst::STListFarReader::Open	far.h	/^  static STListFarReader *Open(const vector<string> &filenames) {$/;"	f	class:fst::STListFarReader
+fst::STListFarReader::Reset	far.h	/^  void Reset() { reader_->Reset(); }$/;"	f	class:fst::STListFarReader
+fst::STListFarReader::STListFarReader	far.h	/^  explicit STListFarReader(STListReader<Fst<A>, FstReader<A> > *reader)$/;"	f	class:fst::STListFarReader
+fst::STListFarReader::Type	far.h	/^  FarType Type() const { return FAR_STLIST; }$/;"	f	class:fst::STListFarReader
+fst::STListFarReader::reader_	far.h	/^  STListReader<Fst<A>, FstReader<A> > *reader_;$/;"	m	class:fst::STListFarReader
+fst::STListFarReader::~STListFarReader	far.h	/^  ~STListFarReader() { delete reader_; }$/;"	f	class:fst::STListFarReader
+fst::STListFarWriter	far.h	/^class STListFarWriter : public FarWriter<A> {$/;"	c	namespace:fst
+fst::STListFarWriter::Add	far.h	/^  void Add(const string &key, const Fst<A> &fst) { writer_->Add(key, fst); }$/;"	f	class:fst::STListFarWriter
+fst::STListFarWriter::Arc	far.h	/^  typedef A Arc;$/;"	t	class:fst::STListFarWriter
+fst::STListFarWriter::Create	far.h	/^  static STListFarWriter *Create(const string &filename) {$/;"	f	class:fst::STListFarWriter
+fst::STListFarWriter::Error	far.h	/^  bool Error() const { return writer_->Error(); }$/;"	f	class:fst::STListFarWriter
+fst::STListFarWriter::STListFarWriter	far.h	/^  explicit STListFarWriter(STListWriter<Fst<A>, FstWriter<A> > *writer)$/;"	f	class:fst::STListFarWriter
+fst::STListFarWriter::Type	far.h	/^  FarType Type() const { return FAR_STLIST; }$/;"	f	class:fst::STListFarWriter
+fst::STListFarWriter::writer_	far.h	/^  STListWriter<Fst<A>, FstWriter<A> > *writer_;$/;"	m	class:fst::STListFarWriter
+fst::STListFarWriter::~STListFarWriter	far.h	/^  ~STListFarWriter() { delete writer_; }$/;"	f	class:fst::STListFarWriter
+fst::STListReader	stlist.h	/^class STListReader {$/;"	c	namespace:fst
+fst::STListReader::Done	stlist.h	/^  bool Done() const {$/;"	f	class:fst::STListReader
+fst::STListReader::EntryReader	stlist.h	/^  typedef R EntryReader;$/;"	t	class:fst::STListReader
+fst::STListReader::EntryType	stlist.h	/^  typedef T EntryType;$/;"	t	class:fst::STListReader
+fst::STListReader::Error	stlist.h	/^  bool Error() const { return error_; }$/;"	f	class:fst::STListReader
+fst::STListReader::Find	stlist.h	/^  bool Find(const string &key) {$/;"	f	class:fst::STListReader
+fst::STListReader::GetEntry	stlist.h	/^  const EntryType &GetEntry() const {$/;"	f	class:fst::STListReader
+fst::STListReader::GetKey	stlist.h	/^  const string &GetKey() const {$/;"	f	class:fst::STListReader
+fst::STListReader::Next	stlist.h	/^  void Next() {$/;"	f	class:fst::STListReader
+fst::STListReader::Open	stlist.h	/^  static STListReader<T, R> *Open(const string &filename) {$/;"	f	class:fst::STListReader
+fst::STListReader::Open	stlist.h	/^  static STListReader<T, R> *Open(const vector<string> &filenames) {$/;"	f	class:fst::STListReader
+fst::STListReader::Reset	stlist.h	/^  void Reset() {$/;"	f	class:fst::STListReader
+fst::STListReader::STListReader	stlist.h	/^  explicit STListReader(const vector<string> &filenames)$/;"	f	class:fst::STListReader
+fst::STListReader::entry_	stlist.h	/^  mutable EntryType *entry_;   \/\/ Pointer to the currently read entry$/;"	m	class:fst::STListReader
+fst::STListReader::entry_reader_	stlist.h	/^  EntryReader entry_reader_;   \/\/ Read functor for 'EntryType'$/;"	m	class:fst::STListReader
+fst::STListReader::error_	stlist.h	/^  bool error_;$/;"	m	class:fst::STListReader
+fst::STListReader::heap_	stlist.h	/^    greater<pair<string, size_t> > > heap_;  \/\/ (Key, stream id) heap$/;"	m	class:fst::STListReader
+fst::STListReader::sources_	stlist.h	/^  vector<string> sources_;     \/\/ and corresponding file names$/;"	m	class:fst::STListReader
+fst::STListReader::streams_	stlist.h	/^  vector<istream*> streams_;   \/\/ Input streams$/;"	m	class:fst::STListReader
+fst::STListReader::~STListReader	stlist.h	/^  ~STListReader() {$/;"	f	class:fst::STListReader
+fst::STListWriter	stlist.h	/^class STListWriter {$/;"	c	namespace:fst
+fst::STListWriter::Add	stlist.h	/^  void Add(const string &key, const T &t) {$/;"	f	class:fst::STListWriter
+fst::STListWriter::Create	stlist.h	/^  static STListWriter<T, W> *Create(const string &filename) {$/;"	f	class:fst::STListWriter
+fst::STListWriter::EntryType	stlist.h	/^  typedef T EntryType;$/;"	t	class:fst::STListWriter
+fst::STListWriter::EntryWriter	stlist.h	/^  typedef W EntryWriter;$/;"	t	class:fst::STListWriter
+fst::STListWriter::Error	stlist.h	/^  bool Error() const { return error_; }$/;"	f	class:fst::STListWriter
+fst::STListWriter::STListWriter	stlist.h	/^  explicit STListWriter(const string filename)$/;"	f	class:fst::STListWriter
+fst::STListWriter::entry_writer_	stlist.h	/^  EntryWriter entry_writer_;  \/\/ Write functor for 'EntryType'$/;"	m	class:fst::STListWriter
+fst::STListWriter::error_	stlist.h	/^  bool error_;$/;"	m	class:fst::STListWriter
+fst::STListWriter::last_key_	stlist.h	/^  string last_key_;           \/\/ Last key$/;"	m	class:fst::STListWriter
+fst::STListWriter::stream_	stlist.h	/^  ostream *stream_;           \/\/ Output stream$/;"	m	class:fst::STListWriter
+fst::STListWriter::~STListWriter	stlist.h	/^  ~STListWriter() {$/;"	f	class:fst::STListWriter
+fst::STTableFarReader	far.h	/^class STTableFarReader : public FarReader<A> {$/;"	c	namespace:fst
+fst::STTableFarReader::Arc	far.h	/^  typedef A Arc;$/;"	t	class:fst::STTableFarReader
+fst::STTableFarReader::Done	far.h	/^  bool Done() const { return reader_->Done(); }$/;"	f	class:fst::STTableFarReader
+fst::STTableFarReader::Error	far.h	/^  bool Error() const { return reader_->Error(); }$/;"	f	class:fst::STTableFarReader
+fst::STTableFarReader::Find	far.h	/^  bool Find(const string &key) { return reader_->Find(key); }$/;"	f	class:fst::STTableFarReader
+fst::STTableFarReader::GetFst	far.h	/^  const Fst<A> &GetFst() const { return reader_->GetEntry(); }$/;"	f	class:fst::STTableFarReader
+fst::STTableFarReader::GetKey	far.h	/^  const string &GetKey() const { return reader_->GetKey(); }$/;"	f	class:fst::STTableFarReader
+fst::STTableFarReader::Next	far.h	/^  void Next() { return reader_->Next(); }$/;"	f	class:fst::STTableFarReader
+fst::STTableFarReader::Open	far.h	/^  static STTableFarReader *Open(const string &filename) {$/;"	f	class:fst::STTableFarReader
+fst::STTableFarReader::Open	far.h	/^  static STTableFarReader *Open(const vector<string> &filenames) {$/;"	f	class:fst::STTableFarReader
+fst::STTableFarReader::Reset	far.h	/^  void Reset() { reader_->Reset(); }$/;"	f	class:fst::STTableFarReader
+fst::STTableFarReader::STTableFarReader	far.h	/^  explicit STTableFarReader(STTableReader<Fst<A>, FstReader<A> > *reader)$/;"	f	class:fst::STTableFarReader
+fst::STTableFarReader::Type	far.h	/^  FarType Type() const { return FAR_STTABLE; }$/;"	f	class:fst::STTableFarReader
+fst::STTableFarReader::reader_	far.h	/^  STTableReader<Fst<A>, FstReader<A> > *reader_;$/;"	m	class:fst::STTableFarReader
+fst::STTableFarReader::~STTableFarReader	far.h	/^  ~STTableFarReader() { delete reader_; }$/;"	f	class:fst::STTableFarReader
+fst::STTableFarWriter	far.h	/^class STTableFarWriter : public FarWriter<A> {$/;"	c	namespace:fst
+fst::STTableFarWriter::Add	far.h	/^  void Add(const string &key, const Fst<A> &fst) { writer_->Add(key, fst); }$/;"	f	class:fst::STTableFarWriter
+fst::STTableFarWriter::Arc	far.h	/^  typedef A Arc;$/;"	t	class:fst::STTableFarWriter
+fst::STTableFarWriter::Create	far.h	/^  static STTableFarWriter *Create(const string &filename) {$/;"	f	class:fst::STTableFarWriter
+fst::STTableFarWriter::Error	far.h	/^  bool Error() const { return writer_->Error(); }$/;"	f	class:fst::STTableFarWriter
+fst::STTableFarWriter::STTableFarWriter	far.h	/^  explicit STTableFarWriter(STTableWriter<Fst<A>, FstWriter<A> > *writer)$/;"	f	class:fst::STTableFarWriter
+fst::STTableFarWriter::Type	far.h	/^  FarType Type() const { return FAR_STTABLE; }$/;"	f	class:fst::STTableFarWriter
+fst::STTableFarWriter::writer_	far.h	/^  STTableWriter<Fst<A>, FstWriter<A> > *writer_;$/;"	m	class:fst::STTableFarWriter
+fst::STTableFarWriter::~STTableFarWriter	far.h	/^  ~STTableFarWriter() { delete writer_; }$/;"	f	class:fst::STTableFarWriter
+fst::STTableReader	sttable.h	/^class STTableReader {$/;"	c	namespace:fst
+fst::STTableReader::Compare	sttable.h	/^  struct Compare {$/;"	s	class:fst::STTableReader
+fst::STTableReader::Compare::Compare	sttable.h	/^    Compare(const vector<string> *keys) : keys_(keys) {}$/;"	f	struct:fst::STTableReader::Compare
+fst::STTableReader::Compare::keys_	sttable.h	/^    const vector<string> *keys_;$/;"	m	struct:fst::STTableReader::Compare
+fst::STTableReader::Compare::operator ()	sttable.h	/^    bool operator()(size_t i, size_t j) const {$/;"	f	struct:fst::STTableReader::Compare
+fst::STTableReader::Done	sttable.h	/^  bool Done() const { return error_ || heap_.empty(); }$/;"	f	class:fst::STTableReader
+fst::STTableReader::EntryReader	sttable.h	/^  typedef R EntryReader;$/;"	t	class:fst::STTableReader
+fst::STTableReader::EntryType	sttable.h	/^  typedef T EntryType;$/;"	t	class:fst::STTableReader
+fst::STTableReader::Error	sttable.h	/^  bool Error() const { return error_; }$/;"	f	class:fst::STTableReader
+fst::STTableReader::Find	sttable.h	/^  bool Find(const string &key) {$/;"	f	class:fst::STTableReader
+fst::STTableReader::GetEntry	sttable.h	/^  const EntryType &GetEntry() const {$/;"	f	class:fst::STTableReader
+fst::STTableReader::GetKey	sttable.h	/^  const string &GetKey() const {$/;"	f	class:fst::STTableReader
+fst::STTableReader::LowerBound	sttable.h	/^  void LowerBound(size_t id, const string &find_key) {$/;"	f	class:fst::STTableReader
+fst::STTableReader::MakeHeap	sttable.h	/^  void MakeHeap() {$/;"	f	class:fst::STTableReader
+fst::STTableReader::Next	sttable.h	/^  void Next() {$/;"	f	class:fst::STTableReader
+fst::STTableReader::Open	sttable.h	/^  static STTableReader<T, R> *Open(const string &filename) {$/;"	f	class:fst::STTableReader
+fst::STTableReader::Open	sttable.h	/^  static STTableReader<T, R> *Open(const vector<string> &filenames) {$/;"	f	class:fst::STTableReader
+fst::STTableReader::PopHeap	sttable.h	/^  void PopHeap() {$/;"	f	class:fst::STTableReader
+fst::STTableReader::Reset	sttable.h	/^  void Reset() {$/;"	f	class:fst::STTableReader
+fst::STTableReader::STTableReader	sttable.h	/^  explicit STTableReader(const vector<string> &filenames)$/;"	f	class:fst::STTableReader
+fst::STTableReader::compare_	sttable.h	/^  Compare *compare_;     \/\/ Functor comparing stream IDs for the heap$/;"	m	class:fst::STTableReader
+fst::STTableReader::current_	sttable.h	/^  int64 current_;        \/\/ Id of current stream to be read$/;"	m	class:fst::STTableReader
+fst::STTableReader::entry_	sttable.h	/^  mutable EntryType *entry_;  \/\/ Pointer to the currently read entry$/;"	m	class:fst::STTableReader
+fst::STTableReader::entry_reader_	sttable.h	/^  EntryReader entry_reader_;   \/\/ Read functor for 'EntryType'$/;"	m	class:fst::STTableReader
+fst::STTableReader::error_	sttable.h	/^  bool error_;$/;"	m	class:fst::STTableReader
+fst::STTableReader::heap_	sttable.h	/^  vector<int64> heap_;   \/\/ Heap containing ID of streams with unread keys$/;"	m	class:fst::STTableReader
+fst::STTableReader::keys_	sttable.h	/^  vector<string> keys_;  \/\/ Lowest unread key for each stream$/;"	m	class:fst::STTableReader
+fst::STTableReader::positions_	sttable.h	/^  vector<vector<int64> > positions_;  \/\/ Index of positions for each stream$/;"	m	class:fst::STTableReader
+fst::STTableReader::sources_	sttable.h	/^  vector<string> sources_;     \/\/ and corresponding file names$/;"	m	class:fst::STTableReader
+fst::STTableReader::streams_	sttable.h	/^  vector<ifstream*> streams_;  \/\/ Input streams$/;"	m	class:fst::STTableReader
+fst::STTableReader::~STTableReader	sttable.h	/^  ~STTableReader() {$/;"	f	class:fst::STTableReader
+fst::STTableWriter	sttable.h	/^class STTableWriter {$/;"	c	namespace:fst
+fst::STTableWriter::Add	sttable.h	/^  void Add(const string &key, const T &t) {$/;"	f	class:fst::STTableWriter
+fst::STTableWriter::Create	sttable.h	/^  static STTableWriter<T, W> *Create(const string &filename) {$/;"	f	class:fst::STTableWriter
+fst::STTableWriter::EntryType	sttable.h	/^  typedef T EntryType;$/;"	t	class:fst::STTableWriter
+fst::STTableWriter::EntryWriter	sttable.h	/^  typedef W EntryWriter;$/;"	t	class:fst::STTableWriter
+fst::STTableWriter::Error	sttable.h	/^  bool Error() const { return error_; }$/;"	f	class:fst::STTableWriter
+fst::STTableWriter::STTableWriter	sttable.h	/^  explicit STTableWriter(const string &filename)$/;"	f	class:fst::STTableWriter
+fst::STTableWriter::entry_writer_	sttable.h	/^  EntryWriter entry_writer_;  \/\/ Write functor for 'EntryType'$/;"	m	class:fst::STTableWriter
+fst::STTableWriter::error_	sttable.h	/^  bool error_;$/;"	m	class:fst::STTableWriter
+fst::STTableWriter::last_key_	sttable.h	/^  string last_key_;           \/\/ Last key$/;"	m	class:fst::STTableWriter
+fst::STTableWriter::positions_	sttable.h	/^  vector<int64> positions_;   \/\/ Position in file of each key-entry pair$/;"	m	class:fst::STTableWriter
+fst::STTableWriter::stream_	sttable.h	/^  ofstream stream_;           \/\/ Output stream$/;"	m	class:fst::STTableWriter
+fst::STTableWriter::~STTableWriter	sttable.h	/^  ~STTableWriter() {$/;"	f	class:fst::STTableWriter
+fst::StringReader	compile-strings.h	/^class StringReader {$/;"	c	namespace:fst
+fst::StringReader::Arc	compile-strings.h	/^  typedef A Arc;$/;"	t	class:fst::StringReader
+fst::StringReader::Done	compile-strings.h	/^  bool Done() {$/;"	f	class:fst::StringReader
+fst::StringReader::EntryType	compile-strings.h	/^  enum EntryType { LINE = 1, FILE = 2 };$/;"	g	class:fst::StringReader
+fst::StringReader::FILE	compile-strings.h	/^  enum EntryType { LINE = 1, FILE = 2 };$/;"	e	enum:fst::StringReader::EntryType
+fst::StringReader::GetCompactFst	compile-strings.h	/^  CompactFst<A, StringCompactor<A> > *GetCompactFst(bool keep_symbols = false) {$/;"	f	class:fst::StringReader
+fst::StringReader::GetVectorFst	compile-strings.h	/^  VectorFst<A> *GetVectorFst(bool keep_symbols = false) {$/;"	f	class:fst::StringReader
+fst::StringReader::LINE	compile-strings.h	/^  enum EntryType { LINE = 1, FILE = 2 };$/;"	e	enum:fst::StringReader::EntryType
+fst::StringReader::Label	compile-strings.h	/^  typedef typename A::Label Label;$/;"	t	class:fst::StringReader
+fst::StringReader::Next	compile-strings.h	/^  void Next() {$/;"	f	class:fst::StringReader
+fst::StringReader::StringReader	compile-strings.h	/^  StringReader(istream &istrm,$/;"	f	class:fst::StringReader
+fst::StringReader::TokenType	compile-strings.h	/^  typedef typename StringCompiler<A>::TokenType TokenType;$/;"	t	class:fst::StringReader
+fst::StringReader::Weight	compile-strings.h	/^  typedef typename A::Weight Weight;$/;"	t	class:fst::StringReader
+fst::StringReader::compiler_	compile-strings.h	/^  StringCompiler<A> compiler_;$/;"	m	class:fst::StringReader
+fst::StringReader::content_	compile-strings.h	/^  string content_;  \/\/ The actual content of the input stream's next FST.$/;"	m	class:fst::StringReader
+fst::StringReader::done_	compile-strings.h	/^  bool done_;$/;"	m	class:fst::StringReader
+fst::StringReader::entry_type_	compile-strings.h	/^  EntryType entry_type_;$/;"	m	class:fst::StringReader
+fst::StringReader::nline_	compile-strings.h	/^  size_t nline_;$/;"	m	class:fst::StringReader
+fst::StringReader::source_	compile-strings.h	/^  string source_;$/;"	m	class:fst::StringReader
+fst::StringReader::strm_	compile-strings.h	/^  istream &strm_;$/;"	m	class:fst::StringReader
+fst::StringReader::symbols_	compile-strings.h	/^  const SymbolTable *symbols_;$/;"	m	class:fst::StringReader
+fst::StringReader::token_type_	compile-strings.h	/^  TokenType token_type_;$/;"	m	class:fst::StringReader
+fst::kSTListFileVersion	stlist.h	/^static const int32 kSTListFileVersion = 1;$/;"	m	namespace:fst
+fst::kSTListMagicNumber	stlist.h	/^static const int32 kSTListMagicNumber = 5656924;$/;"	m	namespace:fst
+fst::kSTTableFileVersion	sttable.h	/^static const int32 kSTTableFileVersion = 1;$/;"	m	namespace:fst
+fst::kSTTableMagicNumber	sttable.h	/^static const int32 kSTTableMagicNumber = 2125656924;$/;"	m	namespace:fst
+fst::script	farscript.h	/^namespace script {$/;"	n	namespace:fst
+fst::script::FarCompileStrings	farscript.h	/^void FarCompileStrings(FarCompileStringsArgs *args) {$/;"	f	namespace:fst::script
+fst::script::FarCompileStringsArgs	farscript.h	/^struct FarCompileStringsArgs {$/;"	s	namespace:fst::script
+fst::script::FarCompileStringsArgs::FarCompileStringsArgs	farscript.h	/^  FarCompileStringsArgs(const vector<string> &in_fnames,$/;"	f	struct:fst::script::FarCompileStringsArgs
+fst::script::FarCompileStringsArgs::allow_negative_labels	farscript.h	/^  const bool allow_negative_labels;$/;"	m	struct:fst::script::FarCompileStringsArgs
+fst::script::FarCompileStringsArgs::far_type	farscript.h	/^  const FarType &far_type;$/;"	m	struct:fst::script::FarCompileStringsArgs
+fst::script::FarCompileStringsArgs::fet	farscript.h	/^  const FarEntryType fet;$/;"	m	struct:fst::script::FarCompileStringsArgs
+fst::script::FarCompileStringsArgs::file_list_input	farscript.h	/^  const bool file_list_input;$/;"	m	struct:fst::script::FarCompileStringsArgs
+fst::script::FarCompileStringsArgs::fst_type	farscript.h	/^  const string &fst_type;$/;"	m	struct:fst::script::FarCompileStringsArgs
+fst::script::FarCompileStringsArgs::generate_keys	farscript.h	/^  const int32 generate_keys;$/;"	m	struct:fst::script::FarCompileStringsArgs
+fst::script::FarCompileStringsArgs::in_fnames	farscript.h	/^  const vector<string> &in_fnames;$/;"	m	struct:fst::script::FarCompileStringsArgs
+fst::script::FarCompileStringsArgs::initial_symbols	farscript.h	/^  const bool initial_symbols;$/;"	m	struct:fst::script::FarCompileStringsArgs
+fst::script::FarCompileStringsArgs::keep_symbols	farscript.h	/^  const bool keep_symbols;$/;"	m	struct:fst::script::FarCompileStringsArgs
+fst::script::FarCompileStringsArgs::key_prefix	farscript.h	/^  const string &key_prefix;$/;"	m	struct:fst::script::FarCompileStringsArgs
+fst::script::FarCompileStringsArgs::key_suffix	farscript.h	/^  const string &key_suffix;$/;"	m	struct:fst::script::FarCompileStringsArgs
+fst::script::FarCompileStringsArgs::out_fname	farscript.h	/^  const string &out_fname;$/;"	m	struct:fst::script::FarCompileStringsArgs
+fst::script::FarCompileStringsArgs::symbols_fname	farscript.h	/^  const string &symbols_fname;$/;"	m	struct:fst::script::FarCompileStringsArgs
+fst::script::FarCompileStringsArgs::tt	farscript.h	/^  const FarTokenType tt;$/;"	m	struct:fst::script::FarCompileStringsArgs
+fst::script::FarCompileStringsArgs::unknown_symbol	farscript.h	/^  const string &unknown_symbol;$/;"	m	struct:fst::script::FarCompileStringsArgs
+fst::script::FarCreate	farscript.h	/^void FarCreate(FarCreateArgs *args) {$/;"	f	namespace:fst::script
+fst::script::FarCreateArgs	farscript.h	/^struct FarCreateArgs {$/;"	s	namespace:fst::script
+fst::script::FarCreateArgs::FarCreateArgs	farscript.h	/^  FarCreateArgs($/;"	f	struct:fst::script::FarCreateArgs
+fst::script::FarCreateArgs::far_type	farscript.h	/^  const FarType &far_type;$/;"	m	struct:fst::script::FarCreateArgs
+fst::script::FarCreateArgs::file_list_input	farscript.h	/^  const bool file_list_input;$/;"	m	struct:fst::script::FarCreateArgs
+fst::script::FarCreateArgs::generate_keys	farscript.h	/^  const int32 generate_keys;$/;"	m	struct:fst::script::FarCreateArgs
+fst::script::FarCreateArgs::in_fnames	farscript.h	/^  const vector<string> &in_fnames;$/;"	m	struct:fst::script::FarCreateArgs
+fst::script::FarCreateArgs::key_prefix	farscript.h	/^  const string &key_prefix;$/;"	m	struct:fst::script::FarCreateArgs
+fst::script::FarCreateArgs::key_suffix	farscript.h	/^  const string &key_suffix;$/;"	m	struct:fst::script::FarCreateArgs
+fst::script::FarCreateArgs::out_fname	farscript.h	/^  const string &out_fname;$/;"	m	struct:fst::script::FarCreateArgs
+fst::script::FarEqual	farscript.h	/^void FarEqual(FarEqualArgs *args) {$/;"	f	namespace:fst::script
+fst::script::FarEqualArgs	farscript.h	/^typedef args::WithReturnValue<bool, FarEqualInnerArgs> FarEqualArgs;$/;"	t	namespace:fst::script
+fst::script::FarEqualInnerArgs	farscript.h	/^                      const string &, const string &> FarEqualInnerArgs;$/;"	t	namespace:fst::script
+fst::script::FarExtract	farscript.h	/^void FarExtract(FarExtractArgs *args) {$/;"	f	namespace:fst::script
+fst::script::FarExtractArgs	farscript.h	/^                      const string&> FarExtractArgs;$/;"	t	namespace:fst::script
+fst::script::FarInfo	farscript.h	/^void FarInfo(FarInfoArgs *args) {$/;"	f	namespace:fst::script
+fst::script::FarInfoArgs	farscript.h	/^                      const string &, const bool> FarInfoArgs;$/;"	t	namespace:fst::script
+fst::script::FarPrintStrings	farscript.h	/^void FarPrintStrings(FarPrintStringsArgs *args) {$/;"	f	namespace:fst::script
+fst::script::FarPrintStringsArgs	farscript.h	/^struct FarPrintStringsArgs {$/;"	s	namespace:fst::script
+fst::script::FarPrintStringsArgs::FarPrintStringsArgs	farscript.h	/^  FarPrintStringsArgs($/;"	f	struct:fst::script::FarPrintStringsArgs
+fst::script::FarPrintStringsArgs::begin_key	farscript.h	/^  const string &begin_key;$/;"	m	struct:fst::script::FarPrintStringsArgs
+fst::script::FarPrintStringsArgs::end_key	farscript.h	/^  const string &end_key;$/;"	m	struct:fst::script::FarPrintStringsArgs
+fst::script::FarPrintStringsArgs::entry_type	farscript.h	/^  const FarEntryType entry_type;$/;"	m	struct:fst::script::FarPrintStringsArgs
+fst::script::FarPrintStringsArgs::filename_prefix	farscript.h	/^  const string &filename_prefix;$/;"	m	struct:fst::script::FarPrintStringsArgs
+fst::script::FarPrintStringsArgs::filename_suffix	farscript.h	/^  const string &filename_suffix;$/;"	m	struct:fst::script::FarPrintStringsArgs
+fst::script::FarPrintStringsArgs::generate_filenames	farscript.h	/^  const int32 generate_filenames;$/;"	m	struct:fst::script::FarPrintStringsArgs
+fst::script::FarPrintStringsArgs::ifilenames	farscript.h	/^  const vector<string> &ifilenames;$/;"	m	struct:fst::script::FarPrintStringsArgs
+fst::script::FarPrintStringsArgs::initial_symbols	farscript.h	/^  const bool initial_symbols;$/;"	m	struct:fst::script::FarPrintStringsArgs
+fst::script::FarPrintStringsArgs::print_key	farscript.h	/^  const bool print_key;$/;"	m	struct:fst::script::FarPrintStringsArgs
+fst::script::FarPrintStringsArgs::print_weight	farscript.h	/^  const bool print_weight;$/;"	m	struct:fst::script::FarPrintStringsArgs
+fst::script::FarPrintStringsArgs::symbols_fname	farscript.h	/^  const string &symbols_fname;$/;"	m	struct:fst::script::FarPrintStringsArgs
+fst::script::FarPrintStringsArgs::token_type	farscript.h	/^  const FarTokenType token_type;$/;"	m	struct:fst::script::FarPrintStringsArgs
+fst_	far.h	/^  mutable Fst<A> *fst_;$/;"	m	class:fst::FstFarReader
+fst_type	farscript.h	/^  const string &fst_type;$/;"	m	struct:fst::script::FarCompileStringsArgs
+generate_filenames	farscript.h	/^  const int32 generate_filenames;$/;"	m	struct:fst::script::FarPrintStringsArgs
+generate_keys	farscript.h	/^  const int32 generate_keys;$/;"	m	struct:fst::script::FarCompileStringsArgs
+generate_keys	farscript.h	/^  const int32 generate_keys;$/;"	m	struct:fst::script::FarCreateArgs
+has_stdin_	far.h	/^  bool has_stdin_;$/;"	m	class:fst::FstFarReader
+heap_	stlist.h	/^    greater<pair<string, size_t> > > heap_;  \/\/ (Key, stream id) heap$/;"	m	class:fst::STListReader
+heap_	sttable.h	/^  vector<int64> heap_;   \/\/ Heap containing ID of streams with unread keys$/;"	m	class:fst::STTableReader
+ifilenames	farscript.h	/^  const vector<string> &ifilenames;$/;"	m	struct:fst::script::FarPrintStringsArgs
+in_fnames	farscript.h	/^  const vector<string> &in_fnames;$/;"	m	struct:fst::script::FarCompileStringsArgs
+in_fnames	farscript.h	/^  const vector<string> &in_fnames;$/;"	m	struct:fst::script::FarCreateArgs
+initial_symbols	farscript.h	/^  const bool initial_symbols;$/;"	m	struct:fst::script::FarCompileStringsArgs
+initial_symbols	farscript.h	/^  const bool initial_symbols;$/;"	m	struct:fst::script::FarPrintStringsArgs
+kSTListFileVersion	stlist.h	/^static const int32 kSTListFileVersion = 1;$/;"	m	namespace:fst
+kSTListMagicNumber	stlist.h	/^static const int32 kSTListMagicNumber = 5656924;$/;"	m	namespace:fst
+kSTTableFileVersion	sttable.h	/^static const int32 kSTTableFileVersion = 1;$/;"	m	namespace:fst
+kSTTableMagicNumber	sttable.h	/^static const int32 kSTTableMagicNumber = 2125656924;$/;"	m	namespace:fst
+keep_symbols	farscript.h	/^  const bool keep_symbols;$/;"	m	struct:fst::script::FarCompileStringsArgs
+key	info.h	/^  string key;$/;"	m	struct:fst::KeyInfo
+key_prefix	farscript.h	/^  const string &key_prefix;$/;"	m	struct:fst::script::FarCompileStringsArgs
+key_prefix	farscript.h	/^  const string &key_prefix;$/;"	m	struct:fst::script::FarCreateArgs
+key_suffix	farscript.h	/^  const string &key_suffix;$/;"	m	struct:fst::script::FarCompileStringsArgs
+key_suffix	farscript.h	/^  const string &key_suffix;$/;"	m	struct:fst::script::FarCreateArgs
+keys_	far.h	/^  vector<string> keys_;$/;"	m	class:fst::FstFarReader
+keys_	sttable.h	/^    const vector<string> *keys_;$/;"	m	struct:fst::STTableReader::Compare
+keys_	sttable.h	/^  vector<string> keys_;  \/\/ Lowest unread key for each stream$/;"	m	class:fst::STTableReader
+last_key_	stlist.h	/^  string last_key_;           \/\/ Last key$/;"	m	class:fst::STListWriter
+last_key_	sttable.h	/^  string last_key_;           \/\/ Last key$/;"	m	class:fst::STTableWriter
+narc	info.h	/^  size_t narc;$/;"	m	struct:fst::KeyInfo
+nline_	compile-strings.h	/^  size_t nline_;$/;"	m	class:fst::StringReader
+nstate	info.h	/^  size_t nstate;$/;"	m	struct:fst::KeyInfo
+operator ()	far.h	/^  Fst<A> *operator()(istream &strm) const {$/;"	f	class:fst::FstReader
+operator ()	far.h	/^  void operator()(ostream &strm, const Fst<A> &fst) const {$/;"	f	class:fst::FstWriter
+operator ()	sttable.h	/^    bool operator()(size_t i, size_t j) const {$/;"	f	struct:fst::STTableReader::Compare
+out_fname	farscript.h	/^  const string &out_fname;$/;"	m	struct:fst::script::FarCompileStringsArgs
+out_fname	farscript.h	/^  const string &out_fname;$/;"	m	struct:fst::script::FarCreateArgs
+pos_	far.h	/^  size_t pos_;$/;"	m	class:fst::FstFarReader
+positions_	sttable.h	/^  vector<int64> positions_;   \/\/ Position in file of each key-entry pair$/;"	m	class:fst::STTableWriter
+positions_	sttable.h	/^  vector<vector<int64> > positions_;  \/\/ Index of positions for each stream$/;"	m	class:fst::STTableReader
+print_key	farscript.h	/^  const bool print_key;$/;"	m	struct:fst::script::FarPrintStringsArgs
+print_weight	farscript.h	/^  const bool print_weight;$/;"	m	struct:fst::script::FarPrintStringsArgs
+reader_	far.h	/^  STListReader<Fst<A>, FstReader<A> > *reader_;$/;"	m	class:fst::STListFarReader
+reader_	far.h	/^  STTableReader<Fst<A>, FstReader<A> > *reader_;$/;"	m	class:fst::STTableFarReader
+script	farscript.h	/^namespace script {$/;"	n	namespace:fst
+source_	compile-strings.h	/^  string source_;$/;"	m	class:fst::StringReader
+sources_	stlist.h	/^  vector<string> sources_;     \/\/ and corresponding file names$/;"	m	class:fst::STListReader
+sources_	sttable.h	/^  vector<string> sources_;     \/\/ and corresponding file names$/;"	m	class:fst::STTableReader
+stream_	stlist.h	/^  ostream *stream_;           \/\/ Output stream$/;"	m	class:fst::STListWriter
+stream_	sttable.h	/^  ofstream stream_;           \/\/ Output stream$/;"	m	class:fst::STTableWriter
+streams_	far.h	/^  vector<istream*> streams_;$/;"	m	class:fst::FstFarReader
+streams_	stlist.h	/^  vector<istream*> streams_;   \/\/ Input streams$/;"	m	class:fst::STListReader
+streams_	sttable.h	/^  vector<ifstream*> streams_;  \/\/ Input streams$/;"	m	class:fst::STTableReader
+strm_	compile-strings.h	/^  istream &strm_;$/;"	m	class:fst::StringReader
+symbols_	compile-strings.h	/^  const SymbolTable *symbols_;$/;"	m	class:fst::StringReader
+symbols_fname	farscript.h	/^  const string &symbols_fname;$/;"	m	struct:fst::script::FarCompileStringsArgs
+symbols_fname	farscript.h	/^  const string &symbols_fname;$/;"	m	struct:fst::script::FarPrintStringsArgs
+token_type	farscript.h	/^  const FarTokenType token_type;$/;"	m	struct:fst::script::FarPrintStringsArgs
+token_type_	compile-strings.h	/^  TokenType token_type_;$/;"	m	class:fst::StringReader
+tt	farscript.h	/^  const FarTokenType tt;$/;"	m	struct:fst::script::FarCompileStringsArgs
+type	info.h	/^  string type;$/;"	m	struct:fst::KeyInfo
+unknown_symbol	farscript.h	/^  const string &unknown_symbol;$/;"	m	struct:fst::script::FarCompileStringsArgs
+writer_	far.h	/^  STListWriter<Fst<A>, FstWriter<A> > *writer_;$/;"	m	class:fst::STListFarWriter
+writer_	far.h	/^  STTableWriter<Fst<A>, FstWriter<A> > *writer_;$/;"	m	class:fst::STTableFarWriter
+written_	far.h	/^  bool written_;$/;"	m	class:fst::FstFarWriter
+~FarReader	far.h	/^  virtual ~FarReader() {}$/;"	f	class:fst::FarReader
+~FarWriter	far.h	/^  virtual ~FarWriter() {}$/;"	f	class:fst::FarWriter
+~FstFarReader	far.h	/^  ~FstFarReader() {$/;"	f	class:fst::FstFarReader
+~FstFarWriter	far.h	/^  ~FstFarWriter() {}$/;"	f	class:fst::FstFarWriter
+~STListFarReader	far.h	/^  ~STListFarReader() { delete reader_; }$/;"	f	class:fst::STListFarReader
+~STListFarWriter	far.h	/^  ~STListFarWriter() { delete writer_; }$/;"	f	class:fst::STListFarWriter
+~STListReader	stlist.h	/^  ~STListReader() {$/;"	f	class:fst::STListReader
+~STListWriter	stlist.h	/^  ~STListWriter() {$/;"	f	class:fst::STListWriter
+~STTableFarReader	far.h	/^  ~STTableFarReader() { delete reader_; }$/;"	f	class:fst::STTableFarReader
+~STTableFarWriter	far.h	/^  ~STTableFarWriter() { delete writer_; }$/;"	f	class:fst::STTableFarWriter
+~STTableReader	sttable.h	/^  ~STTableReader() {$/;"	f	class:fst::STTableReader
+~STTableWriter	sttable.h	/^  ~STTableWriter() {$/;"	f	class:fst::STTableWriter

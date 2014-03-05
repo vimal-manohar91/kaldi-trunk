@@ -1,7 +1,6 @@
 // latbin/lattice-best-path-post.cc
-// Author: Vimal Manohar
 //
-// Copyright 2009-2011  Microsoft Corporation
+// Copyright 2013-2014 (Author: Vimal Manohar)
 
 // See ../../COPYING for clarification regarding multiple authors
 //

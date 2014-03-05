@@ -73,7 +73,6 @@ if [ $stage -le 1 ]; then
       grep -v -E '<silence>' | \
       grep -v -E '<unk>' | \
       grep -v -E '<v-noise>' | \
-      grep -v -E '<.*[^ ]>' | \
       perl -e '@list = (); %list = ();
       while(<>) {
         chomp; 

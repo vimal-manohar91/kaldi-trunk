@@ -1,0 +1,41 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+main	fstarcsort.cc	/^int main(int argc, char **argv) {$/;"	f
+main	fstclosure.cc	/^int main(int argc, char **argv) {$/;"	f
+main	fstcompile.cc	/^int main(int argc, char **argv) {$/;"	f
+main	fstcompose.cc	/^int main(int argc, char **argv) {$/;"	f
+main	fstconcat.cc	/^int main(int argc, char **argv) {$/;"	f
+main	fstconnect.cc	/^int main(int argc, char **argv) {$/;"	f
+main	fstconvert.cc	/^int main(int argc, char **argv) {$/;"	f
+main	fstdeterminize.cc	/^int main(int argc, char **argv) {$/;"	f
+main	fstdifference.cc	/^int main(int argc, char **argv) {$/;"	f
+main	fstdraw.cc	/^int main(int argc, char **argv) {$/;"	f
+main	fstencode.cc	/^int main(int argc, char **argv) {$/;"	f
+main	fstepsnormalize.cc	/^int main(int argc, char **argv) {$/;"	f
+main	fstequal.cc	/^int main(int argc, char **argv) {$/;"	f
+main	fstequivalent.cc	/^int main(int argc, char **argv) {$/;"	f
+main	fstinfo.cc	/^int main(int argc, char **argv) {$/;"	f
+main	fstintersect.cc	/^int main(int argc, char **argv) {$/;"	f
+main	fstinvert.cc	/^int main(int argc, char **argv) {$/;"	f
+main	fstmap.cc	/^int main(int argc, char **argv) {$/;"	f
+main	fstminimize.cc	/^int main(int argc, char **argv) {$/;"	f
+main	fstprint.cc	/^int main(int argc, char **argv) {$/;"	f
+main	fstproject.cc	/^int main(int argc, char **argv) {$/;"	f
+main	fstprune.cc	/^int main(int argc, char **argv) {$/;"	f
+main	fstpush.cc	/^int main(int argc, char **argv) {$/;"	f
+main	fstrandgen.cc	/^int main(int argc, char **argv) {$/;"	f
+main	fstrelabel.cc	/^int main(int argc, char **argv) {$/;"	f
+main	fstreplace.cc	/^int main(int argc, char **argv) {$/;"	f
+main	fstreverse.cc	/^int main(int argc, char **argv) {$/;"	f
+main	fstreweight.cc	/^int main(int argc, char **argv) {$/;"	f
+main	fstrmepsilon.cc	/^int main(int argc, char **argv) {$/;"	f
+main	fstshortestdistance.cc	/^int main(int argc, char **argv) {$/;"	f
+main	fstshortestpath.cc	/^int main(int argc, char **argv) {$/;"	f
+main	fstsymbols.cc	/^int main(int argc, char **argv) {$/;"	f
+main	fstsynchronize.cc	/^int main(int argc, char **argv) {$/;"	f
+main	fsttopsort.cc	/^int main(int argc, char **argv) {$/;"	f
+main	fstunion.cc	/^int main(int argc, char **argv) {$/;"	f

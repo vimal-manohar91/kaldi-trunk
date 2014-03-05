@@ -1,0 +1,352 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Arc	ngram-fst.h	/^  typedef A Arc;$/;"	t	class:fst::ArcIterator
+Arc	ngram-fst.h	/^  typedef A Arc;$/;"	t	class:fst::NGramFst
+Arc	ngram-fst.h	/^  typedef A Arc;$/;"	t	class:fst::NGramFstImpl
+Arc	ngram-fst.h	/^  typedef A Arc;$/;"	t	class:fst::NGramFstMatcher
+ArcIterator	ngram-fst.h	/^  ArcIterator(const NGramFst<A> &fst, StateId state)$/;"	f	class:fst::ArcIterator
+ArcIterator	ngram-fst.h	/^class ArcIterator<NGramFst<A> > : public ArcIteratorBase<A> {$/;"	c	namespace:fst
+ArraySize	bitmap-index.h	/^  size_t ArraySize() const {$/;"	f	class:fst::BitmapIndex
+BitmapIndex	bitmap-index.h	/^  BitmapIndex() : bits_(NULL), size_(0) { }$/;"	f	class:fst::BitmapIndex
+BitmapIndex	bitmap-index.h	/^class BitmapIndex {$/;"	c	namespace:fst
+Bits	bitmap-index.h	/^  size_t Bits() const {$/;"	f	class:fst::BitmapIndex
+Clear	bitmap-index.h	/^  static void Clear(uint64* bits, size_t index) {$/;"	f	class:fst::BitmapIndex
+Copy	ngram-fst.h	/^  virtual NGramFst<A>* Copy(bool safe = false) const {$/;"	f	class:fst::NGramFst
+Copy	ngram-fst.h	/^  virtual NGramFstMatcher<A>* Copy(bool safe = false) const {$/;"	f	class:fst::NGramFstMatcher
+Done	ngram-fst.h	/^  bool Done() const { return s_ >= num_states_; }$/;"	f	class:fst::StateIterator
+Done	ngram-fst.h	/^  bool Done() const {$/;"	f	class:fst::ArcIterator
+Done_	ngram-fst.h	/^  virtual bool Done_() const { return Done(); }$/;"	f	class:fst::ArcIterator
+Done_	ngram-fst.h	/^  virtual bool Done_() const { return Done(); }$/;"	f	class:fst::StateIterator
+Done_	ngram-fst.h	/^  virtual bool Done_() const {$/;"	f	class:fst::NGramFstMatcher
+FST_EXTENSIONS_NGRAM_BITMAP_INDEX_H_	bitmap-index.h	18;"	d
+FST_EXTENSIONS_NGRAM_NGRAM_FST_H_	ngram-fst.h	18;"	d
+FST_EXTENSIONS_NGRAM_NTHBIT_H_	nthbit.h	19;"	d
+Final	ngram-fst.h	/^  Weight Final(StateId state) const {$/;"	f	class:fst::NGramFstImpl
+Find_	ngram-fst.h	/^  virtual bool Find_(Label label) {$/;"	f	class:fst::NGramFstMatcher
+Flags	ngram-fst.h	/^  uint32 Flags() const {$/;"	f	class:fst::ArcIterator
+Flags_	ngram-fst.h	/^  uint32 Flags_() const { return Flags(); }$/;"	f	class:fst::ArcIterator
+Get	bitmap-index.h	/^  bool Get(size_t index) const {$/;"	f	class:fst::BitmapIndex
+GetData	ngram-fst.h	/^  const char* GetData(size_t* data_size) const {$/;"	f	class:fst::NGramFst
+GetData	ngram-fst.h	/^  const char* GetData(size_t* data_size) const {$/;"	f	class:fst::NGramFstImpl
+GetFst	ngram-fst.h	/^  virtual const Fst<A> &GetFst() const {$/;"	f	class:fst::NGramFstMatcher
+GetImpl	ngram-fst.h	/^  Impl* GetImpl() const {$/;"	f	class:fst::NGramFst
+GetOnesCount	bitmap-index.h	/^  size_t GetOnesCount() const {$/;"	f	class:fst::BitmapIndex
+GetOnesCountInRange	bitmap-index.h	/^  size_t GetOnesCountInRange(size_t start, size_t end) const {$/;"	f	class:fst::BitmapIndex
+GetZeroesCountInRange	bitmap-index.h	/^  size_t GetZeroesCountInRange(size_t start, size_t end) const {$/;"	f	class:fst::BitmapIndex
+Impl	ngram-fst.h	/^  typedef NGramFstImpl<A> Impl;$/;"	t	class:fst::NGramFst
+Init	ngram-fst.h	/^inline void NGramFstImpl<A>::Init(const char* data, bool owned) {$/;"	f	class:fst::NGramFstImpl
+InitArcIterator	ngram-fst.h	/^NGramFst<A>::InitArcIterator(StateId s, ArcIteratorData<A>* data) const {$/;"	f	class:fst::NGramFst
+InitMatcher	ngram-fst.h	/^  virtual MatcherBase<A>* InitMatcher(MatchType match_type) const {$/;"	f	class:fst::NGramFst
+InitStateIterator	ngram-fst.h	/^  virtual inline void InitStateIterator(StateIteratorData<A>* data) const {$/;"	f	class:fst::NGramFst
+InitStateIterator	ngram-fst.h	/^  void InitStateIterator(StateIteratorData<A>* data) const {$/;"	f	class:fst::NGramFstImpl
+Label	ngram-fst.h	/^  typedef typename A::Label Label;$/;"	t	class:fst::ArcIterator
+Label	ngram-fst.h	/^  typedef typename A::Label Label;$/;"	t	class:fst::NGramFst
+Label	ngram-fst.h	/^  typedef typename A::Label Label;$/;"	t	class:fst::NGramFstImpl
+Label	ngram-fst.h	/^  typedef typename A::Label Label;$/;"	t	class:fst::NGramFstMatcher
+Label	ngram-fst.h	/^  typedef typename A::Label Label;$/;"	t	struct:fst::NGramFstInst
+NGramFst	ngram-fst.h	/^  NGramFst() : ImplToExpandedFst<Impl>(new Impl()) {}$/;"	f	class:fst::NGramFst
+NGramFst	ngram-fst.h	/^  NGramFst(const Fst<A> &fst, vector<StateId>* order_out)$/;"	f	class:fst::NGramFst
+NGramFst	ngram-fst.h	/^  NGramFst(const NGramFst<A> &fst, bool safe = false)$/;"	f	class:fst::NGramFst
+NGramFst	ngram-fst.h	/^  NGramFst(const char* data, bool owned) : ImplToExpandedFst<Impl>(new Impl()) {$/;"	f	class:fst::NGramFst
+NGramFst	ngram-fst.h	/^  explicit NGramFst(Impl* impl) : ImplToExpandedFst<Impl>(impl) {}$/;"	f	class:fst::NGramFst
+NGramFst	ngram-fst.h	/^  explicit NGramFst(const Fst<A> &dst)$/;"	f	class:fst::NGramFst
+NGramFst	ngram-fst.h	/^class NGramFst : public ImplToExpandedFst<NGramFstImpl<A> > {$/;"	c	namespace:fst
+NGramFstImpl	ngram-fst.h	/^  NGramFstImpl() : data_(0), owned_(false) {$/;"	f	class:fst::NGramFstImpl
+NGramFstImpl	ngram-fst.h	/^NGramFstImpl<A>::NGramFstImpl(const Fst<A> &fst, vector<StateId>* order_out)$/;"	f	class:fst::NGramFstImpl
+NGramFstImpl	ngram-fst.h	/^class NGramFstImpl : public FstImpl<A> {$/;"	c	namespace:fst
+NGramFstInst	ngram-fst.h	/^  NGramFstInst()$/;"	f	struct:fst::NGramFstInst
+NGramFstInst	ngram-fst.h	/^struct NGramFstInst {$/;"	s	namespace:fst
+NGramFstMatcher	ngram-fst.h	/^  NGramFstMatcher(const NGramFst<A> &fst, MatchType match_type)$/;"	f	class:fst::NGramFstMatcher
+NGramFstMatcher	ngram-fst.h	/^  NGramFstMatcher(const NGramFstMatcher<A> &matcher, bool safe = false)$/;"	f	class:fst::NGramFstMatcher
+NGramFstMatcher	ngram-fst.h	/^class NGramFstMatcher : public MatcherBase<A> {$/;"	c	namespace:fst
+Next	ngram-fst.h	/^  void Next() { ++s_; }$/;"	f	class:fst::StateIterator
+Next	ngram-fst.h	/^  void Next() {$/;"	f	class:fst::ArcIterator
+Next_	ngram-fst.h	/^  virtual void Next_() { Next(); }$/;"	f	class:fst::ArcIterator
+Next_	ngram-fst.h	/^  virtual void Next_() { Next(); }$/;"	f	class:fst::StateIterator
+Next_	ngram-fst.h	/^  virtual void Next_() {$/;"	f	class:fst::NGramFstMatcher
+NumArcs	ngram-fst.h	/^  size_t NumArcs(StateId state, NGramFstInst<A> *inst = NULL) const {$/;"	f	class:fst::NGramFstImpl
+NumArcs	ngram-fst.h	/^  virtual size_t NumArcs(StateId s) const {$/;"	f	class:fst::NGramFst
+NumInputEpsilons	ngram-fst.h	/^  size_t NumInputEpsilons(StateId state) const {$/;"	f	class:fst::NGramFstImpl
+NumOutputEpsilons	ngram-fst.h	/^  size_t NumOutputEpsilons(StateId state) const {$/;"	f	class:fst::NGramFstImpl
+NumStates	ngram-fst.h	/^  StateId NumStates() const {$/;"	f	class:fst::NGramFstImpl
+Position	ngram-fst.h	/^  size_t Position() const { return i_; }$/;"	f	class:fst::ArcIterator
+Position_	ngram-fst.h	/^  virtual size_t Position_() const { return Position(); }$/;"	f	class:fst::ArcIterator
+Properties	ngram-fst.h	/^  virtual uint64 Properties(uint64 props) const {$/;"	f	class:fst::NGramFstMatcher
+Rank0	bitmap-index.h	/^  size_t Rank0(size_t end) const {$/;"	f	class:fst::BitmapIndex
+Read	ngram-fst.h	/^  static NGramFst<A>* Read(const string &filename) {$/;"	f	class:fst::NGramFst
+Read	ngram-fst.h	/^  static NGramFst<A>* Read(istream &strm, const FstReadOptions &opts) {$/;"	f	class:fst::NGramFst
+Read	ngram-fst.h	/^  static NGramFstImpl<A>* Read(istream &strm,  \/\/ NOLINT$/;"	f	class:fst::NGramFstImpl
+Reset	ngram-fst.h	/^  void Reset() { s_ = 0; }$/;"	f	class:fst::StateIterator
+Reset	ngram-fst.h	/^  void Reset() {$/;"	f	class:fst::ArcIterator
+Reset_	ngram-fst.h	/^  virtual void Reset_() { Reset(); }$/;"	f	class:fst::ArcIterator
+Reset_	ngram-fst.h	/^  virtual void Reset_() { Reset(); }$/;"	f	class:fst::StateIterator
+Seek	ngram-fst.h	/^  void Seek(size_t a) {$/;"	f	class:fst::ArcIterator
+Seek_	ngram-fst.h	/^  virtual void Seek_(size_t a) { Seek(a); }$/;"	f	class:fst::ArcIterator
+Set	bitmap-index.h	/^  static void Set(uint64* bits, size_t index) {$/;"	f	class:fst::BitmapIndex
+SetFlags	ngram-fst.h	/^  void SetFlags(uint32 f, uint32 m) {$/;"	f	class:fst::ArcIterator
+SetFlags_	ngram-fst.h	/^  void SetFlags_(uint32 f, uint32 m) { SetFlags(f, m); }$/;"	f	class:fst::ArcIterator
+SetImpl	ngram-fst.h	/^  void SetImpl(Impl* impl, bool own_impl = true) {$/;"	f	class:fst::NGramFst
+SetInstContext	ngram-fst.h	/^  void SetInstContext(NGramFstInst<A> *inst) const {$/;"	f	class:fst::NGramFstImpl
+SetInstFuture	ngram-fst.h	/^  void SetInstFuture(StateId state, NGramFstInst<A> *inst) const {$/;"	f	class:fst::NGramFstImpl
+SetInstNode	ngram-fst.h	/^  void SetInstNode(NGramFstInst<A> *inst) const {$/;"	f	class:fst::NGramFstImpl
+SetState_	ngram-fst.h	/^  virtual void SetState_(StateId s) {$/;"	f	class:fst::NGramFstMatcher
+Start	ngram-fst.h	/^  StateId Start() const {$/;"	f	class:fst::NGramFstImpl
+StateId	ngram-fst.h	/^  typedef typename A::StateId StateId;$/;"	t	class:fst::ArcIterator
+StateId	ngram-fst.h	/^  typedef typename A::StateId StateId;$/;"	t	class:fst::NGramFst
+StateId	ngram-fst.h	/^  typedef typename A::StateId StateId;$/;"	t	class:fst::NGramFstImpl
+StateId	ngram-fst.h	/^  typedef typename A::StateId StateId;$/;"	t	class:fst::NGramFstMatcher
+StateId	ngram-fst.h	/^  typedef typename A::StateId StateId;$/;"	t	class:fst::StateIterator
+StateId	ngram-fst.h	/^  typedef typename A::StateId StateId;$/;"	t	struct:fst::NGramFstInst
+StateIterator	ngram-fst.h	/^  explicit StateIterator(const NGramFst<A> &fst)$/;"	f	class:fst::StateIterator
+StateIterator	ngram-fst.h	/^class StateIterator<NGramFst<A> > : public StateIteratorBase<A> {$/;"	c	namespace:fst
+Storage	ngram-fst.h	/^  static size_t Storage(uint64 num_states, uint64 num_futures,$/;"	f	class:fst::NGramFstImpl
+StorageSize	bitmap-index.h	/^  static size_t StorageSize(size_t size) {$/;"	f	class:fst::BitmapIndex
+TestRange	bitmap-index.h	/^  bool TestRange(size_t start, size_t end) const {$/;"	f	class:fst::BitmapIndex
+Transition	ngram-fst.h	/^inline typename A::StateId NGramFstImpl<A>::Transition($/;"	f	class:fst::NGramFstImpl
+Type	ngram-fst.h	/^  virtual MatchType Type(bool test) const {$/;"	f	class:fst::NGramFstMatcher
+Value	ngram-fst.h	/^  StateId Value() const { return s_; }$/;"	f	class:fst::StateIterator
+Value	ngram-fst.h	/^  const Arc &Value() const {$/;"	f	class:fst::ArcIterator
+Value_	ngram-fst.h	/^  virtual StateId Value_() const { return Value(); }$/;"	f	class:fst::StateIterator
+Value_	ngram-fst.h	/^  virtual const Arc& Value_() const { return Value(); }$/;"	f	class:fst::ArcIterator
+Value_	ngram-fst.h	/^  virtual const Arc& Value_() const {$/;"	f	class:fst::NGramFstMatcher
+Weight	ngram-fst.h	/^  typedef typename A::Weight Weight;$/;"	t	class:fst::ArcIterator
+Weight	ngram-fst.h	/^  typedef typename A::Weight Weight;$/;"	t	class:fst::NGramFst
+Weight	ngram-fst.h	/^  typedef typename A::Weight Weight;$/;"	t	class:fst::NGramFstImpl
+Weight	ngram-fst.h	/^  typedef typename A::Weight Weight;$/;"	t	class:fst::NGramFstMatcher
+Weight	ngram-fst.h	/^  typedef typename A::Weight Weight;$/;"	t	struct:fst::NGramFstInst
+Write	ngram-fst.h	/^  bool Write(ostream &strm,   \/\/ NOLINT$/;"	f	class:fst::NGramFstImpl
+Write	ngram-fst.h	/^  virtual bool Write(const string &filename) const {$/;"	f	class:fst::NGramFst
+Write	ngram-fst.h	/^  virtual bool Write(ostream &strm, const FstWriteOptions &opts) const {$/;"	f	class:fst::NGramFst
+arc_	ngram-fst.h	/^  Arc arc_;$/;"	m	class:fst::NGramFstMatcher
+arc_	ngram-fst.h	/^  mutable Arc arc_;$/;"	m	class:fst::ArcIterator
+backoff_	ngram-fst.h	/^  const Weight *backoff_, *final_probs_, *future_probs_;$/;"	m	class:fst::NGramFstImpl
+bits_	bitmap-index.h	/^  const uint64* bits_;$/;"	m	class:fst::BitmapIndex
+context_	ngram-fst.h	/^  const uint64 *context_, *future_, *final_;$/;"	m	class:fst::NGramFstImpl
+context_	ngram-fst.h	/^  vector<Label> context_;$/;"	m	struct:fst::NGramFstInst
+context_index_	ngram-fst.h	/^  BitmapIndex context_index_;$/;"	m	class:fst::NGramFstImpl
+context_state_	ngram-fst.h	/^  StateId context_state_;$/;"	m	struct:fst::NGramFstInst
+context_words_	ngram-fst.h	/^  const Label *context_words_, *future_words_;$/;"	m	class:fst::NGramFstImpl
+current_loop_	ngram-fst.h	/^  bool current_loop_;                \/\/ Current arc is the implicit loop$/;"	m	class:fst::NGramFstMatcher
+data_	ngram-fst.h	/^  const char* data_;$/;"	m	class:fst::NGramFstImpl
+done_	ngram-fst.h	/^  bool done_;$/;"	m	class:fst::NGramFstMatcher
+final_	ngram-fst.h	/^  const uint64 *context_, *future_, *final_;$/;"	m	class:fst::NGramFstImpl
+final_index_	ngram-fst.h	/^  BitmapIndex final_index_;$/;"	m	class:fst::NGramFstImpl
+final_probs_	ngram-fst.h	/^  const Weight *backoff_, *final_probs_, *future_probs_;$/;"	m	class:fst::NGramFstImpl
+flags_	ngram-fst.h	/^  uint32 flags_;$/;"	m	class:fst::ArcIterator
+fst	bitmap-index.h	/^namespace fst {$/;"	n
+fst	ngram-fst.h	/^namespace fst {$/;"	n
+fst::ArcIterator	ngram-fst.h	/^class ArcIterator<NGramFst<A> > : public ArcIteratorBase<A> {$/;"	c	namespace:fst
+fst::ArcIterator::Arc	ngram-fst.h	/^  typedef A Arc;$/;"	t	class:fst::ArcIterator
+fst::ArcIterator::ArcIterator	ngram-fst.h	/^  ArcIterator(const NGramFst<A> &fst, StateId state)$/;"	f	class:fst::ArcIterator
+fst::ArcIterator::Done	ngram-fst.h	/^  bool Done() const {$/;"	f	class:fst::ArcIterator
+fst::ArcIterator::Done_	ngram-fst.h	/^  virtual bool Done_() const { return Done(); }$/;"	f	class:fst::ArcIterator
+fst::ArcIterator::Flags	ngram-fst.h	/^  uint32 Flags() const {$/;"	f	class:fst::ArcIterator
+fst::ArcIterator::Flags_	ngram-fst.h	/^  uint32 Flags_() const { return Flags(); }$/;"	f	class:fst::ArcIterator
+fst::ArcIterator::Label	ngram-fst.h	/^  typedef typename A::Label Label;$/;"	t	class:fst::ArcIterator
+fst::ArcIterator::Next	ngram-fst.h	/^  void Next() {$/;"	f	class:fst::ArcIterator
+fst::ArcIterator::Next_	ngram-fst.h	/^  virtual void Next_() { Next(); }$/;"	f	class:fst::ArcIterator
+fst::ArcIterator::Position	ngram-fst.h	/^  size_t Position() const { return i_; }$/;"	f	class:fst::ArcIterator
+fst::ArcIterator::Position_	ngram-fst.h	/^  virtual size_t Position_() const { return Position(); }$/;"	f	class:fst::ArcIterator
+fst::ArcIterator::Reset	ngram-fst.h	/^  void Reset() {$/;"	f	class:fst::ArcIterator
+fst::ArcIterator::Reset_	ngram-fst.h	/^  virtual void Reset_() { Reset(); }$/;"	f	class:fst::ArcIterator
+fst::ArcIterator::Seek	ngram-fst.h	/^  void Seek(size_t a) {$/;"	f	class:fst::ArcIterator
+fst::ArcIterator::Seek_	ngram-fst.h	/^  virtual void Seek_(size_t a) { Seek(a); }$/;"	f	class:fst::ArcIterator
+fst::ArcIterator::SetFlags	ngram-fst.h	/^  void SetFlags(uint32 f, uint32 m) {$/;"	f	class:fst::ArcIterator
+fst::ArcIterator::SetFlags_	ngram-fst.h	/^  void SetFlags_(uint32 f, uint32 m) { SetFlags(f, m); }$/;"	f	class:fst::ArcIterator
+fst::ArcIterator::StateId	ngram-fst.h	/^  typedef typename A::StateId StateId;$/;"	t	class:fst::ArcIterator
+fst::ArcIterator::Value	ngram-fst.h	/^  const Arc &Value() const {$/;"	f	class:fst::ArcIterator
+fst::ArcIterator::Value_	ngram-fst.h	/^  virtual const Arc& Value_() const { return Value(); }$/;"	f	class:fst::ArcIterator
+fst::ArcIterator::Weight	ngram-fst.h	/^  typedef typename A::Weight Weight;$/;"	t	class:fst::ArcIterator
+fst::ArcIterator::arc_	ngram-fst.h	/^  mutable Arc arc_;$/;"	m	class:fst::ArcIterator
+fst::ArcIterator::flags_	ngram-fst.h	/^  uint32 flags_;$/;"	m	class:fst::ArcIterator
+fst::ArcIterator::i_	ngram-fst.h	/^  size_t i_;$/;"	m	class:fst::ArcIterator
+fst::ArcIterator::impl_	ngram-fst.h	/^  const NGramFstImpl<A> *impl_;$/;"	m	class:fst::ArcIterator
+fst::ArcIterator::inst_	ngram-fst.h	/^  mutable NGramFstInst<A> inst_;$/;"	m	class:fst::ArcIterator
+fst::ArcIterator::lazy_	ngram-fst.h	/^  mutable uint32 lazy_;$/;"	m	class:fst::ArcIterator
+fst::BitmapIndex	bitmap-index.h	/^class BitmapIndex {$/;"	c	namespace:fst
+fst::BitmapIndex::ArraySize	bitmap-index.h	/^  size_t ArraySize() const {$/;"	f	class:fst::BitmapIndex
+fst::BitmapIndex::BitmapIndex	bitmap-index.h	/^  BitmapIndex() : bits_(NULL), size_(0) { }$/;"	f	class:fst::BitmapIndex
+fst::BitmapIndex::Bits	bitmap-index.h	/^  size_t Bits() const {$/;"	f	class:fst::BitmapIndex
+fst::BitmapIndex::Clear	bitmap-index.h	/^  static void Clear(uint64* bits, size_t index) {$/;"	f	class:fst::BitmapIndex
+fst::BitmapIndex::Get	bitmap-index.h	/^  bool Get(size_t index) const {$/;"	f	class:fst::BitmapIndex
+fst::BitmapIndex::GetOnesCount	bitmap-index.h	/^  size_t GetOnesCount() const {$/;"	f	class:fst::BitmapIndex
+fst::BitmapIndex::GetOnesCountInRange	bitmap-index.h	/^  size_t GetOnesCountInRange(size_t start, size_t end) const {$/;"	f	class:fst::BitmapIndex
+fst::BitmapIndex::GetZeroesCountInRange	bitmap-index.h	/^  size_t GetZeroesCountInRange(size_t start, size_t end) const {$/;"	f	class:fst::BitmapIndex
+fst::BitmapIndex::Rank0	bitmap-index.h	/^  size_t Rank0(size_t end) const {$/;"	f	class:fst::BitmapIndex
+fst::BitmapIndex::Set	bitmap-index.h	/^  static void Set(uint64* bits, size_t index) {$/;"	f	class:fst::BitmapIndex
+fst::BitmapIndex::StorageSize	bitmap-index.h	/^  static size_t StorageSize(size_t size) {$/;"	f	class:fst::BitmapIndex
+fst::BitmapIndex::TestRange	bitmap-index.h	/^  bool TestRange(size_t start, size_t end) const {$/;"	f	class:fst::BitmapIndex
+fst::BitmapIndex::bits_	bitmap-index.h	/^  const uint64* bits_;$/;"	m	class:fst::BitmapIndex
+fst::BitmapIndex::kOne	bitmap-index.h	/^  static const uint64 kOne = 1;$/;"	m	class:fst::BitmapIndex
+fst::BitmapIndex::kSecondaryBlockSize	bitmap-index.h	/^  static const uint32 kSecondaryBlockSize = ((1 << 16) - 1)$/;"	m	class:fst::BitmapIndex
+fst::BitmapIndex::kStorageBitSize	bitmap-index.h	/^  static const uint32 kStorageBitSize = 64;$/;"	m	class:fst::BitmapIndex
+fst::BitmapIndex::kStorageBlockMask	bitmap-index.h	/^  static const uint32 kStorageBlockMask = kStorageBitSize - 1;$/;"	m	class:fst::BitmapIndex
+fst::BitmapIndex::kStorageLogBitSize	bitmap-index.h	/^  static const uint32 kStorageLogBitSize = 6;$/;"	m	class:fst::BitmapIndex
+fst::BitmapIndex::primary_index_	bitmap-index.h	/^  vector<uint32> primary_index_;$/;"	m	class:fst::BitmapIndex
+fst::BitmapIndex::primary_index_size	bitmap-index.h	/^  size_t primary_index_size() const {$/;"	f	class:fst::BitmapIndex
+fst::BitmapIndex::secondary_index_	bitmap-index.h	/^  vector<uint16> secondary_index_;$/;"	m	class:fst::BitmapIndex
+fst::BitmapIndex::size_	bitmap-index.h	/^  size_t size_;$/;"	m	class:fst::BitmapIndex
+fst::NGramFst	ngram-fst.h	/^class NGramFst : public ImplToExpandedFst<NGramFstImpl<A> > {$/;"	c	namespace:fst
+fst::NGramFst::Arc	ngram-fst.h	/^  typedef A Arc;$/;"	t	class:fst::NGramFst
+fst::NGramFst::Copy	ngram-fst.h	/^  virtual NGramFst<A>* Copy(bool safe = false) const {$/;"	f	class:fst::NGramFst
+fst::NGramFst::GetData	ngram-fst.h	/^  const char* GetData(size_t* data_size) const {$/;"	f	class:fst::NGramFst
+fst::NGramFst::GetImpl	ngram-fst.h	/^  Impl* GetImpl() const {$/;"	f	class:fst::NGramFst
+fst::NGramFst::Impl	ngram-fst.h	/^  typedef NGramFstImpl<A> Impl;$/;"	t	class:fst::NGramFst
+fst::NGramFst::InitArcIterator	ngram-fst.h	/^NGramFst<A>::InitArcIterator(StateId s, ArcIteratorData<A>* data) const {$/;"	f	class:fst::NGramFst
+fst::NGramFst::InitMatcher	ngram-fst.h	/^  virtual MatcherBase<A>* InitMatcher(MatchType match_type) const {$/;"	f	class:fst::NGramFst
+fst::NGramFst::InitStateIterator	ngram-fst.h	/^  virtual inline void InitStateIterator(StateIteratorData<A>* data) const {$/;"	f	class:fst::NGramFst
+fst::NGramFst::Label	ngram-fst.h	/^  typedef typename A::Label Label;$/;"	t	class:fst::NGramFst
+fst::NGramFst::NGramFst	ngram-fst.h	/^  NGramFst() : ImplToExpandedFst<Impl>(new Impl()) {}$/;"	f	class:fst::NGramFst
+fst::NGramFst::NGramFst	ngram-fst.h	/^  NGramFst(const Fst<A> &fst, vector<StateId>* order_out)$/;"	f	class:fst::NGramFst
+fst::NGramFst::NGramFst	ngram-fst.h	/^  NGramFst(const NGramFst<A> &fst, bool safe = false)$/;"	f	class:fst::NGramFst
+fst::NGramFst::NGramFst	ngram-fst.h	/^  NGramFst(const char* data, bool owned) : ImplToExpandedFst<Impl>(new Impl()) {$/;"	f	class:fst::NGramFst
+fst::NGramFst::NGramFst	ngram-fst.h	/^  explicit NGramFst(Impl* impl) : ImplToExpandedFst<Impl>(impl) {}$/;"	f	class:fst::NGramFst
+fst::NGramFst::NGramFst	ngram-fst.h	/^  explicit NGramFst(const Fst<A> &dst)$/;"	f	class:fst::NGramFst
+fst::NGramFst::NumArcs	ngram-fst.h	/^  virtual size_t NumArcs(StateId s) const {$/;"	f	class:fst::NGramFst
+fst::NGramFst::Read	ngram-fst.h	/^  static NGramFst<A>* Read(const string &filename) {$/;"	f	class:fst::NGramFst
+fst::NGramFst::Read	ngram-fst.h	/^  static NGramFst<A>* Read(istream &strm, const FstReadOptions &opts) {$/;"	f	class:fst::NGramFst
+fst::NGramFst::SetImpl	ngram-fst.h	/^  void SetImpl(Impl* impl, bool own_impl = true) {$/;"	f	class:fst::NGramFst
+fst::NGramFst::StateId	ngram-fst.h	/^  typedef typename A::StateId StateId;$/;"	t	class:fst::NGramFst
+fst::NGramFst::Weight	ngram-fst.h	/^  typedef typename A::Weight Weight;$/;"	t	class:fst::NGramFst
+fst::NGramFst::Write	ngram-fst.h	/^  virtual bool Write(const string &filename) const {$/;"	f	class:fst::NGramFst
+fst::NGramFst::Write	ngram-fst.h	/^  virtual bool Write(ostream &strm, const FstWriteOptions &opts) const {$/;"	f	class:fst::NGramFst
+fst::NGramFst::inst_	ngram-fst.h	/^  mutable NGramFstInst<A> inst_;$/;"	m	class:fst::NGramFst
+fst::NGramFstImpl	ngram-fst.h	/^class NGramFstImpl : public FstImpl<A> {$/;"	c	namespace:fst
+fst::NGramFstImpl::Arc	ngram-fst.h	/^  typedef A Arc;$/;"	t	class:fst::NGramFstImpl
+fst::NGramFstImpl::Final	ngram-fst.h	/^  Weight Final(StateId state) const {$/;"	f	class:fst::NGramFstImpl
+fst::NGramFstImpl::GetData	ngram-fst.h	/^  const char* GetData(size_t* data_size) const {$/;"	f	class:fst::NGramFstImpl
+fst::NGramFstImpl::Init	ngram-fst.h	/^inline void NGramFstImpl<A>::Init(const char* data, bool owned) {$/;"	f	class:fst::NGramFstImpl
+fst::NGramFstImpl::InitStateIterator	ngram-fst.h	/^  void InitStateIterator(StateIteratorData<A>* data) const {$/;"	f	class:fst::NGramFstImpl
+fst::NGramFstImpl::Label	ngram-fst.h	/^  typedef typename A::Label Label;$/;"	t	class:fst::NGramFstImpl
+fst::NGramFstImpl::NGramFstImpl	ngram-fst.h	/^  NGramFstImpl() : data_(0), owned_(false) {$/;"	f	class:fst::NGramFstImpl
+fst::NGramFstImpl::NGramFstImpl	ngram-fst.h	/^NGramFstImpl<A>::NGramFstImpl(const Fst<A> &fst, vector<StateId>* order_out)$/;"	f	class:fst::NGramFstImpl
+fst::NGramFstImpl::NumArcs	ngram-fst.h	/^  size_t NumArcs(StateId state, NGramFstInst<A> *inst = NULL) const {$/;"	f	class:fst::NGramFstImpl
+fst::NGramFstImpl::NumInputEpsilons	ngram-fst.h	/^  size_t NumInputEpsilons(StateId state) const {$/;"	f	class:fst::NGramFstImpl
+fst::NGramFstImpl::NumOutputEpsilons	ngram-fst.h	/^  size_t NumOutputEpsilons(StateId state) const {$/;"	f	class:fst::NGramFstImpl
+fst::NGramFstImpl::NumStates	ngram-fst.h	/^  StateId NumStates() const {$/;"	f	class:fst::NGramFstImpl
+fst::NGramFstImpl::Read	ngram-fst.h	/^  static NGramFstImpl<A>* Read(istream &strm,  \/\/ NOLINT$/;"	f	class:fst::NGramFstImpl
+fst::NGramFstImpl::SetInstContext	ngram-fst.h	/^  void SetInstContext(NGramFstInst<A> *inst) const {$/;"	f	class:fst::NGramFstImpl
+fst::NGramFstImpl::SetInstFuture	ngram-fst.h	/^  void SetInstFuture(StateId state, NGramFstInst<A> *inst) const {$/;"	f	class:fst::NGramFstImpl
+fst::NGramFstImpl::SetInstNode	ngram-fst.h	/^  void SetInstNode(NGramFstInst<A> *inst) const {$/;"	f	class:fst::NGramFstImpl
+fst::NGramFstImpl::Start	ngram-fst.h	/^  StateId Start() const {$/;"	f	class:fst::NGramFstImpl
+fst::NGramFstImpl::StateId	ngram-fst.h	/^  typedef typename A::StateId StateId;$/;"	t	class:fst::NGramFstImpl
+fst::NGramFstImpl::Storage	ngram-fst.h	/^  static size_t Storage(uint64 num_states, uint64 num_futures,$/;"	f	class:fst::NGramFstImpl
+fst::NGramFstImpl::Transition	ngram-fst.h	/^inline typename A::StateId NGramFstImpl<A>::Transition($/;"	f	class:fst::NGramFstImpl
+fst::NGramFstImpl::Weight	ngram-fst.h	/^  typedef typename A::Weight Weight;$/;"	t	class:fst::NGramFstImpl
+fst::NGramFstImpl::Write	ngram-fst.h	/^  bool Write(ostream &strm,   \/\/ NOLINT$/;"	f	class:fst::NGramFstImpl
+fst::NGramFstImpl::backoff_	ngram-fst.h	/^  const Weight *backoff_, *final_probs_, *future_probs_;$/;"	m	class:fst::NGramFstImpl
+fst::NGramFstImpl::context_	ngram-fst.h	/^  const uint64 *context_, *future_, *final_;$/;"	m	class:fst::NGramFstImpl
+fst::NGramFstImpl::context_index_	ngram-fst.h	/^  BitmapIndex context_index_;$/;"	m	class:fst::NGramFstImpl
+fst::NGramFstImpl::context_words_	ngram-fst.h	/^  const Label *context_words_, *future_words_;$/;"	m	class:fst::NGramFstImpl
+fst::NGramFstImpl::data_	ngram-fst.h	/^  const char* data_;$/;"	m	class:fst::NGramFstImpl
+fst::NGramFstImpl::final_	ngram-fst.h	/^  const uint64 *context_, *future_, *final_;$/;"	m	class:fst::NGramFstImpl
+fst::NGramFstImpl::final_index_	ngram-fst.h	/^  BitmapIndex final_index_;$/;"	m	class:fst::NGramFstImpl
+fst::NGramFstImpl::final_probs_	ngram-fst.h	/^  const Weight *backoff_, *final_probs_, *future_probs_;$/;"	m	class:fst::NGramFstImpl
+fst::NGramFstImpl::future_	ngram-fst.h	/^  const uint64 *context_, *future_, *final_;$/;"	m	class:fst::NGramFstImpl
+fst::NGramFstImpl::future_index_	ngram-fst.h	/^  BitmapIndex future_index_;$/;"	m	class:fst::NGramFstImpl
+fst::NGramFstImpl::future_probs_	ngram-fst.h	/^  const Weight *backoff_, *final_probs_, *future_probs_;$/;"	m	class:fst::NGramFstImpl
+fst::NGramFstImpl::future_words_	ngram-fst.h	/^  const Label *context_words_, *future_words_;$/;"	m	class:fst::NGramFstImpl
+fst::NGramFstImpl::kFileVersion	ngram-fst.h	/^  static const int kFileVersion = 4;$/;"	m	class:fst::NGramFstImpl
+fst::NGramFstImpl::kMinFileVersion	ngram-fst.h	/^  static const int kMinFileVersion = 4;$/;"	m	class:fst::NGramFstImpl
+fst::NGramFstImpl::kStaticProperties	ngram-fst.h	/^  static const uint64 kStaticProperties = kAcceptor | kIDeterministic |$/;"	m	class:fst::NGramFstImpl
+fst::NGramFstImpl::num_final_	ngram-fst.h	/^  uint64 num_states_, num_futures_, num_final_;$/;"	m	class:fst::NGramFstImpl
+fst::NGramFstImpl::num_futures_	ngram-fst.h	/^  uint64 num_states_, num_futures_, num_final_;$/;"	m	class:fst::NGramFstImpl
+fst::NGramFstImpl::num_states_	ngram-fst.h	/^  uint64 num_states_, num_futures_, num_final_;$/;"	m	class:fst::NGramFstImpl
+fst::NGramFstImpl::owned_	ngram-fst.h	/^  bool owned_;  \/\/ True if we own data_$/;"	m	class:fst::NGramFstImpl
+fst::NGramFstImpl::root_children_	ngram-fst.h	/^  const Label *root_children_;$/;"	m	class:fst::NGramFstImpl
+fst::NGramFstImpl::root_first_child_	ngram-fst.h	/^  size_t root_first_child_;$/;"	m	class:fst::NGramFstImpl
+fst::NGramFstImpl::root_num_children_	ngram-fst.h	/^  size_t root_num_children_;$/;"	m	class:fst::NGramFstImpl
+fst::NGramFstImpl::~NGramFstImpl	ngram-fst.h	/^  ~NGramFstImpl() {$/;"	f	class:fst::NGramFstImpl
+fst::NGramFstInst	ngram-fst.h	/^struct NGramFstInst {$/;"	s	namespace:fst
+fst::NGramFstInst::Label	ngram-fst.h	/^  typedef typename A::Label Label;$/;"	t	struct:fst::NGramFstInst
+fst::NGramFstInst::NGramFstInst	ngram-fst.h	/^  NGramFstInst()$/;"	f	struct:fst::NGramFstInst
+fst::NGramFstInst::StateId	ngram-fst.h	/^  typedef typename A::StateId StateId;$/;"	t	struct:fst::NGramFstInst
+fst::NGramFstInst::Weight	ngram-fst.h	/^  typedef typename A::Weight Weight;$/;"	t	struct:fst::NGramFstInst
+fst::NGramFstInst::context_	ngram-fst.h	/^  vector<Label> context_;$/;"	m	struct:fst::NGramFstInst
+fst::NGramFstInst::context_state_	ngram-fst.h	/^  StateId context_state_;$/;"	m	struct:fst::NGramFstInst
+fst::NGramFstInst::node_	ngram-fst.h	/^  size_t node_;$/;"	m	struct:fst::NGramFstInst
+fst::NGramFstInst::node_state_	ngram-fst.h	/^  StateId node_state_;$/;"	m	struct:fst::NGramFstInst
+fst::NGramFstInst::num_futures_	ngram-fst.h	/^  size_t num_futures_;$/;"	m	struct:fst::NGramFstInst
+fst::NGramFstInst::offset_	ngram-fst.h	/^  size_t offset_;$/;"	m	struct:fst::NGramFstInst
+fst::NGramFstInst::state_	ngram-fst.h	/^  StateId state_;$/;"	m	struct:fst::NGramFstInst
+fst::NGramFstMatcher	ngram-fst.h	/^class NGramFstMatcher : public MatcherBase<A> {$/;"	c	namespace:fst
+fst::NGramFstMatcher::Arc	ngram-fst.h	/^  typedef A Arc;$/;"	t	class:fst::NGramFstMatcher
+fst::NGramFstMatcher::Copy	ngram-fst.h	/^  virtual NGramFstMatcher<A>* Copy(bool safe = false) const {$/;"	f	class:fst::NGramFstMatcher
+fst::NGramFstMatcher::Done_	ngram-fst.h	/^  virtual bool Done_() const {$/;"	f	class:fst::NGramFstMatcher
+fst::NGramFstMatcher::Find_	ngram-fst.h	/^  virtual bool Find_(Label label) {$/;"	f	class:fst::NGramFstMatcher
+fst::NGramFstMatcher::GetFst	ngram-fst.h	/^  virtual const Fst<A> &GetFst() const {$/;"	f	class:fst::NGramFstMatcher
+fst::NGramFstMatcher::Label	ngram-fst.h	/^  typedef typename A::Label Label;$/;"	t	class:fst::NGramFstMatcher
+fst::NGramFstMatcher::NGramFstMatcher	ngram-fst.h	/^  NGramFstMatcher(const NGramFst<A> &fst, MatchType match_type)$/;"	f	class:fst::NGramFstMatcher
+fst::NGramFstMatcher::NGramFstMatcher	ngram-fst.h	/^  NGramFstMatcher(const NGramFstMatcher<A> &matcher, bool safe = false)$/;"	f	class:fst::NGramFstMatcher
+fst::NGramFstMatcher::Next_	ngram-fst.h	/^  virtual void Next_() {$/;"	f	class:fst::NGramFstMatcher
+fst::NGramFstMatcher::Properties	ngram-fst.h	/^  virtual uint64 Properties(uint64 props) const {$/;"	f	class:fst::NGramFstMatcher
+fst::NGramFstMatcher::SetState_	ngram-fst.h	/^  virtual void SetState_(StateId s) {$/;"	f	class:fst::NGramFstMatcher
+fst::NGramFstMatcher::StateId	ngram-fst.h	/^  typedef typename A::StateId StateId;$/;"	t	class:fst::NGramFstMatcher
+fst::NGramFstMatcher::Type	ngram-fst.h	/^  virtual MatchType Type(bool test) const {$/;"	f	class:fst::NGramFstMatcher
+fst::NGramFstMatcher::Value_	ngram-fst.h	/^  virtual const Arc& Value_() const {$/;"	f	class:fst::NGramFstMatcher
+fst::NGramFstMatcher::Weight	ngram-fst.h	/^  typedef typename A::Weight Weight;$/;"	t	class:fst::NGramFstMatcher
+fst::NGramFstMatcher::arc_	ngram-fst.h	/^  Arc arc_;$/;"	m	class:fst::NGramFstMatcher
+fst::NGramFstMatcher::current_loop_	ngram-fst.h	/^  bool current_loop_;                \/\/ Current arc is the implicit loop$/;"	m	class:fst::NGramFstMatcher
+fst::NGramFstMatcher::done_	ngram-fst.h	/^  bool done_;$/;"	m	class:fst::NGramFstMatcher
+fst::NGramFstMatcher::fst_	ngram-fst.h	/^  const NGramFst<A>& fst_;$/;"	m	class:fst::NGramFstMatcher
+fst::NGramFstMatcher::inst_	ngram-fst.h	/^  NGramFstInst<A> inst_;$/;"	m	class:fst::NGramFstMatcher
+fst::NGramFstMatcher::loop_	ngram-fst.h	/^  Arc loop_;$/;"	m	class:fst::NGramFstMatcher
+fst::NGramFstMatcher::match_type_	ngram-fst.h	/^  MatchType match_type_;             \/\/ Supplied by caller$/;"	m	class:fst::NGramFstMatcher
+fst::StateIterator	ngram-fst.h	/^class StateIterator<NGramFst<A> > : public StateIteratorBase<A> {$/;"	c	namespace:fst
+fst::StateIterator::Done	ngram-fst.h	/^  bool Done() const { return s_ >= num_states_; }$/;"	f	class:fst::StateIterator
+fst::StateIterator::Done_	ngram-fst.h	/^  virtual bool Done_() const { return Done(); }$/;"	f	class:fst::StateIterator
+fst::StateIterator::Next	ngram-fst.h	/^  void Next() { ++s_; }$/;"	f	class:fst::StateIterator
+fst::StateIterator::Next_	ngram-fst.h	/^  virtual void Next_() { Next(); }$/;"	f	class:fst::StateIterator
+fst::StateIterator::Reset	ngram-fst.h	/^  void Reset() { s_ = 0; }$/;"	f	class:fst::StateIterator
+fst::StateIterator::Reset_	ngram-fst.h	/^  virtual void Reset_() { Reset(); }$/;"	f	class:fst::StateIterator
+fst::StateIterator::StateId	ngram-fst.h	/^  typedef typename A::StateId StateId;$/;"	t	class:fst::StateIterator
+fst::StateIterator::StateIterator	ngram-fst.h	/^  explicit StateIterator(const NGramFst<A> &fst)$/;"	f	class:fst::StateIterator
+fst::StateIterator::Value	ngram-fst.h	/^  StateId Value() const { return s_; }$/;"	f	class:fst::StateIterator
+fst::StateIterator::Value_	ngram-fst.h	/^  virtual StateId Value_() const { return Value(); }$/;"	f	class:fst::StateIterator
+fst::StateIterator::num_states_	ngram-fst.h	/^  StateId s_, num_states_;$/;"	m	class:fst::StateIterator
+fst::StateIterator::s_	ngram-fst.h	/^  StateId s_, num_states_;$/;"	m	class:fst::StateIterator
+fst_	ngram-fst.h	/^  const NGramFst<A>& fst_;$/;"	m	class:fst::NGramFstMatcher
+future_	ngram-fst.h	/^  const uint64 *context_, *future_, *final_;$/;"	m	class:fst::NGramFstImpl
+future_index_	ngram-fst.h	/^  BitmapIndex future_index_;$/;"	m	class:fst::NGramFstImpl
+future_probs_	ngram-fst.h	/^  const Weight *backoff_, *final_probs_, *future_probs_;$/;"	m	class:fst::NGramFstImpl
+future_words_	ngram-fst.h	/^  const Label *context_words_, *future_words_;$/;"	m	class:fst::NGramFstImpl
+i_	ngram-fst.h	/^  size_t i_;$/;"	m	class:fst::ArcIterator
+impl_	ngram-fst.h	/^  const NGramFstImpl<A> *impl_;$/;"	m	class:fst::ArcIterator
+inst_	ngram-fst.h	/^  NGramFstInst<A> inst_;$/;"	m	class:fst::NGramFstMatcher
+inst_	ngram-fst.h	/^  mutable NGramFstInst<A> inst_;$/;"	m	class:fst::ArcIterator
+inst_	ngram-fst.h	/^  mutable NGramFstInst<A> inst_;$/;"	m	class:fst::NGramFst
+kFileVersion	ngram-fst.h	/^  static const int kFileVersion = 4;$/;"	m	class:fst::NGramFstImpl
+kMinFileVersion	ngram-fst.h	/^  static const int kMinFileVersion = 4;$/;"	m	class:fst::NGramFstImpl
+kOne	bitmap-index.h	/^  static const uint64 kOne = 1;$/;"	m	class:fst::BitmapIndex
+kSecondaryBlockSize	bitmap-index.h	/^  static const uint32 kSecondaryBlockSize = ((1 << 16) - 1)$/;"	m	class:fst::BitmapIndex
+kStaticProperties	ngram-fst.h	/^  static const uint64 kStaticProperties = kAcceptor | kIDeterministic |$/;"	m	class:fst::NGramFstImpl
+kStorageBitSize	bitmap-index.h	/^  static const uint32 kStorageBitSize = 64;$/;"	m	class:fst::BitmapIndex
+kStorageBlockMask	bitmap-index.h	/^  static const uint32 kStorageBlockMask = kStorageBitSize - 1;$/;"	m	class:fst::BitmapIndex
+kStorageLogBitSize	bitmap-index.h	/^  static const uint32 kStorageLogBitSize = 6;$/;"	m	class:fst::BitmapIndex
+lazy_	ngram-fst.h	/^  mutable uint32 lazy_;$/;"	m	class:fst::ArcIterator
+loop_	ngram-fst.h	/^  Arc loop_;$/;"	m	class:fst::NGramFstMatcher
+match_type_	ngram-fst.h	/^  MatchType match_type_;             \/\/ Supplied by caller$/;"	m	class:fst::NGramFstMatcher
+node_	ngram-fst.h	/^  size_t node_;$/;"	m	struct:fst::NGramFstInst
+node_state_	ngram-fst.h	/^  StateId node_state_;$/;"	m	struct:fst::NGramFstInst
+nth_bit	nthbit.h	/^inline uint32 nth_bit(uint64 v, uint32 r) {$/;"	f
+num_final_	ngram-fst.h	/^  uint64 num_states_, num_futures_, num_final_;$/;"	m	class:fst::NGramFstImpl
+num_futures_	ngram-fst.h	/^  size_t num_futures_;$/;"	m	struct:fst::NGramFstInst
+num_futures_	ngram-fst.h	/^  uint64 num_states_, num_futures_, num_final_;$/;"	m	class:fst::NGramFstImpl
+num_states_	ngram-fst.h	/^  StateId s_, num_states_;$/;"	m	class:fst::StateIterator
+num_states_	ngram-fst.h	/^  uint64 num_states_, num_futures_, num_final_;$/;"	m	class:fst::NGramFstImpl
+offset_	ngram-fst.h	/^  size_t offset_;$/;"	m	struct:fst::NGramFstInst
+owned_	ngram-fst.h	/^  bool owned_;  \/\/ True if we own data_$/;"	m	class:fst::NGramFstImpl
+primary_index_	bitmap-index.h	/^  vector<uint32> primary_index_;$/;"	m	class:fst::BitmapIndex
+primary_index_size	bitmap-index.h	/^  size_t primary_index_size() const {$/;"	f	class:fst::BitmapIndex
+root_children_	ngram-fst.h	/^  const Label *root_children_;$/;"	m	class:fst::NGramFstImpl
+root_first_child_	ngram-fst.h	/^  size_t root_first_child_;$/;"	m	class:fst::NGramFstImpl
+root_num_children_	ngram-fst.h	/^  size_t root_num_children_;$/;"	m	class:fst::NGramFstImpl
+s_	ngram-fst.h	/^  StateId s_, num_states_;$/;"	m	class:fst::StateIterator
+secondary_index_	bitmap-index.h	/^  vector<uint16> secondary_index_;$/;"	m	class:fst::BitmapIndex
+size_	bitmap-index.h	/^  size_t size_;$/;"	m	class:fst::BitmapIndex
+state_	ngram-fst.h	/^  StateId state_;$/;"	m	struct:fst::NGramFstInst
+~NGramFstImpl	ngram-fst.h	/^  ~NGramFstImpl() {$/;"	f	class:fst::NGramFstImpl

@@ -1,0 +1,27 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+PdtCompose	pdtscript.cc	/^void PdtCompose(const FstClass &ifst1,$/;"	f	namespace:fst::script
+PdtExpand	pdtscript.cc	/^void PdtExpand(const FstClass &ifst,$/;"	f	namespace:fst::script
+PdtReplace	pdtscript.cc	/^void PdtReplace(const vector<pair<int64, const FstClass*> > &fst_tuples,$/;"	f	namespace:fst::script
+PdtReverse	pdtscript.cc	/^void PdtReverse(const FstClass &ifst,$/;"	f	namespace:fst::script
+PdtShortestPath	pdtscript.cc	/^void PdtShortestPath(const FstClass &ifst,$/;"	f	namespace:fst::script
+PrintPdtInfo	pdtscript.cc	/^void PrintPdtInfo(const FstClass &ifst,$/;"	f	namespace:fst::script
+fst	pdtscript.cc	/^namespace fst {$/;"	n	file:
+fst::script	pdtscript.cc	/^namespace script {$/;"	n	namespace:fst	file:
+fst::script::PdtCompose	pdtscript.cc	/^void PdtCompose(const FstClass &ifst1,$/;"	f	namespace:fst::script
+fst::script::PdtExpand	pdtscript.cc	/^void PdtExpand(const FstClass &ifst,$/;"	f	namespace:fst::script
+fst::script::PdtReplace	pdtscript.cc	/^void PdtReplace(const vector<pair<int64, const FstClass*> > &fst_tuples,$/;"	f	namespace:fst::script
+fst::script::PdtReverse	pdtscript.cc	/^void PdtReverse(const FstClass &ifst,$/;"	f	namespace:fst::script
+fst::script::PdtShortestPath	pdtscript.cc	/^void PdtShortestPath(const FstClass &ifst,$/;"	f	namespace:fst::script
+fst::script::PrintPdtInfo	pdtscript.cc	/^void PrintPdtInfo(const FstClass &ifst,$/;"	f	namespace:fst::script
+main	pdtcompose.cc	/^int main(int argc, char **argv) {$/;"	f
+main	pdtexpand.cc	/^int main(int argc, char **argv) {$/;"	f
+main	pdtinfo.cc	/^int main(int argc, char **argv) {$/;"	f
+main	pdtreplace.cc	/^int main(int argc, char **argv) {$/;"	f
+main	pdtreverse.cc	/^int main(int argc, char **argv) {$/;"	f
+main	pdtshortestpath.cc	/^int main(int argc, char **argv) {$/;"	f
+script	pdtscript.cc	/^namespace script {$/;"	n	namespace:fst	file:

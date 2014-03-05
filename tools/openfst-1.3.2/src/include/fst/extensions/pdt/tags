@@ -1,0 +1,960 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AddStateAndEnqueue	expand.h	/^void PrunedExpand<A>::AddStateAndEnqueue(StateId s) {$/;"	f	class:fst::PrunedExpand
+Arc	expand.h	/^  typedef A Arc;$/;"	t	class:fst::ExpandFst
+Arc	expand.h	/^  typedef A Arc;$/;"	t	class:fst::ExpandFstImpl
+Arc	expand.h	/^  typedef A Arc;$/;"	t	class:fst::PrunedExpand
+Arc	info.h	/^  typedef A Arc;$/;"	t	class:fst::PdtInfo
+ArcIterator	expand.h	/^  ArcIterator(const ExpandFst<A> &fst, StateId s)$/;"	f	class:fst::ArcIterator
+ArcIterator	expand.h	/^class ArcIterator< ExpandFst<A> >$/;"	c	namespace:fst
+ArcType	info.h	/^  const string& ArcType() const { return A::Type(); }$/;"	f	class:fst::PdtInfo
+COptions	compose.h	/^  typedef ComposeFstOptions<Arc, PdtMatcher, PdtFilter> COptions;$/;"	t	class:fst::PdtComposeOptions
+ChildHash	pdt.h	/^  struct ChildHash {$/;"	s	class:fst::PdtStack
+Clear	paren.h	/^  void Clear() {$/;"	f	class:fst::PdtBalanceData
+Clear	shortest-path.h	/^  void Clear() {$/;"	f	class:fst::PdtShortestPathData
+CloseInsert	paren.h	/^  void CloseInsert(Label paren_id, StateId open_dest, StateId close_source) {$/;"	f	class:fst::PdtBalanceData
+CloseParenMap	paren.h	/^                        typename ParenState<A>::Hash> CloseParenMap;$/;"	t	class:fst::PdtBalanceData
+CloseParenMultimap	shortest-path.h	/^                        typename ParenState<Arc>::Hash> CloseParenMultimap;$/;"	t	class:fst::PdtShortestPath
+CloseSourceIterator	shortest-path.h	/^  typedef typename PdtBalanceData<Arc>::SetIterator CloseSourceIterator;$/;"	t	class:fst::PdtShortestPath
+CloseSourceMap	paren.h	/^                   typename ParenState<A>::Hash> CloseSourceMap;$/;"	t	class:fst::PdtBalanceData
+Collection	collection.h	/^  Collection() {}$/;"	f	class:fst::Collection
+Collection	collection.h	/^class Collection {$/;"	c	namespace:fst
+Compose	compose.h	/^void Compose(const Fst<Arc> &ifst1,$/;"	f	namespace:fst
+ComputeStateSet	paren.h	/^void PdtParenReachable<A>::ComputeStateSet(StateId s) {$/;"	f	class:fst::PdtParenReachable
+Copy	expand.h	/^  virtual ExpandFst<A> *Copy(bool safe = false) const {$/;"	f	class:fst::ExpandFst
+DFSearch	paren.h	/^bool PdtParenReachable<A>::DFSearch(StateId s) {$/;"	f	class:fst::PdtParenReachable
+DestMap	expand.h	/^  typedef unordered_map<StateId, Weight> DestMap;$/;"	t	class:fst::PrunedExpand
+Distance	expand.h	/^typename A::Weight PrunedExpand<A>::Distance(StateId s) const {$/;"	f	class:fst::PrunedExpand
+Distance	shortest-path.h	/^  Weight Distance(SearchState s) const {$/;"	f	class:fst::PdtShortestPathData
+Distance	shortest-path.h	/^  Weight Distance(const ParenSpec &paren) const {$/;"	f	class:fst::PdtShortestPathData
+DistanceToDest	expand.h	/^typename A::Weight PrunedExpand<A>::DistanceToDest(StateId source,$/;"	f	class:fst::PrunedExpand
+Done	collection.h	/^    bool Done() const { return id_ == kNoNodeId; }$/;"	f	class:fst::Collection::SetIterator
+Done	paren.h	/^  bool Done() const {$/;"	f	class:fst::MapIterator
+Element	collection.h	/^    const T &Element() const { return node_.element; }$/;"	f	class:fst::Collection::SetIterator
+Enqueue	shortest-path.h	/^void PdtShortestPath<Arc, Queue>::Enqueue(SearchState s) {$/;"	f	class:fst::PdtShortestPath
+Error	paren.h	/^  bool const Error() { return error_; }$/;"	f	class:fst::PdtParenReachable
+Expand	expand.h	/^void Expand($/;"	f	namespace:fst
+Expand	expand.h	/^void PrunedExpand<A>::Expand($/;"	f	class:fst::PrunedExpand
+ExpandFst	expand.h	/^  ExpandFst(const ExpandFst<A> &fst, bool safe = false)$/;"	f	class:fst::ExpandFst
+ExpandFst	expand.h	/^  ExpandFst(const Fst<A> &fst,$/;"	f	class:fst::ExpandFst
+ExpandFst	expand.h	/^class ExpandFst : public ImplToFst< ExpandFstImpl<A> > {$/;"	c	namespace:fst
+ExpandFstImpl	expand.h	/^  ExpandFstImpl(const ExpandFstImpl &impl)$/;"	f	class:fst::ExpandFstImpl
+ExpandFstImpl	expand.h	/^  ExpandFstImpl(const Fst<A> &fst,$/;"	f	class:fst::ExpandFstImpl
+ExpandFstImpl	expand.h	/^class ExpandFstImpl$/;"	c	namespace:fst
+ExpandFstOptions	expand.h	/^  ExpandFstOptions($/;"	f	struct:fst::ExpandFstOptions
+ExpandFstOptions	expand.h	/^struct ExpandFstOptions : public CacheOptions {$/;"	s	namespace:fst
+ExpandOptions	expand.h	/^  ExpandOptions(bool c  = true, bool k = false,$/;"	f	struct:fst::ExpandOptions
+ExpandOptions	expand.h	/^struct ExpandOptions {$/;"	s	namespace:fst
+ExpandProperties	expand.h	/^inline uint64 ExpandProperties(uint64 inprops) {$/;"	f	namespace:fst
+ExpandState	expand.h	/^  void ExpandState(StateId s) {$/;"	f	class:fst::ExpandFstImpl
+FST_EXTENSIONS_PDT_COLLECTION_H__	collection.h	22;"	d
+FST_EXTENSIONS_PDT_COMPOSE_H__	compose.h	22;"	d
+FST_EXTENSIONS_PDT_EXPAND_H__	expand.h	22;"	d
+FST_EXTENSIONS_PDT_INFO_H__	info.h	22;"	d
+FST_EXTENSIONS_PDT_PAREN_H_	paren.h	23;"	d
+FST_EXTENSIONS_PDT_PDTLIB_H_	pdtlib.h	23;"	d
+FST_EXTENSIONS_PDT_PDTSCRIPT_H_	pdtscript.h	20;"	d
+FST_EXTENSIONS_PDT_PDT_H__	pdt.h	22;"	d
+FST_EXTENSIONS_PDT_REPLACE_H__	replace.h	22;"	d
+FST_EXTENSIONS_PDT_REVERSE_H__	reverse.h	22;"	d
+FST_EXTENSIONS_PDT_SHORTEST_PATH_H__	shortest-path.h	22;"	d
+Final	expand.h	/^  Weight Final(StateId s) {$/;"	f	class:fst::ExpandFstImpl
+FinalDistance	expand.h	/^typename A::Weight PrunedExpand<A>::FinalDistance(StateId s) const {$/;"	f	class:fst::PrunedExpand
+Find	paren.h	/^  SetIterator Find(Label paren_id, StateId open_dest) {$/;"	f	class:fst::PdtBalanceData
+Find	pdt.h	/^  StackId Find(StackId stack_id, Label label) {$/;"	f	class:fst::PdtStack
+FindId	collection.h	/^  I FindId(const vector<T> &set, bool insert = true) {$/;"	f	class:fst::Collection
+FindParenArcs	paren.h	/^  ParenArcIterator FindParenArcs(Label paren_id, StateId s) const {$/;"	f	class:fst::PdtParenReachable
+FindParens	paren.h	/^  ParenIterator FindParens(StateId s) const {$/;"	f	class:fst::PdtParenReachable
+FindSet	collection.h	/^  SetIterator FindSet(I id) {$/;"	f	class:fst::Collection
+FindStates	paren.h	/^  SetIterator FindStates(Label paren_id, StateId s) const {$/;"	f	class:fst::PdtParenReachable
+Finish	shortest-path.h	/^  void Finish() { finished_ = true; }$/;"	f	class:fst::PdtShortestPathData
+FinishInsert	paren.h	/^  void FinishInsert(StateId open_dest) {$/;"	f	class:fst::PdtBalanceData
+Flags	expand.h	/^uint8 PrunedExpand<A>::Flags(StateId s) const {$/;"	f	class:fst::PrunedExpand
+Flags	shortest-path.h	/^  uint8 Flags(SearchState s) const {$/;"	f	class:fst::PdtShortestPathData
+FstType	info.h	/^  const string& FstType() const { return fst_type_; }$/;"	f	class:fst::PdtInfo
+GC	shortest-path.h	/^void  PdtShortestPathData<Arc>::GC(StateId start) {$/;"	f	class:fst::PdtShortestPathData
+GetBalanceData	shortest-path.h	/^  PdtBalanceData<Arc> *GetBalanceData() { return &balance_data_; }$/;"	f	class:fst::PdtShortestPath
+GetCloseParenMultimap	shortest-path.h	/^  const CloseParenMultimap &GetCloseParenMultimap() const {$/;"	f	class:fst::PdtShortestPath
+GetDistance	shortest-path.h	/^void PdtShortestPath<Arc, Queue>::GetDistance(StateId start) {$/;"	f	class:fst::PdtShortestPath
+GetImpl	expand.h	/^  Impl *GetImpl() const { return ImplToFst<Impl>::GetImpl(); }$/;"	f	class:fst::ExpandFst
+GetPath	shortest-path.h	/^void PdtShortestPath<Arc, Queue>::GetPath() {$/;"	f	class:fst::PdtShortestPath
+GetPathArc	shortest-path.h	/^Arc PdtShortestPath<Arc, Queue>::GetPathArc($/;"	f	class:fst::PdtShortestPath
+GetSearchData	shortest-path.h	/^  SearchData *GetSearchData(ParenSpec paren) const {$/;"	f	class:fst::PdtShortestPathData
+GetSearchData	shortest-path.h	/^  SearchData *GetSearchData(SearchState s) const {$/;"	f	class:fst::PdtShortestPathData
+GetShortestPathData	shortest-path.h	/^  const PdtShortestPathData<Arc> &GetShortestPathData() const {$/;"	f	class:fst::PdtShortestPath
+GetStack	expand.h	/^  const PdtStack<StackId, Label> &GetStack() const { return *stack_; }$/;"	f	class:fst::ExpandFstImpl
+GetStack	expand.h	/^  const PdtStack<StackId, Label> &GetStack() const {$/;"	f	class:fst::ExpandFst
+GetStateTable	expand.h	/^  const PdtStateTable<StateId, StackId> &GetStateTable() const {$/;"	f	class:fst::ExpandFst
+GetStateTable	expand.h	/^  const PdtStateTable<StateId, StackId> &GetStateTable() const {$/;"	f	class:fst::ExpandFstImpl
+Hash	paren.h	/^  struct Hash {$/;"	s	class:fst::ParenState
+Impl	expand.h	/^  typedef ExpandFstImpl<A> Impl;$/;"	t	class:fst::ExpandFst
+Init	shortest-path.h	/^void PdtShortestPath<Arc, Queue>::Init(MutableFst<Arc> *ofst) {$/;"	f	class:fst::PdtShortestPath
+InitArcIterator	expand.h	/^  virtual void InitArcIterator(StateId s, ArcIteratorData<A> *data) const {$/;"	f	class:fst::ExpandFst
+InitArcIterator	expand.h	/^  void InitArcIterator(StateId s, ArcIteratorData<A> *data) {$/;"	f	class:fst::ExpandFstImpl
+InitCloseParenMultimap	expand.h	/^void PrunedExpand<A>::InitCloseParenMultimap($/;"	f	class:fst::PrunedExpand
+InitStateIterator	expand.h	/^void ExpandFst<A>::InitStateIterator(StateIteratorData<A> *data) const$/;"	f	class:fst::ExpandFst
+Label	compose.h	/^  typedef typename Arc::Label Label;$/;"	t	class:fst::PdtComposeOptions
+Label	expand.h	/^  typedef typename A::Label Label;$/;"	t	class:fst::ExpandFst
+Label	expand.h	/^  typedef typename A::Label Label;$/;"	t	class:fst::ExpandFstImpl
+Label	expand.h	/^  typedef typename A::Label Label;$/;"	t	class:fst::PrunedExpand
+Label	info.h	/^  typedef typename A::Label Label;$/;"	t	class:fst::PdtInfo
+Label	paren.h	/^  typedef typename A::Label Label;$/;"	t	class:fst::ParenState
+Label	paren.h	/^  typedef typename A::Label Label;$/;"	t	class:fst::PdtBalanceData
+Label	paren.h	/^  typedef typename A::Label Label;$/;"	t	class:fst::PdtParenReachable
+Label	pdt.h	/^  typedef L Label;$/;"	t	class:fst::PdtStack
+Label	shortest-path.h	/^  typedef typename Arc::Label Label;$/;"	t	class:fst::PdtShortestPath
+Label	shortest-path.h	/^  typedef typename Arc::Label Label;$/;"	t	class:fst::PdtShortestPathData
+MapIterator	paren.h	/^  MapIterator(const M &m, StlIterator iter)$/;"	f	class:fst::MapIterator
+MapIterator	paren.h	/^class MapIterator {$/;"	c	namespace:fst
+Next	collection.h	/^    void Next() {$/;"	f	class:fst::Collection::SetIterator
+Next	paren.h	/^  void Next() { ++iter_; }$/;"	f	class:fst::MapIterator
+Node	collection.h	/^    Node() : node_id(kNoNodeId), element(T()) {}$/;"	f	struct:fst::Collection::Node
+Node	collection.h	/^    Node(I i, const T &t) : node_id(i), element(t) {}$/;"	f	struct:fst::Collection::Node
+Node	collection.h	/^  struct Node {  \/\/ Trie node$/;"	s	class:fst::Collection
+NodeHash	collection.h	/^  struct NodeHash {$/;"	s	class:fst::Collection
+NodeTable	collection.h	/^  typedef CompactHashBiTable<I, Node, NodeHash> NodeTable;$/;"	t	class:fst::Collection
+NumArcs	expand.h	/^  size_t NumArcs(StateId s) {$/;"	f	class:fst::ExpandFstImpl
+NumArcs	info.h	/^  int64 NumArcs() const { return narcs_; }$/;"	f	class:fst::PdtInfo
+NumCloseParenStates	info.h	/^  int64 NumCloseParenStates() const { return nclose_paren_states_; }$/;"	f	class:fst::PdtInfo
+NumCloseParens	info.h	/^  int64 NumCloseParens() const { return nclose_parens_; }$/;"	f	class:fst::PdtInfo
+NumInputEpsilons	expand.h	/^  size_t NumInputEpsilons(StateId s) {$/;"	f	class:fst::ExpandFstImpl
+NumOpenParenStates	info.h	/^  int64 NumOpenParenStates() const { return nopen_paren_states_; }$/;"	f	class:fst::PdtInfo
+NumOpenParens	info.h	/^  int64 NumOpenParens() const { return nopen_parens_; }$/;"	f	class:fst::PdtInfo
+NumOutputEpsilons	expand.h	/^  size_t NumOutputEpsilons(StateId s) {$/;"	f	class:fst::ExpandFstImpl
+NumStates	info.h	/^  int64 NumStates() const { return nstates_; }$/;"	f	class:fst::PdtInfo
+NumUniqueCloseParens	info.h	/^  int64 NumUniqueCloseParens() const { return nuniq_close_parens_; }$/;"	f	class:fst::PdtInfo
+NumUniqueOpenParens	info.h	/^  int64 NumUniqueOpenParens() const { return nuniq_open_parens_; }$/;"	f	class:fst::PdtInfo
+OpenInsert	paren.h	/^  void OpenInsert(Label paren_id, StateId open_dest) {$/;"	f	class:fst::PdtBalanceData
+OpenParenMap	paren.h	/^  typedef unordered_multimap<StateId, Label> OpenParenMap;$/;"	t	class:fst::PdtBalanceData
+OpenParenSet	paren.h	/^  typedef unordered_set<ParenState<A>, typename ParenState<A>::Hash> OpenParenSet;$/;"	t	class:fst::PdtBalanceData
+PairType	paren.h	/^  typedef typename M::value_type PairType;$/;"	t	class:fst::MapIterator
+ParenArcIterator	paren.h	/^  typedef MapIterator<ParenArcMultiMap> ParenArcIterator;$/;"	t	class:fst::PdtParenReachable
+ParenArcMultiMap	paren.h	/^                        typename ParenState<A>::Hash> ParenArcMultiMap;$/;"	t	class:fst::PdtParenReachable
+ParenHash	shortest-path.h	/^  struct ParenHash {$/;"	s	class:fst::PdtShortestPathData
+ParenId	pdt.h	/^  ssize_t ParenId(Label label) const {$/;"	f	class:fst::PdtStack
+ParenId	shortest-path.h	/^  Label ParenId(SearchState s) const {$/;"	f	class:fst::PdtShortestPathData
+ParenIterator	paren.h	/^  typedef MapIterator<ParenMultiMap> ParenIterator;$/;"	t	class:fst::PdtParenReachable
+ParenMap	shortest-path.h	/^  typedef unordered_map<ParenSpec, SearchData, ParenHash> ParenMap;$/;"	t	class:fst::PdtShortestPathData
+ParenMultiMap	paren.h	/^  typedef unordered_multimap<StateId, Label> ParenMultiMap;$/;"	t	class:fst::PdtParenReachable
+ParenMultimap	expand.h	/^  typedef typename SP::CloseParenMultimap ParenMultimap;$/;"	t	class:fst::PrunedExpand
+ParenSpec	shortest-path.h	/^    ParenSpec()$/;"	f	struct:fst::PdtShortestPathData::ParenSpec
+ParenSpec	shortest-path.h	/^    ParenSpec(Label id, StateId s, StateId d)$/;"	f	struct:fst::PdtShortestPathData::ParenSpec
+ParenSpec	shortest-path.h	/^  struct ParenSpec {$/;"	s	class:fst::PdtShortestPathData
+ParenSpec	shortest-path.h	/^  typedef typename SpData::ParenSpec ParenSpec;$/;"	t	class:fst::PdtShortestPath
+ParenState	paren.h	/^  ParenState() : paren_id(kNoLabel), state_id(kNoStateId) {}$/;"	f	class:fst::ParenState
+ParenState	paren.h	/^  ParenState(Label p, StateId s) : paren_id(p), state_id(s) {}$/;"	f	class:fst::ParenState
+ParenState	paren.h	/^class ParenState {$/;"	c	namespace:fst
+Parent	shortest-path.h	/^  SearchState Parent(SearchState s) const {$/;"	f	class:fst::PdtShortestPathData
+Parent	shortest-path.h	/^  SearchState Parent(const ParenSpec &paren) const {$/;"	f	class:fst::PdtShortestPathData
+PdtBalanceData	paren.h	/^  PdtBalanceData() {}$/;"	f	class:fst::PdtBalanceData
+PdtBalanceData	paren.h	/^class PdtBalanceData {$/;"	c	namespace:fst
+PdtCompose	pdtscript.h	/^void PdtCompose(PdtComposeArgs *args) {$/;"	f	namespace:fst::script
+PdtComposeArgs	pdtscript.h	/^                      bool> PdtComposeArgs;$/;"	t	namespace:fst::script
+PdtComposeOptions	compose.h	/^  PdtComposeOptions(const Fst<Arc> &ifst1,$/;"	f	class:fst::PdtComposeOptions
+PdtComposeOptions	compose.h	/^class PdtComposeOptions : public$/;"	c	namespace:fst
+PdtComposeOptions	compose.h	/^class PdtComposeOptions<Arc, false> : public$/;"	c	namespace:fst
+PdtExpand	pdtscript.h	/^void PdtExpand(PdtExpandArgs *args) {$/;"	f	namespace:fst::script
+PdtExpandArgs	pdtscript.h	/^                      MutableFstClass *, PdtExpandOptions> PdtExpandArgs;$/;"	t	namespace:fst::script
+PdtExpandOptions	pdtscript.h	/^  PdtExpandOptions(bool c = true, bool k = false,$/;"	f	struct:fst::script::PdtExpandOptions
+PdtExpandOptions	pdtscript.h	/^struct PdtExpandOptions {$/;"	s	namespace:fst::script
+PdtFilter	compose.h	/^  typedef MultiEpsFilter<AltSequenceComposeFilter<PdtMatcher> > PdtFilter;$/;"	t	class:fst::PdtComposeOptions
+PdtFilter	compose.h	/^  typedef MultiEpsFilter<SequenceComposeFilter<PdtMatcher> > PdtFilter;$/;"	t	class:fst::PdtComposeOptions
+PdtInfo	info.h	/^PdtInfo<A>::PdtInfo(const Fst<A> &fst,$/;"	f	class:fst::PdtInfo
+PdtInfo	info.h	/^template <class A> class PdtInfo {$/;"	c	namespace:fst
+PdtMatcher	compose.h	/^  typedef MultiEpsMatcher< Matcher<Fst<Arc> > > PdtMatcher;$/;"	t	class:fst::PdtComposeOptions
+PdtParenReachable	paren.h	/^  PdtParenReachable(const Fst<A> &fst,$/;"	f	class:fst::PdtParenReachable
+PdtParenReachable	paren.h	/^class PdtParenReachable {$/;"	c	namespace:fst
+PdtReplace	pdtscript.h	/^void PdtReplace(PdtReplaceArgs *args) {$/;"	f	namespace:fst::script
+PdtReplaceArgs	pdtscript.h	/^                      const int64 &> PdtReplaceArgs;$/;"	t	namespace:fst::script
+PdtReverse	pdtscript.h	/^void PdtReverse(PdtReverseArgs *args) {$/;"	f	namespace:fst::script
+PdtReverseArgs	pdtscript.h	/^                      MutableFstClass *> PdtReverseArgs;$/;"	t	namespace:fst::script
+PdtShortestPath	pdtscript.h	/^void PdtShortestPath(PdtShortestPathArgs *args) {$/;"	f	namespace:fst::script
+PdtShortestPath	shortest-path.h	/^  PdtShortestPath(const Fst<Arc> &ifst,$/;"	f	class:fst::PdtShortestPath
+PdtShortestPath	shortest-path.h	/^class PdtShortestPath {$/;"	c	namespace:fst
+PdtShortestPathArgs	pdtscript.h	/^                      const PdtShortestPathOptions &> PdtShortestPathArgs;$/;"	t	namespace:fst::script
+PdtShortestPathData	shortest-path.h	/^  PdtShortestPathData(bool gc)$/;"	f	class:fst::PdtShortestPathData
+PdtShortestPathData	shortest-path.h	/^class PdtShortestPathData {$/;"	c	namespace:fst
+PdtShortestPathOptions	pdtscript.h	/^  PdtShortestPathOptions(QueueType qt = FIFO_QUEUE,$/;"	f	struct:fst::script::PdtShortestPathOptions
+PdtShortestPathOptions	pdtscript.h	/^struct PdtShortestPathOptions {$/;"	s	namespace:fst::script
+PdtShortestPathOptions	shortest-path.h	/^  PdtShortestPathOptions(bool kp = false, bool gc = true)$/;"	f	struct:fst::PdtShortestPathOptions
+PdtShortestPathOptions	shortest-path.h	/^struct PdtShortestPathOptions {$/;"	s	namespace:fst
+PdtStack	pdt.h	/^  PdtStack(const vector<pair<Label, Label> > &parens)$/;"	f	class:fst::PdtStack
+PdtStack	pdt.h	/^class PdtStack {$/;"	c	namespace:fst
+PdtStateHash	pdt.h	/^class PdtStateHash {$/;"	c	namespace:fst
+PdtStateTable	pdt.h	/^  PdtStateTable() {}$/;"	f	class:fst::PdtStateTable
+PdtStateTable	pdt.h	/^  PdtStateTable(const PdtStateTable<S, K> &table) {}$/;"	f	class:fst::PdtStateTable
+PdtStateTable	pdt.h	/^class PdtStateTable$/;"	c	namespace:fst
+PdtStateTuple	pdt.h	/^  PdtStateTuple()$/;"	f	struct:fst::PdtStateTuple
+PdtStateTuple	pdt.h	/^  PdtStateTuple(StateId fs, StackId ss)$/;"	f	struct:fst::PdtStateTuple
+PdtStateTuple	pdt.h	/^struct PdtStateTuple {$/;"	s	namespace:fst
+Pop	pdt.h	/^  StackId Pop(StackId stack_id) const {$/;"	f	class:fst::PdtStack
+PrintPdtInfo	info.h	/^void PrintPdtInfo(const PdtInfo<A> &pdtinfo) {$/;"	f	namespace:fst
+PrintPdtInfo	pdtscript.h	/^void PrintPdtInfo(PrintPdtInfoArgs *args) {$/;"	f	namespace:fst::script
+PrintPdtInfoArgs	pdtscript.h	/^                      const vector<pair<int64, int64> > &> PrintPdtInfoArgs;$/;"	t	namespace:fst::script
+ProcArcs	shortest-path.h	/^void PdtShortestPath<Arc, Queue>::ProcArcs(SearchState s) {$/;"	f	class:fst::PdtShortestPath
+ProcCloseParen	expand.h	/^bool PrunedExpand<A>::ProcCloseParen(StateId s, const A &arc) {$/;"	f	class:fst::PrunedExpand
+ProcCloseParen	shortest-path.h	/^void PdtShortestPath<Arc, Queue>::ProcCloseParen($/;"	f	class:fst::PdtShortestPath
+ProcDestStates	expand.h	/^void PrunedExpand<A>::ProcDestStates(StateId s, StackId si) {$/;"	f	class:fst::PrunedExpand
+ProcFinal	expand.h	/^void PrunedExpand<A>::ProcFinal(StateId s) {$/;"	f	class:fst::PrunedExpand
+ProcFinal	shortest-path.h	/^void PdtShortestPath<Arc, Queue>::ProcFinal(SearchState s) {$/;"	f	class:fst::PdtShortestPath
+ProcNonParen	expand.h	/^bool PrunedExpand<A>::ProcNonParen(StateId s, const A &arc, bool add_arc) {$/;"	f	class:fst::PrunedExpand
+ProcNonParen	shortest-path.h	/^void PdtShortestPath<Arc, Queue>::ProcNonParen($/;"	f	class:fst::PdtShortestPath
+ProcOpenParen	expand.h	/^bool PrunedExpand<A>::ProcOpenParen(StateId s, const A &arc, StackId si,$/;"	f	class:fst::PrunedExpand
+ProcOpenParen	shortest-path.h	/^void PdtShortestPath<Arc, Queue>::ProcOpenParen($/;"	f	class:fst::PdtShortestPath
+ProcStart	expand.h	/^void PrunedExpand<A>::ProcStart() {$/;"	f	class:fst::PrunedExpand
+PruneArc	expand.h	/^bool PrunedExpand<A>::PruneArc(StateId s, const A &arc) {$/;"	f	class:fst::PrunedExpand
+PrunedExpand	expand.h	/^  PrunedExpand(const Fst<A> &ifst,$/;"	f	class:fst::PrunedExpand
+PrunedExpand	expand.h	/^class PrunedExpand {$/;"	c	namespace:fst
+REGISTER_FST_PDT_OPERATIONS	pdtscript.h	277;"	d
+Relax	expand.h	/^void PrunedExpand<A>::Relax(StateId s, const A &arc, Weight fd) {$/;"	f	class:fst::PrunedExpand
+Relax	shortest-path.h	/^void PdtShortestPath<Arc, Queue>::Relax($/;"	f	class:fst::PdtShortestPath
+Replace	replace.h	/^void Replace(const vector<pair<typename Arc::Label,$/;"	f	namespace:fst
+ReplaceParenHash	replace.h	/^struct ReplaceParenHash {$/;"	s	namespace:fst
+Reset	paren.h	/^  void Reset() { iter_ = begin_; }$/;"	f	class:fst::MapIterator
+Reverse	paren.h	/^PdtBalanceData<A> *PdtBalanceData<A>::Reverse($/;"	f	class:fst::PdtBalanceData
+Reverse	reverse.h	/^void Reverse(const Fst<Arc> &ifst,$/;"	f	namespace:fst
+SP	expand.h	/^  typedef PdtShortestPath<Arc, FifoQueue<StateId> > SP;$/;"	t	class:fst::PrunedExpand
+SearchData	shortest-path.h	/^    SearchData() : distance(Weight::Zero()),$/;"	f	struct:fst::PdtShortestPathData::SearchData
+SearchData	shortest-path.h	/^  struct SearchData {$/;"	s	class:fst::PdtShortestPathData
+SearchMap	shortest-path.h	/^  typedef unordered_map<SearchState, SearchData, SearchStateHash> SearchMap;$/;"	t	class:fst::PdtShortestPathData
+SearchMultimap	shortest-path.h	/^  typedef unordered_multimap<StateId, StateId> SearchMultimap;$/;"	t	class:fst::PdtShortestPathData
+SearchState	shortest-path.h	/^    SearchState() : state(kNoStateId), start(kNoStateId) {}$/;"	f	struct:fst::PdtShortestPathData::SearchState
+SearchState	shortest-path.h	/^    SearchState(StateId s, StateId t) : state(s), start(t) {}$/;"	f	struct:fst::PdtShortestPathData::SearchState
+SearchState	shortest-path.h	/^  struct SearchState {$/;"	s	class:fst::PdtShortestPathData
+SearchState	shortest-path.h	/^  typedef typename SpData::SearchState SearchState;$/;"	t	class:fst::PdtShortestPath
+SearchStateHash	shortest-path.h	/^  struct SearchStateHash {$/;"	s	class:fst::PdtShortestPathData
+SetDistance	expand.h	/^void PrunedExpand<A>::SetDistance(StateId s, Weight w) {$/;"	f	class:fst::PrunedExpand
+SetDistance	shortest-path.h	/^  void SetDistance(SearchState s, Weight w) {$/;"	f	class:fst::PdtShortestPathData
+SetDistance	shortest-path.h	/^  void SetDistance(const ParenSpec &paren, Weight w) {$/;"	f	class:fst::PdtShortestPathData
+SetFinalDistance	expand.h	/^void PrunedExpand<A>::SetFinalDistance(StateId s, Weight w) {$/;"	f	class:fst::PrunedExpand
+SetFlags	expand.h	/^void PrunedExpand<A>::SetFlags(StateId s, uint8 flags, uint8 mask) {$/;"	f	class:fst::PrunedExpand
+SetFlags	shortest-path.h	/^  void SetFlags(SearchState s, uint8 f, uint8 mask) {$/;"	f	class:fst::PdtShortestPathData
+SetIterator	collection.h	/^    SetIterator(I id, Node node, NodeTable *node_table)$/;"	f	class:fst::Collection::SetIterator
+SetIterator	collection.h	/^  class SetIterator {$/;"	c	class:fst::Collection
+SetIterator	expand.h	/^  typedef typename PdtBalanceData<Arc>::SetIterator SetIterator;$/;"	t	class:fst::PrunedExpand
+SetIterator	paren.h	/^  typedef typename Collection<ssize_t, StateId>::SetIterator SetIterator;$/;"	t	class:fst::PdtBalanceData
+SetIterator	paren.h	/^  typedef typename Collection<ssize_t, StateId>::SetIterator SetIterator;$/;"	t	class:fst::PdtParenReachable
+SetParenId	shortest-path.h	/^  void SetParenId(SearchState s, Label p) {$/;"	f	class:fst::PdtShortestPathData
+SetParent	shortest-path.h	/^  void SetParent(SearchState s, SearchState p) {$/;"	f	class:fst::PdtShortestPathData
+SetParent	shortest-path.h	/^  void SetParent(const ParenSpec &paren, SearchState p) {$/;"	f	class:fst::PdtShortestPathData
+SetSourceState	expand.h	/^void PrunedExpand<A>::SetSourceState(StateId s, StateId p) {$/;"	f	class:fst::PrunedExpand
+ShortestPath	shortest-path.h	/^  void ShortestPath(MutableFst<Arc> *ofst) {$/;"	f	class:fst::PdtShortestPath
+ShortestPath	shortest-path.h	/^void ShortestPath(const Fst<Arc> &ifst,$/;"	f	namespace:fst
+ShortestStackFirstQueue	expand.h	/^    ShortestStackFirstQueue($/;"	f	class:fst::PrunedExpand::ShortestStackFirstQueue
+ShortestStackFirstQueue	expand.h	/^  class ShortestStackFirstQueue$/;"	c	class:fst::PrunedExpand
+SourceState	expand.h	/^typename A::StateId PrunedExpand<A>::SourceState(StateId s) const {$/;"	f	class:fst::PrunedExpand
+SpData	shortest-path.h	/^  typedef PdtShortestPathData<Arc> SpData;$/;"	t	class:fst::PdtShortestPath
+Stack	expand.h	/^  typedef PdtStack<StackId, Label> Stack;$/;"	t	class:fst::PrunedExpand
+StackCompare	expand.h	/^    StackCompare(const StateTable &st,$/;"	f	class:fst::PrunedExpand::StackCompare
+StackCompare	expand.h	/^  class StackCompare {$/;"	c	class:fst::PrunedExpand
+StackId	expand.h	/^  typedef StateId StackId;$/;"	t	class:fst::ExpandFst
+StackId	expand.h	/^  typedef StateId StackId;$/;"	t	class:fst::ExpandFstImpl
+StackId	expand.h	/^  typedef StateId StackId;$/;"	t	class:fst::PrunedExpand
+StackId	pdt.h	/^  typedef K StackId;$/;"	t	class:fst::PdtStack
+StackId	pdt.h	/^  typedef K StackId;$/;"	t	class:fst::PdtStateTable
+StackId	pdt.h	/^  typedef K StackId;$/;"	t	struct:fst::PdtStateTuple
+StackNode	pdt.h	/^    StackNode(StackId p, size_t i) : parent_id(p), paren_id(i) {}$/;"	f	struct:fst::PdtStack::StackNode
+StackNode	pdt.h	/^  struct StackNode {$/;"	s	class:fst::PdtStack
+Start	expand.h	/^  StateId Start() {$/;"	f	class:fst::ExpandFstImpl
+State	expand.h	/^  typedef CacheState<A> State;$/;"	t	class:fst::ExpandFst
+StateId	expand.h	/^  typedef typename A::StateId StateId;$/;"	t	class:fst::ArcIterator
+StateId	expand.h	/^  typedef typename A::StateId StateId;$/;"	t	class:fst::ExpandFst
+StateId	expand.h	/^  typedef typename A::StateId StateId;$/;"	t	class:fst::ExpandFstImpl
+StateId	expand.h	/^  typedef typename A::StateId StateId;$/;"	t	class:fst::PrunedExpand
+StateId	info.h	/^  typedef typename A::StateId StateId;$/;"	t	class:fst::PdtInfo
+StateId	paren.h	/^  typedef typename A::StateId StateId;$/;"	t	class:fst::ParenState
+StateId	paren.h	/^  typedef typename A::StateId StateId;$/;"	t	class:fst::PdtBalanceData
+StateId	paren.h	/^  typedef typename A::StateId StateId;$/;"	t	class:fst::PdtParenReachable
+StateId	pdt.h	/^  typedef S StateId;$/;"	t	class:fst::PdtStateTable
+StateId	pdt.h	/^  typedef S StateId;$/;"	t	struct:fst::PdtStateTuple
+StateId	shortest-path.h	/^  typedef typename Arc::StateId StateId;$/;"	t	class:fst::PdtShortestPath
+StateId	shortest-path.h	/^  typedef typename Arc::StateId StateId;$/;"	t	class:fst::PdtShortestPathData
+StateIterator	expand.h	/^  explicit StateIterator(const ExpandFst<A> &fst)$/;"	f	class:fst::StateIterator
+StateIterator	expand.h	/^class StateIterator< ExpandFst<A> >$/;"	c	namespace:fst
+StateSetMap	paren.h	/^                   typename ParenState<A>::Hash> StateSetMap;$/;"	t	class:fst::PdtParenReachable
+StateTable	expand.h	/^  typedef PdtStateTable<StateId, StackId> StateTable;$/;"	t	class:fst::PrunedExpand
+StateTuple	expand.h	/^  typedef PdtStateTuple<StateId, StackId> StateTuple;$/;"	t	class:fst::ExpandFstImpl
+StlIterator	paren.h	/^  typedef typename M::const_iterator StlIterator;$/;"	t	class:fst::MapIterator
+Top	pdt.h	/^  ssize_t Top(StackId stack_id) const {$/;"	f	class:fst::PdtStack
+UpdateStateSet	paren.h	/^void PdtParenReachable<A>::UpdateStateSet($/;"	f	class:fst::PdtParenReachable
+Value	paren.h	/^  ValueType Value() const { return iter_->second; }$/;"	f	class:fst::MapIterator
+ValueType	paren.h	/^  typedef typename PairType::second_type ValueType;$/;"	t	class:fst::MapIterator
+Weight	expand.h	/^  typedef typename A::Weight Weight;$/;"	t	class:fst::ExpandFst
+Weight	expand.h	/^  typedef typename A::Weight Weight;$/;"	t	class:fst::ExpandFstImpl
+Weight	expand.h	/^  typedef typename A::Weight Weight;$/;"	t	class:fst::PrunedExpand
+Weight	info.h	/^  typedef typename A::Weight Weight;$/;"	t	class:fst::PdtInfo
+Weight	shortest-path.h	/^  typedef typename Arc::Weight Weight;$/;"	t	class:fst::PdtShortestPath
+Weight	shortest-path.h	/^  typedef typename Arc::Weight Weight;$/;"	t	class:fst::PdtShortestPathData
+balance_data_	expand.h	/^  PdtBalanceData<Arc> *balance_data_;   \/\/ Not owned by shortest_path_$/;"	m	class:fst::PrunedExpand
+balance_data_	shortest-path.h	/^  PdtBalanceData<Arc> balance_data_;$/;"	m	class:fst::PdtShortestPath
+begin_	paren.h	/^  StlIterator begin_;$/;"	m	class:fst::MapIterator
+cached_dest_list_	expand.h	/^  slist<pair<StateId, Weight> > cached_dest_list_;$/;"	m	class:fst::PrunedExpand
+cached_source_	expand.h	/^  StateId cached_source_;$/;"	m	class:fst::PrunedExpand
+cached_stack_id_	expand.h	/^  ssize_t cached_stack_id_;$/;"	m	class:fst::PrunedExpand
+child_map_	pdt.h	/^           StackId, ChildHash> child_map_;   \/\/ Child of stack node wrt label$/;"	m	class:fst::PdtStack
+close_	paren.h	/^  bool close_;                                        \/\/ Close\/open paren info?$/;"	m	class:fst::PdtParenReachable
+close_paren_map_	paren.h	/^  CloseParenMap close_paren_map_;                    \/\/ close states\/open$/;"	m	class:fst::PdtBalanceData
+close_paren_multimap_	expand.h	/^  ParenMultimap close_paren_multimap_;  \/\/ Maps open paren arcs to$/;"	m	class:fst::PrunedExpand
+close_paren_multimap_	shortest-path.h	/^  CloseParenMultimap close_paren_multimap_;$/;"	m	class:fst::PdtShortestPath
+close_source_map_	paren.h	/^  CloseSourceMap close_source_map_;                  \/\/ paren, state to set ID$/;"	m	class:fst::PdtBalanceData
+close_source_sets_	paren.h	/^  mutable Collection<ssize_t, StateId> close_source_sets_;$/;"	m	class:fst::PdtBalanceData
+connect	expand.h	/^  bool connect;$/;"	m	struct:fst::ExpandOptions
+connect	pdtscript.h	/^  bool connect;$/;"	m	struct:fst::script::PdtExpandOptions
+current_paren_id_	expand.h	/^  ssize_t current_paren_id_;  \/\/ Paren id at top of current stack$/;"	m	class:fst::PrunedExpand
+current_stack_id_	expand.h	/^  StackId current_stack_id_;$/;"	m	class:fst::PrunedExpand
+dest_map_	expand.h	/^  DestMap dest_map_;$/;"	m	class:fst::PrunedExpand
+dest_start	shortest-path.h	/^    StateId dest_start;    \/\/ sub-graph 'start' state for paren dest.$/;"	m	struct:fst::PdtShortestPathData::ParenSpec
+distance	shortest-path.h	/^    Weight distance;     \/\/ Distance to this state from PDT 'start' state$/;"	m	struct:fst::PdtShortestPathData::SearchData
+distance_	expand.h	/^    const vector<Weight> &distance_;$/;"	m	class:fst::PrunedExpand::StackCompare
+distance_	expand.h	/^  vector<Weight> distance_;        \/\/ Distance from initial state in efst_\/ofst$/;"	m	class:fst::PrunedExpand
+efst_	expand.h	/^  ExpandFst<Arc> efst_;            \/\/ Expanded PDT$/;"	m	class:fst::PrunedExpand
+element	collection.h	/^    T element;$/;"	m	struct:fst::Collection::Node
+error_	paren.h	/^  bool error_;$/;"	m	class:fst::PdtParenReachable
+error_	shortest-path.h	/^  bool error_;$/;"	m	class:fst::PdtShortestPath
+f_distance_	shortest-path.h	/^  Weight f_distance_;$/;"	m	class:fst::PdtShortestPath
+f_parent_	shortest-path.h	/^  SearchState f_parent_;$/;"	m	class:fst::PdtShortestPath
+fdistance_	expand.h	/^    const vector<Weight> &fdistance_;$/;"	m	class:fst::PrunedExpand::StackCompare
+fdistance_	expand.h	/^  vector<Weight> fdistance_;       \/\/ Distance to final states in efst_\/ofst$/;"	m	class:fst::PrunedExpand
+finished_	shortest-path.h	/^  bool finished_;                           \/\/ Read-only access when true$/;"	m	class:fst::PdtShortestPathData
+flags	shortest-path.h	/^    uint8 flags;         \/\/ First byte reserved for PdtShortestPathData use$/;"	m	struct:fst::PdtShortestPathData::SearchData
+flags_	expand.h	/^  vector<uint8> flags_;            \/\/ Status flags for states in efst_\/ofst$/;"	m	class:fst::PrunedExpand
+fst	collection.h	/^namespace fst {$/;"	n
+fst	compose.h	/^namespace fst {$/;"	n
+fst	expand.h	/^namespace fst {$/;"	n
+fst	info.h	/^namespace fst {$/;"	n
+fst	paren.h	/^namespace fst {$/;"	n
+fst	pdt.h	/^namespace fst {$/;"	n
+fst	pdtscript.h	/^namespace fst {$/;"	n
+fst	replace.h	/^namespace fst {$/;"	n
+fst	reverse.h	/^namespace fst {$/;"	n
+fst	shortest-path.h	/^namespace fst {$/;"	n
+fst::ArcIterator	expand.h	/^class ArcIterator< ExpandFst<A> >$/;"	c	namespace:fst
+fst::ArcIterator::ArcIterator	expand.h	/^  ArcIterator(const ExpandFst<A> &fst, StateId s)$/;"	f	class:fst::ArcIterator
+fst::ArcIterator::StateId	expand.h	/^  typedef typename A::StateId StateId;$/;"	t	class:fst::ArcIterator
+fst::Collection	collection.h	/^class Collection {$/;"	c	namespace:fst
+fst::Collection::Collection	collection.h	/^  Collection() {}$/;"	f	class:fst::Collection
+fst::Collection::FindId	collection.h	/^  I FindId(const vector<T> &set, bool insert = true) {$/;"	f	class:fst::Collection
+fst::Collection::FindSet	collection.h	/^  SetIterator FindSet(I id) {$/;"	f	class:fst::Collection
+fst::Collection::Node	collection.h	/^  struct Node {  \/\/ Trie node$/;"	s	class:fst::Collection
+fst::Collection::Node::Node	collection.h	/^    Node() : node_id(kNoNodeId), element(T()) {}$/;"	f	struct:fst::Collection::Node
+fst::Collection::Node::Node	collection.h	/^    Node(I i, const T &t) : node_id(i), element(t) {}$/;"	f	struct:fst::Collection::Node
+fst::Collection::Node::element	collection.h	/^    T element;$/;"	m	struct:fst::Collection::Node
+fst::Collection::Node::node_id	collection.h	/^    I node_id;   \/\/ Root is kNoNodeId;$/;"	m	struct:fst::Collection::Node
+fst::Collection::Node::operator ==	collection.h	/^    bool operator==(const Node& n) const {$/;"	f	struct:fst::Collection::Node
+fst::Collection::NodeHash	collection.h	/^  struct NodeHash {$/;"	s	class:fst::Collection
+fst::Collection::NodeHash::operator ()	collection.h	/^    size_t operator()(const Node &n) const {$/;"	f	struct:fst::Collection::NodeHash
+fst::Collection::NodeTable	collection.h	/^  typedef CompactHashBiTable<I, Node, NodeHash> NodeTable;$/;"	t	class:fst::Collection
+fst::Collection::SetIterator	collection.h	/^  class SetIterator {$/;"	c	class:fst::Collection
+fst::Collection::SetIterator::Done	collection.h	/^    bool Done() const { return id_ == kNoNodeId; }$/;"	f	class:fst::Collection::SetIterator
+fst::Collection::SetIterator::Element	collection.h	/^    const T &Element() const { return node_.element; }$/;"	f	class:fst::Collection::SetIterator
+fst::Collection::SetIterator::Next	collection.h	/^    void Next() {$/;"	f	class:fst::Collection::SetIterator
+fst::Collection::SetIterator::SetIterator	collection.h	/^    SetIterator(I id, Node node, NodeTable *node_table)$/;"	f	class:fst::Collection::SetIterator
+fst::Collection::SetIterator::id_	collection.h	/^    I id_;                     \/\/ Iterator set node id$/;"	m	class:fst::Collection::SetIterator
+fst::Collection::SetIterator::node_	collection.h	/^    Node node_;                \/\/ Iterator set node$/;"	m	class:fst::Collection::SetIterator
+fst::Collection::SetIterator::node_table_	collection.h	/^    NodeTable *node_table_;$/;"	m	class:fst::Collection::SetIterator
+fst::Collection::hash_	collection.h	/^  static std::tr1::hash<T> hash_;$/;"	m	class:fst::Collection
+fst::Collection::hash_	collection.h	/^template <class I, class T> std::tr1::hash<T> Collection<I, T>::hash_;$/;"	m	class:fst::Collection
+fst::Collection::kNoNodeId	collection.h	/^  static const I kNoNodeId;$/;"	m	class:fst::Collection
+fst::Collection::kNoNodeId	collection.h	/^template<class I, class T> const I Collection<I, T>::kNoNodeId = -1;$/;"	m	class:fst::Collection
+fst::Collection::kPrime	collection.h	/^  static const size_t kPrime;$/;"	m	class:fst::Collection
+fst::Collection::kPrime	collection.h	/^template <class I, class T> const size_t Collection<I, T>::kPrime = 7853;$/;"	m	class:fst::Collection
+fst::Collection::node_table_	collection.h	/^  NodeTable node_table_;$/;"	m	class:fst::Collection
+fst::Compose	compose.h	/^void Compose(const Fst<Arc> &ifst1,$/;"	f	namespace:fst
+fst::Expand	expand.h	/^void Expand($/;"	f	namespace:fst
+fst::ExpandFst	expand.h	/^class ExpandFst : public ImplToFst< ExpandFstImpl<A> > {$/;"	c	namespace:fst
+fst::ExpandFst::Arc	expand.h	/^  typedef A Arc;$/;"	t	class:fst::ExpandFst
+fst::ExpandFst::Copy	expand.h	/^  virtual ExpandFst<A> *Copy(bool safe = false) const {$/;"	f	class:fst::ExpandFst
+fst::ExpandFst::ExpandFst	expand.h	/^  ExpandFst(const ExpandFst<A> &fst, bool safe = false)$/;"	f	class:fst::ExpandFst
+fst::ExpandFst::ExpandFst	expand.h	/^  ExpandFst(const Fst<A> &fst,$/;"	f	class:fst::ExpandFst
+fst::ExpandFst::GetImpl	expand.h	/^  Impl *GetImpl() const { return ImplToFst<Impl>::GetImpl(); }$/;"	f	class:fst::ExpandFst
+fst::ExpandFst::GetStack	expand.h	/^  const PdtStack<StackId, Label> &GetStack() const {$/;"	f	class:fst::ExpandFst
+fst::ExpandFst::GetStateTable	expand.h	/^  const PdtStateTable<StateId, StackId> &GetStateTable() const {$/;"	f	class:fst::ExpandFst
+fst::ExpandFst::Impl	expand.h	/^  typedef ExpandFstImpl<A> Impl;$/;"	t	class:fst::ExpandFst
+fst::ExpandFst::InitArcIterator	expand.h	/^  virtual void InitArcIterator(StateId s, ArcIteratorData<A> *data) const {$/;"	f	class:fst::ExpandFst
+fst::ExpandFst::InitStateIterator	expand.h	/^void ExpandFst<A>::InitStateIterator(StateIteratorData<A> *data) const$/;"	f	class:fst::ExpandFst
+fst::ExpandFst::Label	expand.h	/^  typedef typename A::Label Label;$/;"	t	class:fst::ExpandFst
+fst::ExpandFst::StackId	expand.h	/^  typedef StateId StackId;$/;"	t	class:fst::ExpandFst
+fst::ExpandFst::State	expand.h	/^  typedef CacheState<A> State;$/;"	t	class:fst::ExpandFst
+fst::ExpandFst::StateId	expand.h	/^  typedef typename A::StateId StateId;$/;"	t	class:fst::ExpandFst
+fst::ExpandFst::Weight	expand.h	/^  typedef typename A::Weight Weight;$/;"	t	class:fst::ExpandFst
+fst::ExpandFstImpl	expand.h	/^class ExpandFstImpl$/;"	c	namespace:fst
+fst::ExpandFstImpl::Arc	expand.h	/^  typedef A Arc;$/;"	t	class:fst::ExpandFstImpl
+fst::ExpandFstImpl::ExpandFstImpl	expand.h	/^  ExpandFstImpl(const ExpandFstImpl &impl)$/;"	f	class:fst::ExpandFstImpl
+fst::ExpandFstImpl::ExpandFstImpl	expand.h	/^  ExpandFstImpl(const Fst<A> &fst,$/;"	f	class:fst::ExpandFstImpl
+fst::ExpandFstImpl::ExpandState	expand.h	/^  void ExpandState(StateId s) {$/;"	f	class:fst::ExpandFstImpl
+fst::ExpandFstImpl::Final	expand.h	/^  Weight Final(StateId s) {$/;"	f	class:fst::ExpandFstImpl
+fst::ExpandFstImpl::GetStack	expand.h	/^  const PdtStack<StackId, Label> &GetStack() const { return *stack_; }$/;"	f	class:fst::ExpandFstImpl
+fst::ExpandFstImpl::GetStateTable	expand.h	/^  const PdtStateTable<StateId, StackId> &GetStateTable() const {$/;"	f	class:fst::ExpandFstImpl
+fst::ExpandFstImpl::InitArcIterator	expand.h	/^  void InitArcIterator(StateId s, ArcIteratorData<A> *data) {$/;"	f	class:fst::ExpandFstImpl
+fst::ExpandFstImpl::Label	expand.h	/^  typedef typename A::Label Label;$/;"	t	class:fst::ExpandFstImpl
+fst::ExpandFstImpl::NumArcs	expand.h	/^  size_t NumArcs(StateId s) {$/;"	f	class:fst::ExpandFstImpl
+fst::ExpandFstImpl::NumInputEpsilons	expand.h	/^  size_t NumInputEpsilons(StateId s) {$/;"	f	class:fst::ExpandFstImpl
+fst::ExpandFstImpl::NumOutputEpsilons	expand.h	/^  size_t NumOutputEpsilons(StateId s) {$/;"	f	class:fst::ExpandFstImpl
+fst::ExpandFstImpl::StackId	expand.h	/^  typedef StateId StackId;$/;"	t	class:fst::ExpandFstImpl
+fst::ExpandFstImpl::Start	expand.h	/^  StateId Start() {$/;"	f	class:fst::ExpandFstImpl
+fst::ExpandFstImpl::StateId	expand.h	/^  typedef typename A::StateId StateId;$/;"	t	class:fst::ExpandFstImpl
+fst::ExpandFstImpl::StateTuple	expand.h	/^  typedef PdtStateTuple<StateId, StackId> StateTuple;$/;"	t	class:fst::ExpandFstImpl
+fst::ExpandFstImpl::Weight	expand.h	/^  typedef typename A::Weight Weight;$/;"	t	class:fst::ExpandFstImpl
+fst::ExpandFstImpl::fst_	expand.h	/^  const Fst<A> *fst_;$/;"	m	class:fst::ExpandFstImpl
+fst::ExpandFstImpl::keep_parentheses_	expand.h	/^  bool keep_parentheses_;$/;"	m	class:fst::ExpandFstImpl
+fst::ExpandFstImpl::own_stack_	expand.h	/^  bool own_stack_;$/;"	m	class:fst::ExpandFstImpl
+fst::ExpandFstImpl::own_state_table_	expand.h	/^  bool own_state_table_;$/;"	m	class:fst::ExpandFstImpl
+fst::ExpandFstImpl::stack_	expand.h	/^  PdtStack<StackId, Label> *stack_;$/;"	m	class:fst::ExpandFstImpl
+fst::ExpandFstImpl::state_table_	expand.h	/^  PdtStateTable<StateId, StackId> *state_table_;$/;"	m	class:fst::ExpandFstImpl
+fst::ExpandFstImpl::~ExpandFstImpl	expand.h	/^  ~ExpandFstImpl() {$/;"	f	class:fst::ExpandFstImpl
+fst::ExpandFstOptions	expand.h	/^struct ExpandFstOptions : public CacheOptions {$/;"	s	namespace:fst
+fst::ExpandFstOptions::ExpandFstOptions	expand.h	/^  ExpandFstOptions($/;"	f	struct:fst::ExpandFstOptions
+fst::ExpandFstOptions::keep_parentheses	expand.h	/^  bool keep_parentheses;$/;"	m	struct:fst::ExpandFstOptions
+fst::ExpandFstOptions::stack	expand.h	/^  PdtStack<typename Arc::StateId, typename Arc::Label> *stack;$/;"	m	struct:fst::ExpandFstOptions
+fst::ExpandFstOptions::state_table	expand.h	/^  PdtStateTable<typename Arc::StateId, typename Arc::StateId> *state_table;$/;"	m	struct:fst::ExpandFstOptions
+fst::ExpandOptions	expand.h	/^struct ExpandOptions {$/;"	s	namespace:fst
+fst::ExpandOptions::ExpandOptions	expand.h	/^  ExpandOptions(bool c  = true, bool k = false,$/;"	f	struct:fst::ExpandOptions
+fst::ExpandOptions::connect	expand.h	/^  bool connect;$/;"	m	struct:fst::ExpandOptions
+fst::ExpandOptions::keep_parentheses	expand.h	/^  bool keep_parentheses;$/;"	m	struct:fst::ExpandOptions
+fst::ExpandOptions::weight_threshold	expand.h	/^  typename Arc::Weight weight_threshold;$/;"	m	struct:fst::ExpandOptions
+fst::ExpandProperties	expand.h	/^inline uint64 ExpandProperties(uint64 inprops) {$/;"	f	namespace:fst
+fst::MapIterator	paren.h	/^class MapIterator {$/;"	c	namespace:fst
+fst::MapIterator::Done	paren.h	/^  bool Done() const {$/;"	f	class:fst::MapIterator
+fst::MapIterator::MapIterator	paren.h	/^  MapIterator(const M &m, StlIterator iter)$/;"	f	class:fst::MapIterator
+fst::MapIterator::Next	paren.h	/^  void Next() { ++iter_; }$/;"	f	class:fst::MapIterator
+fst::MapIterator::PairType	paren.h	/^  typedef typename M::value_type PairType;$/;"	t	class:fst::MapIterator
+fst::MapIterator::Reset	paren.h	/^  void Reset() { iter_ = begin_; }$/;"	f	class:fst::MapIterator
+fst::MapIterator::StlIterator	paren.h	/^  typedef typename M::const_iterator StlIterator;$/;"	t	class:fst::MapIterator
+fst::MapIterator::Value	paren.h	/^  ValueType Value() const { return iter_->second; }$/;"	f	class:fst::MapIterator
+fst::MapIterator::ValueType	paren.h	/^  typedef typename PairType::second_type ValueType;$/;"	t	class:fst::MapIterator
+fst::MapIterator::begin_	paren.h	/^  StlIterator begin_;$/;"	m	class:fst::MapIterator
+fst::MapIterator::iter_	paren.h	/^  StlIterator iter_;$/;"	m	class:fst::MapIterator
+fst::MapIterator::map_	paren.h	/^  const M &map_;$/;"	m	class:fst::MapIterator
+fst::ParenState	paren.h	/^class ParenState {$/;"	c	namespace:fst
+fst::ParenState::Hash	paren.h	/^  struct Hash {$/;"	s	class:fst::ParenState
+fst::ParenState::Hash::operator ()	paren.h	/^    size_t operator()(const ParenState<A> &p) const {$/;"	f	struct:fst::ParenState::Hash
+fst::ParenState::Label	paren.h	/^  typedef typename A::Label Label;$/;"	t	class:fst::ParenState
+fst::ParenState::ParenState	paren.h	/^  ParenState() : paren_id(kNoLabel), state_id(kNoStateId) {}$/;"	f	class:fst::ParenState
+fst::ParenState::ParenState	paren.h	/^  ParenState(Label p, StateId s) : paren_id(p), state_id(s) {}$/;"	f	class:fst::ParenState
+fst::ParenState::StateId	paren.h	/^  typedef typename A::StateId StateId;$/;"	t	class:fst::ParenState
+fst::ParenState::kPrime	paren.h	/^  static const size_t kPrime;$/;"	m	class:fst::ParenState
+fst::ParenState::kPrime	paren.h	/^const size_t ParenState<A>::kPrime = 7853;$/;"	m	class:fst::ParenState
+fst::ParenState::operator !=	paren.h	/^  bool operator!=(const ParenState<A> &p) const { return !(p == *this); }$/;"	f	class:fst::ParenState
+fst::ParenState::operator <	paren.h	/^  bool operator<(const ParenState<A> &p) const {$/;"	f	class:fst::ParenState
+fst::ParenState::operator ==	paren.h	/^  bool operator==(const ParenState<A> &p) const {$/;"	f	class:fst::ParenState
+fst::ParenState::paren_id	paren.h	/^  Label paren_id;     \/\/ ID of open (close) paren$/;"	m	class:fst::ParenState
+fst::ParenState::state_id	paren.h	/^  StateId state_id;   \/\/ destination (source) state of open (close) paren$/;"	m	class:fst::ParenState
+fst::PdtBalanceData	paren.h	/^class PdtBalanceData {$/;"	c	namespace:fst
+fst::PdtBalanceData::Clear	paren.h	/^  void Clear() {$/;"	f	class:fst::PdtBalanceData
+fst::PdtBalanceData::CloseInsert	paren.h	/^  void CloseInsert(Label paren_id, StateId open_dest, StateId close_source) {$/;"	f	class:fst::PdtBalanceData
+fst::PdtBalanceData::CloseParenMap	paren.h	/^                        typename ParenState<A>::Hash> CloseParenMap;$/;"	t	class:fst::PdtBalanceData
+fst::PdtBalanceData::CloseSourceMap	paren.h	/^                   typename ParenState<A>::Hash> CloseSourceMap;$/;"	t	class:fst::PdtBalanceData
+fst::PdtBalanceData::Find	paren.h	/^  SetIterator Find(Label paren_id, StateId open_dest) {$/;"	f	class:fst::PdtBalanceData
+fst::PdtBalanceData::FinishInsert	paren.h	/^  void FinishInsert(StateId open_dest) {$/;"	f	class:fst::PdtBalanceData
+fst::PdtBalanceData::Label	paren.h	/^  typedef typename A::Label Label;$/;"	t	class:fst::PdtBalanceData
+fst::PdtBalanceData::OpenInsert	paren.h	/^  void OpenInsert(Label paren_id, StateId open_dest) {$/;"	f	class:fst::PdtBalanceData
+fst::PdtBalanceData::OpenParenMap	paren.h	/^  typedef unordered_multimap<StateId, Label> OpenParenMap;$/;"	t	class:fst::PdtBalanceData
+fst::PdtBalanceData::OpenParenSet	paren.h	/^  typedef unordered_set<ParenState<A>, typename ParenState<A>::Hash> OpenParenSet;$/;"	t	class:fst::PdtBalanceData
+fst::PdtBalanceData::PdtBalanceData	paren.h	/^  PdtBalanceData() {}$/;"	f	class:fst::PdtBalanceData
+fst::PdtBalanceData::Reverse	paren.h	/^PdtBalanceData<A> *PdtBalanceData<A>::Reverse($/;"	f	class:fst::PdtBalanceData
+fst::PdtBalanceData::SetIterator	paren.h	/^  typedef typename Collection<ssize_t, StateId>::SetIterator SetIterator;$/;"	t	class:fst::PdtBalanceData
+fst::PdtBalanceData::StateId	paren.h	/^  typedef typename A::StateId StateId;$/;"	t	class:fst::PdtBalanceData
+fst::PdtBalanceData::close_paren_map_	paren.h	/^  CloseParenMap close_paren_map_;                    \/\/ close states\/open$/;"	m	class:fst::PdtBalanceData
+fst::PdtBalanceData::close_source_map_	paren.h	/^  CloseSourceMap close_source_map_;                  \/\/ paren, state to set ID$/;"	m	class:fst::PdtBalanceData
+fst::PdtBalanceData::close_source_sets_	paren.h	/^  mutable Collection<ssize_t, StateId> close_source_sets_;$/;"	m	class:fst::PdtBalanceData
+fst::PdtBalanceData::open_dest_	paren.h	/^  ParenState<A> open_dest_;                          \/\/ cur open dest. state$/;"	m	class:fst::PdtBalanceData
+fst::PdtBalanceData::open_iter_	paren.h	/^  typename OpenParenMap::const_iterator open_iter_;  \/\/ cur open parens\/state$/;"	m	class:fst::PdtBalanceData
+fst::PdtBalanceData::open_paren_map_	paren.h	/^  OpenParenMap open_paren_map_;                      \/\/ open parens per state$/;"	m	class:fst::PdtBalanceData
+fst::PdtBalanceData::open_paren_set_	paren.h	/^  OpenParenSet open_paren_set_;                      \/\/ open par. at dest?$/;"	m	class:fst::PdtBalanceData
+fst::PdtComposeOptions	compose.h	/^class PdtComposeOptions : public$/;"	c	namespace:fst
+fst::PdtComposeOptions	compose.h	/^class PdtComposeOptions<Arc, false> : public$/;"	c	namespace:fst
+fst::PdtComposeOptions::COptions	compose.h	/^  typedef ComposeFstOptions<Arc, PdtMatcher, PdtFilter> COptions;$/;"	t	class:fst::PdtComposeOptions
+fst::PdtComposeOptions::Label	compose.h	/^  typedef typename Arc::Label Label;$/;"	t	class:fst::PdtComposeOptions
+fst::PdtComposeOptions::PdtComposeOptions	compose.h	/^  PdtComposeOptions(const Fst<Arc> &ifst1,$/;"	f	class:fst::PdtComposeOptions
+fst::PdtComposeOptions::PdtFilter	compose.h	/^  typedef MultiEpsFilter<AltSequenceComposeFilter<PdtMatcher> > PdtFilter;$/;"	t	class:fst::PdtComposeOptions
+fst::PdtComposeOptions::PdtFilter	compose.h	/^  typedef MultiEpsFilter<SequenceComposeFilter<PdtMatcher> > PdtFilter;$/;"	t	class:fst::PdtComposeOptions
+fst::PdtComposeOptions::PdtMatcher	compose.h	/^  typedef MultiEpsMatcher< Matcher<Fst<Arc> > > PdtMatcher;$/;"	t	class:fst::PdtComposeOptions
+fst::PdtInfo	info.h	/^template <class A> class PdtInfo {$/;"	c	namespace:fst
+fst::PdtInfo::Arc	info.h	/^  typedef A Arc;$/;"	t	class:fst::PdtInfo
+fst::PdtInfo::ArcType	info.h	/^  const string& ArcType() const { return A::Type(); }$/;"	f	class:fst::PdtInfo
+fst::PdtInfo::FstType	info.h	/^  const string& FstType() const { return fst_type_; }$/;"	f	class:fst::PdtInfo
+fst::PdtInfo::Label	info.h	/^  typedef typename A::Label Label;$/;"	t	class:fst::PdtInfo
+fst::PdtInfo::NumArcs	info.h	/^  int64 NumArcs() const { return narcs_; }$/;"	f	class:fst::PdtInfo
+fst::PdtInfo::NumCloseParenStates	info.h	/^  int64 NumCloseParenStates() const { return nclose_paren_states_; }$/;"	f	class:fst::PdtInfo
+fst::PdtInfo::NumCloseParens	info.h	/^  int64 NumCloseParens() const { return nclose_parens_; }$/;"	f	class:fst::PdtInfo
+fst::PdtInfo::NumOpenParenStates	info.h	/^  int64 NumOpenParenStates() const { return nopen_paren_states_; }$/;"	f	class:fst::PdtInfo
+fst::PdtInfo::NumOpenParens	info.h	/^  int64 NumOpenParens() const { return nopen_parens_; }$/;"	f	class:fst::PdtInfo
+fst::PdtInfo::NumStates	info.h	/^  int64 NumStates() const { return nstates_; }$/;"	f	class:fst::PdtInfo
+fst::PdtInfo::NumUniqueCloseParens	info.h	/^  int64 NumUniqueCloseParens() const { return nuniq_close_parens_; }$/;"	f	class:fst::PdtInfo
+fst::PdtInfo::NumUniqueOpenParens	info.h	/^  int64 NumUniqueOpenParens() const { return nuniq_open_parens_; }$/;"	f	class:fst::PdtInfo
+fst::PdtInfo::PdtInfo	info.h	/^PdtInfo<A>::PdtInfo(const Fst<A> &fst,$/;"	f	class:fst::PdtInfo
+fst::PdtInfo::StateId	info.h	/^  typedef typename A::StateId StateId;$/;"	t	class:fst::PdtInfo
+fst::PdtInfo::Weight	info.h	/^  typedef typename A::Weight Weight;$/;"	t	class:fst::PdtInfo
+fst::PdtInfo::fst_type_	info.h	/^  string fst_type_;$/;"	m	class:fst::PdtInfo
+fst::PdtInfo::narcs_	info.h	/^  int64 narcs_;$/;"	m	class:fst::PdtInfo
+fst::PdtInfo::nclose_paren_states_	info.h	/^  int64 nclose_paren_states_;$/;"	m	class:fst::PdtInfo
+fst::PdtInfo::nclose_parens_	info.h	/^  int64 nclose_parens_;$/;"	m	class:fst::PdtInfo
+fst::PdtInfo::nopen_paren_states_	info.h	/^  int64 nopen_paren_states_;$/;"	m	class:fst::PdtInfo
+fst::PdtInfo::nopen_parens_	info.h	/^  int64 nopen_parens_;$/;"	m	class:fst::PdtInfo
+fst::PdtInfo::nstates_	info.h	/^  int64 nstates_;$/;"	m	class:fst::PdtInfo
+fst::PdtInfo::nuniq_close_parens_	info.h	/^  int64 nuniq_close_parens_;$/;"	m	class:fst::PdtInfo
+fst::PdtInfo::nuniq_open_parens_	info.h	/^  int64 nuniq_open_parens_;$/;"	m	class:fst::PdtInfo
+fst::PdtParenReachable	paren.h	/^class PdtParenReachable {$/;"	c	namespace:fst
+fst::PdtParenReachable::ComputeStateSet	paren.h	/^void PdtParenReachable<A>::ComputeStateSet(StateId s) {$/;"	f	class:fst::PdtParenReachable
+fst::PdtParenReachable::DFSearch	paren.h	/^bool PdtParenReachable<A>::DFSearch(StateId s) {$/;"	f	class:fst::PdtParenReachable
+fst::PdtParenReachable::Error	paren.h	/^  bool const Error() { return error_; }$/;"	f	class:fst::PdtParenReachable
+fst::PdtParenReachable::FindParenArcs	paren.h	/^  ParenArcIterator FindParenArcs(Label paren_id, StateId s) const {$/;"	f	class:fst::PdtParenReachable
+fst::PdtParenReachable::FindParens	paren.h	/^  ParenIterator FindParens(StateId s) const {$/;"	f	class:fst::PdtParenReachable
+fst::PdtParenReachable::FindStates	paren.h	/^  SetIterator FindStates(Label paren_id, StateId s) const {$/;"	f	class:fst::PdtParenReachable
+fst::PdtParenReachable::Label	paren.h	/^  typedef typename A::Label Label;$/;"	t	class:fst::PdtParenReachable
+fst::PdtParenReachable::ParenArcIterator	paren.h	/^  typedef MapIterator<ParenArcMultiMap> ParenArcIterator;$/;"	t	class:fst::PdtParenReachable
+fst::PdtParenReachable::ParenArcMultiMap	paren.h	/^                        typename ParenState<A>::Hash> ParenArcMultiMap;$/;"	t	class:fst::PdtParenReachable
+fst::PdtParenReachable::ParenIterator	paren.h	/^  typedef MapIterator<ParenMultiMap> ParenIterator;$/;"	t	class:fst::PdtParenReachable
+fst::PdtParenReachable::ParenMultiMap	paren.h	/^  typedef unordered_multimap<StateId, Label> ParenMultiMap;$/;"	t	class:fst::PdtParenReachable
+fst::PdtParenReachable::PdtParenReachable	paren.h	/^  PdtParenReachable(const Fst<A> &fst,$/;"	f	class:fst::PdtParenReachable
+fst::PdtParenReachable::SetIterator	paren.h	/^  typedef typename Collection<ssize_t, StateId>::SetIterator SetIterator;$/;"	t	class:fst::PdtParenReachable
+fst::PdtParenReachable::StateId	paren.h	/^  typedef typename A::StateId StateId;$/;"	t	class:fst::PdtParenReachable
+fst::PdtParenReachable::StateSetMap	paren.h	/^                   typename ParenState<A>::Hash> StateSetMap;$/;"	t	class:fst::PdtParenReachable
+fst::PdtParenReachable::UpdateStateSet	paren.h	/^void PdtParenReachable<A>::UpdateStateSet($/;"	f	class:fst::PdtParenReachable
+fst::PdtParenReachable::close_	paren.h	/^  bool close_;                                        \/\/ Close\/open paren info?$/;"	m	class:fst::PdtParenReachable
+fst::PdtParenReachable::error_	paren.h	/^  bool error_;$/;"	m	class:fst::PdtParenReachable
+fst::PdtParenReachable::fst_	paren.h	/^  const Fst<A> &fst_;$/;"	m	class:fst::PdtParenReachable
+fst::PdtParenReachable::paren_arc_multimap_	paren.h	/^  ParenArcMultiMap paren_arc_multimap_;               \/\/ Paren Arcs$/;"	m	class:fst::PdtParenReachable
+fst::PdtParenReachable::paren_id_map_	paren.h	/^  unordered_map<Label, Label> paren_id_map_;               \/\/ Paren labels -> ID$/;"	m	class:fst::PdtParenReachable
+fst::PdtParenReachable::paren_multimap_	paren.h	/^  ParenMultiMap paren_multimap_;                      \/\/ Paren reachability$/;"	m	class:fst::PdtParenReachable
+fst::PdtParenReachable::parens_	paren.h	/^  const vector<pair<Label, Label> > &parens_;         \/\/ Paren ID -> Labels$/;"	m	class:fst::PdtParenReachable
+fst::PdtParenReachable::set_map_	paren.h	/^  StateSetMap set_map_;                               \/\/ ID -> Reachable states$/;"	m	class:fst::PdtParenReachable
+fst::PdtParenReachable::state_color_	paren.h	/^  vector<char> state_color_;                          \/\/ DFS state$/;"	m	class:fst::PdtParenReachable
+fst::PdtParenReachable::state_sets_	paren.h	/^  mutable Collection<ssize_t, StateId> state_sets_;   \/\/ Reachable states -> ID$/;"	m	class:fst::PdtParenReachable
+fst::PdtShortestPath	shortest-path.h	/^class PdtShortestPath {$/;"	c	namespace:fst
+fst::PdtShortestPath::CloseParenMultimap	shortest-path.h	/^                        typename ParenState<Arc>::Hash> CloseParenMultimap;$/;"	t	class:fst::PdtShortestPath
+fst::PdtShortestPath::CloseSourceIterator	shortest-path.h	/^  typedef typename PdtBalanceData<Arc>::SetIterator CloseSourceIterator;$/;"	t	class:fst::PdtShortestPath
+fst::PdtShortestPath::Enqueue	shortest-path.h	/^void PdtShortestPath<Arc, Queue>::Enqueue(SearchState s) {$/;"	f	class:fst::PdtShortestPath
+fst::PdtShortestPath::GetBalanceData	shortest-path.h	/^  PdtBalanceData<Arc> *GetBalanceData() { return &balance_data_; }$/;"	f	class:fst::PdtShortestPath
+fst::PdtShortestPath::GetCloseParenMultimap	shortest-path.h	/^  const CloseParenMultimap &GetCloseParenMultimap() const {$/;"	f	class:fst::PdtShortestPath
+fst::PdtShortestPath::GetDistance	shortest-path.h	/^void PdtShortestPath<Arc, Queue>::GetDistance(StateId start) {$/;"	f	class:fst::PdtShortestPath
+fst::PdtShortestPath::GetPath	shortest-path.h	/^void PdtShortestPath<Arc, Queue>::GetPath() {$/;"	f	class:fst::PdtShortestPath
+fst::PdtShortestPath::GetPathArc	shortest-path.h	/^Arc PdtShortestPath<Arc, Queue>::GetPathArc($/;"	f	class:fst::PdtShortestPath
+fst::PdtShortestPath::GetShortestPathData	shortest-path.h	/^  const PdtShortestPathData<Arc> &GetShortestPathData() const {$/;"	f	class:fst::PdtShortestPath
+fst::PdtShortestPath::Init	shortest-path.h	/^void PdtShortestPath<Arc, Queue>::Init(MutableFst<Arc> *ofst) {$/;"	f	class:fst::PdtShortestPath
+fst::PdtShortestPath::Label	shortest-path.h	/^  typedef typename Arc::Label Label;$/;"	t	class:fst::PdtShortestPath
+fst::PdtShortestPath::ParenSpec	shortest-path.h	/^  typedef typename SpData::ParenSpec ParenSpec;$/;"	t	class:fst::PdtShortestPath
+fst::PdtShortestPath::PdtShortestPath	shortest-path.h	/^  PdtShortestPath(const Fst<Arc> &ifst,$/;"	f	class:fst::PdtShortestPath
+fst::PdtShortestPath::ProcArcs	shortest-path.h	/^void PdtShortestPath<Arc, Queue>::ProcArcs(SearchState s) {$/;"	f	class:fst::PdtShortestPath
+fst::PdtShortestPath::ProcCloseParen	shortest-path.h	/^void PdtShortestPath<Arc, Queue>::ProcCloseParen($/;"	f	class:fst::PdtShortestPath
+fst::PdtShortestPath::ProcFinal	shortest-path.h	/^void PdtShortestPath<Arc, Queue>::ProcFinal(SearchState s) {$/;"	f	class:fst::PdtShortestPath
+fst::PdtShortestPath::ProcNonParen	shortest-path.h	/^void PdtShortestPath<Arc, Queue>::ProcNonParen($/;"	f	class:fst::PdtShortestPath
+fst::PdtShortestPath::ProcOpenParen	shortest-path.h	/^void PdtShortestPath<Arc, Queue>::ProcOpenParen($/;"	f	class:fst::PdtShortestPath
+fst::PdtShortestPath::Relax	shortest-path.h	/^void PdtShortestPath<Arc, Queue>::Relax($/;"	f	class:fst::PdtShortestPath
+fst::PdtShortestPath::SearchState	shortest-path.h	/^  typedef typename SpData::SearchState SearchState;$/;"	t	class:fst::PdtShortestPath
+fst::PdtShortestPath::ShortestPath	shortest-path.h	/^  void ShortestPath(MutableFst<Arc> *ofst) {$/;"	f	class:fst::PdtShortestPath
+fst::PdtShortestPath::SpData	shortest-path.h	/^  typedef PdtShortestPathData<Arc> SpData;$/;"	t	class:fst::PdtShortestPath
+fst::PdtShortestPath::StateId	shortest-path.h	/^  typedef typename Arc::StateId StateId;$/;"	t	class:fst::PdtShortestPath
+fst::PdtShortestPath::Weight	shortest-path.h	/^  typedef typename Arc::Weight Weight;$/;"	t	class:fst::PdtShortestPath
+fst::PdtShortestPath::balance_data_	shortest-path.h	/^  PdtBalanceData<Arc> balance_data_;$/;"	m	class:fst::PdtShortestPath
+fst::PdtShortestPath::close_paren_multimap_	shortest-path.h	/^  CloseParenMultimap close_paren_multimap_;$/;"	m	class:fst::PdtShortestPath
+fst::PdtShortestPath::error_	shortest-path.h	/^  bool error_;$/;"	m	class:fst::PdtShortestPath
+fst::PdtShortestPath::f_distance_	shortest-path.h	/^  Weight f_distance_;$/;"	m	class:fst::PdtShortestPath
+fst::PdtShortestPath::f_parent_	shortest-path.h	/^  SearchState f_parent_;$/;"	m	class:fst::PdtShortestPath
+fst::PdtShortestPath::ifst_	shortest-path.h	/^  Fst<Arc> *ifst_;$/;"	m	class:fst::PdtShortestPath
+fst::PdtShortestPath::kEnqueued	shortest-path.h	/^  static const uint8 kEnqueued;$/;"	m	class:fst::PdtShortestPath
+fst::PdtShortestPath::kEnqueued	shortest-path.h	/^const uint8 PdtShortestPath<Arc, Queue>::kEnqueued = 0x10;$/;"	m	class:fst::PdtShortestPath
+fst::PdtShortestPath::kExpanded	shortest-path.h	/^  static const uint8 kExpanded;$/;"	m	class:fst::PdtShortestPath
+fst::PdtShortestPath::kExpanded	shortest-path.h	/^const uint8 PdtShortestPath<Arc, Queue>::kExpanded = 0x20;$/;"	m	class:fst::PdtShortestPath
+fst::PdtShortestPath::kFinal	shortest-path.h	/^  const uint8 kFinal;$/;"	m	class:fst::PdtShortestPath
+fst::PdtShortestPath::kFinished	shortest-path.h	/^  static const uint8 kFinished;$/;"	m	class:fst::PdtShortestPath
+fst::PdtShortestPath::kFinished	shortest-path.h	/^const uint8 PdtShortestPath<Arc, Queue>::kFinished = 0x40;$/;"	m	class:fst::PdtShortestPath
+fst::PdtShortestPath::kNoArc	shortest-path.h	/^  static const Arc kNoArc;$/;"	m	class:fst::PdtShortestPath
+fst::PdtShortestPath::kNoArc	shortest-path.h	/^const Arc PdtShortestPath<Arc, Queue>::kNoArc$/;"	m	class:fst::PdtShortestPath
+fst::PdtShortestPath::keep_parens_	shortest-path.h	/^  bool keep_parens_;$/;"	m	class:fst::PdtShortestPath
+fst::PdtShortestPath::nenqueued_	shortest-path.h	/^  ssize_t nenqueued_;$/;"	m	class:fst::PdtShortestPath
+fst::PdtShortestPath::ofst_	shortest-path.h	/^  MutableFst<Arc> *ofst_;$/;"	m	class:fst::PdtShortestPath
+fst::PdtShortestPath::paren_id_map_	shortest-path.h	/^  unordered_map<Label, Label> paren_id_map_;$/;"	m	class:fst::PdtShortestPath
+fst::PdtShortestPath::parens_	shortest-path.h	/^  const vector<pair<Label, Label> > &parens_;$/;"	m	class:fst::PdtShortestPath
+fst::PdtShortestPath::sp_data_	shortest-path.h	/^  SpData sp_data_;$/;"	m	class:fst::PdtShortestPath
+fst::PdtShortestPath::start_	shortest-path.h	/^  StateId start_;$/;"	m	class:fst::PdtShortestPath
+fst::PdtShortestPath::state_queue_	shortest-path.h	/^  Queue *state_queue_;                   \/\/ current state queue$/;"	m	class:fst::PdtShortestPath
+fst::PdtShortestPath::~PdtShortestPath	shortest-path.h	/^  ~PdtShortestPath() {$/;"	f	class:fst::PdtShortestPath
+fst::PdtShortestPathData	shortest-path.h	/^class PdtShortestPathData {$/;"	c	namespace:fst
+fst::PdtShortestPathData::Clear	shortest-path.h	/^  void Clear() {$/;"	f	class:fst::PdtShortestPathData
+fst::PdtShortestPathData::Distance	shortest-path.h	/^  Weight Distance(SearchState s) const {$/;"	f	class:fst::PdtShortestPathData
+fst::PdtShortestPathData::Distance	shortest-path.h	/^  Weight Distance(const ParenSpec &paren) const {$/;"	f	class:fst::PdtShortestPathData
+fst::PdtShortestPathData::Finish	shortest-path.h	/^  void Finish() { finished_ = true; }$/;"	f	class:fst::PdtShortestPathData
+fst::PdtShortestPathData::Flags	shortest-path.h	/^  uint8 Flags(SearchState s) const {$/;"	f	class:fst::PdtShortestPathData
+fst::PdtShortestPathData::GC	shortest-path.h	/^void  PdtShortestPathData<Arc>::GC(StateId start) {$/;"	f	class:fst::PdtShortestPathData
+fst::PdtShortestPathData::GetSearchData	shortest-path.h	/^  SearchData *GetSearchData(ParenSpec paren) const {$/;"	f	class:fst::PdtShortestPathData
+fst::PdtShortestPathData::GetSearchData	shortest-path.h	/^  SearchData *GetSearchData(SearchState s) const {$/;"	f	class:fst::PdtShortestPathData
+fst::PdtShortestPathData::Label	shortest-path.h	/^  typedef typename Arc::Label Label;$/;"	t	class:fst::PdtShortestPathData
+fst::PdtShortestPathData::ParenHash	shortest-path.h	/^  struct ParenHash {$/;"	s	class:fst::PdtShortestPathData
+fst::PdtShortestPathData::ParenHash::operator ()	shortest-path.h	/^    size_t operator()(const ParenSpec &paren) const {$/;"	f	struct:fst::PdtShortestPathData::ParenHash
+fst::PdtShortestPathData::ParenId	shortest-path.h	/^  Label ParenId(SearchState s) const {$/;"	f	class:fst::PdtShortestPathData
+fst::PdtShortestPathData::ParenMap	shortest-path.h	/^  typedef unordered_map<ParenSpec, SearchData, ParenHash> ParenMap;$/;"	t	class:fst::PdtShortestPathData
+fst::PdtShortestPathData::ParenSpec	shortest-path.h	/^  struct ParenSpec {$/;"	s	class:fst::PdtShortestPathData
+fst::PdtShortestPathData::ParenSpec::ParenSpec	shortest-path.h	/^    ParenSpec()$/;"	f	struct:fst::PdtShortestPathData::ParenSpec
+fst::PdtShortestPathData::ParenSpec::ParenSpec	shortest-path.h	/^    ParenSpec(Label id, StateId s, StateId d)$/;"	f	struct:fst::PdtShortestPathData::ParenSpec
+fst::PdtShortestPathData::ParenSpec::dest_start	shortest-path.h	/^    StateId dest_start;    \/\/ sub-graph 'start' state for paren dest.$/;"	m	struct:fst::PdtShortestPathData::ParenSpec
+fst::PdtShortestPathData::ParenSpec::operator ==	shortest-path.h	/^    bool operator==(const ParenSpec &x) const {$/;"	f	struct:fst::PdtShortestPathData::ParenSpec
+fst::PdtShortestPathData::ParenSpec::paren_id	shortest-path.h	/^    Label paren_id;        \/\/ Id of parenthesis$/;"	m	struct:fst::PdtShortestPathData::ParenSpec
+fst::PdtShortestPathData::ParenSpec::src_start	shortest-path.h	/^    StateId src_start;     \/\/ sub-graph 'start' state for paren source.$/;"	m	struct:fst::PdtShortestPathData::ParenSpec
+fst::PdtShortestPathData::Parent	shortest-path.h	/^  SearchState Parent(SearchState s) const {$/;"	f	class:fst::PdtShortestPathData
+fst::PdtShortestPathData::Parent	shortest-path.h	/^  SearchState Parent(const ParenSpec &paren) const {$/;"	f	class:fst::PdtShortestPathData
+fst::PdtShortestPathData::PdtShortestPathData	shortest-path.h	/^  PdtShortestPathData(bool gc)$/;"	f	class:fst::PdtShortestPathData
+fst::PdtShortestPathData::SearchData	shortest-path.h	/^  struct SearchData {$/;"	s	class:fst::PdtShortestPathData
+fst::PdtShortestPathData::SearchData::SearchData	shortest-path.h	/^    SearchData() : distance(Weight::Zero()),$/;"	f	struct:fst::PdtShortestPathData::SearchData
+fst::PdtShortestPathData::SearchData::distance	shortest-path.h	/^    Weight distance;     \/\/ Distance to this state from PDT 'start' state$/;"	m	struct:fst::PdtShortestPathData::SearchData
+fst::PdtShortestPathData::SearchData::flags	shortest-path.h	/^    uint8 flags;         \/\/ First byte reserved for PdtShortestPathData use$/;"	m	struct:fst::PdtShortestPathData::SearchData
+fst::PdtShortestPathData::SearchData::paren_id	shortest-path.h	/^    int16 paren_id;      \/\/ If parent arc has paren, paren ID, o.w. kNoLabel$/;"	m	struct:fst::PdtShortestPathData::SearchData
+fst::PdtShortestPathData::SearchData::parent	shortest-path.h	/^    SearchState parent;  \/\/ Parent state in shortest path tree$/;"	m	struct:fst::PdtShortestPathData::SearchData
+fst::PdtShortestPathData::SearchMap	shortest-path.h	/^  typedef unordered_map<SearchState, SearchData, SearchStateHash> SearchMap;$/;"	t	class:fst::PdtShortestPathData
+fst::PdtShortestPathData::SearchMultimap	shortest-path.h	/^  typedef unordered_multimap<StateId, StateId> SearchMultimap;$/;"	t	class:fst::PdtShortestPathData
+fst::PdtShortestPathData::SearchState	shortest-path.h	/^  struct SearchState {$/;"	s	class:fst::PdtShortestPathData
+fst::PdtShortestPathData::SearchState::SearchState	shortest-path.h	/^    SearchState() : state(kNoStateId), start(kNoStateId) {}$/;"	f	struct:fst::PdtShortestPathData::SearchState
+fst::PdtShortestPathData::SearchState::SearchState	shortest-path.h	/^    SearchState(StateId s, StateId t) : state(s), start(t) {}$/;"	f	struct:fst::PdtShortestPathData::SearchState
+fst::PdtShortestPathData::SearchState::operator ==	shortest-path.h	/^    bool operator==(const SearchState &s) const {$/;"	f	struct:fst::PdtShortestPathData::SearchState
+fst::PdtShortestPathData::SearchState::start	shortest-path.h	/^    StateId start;  \/\/ PDT paren 'source' state$/;"	m	struct:fst::PdtShortestPathData::SearchState
+fst::PdtShortestPathData::SearchState::state	shortest-path.h	/^    StateId state;  \/\/ PDT state$/;"	m	struct:fst::PdtShortestPathData::SearchState
+fst::PdtShortestPathData::SearchStateHash	shortest-path.h	/^  struct SearchStateHash {$/;"	s	class:fst::PdtShortestPathData
+fst::PdtShortestPathData::SearchStateHash::operator ()	shortest-path.h	/^    size_t operator()(const SearchState &s) const {$/;"	f	struct:fst::PdtShortestPathData::SearchStateHash
+fst::PdtShortestPathData::SetDistance	shortest-path.h	/^  void SetDistance(SearchState s, Weight w) {$/;"	f	class:fst::PdtShortestPathData
+fst::PdtShortestPathData::SetDistance	shortest-path.h	/^  void SetDistance(const ParenSpec &paren, Weight w) {$/;"	f	class:fst::PdtShortestPathData
+fst::PdtShortestPathData::SetFlags	shortest-path.h	/^  void SetFlags(SearchState s, uint8 f, uint8 mask) {$/;"	f	class:fst::PdtShortestPathData
+fst::PdtShortestPathData::SetParenId	shortest-path.h	/^  void SetParenId(SearchState s, Label p) {$/;"	f	class:fst::PdtShortestPathData
+fst::PdtShortestPathData::SetParent	shortest-path.h	/^  void SetParent(SearchState s, SearchState p) {$/;"	f	class:fst::PdtShortestPathData
+fst::PdtShortestPathData::SetParent	shortest-path.h	/^  void SetParent(const ParenSpec &paren, SearchState p) {$/;"	f	class:fst::PdtShortestPathData
+fst::PdtShortestPathData::StateId	shortest-path.h	/^  typedef typename Arc::StateId StateId;$/;"	t	class:fst::PdtShortestPathData
+fst::PdtShortestPathData::Weight	shortest-path.h	/^  typedef typename Arc::Weight Weight;$/;"	t	class:fst::PdtShortestPathData
+fst::PdtShortestPathData::finished_	shortest-path.h	/^  bool finished_;                           \/\/ Read-only access when true$/;"	m	class:fst::PdtShortestPathData
+fst::PdtShortestPathData::gc_	shortest-path.h	/^  bool gc_;                                 \/\/ Allow GC?$/;"	m	class:fst::PdtShortestPathData
+fst::PdtShortestPathData::kFinal	shortest-path.h	/^  static const uint8 kFinal;$/;"	m	class:fst::PdtShortestPathData
+fst::PdtShortestPathData::kFinal	shortest-path.h	/^template<class Arc> const uint8 PdtShortestPathData<Arc>::kFinal =  0x02;$/;"	m	class:fst::PdtShortestPathData
+fst::PdtShortestPathData::kInited	shortest-path.h	/^  static const uint8 kInited;$/;"	m	class:fst::PdtShortestPathData
+fst::PdtShortestPathData::kInited	shortest-path.h	/^template<class Arc> const uint8 PdtShortestPathData<Arc>::kInited = 0x01;$/;"	m	class:fst::PdtShortestPathData
+fst::PdtShortestPathData::kMarked	shortest-path.h	/^  static const uint8 kMarked;$/;"	m	class:fst::PdtShortestPathData
+fst::PdtShortestPathData::kMarked	shortest-path.h	/^template<class Arc> const uint8 PdtShortestPathData<Arc>::kMarked = 0x04;$/;"	m	class:fst::PdtShortestPathData
+fst::PdtShortestPathData::kNoArc	shortest-path.h	/^  static const Arc kNoArc;$/;"	m	class:fst::PdtShortestPathData
+fst::PdtShortestPathData::kNoArc	shortest-path.h	/^template<class Arc> const Arc PdtShortestPathData<Arc>::kNoArc$/;"	m	class:fst::PdtShortestPathData
+fst::PdtShortestPathData::kPrime0	shortest-path.h	/^  static const size_t kPrime0;$/;"	m	class:fst::PdtShortestPathData
+fst::PdtShortestPathData::kPrime0	shortest-path.h	/^template<class Arc> const size_t PdtShortestPathData<Arc>::kPrime0 = 7853;$/;"	m	class:fst::PdtShortestPathData
+fst::PdtShortestPathData::kPrime1	shortest-path.h	/^  static const size_t kPrime1;$/;"	m	class:fst::PdtShortestPathData
+fst::PdtShortestPathData::kPrime1	shortest-path.h	/^template<class Arc> const size_t PdtShortestPathData<Arc>::kPrime1 = 7867;$/;"	m	class:fst::PdtShortestPathData
+fst::PdtShortestPathData::ngc_	shortest-path.h	/^  size_t ngc_;                              \/\/ Number of GC'd search states$/;"	m	class:fst::PdtShortestPathData
+fst::PdtShortestPathData::nstates_	shortest-path.h	/^  mutable size_t nstates_;                  \/\/ Total number of search states$/;"	m	class:fst::PdtShortestPathData
+fst::PdtShortestPathData::null_search_data_	shortest-path.h	/^  mutable SearchData null_search_data_;     \/\/ Null search data$/;"	m	class:fst::PdtShortestPathData
+fst::PdtShortestPathData::paren_	shortest-path.h	/^  mutable ParenSpec paren_;                 \/\/ Last paren spec accessed$/;"	m	class:fst::PdtShortestPathData
+fst::PdtShortestPathData::paren_data_	shortest-path.h	/^  mutable SearchData *paren_data_;          \/\/ Last paren data accessed$/;"	m	class:fst::PdtShortestPathData
+fst::PdtShortestPathData::paren_map_	shortest-path.h	/^  mutable ParenMap paren_map_;              \/\/ Maps paren spec to search data$/;"	m	class:fst::PdtShortestPathData
+fst::PdtShortestPathData::search_map_	shortest-path.h	/^  mutable SearchMap search_map_;            \/\/ Maps from search state to data$/;"	m	class:fst::PdtShortestPathData
+fst::PdtShortestPathData::search_multimap_	shortest-path.h	/^  mutable SearchMultimap search_multimap_;  \/\/ Maps from 'start' to subgraph$/;"	m	class:fst::PdtShortestPathData
+fst::PdtShortestPathData::state_	shortest-path.h	/^  mutable SearchState state_;               \/\/ Last state accessed$/;"	m	class:fst::PdtShortestPathData
+fst::PdtShortestPathData::state_data_	shortest-path.h	/^  mutable SearchData *state_data_;          \/\/ Last state data accessed$/;"	m	class:fst::PdtShortestPathData
+fst::PdtShortestPathData::~PdtShortestPathData	shortest-path.h	/^  ~PdtShortestPathData() {$/;"	f	class:fst::PdtShortestPathData
+fst::PdtShortestPathOptions	shortest-path.h	/^struct PdtShortestPathOptions {$/;"	s	namespace:fst
+fst::PdtShortestPathOptions::PdtShortestPathOptions	shortest-path.h	/^  PdtShortestPathOptions(bool kp = false, bool gc = true)$/;"	f	struct:fst::PdtShortestPathOptions
+fst::PdtShortestPathOptions::keep_parentheses	shortest-path.h	/^  bool keep_parentheses;$/;"	m	struct:fst::PdtShortestPathOptions
+fst::PdtShortestPathOptions::path_gc	shortest-path.h	/^  bool path_gc;$/;"	m	struct:fst::PdtShortestPathOptions
+fst::PdtStack	pdt.h	/^class PdtStack {$/;"	c	namespace:fst
+fst::PdtStack::ChildHash	pdt.h	/^  struct ChildHash {$/;"	s	class:fst::PdtStack
+fst::PdtStack::ChildHash::operator ()	pdt.h	/^    size_t operator()(const pair<StackId, Label> &p) const {$/;"	f	struct:fst::PdtStack::ChildHash
+fst::PdtStack::Find	pdt.h	/^  StackId Find(StackId stack_id, Label label) {$/;"	f	class:fst::PdtStack
+fst::PdtStack::Label	pdt.h	/^  typedef L Label;$/;"	t	class:fst::PdtStack
+fst::PdtStack::ParenId	pdt.h	/^  ssize_t ParenId(Label label) const {$/;"	f	class:fst::PdtStack
+fst::PdtStack::PdtStack	pdt.h	/^  PdtStack(const vector<pair<Label, Label> > &parens)$/;"	f	class:fst::PdtStack
+fst::PdtStack::Pop	pdt.h	/^  StackId Pop(StackId stack_id) const {$/;"	f	class:fst::PdtStack
+fst::PdtStack::StackId	pdt.h	/^  typedef K StackId;$/;"	t	class:fst::PdtStack
+fst::PdtStack::StackNode	pdt.h	/^  struct StackNode {$/;"	s	class:fst::PdtStack
+fst::PdtStack::StackNode::StackNode	pdt.h	/^    StackNode(StackId p, size_t i) : parent_id(p), paren_id(i) {}$/;"	f	struct:fst::PdtStack::StackNode
+fst::PdtStack::StackNode::paren_id	pdt.h	/^    size_t paren_id;$/;"	m	struct:fst::PdtStack::StackNode
+fst::PdtStack::StackNode::parent_id	pdt.h	/^    StackId parent_id;$/;"	m	struct:fst::PdtStack::StackNode
+fst::PdtStack::Top	pdt.h	/^  ssize_t Top(StackId stack_id) const {$/;"	f	class:fst::PdtStack
+fst::PdtStack::child_map_	pdt.h	/^           StackId, ChildHash> child_map_;   \/\/ Child of stack node wrt label$/;"	m	class:fst::PdtStack
+fst::PdtStack::kPrime	pdt.h	/^  static const size_t kPrime;$/;"	m	class:fst::PdtStack
+fst::PdtStack::kPrime	pdt.h	/^const size_t PdtStack<T, L>::kPrime = 7853;$/;"	m	class:fst::PdtStack
+fst::PdtStack::max_paren_	pdt.h	/^  Label max_paren_;                          \/\/ For faster paren. check$/;"	m	class:fst::PdtStack
+fst::PdtStack::min_paren_	pdt.h	/^  Label min_paren_;                          \/\/ For faster paren. check$/;"	m	class:fst::PdtStack
+fst::PdtStack::nodes_	pdt.h	/^  vector<StackNode> nodes_;$/;"	m	class:fst::PdtStack
+fst::PdtStack::paren_map_	pdt.h	/^  unordered_map<Label, size_t> paren_map_;$/;"	m	class:fst::PdtStack
+fst::PdtStack::parens_	pdt.h	/^  vector<pair<Label, Label> > parens_;$/;"	m	class:fst::PdtStack
+fst::PdtStateHash	pdt.h	/^class PdtStateHash {$/;"	c	namespace:fst
+fst::PdtStateHash::kPrime	pdt.h	/^  static const size_t kPrime;$/;"	m	class:fst::PdtStateHash
+fst::PdtStateHash::kPrime	pdt.h	/^const size_t PdtStateHash<T>::kPrime = 7853;$/;"	m	class:fst::PdtStateHash
+fst::PdtStateHash::operator ()	pdt.h	/^  size_t operator()(const T &tuple) const {$/;"	f	class:fst::PdtStateHash
+fst::PdtStateTable	pdt.h	/^class PdtStateTable$/;"	c	namespace:fst
+fst::PdtStateTable::PdtStateTable	pdt.h	/^  PdtStateTable() {}$/;"	f	class:fst::PdtStateTable
+fst::PdtStateTable::PdtStateTable	pdt.h	/^  PdtStateTable(const PdtStateTable<S, K> &table) {}$/;"	f	class:fst::PdtStateTable
+fst::PdtStateTable::StackId	pdt.h	/^  typedef K StackId;$/;"	t	class:fst::PdtStateTable
+fst::PdtStateTable::StateId	pdt.h	/^  typedef S StateId;$/;"	t	class:fst::PdtStateTable
+fst::PdtStateTuple	pdt.h	/^struct PdtStateTuple {$/;"	s	namespace:fst
+fst::PdtStateTuple::PdtStateTuple	pdt.h	/^  PdtStateTuple()$/;"	f	struct:fst::PdtStateTuple
+fst::PdtStateTuple::PdtStateTuple	pdt.h	/^  PdtStateTuple(StateId fs, StackId ss)$/;"	f	struct:fst::PdtStateTuple
+fst::PdtStateTuple::StackId	pdt.h	/^  typedef K StackId;$/;"	t	struct:fst::PdtStateTuple
+fst::PdtStateTuple::StateId	pdt.h	/^  typedef S StateId;$/;"	t	struct:fst::PdtStateTuple
+fst::PdtStateTuple::stack_id	pdt.h	/^  StackId stack_id;$/;"	m	struct:fst::PdtStateTuple
+fst::PdtStateTuple::state_id	pdt.h	/^  StateId state_id;$/;"	m	struct:fst::PdtStateTuple
+fst::PrintPdtInfo	info.h	/^void PrintPdtInfo(const PdtInfo<A> &pdtinfo) {$/;"	f	namespace:fst
+fst::PrunedExpand	expand.h	/^class PrunedExpand {$/;"	c	namespace:fst
+fst::PrunedExpand::AddStateAndEnqueue	expand.h	/^void PrunedExpand<A>::AddStateAndEnqueue(StateId s) {$/;"	f	class:fst::PrunedExpand
+fst::PrunedExpand::Arc	expand.h	/^  typedef A Arc;$/;"	t	class:fst::PrunedExpand
+fst::PrunedExpand::DestMap	expand.h	/^  typedef unordered_map<StateId, Weight> DestMap;$/;"	t	class:fst::PrunedExpand
+fst::PrunedExpand::Distance	expand.h	/^typename A::Weight PrunedExpand<A>::Distance(StateId s) const {$/;"	f	class:fst::PrunedExpand
+fst::PrunedExpand::DistanceToDest	expand.h	/^typename A::Weight PrunedExpand<A>::DistanceToDest(StateId source,$/;"	f	class:fst::PrunedExpand
+fst::PrunedExpand::Expand	expand.h	/^void PrunedExpand<A>::Expand($/;"	f	class:fst::PrunedExpand
+fst::PrunedExpand::FinalDistance	expand.h	/^typename A::Weight PrunedExpand<A>::FinalDistance(StateId s) const {$/;"	f	class:fst::PrunedExpand
+fst::PrunedExpand::Flags	expand.h	/^uint8 PrunedExpand<A>::Flags(StateId s) const {$/;"	f	class:fst::PrunedExpand
+fst::PrunedExpand::InitCloseParenMultimap	expand.h	/^void PrunedExpand<A>::InitCloseParenMultimap($/;"	f	class:fst::PrunedExpand
+fst::PrunedExpand::Label	expand.h	/^  typedef typename A::Label Label;$/;"	t	class:fst::PrunedExpand
+fst::PrunedExpand::ParenMultimap	expand.h	/^  typedef typename SP::CloseParenMultimap ParenMultimap;$/;"	t	class:fst::PrunedExpand
+fst::PrunedExpand::ProcCloseParen	expand.h	/^bool PrunedExpand<A>::ProcCloseParen(StateId s, const A &arc) {$/;"	f	class:fst::PrunedExpand
+fst::PrunedExpand::ProcDestStates	expand.h	/^void PrunedExpand<A>::ProcDestStates(StateId s, StackId si) {$/;"	f	class:fst::PrunedExpand
+fst::PrunedExpand::ProcFinal	expand.h	/^void PrunedExpand<A>::ProcFinal(StateId s) {$/;"	f	class:fst::PrunedExpand
+fst::PrunedExpand::ProcNonParen	expand.h	/^bool PrunedExpand<A>::ProcNonParen(StateId s, const A &arc, bool add_arc) {$/;"	f	class:fst::PrunedExpand
+fst::PrunedExpand::ProcOpenParen	expand.h	/^bool PrunedExpand<A>::ProcOpenParen(StateId s, const A &arc, StackId si,$/;"	f	class:fst::PrunedExpand
+fst::PrunedExpand::ProcStart	expand.h	/^void PrunedExpand<A>::ProcStart() {$/;"	f	class:fst::PrunedExpand
+fst::PrunedExpand::PruneArc	expand.h	/^bool PrunedExpand<A>::PruneArc(StateId s, const A &arc) {$/;"	f	class:fst::PrunedExpand
+fst::PrunedExpand::PrunedExpand	expand.h	/^  PrunedExpand(const Fst<A> &ifst,$/;"	f	class:fst::PrunedExpand
+fst::PrunedExpand::Relax	expand.h	/^void PrunedExpand<A>::Relax(StateId s, const A &arc, Weight fd) {$/;"	f	class:fst::PrunedExpand
+fst::PrunedExpand::SP	expand.h	/^  typedef PdtShortestPath<Arc, FifoQueue<StateId> > SP;$/;"	t	class:fst::PrunedExpand
+fst::PrunedExpand::SetDistance	expand.h	/^void PrunedExpand<A>::SetDistance(StateId s, Weight w) {$/;"	f	class:fst::PrunedExpand
+fst::PrunedExpand::SetFinalDistance	expand.h	/^void PrunedExpand<A>::SetFinalDistance(StateId s, Weight w) {$/;"	f	class:fst::PrunedExpand
+fst::PrunedExpand::SetFlags	expand.h	/^void PrunedExpand<A>::SetFlags(StateId s, uint8 flags, uint8 mask) {$/;"	f	class:fst::PrunedExpand
+fst::PrunedExpand::SetIterator	expand.h	/^  typedef typename PdtBalanceData<Arc>::SetIterator SetIterator;$/;"	t	class:fst::PrunedExpand
+fst::PrunedExpand::SetSourceState	expand.h	/^void PrunedExpand<A>::SetSourceState(StateId s, StateId p) {$/;"	f	class:fst::PrunedExpand
+fst::PrunedExpand::ShortestStackFirstQueue	expand.h	/^  class ShortestStackFirstQueue$/;"	c	class:fst::PrunedExpand
+fst::PrunedExpand::ShortestStackFirstQueue::ShortestStackFirstQueue	expand.h	/^    ShortestStackFirstQueue($/;"	f	class:fst::PrunedExpand::ShortestStackFirstQueue
+fst::PrunedExpand::SourceState	expand.h	/^typename A::StateId PrunedExpand<A>::SourceState(StateId s) const {$/;"	f	class:fst::PrunedExpand
+fst::PrunedExpand::Stack	expand.h	/^  typedef PdtStack<StackId, Label> Stack;$/;"	t	class:fst::PrunedExpand
+fst::PrunedExpand::StackCompare	expand.h	/^  class StackCompare {$/;"	c	class:fst::PrunedExpand
+fst::PrunedExpand::StackCompare::StackCompare	expand.h	/^    StackCompare(const StateTable &st,$/;"	f	class:fst::PrunedExpand::StackCompare
+fst::PrunedExpand::StackCompare::distance_	expand.h	/^    const vector<Weight> &distance_;$/;"	m	class:fst::PrunedExpand::StackCompare
+fst::PrunedExpand::StackCompare::fdistance_	expand.h	/^    const vector<Weight> &fdistance_;$/;"	m	class:fst::PrunedExpand::StackCompare
+fst::PrunedExpand::StackCompare::less_	expand.h	/^    NaturalLess<Weight> less_;$/;"	m	class:fst::PrunedExpand::StackCompare
+fst::PrunedExpand::StackCompare::operator ()	expand.h	/^    bool operator()(StateId s1, StateId s2) const {$/;"	f	class:fst::PrunedExpand::StackCompare
+fst::PrunedExpand::StackCompare::stack_	expand.h	/^    const Stack &stack_;$/;"	m	class:fst::PrunedExpand::StackCompare
+fst::PrunedExpand::StackCompare::stack_length_	expand.h	/^    const vector<StackId> &stack_length_;$/;"	m	class:fst::PrunedExpand::StackCompare
+fst::PrunedExpand::StackCompare::state_table_	expand.h	/^    const StateTable &state_table_;$/;"	m	class:fst::PrunedExpand::StackCompare
+fst::PrunedExpand::StackId	expand.h	/^  typedef StateId StackId;$/;"	t	class:fst::PrunedExpand
+fst::PrunedExpand::StateId	expand.h	/^  typedef typename A::StateId StateId;$/;"	t	class:fst::PrunedExpand
+fst::PrunedExpand::StateTable	expand.h	/^  typedef PdtStateTable<StateId, StackId> StateTable;$/;"	t	class:fst::PrunedExpand
+fst::PrunedExpand::Weight	expand.h	/^  typedef typename A::Weight Weight;$/;"	t	class:fst::PrunedExpand
+fst::PrunedExpand::balance_data_	expand.h	/^  PdtBalanceData<Arc> *balance_data_;   \/\/ Not owned by shortest_path_$/;"	m	class:fst::PrunedExpand
+fst::PrunedExpand::cached_dest_list_	expand.h	/^  slist<pair<StateId, Weight> > cached_dest_list_;$/;"	m	class:fst::PrunedExpand
+fst::PrunedExpand::cached_source_	expand.h	/^  StateId cached_source_;$/;"	m	class:fst::PrunedExpand
+fst::PrunedExpand::cached_stack_id_	expand.h	/^  ssize_t cached_stack_id_;$/;"	m	class:fst::PrunedExpand
+fst::PrunedExpand::close_paren_multimap_	expand.h	/^  ParenMultimap close_paren_multimap_;  \/\/ Maps open paren arcs to$/;"	m	class:fst::PrunedExpand
+fst::PrunedExpand::current_paren_id_	expand.h	/^  ssize_t current_paren_id_;  \/\/ Paren id at top of current stack$/;"	m	class:fst::PrunedExpand
+fst::PrunedExpand::current_stack_id_	expand.h	/^  StackId current_stack_id_;$/;"	m	class:fst::PrunedExpand
+fst::PrunedExpand::dest_map_	expand.h	/^  DestMap dest_map_;$/;"	m	class:fst::PrunedExpand
+fst::PrunedExpand::distance_	expand.h	/^  vector<Weight> distance_;        \/\/ Distance from initial state in efst_\/ofst$/;"	m	class:fst::PrunedExpand
+fst::PrunedExpand::efst_	expand.h	/^  ExpandFst<Arc> efst_;            \/\/ Expanded PDT$/;"	m	class:fst::PrunedExpand
+fst::PrunedExpand::fdistance_	expand.h	/^  vector<Weight> fdistance_;       \/\/ Distance to final states in efst_\/ofst$/;"	m	class:fst::PrunedExpand
+fst::PrunedExpand::flags_	expand.h	/^  vector<uint8> flags_;            \/\/ Status flags for states in efst_\/ofst$/;"	m	class:fst::PrunedExpand
+fst::PrunedExpand::ifst_	expand.h	/^  Fst<A> *ifst_;                   \/\/ Input PDT$/;"	m	class:fst::PrunedExpand
+fst::PrunedExpand::kEnqueued	expand.h	/^  static const uint8 kEnqueued;$/;"	m	class:fst::PrunedExpand
+fst::PrunedExpand::kEnqueued	expand.h	/^template <class A> const uint8 PrunedExpand<A>::kEnqueued = 0x01;$/;"	m	class:fst::PrunedExpand
+fst::PrunedExpand::kExpanded	expand.h	/^  static const uint8 kExpanded;$/;"	m	class:fst::PrunedExpand
+fst::PrunedExpand::kExpanded	expand.h	/^template <class A> const uint8 PrunedExpand<A>::kExpanded = 0x02;$/;"	m	class:fst::PrunedExpand
+fst::PrunedExpand::kSourceState	expand.h	/^  static const uint8 kSourceState;$/;"	m	class:fst::PrunedExpand
+fst::PrunedExpand::kSourceState	expand.h	/^template <class A> const uint8 PrunedExpand<A>::kSourceState = 0x04;$/;"	m	class:fst::PrunedExpand
+fst::PrunedExpand::keep_parentheses_	expand.h	/^  bool keep_parentheses_;          \/\/ Keep parentheses in ofst?$/;"	m	class:fst::PrunedExpand
+fst::PrunedExpand::less_	expand.h	/^  NaturalLess<Weight> less_;$/;"	m	class:fst::PrunedExpand
+fst::PrunedExpand::limit_	expand.h	/^  Weight limit_;           \/\/ Weight limit$/;"	m	class:fst::PrunedExpand
+fst::PrunedExpand::ofst_	expand.h	/^  MutableFst<Arc> *ofst_;  \/\/ Output fst$/;"	m	class:fst::PrunedExpand
+fst::PrunedExpand::queue_	expand.h	/^  ShortestStackFirstQueue queue_;  \/\/ Queue used to visit efst_$/;"	m	class:fst::PrunedExpand
+fst::PrunedExpand::reverse_shortest_path_	expand.h	/^  SP *reverse_shortest_path_;  \/\/ Shortest path for rfst_$/;"	m	class:fst::PrunedExpand
+fst::PrunedExpand::rfst_	expand.h	/^  VectorFst<Arc> rfst_;            \/\/ Reversed PDT$/;"	m	class:fst::PrunedExpand
+fst::PrunedExpand::sources_	expand.h	/^  vector<StateId> sources_;        \/\/ PDT source state for each expanded state$/;"	m	class:fst::PrunedExpand
+fst::PrunedExpand::stack_	expand.h	/^  Stack stack_;                    \/\/ Stack trie$/;"	m	class:fst::PrunedExpand
+fst::PrunedExpand::stack_length_	expand.h	/^  vector<StackId> stack_length_;   \/\/ Length of stack for given stack id$/;"	m	class:fst::PrunedExpand
+fst::PrunedExpand::state_table_	expand.h	/^  StateTable state_table_;         \/\/ State table for efst_$/;"	m	class:fst::PrunedExpand
+fst::PrunedExpand::~PrunedExpand	expand.h	/^  ~PrunedExpand() {$/;"	f	class:fst::PrunedExpand
+fst::Replace	replace.h	/^void Replace(const vector<pair<typename Arc::Label,$/;"	f	namespace:fst
+fst::ReplaceParenHash	replace.h	/^struct ReplaceParenHash {$/;"	s	namespace:fst
+fst::ReplaceParenHash::kPrime	replace.h	/^  static const size_t kPrime = 7853;$/;"	m	struct:fst::ReplaceParenHash
+fst::ReplaceParenHash::kPrime	replace.h	/^template <typename S> const size_t ReplaceParenHash<S>::kPrime;$/;"	m	class:fst::ReplaceParenHash
+fst::ReplaceParenHash::operator ()	replace.h	/^  size_t operator()(const pair<size_t, S> &p) const {$/;"	f	struct:fst::ReplaceParenHash
+fst::Reverse	reverse.h	/^void Reverse(const Fst<Arc> &ifst,$/;"	f	namespace:fst
+fst::ShortestPath	shortest-path.h	/^void ShortestPath(const Fst<Arc> &ifst,$/;"	f	namespace:fst
+fst::StateIterator	expand.h	/^class StateIterator< ExpandFst<A> >$/;"	c	namespace:fst
+fst::StateIterator::StateIterator	expand.h	/^  explicit StateIterator(const ExpandFst<A> &fst)$/;"	f	class:fst::StateIterator
+fst::operator ==	pdt.h	/^inline bool operator==(const PdtStateTuple<S, K>& x,$/;"	f	namespace:fst
+fst::script	pdtscript.h	/^namespace script {$/;"	n	namespace:fst
+fst::script::PdtCompose	pdtscript.h	/^void PdtCompose(PdtComposeArgs *args) {$/;"	f	namespace:fst::script
+fst::script::PdtComposeArgs	pdtscript.h	/^                      bool> PdtComposeArgs;$/;"	t	namespace:fst::script
+fst::script::PdtExpand	pdtscript.h	/^void PdtExpand(PdtExpandArgs *args) {$/;"	f	namespace:fst::script
+fst::script::PdtExpandArgs	pdtscript.h	/^                      MutableFstClass *, PdtExpandOptions> PdtExpandArgs;$/;"	t	namespace:fst::script
+fst::script::PdtExpandOptions	pdtscript.h	/^struct PdtExpandOptions {$/;"	s	namespace:fst::script
+fst::script::PdtExpandOptions::PdtExpandOptions	pdtscript.h	/^  PdtExpandOptions(bool c = true, bool k = false,$/;"	f	struct:fst::script::PdtExpandOptions
+fst::script::PdtExpandOptions::connect	pdtscript.h	/^  bool connect;$/;"	m	struct:fst::script::PdtExpandOptions
+fst::script::PdtExpandOptions::keep_parentheses	pdtscript.h	/^  bool keep_parentheses;$/;"	m	struct:fst::script::PdtExpandOptions
+fst::script::PdtExpandOptions::weight_threshold	pdtscript.h	/^  WeightClass weight_threshold;$/;"	m	struct:fst::script::PdtExpandOptions
+fst::script::PdtReplace	pdtscript.h	/^void PdtReplace(PdtReplaceArgs *args) {$/;"	f	namespace:fst::script
+fst::script::PdtReplaceArgs	pdtscript.h	/^                      const int64 &> PdtReplaceArgs;$/;"	t	namespace:fst::script
+fst::script::PdtReverse	pdtscript.h	/^void PdtReverse(PdtReverseArgs *args) {$/;"	f	namespace:fst::script
+fst::script::PdtReverseArgs	pdtscript.h	/^                      MutableFstClass *> PdtReverseArgs;$/;"	t	namespace:fst::script
+fst::script::PdtShortestPath	pdtscript.h	/^void PdtShortestPath(PdtShortestPathArgs *args) {$/;"	f	namespace:fst::script
+fst::script::PdtShortestPathArgs	pdtscript.h	/^                      const PdtShortestPathOptions &> PdtShortestPathArgs;$/;"	t	namespace:fst::script
+fst::script::PdtShortestPathOptions	pdtscript.h	/^struct PdtShortestPathOptions {$/;"	s	namespace:fst::script
+fst::script::PdtShortestPathOptions::PdtShortestPathOptions	pdtscript.h	/^  PdtShortestPathOptions(QueueType qt = FIFO_QUEUE,$/;"	f	struct:fst::script::PdtShortestPathOptions
+fst::script::PdtShortestPathOptions::keep_parentheses	pdtscript.h	/^  bool keep_parentheses;$/;"	m	struct:fst::script::PdtShortestPathOptions
+fst::script::PdtShortestPathOptions::path_gc	pdtscript.h	/^  bool path_gc;$/;"	m	struct:fst::script::PdtShortestPathOptions
+fst::script::PdtShortestPathOptions::queue_type	pdtscript.h	/^  QueueType queue_type;$/;"	m	struct:fst::script::PdtShortestPathOptions
+fst::script::PrintPdtInfo	pdtscript.h	/^void PrintPdtInfo(PrintPdtInfoArgs *args) {$/;"	f	namespace:fst::script
+fst::script::PrintPdtInfoArgs	pdtscript.h	/^                      const vector<pair<int64, int64> > &> PrintPdtInfoArgs;$/;"	t	namespace:fst::script
+fst_	expand.h	/^  const Fst<A> *fst_;$/;"	m	class:fst::ExpandFstImpl
+fst_	paren.h	/^  const Fst<A> &fst_;$/;"	m	class:fst::PdtParenReachable
+fst_type_	info.h	/^  string fst_type_;$/;"	m	class:fst::PdtInfo
+gc_	shortest-path.h	/^  bool gc_;                                 \/\/ Allow GC?$/;"	m	class:fst::PdtShortestPathData
+hash_	collection.h	/^  static std::tr1::hash<T> hash_;$/;"	m	class:fst::Collection
+hash_	collection.h	/^template <class I, class T> std::tr1::hash<T> Collection<I, T>::hash_;$/;"	m	class:fst::Collection
+id_	collection.h	/^    I id_;                     \/\/ Iterator set node id$/;"	m	class:fst::Collection::SetIterator
+ifst_	expand.h	/^  Fst<A> *ifst_;                   \/\/ Input PDT$/;"	m	class:fst::PrunedExpand
+ifst_	shortest-path.h	/^  Fst<Arc> *ifst_;$/;"	m	class:fst::PdtShortestPath
+iter_	paren.h	/^  StlIterator iter_;$/;"	m	class:fst::MapIterator
+kEnqueued	expand.h	/^  static const uint8 kEnqueued;$/;"	m	class:fst::PrunedExpand
+kEnqueued	expand.h	/^template <class A> const uint8 PrunedExpand<A>::kEnqueued = 0x01;$/;"	m	class:fst::PrunedExpand
+kEnqueued	shortest-path.h	/^  static const uint8 kEnqueued;$/;"	m	class:fst::PdtShortestPath
+kEnqueued	shortest-path.h	/^const uint8 PdtShortestPath<Arc, Queue>::kEnqueued = 0x10;$/;"	m	class:fst::PdtShortestPath
+kExpanded	expand.h	/^  static const uint8 kExpanded;$/;"	m	class:fst::PrunedExpand
+kExpanded	expand.h	/^template <class A> const uint8 PrunedExpand<A>::kExpanded = 0x02;$/;"	m	class:fst::PrunedExpand
+kExpanded	shortest-path.h	/^  static const uint8 kExpanded;$/;"	m	class:fst::PdtShortestPath
+kExpanded	shortest-path.h	/^const uint8 PdtShortestPath<Arc, Queue>::kExpanded = 0x20;$/;"	m	class:fst::PdtShortestPath
+kFinal	shortest-path.h	/^  const uint8 kFinal;$/;"	m	class:fst::PdtShortestPath
+kFinal	shortest-path.h	/^  static const uint8 kFinal;$/;"	m	class:fst::PdtShortestPathData
+kFinal	shortest-path.h	/^template<class Arc> const uint8 PdtShortestPathData<Arc>::kFinal =  0x02;$/;"	m	class:fst::PdtShortestPathData
+kFinished	shortest-path.h	/^  static const uint8 kFinished;$/;"	m	class:fst::PdtShortestPath
+kFinished	shortest-path.h	/^const uint8 PdtShortestPath<Arc, Queue>::kFinished = 0x40;$/;"	m	class:fst::PdtShortestPath
+kInited	shortest-path.h	/^  static const uint8 kInited;$/;"	m	class:fst::PdtShortestPathData
+kInited	shortest-path.h	/^template<class Arc> const uint8 PdtShortestPathData<Arc>::kInited = 0x01;$/;"	m	class:fst::PdtShortestPathData
+kMarked	shortest-path.h	/^  static const uint8 kMarked;$/;"	m	class:fst::PdtShortestPathData
+kMarked	shortest-path.h	/^template<class Arc> const uint8 PdtShortestPathData<Arc>::kMarked = 0x04;$/;"	m	class:fst::PdtShortestPathData
+kNoArc	shortest-path.h	/^  static const Arc kNoArc;$/;"	m	class:fst::PdtShortestPath
+kNoArc	shortest-path.h	/^  static const Arc kNoArc;$/;"	m	class:fst::PdtShortestPathData
+kNoArc	shortest-path.h	/^const Arc PdtShortestPath<Arc, Queue>::kNoArc$/;"	m	class:fst::PdtShortestPath
+kNoArc	shortest-path.h	/^template<class Arc> const Arc PdtShortestPathData<Arc>::kNoArc$/;"	m	class:fst::PdtShortestPathData
+kNoNodeId	collection.h	/^  static const I kNoNodeId;$/;"	m	class:fst::Collection
+kNoNodeId	collection.h	/^template<class I, class T> const I Collection<I, T>::kNoNodeId = -1;$/;"	m	class:fst::Collection
+kPrime	collection.h	/^  static const size_t kPrime;$/;"	m	class:fst::Collection
+kPrime	collection.h	/^template <class I, class T> const size_t Collection<I, T>::kPrime = 7853;$/;"	m	class:fst::Collection
+kPrime	paren.h	/^  static const size_t kPrime;$/;"	m	class:fst::ParenState
+kPrime	paren.h	/^const size_t ParenState<A>::kPrime = 7853;$/;"	m	class:fst::ParenState
+kPrime	pdt.h	/^  static const size_t kPrime;$/;"	m	class:fst::PdtStack
+kPrime	pdt.h	/^  static const size_t kPrime;$/;"	m	class:fst::PdtStateHash
+kPrime	pdt.h	/^const size_t PdtStack<T, L>::kPrime = 7853;$/;"	m	class:fst::PdtStack
+kPrime	pdt.h	/^const size_t PdtStateHash<T>::kPrime = 7853;$/;"	m	class:fst::PdtStateHash
+kPrime	replace.h	/^  static const size_t kPrime = 7853;$/;"	m	struct:fst::ReplaceParenHash
+kPrime	replace.h	/^template <typename S> const size_t ReplaceParenHash<S>::kPrime;$/;"	m	class:fst::ReplaceParenHash
+kPrime0	shortest-path.h	/^  static const size_t kPrime0;$/;"	m	class:fst::PdtShortestPathData
+kPrime0	shortest-path.h	/^template<class Arc> const size_t PdtShortestPathData<Arc>::kPrime0 = 7853;$/;"	m	class:fst::PdtShortestPathData
+kPrime1	shortest-path.h	/^  static const size_t kPrime1;$/;"	m	class:fst::PdtShortestPathData
+kPrime1	shortest-path.h	/^template<class Arc> const size_t PdtShortestPathData<Arc>::kPrime1 = 7867;$/;"	m	class:fst::PdtShortestPathData
+kSourceState	expand.h	/^  static const uint8 kSourceState;$/;"	m	class:fst::PrunedExpand
+kSourceState	expand.h	/^template <class A> const uint8 PrunedExpand<A>::kSourceState = 0x04;$/;"	m	class:fst::PrunedExpand
+keep_parens_	shortest-path.h	/^  bool keep_parens_;$/;"	m	class:fst::PdtShortestPath
+keep_parentheses	expand.h	/^  bool keep_parentheses;$/;"	m	struct:fst::ExpandFstOptions
+keep_parentheses	expand.h	/^  bool keep_parentheses;$/;"	m	struct:fst::ExpandOptions
+keep_parentheses	pdtscript.h	/^  bool keep_parentheses;$/;"	m	struct:fst::script::PdtExpandOptions
+keep_parentheses	pdtscript.h	/^  bool keep_parentheses;$/;"	m	struct:fst::script::PdtShortestPathOptions
+keep_parentheses	shortest-path.h	/^  bool keep_parentheses;$/;"	m	struct:fst::PdtShortestPathOptions
+keep_parentheses_	expand.h	/^  bool keep_parentheses_;          \/\/ Keep parentheses in ofst?$/;"	m	class:fst::PrunedExpand
+keep_parentheses_	expand.h	/^  bool keep_parentheses_;$/;"	m	class:fst::ExpandFstImpl
+less_	expand.h	/^    NaturalLess<Weight> less_;$/;"	m	class:fst::PrunedExpand::StackCompare
+less_	expand.h	/^  NaturalLess<Weight> less_;$/;"	m	class:fst::PrunedExpand
+limit_	expand.h	/^  Weight limit_;           \/\/ Weight limit$/;"	m	class:fst::PrunedExpand
+map_	paren.h	/^  const M &map_;$/;"	m	class:fst::MapIterator
+max_paren_	pdt.h	/^  Label max_paren_;                          \/\/ For faster paren. check$/;"	m	class:fst::PdtStack
+min_paren_	pdt.h	/^  Label min_paren_;                          \/\/ For faster paren. check$/;"	m	class:fst::PdtStack
+narcs_	info.h	/^  int64 narcs_;$/;"	m	class:fst::PdtInfo
+nclose_paren_states_	info.h	/^  int64 nclose_paren_states_;$/;"	m	class:fst::PdtInfo
+nclose_parens_	info.h	/^  int64 nclose_parens_;$/;"	m	class:fst::PdtInfo
+nenqueued_	shortest-path.h	/^  ssize_t nenqueued_;$/;"	m	class:fst::PdtShortestPath
+ngc_	shortest-path.h	/^  size_t ngc_;                              \/\/ Number of GC'd search states$/;"	m	class:fst::PdtShortestPathData
+node_	collection.h	/^    Node node_;                \/\/ Iterator set node$/;"	m	class:fst::Collection::SetIterator
+node_id	collection.h	/^    I node_id;   \/\/ Root is kNoNodeId;$/;"	m	struct:fst::Collection::Node
+node_table_	collection.h	/^    NodeTable *node_table_;$/;"	m	class:fst::Collection::SetIterator
+node_table_	collection.h	/^  NodeTable node_table_;$/;"	m	class:fst::Collection
+nodes_	pdt.h	/^  vector<StackNode> nodes_;$/;"	m	class:fst::PdtStack
+nopen_paren_states_	info.h	/^  int64 nopen_paren_states_;$/;"	m	class:fst::PdtInfo
+nopen_parens_	info.h	/^  int64 nopen_parens_;$/;"	m	class:fst::PdtInfo
+nstates_	info.h	/^  int64 nstates_;$/;"	m	class:fst::PdtInfo
+nstates_	shortest-path.h	/^  mutable size_t nstates_;                  \/\/ Total number of search states$/;"	m	class:fst::PdtShortestPathData
+null_search_data_	shortest-path.h	/^  mutable SearchData null_search_data_;     \/\/ Null search data$/;"	m	class:fst::PdtShortestPathData
+nuniq_close_parens_	info.h	/^  int64 nuniq_close_parens_;$/;"	m	class:fst::PdtInfo
+nuniq_open_parens_	info.h	/^  int64 nuniq_open_parens_;$/;"	m	class:fst::PdtInfo
+ofst_	expand.h	/^  MutableFst<Arc> *ofst_;  \/\/ Output fst$/;"	m	class:fst::PrunedExpand
+ofst_	shortest-path.h	/^  MutableFst<Arc> *ofst_;$/;"	m	class:fst::PdtShortestPath
+open_dest_	paren.h	/^  ParenState<A> open_dest_;                          \/\/ cur open dest. state$/;"	m	class:fst::PdtBalanceData
+open_iter_	paren.h	/^  typename OpenParenMap::const_iterator open_iter_;  \/\/ cur open parens\/state$/;"	m	class:fst::PdtBalanceData
+open_paren_map_	paren.h	/^  OpenParenMap open_paren_map_;                      \/\/ open parens per state$/;"	m	class:fst::PdtBalanceData
+open_paren_set_	paren.h	/^  OpenParenSet open_paren_set_;                      \/\/ open par. at dest?$/;"	m	class:fst::PdtBalanceData
+operator !=	paren.h	/^  bool operator!=(const ParenState<A> &p) const { return !(p == *this); }$/;"	f	class:fst::ParenState
+operator ()	collection.h	/^    size_t operator()(const Node &n) const {$/;"	f	struct:fst::Collection::NodeHash
+operator ()	expand.h	/^    bool operator()(StateId s1, StateId s2) const {$/;"	f	class:fst::PrunedExpand::StackCompare
+operator ()	paren.h	/^    size_t operator()(const ParenState<A> &p) const {$/;"	f	struct:fst::ParenState::Hash
+operator ()	pdt.h	/^    size_t operator()(const pair<StackId, Label> &p) const {$/;"	f	struct:fst::PdtStack::ChildHash
+operator ()	pdt.h	/^  size_t operator()(const T &tuple) const {$/;"	f	class:fst::PdtStateHash
+operator ()	replace.h	/^  size_t operator()(const pair<size_t, S> &p) const {$/;"	f	struct:fst::ReplaceParenHash
+operator ()	shortest-path.h	/^    size_t operator()(const ParenSpec &paren) const {$/;"	f	struct:fst::PdtShortestPathData::ParenHash
+operator ()	shortest-path.h	/^    size_t operator()(const SearchState &s) const {$/;"	f	struct:fst::PdtShortestPathData::SearchStateHash
+operator <	paren.h	/^  bool operator<(const ParenState<A> &p) const {$/;"	f	class:fst::ParenState
+operator ==	collection.h	/^    bool operator==(const Node& n) const {$/;"	f	struct:fst::Collection::Node
+operator ==	paren.h	/^  bool operator==(const ParenState<A> &p) const {$/;"	f	class:fst::ParenState
+operator ==	pdt.h	/^inline bool operator==(const PdtStateTuple<S, K>& x,$/;"	f	namespace:fst
+operator ==	shortest-path.h	/^    bool operator==(const ParenSpec &x) const {$/;"	f	struct:fst::PdtShortestPathData::ParenSpec
+operator ==	shortest-path.h	/^    bool operator==(const SearchState &s) const {$/;"	f	struct:fst::PdtShortestPathData::SearchState
+own_stack_	expand.h	/^  bool own_stack_;$/;"	m	class:fst::ExpandFstImpl
+own_state_table_	expand.h	/^  bool own_state_table_;$/;"	m	class:fst::ExpandFstImpl
+paren_	shortest-path.h	/^  mutable ParenSpec paren_;                 \/\/ Last paren spec accessed$/;"	m	class:fst::PdtShortestPathData
+paren_arc_multimap_	paren.h	/^  ParenArcMultiMap paren_arc_multimap_;               \/\/ Paren Arcs$/;"	m	class:fst::PdtParenReachable
+paren_data_	shortest-path.h	/^  mutable SearchData *paren_data_;          \/\/ Last paren data accessed$/;"	m	class:fst::PdtShortestPathData
+paren_id	paren.h	/^  Label paren_id;     \/\/ ID of open (close) paren$/;"	m	class:fst::ParenState
+paren_id	pdt.h	/^    size_t paren_id;$/;"	m	struct:fst::PdtStack::StackNode
+paren_id	shortest-path.h	/^    Label paren_id;        \/\/ Id of parenthesis$/;"	m	struct:fst::PdtShortestPathData::ParenSpec
+paren_id	shortest-path.h	/^    int16 paren_id;      \/\/ If parent arc has paren, paren ID, o.w. kNoLabel$/;"	m	struct:fst::PdtShortestPathData::SearchData
+paren_id_map_	paren.h	/^  unordered_map<Label, Label> paren_id_map_;               \/\/ Paren labels -> ID$/;"	m	class:fst::PdtParenReachable
+paren_id_map_	shortest-path.h	/^  unordered_map<Label, Label> paren_id_map_;$/;"	m	class:fst::PdtShortestPath
+paren_map_	pdt.h	/^  unordered_map<Label, size_t> paren_map_;$/;"	m	class:fst::PdtStack
+paren_map_	shortest-path.h	/^  mutable ParenMap paren_map_;              \/\/ Maps paren spec to search data$/;"	m	class:fst::PdtShortestPathData
+paren_multimap_	paren.h	/^  ParenMultiMap paren_multimap_;                      \/\/ Paren reachability$/;"	m	class:fst::PdtParenReachable
+parens_	paren.h	/^  const vector<pair<Label, Label> > &parens_;         \/\/ Paren ID -> Labels$/;"	m	class:fst::PdtParenReachable
+parens_	pdt.h	/^  vector<pair<Label, Label> > parens_;$/;"	m	class:fst::PdtStack
+parens_	shortest-path.h	/^  const vector<pair<Label, Label> > &parens_;$/;"	m	class:fst::PdtShortestPath
+parent	shortest-path.h	/^    SearchState parent;  \/\/ Parent state in shortest path tree$/;"	m	struct:fst::PdtShortestPathData::SearchData
+parent_id	pdt.h	/^    StackId parent_id;$/;"	m	struct:fst::PdtStack::StackNode
+path_gc	pdtscript.h	/^  bool path_gc;$/;"	m	struct:fst::script::PdtShortestPathOptions
+path_gc	shortest-path.h	/^  bool path_gc;$/;"	m	struct:fst::PdtShortestPathOptions
+queue_	expand.h	/^  ShortestStackFirstQueue queue_;  \/\/ Queue used to visit efst_$/;"	m	class:fst::PrunedExpand
+queue_type	pdtscript.h	/^  QueueType queue_type;$/;"	m	struct:fst::script::PdtShortestPathOptions
+reverse_shortest_path_	expand.h	/^  SP *reverse_shortest_path_;  \/\/ Shortest path for rfst_$/;"	m	class:fst::PrunedExpand
+rfst_	expand.h	/^  VectorFst<Arc> rfst_;            \/\/ Reversed PDT$/;"	m	class:fst::PrunedExpand
+script	pdtscript.h	/^namespace script {$/;"	n	namespace:fst
+search_map_	shortest-path.h	/^  mutable SearchMap search_map_;            \/\/ Maps from search state to data$/;"	m	class:fst::PdtShortestPathData
+search_multimap_	shortest-path.h	/^  mutable SearchMultimap search_multimap_;  \/\/ Maps from 'start' to subgraph$/;"	m	class:fst::PdtShortestPathData
+set_map_	paren.h	/^  StateSetMap set_map_;                               \/\/ ID -> Reachable states$/;"	m	class:fst::PdtParenReachable
+sources_	expand.h	/^  vector<StateId> sources_;        \/\/ PDT source state for each expanded state$/;"	m	class:fst::PrunedExpand
+sp_data_	shortest-path.h	/^  SpData sp_data_;$/;"	m	class:fst::PdtShortestPath
+src_start	shortest-path.h	/^    StateId src_start;     \/\/ sub-graph 'start' state for paren source.$/;"	m	struct:fst::PdtShortestPathData::ParenSpec
+stack	expand.h	/^  PdtStack<typename Arc::StateId, typename Arc::Label> *stack;$/;"	m	struct:fst::ExpandFstOptions
+stack_	expand.h	/^    const Stack &stack_;$/;"	m	class:fst::PrunedExpand::StackCompare
+stack_	expand.h	/^  PdtStack<StackId, Label> *stack_;$/;"	m	class:fst::ExpandFstImpl
+stack_	expand.h	/^  Stack stack_;                    \/\/ Stack trie$/;"	m	class:fst::PrunedExpand
+stack_id	pdt.h	/^  StackId stack_id;$/;"	m	struct:fst::PdtStateTuple
+stack_length_	expand.h	/^    const vector<StackId> &stack_length_;$/;"	m	class:fst::PrunedExpand::StackCompare
+stack_length_	expand.h	/^  vector<StackId> stack_length_;   \/\/ Length of stack for given stack id$/;"	m	class:fst::PrunedExpand
+start	shortest-path.h	/^    StateId start;  \/\/ PDT paren 'source' state$/;"	m	struct:fst::PdtShortestPathData::SearchState
+start_	shortest-path.h	/^  StateId start_;$/;"	m	class:fst::PdtShortestPath
+state	shortest-path.h	/^    StateId state;  \/\/ PDT state$/;"	m	struct:fst::PdtShortestPathData::SearchState
+state_	shortest-path.h	/^  mutable SearchState state_;               \/\/ Last state accessed$/;"	m	class:fst::PdtShortestPathData
+state_color_	paren.h	/^  vector<char> state_color_;                          \/\/ DFS state$/;"	m	class:fst::PdtParenReachable
+state_data_	shortest-path.h	/^  mutable SearchData *state_data_;          \/\/ Last state data accessed$/;"	m	class:fst::PdtShortestPathData
+state_id	paren.h	/^  StateId state_id;   \/\/ destination (source) state of open (close) paren$/;"	m	class:fst::ParenState
+state_id	pdt.h	/^  StateId state_id;$/;"	m	struct:fst::PdtStateTuple
+state_queue_	shortest-path.h	/^  Queue *state_queue_;                   \/\/ current state queue$/;"	m	class:fst::PdtShortestPath
+state_sets_	paren.h	/^  mutable Collection<ssize_t, StateId> state_sets_;   \/\/ Reachable states -> ID$/;"	m	class:fst::PdtParenReachable
+state_table	expand.h	/^  PdtStateTable<typename Arc::StateId, typename Arc::StateId> *state_table;$/;"	m	struct:fst::ExpandFstOptions
+state_table_	expand.h	/^    const StateTable &state_table_;$/;"	m	class:fst::PrunedExpand::StackCompare
+state_table_	expand.h	/^  PdtStateTable<StateId, StackId> *state_table_;$/;"	m	class:fst::ExpandFstImpl
+state_table_	expand.h	/^  StateTable state_table_;         \/\/ State table for efst_$/;"	m	class:fst::PrunedExpand
+weight_threshold	expand.h	/^  typename Arc::Weight weight_threshold;$/;"	m	struct:fst::ExpandOptions
+weight_threshold	pdtscript.h	/^  WeightClass weight_threshold;$/;"	m	struct:fst::script::PdtExpandOptions
+~ExpandFstImpl	expand.h	/^  ~ExpandFstImpl() {$/;"	f	class:fst::ExpandFstImpl
+~PdtShortestPath	shortest-path.h	/^  ~PdtShortestPath() {$/;"	f	class:fst::PdtShortestPath
+~PdtShortestPathData	shortest-path.h	/^  ~PdtShortestPathData() {$/;"	f	class:fst::PdtShortestPathData
+~PrunedExpand	expand.h	/^  ~PrunedExpand() {$/;"	f	class:fst::PrunedExpand

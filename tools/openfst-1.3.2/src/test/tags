@@ -1,0 +1,299 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AlgoTester	algo_test.h	/^  AlgoTester(WeightGenerator generator, int seed) :$/;"	f	class:fst::AlgoTester
+AlgoTester	algo_test.h	/^class AlgoTester {$/;"	c	namespace:fst
+Arc	algo_test.h	/^  typedef StdArc Arc;$/;"	t	class:fst::UnweightedTester
+Arc	fst_test.cc	/^  typedef A Arc;$/;"	t	class:fst::CustomCompactor	file:
+Arc	fst_test.h	/^  typedef typename F::Arc Arc;$/;"	t	class:fst::FstTester
+Compact	fst_test.cc	/^  Element Compact(StateId s, const A &arc) const {$/;"	f	class:fst::CustomCompactor
+CompactFst_CustomArc_CustomCompactor_registerer	fst_test.cc	/^CompactFst_CustomArc_CustomCompactor_registerer;$/;"	m	namespace:fst	file:
+CompactFst_StdArc_CustomCompactor_registerer	fst_test.cc	/^CompactFst_StdArc_CustomCompactor_registerer;$/;"	m	namespace:fst	file:
+CompactFst_StdArc_CustomCompactor_uint16_registerer	fst_test.cc	/^CompactFst_StdArc_CustomCompactor_uint16_registerer;$/;"	m	namespace:fst	file:
+Compatible	fst_test.cc	/^  bool Compatible(const Fst<A> &fst) const {$/;"	f	class:fst::CustomCompactor
+Complement	algo_test.h	/^  void Complement(const Fst<Arc> &ifsa, MutableFst<Arc> *ofsa) {$/;"	f	class:fst::UnweightedTester
+ConstFst_StdArc_uint16_registerer	fst_test.cc	/^ConstFst_StdArc_uint16_registerer;$/;"	m	namespace:fst	file:
+CustomArc	fst_test.cc	/^  CustomArc() {}$/;"	f	struct:fst::CustomArc
+CustomArc	fst_test.cc	/^  CustomArc(Label i, Label o, Weight w, StateId s) :$/;"	f	struct:fst::CustomArc
+CustomArc	fst_test.cc	/^struct CustomArc {$/;"	s	namespace:fst	file:
+CustomCompactor	fst_test.cc	/^class CustomCompactor {$/;"	c	namespace:fst	file:
+Element	fst_test.cc	/^  typedef pair<Label, Weight> Element;$/;"	t	class:fst::CustomCompactor	file:
+EpsMapper	algo_test.h	/^  EpsMapper() {}$/;"	f	class:fst::EpsMapper
+EpsMapper	algo_test.h	/^class EpsMapper {$/;"	c	namespace:fst
+Equiv	algo_test.h	/^  bool Equiv(const Fst<Arc> &fsa1, const Fst<Arc> &fsa2) {$/;"	f	class:fst::UnweightedTester
+Equiv	algo_test.h	/^  bool Equiv(const Fst<Arc> &fst1, const Fst<Arc> &fst2) {$/;"	f	class:fst::WeightedTester
+Expand	fst_test.cc	/^  Arc Expand(StateId s, const Element &p, uint32 f = kArcValueFlags) const {$/;"	f	class:fst::CustomCompactor
+FST_TEST_ALGO_TEST_H__	algo_test.h	22;"	d
+FST_TEST_FST_TEST_H_	fst_test.h	22;"	d
+FST_TEST_WEIGHT_TESTER_H_	weight-tester.h	22;"	d
+FinalAction	algo_test.h	/^  MapFinalAction FinalAction() const { return MAP_NO_SUPERFINAL; }$/;"	f	class:fst::EpsMapper
+FstTester	fst_test.h	/^  FstTester() {$/;"	f	class:fst::FstTester
+FstTester	fst_test.h	/^class FstTester {$/;"	c	namespace:fst
+InitFst	fst_test.h	/^  void InitFst(MutableFst<Arc> *fst, size_t nstates) const {$/;"	f	class:fst::FstTester
+InputSymbolsAction	algo_test.h	/^  MapSymbolsAction InputSymbolsAction() const { return MAP_COPY_SYMBOLS;}$/;"	f	class:fst::EpsMapper
+Label	algo_test.h	/^  typedef Arc::Label Label;$/;"	t	class:fst::UnweightedTester
+Label	algo_test.h	/^  typedef typename Arc::Label Label;$/;"	t	class:fst::AlgoTester
+Label	algo_test.h	/^  typedef typename Arc::Label Label;$/;"	t	class:fst::WeightedTester
+Label	fst_test.cc	/^  typedef short Label;$/;"	t	struct:fst::CustomArc	file:
+Label	fst_test.cc	/^  typedef typename A::Label Label;$/;"	t	class:fst::CustomCompactor	file:
+Label	fst_test.h	/^  typedef typename Arc::Label Label;$/;"	t	class:fst::FstTester
+NthWeight	fst_test.h	/^  Weight NthWeight(int n) const {$/;"	f	class:fst::FstTester
+OutputSymbolsAction	algo_test.h	/^  MapSymbolsAction OutputSymbolsAction() const { return MAP_COPY_SYMBOLS;}$/;"	f	class:fst::EpsMapper
+Properties	algo_test.h	/^  uint64 Properties(uint64 props) const {$/;"	f	class:fst::EpsMapper
+Properties	fst_test.cc	/^  uint64 Properties() const { return 0ULL;}$/;"	f	class:fst::CustomCompactor
+RandFst	algo_test.h	/^  void RandFst(MutableFst<Arc> *fst) {$/;"	f	class:fst::AlgoTester
+Read	fst_test.cc	/^  static CustomCompactor *Read(istream &strm) {$/;"	f	class:fst::CustomCompactor
+Size	fst_test.cc	/^  ssize_t Size() const { return -1;}$/;"	f	class:fst::CustomCompactor
+StateId	algo_test.h	/^  typedef Arc::StateId StateId;$/;"	t	class:fst::UnweightedTester
+StateId	algo_test.h	/^  typedef typename Arc::StateId StateId;$/;"	t	class:fst::AlgoTester
+StateId	algo_test.h	/^  typedef typename Arc::StateId StateId;$/;"	t	class:fst::WeightedTester
+StateId	fst_test.cc	/^  typedef int64 StateId;$/;"	t	struct:fst::CustomArc	file:
+StateId	fst_test.cc	/^  typedef typename A::StateId StateId;$/;"	t	class:fst::CustomCompactor	file:
+StateId	fst_test.h	/^  typedef typename Arc::StateId StateId;$/;"	t	class:fst::FstTester
+Subset	algo_test.h	/^  bool Subset(const Fst<Arc> &fsa1, const Fst<Arc> &fsa2) {$/;"	f	class:fst::UnweightedTester
+TEST_LOG	algo_test.cc	28;"	d	file:
+TEST_TROPICAL	algo_test.cc	27;"	d	file:
+Test	algo_test.h	/^  void Test() {$/;"	f	class:fst::AlgoTester
+Test	algo_test.h	/^  void Test(const Fst<Arc> &A1, const Fst<Arc> &A2, const Fst<Arc> &A3) {$/;"	f	class:fst::UnweightedTester
+Test	algo_test.h	/^  void Test(const Fst<Arc> &A1, const Fst<Arc> &A2, const Fst<Arc> &A3) {}$/;"	f	class:fst::UnweightedTester
+Test	algo_test.h	/^  void Test(const Fst<Arc> &T1, const Fst<Arc> &T2, const Fst<Arc> &T3) {$/;"	f	class:fst::WeightedTester
+Test	weight-tester.h	/^  void Test(int iterations, bool test_division = true) {$/;"	f	class:fst::WeightTester
+TestAssign	fst_test.h	/^  void TestAssign() { TestAssign(testfst_); }$/;"	f	class:fst::FstTester
+TestAssign	fst_test.h	/^  void TestAssign(G *fst) const {$/;"	f	class:fst::FstTester
+TestBase	fst_test.h	/^  void TestBase() const {$/;"	f	class:fst::FstTester
+TestBase	fst_test.h	/^  void TestBase(const G &fst) const {$/;"	f	class:fst::FstTester
+TestCompose	algo_test.h	/^  void TestCompose(const Fst<Arc> &T1, const Fst<Arc> &T2,$/;"	f	class:fst::WeightedTester
+TestCopy	fst_test.h	/^  void TestCopy() const { TestCopy(*testfst_); }$/;"	f	class:fst::FstTester
+TestCopy	fst_test.h	/^  void TestCopy(const G &fst) const {$/;"	f	class:fst::FstTester
+TestCopy	weight-tester.h	/^  void TestCopy(Weight w) {$/;"	f	class:fst::WeightTester
+TestDivision	weight-tester.h	/^  void TestDivision(Weight w1, Weight w2) {$/;"	f	class:fst::WeightTester
+TestEquality	weight-tester.h	/^  void TestEquality(Weight w1, Weight w2, Weight w3) {$/;"	f	class:fst::WeightTester
+TestExpanded	fst_test.h	/^  void TestExpanded() const { TestExpanded(*testfst_); }$/;"	f	class:fst::FstTester
+TestExpanded	fst_test.h	/^  void TestExpanded(const G &fst) const {$/;"	f	class:fst::FstTester
+TestIO	fst_test.h	/^  void TestIO() const { TestIO(*testfst_); }$/;"	f	class:fst::FstTester
+TestIO	fst_test.h	/^  void TestIO(const G &fst) const {$/;"	f	class:fst::FstTester
+TestIO	weight-tester.h	/^  void TestIO(Weight w) {$/;"	f	class:fst::WeightTester
+TestIntersect	algo_test.h	/^  void TestIntersect(const Fst<Arc> &A1, const Fst<Arc> &A2,$/;"	f	class:fst::UnweightedTester
+TestMap	algo_test.h	/^  void TestMap(const Fst<Arc> &T) {$/;"	f	class:fst::WeightedTester
+TestMutable	fst_test.h	/^  void TestMutable() { TestMutable(testfst_); }$/;"	f	class:fst::FstTester
+TestMutable	fst_test.h	/^  void TestMutable(G *fst) const {$/;"	f	class:fst::FstTester
+TestOptimize	algo_test.h	/^  void TestOptimize(const Fst<Arc> &A) {$/;"	f	class:fst::UnweightedTester
+TestOptimize	algo_test.h	/^  void TestOptimize(const Fst<Arc> &T) {$/;"	f	class:fst::WeightedTester
+TestRational	algo_test.h	/^  void TestRational(const Fst<Arc> &A1, const Fst<Arc> &A2,$/;"	f	class:fst::UnweightedTester
+TestRational	algo_test.h	/^  void TestRational(const Fst<Arc> &T1, const Fst<Arc> &T2,$/;"	f	class:fst::WeightedTester
+TestReverse	weight-tester.h	/^  void TestReverse(Weight w1, Weight w2) {$/;"	f	class:fst::WeightTester
+TestSearch	algo_test.h	/^  void TestSearch(const Fst<Arc> &T) {$/;"	f	class:fst::WeightedTester
+TestSemiring	weight-tester.h	/^  void TestSemiring(Weight w1, Weight w2, Weight w3) {$/;"	f	class:fst::WeightTester
+TestSort	algo_test.h	/^  void TestSort(const Fst<Arc> &T) {$/;"	f	class:fst::WeightedTester
+TestTemplatedWeights	weight_test.cc	/^void TestTemplatedWeights(int repeat, int seed) {$/;"	f
+Type	fst_test.cc	/^  static const string &Type() {  \/\/ Arc type name$/;"	f	struct:fst::CustomArc
+Type	fst_test.cc	/^  static const string &Type() {$/;"	f	class:fst::CustomCompactor
+UnweightedTester	algo_test.h	/^  UnweightedTester(const Fst<Arc> &zero_fsa, const Fst<Arc> &one_fsa,$/;"	f	class:fst::UnweightedTester
+UnweightedTester	algo_test.h	/^class UnweightedTester {$/;"	c	namespace:fst
+UnweightedTester	algo_test.h	/^class UnweightedTester<StdArc> {$/;"	c	namespace:fst
+Weight	algo_test.h	/^  typedef Arc::Weight Weight;$/;"	t	class:fst::UnweightedTester
+Weight	algo_test.h	/^  typedef typename Arc::Weight Weight;$/;"	t	class:fst::AlgoTester
+Weight	algo_test.h	/^  typedef typename Arc::Weight Weight;$/;"	t	class:fst::WeightedTester
+Weight	fst_test.cc	/^  typedef ProductWeight<TropicalWeight, LogWeight> Weight;$/;"	t	struct:fst::CustomArc	file:
+Weight	fst_test.cc	/^  typedef typename A::Weight Weight;$/;"	t	class:fst::CustomCompactor	file:
+Weight	fst_test.h	/^  typedef typename Arc::Weight Weight;$/;"	t	class:fst::FstTester
+WeightTester	weight-tester.h	/^  WeightTester(WeightGenerator generator) : weight_generator_(generator) {}$/;"	f	class:fst::WeightTester
+WeightTester	weight-tester.h	/^class WeightTester {$/;"	c	namespace:fst
+WeightedTester	algo_test.h	/^  WeightedTester(int seed, const Fst<Arc> &zero_fst, const Fst<Arc> &one_fst,$/;"	f	class:fst::WeightedTester
+WeightedTester	algo_test.h	/^class WeightedTester {$/;"	c	namespace:fst
+Write	fst_test.cc	/^  bool Write(ostream &strm) const { return true; }$/;"	f	class:fst::CustomCompactor
+fst	algo_test.h	/^namespace fst {$/;"	n
+fst	fst_test.cc	/^namespace fst {$/;"	n	file:
+fst	fst_test.h	/^namespace fst {$/;"	n
+fst	weight-tester.h	/^namespace fst {$/;"	n
+fst::AlgoTester	algo_test.h	/^class AlgoTester {$/;"	c	namespace:fst
+fst::AlgoTester::AlgoTester	algo_test.h	/^  AlgoTester(WeightGenerator generator, int seed) :$/;"	f	class:fst::AlgoTester
+fst::AlgoTester::Label	algo_test.h	/^  typedef typename Arc::Label Label;$/;"	t	class:fst::AlgoTester
+fst::AlgoTester::RandFst	algo_test.h	/^  void RandFst(MutableFst<Arc> *fst) {$/;"	f	class:fst::AlgoTester
+fst::AlgoTester::StateId	algo_test.h	/^  typedef typename Arc::StateId StateId;$/;"	t	class:fst::AlgoTester
+fst::AlgoTester::Test	algo_test.h	/^  void Test() {$/;"	f	class:fst::AlgoTester
+fst::AlgoTester::Weight	algo_test.h	/^  typedef typename Arc::Weight Weight;$/;"	t	class:fst::AlgoTester
+fst::AlgoTester::kAcyclicProb	algo_test.h	/^  static const float kAcyclicProb;$/;"	m	class:fst::AlgoTester
+fst::AlgoTester::kAcyclicProb	algo_test.h	/^template <class A, class G> const float AlgoTester<A, G>::kAcyclicProb = .25;$/;"	m	class:fst::AlgoTester
+fst::AlgoTester::kNumRandomArcs	algo_test.h	/^  static const int kNumRandomArcs;$/;"	m	class:fst::AlgoTester
+fst::AlgoTester::kNumRandomArcs	algo_test.h	/^template <class A, class G> const int AlgoTester<A, G>::kNumRandomArcs = 25;$/;"	m	class:fst::AlgoTester
+fst::AlgoTester::kNumRandomLabels	algo_test.h	/^  static const int kNumRandomLabels;$/;"	m	class:fst::AlgoTester
+fst::AlgoTester::kNumRandomLabels	algo_test.h	/^template <class A, class G> const int AlgoTester<A, G>::kNumRandomLabels = 5;$/;"	m	class:fst::AlgoTester
+fst::AlgoTester::kNumRandomPaths	algo_test.h	/^  static const int kNumRandomPaths;$/;"	m	class:fst::AlgoTester
+fst::AlgoTester::kNumRandomPaths	algo_test.h	/^template <class A, class G> const int AlgoTester<A, G>::kNumRandomPaths = 100;$/;"	m	class:fst::AlgoTester
+fst::AlgoTester::kNumRandomStates	algo_test.h	/^  static const int kNumRandomStates;$/;"	m	class:fst::AlgoTester
+fst::AlgoTester::kNumRandomStates	algo_test.h	/^template <class A, class G> const int AlgoTester<A, G>::kNumRandomStates = 10;$/;"	m	class:fst::AlgoTester
+fst::AlgoTester::kRandomPathLength	algo_test.h	/^  static const int kRandomPathLength;$/;"	m	class:fst::AlgoTester
+fst::AlgoTester::kRandomPathLength	algo_test.h	/^template <class A, class G> const int AlgoTester<A, G>::kRandomPathLength = 25;$/;"	m	class:fst::AlgoTester
+fst::AlgoTester::one_fst_	algo_test.h	/^  VectorFst<Arc> one_fst_;$/;"	m	class:fst::AlgoTester
+fst::AlgoTester::rm_weight_mapper	algo_test.h	/^  RmWeightMapper<Arc> rm_weight_mapper;$/;"	m	class:fst::AlgoTester
+fst::AlgoTester::seed_	algo_test.h	/^  int seed_;$/;"	m	class:fst::AlgoTester
+fst::AlgoTester::univ_fst_	algo_test.h	/^  VectorFst<Arc> univ_fst_;$/;"	m	class:fst::AlgoTester
+fst::AlgoTester::weight_generator_	algo_test.h	/^  WeightGenerator weight_generator_;$/;"	m	class:fst::AlgoTester
+fst::AlgoTester::zero_fst_	algo_test.h	/^  VectorFst<Arc> zero_fst_;$/;"	m	class:fst::AlgoTester
+fst::CompactFst_CustomArc_CustomCompactor_registerer	fst_test.cc	/^CompactFst_CustomArc_CustomCompactor_registerer;$/;"	m	namespace:fst	file:
+fst::CompactFst_StdArc_CustomCompactor_registerer	fst_test.cc	/^CompactFst_StdArc_CustomCompactor_registerer;$/;"	m	namespace:fst	file:
+fst::CompactFst_StdArc_CustomCompactor_uint16_registerer	fst_test.cc	/^CompactFst_StdArc_CustomCompactor_uint16_registerer;$/;"	m	namespace:fst	file:
+fst::ConstFst_StdArc_uint16_registerer	fst_test.cc	/^ConstFst_StdArc_uint16_registerer;$/;"	m	namespace:fst	file:
+fst::CustomArc	fst_test.cc	/^struct CustomArc {$/;"	s	namespace:fst	file:
+fst::CustomArc::CustomArc	fst_test.cc	/^  CustomArc() {}$/;"	f	struct:fst::CustomArc
+fst::CustomArc::CustomArc	fst_test.cc	/^  CustomArc(Label i, Label o, Weight w, StateId s) :$/;"	f	struct:fst::CustomArc
+fst::CustomArc::Label	fst_test.cc	/^  typedef short Label;$/;"	t	struct:fst::CustomArc	file:
+fst::CustomArc::StateId	fst_test.cc	/^  typedef int64 StateId;$/;"	t	struct:fst::CustomArc	file:
+fst::CustomArc::Type	fst_test.cc	/^  static const string &Type() {  \/\/ Arc type name$/;"	f	struct:fst::CustomArc
+fst::CustomArc::Weight	fst_test.cc	/^  typedef ProductWeight<TropicalWeight, LogWeight> Weight;$/;"	t	struct:fst::CustomArc	file:
+fst::CustomArc::ilabel	fst_test.cc	/^  Label ilabel;       \/\/ Transition input label$/;"	m	struct:fst::CustomArc	file:
+fst::CustomArc::nextstate	fst_test.cc	/^  StateId nextstate;  \/\/ Transition destination state$/;"	m	struct:fst::CustomArc	file:
+fst::CustomArc::olabel	fst_test.cc	/^  Label olabel;       \/\/ Transition output label$/;"	m	struct:fst::CustomArc	file:
+fst::CustomArc::weight	fst_test.cc	/^  Weight weight;      \/\/ Transition weight$/;"	m	struct:fst::CustomArc	file:
+fst::CustomCompactor	fst_test.cc	/^class CustomCompactor {$/;"	c	namespace:fst	file:
+fst::CustomCompactor::Arc	fst_test.cc	/^  typedef A Arc;$/;"	t	class:fst::CustomCompactor	file:
+fst::CustomCompactor::Compact	fst_test.cc	/^  Element Compact(StateId s, const A &arc) const {$/;"	f	class:fst::CustomCompactor
+fst::CustomCompactor::Compatible	fst_test.cc	/^  bool Compatible(const Fst<A> &fst) const {$/;"	f	class:fst::CustomCompactor
+fst::CustomCompactor::Element	fst_test.cc	/^  typedef pair<Label, Weight> Element;$/;"	t	class:fst::CustomCompactor	file:
+fst::CustomCompactor::Expand	fst_test.cc	/^  Arc Expand(StateId s, const Element &p, uint32 f = kArcValueFlags) const {$/;"	f	class:fst::CustomCompactor
+fst::CustomCompactor::Label	fst_test.cc	/^  typedef typename A::Label Label;$/;"	t	class:fst::CustomCompactor	file:
+fst::CustomCompactor::Properties	fst_test.cc	/^  uint64 Properties() const { return 0ULL;}$/;"	f	class:fst::CustomCompactor
+fst::CustomCompactor::Read	fst_test.cc	/^  static CustomCompactor *Read(istream &strm) {$/;"	f	class:fst::CustomCompactor
+fst::CustomCompactor::Size	fst_test.cc	/^  ssize_t Size() const { return -1;}$/;"	f	class:fst::CustomCompactor
+fst::CustomCompactor::StateId	fst_test.cc	/^  typedef typename A::StateId StateId;$/;"	t	class:fst::CustomCompactor	file:
+fst::CustomCompactor::Type	fst_test.cc	/^  static const string &Type() {$/;"	f	class:fst::CustomCompactor
+fst::CustomCompactor::Weight	fst_test.cc	/^  typedef typename A::Weight Weight;$/;"	t	class:fst::CustomCompactor	file:
+fst::CustomCompactor::Write	fst_test.cc	/^  bool Write(ostream &strm) const { return true; }$/;"	f	class:fst::CustomCompactor
+fst::EpsMapper	algo_test.h	/^class EpsMapper {$/;"	c	namespace:fst
+fst::EpsMapper::EpsMapper	algo_test.h	/^  EpsMapper() {}$/;"	f	class:fst::EpsMapper
+fst::EpsMapper::FinalAction	algo_test.h	/^  MapFinalAction FinalAction() const { return MAP_NO_SUPERFINAL; }$/;"	f	class:fst::EpsMapper
+fst::EpsMapper::InputSymbolsAction	algo_test.h	/^  MapSymbolsAction InputSymbolsAction() const { return MAP_COPY_SYMBOLS;}$/;"	f	class:fst::EpsMapper
+fst::EpsMapper::OutputSymbolsAction	algo_test.h	/^  MapSymbolsAction OutputSymbolsAction() const { return MAP_COPY_SYMBOLS;}$/;"	f	class:fst::EpsMapper
+fst::EpsMapper::Properties	algo_test.h	/^  uint64 Properties(uint64 props) const {$/;"	f	class:fst::EpsMapper
+fst::EpsMapper::operator ()	algo_test.h	/^  A operator()(const A &arc) const {$/;"	f	class:fst::EpsMapper
+fst::FstTester	fst_test.h	/^class FstTester {$/;"	c	namespace:fst
+fst::FstTester::Arc	fst_test.h	/^  typedef typename F::Arc Arc;$/;"	t	class:fst::FstTester
+fst::FstTester::FstTester	fst_test.h	/^  FstTester() {$/;"	f	class:fst::FstTester
+fst::FstTester::InitFst	fst_test.h	/^  void InitFst(MutableFst<Arc> *fst, size_t nstates) const {$/;"	f	class:fst::FstTester
+fst::FstTester::Label	fst_test.h	/^  typedef typename Arc::Label Label;$/;"	t	class:fst::FstTester
+fst::FstTester::NthWeight	fst_test.h	/^  Weight NthWeight(int n) const {$/;"	f	class:fst::FstTester
+fst::FstTester::StateId	fst_test.h	/^  typedef typename Arc::StateId StateId;$/;"	t	class:fst::FstTester
+fst::FstTester::TestAssign	fst_test.h	/^  void TestAssign() { TestAssign(testfst_); }$/;"	f	class:fst::FstTester
+fst::FstTester::TestAssign	fst_test.h	/^  void TestAssign(G *fst) const {$/;"	f	class:fst::FstTester
+fst::FstTester::TestBase	fst_test.h	/^  void TestBase() const {$/;"	f	class:fst::FstTester
+fst::FstTester::TestBase	fst_test.h	/^  void TestBase(const G &fst) const {$/;"	f	class:fst::FstTester
+fst::FstTester::TestCopy	fst_test.h	/^  void TestCopy() const { TestCopy(*testfst_); }$/;"	f	class:fst::FstTester
+fst::FstTester::TestCopy	fst_test.h	/^  void TestCopy(const G &fst) const {$/;"	f	class:fst::FstTester
+fst::FstTester::TestExpanded	fst_test.h	/^  void TestExpanded() const { TestExpanded(*testfst_); }$/;"	f	class:fst::FstTester
+fst::FstTester::TestExpanded	fst_test.h	/^  void TestExpanded(const G &fst) const {$/;"	f	class:fst::FstTester
+fst::FstTester::TestIO	fst_test.h	/^  void TestIO() const { TestIO(*testfst_); }$/;"	f	class:fst::FstTester
+fst::FstTester::TestIO	fst_test.h	/^  void TestIO(const G &fst) const {$/;"	f	class:fst::FstTester
+fst::FstTester::TestMutable	fst_test.h	/^  void TestMutable() { TestMutable(testfst_); }$/;"	f	class:fst::FstTester
+fst::FstTester::TestMutable	fst_test.h	/^  void TestMutable(G *fst) const {$/;"	f	class:fst::FstTester
+fst::FstTester::Weight	fst_test.h	/^  typedef typename Arc::Weight Weight;$/;"	t	class:fst::FstTester
+fst::FstTester::testfst_	fst_test.h	/^  F *testfst_;   \/\/ what we're testing$/;"	m	class:fst::FstTester
+fst::FstTester::~FstTester	fst_test.h	/^  ~FstTester() {$/;"	f	class:fst::FstTester
+fst::UnweightedTester	algo_test.h	/^class UnweightedTester {$/;"	c	namespace:fst
+fst::UnweightedTester	algo_test.h	/^class UnweightedTester<StdArc> {$/;"	c	namespace:fst
+fst::UnweightedTester::Arc	algo_test.h	/^  typedef StdArc Arc;$/;"	t	class:fst::UnweightedTester
+fst::UnweightedTester::Complement	algo_test.h	/^  void Complement(const Fst<Arc> &ifsa, MutableFst<Arc> *ofsa) {$/;"	f	class:fst::UnweightedTester
+fst::UnweightedTester::Equiv	algo_test.h	/^  bool Equiv(const Fst<Arc> &fsa1, const Fst<Arc> &fsa2) {$/;"	f	class:fst::UnweightedTester
+fst::UnweightedTester::Label	algo_test.h	/^  typedef Arc::Label Label;$/;"	t	class:fst::UnweightedTester
+fst::UnweightedTester::StateId	algo_test.h	/^  typedef Arc::StateId StateId;$/;"	t	class:fst::UnweightedTester
+fst::UnweightedTester::Subset	algo_test.h	/^  bool Subset(const Fst<Arc> &fsa1, const Fst<Arc> &fsa2) {$/;"	f	class:fst::UnweightedTester
+fst::UnweightedTester::Test	algo_test.h	/^  void Test(const Fst<Arc> &A1, const Fst<Arc> &A2, const Fst<Arc> &A3) {$/;"	f	class:fst::UnweightedTester
+fst::UnweightedTester::Test	algo_test.h	/^  void Test(const Fst<Arc> &A1, const Fst<Arc> &A2, const Fst<Arc> &A3) {}$/;"	f	class:fst::UnweightedTester
+fst::UnweightedTester::TestIntersect	algo_test.h	/^  void TestIntersect(const Fst<Arc> &A1, const Fst<Arc> &A2,$/;"	f	class:fst::UnweightedTester
+fst::UnweightedTester::TestOptimize	algo_test.h	/^  void TestOptimize(const Fst<Arc> &A) {$/;"	f	class:fst::UnweightedTester
+fst::UnweightedTester::TestRational	algo_test.h	/^  void TestRational(const Fst<Arc> &A1, const Fst<Arc> &A2,$/;"	f	class:fst::UnweightedTester
+fst::UnweightedTester::UnweightedTester	algo_test.h	/^  UnweightedTester(const Fst<Arc> &zero_fsa, const Fst<Arc> &one_fsa,$/;"	f	class:fst::UnweightedTester
+fst::UnweightedTester::Weight	algo_test.h	/^  typedef Arc::Weight Weight;$/;"	t	class:fst::UnweightedTester
+fst::UnweightedTester::one_fsa_	algo_test.h	/^  VectorFst<Arc> one_fsa_;$/;"	m	class:fst::UnweightedTester
+fst::UnweightedTester::univ_fsa_	algo_test.h	/^  VectorFst<Arc> univ_fsa_;$/;"	m	class:fst::UnweightedTester
+fst::UnweightedTester::zero_fsa_	algo_test.h	/^  VectorFst<Arc> zero_fsa_;$/;"	m	class:fst::UnweightedTester
+fst::WeightTester	weight-tester.h	/^class WeightTester {$/;"	c	namespace:fst
+fst::WeightTester::Test	weight-tester.h	/^  void Test(int iterations, bool test_division = true) {$/;"	f	class:fst::WeightTester
+fst::WeightTester::TestCopy	weight-tester.h	/^  void TestCopy(Weight w) {$/;"	f	class:fst::WeightTester
+fst::WeightTester::TestDivision	weight-tester.h	/^  void TestDivision(Weight w1, Weight w2) {$/;"	f	class:fst::WeightTester
+fst::WeightTester::TestEquality	weight-tester.h	/^  void TestEquality(Weight w1, Weight w2, Weight w3) {$/;"	f	class:fst::WeightTester
+fst::WeightTester::TestIO	weight-tester.h	/^  void TestIO(Weight w) {$/;"	f	class:fst::WeightTester
+fst::WeightTester::TestReverse	weight-tester.h	/^  void TestReverse(Weight w1, Weight w2) {$/;"	f	class:fst::WeightTester
+fst::WeightTester::TestSemiring	weight-tester.h	/^  void TestSemiring(Weight w1, Weight w2, Weight w3) {$/;"	f	class:fst::WeightTester
+fst::WeightTester::WeightTester	weight-tester.h	/^  WeightTester(WeightGenerator generator) : weight_generator_(generator) {}$/;"	f	class:fst::WeightTester
+fst::WeightTester::weight_generator_	weight-tester.h	/^  WeightGenerator weight_generator_;$/;"	m	class:fst::WeightTester
+fst::WeightedTester	algo_test.h	/^class WeightedTester {$/;"	c	namespace:fst
+fst::WeightedTester::Equiv	algo_test.h	/^  bool Equiv(const Fst<Arc> &fst1, const Fst<Arc> &fst2) {$/;"	f	class:fst::WeightedTester
+fst::WeightedTester::Label	algo_test.h	/^  typedef typename Arc::Label Label;$/;"	t	class:fst::WeightedTester
+fst::WeightedTester::StateId	algo_test.h	/^  typedef typename Arc::StateId StateId;$/;"	t	class:fst::WeightedTester
+fst::WeightedTester::Test	algo_test.h	/^  void Test(const Fst<Arc> &T1, const Fst<Arc> &T2, const Fst<Arc> &T3) {$/;"	f	class:fst::WeightedTester
+fst::WeightedTester::TestCompose	algo_test.h	/^  void TestCompose(const Fst<Arc> &T1, const Fst<Arc> &T2,$/;"	f	class:fst::WeightedTester
+fst::WeightedTester::TestMap	algo_test.h	/^  void TestMap(const Fst<Arc> &T) {$/;"	f	class:fst::WeightedTester
+fst::WeightedTester::TestOptimize	algo_test.h	/^  void TestOptimize(const Fst<Arc> &T) {$/;"	f	class:fst::WeightedTester
+fst::WeightedTester::TestRational	algo_test.h	/^  void TestRational(const Fst<Arc> &T1, const Fst<Arc> &T2,$/;"	f	class:fst::WeightedTester
+fst::WeightedTester::TestSearch	algo_test.h	/^  void TestSearch(const Fst<Arc> &T) {$/;"	f	class:fst::WeightedTester
+fst::WeightedTester::TestSort	algo_test.h	/^  void TestSort(const Fst<Arc> &T) {$/;"	f	class:fst::WeightedTester
+fst::WeightedTester::Weight	algo_test.h	/^  typedef typename Arc::Weight Weight;$/;"	t	class:fst::WeightedTester
+fst::WeightedTester::WeightedTester	algo_test.h	/^  WeightedTester(int seed, const Fst<Arc> &zero_fst, const Fst<Arc> &one_fst,$/;"	f	class:fst::WeightedTester
+fst::WeightedTester::kNumRandomPaths	algo_test.h	/^  static const int kNumRandomPaths;$/;"	m	class:fst::WeightedTester
+fst::WeightedTester::kNumRandomPaths	algo_test.h	/^const int WeightedTester<A, WG>::kNumRandomPaths = 100;$/;"	m	class:fst::WeightedTester
+fst::WeightedTester::kNumRandomShortestPaths	algo_test.h	/^  static const int kNumRandomShortestPaths;$/;"	m	class:fst::WeightedTester
+fst::WeightedTester::kNumRandomShortestPaths	algo_test.h	/^const int WeightedTester<A, WG>::kNumRandomShortestPaths = 100;$/;"	m	class:fst::WeightedTester
+fst::WeightedTester::kNumShortestStates	algo_test.h	/^  static const int kNumShortestStates;$/;"	m	class:fst::WeightedTester
+fst::WeightedTester::kNumShortestStates	algo_test.h	/^const int WeightedTester<A, WG>::kNumShortestStates = 10000;$/;"	m	class:fst::WeightedTester
+fst::WeightedTester::kRandomPathLength	algo_test.h	/^  static const int kRandomPathLength;$/;"	m	class:fst::WeightedTester
+fst::WeightedTester::kRandomPathLength	algo_test.h	/^const int WeightedTester<A, WG>::kRandomPathLength = 25;$/;"	m	class:fst::WeightedTester
+fst::WeightedTester::kTestDelta	algo_test.h	/^  static const float kTestDelta;$/;"	m	class:fst::WeightedTester
+fst::WeightedTester::kTestDelta	algo_test.h	/^const float WeightedTester<A, WG>::kTestDelta = .05;$/;"	m	class:fst::WeightedTester
+fst::WeightedTester::one_fst_	algo_test.h	/^  VectorFst<Arc> one_fst_;$/;"	m	class:fst::WeightedTester
+fst::WeightedTester::seed_	algo_test.h	/^  int seed_;$/;"	m	class:fst::WeightedTester
+fst::WeightedTester::univ_fst_	algo_test.h	/^  VectorFst<Arc> univ_fst_;$/;"	m	class:fst::WeightedTester
+fst::WeightedTester::weight_generator_	algo_test.h	/^  WeightGenerator *weight_generator_;$/;"	m	class:fst::WeightedTester
+fst::WeightedTester::zero_fst_	algo_test.h	/^  VectorFst<Arc> zero_fst_;$/;"	m	class:fst::WeightedTester
+ilabel	fst_test.cc	/^  Label ilabel;       \/\/ Transition input label$/;"	m	struct:fst::CustomArc	file:
+kAcyclicProb	algo_test.h	/^  static const float kAcyclicProb;$/;"	m	class:fst::AlgoTester
+kAcyclicProb	algo_test.h	/^template <class A, class G> const float AlgoTester<A, G>::kAcyclicProb = .25;$/;"	m	class:fst::AlgoTester
+kNumRandomArcs	algo_test.h	/^  static const int kNumRandomArcs;$/;"	m	class:fst::AlgoTester
+kNumRandomArcs	algo_test.h	/^template <class A, class G> const int AlgoTester<A, G>::kNumRandomArcs = 25;$/;"	m	class:fst::AlgoTester
+kNumRandomLabels	algo_test.h	/^  static const int kNumRandomLabels;$/;"	m	class:fst::AlgoTester
+kNumRandomLabels	algo_test.h	/^template <class A, class G> const int AlgoTester<A, G>::kNumRandomLabels = 5;$/;"	m	class:fst::AlgoTester
+kNumRandomPaths	algo_test.h	/^  static const int kNumRandomPaths;$/;"	m	class:fst::AlgoTester
+kNumRandomPaths	algo_test.h	/^  static const int kNumRandomPaths;$/;"	m	class:fst::WeightedTester
+kNumRandomPaths	algo_test.h	/^const int WeightedTester<A, WG>::kNumRandomPaths = 100;$/;"	m	class:fst::WeightedTester
+kNumRandomPaths	algo_test.h	/^template <class A, class G> const int AlgoTester<A, G>::kNumRandomPaths = 100;$/;"	m	class:fst::AlgoTester
+kNumRandomShortestPaths	algo_test.h	/^  static const int kNumRandomShortestPaths;$/;"	m	class:fst::WeightedTester
+kNumRandomShortestPaths	algo_test.h	/^const int WeightedTester<A, WG>::kNumRandomShortestPaths = 100;$/;"	m	class:fst::WeightedTester
+kNumRandomStates	algo_test.h	/^  static const int kNumRandomStates;$/;"	m	class:fst::AlgoTester
+kNumRandomStates	algo_test.h	/^template <class A, class G> const int AlgoTester<A, G>::kNumRandomStates = 10;$/;"	m	class:fst::AlgoTester
+kNumShortestStates	algo_test.h	/^  static const int kNumShortestStates;$/;"	m	class:fst::WeightedTester
+kNumShortestStates	algo_test.h	/^const int WeightedTester<A, WG>::kNumShortestStates = 10000;$/;"	m	class:fst::WeightedTester
+kRandomPathLength	algo_test.h	/^  static const int kRandomPathLength;$/;"	m	class:fst::AlgoTester
+kRandomPathLength	algo_test.h	/^  static const int kRandomPathLength;$/;"	m	class:fst::WeightedTester
+kRandomPathLength	algo_test.h	/^const int WeightedTester<A, WG>::kRandomPathLength = 25;$/;"	m	class:fst::WeightedTester
+kRandomPathLength	algo_test.h	/^template <class A, class G> const int AlgoTester<A, G>::kRandomPathLength = 25;$/;"	m	class:fst::AlgoTester
+kTestDelta	algo_test.h	/^  static const float kTestDelta;$/;"	m	class:fst::WeightedTester
+kTestDelta	algo_test.h	/^const float WeightedTester<A, WG>::kTestDelta = .05;$/;"	m	class:fst::WeightedTester
+main	algo_test.cc	/^int main(int argc, char **argv) {$/;"	f
+main	fst_test.cc	/^int main(int argc, char **argv) {$/;"	f
+main	weight_test.cc	/^int main(int argc, char **argv) {$/;"	f
+nextstate	fst_test.cc	/^  StateId nextstate;  \/\/ Transition destination state$/;"	m	struct:fst::CustomArc	file:
+olabel	fst_test.cc	/^  Label olabel;       \/\/ Transition output label$/;"	m	struct:fst::CustomArc	file:
+one_fsa_	algo_test.h	/^  VectorFst<Arc> one_fsa_;$/;"	m	class:fst::UnweightedTester
+one_fst_	algo_test.h	/^  VectorFst<Arc> one_fst_;$/;"	m	class:fst::AlgoTester
+one_fst_	algo_test.h	/^  VectorFst<Arc> one_fst_;$/;"	m	class:fst::WeightedTester
+operator ()	algo_test.h	/^  A operator()(const A &arc) const {$/;"	f	class:fst::EpsMapper
+repeat	algo_test.h	/^DECLARE_int32(repeat);  \/\/ defined in .\/algo_test.cc$/;"	v
+rm_weight_mapper	algo_test.h	/^  RmWeightMapper<Arc> rm_weight_mapper;$/;"	m	class:fst::AlgoTester
+seed_	algo_test.h	/^  int seed_;$/;"	m	class:fst::AlgoTester
+seed_	algo_test.h	/^  int seed_;$/;"	m	class:fst::WeightedTester
+testfst_	fst_test.h	/^  F *testfst_;   \/\/ what we're testing$/;"	m	class:fst::FstTester
+tmpdir	fst_test.h	/^DECLARE_string(tmpdir);$/;"	v
+univ_fsa_	algo_test.h	/^  VectorFst<Arc> univ_fsa_;$/;"	m	class:fst::UnweightedTester
+univ_fst_	algo_test.h	/^  VectorFst<Arc> univ_fst_;$/;"	m	class:fst::AlgoTester
+univ_fst_	algo_test.h	/^  VectorFst<Arc> univ_fst_;$/;"	m	class:fst::WeightedTester
+weight	fst_test.cc	/^  Weight weight;      \/\/ Transition weight$/;"	m	struct:fst::CustomArc	file:
+weight_generator_	algo_test.h	/^  WeightGenerator *weight_generator_;$/;"	m	class:fst::WeightedTester
+weight_generator_	algo_test.h	/^  WeightGenerator weight_generator_;$/;"	m	class:fst::AlgoTester
+weight_generator_	weight-tester.h	/^  WeightGenerator weight_generator_;$/;"	m	class:fst::WeightTester
+zero_fsa_	algo_test.h	/^  VectorFst<Arc> zero_fsa_;$/;"	m	class:fst::UnweightedTester
+zero_fst_	algo_test.h	/^  VectorFst<Arc> zero_fst_;$/;"	m	class:fst::AlgoTester
+zero_fst_	algo_test.h	/^  VectorFst<Arc> zero_fst_;$/;"	m	class:fst::WeightedTester
+~FstTester	fst_test.h	/^  ~FstTester() {$/;"	f	class:fst::FstTester

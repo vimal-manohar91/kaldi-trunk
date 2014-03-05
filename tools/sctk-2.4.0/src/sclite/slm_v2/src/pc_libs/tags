@@ -1,0 +1,17 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+_PCGEN_H_	pc_general.h	24;"	d
+pc_doublearg	pc_comline.c	/^double pc_doublearg(int *argc, char **argv, char *flag, double value) {$/;"	f
+pc_flagarg	pc_comline.c	/^int pc_flagarg(int *argc, char **argv, char *flag) {$/;"	f
+pc_intarg	pc_comline.c	/^int pc_intarg(int *argc, char **argv, char *flag, int value) {$/;"	f
+pc_intarrayarg	pc_comline.c	/^int *pc_intarrayarg(int *argc, char **argv, char *flag, int elements, int size) {$/;"	f
+pc_message	pc_message.c	/^void pc_message(unsigned short verbosity, $/;"	f
+pc_report_unk_args	pc_comline.c	/^void pc_report_unk_args(int *argc, char **argv, int verbosity) {$/;"	f
+pc_shortarrayarg	pc_comline.c	/^short *pc_shortarrayarg(int *argc, char **argv, char *flag, int elements, int size) {$/;"	f
+pc_stringarg	pc_comline.c	/^char *pc_stringarg(int *argc, char **argv, char *flag, char *value) {$/;"	f
+report_version	pc_comline.c	/^void report_version(int *argc, char **argv) {$/;"	f
+updateArgs	pc_comline.c	/^static void updateArgs( int *pargc, char **argv, int rm_cnt ) $/;"	f	file:

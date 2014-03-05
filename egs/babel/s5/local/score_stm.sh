@@ -74,7 +74,6 @@ mkdir -p $dir/scoring/log
 if [ $stage -le 0 ] ; then
   $cmd LMWT=$min_lmwt:$max_lmwt $dir/scoring/log/score.LMWT.log \
     set -e';' set -o pipefail';' \
-    mkdir -p $dir/score_LMWT';' \
     cp $data/stm $dir/score_LMWT/stm.unsorted '&&' \
     cp $dir/score_LMWT/${name}.ctm $dir/score_LMWT/${name}.ctm.unsorted '&&'\
     $SortingProgram sortSTM \<$dir/score_LMWT/stm.unsorted          \>$dir/score_LMWT/stm.sorted '&&' \

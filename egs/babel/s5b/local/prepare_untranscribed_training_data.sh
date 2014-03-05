@@ -29,6 +29,7 @@ if [ $# -ne 2 ]; then
   echo "Usage: $0 [options] <segmenation-model-dir> <out-data-dir>"
   echo " Options:"
   echo "    --segmentation-opts '--opt1 opt1val --opt2 opt2val' # options for segmentation.py"
+  echo "    --nj             # Number of parallel jobs"
   echo 
   echo "e.g.:"
   echo "$0 exp/tri4b_seg data/train_unt"
@@ -75,4 +76,4 @@ fi
 
 [ ! -f $model_dir/final.mdl ] && echo "$model_dir/final.mdl not found!" && exit 1
 
-local/run_segmentation.sh --segmentation_opts ${segmentation_opts} --nj $nj $datadir data/lang $model_dir exp/tri4b_resegment_${dirid} || exit 1
+local/resegment/run_segmentation.sh --segmentation_opts "${segmentation_opts}" --nj $nj $datadir data/lang $model_dir exp/tri4b_resegment_${dirid} || exit 1

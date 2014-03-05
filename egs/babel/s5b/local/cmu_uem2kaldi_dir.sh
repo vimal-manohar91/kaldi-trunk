@@ -1,6 +1,11 @@
 #!/bin/bash -e
 
 # Creating a UEM decoding setup with CMU segmentation from Florian (Feb 15, 2013).
+
+# Vimal Manohar (Jan 2014):
+# Modified script to deal with .wav files in addition to .sph files 
+# while creating the data directory
+
 dummy_text=true
 text=
 filelist=
@@ -69,6 +74,7 @@ if [ $? -ne 0 ] ; then
   echo "Could not find sph2pipe binary. Add it to PATH"  
   exit 1;
 fi
+
 sox=`which sox`
 if [ $? -ne 0 ] ; then
   echo "Could not find sox binary. Add it to PATH"  
@@ -82,7 +88,7 @@ echo "Creating the $datadir/wav.scp file"
     if [ -f $audiopath/audio/$file.sph ] ; then
       echo "$file $sph2pipe -f wav -p -c 1 $audiopath/audio/$file.sph |"
     elif [ -f $audiopath/audio/$file.wav ] ; then
-      echo "$file /usr/bin/sox $audiopath/audio/$file.wav -r 8000 -c 1 -b 16 -t wav - downsample |"
+      echo "$file $sox $audiopath/audio/$file.wav -r 8000 -c 1 -b 16 -t wav - downsample |"
     else
       echo "Audio file $audiopath/audio/$file.sph does not exist!" >&2 
       exit 1
@@ -117,10 +123,7 @@ fi
 
 # 6. reco2file_and_channel
 echo "Creating the $datadir/reco2file_and_channel file"
-for f in $(cat $datadir/wav.scp | sed 's/ |//g' | awk -F'/' '{print $NF}'); do
-  echo "${f%%.*} ${f%%.*} 1"
-done > $datadir/reco2file_and_channel
-
+(for f in $( cut -f 1 -d ' '  $datadir/wav.scp ) ; do echo $f $f "A"; done) > $datadir/reco2file_and_channel
 #(for f in $( cut -f 8 -d ' '  $datadir/wav.scp ) ; do p=`basename $f .sph`; echo $p $p 1; done) > $datadir/reco2file_and_channel
 
 echo "Everything done"

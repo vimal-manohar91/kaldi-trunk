@@ -6,7 +6,7 @@ set -o pipefail
 get_whole_transcripts=false
 add_fillers_opts="--num-fillers 10 --count-threshold 20"
 extract_insertions_opts="" 
-clean_insertions=false
+clean_insertions=true
 
 . utils/parse_options.sh
 
@@ -63,8 +63,12 @@ if [ ! -f $data_out/.done ]; then
     cp $f $data_out || exit 1
   done
   steps/retranscribe.sh --clean-insertions $clean_insertions --get-whole-transcripts $get_whole_transcripts \
-    --cmd "$train_cmd" data/train data/lang \
-    $data_out/ctm.augmented $data_out exp/tri4b_augment_train || exit 1
+    data/lang $data_out/ctm.augmented $data_out exp/tri4b_augment_train || exit 1
+  
+  nw_old=`cat data_initial/train/text | wc | awk '{print $2 - $1}'`
+  nw_new=`cat data/train/text | wc | awk '{print $2 - $1}'`
+  echo "Number of words of training text changed from $nw_old to $nw_new";
+
   touch $data_out/.done
 fi
 

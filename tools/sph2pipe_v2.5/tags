@@ -1,0 +1,186 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ALAW	sph_convert.h	29;"	d
+BIAS	sph2pipe.c	425;"	d	file:
+BITSHIFTSIZE	shorten_x.c	63;"	d	file:
+BUFSIZ	shorten_x.c	57;"	d	file:
+BUFSIZ	shorten_x.c	58;"	d	file:
+CHANSIZE	shorten_x.c	61;"	d	file:
+CLIP	sph2pipe.c	426;"	d	file:
+ConvertToIeeeExtended	file_headers.c	/^ConvertToIeeeExtended(num, bytes)$/;"	f
+DEFAULT_BLOCK_SIZE	shorten_x.c	44;"	d	file:
+DEFAULT_MAXNLPC	shorten_x.c	47;"	d	file:
+DEFAULT_MAXRESNSTR	shorten_x.c	53;"	d	file:
+DEFAULT_MINSNR	shorten_x.c	52;"	d	file:
+DEFAULT_NCHAN	shorten_x.c	48;"	d	file:
+DEFAULT_NDISCARD	shorten_x.c	50;"	d	file:
+DEFAULT_NSKIP	shorten_x.c	49;"	d	file:
+DEFAULT_QUANTERROR	shorten_x.c	54;"	d	file:
+DEFAULT_V0NMEAN	shorten_x.c	45;"	d	file:
+DEFAULT_V2NMEAN	shorten_x.c	46;"	d	file:
+ENERGYSIZE	shorten_x.c	62;"	d	file:
+FNSIZE	shorten_x.c	70;"	d	file:
+FN_BITSHIFT	shorten_x.c	77;"	d	file:
+FN_BLOCKSIZE	shorten_x.c	76;"	d	file:
+FN_DIFF0	shorten_x.c	71;"	d	file:
+FN_DIFF1	shorten_x.c	72;"	d	file:
+FN_DIFF2	shorten_x.c	73;"	d	file:
+FN_DIFF3	shorten_x.c	74;"	d	file:
+FN_QLPC	shorten_x.c	78;"	d	file:
+FN_QUIT	shorten_x.c	75;"	d	file:
+FN_ZERO	shorten_x.c	79;"	d	file:
+FORMAT_VERSION	shorten_x.c	39;"	d	file:
+FloatToUnsigned	file_headers.c	577;"	d	file:
+GLOBAL	sph_convert.h	21;"	d
+GLOBAL	sph_convert.h	23;"	d
+HUGE_VAL	file_headers.c	574;"	d	file:
+LPCQSIZE	shorten_x.c	97;"	d	file:
+LPCQUANT	shorten_x.c	98;"	d	file:
+MAGIC	shorten_x.c	38;"	d	file:
+MASKTABSIZE	shorten_x.c	94;"	d	file:
+MAX	shorten_x.c	108;"	d	file:
+MAX_LPC_ORDER	shorten_x.c	60;"	d	file:
+MAX_SUPPORTED_VERSION	shorten_x.c	41;"	d	file:
+MAX_VERSION	shorten_x.c	42;"	d	file:
+MIN	shorten_x.c	104;"	d	file:
+MINBITRATE	shorten_x.c	55;"	d	file:
+MIN_SUPPORTED_VERSION	shorten_x.c	40;"	d	file:
+NBITPERLONG	shorten_x.c	51;"	d	file:
+NEGATIVE_ULAW_ZERO	shorten_x.c	68;"	d	file:
+NSKIPSIZE	shorten_x.c	96;"	d	file:
+NWRAP	shorten_x.c	64;"	d	file:
+NWRAP	shorten_x.c	99;"	d	file:
+PCM	sph_convert.h	27;"	d
+POSITIVE_ULAW_ZERO	shorten_x.c	67;"	d	file:
+QUANT_MASK	sph2pipe.c	474;"	d	file:
+ROUNDEDSHIFTDOWN	shorten_x.c	111;"	d	file:
+SEG_SHIFT	sph2pipe.c	473;"	d	file:
+STD_BUF_SIZE	sph_convert.h	26;"	d
+TYPESIZE	shorten_x.c	81;"	d	file:
+TYPE_AU1	shorten_x.c	82;"	d	file:
+TYPE_AU2	shorten_x.c	90;"	d	file:
+TYPE_EOF	shorten_x.c	91;"	d	file:
+TYPE_GENERIC_ULAW	shorten_x.c	92;"	d	file:
+TYPE_S16HL	shorten_x.c	85;"	d	file:
+TYPE_S16LH	shorten_x.c	87;"	d	file:
+TYPE_S8	shorten_x.c	83;"	d	file:
+TYPE_U16HL	shorten_x.c	86;"	d	file:
+TYPE_U16LH	shorten_x.c	88;"	d	file:
+TYPE_U8	shorten_x.c	84;"	d	file:
+TYPE_ULAW	shorten_x.c	89;"	d	file:
+ULAW	sph_convert.h	28;"	d
+ULONGSIZE	shorten_x.c	95;"	d	file:
+UNDEFINED_UINT	shorten_x.c	43;"	d	file:
+UNKNOWN	sph_convert.h	30;"	d
+V2LPCQOFFSET	shorten_x.c	101;"	d	file:
+XBYTESIZE	shorten_x.c	65;"	d	file:
+ZEROTRAP	sph2pipe.c	423;"	d	file:
+ZEROTRAP	sph2pipe.c	424;"	d	file:
+_SPH_CONVERT_MAIN_	sph2pipe.c	104;"	d	file:
+__anon1::ch	sph_convert.h	/^    char ch[2];$/;"	m	union:__anon1
+__anon1::i2	sph_convert.h	/^    short int i2;$/;"	m	union:__anon1
+__anon2::ch	sph_convert.h	/^    char ch[4];$/;"	m	union:__anon2
+__anon2::i4	sph_convert.h	/^    int i4;$/;"	m	union:__anon2
+alaw2pcm	ulaw.h	/^GLOBAL short int alaw2pcm[256]$/;"	v
+badinput	shorten_x.c	/^static int  badinput;$/;"	v	file:
+bgnsamp	sph2pipe.c	/^static int bgnsamp, endsamp;$/;"	v	file:
+bgnsec	sph2pipe.c	/^static double bgnsec, endsec;$/;"	v	file:
+ch	sph_convert.h	/^    char ch[2];$/;"	m	union:__anon1
+ch	sph_convert.h	/^    char ch[4];$/;"	m	union:__anon2
+chancount	sph_convert.h	/^GLOBAL int chancount, samptype, sampsize, sampcount, samprate, doshorten;$/;"	v
+chanout	sph_convert.h	/^GLOBAL int chanout, typeout, sizeout, startout, endout, debug;$/;"	v
+copySamples	sph2pipe.c	/^int copySamples( void )$/;"	f
+copycharr	file_headers.c	/^void copycharr( char *from, char *to, int n )$/;"	f
+copylong	file_headers.c	/^void copylong( int val, char *dest, char *intended )$/;"	f
+copyshort	file_headers.c	/^void copyshort( short int val, char *dest, char *intended )$/;"	f
+debug	sph_convert.h	/^GLOBAL int chanout, typeout, sizeout, startout, endout, debug;$/;"	v
+def_outheader	sph_convert.h	/^GLOBAL char *def_outheader;$/;"	v
+demux	sph2pipe.c	/^void demux( int ns )$/;"	f
+doConversion	sph2pipe.c	/^int doConversion( char *inpname, char *outname )$/;"	f
+doshorten	sph_convert.h	/^GLOBAL int chancount, samptype, sampsize, sampcount, samprate, doshorten;$/;"	v
+endout	sph_convert.h	/^GLOBAL int chanout, typeout, sizeout, startout, endout, debug;$/;"	v
+endsamp	sph2pipe.c	/^static int bgnsamp, endsamp;$/;"	v	file:
+endsec	sph2pipe.c	/^static double bgnsec, endsec;$/;"	v	file:
+fix_bitshift	shorten_x.c	/^void fix_bitshift( long *buffer, int nitem, int bitshift, int ftype )$/;"	f
+fpin	sph_convert.h	/^GLOBAL FILE *fpin, *fpout;$/;"	v
+fpout	sph_convert.h	/^GLOBAL FILE *fpin, *fpout;$/;"	v
+fwrite_type	shorten_x.c	/^void fwrite_type( long **data, int ftype, int nchan, int nitem )$/;"	f
+gbuffer	shorten_x.c	/^static ulong  gbuffer;$/;"	v	file:
+getUserOpts	sph2pipe.c	/^int getUserOpts( int ac, char **av )$/;"	f
+getbuf	shorten_x.c	/^static uchar *getbuf;$/;"	v	file:
+getbufp	shorten_x.c	/^static uchar *getbufp;$/;"	v	file:
+hdr	file_headers.c	/^static char hdr[90];$/;"	v	file:
+hdrfile	sph2pipe.c	/^static char *hdrfile;$/;"	v	file:
+hdrsize	file_headers.c	/^static int hdrsize, origSampcount;$/;"	v	file:
+i2	sph_convert.h	/^    short int i2;$/;"	m	union:__anon1
+i4	sph_convert.h	/^    int i4;$/;"	m	union:__anon2
+init_offset	shorten_x.c	/^void init_offset( long **offset, int nchan, int nblock, int ftype )$/;"	f
+init_sizeof_sample	shorten_x.c	/^void init_sizeof_sample( void )$/;"	f
+inpbuf	sph_convert.h	/^GLOBAL char *inpbuf, *outbuf;$/;"	v
+inpname	sph_convert.h	/^GLOBAL char *inpname, *outname;$/;"	v
+inporder	sph_convert.h	/^GLOBAL char *nativorder, *inporder, *outorder, *outheader;$/;"	v
+long2d	shorten_x.c	/^long **long2d( ulong n0, ulong n1)$/;"	f
+long_order	sph_convert.h	/^} long_order;$/;"	v	typeref:union:__anon2
+main	sph2pipe.c	/^int main( int argc, char **argv )$/;"	f
+masktab	shorten_x.c	/^ulong masktab[MASKTABSIZE];$/;"	v
+mesgbuf	sph_convert.h	/^GLOBAL char mesgbuf[512];$/;"	v
+mkmasktab	shorten_x.c	/^void mkmasktab() $/;"	f
+nativorder	sph_convert.h	/^GLOBAL char *nativorder, *inporder, *outorder, *outheader;$/;"	v
+nbitget	shorten_x.c	/^static int    nbitget;$/;"	v	file:
+nbyteget	shorten_x.c	/^static int    nbyteget;$/;"	v	file:
+nsampsdone	shorten_x.c	/^static int  nwritebuf, nsampsdone, nsampswritten;$/;"	v	file:
+nsampswritten	shorten_x.c	/^static int  nwritebuf, nsampsdone, nsampswritten;$/;"	v	file:
+nwritebuf	shorten_x.c	/^static int  nwritebuf, nsampsdone, nsampswritten;$/;"	v	file:
+origSampcount	file_headers.c	/^static int hdrsize, origSampcount;$/;"	v	file:
+outbuf	sph_convert.h	/^GLOBAL char *inpbuf, *outbuf;$/;"	v
+outheader	sph_convert.h	/^GLOBAL char *nativorder, *inporder, *outorder, *outheader;$/;"	v
+outname	sph_convert.h	/^GLOBAL char *inpname, *outname;$/;"	v
+outorder	sph_convert.h	/^GLOBAL char *nativorder, *inporder, *outorder, *outheader;$/;"	v
+pcm2alaw	sph2pipe.c	/^uchar pcm2alaw( short int pcmval )$/;"	f
+pcm2ulaw	sph2pipe.c	/^uchar pcm2ulaw( short int sample )$/;"	f
+readSphHeader	file_headers.c	/^int readSphHeader( char *hdrfname )$/;"	f
+sampcount	sph_convert.h	/^GLOBAL int chancount, samptype, sampsize, sampcount, samprate, doshorten;$/;"	v
+samprate	sph_convert.h	/^GLOBAL int chancount, samptype, sampsize, sampcount, samprate, doshorten;$/;"	v
+sampsize	sph_convert.h	/^GLOBAL int chancount, samptype, sampsize, sampcount, samprate, doshorten;$/;"	v
+samptype	sph_convert.h	/^GLOBAL int chancount, samptype, sampsize, sampcount, samprate, doshorten;$/;"	v
+schar	shorten_x.c	31;"	d	file:
+schar	shorten_x.c	32;"	d	file:
+schar	sph_convert.h	77;"	d
+schar	sph_convert.h	78;"	d
+short_order	sph_convert.h	/^} short_order;$/;"	v	typeref:union:__anon1
+shortenXtract	shorten_x.c	/^int shortenXtract( void )$/;"	f
+sizeof_sample	shorten_x.c	/^static int sizeof_sample[TYPE_EOF];$/;"	v	file:
+sizeout	sph_convert.h	/^GLOBAL int chanout, typeout, sizeout, startout, endout, debug;$/;"	v
+startout	sph_convert.h	/^GLOBAL int chanout, typeout, sizeout, startout, endout, debug;$/;"	v
+totalsec	sph_convert.h	/^GLOBAL double totalsec;$/;"	v
+typeout	sph_convert.h	/^GLOBAL int chanout, typeout, sizeout, startout, endout, debug;$/;"	v
+uchar	shorten_x.c	29;"	d	file:
+uchar	shorten_x.c	30;"	d	file:
+uchar	sph_convert.h	75;"	d
+uchar	sph_convert.h	76;"	d
+ulaw2pcm	ulaw.h	/^GLOBAL short int ulaw2pcm[256]$/;"	v
+ulaw_inward	bitshift.h	/^schar ulaw_inward[13][256] = {$/;"	v
+ulaw_maxshift	bitshift.h	/^char ulaw_maxshift[256] = {12,8,7,9,7,8,7,10,7,8,7,9,7,8,7,11,6,7,6,8,6,7,6,9,6,7,6,8,6,7,6,10,5,6,5,7,5,6,5,8,5,6,5,7,5,6,5,9,5,4,6,4,5,4,7,4,5,4,6,4,5,4,8,4,3,5,3,4,3,6,3,4,3,5,3,4,3,7,3,4,2,3,2,5,2,3,2,4,2,3,2,6,2,3,2,4,1,2,1,3,1,2,1,5,1,2,1,3,1,2,1,4,0,1,0,2,0,1,0,3,0,1,0,2,0,1,0,0,7,8,7,9,7,8,7,10,7,8,7,9,7,8,7,11,6,7,6,8,6,7,6,9,6,7,6,8,6,7,6,10,5,6,5,7,5,6,5,8,5,6,5,7,5,6,5,9,5,4,6,4,5,4,7,4,5,4,6,4,5,4,8,4,3,5,3,4,3,6,3,4,3,5,3,4,3,7,3,4,2,3,2,5,2,3,2,4,2,3,2,6,2,3,2,4,1,2,1,3,1,2,1,5,1,2,1,3,1,2,1,4,0,1,0,2,0,1,0,3,0,1,0,2,0,1,0,12};$/;"	v
+ulaw_outward	bitshift.h	/^uchar ulaw_outward[13][256] = {$/;"	v
+ulong	shorten_x.c	35;"	d	file:
+ulong	shorten_x.c	36;"	d	file:
+ulong	sph_convert.h	81;"	d
+ulong	sph_convert.h	82;"	d
+ulong_get	shorten_x.c	/^ulong ulong_get( void )$/;"	f
+ushort	shorten_x.c	33;"	d	file:
+ushort	shorten_x.c	34;"	d	file:
+ushort	sph_convert.h	79;"	d
+ushort	sph_convert.h	80;"	d
+uvar_get	shorten_x.c	/^long uvar_get( int nbin )$/;"	f
+var_get	shorten_x.c	/^long var_get( int nbin )$/;"	f
+word_get	shorten_x.c	/^ulong word_get()$/;"	f
+writeAIFFHeader	file_headers.c	/^void writeAIFFHeader( void )$/;"	f
+writeAUHeader	file_headers.c	/^void writeAUHeader( void )$/;"	f
+writeRIFFHeader	file_headers.c	/^void writeRIFFHeader( void )$/;"	f
+writeSphHeader	file_headers.c	/^void writeSphHeader( void )$/;"	f
+writebuf	shorten_x.c	/^static char *writebuf, *writefub;$/;"	v	file:
+writefub	shorten_x.c	/^static char *writebuf, *writefub;$/;"	v	file:

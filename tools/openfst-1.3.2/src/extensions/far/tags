@@ -1,0 +1,49 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+FarCompileStrings	farscript.cc	/^void FarCompileStrings(const vector<string> &in_fnames,$/;"	f	namespace:fst::script
+FarCreate	farscript.cc	/^void FarCreate(const vector<string> &in_fnames,$/;"	f	namespace:fst::script
+FarEqual	farscript.cc	/^bool FarEqual(const string &filename1, const string &filename2,$/;"	f	namespace:fst::script
+FarExtract	farscript.cc	/^void FarExtract(const vector<string> &ifilenames,$/;"	f	namespace:fst::script
+FarInfo	farscript.cc	/^void FarInfo(const vector<string> &filenames,$/;"	f	namespace:fst::script
+FarPrintStrings	farscript.cc	/^void FarPrintStrings(const vector<string> &ifilenames,$/;"	f	namespace:fst::script
+FarTypeFromString	main.cc	/^FarType FarTypeFromString(const string &str) {$/;"	f	namespace:fst
+FarTypeToString	main.cc	/^string FarTypeToString(FarType type) {$/;"	f	namespace:fst
+IsSTList	stlist.cc	/^bool IsSTList(const string &filename) {$/;"	f	namespace:fst
+IsSTTable	sttable.cc	/^bool IsSTTable(const string &filename) {$/;"	f	namespace:fst
+KeySize	strings.cc	/^int KeySize(const char *filename) {$/;"	f	namespace:fst
+LoadArcTypeFromFar	main.cc	/^string LoadArcTypeFromFar(const string &far_fname) {$/;"	f	namespace:fst
+LoadArcTypeFromFst	main.cc	/^string LoadArcTypeFromFst(const string &fst_fname) {$/;"	f	namespace:fst
+StringToFarEntryType	main.cc	/^FarEntryType StringToFarEntryType(const string &s) {$/;"	f	namespace:fst
+StringToFarTokenType	main.cc	/^FarTokenType StringToFarTokenType(const string &s) {$/;"	f	namespace:fst
+fst	farscript.cc	/^namespace fst {$/;"	n	file:
+fst	main.cc	/^namespace fst {$/;"	n	file:
+fst	stlist.cc	/^namespace fst {$/;"	n	file:
+fst	strings.cc	/^namespace fst {$/;"	n	file:
+fst	sttable.cc	/^namespace fst {$/;"	n	file:
+fst::FarTypeFromString	main.cc	/^FarType FarTypeFromString(const string &str) {$/;"	f	namespace:fst
+fst::FarTypeToString	main.cc	/^string FarTypeToString(FarType type) {$/;"	f	namespace:fst
+fst::IsSTList	stlist.cc	/^bool IsSTList(const string &filename) {$/;"	f	namespace:fst
+fst::IsSTTable	sttable.cc	/^bool IsSTTable(const string &filename) {$/;"	f	namespace:fst
+fst::KeySize	strings.cc	/^int KeySize(const char *filename) {$/;"	f	namespace:fst
+fst::LoadArcTypeFromFar	main.cc	/^string LoadArcTypeFromFar(const string &far_fname) {$/;"	f	namespace:fst
+fst::LoadArcTypeFromFst	main.cc	/^string LoadArcTypeFromFst(const string &fst_fname) {$/;"	f	namespace:fst
+fst::StringToFarEntryType	main.cc	/^FarEntryType StringToFarEntryType(const string &s) {$/;"	f	namespace:fst
+fst::StringToFarTokenType	main.cc	/^FarTokenType StringToFarTokenType(const string &s) {$/;"	f	namespace:fst
+fst::script	farscript.cc	/^namespace script {$/;"	n	namespace:fst	file:
+fst::script::FarCompileStrings	farscript.cc	/^void FarCompileStrings(const vector<string> &in_fnames,$/;"	f	namespace:fst::script
+fst::script::FarCreate	farscript.cc	/^void FarCreate(const vector<string> &in_fnames,$/;"	f	namespace:fst::script
+fst::script::FarEqual	farscript.cc	/^bool FarEqual(const string &filename1, const string &filename2,$/;"	f	namespace:fst::script
+fst::script::FarExtract	farscript.cc	/^void FarExtract(const vector<string> &ifilenames,$/;"	f	namespace:fst::script
+fst::script::FarInfo	farscript.cc	/^void FarInfo(const vector<string> &filenames,$/;"	f	namespace:fst::script
+fst::script::FarPrintStrings	farscript.cc	/^void FarPrintStrings(const vector<string> &ifilenames,$/;"	f	namespace:fst::script
+main	farcompilestrings.cc	/^int  main(int argc, char **argv) {$/;"	f
+main	farcreate.cc	/^int main(int argc, char **argv) {$/;"	f
+main	farequal.cc	/^int main(int argc, char **argv) {$/;"	f
+main	farextract.cc	/^int main(int argc, char **argv) {$/;"	f
+main	farinfo.cc	/^int main(int argc, char **argv) {$/;"	f
+main	farprintstrings.cc	/^int  main(int argc, char **argv) {$/;"	f
+script	farscript.cc	/^namespace script {$/;"	n	namespace:fst	file:

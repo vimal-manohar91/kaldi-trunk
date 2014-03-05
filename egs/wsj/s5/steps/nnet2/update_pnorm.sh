@@ -3,13 +3,12 @@
 # Copyright 2012  Johns Hopkins University (Author: Daniel Povey). 
 #           2013  Xiaohui Zhang
 #           2013  Guoguo Chen
+#           2013  Johns Hopkins University (Author: Jan Trmal)
+#           2013  Vimal Manohar
 # Apache 2.0.
 
 
-# This script trains neural network with pnorm nonlinearities. 
-# The difference with train_tanh.sh is that, instead of setting 
-# hidden_layer_size, you should set pnorm_input_dim and pnorm_output_dim.
-# Also the P value (the order of the p-norm) should be set.
+# This script updates an existing neural network model without initializing it.
 
 # Begin configuration section.
 cmd=run.pl
@@ -20,7 +19,6 @@ num_iters_final=20 # Maximum number of final iterations to give to the
 learning_rates="0.0008:0.0008:0.0008:0"
 
 combine_regularizer=1.0e-14 # Small regularizer so that parameters won't go crazy.
-p=2
 minibatch_size=128 # by default use a smallish minibatch size for neural net
                    # training; this controls instability which would otherwise
                    # be a problem with multi-threaded update.  Note: it also
@@ -55,9 +53,8 @@ parallel_opts="-pe smp 16 -l ram_free=1G,mem_free=1G" # by default we use 16 thr
   # note: parallel_opts doesn't automatically get adjusted if you adjust num-threads.
 cleanup=false
 egs_dir=
-lda_opts=
 egs_opts=
-transform_dir=
+transform_dir=     # If supplied, overrides alidir
 # End configuration section.
 
 
@@ -67,8 +64,8 @@ if [ -f path.sh ]; then . ./path.sh; fi
 . parse_options.sh || exit 1;
 
 if [ $# != 5 ]; then
-  echo "Usage: $0 [opts] <data> <lang> <ali-dir> <exp-dir>"
-  echo " e.g.: $0 data/train data/lang exp/tri3_ali exp/tri4_nnet"
+  echo "Usage: $0 [opts] <data> <lang> <ali-dir> <model-dir> <exp-dir>"
+  echo " e.g.: $0 data/train data/lang exp/tri3_ali exp/tri4_nnet exp/tri4b_nnet"
   echo ""
   echo "Main options (for others, see top of script file)"
   echo "  --config <config-file>                           # config file containing options"
@@ -93,7 +90,6 @@ if [ $# != 5 ]; then
   echo "                                                   # process."
   echo "  --splice-width <width|4>                         # Number of frames on each side to append for feature input"
   echo "                                                   # (note: we splice processed, typically 40-dimensional frames"
-  echo "  --lda-dim <dim|250>                              # Dimension to reduce spliced features to with LDA"
   echo "  --num-iters-final <#iters|10>                    # Number of final iterations to give to nnet-combine-fast to "
   echo "                                                   # interpolate parameters (the weights are learned with a validation set)"
   echo "  --num-utts-subset <#utts|300>                    # Number of utterances in subsets used for validation and diagnostics"
@@ -103,6 +99,7 @@ if [ $# != 5 ]; then
   echo "                                                   # very end."
   echo "  --stage <stage|-9>                               # Used to run a partially-completed training process from somewhere in"
   echo "                                                   # the middle."
+  echo "  --transform-dir                                  # Directory with fMLLR transforms. Overrides alidir if provided."
   
   exit 1;
 fi
@@ -133,21 +130,13 @@ splice_opts=`cat $alidir/splice_opts 2>/dev/null`
 cp $alidir/splice_opts $dir 2>/dev/null
 cp $alidir/tree $dir
 
-if [ $stage -le -4 ]; then
-  echo "$0: calling get_lda.sh"
-  steps/nnet2/get_lda.sh $lda_opts --splice-width $splice_width --cmd "$cmd" $data $lang $alidir $dir || exit 1;
-fi
-
-# these files will have been written by get_lda.sh
-feat_dim=`cat $dir/feat_dim` || exit 1;
-lda_dim=`cat $dir/lda_dim` || exit 1;
+[ -z "$transform_dir" ] && transform_dir=$alidir
 
 if [ $stage -le -3 ] && [ -z "$egs_dir" ]; then
   echo "$0: calling get_egs.sh"
   [ ! -z $spk_vecs_dir ] && spk_vecs_opt="--spk-vecs-dir $spk_vecs_dir";
   steps/nnet2/get_egs.sh $spk_vecs_opt --samples-per-iter $samples_per_iter --num-jobs-nnet $num_jobs_nnet \
-      --splice-width $splice_width --stage $get_egs_stage --cmd "$cmd" $egs_opts --io-opts "$io_opts" \
-      --transform-dir $transform_dir \
+      --splice-width $splice_width --stage $get_egs_stage --cmd "$cmd" $egs_opts --io-opts "$io_opts" --transform-dir $transform_dir \
       $data $lang $alidir $dir || exit 1;
 fi
 
