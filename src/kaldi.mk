@@ -1,5 +1,5 @@
 # This file was generated using the following command:
-# ./configure 
+# ./configure --use-cuda=yes
 
 # Rules that enable valgrind debugging ("make valgrind")
 
@@ -19,7 +19,7 @@ OPENFSTLIBS = -L/home/vmanoha1/kaldi-trunk/tools/openfst/lib -lfst
 OPENFSTLDFLAGS = -Wl,-rpath=/home/vmanoha1/kaldi-trunk/tools/openfst/lib
 FSTROOT = /home/vmanoha1/kaldi-trunk/tools/openfst
 ATLASINC = /home/vmanoha1/kaldi-trunk/tools/ATLAS/include
-ATLASLIBS = /usr/lib/atlas-base/libatlas.so.3.0 /usr/lib/atlas-base/libf77blas.so.3.0 /usr/lib/atlas-base/libcblas.so.3 /usr/lib/atlas-base/liblapack_atlas.so.3
+ATLASLIBS = /usr/lib/atlas-base/libatlas.so.3.0 /usr/lib/atlas-base/libf77blas.so.3.0 /usr/lib/atlas-base/libcblas.so.3 /usr/lib/atlas-base/liblapack_atlas.so.3 -Wl,-rpath=/usr/lib/atlas-base
 # You have to make sure ATLASLIBS is set...
 
 ifndef FSTROOT
@@ -37,8 +37,8 @@ endif
 
 CXXFLAGS = -msse -msse2 -Wall -I.. \
 	  -fPIC \
-      -DKALDI_DOUBLEPRECISION=1 -DHAVE_POSIX_MEMALIGN \
-      -Wno-sign-compare -Winit-self \
+      -DKALDI_DOUBLEPRECISION=0 -DHAVE_POSIX_MEMALIGN \
+      -Wno-sign-compare -Wno-unused-local-typedefs -Winit-self \
       -DHAVE_EXECINFO_H=1 -rdynamic -DHAVE_CXXABI_H \
       -DHAVE_ATLAS -I$(ATLASINC) \
       -I$(FSTROOT)/include \
@@ -56,3 +56,15 @@ CXX = g++
 AR = ar
 AS = as
 RANLIB = ranlib
+
+#Next section enables CUDA for compilation
+CUDA = true
+CUDATKDIR = /usr/
+
+CUDA_INCLUDE= -I$(CUDATKDIR)/include
+CUDA_FLAGS = -g -Xcompiler -fPIC --verbose --machine 64 -DHAVE_CUDA
+
+CXXFLAGS += -DHAVE_CUDA -I$(CUDATKDIR)/include 
+CUDA_LDFLAGS += -L$(CUDATKDIR)/lib64 -Wl,-rpath,$(CUDATKDIR)/lib64
+CUDA_LDLIBS += -lcublas -lcudart #LDLIBS : The libs are loaded later than static libs in implicit rule
+
