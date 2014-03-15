@@ -1,0 +1,127 @@
+#!/bin/bash
+
+
+#Run decoding of the
+#DEVTRAIN
+#UNTRANSCRIBED
+#This yields approx 70 hours of data
+
+set -e           #Exit on non-zero return code from any command
+set -o pipefail  #Exit if any of the commands in the pipeline will
+                 #return non-zero return code
+
+. conf/common_vars.sh || exit 1;
+. ./lang.conf || exit 1;
+. cmd.sh
+. path.sh
+
+set -u           #Fail on an undefined variable
+
+segmentation_opts=( --isolated-resegmentation --min-inter-utt-silence-length 1.0 --silence-proportion 0.05 )
+nj=32
+train_stage=-100
+. ./utils/parse_options.sh
+
+sph2pipe=`which sph2pipe`
+if [ $? -ne 0 ] ; then
+  echo "Could not find sph2pipe binary. Add it to PATH"  
+  exit 1;
+fi
+
+sox=`which sox`
+if [ $? -ne 0 ] ; then
+  echo "Could not find sox binary. Add it to PATH"  
+  exit 1;
+fi
+
+mkdir -p data/train_unt
+
+if [ ! -f data/train_unt/wav.scp ]; then
+  (
+  for file in `utils/filter_scp.pl --exclude $train_data_list $(dirname $train_data_list)/train.FullLP.list`; do 
+    if [ -f $train_data_dir/audio/${file}.sph ]; then
+      echo "$file $sph2pipe -f wav -p -c 1 $train_data_dir/audio/${file}.sph |" 
+    elif [ -f $train_data_dir/audio/${file}.wav ]; then
+      echo "$file $sox $train_data_dir/audio/${file}.wav -r 8000 -c 1 -b 16 -t wav - downsample |"
+    fi
+  done
+  audiopath=$(dirname $train_data_dir)/untranscribed-training/audio
+  for file in `cat $(dirname $train_data_list)/train.untranscribed.list`; do 
+    if [ -f $audiopath/${file}.sph ]; then
+      echo "$file $sph2pipe -f wav -p -c 1 $audiopath/${file}.sph |" 
+    elif [ -f $audiopath/${file}.wav ]; then
+      echo "$file $sox $audiopath/${file}.wav -r 8000 -c 1 -b 16 -t wav - downsample |"
+    fi
+  done 
+  ) | sort > data/train_unt/wav.scp
+fi
+
+local/run_segmentation.sh --segmentation_opts ${segmentation_opts} --nj $nj data/train_unt data/lang || exit 1
+
+# Generate alignment.
+if [ ! -f exp/tri6_nnet_ali/.done ]; then
+  steps/nnet2/align.sh  --cmd "$decode_cmd" \
+    --use-gpu no --transform-dir exp/tri5_ali --nj $train_nj \
+    data/train data/lang exp/tri6_nnet exp/tri6_nnet_ali || exit 1
+  touch exp/tri6_nnet_ali/.done
+fi
+
+dirid=train_unt.seg
+datadir=data/${dirid}
+
+decode=exp/tri5/decode_${dirid}
+if [ ! -f ${decode}/.done ]; then
+  echo ---------------------------------------------------------------------
+  echo "Spawning decoding with SAT models  on" `date`
+  echo ---------------------------------------------------------------------
+  utils/mkgraph.sh \
+    data/lang exp/tri5 exp/tri5/graph |tee exp/tri5/mkgraph.log
+
+  mkdir -p $decode
+  #By default, we do not care about the lattices for this step -- we just want the transforms
+  #Therefore, we will reduce the beam sizes, to reduce the decoding times
+  steps/decode_fmllr_extra.sh --skip-scoring true --beam 10 --lattice-beam 4\
+    --nj $nj --cmd "$decode_cmd" "${decode_extra_opts[@]}"\
+    exp/tri5/graph ${datadir} ${decode} |tee ${decode}/decode.log
+  touch ${decode}/.done
+fi
+
+decode=exp/tri6_nnet/decode_${dirid}
+if [ ! -f $decode/.done ]; then
+  mkdir -p $decode
+  steps/nnet2/decode.sh --cmd "$decode_cmd" --nj $nj \
+    --beam $dnn_beam --lat-beam $dnn_lat_beam \
+    --skip-scoring true "${decode_extra_opts[@]}" \
+    --transform-dir exp/tri5/decode_${dirid} \
+    exp/tri5/graph ${datadir} $decode | tee $decode/decode.log
+
+  touch $decode/.done
+fi
+
+if [ ! -f $decode/.best_path.done ]; then
+
+  $decode_cmd JOB=1:$nj $decode/log/best_path_post.JOB.log \
+    lattice-best-path-post --acoustic-scale=0.1 \
+    "ark,s,cs:gunzip -c $decode/lat.JOB.gz |" \
+    "ark:| gzip -c > $decode/best_path_ali.JOB.gz" \
+    "ark:| gzip -c > $decode/weights.JOB.gz" || exit 1
+  touch $decode/.best_path.done
+fi
+
+if [ ! -f exp/tri6_nnet_semi_supervised/.done ]; then
+  steps/nnet2/train_pnorm_semi_supervised.sh \
+    --stage $train_stage --mix-up $dnn_mixup \
+    --initial-learning-rate $dnn_init_learning_rate \
+    --final-learning-rate $dnn_final_learning_rate \
+    --num-hidden-layers $dnn_num_hidden_layers \
+    --pnorm-input-dim $dnn_input_dim \
+    --pnorm-output-dim $dnn_output_dim \
+    --max-change $dnn_max_change \
+    --cmd "$train_cmd" \
+    "${dnn_cpu_parallel_opts[@]}" \
+    --transform-dir-sup exp/tri5_ali --transform-dir-unsup exp/tri5/decode_${dirid} \
+    data/train data/${dirid} \
+    data/lang exp/tri6_nnet_ali $decode exp/tri6_nnet_semi_supervised || exit 1
+
+  touch exp/tri6_nnet_semi_supervised/.done
+fi

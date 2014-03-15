@@ -38,6 +38,8 @@ struct NnetExample {
   /// The label(s) for this frame; in the normal case, this will be a vector of
   /// length one, containing (the pdf-id, 1.0)
   std::vector<std::pair<int32, BaseFloat> > labels;  
+  
+  BaseFloat weight;
 
   /// The input data-- typically with NumRows() more than
   /// labels.size(), it includes features to the left and

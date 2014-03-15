@@ -1,0 +1,9 @@
+K 10
+svn:ignore
+V 65
+feature-mfcc-test
+feature-plp-test
+feature-fbank-test
+.depend.mk
+
+END

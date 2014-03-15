@@ -26,6 +26,7 @@ decode_dir=
 ali_dir=
 nj=
 egs_gpu_opts_extra=
+get_egs_only=false
 
 . parse_options.sh || exit 1
 

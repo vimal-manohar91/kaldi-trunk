@@ -12,10 +12,6 @@ fi
 
 check_variables_are_set
 
-segmentation_opts="--isolated-resegmentation \
-  --min-inter-utt-silence-length 1.0 \
-  --silence-proportion 0.05 "
-
 workdir=exp/make_seg/${dataset_id}
 unseg_dir=$workdir
 mkdir -p $unseg_dir

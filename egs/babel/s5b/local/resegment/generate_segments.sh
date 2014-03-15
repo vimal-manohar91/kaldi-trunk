@@ -7,7 +7,7 @@ set -e
 nj=8
 cmd=run.pl
 stage=0
-segmentation_opts="--isolated-resegmentation --min-inter-utt-silence-length 1.0 --silence-proportion 0.05"
+segmentation_opts="--isolated-resegmentation --min-inter-utt-silence-length 1.0"
 decoder_extra_opts=""
 reference_rttm=
 get_text=false  # Get text corresponding to new segments in ${output_dir}
@@ -19,6 +19,7 @@ max_active=1000
 boost_silence=1.0   # Boost silence probailities in the model. 
                     # Seems to reduce the false alarms. 
                     # But may result in more deletions.
+segmentation2=true
 
 #debugging stuff
 echo $0 $@
@@ -124,9 +125,17 @@ cat $lang/phones/nonsilence.txt | awk '{print $1, 2;}' | sed 's/\(<.*>.*\)2/\11/
 mkdir -p $output_dir
 mkdir -p $temp_dir/log
 
-local/resegment/segmentation.py --verbose 2 $segmentation_opts \
-  $temp_dir/pred $temp_dir/phone_map.txt 2> $temp_dir/log/resegment.log | \
-  sort > $output_dir/segments || exit 1
+if [ $stage -le 2 ]; then
+  if ! $segmentation2; then
+    local/resegment/segmentation.py --verbose 2 $segmentation_opts \
+      $temp_dir/pred $temp_dir/phone_map.txt 2> $temp_dir/log/resegment.log | \
+      sort > $output_dir/segments || exit 1
+  else
+    local/resegment/segmentation2.py --verbose 2 $segmentation_opts \
+      $temp_dir/pred $temp_dir/phone_map.txt 2> $temp_dir/log/resegment.log | \
+      sort > $output_dir/segments || exit 1
+  fi
+fi
 
 if [ ! -s $output_dir/segments ] ; then
   echo "Zero segments created during segmentation process."

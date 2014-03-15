@@ -1,4 +1,3 @@
-// nnet/nnet-example.cc
 
 // Copyright 2012-2013  Johns Hopkins University (author: Daniel Povey)
 
@@ -28,6 +27,10 @@ void NnetExample::Write(std::ostream &os, bool binary) const {
   // Note: weight, label, input_frames and spk_info are members.  This is a
   // struct.
   WriteToken(os, binary, "<NnetExample>");
+  if (weight < 1.0) {
+    WriteToken(os, binary, "<Weight>");
+    WriteBasicType(os, binary, weight);
+  }
   WriteToken(os, binary, "<Labels>");
   int32 size = labels.size();
   WriteBasicType(os, binary, size);
@@ -47,7 +50,15 @@ void NnetExample::Read(std::istream &is, bool binary) {
   // Note: weight, label, input_frames, left_context and spk_info are members.
   // This is a struct.
   ExpectToken(is, binary, "<NnetExample>");  
-  ExpectToken(is, binary, "<Labels>");
+  std::string token;
+  ReadToken(is, binary, &token);
+  if (token == "<Weight>") {
+    ReadBasicType(is, binary, &weight);
+    ExpectToken(is, binary, "<Labels>");
+  } else {
+    weight = 1.0;
+    KALDI_ASSERT(token == "<Labels>");
+  }
   int32 size;
   ReadBasicType(is, binary, &size);
   labels.resize(size);

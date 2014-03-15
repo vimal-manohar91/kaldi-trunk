@@ -10,7 +10,6 @@ word_ins_penalty=0.5
 min_lmwt=7
 max_lmwt=17
 model=
-keep_fillers=false  # Set to true while decoding training data for the purpose of augmenting it
 
 #end configuration section.
 
@@ -51,7 +50,6 @@ mkdir -p $dir/scoring/log
 
 if [ $stage -le 0 ]; then
   $cmd LMWT=$min_lmwt:$max_lmwt $dir/scoring/log/get_ctm.LMWT.log \
-    set -e -o pipefail \; \
     mkdir -p $dir/score_LMWT/ '&&' \
     lattice-scale --inv-acoustic-scale=LMWT "ark:gunzip -c $dir/lat.*.gz|" ark:- \| \
     lattice-add-penalty --word-ins-penalty=$word_ins_penalty ark:- ark:- \| \
@@ -91,6 +89,7 @@ if [ $stage -le 1 ]; then
       }' > $x;
   done
 fi
+
 
 echo "Lattice2CTM finished on " `date`
 exit 0

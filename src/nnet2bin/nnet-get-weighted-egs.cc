@@ -76,9 +76,12 @@ static void ProcessFile(const MatrixBase<BaseFloat> &feats,
       }
       eg.labels = pdf_post[i];
       eg.input_frames = input_frames;
-      //if (use_frame_weights) {
-      //  eg.weight = (weights == NULL) ? 1.0 : weights[i];
-      //}
+      if (use_frame_weights) {
+        eg.weight = weights(i);
+      } else {
+        eg.weight = 1.0;
+      }
+
       if (use_frame_selection) {
         if (weights(i) < weight_threshold) {
           (*num_frames_skipped)++;
@@ -175,7 +178,7 @@ int main(int argc, char *argv[]) {
     RandomAccessBaseFloatVectorReader weights_reader(weights_rspecifier);
     NnetExampleWriter example_writer(examples_wspecifier);
     
-    int32 num_done = 0, num_err = 0;
+    int32 num_done = 0, num_err = 0, num_missing = 0;
     int32 spk_dim = -1;
     int64 num_frames_written = 0;
     int64 num_frames_skipped = 0;
@@ -215,11 +218,14 @@ int main(int argc, char *argv[]) {
         }
 
         if (!weights_reader.HasKey(key)) {
-          KALDI_ERR << "No weights for utterance " << key;
-          //ProcessFile(feats, pdf_post, NULL, spk_info,
-          //    left_context, right_context, keep_proportion,
-          //    weight_threshold, false, false, &num_frames_written, 
-          //    &num_frames_skipped, &example_writer);
+          KALDI_WARN << "No weights for utterance " << key;
+          num_missing++;
+          Vector<BaseFloat> weights(pdf_post.size());
+          weights.Set(1.0);
+          ProcessFile(feats, pdf_post, weights, spk_info,
+              left_context, right_context, keep_proportion,
+              weight_threshold, false, false, &num_frames_written, 
+              &num_frames_skipped, &example_writer);
         } else {
           Vector<BaseFloat> weights = weights_reader.Value(key);
           if (weights.Dim() != static_cast<int32>(pdf_post.size())) {
@@ -242,7 +248,8 @@ int main(int argc, char *argv[]) {
               << "successfully processed " << num_done
               << " feature files, wrote " << num_frames_written << " examples, "
               << "skipped " << num_frames_skipped << " examples, "
-              << num_err << " files had errors.";
+              << num_err << " files had errors," << num_missing << " has no"
+              "weights. Assuming 1.0 weights on those.";
     return (num_done == 0 ? 1 : 0);
   } catch(const std::exception &e) {
     std::cerr << e.what() << '\n';

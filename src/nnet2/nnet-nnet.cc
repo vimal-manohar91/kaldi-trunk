@@ -223,7 +223,6 @@ void Nnet::Init(std::vector<Component*> *components) {
   Check();
 }
 
-
 void Nnet::ScaleLearningRates(BaseFloat factor) {
   std::ostringstream ostr;
   for (int32 c = 0; c < NumComponents(); c++) {
@@ -424,7 +423,6 @@ void Nnet::SetDropoutScale(BaseFloat scale) {
             << " for " << n_set << " components.";
 }      
 
-
 void Nnet::RemovePreconditioning() {
   for (size_t i = 0; i < components_.size(); i++) {
     if (dynamic_cast<AffineComponentPreconditioned*>(components_[i]) != NULL) {
@@ -517,6 +515,15 @@ void Nnet::SetComponent(int32 c, Component *component) {
   components_[c] = component;
   SetIndexes();
   Check(); // Check that all the dimensions still match up.
+}
+
+void Nnet::RemoveComponent(int32 c) {
+  KALDI_ASSERT(static_cast<size_t>(c) < NumComponents());
+  Component* ptr = components_[c];
+  components_.erase(components_.begin()+c);
+  delete ptr;
+  SetIndexes();
+  Check();
 }
 
 int32 Nnet::GetParameterDim() const {

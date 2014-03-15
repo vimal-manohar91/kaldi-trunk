@@ -107,6 +107,10 @@ double NnetUpdater::ComputeObjfAndDeriv(
 void NnetUpdater::Backprop(const std::vector<NnetExample> &data,
                            CuMatrix<BaseFloat> *deriv) {
   int32 num_chunks = data.size();
+  for (int32 m = 0; m < num_chunks; m++) {
+    CuSubVector<BaseFloat> tmp(deriv->Row(m));
+    tmp.Scale(data[m].weight);
+  }
   // We assume ComputeObjfAndDeriv has already been called.
   for (int32 c = nnet_.NumComponents() - 1; c >= 0; c--) {
     const Component &component = nnet_.GetComponent(c);

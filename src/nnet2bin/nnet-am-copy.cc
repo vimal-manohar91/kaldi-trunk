@@ -52,6 +52,8 @@ int main(int argc, char *argv[]) {
     std::string learning_rates = "";
     std::string scales = "";
     std::string stats_from;
+    bool copy_tm = true;
+    bool copy_nnet = true;
     
     ParseOptions po(usage);
     po.Register("binary", &binary_write, "Write output in binary mode");
@@ -83,12 +85,20 @@ int main(int argc, char *argv[]) {
                 "and FixedAffineComponents to compactify model");
     po.Register("match-updatableness", &match_updatableness, "Only relevant if "
                 "collapse=true; set this to false to collapse mixed types.");
+    po.Register("copy-tm", &copy_tm, "Copy transition model");
+    po.Register("copy-nnet", &copy_nnet, "Copy the nnet");
+
 
     po.Read(argc, argv);
     
     if (po.NumArgs() != 2) {
       po.PrintUsage();
       exit(1);
+    }
+
+    if ( ! copy_tm && ! copy_nnet ) {
+      KALDI_ERR << "--copy-tm and --copy-nnet are both set to false."
+        << "So nothing to copy.";
     }
 
     std::string nnet_rxfilename = po.GetArg(1),
@@ -169,8 +179,10 @@ int main(int argc, char *argv[]) {
     
     {
       Output ko(nnet_wxfilename, binary_write);
-      trans_model.Write(ko.Stream(), binary_write);
-      am_nnet.Write(ko.Stream(), binary_write);
+      if (copy_tm)
+        trans_model.Write(ko.Stream(), binary_write);
+      if (copy_nnet)
+        am_nnet.Write(ko.Stream(), binary_write);
     }
     KALDI_LOG << "Copied neural net from " << nnet_rxfilename
               << " to " << nnet_wxfilename;

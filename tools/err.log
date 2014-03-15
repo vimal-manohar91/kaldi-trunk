@@ -1,0 +1,5 @@
++ set -e
++ set -o pipefail
++ . conf/common_vars.sh
+/home/vmanoha1/workspace/babel_assamese_pitch_orig/run-4-anydecode.sh: line 5: conf/common_vars.sh: No such file or directory
++ exit 1

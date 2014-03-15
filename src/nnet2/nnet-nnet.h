@@ -192,6 +192,10 @@ class Nnet {
   /// Takes ownership of the pointer.
   void Append(Component *new_component);
   
+  /// Remove component
+  void RemoveComponent(int32 c);
+  void RemoveLastComponent() { RemoveComponent(NumComponents()-1); }
+  
   virtual ~Nnet() { Destroy(); }
 
   std::string Info() const; // some human-readable summary info.

@@ -84,7 +84,7 @@ dirid=`basename $output_dir`
 #
 ###############################################################################
 
-if [ ! -f $data/${dirid}.whole/.done ]; then
+if [ $stage -le -3 ]; then
   mkdir -p $data/${dirid}.whole
   mkdir -p $data/${dirid}.orig
   mkdir -p $data/${dirid}
@@ -106,8 +106,6 @@ if [ ! -f $data/${dirid}.whole/.done ]; then
   # dir, we'll overwrite the old data.
   mkdir -p $plpdir
   make_plp ${dirid}.whole $data $plpdir || exit 1
-  
-  touch $data/${dirid}.whole/.done
 fi
 
 [ ! -s $data/${dirid}.whole/feats.scp ] && echo "$data/${dirid}.whole/feats.scp not found or empty!" && exit 1
@@ -117,7 +115,7 @@ cp $data/${dirid}.whole/wav.scp $data/$dirid.orig || exit 1
 
 mkdir -p $vad_dir/resegment_$dirid
 
-if [ ! -f $vad_dir/decode_$dirid.whole/.done ]; then
+if [ $stage -le -2 ]; then
   if ! $use_likes_decode; then
     steps/decode_nolats.sh --write-words false --write-alignments true \
       --cmd "$cmd" --nj $nj --beam 7.0 --max-active 1000 \
@@ -132,8 +130,8 @@ if [ ! -f $vad_dir/decode_$dirid.whole/.done ]; then
   touch $vad_dir/decode_$dirid.whole/.done
 fi
 
-if [ ! -s $vad_dir/resegment_${dirid}/pred.1.gz ]; then
-[ ! -s $vad_dir/decode_${dirid}.whole/ali.1.gz ] && echo "$vad_dir/decode_${dirid}.whole/ali.1.gz not found or empty!" && exit 1
+if [ $stage -le -1 ]; then
+  [ ! -s $vad_dir/decode_${dirid}.whole/ali.1.gz ] && echo "$vad_dir/decode_${dirid}.whole/ali.1.gz not found or empty!" && exit 1
   mkdir -p $vad_dir/resegment_$dirid/log
 
   if ! $use_likes_decode; then
@@ -151,8 +149,7 @@ if [ ! -s $vad_dir/resegment_${dirid}/pred.1.gz ]; then
   fi
 fi
 
-if [ ! -s $data/${dirid}.orig/feats.scp ]; then
-
+if [ $stage -le 0 ]; then
 
   [ ! -s $vad_dir/resegment_${dirid}/pred.1.gz ] && echo "$vad_dir/resegment_${dirid}/pred.1.gz is empty!" && exit 1
 
@@ -191,7 +188,7 @@ mkdir -p $temp_dir
 total_time=0
 t1=$(date +%s)
 [ ! -f $model_dir/final.mdl ] && echo "$model_dir/final.mdl not found" && exit 1
-if [ $stage -le 2 ]; then
+if [ $stage -le 1 ]; then
   steps/decode_nolats.sh --write-words false --write-alignments true \
     --cmd "$cmd" --nj $my_nj --beam $beam --max-active $max_active \
     --boost-silence $boost_silence --silence-phones-list `cat $lang/phones/optional_silence.csl` \
@@ -200,7 +197,7 @@ fi
 
 [ ! -s $model_dir/decode_${dirid}.orig/ali.1.gz ] && echo "$model_dir/decode_${dirid}.orig/ali.1.gz not found or empty!" && exit 1
 
-if [ $stage -le 3 ]; then
+if [ $stage -le 2 ]; then
   $cmd JOB=1:$my_nj $model_dir/decode_${dirid}.orig/log/predict.JOB.log \
     gunzip -c $model_dir/decode_${dirid}.orig/ali.JOB.gz \| \
     ali-to-phones --per-frame=true $model_dir/final.mdl ark:- ark,t:- \| \
@@ -212,20 +209,19 @@ fi
 
 mkdir -p $temp_dir/pred_temp
   
-for n in `seq $my_nj`; do gunzip -c $temp_dir/pred.$n.gz; done | \
-python -c "import sys
+if [ $stage -le 3 ]; then
+  for n in `seq $my_nj`; do gunzip -c $temp_dir/pred.$n.gz; done | \
+  python -c "import sys
 for l in sys.stdin.readlines():
   splits = l.strip().split()
   file_handle = open(\""$temp_dir"/pred_temp/%s.pred\" % splits[0], 'w')
   file_handle.write(l)
   file_handle.close()" || exit 1
-  
-if [ ! -f $temp_dir/.pred.done ]; then
+
   mkdir -p $temp_dir/pred
   local/resegment/merge_pred.py $data/${dirid}.orig/segments $temp_dir/pred_temp $temp_dir/pred || exit 1
-  touch $temp_dir/.pred.done
 fi
-  
+
 count=0
 for f in $temp_dir/pred/*.pred; do 
   count=$((count+1))
@@ -256,22 +252,25 @@ fi
 silphone=`cat $lang/phones/optional_silence.txt` 
 # silphone will typically be "sil" or "SIL". 
 
-# 3 sets of phones: 0 is silence, 1 is noise, 2 is speech.,
-{
-  echo "$silphone 0"
-  if ! $noise_oov; then
-    grep -v -w $silphone $lang/phones/silence.txt \
-      | awk '{print $1, 1;}' \
-      | sed 's/SIL\(.*\)1/SIL\10/' \
-      | sed 's/<oov>\(.*\)1/<oov>\12/'
-  else
-    grep -v -w $silphone $lang/phones/silence.txt \
-      | awk '{print $1, 1;}' \
-      | sed 's/SIL\(.*\)1/SIL\10/'
-  fi
-  cat $lang/phones/nonsilence.txt | awk '{print $1, 2;}' | sed 's/\(<.*>.*\)2/\11/' | sed 's/<oov>\(.*\)1/<oov>\12/'
-} > $temp_dir/phone_map.txt
+if [ $stage -le 4 ]; then
 
+  # 3 sets of phones: 0 is silence, 1 is noise, 2 is speech.,
+  {
+    echo "$silphone 0"
+    if ! $noise_oov; then
+      grep -v -w $silphone $lang/phones/silence.txt \
+        | awk '{print $1, 1;}' \
+        | sed 's/SIL\(.*\)1/SIL\10/' \
+        | sed 's/<oov>\(.*\)1/<oov>\12/'
+    else
+      grep -v -w $silphone $lang/phones/silence.txt \
+        | awk '{print $1, 1;}' \
+        | sed 's/SIL\(.*\)1/SIL\10/'
+    fi
+    cat $lang/phones/nonsilence.txt | awk '{print $1, 2;}' | sed 's/\(<.*>.*\)2/\11/' | sed 's/<oov>\(.*\)1/<oov>\12/'
+  } > $temp_dir/phone_map.txt
+
+fi  
 mkdir -p $data/$dirid
 
 ls $temp_dir/pred/*.pred &> /dev/null
@@ -279,56 +278,59 @@ ls $temp_dir/pred/*.pred &> /dev/null
 [ $? -eq "0" ] || exit 1
 
 t1=$(date +%s)
-mkdir -p $temp_dir/log
-local/resegment/segmentation.py --verbose 2 $segmentation_opts $temp_dir/pred $temp_dir/phone_map.txt \
-  2> $temp_dir/log/resegment.log | sort > $data/$dirid/segments || exit 1
-[ ! -f $data/$dirid/segments ] && exit 1
-cp $data/$dirid/segments $temp_dir
-
+if [ $stage -le 5 ]; then
+  mkdir -p $temp_dir/log
+  local/resegment/segmentation.py --verbose 2 $segmentation_opts $temp_dir/pred $temp_dir/phone_map.txt \
+    2> $temp_dir/log/resegment.log | sort > $data/$dirid/segments || exit 1
+  [ ! -f $data/$dirid/segments ] && exit 1
+  cp $data/$dirid/segments $temp_dir
+fi
 t2=$(date +%s)
 total_time=$((total_time + t2 - t1))
 echo "Resegment data done in $((t2-t1)) seconds" 
 
 [ -f ${data}/$type/segments ] && local/resegment/evaluate_segmentation.pl ${data}/$type/segments ${data}/$dirid/segments &> $temp_dir/segment_evaluation.log
 
-if [ -s $data/$type/reco2file_and_channel ]; then
-  cp $data/$type/reco2file_and_channel $data/$dirid/reco2file_and_channel
-fi
-
-if [ -s $data/$type/wav.scp ]; then
-  cp $data/$type/wav.scp $data/$dirid/wav.scp
-else
-  echo "Expected file $data/$type/wav.scp to exist" # or there is really nothing to copy.
-  exit 1
-fi
-
-for f in glm stm; do 
-  if [ -f $data/$type/$f ]; then
-    cp $data/$type/$f $data/$dirid/$f
+if [ $stage -le 5 ]; then
+  if [ -s $data/$type/reco2file_and_channel ]; then
+    cp $data/$type/reco2file_and_channel $data/$dirid/reco2file_and_channel
   fi
-done
 
-# We'll make the speaker-ids be the same as the recording-ids (e.g. conversation
-# sides).  This will normally be OK for telephone data.
-cat $data/$dirid/segments | awk '{print $1, $2}' > $data/$dirid/utt2spk || exit 1
-utils/utt2spk_to_spk2utt.pl $data/$dirid/utt2spk > $data/$dirid/spk2utt || exit 1
+  if [ -s $data/$type/wav.scp ]; then
+    cp $data/$type/wav.scp $data/$dirid/wav.scp
+  else
+    echo "Expected file $data/$type/wav.scp to exist" # or there is really nothing to copy.
+    exit 1
+  fi
 
-cat $data/$dirid/segments | awk '{num_secs += $4 - $3;} END{print "Number of hours of data is " (num_secs/3600);}'
+  for f in glm stm; do 
+    if [ -f $data/$type/$f ]; then
+      cp $data/$type/$f $data/$dirid/$f
+    fi
+  done
 
-plpdir=exp/plp.seg # don't use plp because of the way names are assigned within that
-# dir, we'll overwrite the old data.
-echo ---------------------------------------------------------------------
-echo "Starting plp feature extraction for $data/$type in $plpdir on " `date`
-echo ---------------------------------------------------------------------
+  # We'll make the speaker-ids be the same as the recording-ids (e.g. conversation
+  # sides).  This will normally be OK for telephone data.
+  cat $data/$dirid/segments | awk '{print $1, $2}' > $data/$dirid/utt2spk || exit 1
+  utils/utt2spk_to_spk2utt.pl $data/$dirid/utt2spk > $data/$dirid/spk2utt || exit 1
 
-t1=$(date +%s)
-utils/validate_data_dir.sh --no-feats --no-text $data/${dirid}
-mkdir -p $plpdir
+  cat $data/$dirid/segments | awk '{num_secs += $4 - $3;} END{print "Number of hours of data is " (num_secs/3600);}'
 
-make_plp $dirid $data $plpdir
-t2=$(date +%s)
-total_time=$((total_time + t2 - t1))
-echo "Feature extraction done in $((t2-t1)) seconds" 
+  plpdir=exp/plp.seg # don't use plp because of the way names are assigned within that
+  # dir, we'll overwrite the old data.
+  echo ---------------------------------------------------------------------
+  echo "Starting plp feature extraction for $data/$type in $plpdir on " `date`
+  echo ---------------------------------------------------------------------
+
+  t1=$(date +%s)
+  utils/validate_data_dir.sh --no-feats --no-text $data/${dirid}
+  mkdir -p $plpdir
+
+  make_plp $dirid $data $plpdir
+  t2=$(date +%s)
+  total_time=$((total_time + t2 - t1))
+  echo "Feature extraction done in $((t2-t1)) seconds" 
+fi
 
 echo "Resegmentation of $type took $total_time seconds"
 
@@ -340,17 +342,15 @@ if $get_text && [ -f $data/$type/text ]; then
       $data/$type $lang exp/${tri4} exp/${tri4}_ali_$type || exit 1;
     touch exp/${tri4}_ali_$type/.done
   fi
-  
-  if [ ! -f $data/$dirid/text ]; then
-    # Get the file $data/$dirid/text
-    [ ! -s $data/$type/reco2file_and_channel ] && cat $data/$type/segments | awk '{print $2" "$2" "1}' > $data/$type/reco2file_and_channel
-    [ ! -s $data/$dirid/reco2file_and_channel ] && cat $data/$dirid/segments | awk '{print $2" "$2" "1}' > $data/$dirid/reco2file_and_channel
-    steps/resegment_text.sh --cmd "$cmd" $data/$type $lang \
-      exp/${tri4}_ali_$type $data/$dirid exp/${tri4b}_resegment_$type || exit 1
-    [ ! -f $data/$dirid/text ] && exit 1
-    utils/fix_data_dir.sh $data/${dirid}
-    utils/validate_data_dir.sh --no-feats --no-text $data/${dirid}
-  fi
+
+  # Get the file $data/$dirid/text
+  [ ! -s $data/$type/reco2file_and_channel ] && cat $data/$type/segments | awk '{print $2" "$2" "1}' > $data/$type/reco2file_and_channel
+  [ ! -s $data/$dirid/reco2file_and_channel ] && cat $data/$dirid/segments | awk '{print $2" "$2" "1}' > $data/$dirid/reco2file_and_channel
+  steps/resegment_text.sh --cmd "$cmd" $data/$type $lang \
+    exp/${tri4}_ali_$type $data/$dirid exp/${tri4b}_resegment_$type || exit 1
+  [ ! -f $data/$dirid/text ] && exit 1
+  utils/fix_data_dir.sh $data/${dirid}
+  utils/validate_data_dir.sh --no-feats --no-text $data/${dirid}
 fi
 
 touch $data/$dirid/.done

@@ -20,6 +20,8 @@ extra_kws=true
 vocab_kws=false
 wip=0.5
 shadow_set_extra_opts=( --wip $wip )
+segmentation_opts="--isolated-resegmentation \
+  --min-inter-utt-silence-length 1.0"
 
 echo "run-4-test.sh $@"
 

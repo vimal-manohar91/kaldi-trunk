@@ -1,0 +1,77 @@
+10
+
+dir
+3764
+svn://svn.code.sf.net/p/kaldi/code/trunk/misc
+svn://svn.code.sf.net/p/kaldi/code
+
+
+
+2014-03-09T23:51:36.159401Z
+3755
+danielpovey
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+5e6a8d80-dfce-4ca6-a32a-6e07a63d50c8
+
+htk_graph_creation_example
+dir
+
+papers
+dir
+
+htk_conversion
+dir
+
+README.txt
+file
+
+
+
+
+2013-10-31T18:31:07.956135Z
+6363390d8768d819de6a7e1d64766329
+2013-01-28T18:44:09.785899Z
+1949
+danielpovey
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+850
+
+logo
+dir
+
+htk_decode_example
+dir
+

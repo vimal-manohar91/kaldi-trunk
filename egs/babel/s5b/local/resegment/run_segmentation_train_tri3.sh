@@ -45,7 +45,7 @@ elif [ ! -f $alidir/.done ]; then
 fi
 
 if [ ! -f $out_model_dir/.done ]; then
-  steps/train_deltas.sh --norm-vars true --cmd "$train_cmd" --realign-iters "" --boost-silence $boost_sil \
+  steps/train_sat --cmd "$train_cmd" --realign-iters "" --boost-silence $boost_sil \
     1000 10000 $train_data_dir $lang $alidir $out_model_dir || exit 1;
   touch $out_model_dir/.done
 fi
