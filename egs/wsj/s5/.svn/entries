@@ -1,14 +1,14 @@
 10
 
 dir
-3764
+3766
 svn://svn.code.sf.net/p/kaldi/code/trunk/egs/wsj/s5
 svn://svn.code.sf.net/p/kaldi/code
 
 
 
-2014-03-13T02:17:42.319841Z
-3761
+2014-03-16T04:33:50.205336Z
+3766
 danielpovey
 
 
@@ -25,6 +25,46 @@ danielpovey
 
 
 5e6a8d80-dfce-4ca6-a32a-6e07a63d50c8
+
+conf
+dir
+
+path.sh
+file
+
+
+
+
+2013-12-13T19:55:31.407900Z
+548c94553860eb9ba5644345c8282be3
+2013-12-11T18:39:46.616498Z
+3298
+danielpovey
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+400
+
+local
+dir
 
 cmd.sh
 file
@@ -133,44 +173,4 @@ vesis84
 
 
 15642
-
-conf
-dir
-
-path.sh
-file
-
-
-
-
-2013-12-13T19:55:31.407900Z
-548c94553860eb9ba5644345c8282be3
-2013-12-11T18:39:46.616498Z
-3298
-danielpovey
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-400
-
-local
-dir
 

@@ -1,7 +1,7 @@
 10
 
 dir
-3764
+3766
 svn://svn.code.sf.net/p/kaldi/code/trunk/egs/timit/s5/local
 svn://svn.code.sf.net/p/kaldi/code
 
@@ -25,40 +25,6 @@ arnab13
 
 
 5e6a8d80-dfce-4ca6-a32a-6e07a63d50c8
-
-timit_data_prep.sh
-file
-
-
-
-
-2013-10-31T18:31:31.476135Z
-a4f5c3f042ba49725954dbd558c227e2
-2013-10-07T16:33:35.970598Z
-3054
-arnab13
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4004
 
 score_combine.sh
 file
@@ -229,4 +195,38 @@ has-props
 
 
 2245
+
+timit_data_prep.sh
+file
+
+
+
+
+2013-10-31T18:31:31.476135Z
+a4f5c3f042ba49725954dbd558c227e2
+2013-10-07T16:33:35.970598Z
+3054
+arnab13
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4004
 

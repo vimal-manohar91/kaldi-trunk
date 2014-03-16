@@ -1,7 +1,7 @@
 10
 
 dir
-3764
+3766
 svn://svn.code.sf.net/p/kaldi/code/trunk/egs/babel/s5/conf
 svn://svn.code.sf.net/p/kaldi/code
 
@@ -25,74 +25,6 @@ danielpovey
 
 
 5e6a8d80-dfce-4ca6-a32a-6e07a63d50c8
-
-common.limitedLP
-file
-
-
-
-
-2013-12-13T20:01:22.771891Z
-49bb8598e25894688eab03d06f84f03d
-2013-11-20T18:14:33.202103Z
-3175
-jtrmal
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1695
-
-common_vars.sh
-file
-
-
-
-
-2013-10-31T18:31:23.824135Z
-5cb013b93efd22d508e98bfd74ef0ed5
-2013-03-27T20:47:13.959847Z
-2279
-danielpovey
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-413
 
 glm
 file
@@ -235,4 +167,72 @@ jtrmal
 
 
 1633
+
+common.limitedLP
+file
+
+
+
+
+2013-12-13T20:01:22.771891Z
+49bb8598e25894688eab03d06f84f03d
+2013-11-20T18:14:33.202103Z
+3175
+jtrmal
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1695
+
+common_vars.sh
+file
+
+
+
+
+2013-10-31T18:31:23.824135Z
+5cb013b93efd22d508e98bfd74ef0ed5
+2013-03-27T20:47:13.959847Z
+2279
+danielpovey
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+413
 

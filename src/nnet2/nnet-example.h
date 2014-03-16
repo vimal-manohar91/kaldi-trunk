@@ -34,6 +34,8 @@ namespace nnet2 {
 // labels with different weights.  (note: we may not end up using
 // this for discriminative training after all.)
 struct NnetExample {
+  
+  NnetExample() : weight(1.0) {}
 
   /// The label(s) for this frame; in the normal case, this will be a vector of
   /// length one, containing (the pdf-id, 1.0)

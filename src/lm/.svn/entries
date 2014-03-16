@@ -1,7 +1,7 @@
 10
 
 dir
-3764
+3766
 svn://svn.code.sf.net/p/kaldi/code/trunk/src/lm
 svn://svn.code.sf.net/p/kaldi/code
 
@@ -471,40 +471,6 @@ danielpovey
 
 13
 
-Makefile
-file
-
-
-
-
-2013-10-31T18:30:55.996136Z
-0165beace2156874d95828f44bc093c9
-2013-07-07T02:28:16.505937Z
-2664
-danielpovey
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-497
-
 lm-lib-test.cc
 file
 
@@ -538,4 +504,38 @@ danielpovey
 
 
 12433
+
+Makefile
+file
+
+
+
+
+2013-10-31T18:30:55.996136Z
+0165beace2156874d95828f44bc093c9
+2013-07-07T02:28:16.505937Z
+2664
+danielpovey
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+497
 

@@ -1,15 +1,15 @@
 10
 
 dir
-3764
+3766
 svn://svn.code.sf.net/p/kaldi/code/trunk/egs/wsj/s5/steps/nnet2
 svn://svn.code.sf.net/p/kaldi/code
 
 
 
-2014-02-28T17:57:30.647740Z
-3630
-chenguoguo
+2014-03-15T18:23:14.277525Z
+3765
+danielpovey
 
 
 
@@ -25,6 +25,122 @@ chenguoguo
 
 
 5e6a8d80-dfce-4ca6-a32a-6e07a63d50c8
+
+get_lda_block.sh
+file
+
+
+
+
+2013-12-13T19:55:28.819901Z
+e2e22454179fbcc0d702e0336ae5296b
+2013-12-11T18:39:46.616498Z
+3298
+danielpovey
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4660
+
+train_pnorm2.sh
+file
+0
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+
+get_egs.sh
+file
+
+
+
+
+2014-03-15T20:52:40.881644Z
+ad40f168d538a60d069d6c639f88f01b
+2014-03-15T18:23:14.277525Z
+3765
+danielpovey
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+13965
+
+get_perturbed_feats.sh
+file
+
+
+
+
+2013-10-31T18:31:21.320135Z
+a163c7bd7c9b7dfc8f07d4e675fe9af0
+2013-08-21T11:38:14.957331Z
+2828
+danielpovey
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2919
 
 retrain_tanh.sh
 file
@@ -60,53 +176,6 @@ has-props
 
 9944
 
-get_lda.sh
-file
-
-
-
-
-
-ce03af310144a9d5ff199e16fde0af55
-2014-02-27T20:28:07.664342Z
-3614
-vimalmanohar91
-has-props
-
-train_pnorm_ensemble.sh
-file
-
-
-
-
-2014-02-20T20:35:31.719213Z
-de00b2abbab144d48633d5a98676f6b6
-2014-02-20T18:07:31.700188Z
-3553
-vimalmanohar91
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-20008
-
 decode.sh
 file
 
@@ -140,53 +209,6 @@ has-props
 
 
 5704
-
-update_nnet.sh
-file
-
-
-
-
-
-3b2728d37b4e4b5dc6c2c55b4912250b
-2014-02-27T21:22:40.675154Z
-3616
-vimalmanohar91
-has-props
-
-train_discriminative.sh
-file
-
-
-
-
-2014-01-23T00:44:37.254318Z
-778878dba38b5c4bc2f95148535ee8c0
-2014-01-20T19:12:28.147069Z
-3421
-chenguoguo
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-14279
 
 make_denlats.sh
 file
@@ -303,40 +325,6 @@ af09b296b75f7286c6873d703bd644fa
 vimalmanohar91
 has-props
 
-get_lda_block.sh
-file
-
-
-
-
-2013-12-13T19:55:28.819901Z
-e2e22454179fbcc0d702e0336ae5296b
-2013-12-11T18:39:46.616498Z
-3298
-danielpovey
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4660
-
 align.sh
 file
 
@@ -371,16 +359,76 @@ has-props
 
 4135
 
-get_egs.sh
+get_lda.sh
 file
 
 
 
 
-2014-01-23T00:44:37.426318Z
-2ff354d20f6d935368b6f86eace81fc0
-2014-01-20T19:25:47.122941Z
-3422
+
+ce03af310144a9d5ff199e16fde0af55
+2014-02-27T20:28:07.664342Z
+3614
+vimalmanohar91
+has-props
+
+train_pnorm_ensemble.sh
+file
+
+
+
+
+2014-02-20T20:35:31.719213Z
+de00b2abbab144d48633d5a98676f6b6
+2014-02-20T18:07:31.700188Z
+3553
+vimalmanohar91
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+20008
+
+update_nnet.sh
+file
+
+
+
+
+
+3b2728d37b4e4b5dc6c2c55b4912250b
+2014-02-27T21:22:40.675154Z
+3616
+vimalmanohar91
+has-props
+
+train_discriminative.sh
+file
+
+
+
+
+2014-01-23T00:44:37.254318Z
+778878dba38b5c4bc2f95148535ee8c0
+2014-01-20T19:12:28.147069Z
+3421
 chenguoguo
 has-props
 
@@ -403,39 +451,5 @@ has-props
 
 
 
-13965
-
-get_perturbed_feats.sh
-file
-
-
-
-
-2013-10-31T18:31:21.320135Z
-a163c7bd7c9b7dfc8f07d4e675fe9af0
-2013-08-21T11:38:14.957331Z
-2828
-danielpovey
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2919
+14279
 

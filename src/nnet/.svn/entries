@@ -1,7 +1,7 @@
 10
 
 dir
-3764
+3766
 svn://svn.code.sf.net/p/kaldi/code/trunk/src/nnet
 svn://svn.code.sf.net/p/kaldi/code
 
@@ -25,142 +25,6 @@ has-props
 
 
 5e6a8d80-dfce-4ca6-a32a-6e07a63d50c8
-
-nnet-nnet.h
-file
-
-
-
-
-2014-01-23T00:44:44.202318Z
-d0272028e9939cf1e17c1e0bec7e106e
-2014-01-13T16:14:19.743773Z
-3402
-vesis84
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5415
-
-nnet-sentence-averaging-component.h
-file
-
-
-
-
-2014-01-23T00:44:44.286318Z
-d9c72361d511a691f204dbd9b5068515
-2014-01-15T16:02:22.641019Z
-3409
-vesis84
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5680
-
-nnet-randomizer.cc
-file
-
-
-
-
-2014-01-08T02:40:04.017050Z
-d1b02cffd763ec9e98c4fa445ef46bd0
-2013-12-18T19:08:52.369320Z
-3322
-vesis84
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-7681
-
-nnet-trnopts.h
-file
-
-
-
-
-2013-10-31T18:30:52.736136Z
-7207f80853e0f3978808ccc94c7460d3
-2013-10-18T13:34:07.084963Z
-3102
-vesis84
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3774
 
 nnet-randomizer.h
 file
@@ -298,40 +162,6 @@ vesis84
 
 5854
 
-nnet-loss.h
-file
-
-
-
-
-2013-12-13T19:54:33.143902Z
-cab3c09a5d85521a5947a46f5dd52d25
-2013-12-11T18:39:46.616498Z
-3298
-danielpovey
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3231
-
 nnet-rbm.h
 file
 
@@ -365,6 +195,40 @@ vesis84
 
 
 16963
+
+nnet-loss.h
+file
+
+
+
+
+2013-12-13T19:54:33.143902Z
+cab3c09a5d85521a5947a46f5dd52d25
+2013-12-11T18:39:46.616498Z
+3298
+danielpovey
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3231
 
 nnet-average-pooling-2d-component.h
 file
@@ -400,16 +264,16 @@ vesis84
 
 8426
 
-Makefile
+nnet-randomizer-test.cc
 file
 
 
 
 
-2014-02-20T20:35:29.915213Z
-2b9b2dfc76dff65b4136acc15fe46523
-2014-02-20T10:55:18.989042Z
-3551
+2013-12-13T19:54:33.155902Z
+9060189b88ebb810c5af77dc5a8d5653
+2013-11-20T13:40:45.959743Z
+3171
 vesis84
 
 
@@ -432,7 +296,7 @@ vesis84
 
 
 
-411
+7190
 
 nnet-kl-hmm.h
 file
@@ -468,16 +332,16 @@ dimseng
 
 5230
 
-nnet-randomizer-test.cc
+Makefile
 file
 
 
 
 
-2013-12-13T19:54:33.155902Z
-9060189b88ebb810c5af77dc5a8d5653
-2013-11-20T13:40:45.959743Z
-3171
+2014-02-20T20:35:29.915213Z
+2b9b2dfc76dff65b4136acc15fe46523
+2014-02-20T10:55:18.989042Z
+3551
 vesis84
 
 
@@ -500,7 +364,7 @@ vesis84
 
 
 
-7190
+411
 
 nnet-various.h
 file
@@ -706,40 +570,6 @@ vesis84
 
 17960
 
-nnet-pdf-prior.cc
-file
-
-
-
-
-2013-10-31T18:30:52.708136Z
-9bb410fdfb5de59b2ca6b9c18d39b89e
-2013-09-24T22:38:48.828279Z
-2988
-danielpovey
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3195
-
 nnet-component.cc
 file
 
@@ -774,17 +604,17 @@ vesis84
 
 7254
 
-nnet-affine-transform.h
+nnet-pdf-prior.cc
 file
 
 
 
 
-2014-01-23T00:44:44.810318Z
-4fe979dbddf5732f156d9c5e855d3706
-2014-01-13T16:14:19.743773Z
-3402
-vesis84
+2013-10-31T18:30:52.708136Z
+9bb410fdfb5de59b2ca6b9c18d39b89e
+2013-09-24T22:38:48.828279Z
+2988
+danielpovey
 
 
 
@@ -806,7 +636,7 @@ vesis84
 
 
 
-6171
+3195
 
 nnet-activation.h
 file
@@ -842,16 +672,16 @@ vesis84
 
 4180
 
-nnet-component.h
+nnet-affine-transform.h
 file
 
 
 
 
-2014-02-20T20:35:29.883213Z
-0b56c0a651801aaa96c847882c484a4e
-2014-02-20T10:55:18.989042Z
-3551
+2014-01-23T00:44:44.810318Z
+4fe979dbddf5732f156d9c5e855d3706
+2014-01-13T16:14:19.743773Z
+3402
 vesis84
 
 
@@ -874,7 +704,41 @@ vesis84
 
 
 
-8364
+6171
+
+nnet-pdf-prior.h
+file
+
+
+
+
+2013-10-31T18:30:52.720136Z
+2af28bf3cb33946cb934021384abc71c
+2013-09-24T22:38:48.828279Z
+2988
+danielpovey
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2331
 
 nnet-nnet.cc
 file
@@ -910,17 +774,17 @@ vesis84
 
 17099
 
-nnet-pdf-prior.h
+nnet-component.h
 file
 
 
 
 
-2013-10-31T18:30:52.720136Z
-2af28bf3cb33946cb934021384abc71c
-2013-09-24T22:38:48.828279Z
-2988
-danielpovey
+2014-02-20T20:35:29.883213Z
+0b56c0a651801aaa96c847882c484a4e
+2014-02-20T10:55:18.989042Z
+3551
+vesis84
 
 
 
@@ -942,5 +806,141 @@ danielpovey
 
 
 
-2331
+8364
+
+nnet-nnet.h
+file
+
+
+
+
+2014-01-23T00:44:44.202318Z
+d0272028e9939cf1e17c1e0bec7e106e
+2014-01-13T16:14:19.743773Z
+3402
+vesis84
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5415
+
+nnet-sentence-averaging-component.h
+file
+
+
+
+
+2014-01-23T00:44:44.286318Z
+d9c72361d511a691f204dbd9b5068515
+2014-01-15T16:02:22.641019Z
+3409
+vesis84
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5680
+
+nnet-randomizer.cc
+file
+
+
+
+
+2014-01-08T02:40:04.017050Z
+d1b02cffd763ec9e98c4fa445ef46bd0
+2013-12-18T19:08:52.369320Z
+3322
+vesis84
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7681
+
+nnet-trnopts.h
+file
+
+
+
+
+2013-10-31T18:30:52.736136Z
+7207f80853e0f3978808ccc94c7460d3
+2013-10-18T13:34:07.084963Z
+3102
+vesis84
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3774
 

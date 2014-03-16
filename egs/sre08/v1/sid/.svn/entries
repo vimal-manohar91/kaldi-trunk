@@ -1,7 +1,7 @@
 10
 
 dir
-3764
+3766
 svn://svn.code.sf.net/p/kaldi/code/trunk/egs/sre08/v1/sid
 svn://svn.code.sf.net/p/kaldi/code
 
@@ -25,40 +25,6 @@ david-snyder
 
 
 5e6a8d80-dfce-4ca6-a32a-6e07a63d50c8
-
-gender_id.sh
-file
-
-
-
-
-2014-01-23T00:44:31.746318Z
-b68968e6798ae7bfb489986211527e6d
-2014-01-22T00:46:43.756189Z
-3425
-david-snyder
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6391
 
 train_full_ubm.sh
 file
@@ -229,4 +195,38 @@ has-props
 
 
 3253
+
+gender_id.sh
+file
+
+
+
+
+2014-01-23T00:44:31.746318Z
+b68968e6798ae7bfb489986211527e6d
+2014-01-22T00:46:43.756189Z
+3425
+david-snyder
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6391
 

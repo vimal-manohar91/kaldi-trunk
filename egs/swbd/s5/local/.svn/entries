@@ -1,7 +1,7 @@
 10
 
 dir
-3764
+3766
 svn://svn.code.sf.net/p/kaldi/code/trunk/egs/swbd/s5/local
 svn://svn.code.sf.net/p/kaldi/code
 
@@ -60,40 +60,6 @@ has-props
 
 1261
 
-swbd1_train_lms_edin.sh
-file
-
-
-
-
-2013-10-31T18:31:08.744135Z
-6b7ed78d5ed93a1ba92afef179e50a0a
-2013-02-27T16:46:58.102305Z
-2095
-arnab13
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3982
-
 run_sgmm.sh
 file
 
@@ -128,16 +94,16 @@ has-props
 
 1709
 
-swbd1_map_words.pl
+swbd1_train_lms_edin.sh
 file
 
 
 
 
-2013-10-31T18:31:08.756135Z
-56fa3d088f52383017b7a935a0f6d5fa
-2013-02-07T15:37:17.850616Z
-1990
+2013-10-31T18:31:08.744135Z
+6b7ed78d5ed93a1ba92afef179e50a0a
+2013-02-27T16:46:58.102305Z
+2095
 arnab13
 has-props
 
@@ -160,7 +126,7 @@ has-props
 
 
 
-1994
+3982
 
 fisher_map_words.pl
 file
@@ -195,6 +161,40 @@ has-props
 
 
 2857
+
+swbd1_map_words.pl
+file
+
+
+
+
+2013-10-31T18:31:08.756135Z
+56fa3d088f52383017b7a935a0f6d5fa
+2013-02-07T15:37:17.850616Z
+1990
+arnab13
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1994
 
 swbd1_data_prep_edin.sh
 file
@@ -502,40 +502,6 @@ has-props
 
 2958
 
-swbd_map_words.pl
-file
-
-
-
-
-2013-10-31T18:31:08.704135Z
-22abfc16df0107e72b634031457eadd4
-2012-04-28T17:45:32.153179Z
-879
-danielpovey
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1869
-
 score.sh
 file
 
@@ -569,6 +535,40 @@ has-props
 
 
 1426
+
+swbd_map_words.pl
+file
+
+
+
+
+2013-10-31T18:31:08.704135Z
+22abfc16df0107e72b634031457eadd4
+2012-04-28T17:45:32.153179Z
+879
+danielpovey
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1869
 
 score_basic.sh
 file
@@ -604,40 +604,6 @@ has-props
 
 2461
 
-swbd_p1_data_prep.sh
-file
-
-
-
-
-2013-10-31T18:31:08.720135Z
-a86e8c42564f26d9bcbc69f951df46ca
-2013-02-07T15:37:17.850616Z
-1990
-arnab13
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4039
-
 score_sclite.sh
 file
 
@@ -671,6 +637,40 @@ has-props
 
 
 5585
+
+swbd_p1_data_prep.sh
+file
+
+
+
+
+2013-10-31T18:31:08.720135Z
+a86e8c42564f26d9bcbc69f951df46ca
+2013-02-07T15:37:17.850616Z
+1990
+arnab13
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4039
 
 swbd_p1_prepare_dict.sh
 file

@@ -1,7 +1,7 @@
 10
 
 dir
-3764
+3766
 svn://svn.code.sf.net/p/kaldi/code/trunk/egs/babel/s5b/local/nnet2
 svn://svn.code.sf.net/p/kaldi/code
 
@@ -25,53 +25,6 @@ pegita
 
 
 5e6a8d80-dfce-4ca6-a32a-6e07a63d50c8
-
-train_tanh_bottleneck.sh
-file
-
-
-
-
-2014-03-05T23:08:24.296703Z
-e632f27d1e1c5a604304179c04a59536
-2014-03-03T02:25:05.860549Z
-3659
-pegita
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-20194
-
-get_egs_semi_supervised.sh
-file
-
-
-
-
-
-568101ca2486ffa94f28f9286d39b920
-2014-02-24T16:48:39.881806Z
-3579
-vimalmanohar91
-has-props
 
 dump_bottleneck_features.sh
 file
@@ -120,4 +73,51 @@ add
 
 has-props
 has-prop-mods
+
+train_tanh_bottleneck.sh
+file
+
+
+
+
+2014-03-05T23:08:24.296703Z
+e632f27d1e1c5a604304179c04a59536
+2014-03-03T02:25:05.860549Z
+3659
+pegita
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+20194
+
+get_egs_semi_supervised.sh
+file
+
+
+
+
+
+568101ca2486ffa94f28f9286d39b920
+2014-02-24T16:48:39.881806Z
+3579
+vimalmanohar91
+has-props
 

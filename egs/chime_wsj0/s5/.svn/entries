@@ -1,7 +1,7 @@
 10
 
 dir
-3764
+3766
 svn://svn.code.sf.net/p/kaldi/code/trunk/egs/chime_wsj0/s5
 svn://svn.code.sf.net/p/kaldi/code
 
@@ -25,77 +25,6 @@ cweng
 
 
 5e6a8d80-dfce-4ca6-a32a-6e07a63d50c8
-
-utils
-file
-
-
-
-
-2014-01-08T02:39:40.241050Z
-fed9cd2d80bd156049b62fa712511e44
-2013-12-24T01:15:41.365833Z
-3342
-danielpovey
-has-props
-
-
-svn:special
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-18
-
-conf
-dir
-
-path.sh
-file
-
-
-
-
-2013-12-13T20:01:51.663890Z
-548c94553860eb9ba5644345c8282be3
-2013-12-11T04:58:12.195458Z
-3293
-danielpovey
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-400
 
 local
 dir
@@ -201,4 +130,75 @@ svn:special
 
 
 18
+
+utils
+file
+
+
+
+
+2014-01-08T02:39:40.241050Z
+fed9cd2d80bd156049b62fa712511e44
+2013-12-24T01:15:41.365833Z
+3342
+danielpovey
+has-props
+
+
+svn:special
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+18
+
+conf
+dir
+
+path.sh
+file
+
+
+
+
+2013-12-13T20:01:51.663890Z
+548c94553860eb9ba5644345c8282be3
+2013-12-11T04:58:12.195458Z
+3293
+danielpovey
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+400
 

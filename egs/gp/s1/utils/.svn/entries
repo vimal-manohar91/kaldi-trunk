@@ -1,7 +1,7 @@
 10
 
 dir
-3764
+3766
 svn://svn.code.sf.net/p/kaldi/code/trunk/egs/gp/s1/utils
 svn://svn.code.sf.net/p/kaldi/code
 
@@ -25,210 +25,6 @@ arnab13
 
 
 5e6a8d80-dfce-4ca6-a32a-6e07a63d50c8
-
-score_sclite.sh
-file
-
-
-
-
-2013-10-31T18:31:27.356135Z
-c05b13de27020780278d148477160248
-2012-02-15T15:46:53.098326Z
-758
-arnab13
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1497
-
-get_splits.pl
-file
-
-
-
-
-2013-10-31T18:31:27.360135Z
-f2746f1bbc11ba3c6d1eeb567d67d51b
-2012-02-15T15:46:53.098326Z
-758
-arnab13
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-850
-
-score_text.sh
-file
-
-
-
-
-2013-10-31T18:31:27.364135Z
-8fe0ed909f038213005d18d2dc13becc
-2012-02-15T15:46:53.098326Z
-758
-arnab13
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-611
-
-submit_jobs.sh
-file
-
-
-
-
-2013-10-31T18:31:27.368135Z
-4b4fa4910516be5c753479ab64a5ded0
-2012-02-28T11:15:51.847266Z
-790
-arnab13
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5545
-
-decode.sh
-file
-
-
-
-
-2013-10-31T18:31:27.376135Z
-cf2113bf21929c7ecd9318cb7197a744
-2012-02-28T11:15:51.847266Z
-790
-arnab13
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4944
-
-split_data.sh
-file
-
-
-
-
-2013-10-31T18:31:27.380135Z
-d0b2bed1078bc21987afe33ddb90aa27
-2012-02-15T15:46:53.098326Z
-758
-arnab13
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2587
 
 add_disambig.pl
 file
@@ -332,40 +128,6 @@ has-props
 
 2039
 
-filter_scp.pl
-file
-
-
-
-
-2013-10-31T18:31:27.404135Z
-e3ba93e64e7a9486a2bd857133448e1f
-2012-02-15T15:46:53.098326Z
-758
-arnab13
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1327
-
 lmrescore.sh
 file
 
@@ -399,6 +161,40 @@ has-props
 
 
 6667
+
+filter_scp.pl
+file
+
+
+
+
+2013-10-31T18:31:27.404135Z
+e3ba93e64e7a9486a2bd857133448e1f
+2012-02-15T15:46:53.098326Z
+758
+arnab13
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1327
 
 s2eps.pl
 file
@@ -434,40 +230,6 @@ has-props
 
 1005
 
-subset_lm.pl
-file
-
-
-
-
-2013-10-31T18:31:27.416135Z
-7d2203634464186c54f97f39ec4fe03c
-2012-02-15T15:46:53.098326Z
-758
-arnab13
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2880
-
 score_lats.sh
 file
 
@@ -501,6 +263,40 @@ has-props
 
 
 1605
+
+subset_lm.pl
+file
+
+
+
+
+2013-10-31T18:31:27.416135Z
+7d2203634464186c54f97f39ec4fe03c
+2012-02-15T15:46:53.098326Z
+758
+arnab13
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2880
 
 htk2kaldi_feats.sh
 file
@@ -706,40 +502,6 @@ has-props
 
 1855
 
-sym2int.pl
-file
-
-
-
-
-2013-10-31T18:31:27.332135Z
-b8097eda1db8650f43ede05ec8bc86b9
-2012-02-15T15:46:53.098326Z
-758
-arnab13
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2636
-
 int2sym.pl
 file
 
@@ -773,6 +535,40 @@ has-props
 
 
 2666
+
+sym2int.pl
+file
+
+
+
+
+2013-10-31T18:31:27.332135Z
+b8097eda1db8650f43ede05ec8bc86b9
+2012-02-15T15:46:53.098326Z
+758
+arnab13
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2636
 
 get_split_id.pl
 file
@@ -842,6 +638,40 @@ has-props
 
 821
 
+make_lexicon_fst.pl
+file
+
+
+
+
+2013-10-31T18:31:27.352135Z
+9b118c6f54f91d1241267bef739861d8
+2012-02-15T15:46:53.098326Z
+758
+arnab13
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4117
+
 utt2spk_to_spk2utt.pl
 file
 
@@ -876,14 +706,14 @@ has-props
 
 1234
 
-make_lexicon_fst.pl
+score_sclite.sh
 file
 
 
 
 
-2013-10-31T18:31:27.352135Z
-9b118c6f54f91d1241267bef739861d8
+2013-10-31T18:31:27.356135Z
+c05b13de27020780278d148477160248
 2012-02-15T15:46:53.098326Z
 758
 arnab13
@@ -908,5 +738,175 @@ has-props
 
 
 
-4117
+1497
+
+get_splits.pl
+file
+
+
+
+
+2013-10-31T18:31:27.360135Z
+f2746f1bbc11ba3c6d1eeb567d67d51b
+2012-02-15T15:46:53.098326Z
+758
+arnab13
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+850
+
+score_text.sh
+file
+
+
+
+
+2013-10-31T18:31:27.364135Z
+8fe0ed909f038213005d18d2dc13becc
+2012-02-15T15:46:53.098326Z
+758
+arnab13
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+611
+
+submit_jobs.sh
+file
+
+
+
+
+2013-10-31T18:31:27.368135Z
+4b4fa4910516be5c753479ab64a5ded0
+2012-02-28T11:15:51.847266Z
+790
+arnab13
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5545
+
+decode.sh
+file
+
+
+
+
+2013-10-31T18:31:27.376135Z
+cf2113bf21929c7ecd9318cb7197a744
+2012-02-28T11:15:51.847266Z
+790
+arnab13
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4944
+
+split_data.sh
+file
+
+
+
+
+2013-10-31T18:31:27.380135Z
+d0b2bed1078bc21987afe33ddb90aa27
+2012-02-15T15:46:53.098326Z
+758
+arnab13
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2587
 

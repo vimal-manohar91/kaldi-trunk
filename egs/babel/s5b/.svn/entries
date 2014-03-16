@@ -1,7 +1,7 @@
 10
 
 dir
-3764
+3766
 svn://svn.code.sf.net/p/kaldi/code/trunk/egs/babel/s5b
 svn://svn.code.sf.net/p/kaldi/code
 
@@ -34,122 +34,6 @@ has-props
 
 
 ()
-
-run-4-anydecode.sh
-file
-
-
-
-
-2014-03-05T23:08:39.192703Z
-fdded26a9fb2372ae28c00e4b3c70e34
-2014-03-02T22:36:48.267513Z
-3653
-jtrmal
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-18431
-
-run-1-main-seg.sh
-file
-0
-
-
-add
-
-
-
-
-
-has-props
-has-prop-mods
-
-run-8c-kaldi-bnf-dnn.sh
-file
-
-
-
-
-2014-02-05T16:57:49.246483Z
-36bc90fdd73ccdda4e2bdb6ae51c1d25
-2014-02-02T05:27:18.968790Z
-3457
-danielpovey
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1811
-
-run-6-combine.sh
-file
-
-
-
-
-2014-03-05T23:08:38.576703Z
-98c1a4f42ecb7a464482059de3183a6b
-2014-03-02T22:36:48.267513Z
-3653
-jtrmal
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2262
 
 run-1-main.sh
 file
@@ -198,17 +82,17 @@ svn:special
 
 18
 
-run-2a-nnet-mpe.sh
+run-8d-test-kaldi-bnf-sgmm-semisupervised.sh
 file
 
 
 
 
-2014-02-08T01:35:34.144990Z
-21de3d175823da9dbd99069c82bd4ff7
-2014-02-07T20:33:21.853546Z
-3481
-chenguoguo
+2014-03-05T23:08:38.892703Z
+f1120c775614eebef4c726f8197bcdc7
+2014-03-05T20:43:25.877702Z
+3694
+pegita
 has-props
 
 
@@ -230,7 +114,7 @@ has-props
 
 
 
-1488
+8141
 
 utils
 file
@@ -347,40 +231,6 @@ eef579e7ef85135957e30df273daa8c0
 vimalmanohar91
 has-props
 
-run-2a-nnet-cpu.sh
-file
-
-
-
-
-2014-02-05T16:57:49.770483Z
-34411a376e95c39610ed6974f0084bcc
-2014-02-04T17:51:16.927131Z
-3462
-danielpovey
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-952
-
 path.sh
 file
 
@@ -415,40 +265,6 @@ has-props
 
 472
 
-run-8e-test-kaldi-bnf-dnn.sh
-file
-
-
-
-
-2014-02-28T18:15:48.584815Z
-3f587d4c8dbc96f7fb8e8b3db49ada33
-2014-02-28T17:57:30.647740Z
-3630
-chenguoguo
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3242
-
 run-4-test-seg.sh
 file
 0
@@ -462,6 +278,40 @@ add
 
 has-props
 has-prop-mods
+
+run-4-anydecode.sh
+file
+
+
+
+
+2014-03-05T23:08:39.192703Z
+fdded26a9fb2372ae28c00e4b3c70e34
+2014-03-02T22:36:48.267513Z
+3653
+jtrmal
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+18431
 
 run-2-segmentation.sh
 file
@@ -530,6 +380,342 @@ has-props
 
 
 3148
+
+RESULTS.txt
+file
+
+
+
+
+2013-12-13T20:01:35.963891Z
+9b706a6fe3cf6f9bdb0c7caccf05041f
+2013-03-27T20:47:13.959847Z
+2279
+danielpovey
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+732
+
+run-6-semisupervised.sh
+file
+
+
+
+
+2014-03-05T23:08:37.916703Z
+7786e232ccd802f820af6bf106603d4c
+2014-03-03T00:37:09.297081Z
+3655
+jtrmal
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4697
+
+make_release.sh
+file
+
+
+
+
+2014-03-05T23:08:38.008703Z
+b8120d5ec7d15426c0095d29752abf61
+2014-03-02T22:36:48.267513Z
+3653
+jtrmal
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4042
+
+run-5-initial-decode.sh
+file
+0
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+
+run-6-bnf-semisupervised.sh
+file
+
+
+
+
+2014-03-05T23:08:38.136703Z
+d70cbc645fc032411573be08e6f9f61b
+2014-03-05T20:40:56.849341Z
+3692
+pegita
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4633
+
+run-8d-test-kaldi-bnf-sgmm.sh
+file
+
+
+
+
+2014-03-05T23:08:38.224703Z
+a08529e802db4b019df244155c4f7b37
+2014-03-02T22:36:48.267513Z
+3653
+jtrmal
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7404
+
+run-6-combine.sh
+file
+
+
+
+
+2014-03-05T23:08:38.576703Z
+98c1a4f42ecb7a464482059de3183a6b
+2014-03-02T22:36:48.267513Z
+3653
+jtrmal
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2262
+
+local
+dir
+
+run-4-test.sh
+file
+
+
+
+
+
+d657a2bdc51f25fcd1348cb05ae4a47c
+2014-03-02T22:36:48.267513Z
+3653
+jtrmal
+has-props
+
+run-2a-nnet-mpe.sh
+file
+
+
+
+
+2014-02-08T01:35:34.144990Z
+21de3d175823da9dbd99069c82bd4ff7
+2014-02-07T20:33:21.853546Z
+3481
+chenguoguo
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1488
+
+run-2a-nnet-cpu.sh
+file
+
+
+
+
+2014-02-05T16:57:49.770483Z
+34411a376e95c39610ed6974f0084bcc
+2014-02-04T17:51:16.927131Z
+3462
+danielpovey
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+952
+
+run-8e-test-kaldi-bnf-dnn.sh
+file
+
+
+
+
+2014-02-28T18:15:48.584815Z
+3f587d4c8dbc96f7fb8e8b3db49ada33
+2014-02-28T17:57:30.647740Z
+3630
+chenguoguo
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3242
 
 run-1-main-extend-lex.sh
 file
@@ -611,6 +797,20 @@ has-props
 
 
 953
+
+run-1-main-seg.sh
+file
+0
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
 
 run-8b-kaldi-bnf-sgmm.sh
 file
@@ -748,88 +948,20 @@ svn://svn.code.sf.net/p/kaldi/code/trunk/egs/babel/s5b/run-2a-nnet.sh
 
 1071
 
-RESULTS.txt
-file
-
-
-
-
-2013-12-13T20:01:35.963891Z
-9b706a6fe3cf6f9bdb0c7caccf05041f
-2013-03-27T20:47:13.959847Z
-2279
-danielpovey
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-732
-
-run-6-semisupervised.sh
-file
-
-
-
-
-2014-03-05T23:08:37.916703Z
-7786e232ccd802f820af6bf106603d4c
-2014-03-03T00:37:09.297081Z
-3655
-jtrmal
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4697
-
 conf
 dir
 
-make_release.sh
+run-8c-kaldi-bnf-dnn.sh
 file
 
 
 
 
-2014-03-05T23:08:38.008703Z
-b8120d5ec7d15426c0095d29752abf61
-2014-03-02T22:36:48.267513Z
-3653
-jtrmal
+2014-02-05T16:57:49.246483Z
+36bc90fdd73ccdda4e2bdb6ae51c1d25
+2014-02-02T05:27:18.968790Z
+3457
+danielpovey
 has-props
 
 
@@ -851,55 +983,7 @@ has-props
 
 
 
-4042
-
-run-5-initial-decode.sh
-file
-0
-
-
-add
-
-
-
-
-
-has-props
-has-prop-mods
-
-run-6-bnf-semisupervised.sh
-file
-
-
-
-
-2014-03-05T23:08:38.136703Z
-d70cbc645fc032411573be08e6f9f61b
-2014-03-05T20:40:56.849341Z
-3692
-pegita
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4633
+1811
 
 run-6-bnf-sgmm-semisupervised.sh
 file
@@ -934,88 +1018,4 @@ has-props
 
 
 3348
-
-run-8d-test-kaldi-bnf-sgmm.sh
-file
-
-
-
-
-2014-03-05T23:08:38.224703Z
-a08529e802db4b019df244155c4f7b37
-2014-03-02T22:36:48.267513Z
-3653
-jtrmal
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-7404
-
-local
-dir
-
-run-4-test.sh
-file
-
-
-
-
-
-d657a2bdc51f25fcd1348cb05ae4a47c
-2014-03-02T22:36:48.267513Z
-3653
-jtrmal
-has-props
-
-run-8d-test-kaldi-bnf-sgmm-semisupervised.sh
-file
-
-
-
-
-2014-03-05T23:08:38.892703Z
-f1120c775614eebef4c726f8197bcdc7
-2014-03-05T20:43:25.877702Z
-3694
-pegita
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-8141
 

@@ -653,6 +653,11 @@ class AffineComponent: public UpdatableComponent {
   /// AffineComponent by two AffineComponents.
   virtual void LimitRank(int32 dimension,
                          AffineComponent **a, AffineComponent **b) const;
+  virtual void LimitRankPiecewise(BaseFloat f, 
+                         std::vector< std::vector<int32> > &output_map, 
+                         AffineComponent **a, AffineComponent **b) const;
+  virtual void LimitRankPiecewiseInplace(BaseFloat f, 
+                         std::vector< std::vector<int32> > &output_map);
 
   /// This function is implemented in widen-nnet.cc
   void Widen(int32 new_dimension,

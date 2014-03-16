@@ -1,7 +1,7 @@
 10
 
 dir
-3764
+3766
 svn://svn.code.sf.net/p/kaldi/code/trunk/misc/htk_conversion
 svn://svn.code.sf.net/p/kaldi/code
 
@@ -25,6 +25,40 @@ danielpovey
 
 
 5e6a8d80-dfce-4ca6-a32a-6e07a63d50c8
+
+trans2topo.pl
+file
+
+
+
+
+2013-10-31T18:31:07.848135Z
+9a6117f2e9258591964f70367da6ad07
+2011-05-30T12:04:57.036677Z
+58
+danielpovey
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1655
 
 parse_trees.pl
 file
@@ -365,38 +399,4 @@ has-props
 
 
 3763
-
-trans2topo.pl
-file
-
-
-
-
-2013-10-31T18:31:07.848135Z
-9a6117f2e9258591964f70367da6ad07
-2011-05-30T12:04:57.036677Z
-58
-danielpovey
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1655
 

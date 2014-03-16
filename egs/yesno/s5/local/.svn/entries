@@ -1,7 +1,7 @@
 10
 
 dir
-3764
+3766
 svn://svn.code.sf.net/p/kaldi/code/trunk/egs/yesno/s5/local
 svn://svn.code.sf.net/p/kaldi/code
 
@@ -25,40 +25,6 @@ nshmyrev
 
 
 5e6a8d80-dfce-4ca6-a32a-6e07a63d50c8
-
-create_yesno_txt.pl
-file
-
-
-
-
-2014-01-08T02:39:41.189050Z
-b4fcea1e21097e71fe8eb21813ca7de9
-2012-10-22T14:17:45.150697Z
-1483
-danielpovey
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-211
 
 prepare_dict.sh
 file
@@ -263,4 +229,38 @@ has-props
 
 
 2279
+
+create_yesno_txt.pl
+file
+
+
+
+
+2014-01-08T02:39:41.189050Z
+b4fcea1e21097e71fe8eb21813ca7de9
+2012-10-22T14:17:45.150697Z
+1483
+danielpovey
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+211
 

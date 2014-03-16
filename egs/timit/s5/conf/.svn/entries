@@ -1,7 +1,7 @@
 10
 
 dir
-3764
+3766
 svn://svn.code.sf.net/p/kaldi/code/trunk/egs/timit/s5/conf
 svn://svn.code.sf.net/p/kaldi/code
 
@@ -25,6 +25,40 @@ bbabaali
 
 
 5e6a8d80-dfce-4ca6-a32a-6e07a63d50c8
+
+phones.60-48-39.map
+file
+
+
+
+
+2013-10-31T18:31:31.292135Z
+43705d63201ef3bf13a9e7f983d1ce26
+2013-04-02T00:35:25.631910Z
+2295
+bbabaali
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+515
 
 dev_spk.list
 file
@@ -161,38 +195,4 @@ bbabaali
 
 
 48
-
-phones.60-48-39.map
-file
-
-
-
-
-2013-10-31T18:31:31.292135Z
-43705d63201ef3bf13a9e7f983d1ce26
-2013-04-02T00:35:25.631910Z
-2295
-bbabaali
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-515
 

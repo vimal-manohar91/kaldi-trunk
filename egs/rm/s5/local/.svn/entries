@@ -1,14 +1,14 @@
 10
 
 dir
-3764
+3766
 svn://svn.code.sf.net/p/kaldi/code/trunk/egs/rm/s5/local
 svn://svn.code.sf.net/p/kaldi/code
 
 
 
-2014-03-13T02:17:42.319841Z
-3761
+2014-03-15T18:23:14.277525Z
+3765
 danielpovey
 
 
@@ -100,11 +100,11 @@ file
 
 
 
-2014-01-08T02:39:42.681050Z
-4159a28934c376704f00aaa6fea3f459
-2013-12-29T04:44:27.018479Z
-3371
-xiaohuizhang
+2014-03-15T20:52:44.045644Z
+ec1523b76711c93c7625e0d5ddb56cc3
+2014-03-15T18:23:14.277525Z
+3765
+danielpovey
 has-props
 
 
@@ -126,7 +126,7 @@ has-props
 
 
 
-1037
+1182
 
 score.sh
 file

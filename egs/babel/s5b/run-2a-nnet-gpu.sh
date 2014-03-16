@@ -31,19 +31,3 @@ if [ ! -f exp/tri6_nnet/.done ]; then
 
   touch exp/tri6_nnet/.done
 fi
-
-if [ ! -f exp/tri6b_nnet/.done ]; then
-  steps/nnet2/train_pnorm_ensemble.sh \
-    --ensemble-size 4 \
-    --stage $train_stage --mix-up $dnn_mixup \
-    --initial-learning-rate $dnn_init_learning_rate \
-    --final-learning-rate $dnn_final_learning_rate \
-    --num-hidden-layers $dnn_num_hidden_layers \
-    --pnorm-input-dim $dnn_input_dim \
-    --pnorm-output-dim $dnn_output_dim \
-    --cmd "$train_cmd" \
-    "${dnn_gpu_parallel_opts[@]}" \
-    data/train data/lang exp/tri5_ali exp/tri6b_nnet || exit 1
-
-  touch exp/tri6b_nnet/.done
-fi

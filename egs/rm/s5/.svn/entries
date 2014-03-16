@@ -1,14 +1,14 @@
 10
 
 dir
-3764
+3766
 svn://svn.code.sf.net/p/kaldi/code/trunk/egs/rm/s5
 svn://svn.code.sf.net/p/kaldi/code
 
 
 
-2014-03-13T02:17:42.319841Z
-3761
+2014-03-15T18:23:14.277525Z
+3765
 danielpovey
 
 
@@ -25,111 +25,6 @@ danielpovey
 
 
 5e6a8d80-dfce-4ca6-a32a-6e07a63d50c8
-
-local
-dir
-
-cmd.sh
-file
-
-
-
-
-2014-02-05T16:57:58.578482Z
-ac637ee516a226cb6a28a31e9d5f41e2
-2014-01-23T18:13:05.947607Z
-3432
-vesis84
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-569
-
-run.sh
-file
-
-
-
-
-2014-03-13T17:59:39.782579Z
-6ebbf7ffc9e11c8764cc57d4c27b39d7
-2014-03-13T02:17:42.319841Z
-3761
-danielpovey
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-8122
-
-steps
-file
-
-
-
-
-2013-10-31T18:31:41.264135Z
-55a49b6509a35039f95b3b1d2d7e3f2e
-2012-05-09T18:29:34.452314Z
-903
-danielpovey
-has-props
-
-
-svn:special
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-18
 
 utils
 file
@@ -235,4 +130,109 @@ has-props
 
 
 377
+
+local
+dir
+
+cmd.sh
+file
+
+
+
+
+2014-02-05T16:57:58.578482Z
+ac637ee516a226cb6a28a31e9d5f41e2
+2014-01-23T18:13:05.947607Z
+3432
+vesis84
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+569
+
+run.sh
+file
+
+
+
+
+2014-03-13T17:59:39.782579Z
+6ebbf7ffc9e11c8764cc57d4c27b39d7
+2014-03-13T02:17:42.319841Z
+3761
+danielpovey
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8122
+
+steps
+file
+
+
+
+
+2013-10-31T18:31:41.264135Z
+55a49b6509a35039f95b3b1d2d7e3f2e
+2012-05-09T18:29:34.452314Z
+903
+danielpovey
+has-props
+
+
+svn:special
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+18
 

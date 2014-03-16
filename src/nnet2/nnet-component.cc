@@ -1251,6 +1251,159 @@ void AffineComponent::LimitRank(int32 d,
   (*b)->linear_params_ = U;
 }
 
+void AffineComponent::LimitRankPiecewise(BaseFloat f, 
+                                std::vector< std::vector<int32> > &output_map, 
+                                AffineComponent **a, AffineComponent **b) const {
+
+  KALDI_ASSERT(f <= 1.0 && f > 0);
+
+  // We'll limit the rank of just the linear part, keeping the bias vector full.
+  Matrix<BaseFloat> M (linear_params_);
+  int32 cols = M.NumCols(), rows = M.NumRows();
+
+  // We'll replace the affine component with two pieces that are obtained 
+  // by SVD followed by reducing rank.
+  // The intermediate dimension of the new affine components are not
+  // not known yet. They depend on the output_map.
+  // But it can be at most the number of rows. They will be resized later.
+  Matrix<BaseFloat> X(rows, rows);    
+  Matrix<BaseFloat> Y(rows, cols);
+  
+  int32 rank_sum = 0;                
+  // Used to accumulate the intermediate dimension by summing the ranks of each of the pieces.
+  for (int32 k = 0; k < output_map.size(); k++) {
+    // In a typical setup, this iterates over all the codebooks in a two-level pdf tree
+    KALDI_ASSERT(output_map[k].size() > 0);
+    // Extract the matrix in the affine component corresponding to 
+    // the kth codebook
+    Matrix<BaseFloat> M_k(output_map[k].size(), cols);
+    for (std::vector<int32>::iterator it = output_map[k].begin(); it != output_map[k].end(); it++) {
+      M_k.CopyRowFromVec(M.Row(*it), it - output_map[k].begin());
+    }
+    int32 rows_k = M_k.NumRows();
+    int32 rc_min = std::min(rows_k, cols);
+    Vector<BaseFloat> s(rc_min);
+
+    // Actual Dimensions: U(rows_k, rc_min), Vt(rc_min, cols)
+    Matrix<BaseFloat> U(rc_min, rows_k), Vt(cols, rc_min);
+    // Do the destructive svd M = U diag(s) V^T.  It actually outputs the transpose of V.
+    // We actually do it as M^T = V diag(s) U^T because the 
+    // number of rows must be >= number of cols.
+    M_k.Transpose();
+    M_k.DestructiveSvd(&s, &Vt, &U);
+    SortSvd(&s, &Vt, &U); // Sort the singular values from largest to smallest.
+    BaseFloat old_svd_sum = s.Sum();
+    int32 d = std::max(2, static_cast<int32>(f * rows_k));
+    if (d > rows_k) {
+      // In case there is only one row.
+      d = rows_k;
+    }
+    U.Transpose();
+    Vt.Transpose();
+    U.Resize(rows_k, d, kCopyData);
+    s.Resize(d, kCopyData);
+    Vt.Resize(d, cols, kCopyData);
+    BaseFloat new_svd_sum = s.Sum();
+    KALDI_LOG << "Reduced rank for group " << k << " from "
+              << rc_min <<  " to " << d << ", SVD sum reduced from "
+              << old_svd_sum << " to " << new_svd_sum;
+
+    // U.MulColsVec(s); // U <-- U diag(s)
+    Vt.MulRowsVec(s); // Vt <-- diag(s) Vt.
+    
+    SubMatrix<BaseFloat> X_k(X, 0, rows, rank_sum, d);
+    for (std::vector<int32>::iterator it = output_map[k].begin(); it != output_map[k].end(); it++) {
+      X_k.CopyRowFromVec(U.Row(it - output_map[k].begin()), *it);
+    }
+    SubMatrix<BaseFloat> Y_k(Y, rank_sum, d, 0, cols);
+    Y_k.CopyFromMat(Vt);
+    rank_sum += d;
+  }
+
+  *a = dynamic_cast<AffineComponent*>(this->Copy());
+  *b = dynamic_cast<AffineComponent*>(this->Copy());
+  
+  Y.Resize(rank_sum, cols);
+  X.Resize(rows, rank_sum);
+
+  (*a)->bias_params_.Resize(rank_sum, kSetZero);
+  (*a)->linear_params_ = Y;
+  
+  (*b)->bias_params_ = this->bias_params_;
+  (*b)->linear_params_ = X;
+}
+
+void AffineComponent::LimitRankPiecewiseInplace(BaseFloat f, 
+                                std::vector< std::vector<int32> > &output_map) { 
+
+  KALDI_ASSERT(f <= 1.0 && f > 0);
+
+  // We'll limit the rank of just the linear part, keeping the bias vector full.
+  Matrix<BaseFloat> M (linear_params_);
+  int32 cols = M.NumCols(), rows = M.NumRows();
+
+  // We'll replace the affine component with two pieces that are obtained 
+  // by SVD followed by reducing rank.
+  // The intermediate dimension of the new affine components are not
+  // not known yet. They depend on the output_map.
+  // But it can be at most the number of rows. They will be resized later.
+  Matrix<BaseFloat> X(rows, rows);    
+  Matrix<BaseFloat> Y(rows, cols);
+  
+  int32 rank_sum = 0;                
+  // Used to accumulate the intermediate dimension by summing the ranks of each of the pieces.
+  for (int32 k = 0; k < output_map.size(); k++) {
+    // In a typical setup, this iterates over all the codebooks in a two-level pdf tree
+    KALDI_ASSERT(output_map[k].size() > 0);
+    // Extract the matrix in the affine component corresponding to 
+    // the kth codebook
+    Matrix<BaseFloat> M_k(output_map[k].size(), cols);
+    for (std::vector<int32>::iterator it = output_map[k].begin(); it != output_map[k].end(); it++) {
+      M_k.CopyRowFromVec(M.Row(*it), it - output_map[k].begin());
+    }
+    int32 rows_k = M_k.NumRows();
+    int32 rc_min = std::min(rows_k, cols);
+
+    Vector<BaseFloat> s(rc_min);
+    Matrix<BaseFloat> U(rows_k, rc_min), Vt(rc_min, cols);
+
+    // Do the svd M = U diag(s) V^T.  It actually outputs the transpose of V.
+    M_k.Svd(&s, &U, &Vt);
+    SortSvd(&s, &U, &Vt); // Sort the singular values from largest to smallest.
+    BaseFloat old_svd_sum = s.Sum();
+    int32 d = std::max(2, static_cast<int32>(f * rows_k));
+    if (d > rows_k) {
+      // In case there is only one row.
+      d = rows_k;
+    }
+    U.Resize(rows_k, d, kCopyData);
+    s.Resize(d, kCopyData);
+    Vt.Resize(d, cols, kCopyData);
+    BaseFloat new_svd_sum = s.Sum();
+    KALDI_LOG << "Reduced rank for group " << k << " from "
+              << rc_min <<  " to " << d << ", SVD sum reduced from "
+              << old_svd_sum << " to " << new_svd_sum;
+
+    Vt.MulRowsVec(s); // Vt <-- diag(s) Vt.
+    
+    SubMatrix<BaseFloat> X_k(X, 0, rows, rank_sum, d);
+    for (std::vector<int32>::iterator it = output_map[k].begin(); it != output_map[k].end(); it++) {
+      X_k.CopyRowFromVec(U.Row(it - output_map[k].begin()), *it);
+    }
+    SubMatrix<BaseFloat> Y_k(Y, rank_sum, d, 0, cols);
+    Y_k.CopyFromMat(Vt);
+    rank_sum += d;
+  }
+
+  *a = dynamic_cast<AffineComponent*>(this->Copy());
+  *b = dynamic_cast<AffineComponent*>(this->Copy());
+  
+  Y.Resize(rank_sum, cols);
+  X.Resize(rows, rank_sum);
+
+  this->linear_paramms_.AddMatMat(1.0, CuMatrix<BaseFloat>(X), kNoTrans, CuMatrix<BaseFloat>(Y), kNoTrans, 0);
+}
+
 Component *AffineComponent::CollapseWithNext(
     const AffineComponent &next_component) const {
   AffineComponent *ans = dynamic_cast<AffineComponent*>(this->Copy());

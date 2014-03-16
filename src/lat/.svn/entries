@@ -1,7 +1,7 @@
 10
 
 dir
-3764
+3766
 svn://svn.code.sf.net/p/kaldi/code/trunk/src/lat
 svn://svn.code.sf.net/p/kaldi/code
 
@@ -60,40 +60,6 @@ rickychanhoyin
 
 2052
 
-phone-align-lattice.cc
-file
-
-
-
-
-2013-10-31T18:31:00.128136Z
-224b837d9989559a112dd0a3a4707dd8
-2013-09-24T22:38:48.828279Z
-2988
-danielpovey
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-17383
-
 kaldi-lattice-test.cc
 file
 
@@ -127,6 +93,40 @@ danielpovey
 
 
 4616
+
+phone-align-lattice.cc
+file
+
+
+
+
+2013-10-31T18:31:00.128136Z
+224b837d9989559a112dd0a3a4707dd8
+2013-09-24T22:38:48.828279Z
+2988
+danielpovey
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+17383
 
 word-align-lattice-lexicon.cc
 file
@@ -570,40 +570,6 @@ chenguoguo
 
 11809
 
-push-lattice.h
-file
-
-
-
-
-2014-02-28T18:14:02.956818Z
-dd9b17cedaf422a6d53d805c431d4869
-2014-02-28T17:57:30.647740Z
-3630
-chenguoguo
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2479
-
 minimize-lattice.cc
 file
 
@@ -637,6 +603,40 @@ chenguoguo
 
 
 11414
+
+push-lattice.h
+file
+
+
+
+
+2014-02-28T18:14:02.956818Z
+dd9b17cedaf422a6d53d805c431d4869
+2014-02-28T17:57:30.647740Z
+3630
+chenguoguo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2479
 
 minimize-lattice.h
 file

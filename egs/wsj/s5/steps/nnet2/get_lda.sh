@@ -46,7 +46,7 @@ alidir=$3
 dir=$4
 
 # Check some files.
-for f in $data/feats.scp $lang/L.fst $alidir/ali.1.gz $alidir/final.mdl $alidir/tree; do
+for f in $data/feats.scp $lang/L.fst $alidir/ali.1.gz $alidir/final.mdl; do
   [ ! -f $f ] && echo "$0: no such file $f" && exit 1;
 done
 
@@ -63,11 +63,9 @@ utils/split_data.sh $data $nj
 
 mkdir -p $dir/log
 echo $nj > $dir/num_jobs
-cp $alidir/tree $dir
 
 [ -z "$transform_dir" ] && transform_dir=$alidir
 norm_vars=`cat $alidir/norm_vars 2>/dev/null` || norm_vars=false # cmn/cmvn option, default false.
-cp $alidir/norm_vars $dir 2>/dev/null
 
 ## Set up features.  Note: these are different from the normal features
 ## because we have one rspecifier that has the features for the entire
@@ -82,8 +80,6 @@ case $feat_type in
    ;;
   lda) 
     splice_opts=`cat $alidir/splice_opts 2>/dev/null`
-    cp $alidir/splice_opts $dir 2>/dev/null
-    cp $alidir/final.mat $dir    
       feats="ark,s,cs:apply-cmvn --norm-vars=$norm_vars --utt2spk=ark:$sdata/JOB/utt2spk scp:$sdata/JOB/cmvn.scp scp:$sdata/JOB/feats.scp ark:- | splice-feats $splice_opts ark:- ark:- | transform-feats $dir/final.mat ark:- ark:- |"
     ;;
   *) echo "$0: invalid feature type $feat_type" && exit 1;

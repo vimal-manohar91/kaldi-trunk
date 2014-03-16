@@ -1,14 +1,14 @@
 10
 
 dir
-3764
+3766
 svn://svn.code.sf.net/p/kaldi/code/trunk/egs
 svn://svn.code.sf.net/p/kaldi/code
 
 
 
-2014-03-13T02:17:42.319841Z
-3761
+2014-03-16T04:33:50.205336Z
+3766
 danielpovey
 
 
@@ -25,24 +25,6 @@ danielpovey
 
 
 5e6a8d80-dfce-4ca6-a32a-6e07a63d50c8
-
-yesno
-dir
-
-hkust
-dir
-
-voxforge
-dir
-
-swbd
-dir
-
-sre08
-dir
-
-wsj
-dir
 
 babel
 dir
@@ -100,5 +82,23 @@ chime_wsj0
 dir
 
 fisher_english
+dir
+
+yesno
+dir
+
+hkust
+dir
+
+voxforge
+dir
+
+swbd
+dir
+
+sre08
+dir
+
+wsj
 dir
 

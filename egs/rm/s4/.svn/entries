@@ -1,7 +1,7 @@
 10
 
 dir
-3764
+3766
 svn://svn.code.sf.net/p/kaldi/code/trunk/egs/rm/s4
 svn://svn.code.sf.net/p/kaldi/code
 
@@ -25,6 +25,40 @@ vpanayotov
 
 
 5e6a8d80-dfce-4ca6-a32a-6e07a63d50c8
+
+README.txt
+file
+
+
+
+
+2013-10-31T18:31:40.404135Z
+495785a917c3ae59479c7a9ef1f29a46
+2012-05-29T11:18:18.309297Z
+969
+vpanayotov
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+897
 
 run.sh
 file
@@ -139,38 +173,4 @@ dir
 
 local
 dir
-
-README.txt
-file
-
-
-
-
-2013-10-31T18:31:40.404135Z
-495785a917c3ae59479c7a9ef1f29a46
-2012-05-29T11:18:18.309297Z
-969
-vpanayotov
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-897
 

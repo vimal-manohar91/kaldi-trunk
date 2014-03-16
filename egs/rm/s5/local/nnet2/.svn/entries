@@ -1,15 +1,15 @@
 10
 
 dir
-3764
+3766
 svn://svn.code.sf.net/p/kaldi/code/trunk/egs/rm/s5/local/nnet2
 svn://svn.code.sf.net/p/kaldi/code
 
 
 
-2013-12-26T05:43:27.915058Z
-3357
-xiaohuizhang
+2014-03-15T18:23:14.277525Z
+3765
+danielpovey
 
 
 
@@ -26,50 +26,16 @@ xiaohuizhang
 
 5e6a8d80-dfce-4ca6-a32a-6e07a63d50c8
 
-run_5c.sh
-file
-
-
-
-
-2013-12-13T20:01:45.775890Z
-3fb43333421167dfc64141aad2f1972d
-2013-12-11T18:39:46.616498Z
-3298
-danielpovey
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2027
-
 run_4b_gpu.sh
 file
 
 
 
 
-2013-12-13T20:01:45.867890Z
-89f86073755e38e73906404a9006eca1
-2013-12-11T18:39:46.616498Z
-3298
+2014-03-15T20:52:43.869644Z
+7f6a2098e13d26b7643086166285d276
+2014-03-15T18:23:14.277525Z
+3765
 danielpovey
 has-props
 
@@ -92,7 +58,7 @@ has-props
 
 
 
-2960
+2948
 
 run_4c_gpu.sh
 file
@@ -100,10 +66,10 @@ file
 
 
 
-2013-12-13T20:01:46.175890Z
-a657746c065f4c2aeeac5efe0344f3f7
-2013-12-11T18:39:46.616498Z
-3298
+2014-03-15T20:52:43.953644Z
+79dcf2e5eeda178e88bd823c6baf0ce7
+2014-03-15T18:23:14.277525Z
+3765
 danielpovey
 has-props
 
@@ -126,7 +92,7 @@ has-props
 
 
 
-1299
+1287
 
 run_4d_gpu.sh
 file
@@ -134,11 +100,11 @@ file
 
 
 
-2014-01-08T02:39:42.409050Z
-290c43c5e4c0f6d6b56646cf174d88d8
-2013-12-26T05:43:27.915058Z
-3357
-xiaohuizhang
+2014-03-15T20:52:43.569644Z
+78501e97d725c8fc447c8aac76edafe9
+2014-03-15T18:23:14.277525Z
+3765
+danielpovey
 has-props
 
 
@@ -160,7 +126,7 @@ has-props
 
 
 
-1156
+1070
 
 run_5c_gpu.sh
 file
@@ -236,10 +202,10 @@ file
 
 
 
-2013-10-31T18:31:41.004135Z
-96f58fde2a1582556037882b496e62bf
-2013-08-19T12:15:45.366692Z
-2819
+2014-03-15T20:52:43.693644Z
+5add579b6e946f8c395ef2f8eae5c433
+2014-03-15T18:23:14.277525Z
+3765
 danielpovey
 has-props
 
@@ -262,7 +228,7 @@ has-props
 
 
 
-828
+880
 
 run_4b.sh
 file
@@ -331,4 +297,72 @@ has-props
 
 
 782
+
+run_5c.sh
+file
+
+
+
+
+2013-12-13T20:01:45.775890Z
+3fb43333421167dfc64141aad2f1972d
+2013-12-11T18:39:46.616498Z
+3298
+danielpovey
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2027
+
+run_4d.sh
+file
+
+
+
+
+2014-03-15T20:52:43.785644Z
+2b067635fd1f8303d63c9ab0d831a857
+2014-03-15T18:23:14.277525Z
+3765
+danielpovey
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1224
 

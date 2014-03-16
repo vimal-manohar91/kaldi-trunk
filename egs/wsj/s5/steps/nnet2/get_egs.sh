@@ -13,7 +13,7 @@ num_utts_subset=300    # number of utterances in validation and training
 num_valid_frames_combine=0 # #valid frames for combination weights at the very end.
 num_train_frames_combine=10000 # # train frames for the above.
 num_frames_diagnostic=4000 # number of frames for "compute_prob" jobs
-samples_per_iter=400000 # each iteration of training, see this many samples
+samples_per_iter=200000 # each iteration of training, see this many samples
                         # per job.  This is just a guideline; it will pick a number
                         # that divides the number of samples in the entire data.
 transform_dir=     # If supplied, overrides alidir
@@ -23,6 +23,7 @@ io_opts="-tc 5" # for jobs with a lot of I/O, limits the number running at one t
 splice_width=4 # meaning +- 4 frames on each side for second LDA
 spk_vecs_dir=
 random_copy=false
+model=
 
 echo "$0 $@"  # Print the command line for logging
 
@@ -59,16 +60,13 @@ lang=$2
 alidir=$3
 dir=$4
 
+[ -z "$model" ] && model=$alidir/final.mdl
+
 # Check some files.
-for f in $data/feats.scp $lang/L.fst $alidir/ali.1.gz $alidir/final.mdl $alidir/tree; do
+for f in $data/feats.scp $lang/L.fst $alidir/ali.1.gz $model $alidir/tree; do
   [ ! -f $f ] && echo "$0: no such file $f" && exit 1;
 done
 
-
-# Set some variables.
-oov=`cat $lang/oov.int`
-num_leaves=`gmm-info $alidir/final.mdl 2>/dev/null | awk '/number of pdfs/{print $NF}'` || exit 1;
-silphonelist=`cat $lang/phones/silence.csl` || exit 1;
 
 nj=`cat $alidir/num_jobs` || exit 1;  # number of jobs in alignment dir...
 # in this dir we'll have just one job.
@@ -77,8 +75,7 @@ utils/split_data.sh $data $nj
 
 mkdir -p $dir/log
 echo $nj > $dir/num_jobs
-cp $alidir/tree $dir
-
+[ ! -f $dir/tree ] && cp $alidir/tree $dir
 
 # Get list of validation utterances. 
 awk '{print $1}' $data/utt2spk | utils/shuffle_list.pl | head -$num_utts_subset \
@@ -178,11 +175,11 @@ if [ $stage -le 2 ]; then
   rm $dir/.error 2>/dev/null
   $cmd $dir/log/create_valid_subset.log \
     nnet-get-egs $nnet_context_opts "${spk_vecs_opt[@]}" "$valid_feats" \
-     "ark,cs:gunzip -c $alidir/ali.*.gz | ali-to-pdf $alidir/final.mdl ark:- ark:- | ali-to-post ark:- ark:- |" \
+     "ark,cs:gunzip -c $alidir/ali.*.gz | ali-to-pdf $model ark:- ark:- | ali-to-post ark:- ark:- |" \
      "ark:$dir/egs/valid_all.egs" || touch $dir/.error &
   $cmd $dir/log/create_train_subset.log \
     nnet-get-egs $nnet_context_opts "${spk_vecs_opt[@]}" "$train_subset_feats" \
-     "ark,cs:gunzip -c $alidir/ali.*.gz | ali-to-pdf $alidir/final.mdl ark:- ark:- | ali-to-post ark:- ark:- |" \
+     "ark,cs:gunzip -c $alidir/ali.*.gz | ali-to-pdf $model ark:- ark:- | ali-to-post ark:- ark:- |" \
      "ark:$dir/egs/train_subset_all.egs" || touch $dir/.error &
   wait;
   [ -f $dir/.error ] && exit 1;
@@ -229,7 +226,7 @@ if [ $stage -le 3 ]; then
   # The examples will go round-robin to egs_list.
   $cmd $io_opts JOB=1:$nj $dir/log/get_egs.JOB.log \
     nnet-get-egs $nnet_context_opts "${spk_vecs_opt[@]}" "$feats" \
-    "ark,s,cs:gunzip -c $alidir/ali.JOB.gz | ali-to-pdf $alidir/final.mdl ark:- ark:- | ali-to-post ark:- ark:- |" ark:- \| \
+    "ark,s,cs:gunzip -c $alidir/ali.JOB.gz | ali-to-pdf $model ark:- ark:- | ali-to-post ark:- ark:- |" ark:- \| \
     nnet-copy-egs ark:- $egs_list || exit 1;
 fi
 

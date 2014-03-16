@@ -140,6 +140,11 @@ class Nnet {
   /// the matrix.
   void LimitRankOfLastLayer(int32 dimension);
 
+  /// Same as previous. But does it piecewise taking into the pdf map 
+  /// from a two-level tree.
+  void LimitRankOfLastLayerPiecewise(BaseFloat f, std::vector<int32> &pdf2group); 
+  void LimitRankOfLastLayerPiecewiseInplace(BaseFloat f, std::vector<int32> &pdf2group); 
+
   /// This version of AddNnet adds to *this, alpha times *other, and then scales
   /// *other by beta.  The reason why we make this a separate function is for
   /// multithreading reasons (otherwise you could do AddNnet(alpha, *iter) and then
@@ -191,10 +196,6 @@ class Nnet {
   /// Appends this component to the components already in the neural net.
   /// Takes ownership of the pointer.
   void Append(Component *new_component);
-  
-  /// Remove component
-  void RemoveComponent(int32 c);
-  void RemoveLastComponent() { RemoveComponent(NumComponents()-1); }
   
   virtual ~Nnet() { Destroy(); }
 

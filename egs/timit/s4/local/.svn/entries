@@ -1,7 +1,7 @@
 10
 
 dir
-3764
+3766
 svn://svn.code.sf.net/p/kaldi/code/trunk/egs/timit/s4/local
 svn://svn.code.sf.net/p/kaldi/code
 
@@ -25,6 +25,74 @@ arnab13
 
 
 5e6a8d80-dfce-4ca6-a32a-6e07a63d50c8
+
+timit_make_questions.pl
+file
+
+
+
+
+2013-10-31T18:31:30.856135Z
+96551083994773eb6ae39a396c52a332
+2012-02-20T18:19:40.110606Z
+767
+arnab13
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2431
+
+timit_prep_flists.sh
+file
+
+
+
+
+2013-10-31T18:31:30.860135Z
+3f24f60a1a64281978c990cc2c1ba1f7
+2012-04-02T11:36:32.115447Z
+831
+danielpovey
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4374
 
 timit_data_prep.sh
 file
@@ -161,72 +229,4 @@ has-props
 
 
 3361
-
-timit_make_questions.pl
-file
-
-
-
-
-2013-10-31T18:31:30.856135Z
-96551083994773eb6ae39a396c52a332
-2012-02-20T18:19:40.110606Z
-767
-arnab13
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2431
-
-timit_prep_flists.sh
-file
-
-
-
-
-2013-10-31T18:31:30.860135Z
-3f24f60a1a64281978c990cc2c1ba1f7
-2012-04-02T11:36:32.115447Z
-831
-danielpovey
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4374
 

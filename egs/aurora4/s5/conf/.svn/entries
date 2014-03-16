@@ -1,7 +1,7 @@
 10
 
 dir
-3764
+3766
 svn://svn.code.sf.net/p/kaldi/code/trunk/egs/aurora4/s5/conf
 svn://svn.code.sf.net/p/kaldi/code
 
@@ -25,6 +25,40 @@ cweng
 
 
 5e6a8d80-dfce-4ca6-a32a-6e07a63d50c8
+
+mfcc.conf
+file
+
+
+
+
+2013-12-13T20:01:52.295890Z
+f8646cb49898d7815b39d7b5b9340a06
+2013-12-10T22:24:27.849588Z
+3292
+cweng
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+48
 
 train_dnn.config
 file
@@ -229,38 +263,4 @@ cweng
 
 
 118
-
-mfcc.conf
-file
-
-
-
-
-2013-12-13T20:01:52.295890Z
-f8646cb49898d7815b39d7b5b9340a06
-2013-12-10T22:24:27.849588Z
-3292
-cweng
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-48
 

@@ -1,7 +1,7 @@
 10
 
 dir
-3764
+3766
 svn://svn.code.sf.net/p/kaldi/code/trunk/src/nnetbin
 svn://svn.code.sf.net/p/kaldi/code
 
@@ -25,40 +25,6 @@ has-props
 
 
 5e6a8d80-dfce-4ca6-a32a-6e07a63d50c8
-
-rbm-convert-to-nnet.cc
-file
-
-
-
-
-2013-10-31T18:30:51.716136Z
-a3ad35c17009c68b55bafcb154ae9b0b
-2013-10-18T13:34:07.084963Z
-3102
-vesis84
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2202
 
 cmvn-to-nnet.cc
 file
@@ -603,4 +569,38 @@ vesis84
 
 
 2579
+
+rbm-convert-to-nnet.cc
+file
+
+
+
+
+2013-10-31T18:30:51.716136Z
+a3ad35c17009c68b55bafcb154ae9b0b
+2013-10-18T13:34:07.084963Z
+3102
+vesis84
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2202
 

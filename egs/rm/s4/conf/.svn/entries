@@ -1,7 +1,7 @@
 10
 
 dir
-3764
+3766
 svn://svn.code.sf.net/p/kaldi/code/trunk/egs/rm/s4/conf
 svn://svn.code.sf.net/p/kaldi/code
 
@@ -25,6 +25,40 @@ vpanayotov
 
 
 5e6a8d80-dfce-4ca6-a32a-6e07a63d50c8
+
+mfcc.conf
+file
+
+
+
+
+2013-10-31T18:31:39.732135Z
+f8646cb49898d7815b39d7b5b9340a06
+2012-03-04T09:11:29.847255Z
+799
+vpanayotov
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+48
 
 plp.conf
 file
@@ -93,38 +127,4 @@ vpanayotov
 
 
 960
-
-mfcc.conf
-file
-
-
-
-
-2013-10-31T18:31:39.732135Z
-f8646cb49898d7815b39d7b5b9340a06
-2012-03-04T09:11:29.847255Z
-799
-vpanayotov
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-48
 

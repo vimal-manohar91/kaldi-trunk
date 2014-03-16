@@ -37,18 +37,28 @@ int main(int argc, char *argv[]) {
         "the rank of the last affine component, which is replaced with two\n"
         "affine components.  You specify the number of singlular values to\n"
         "retain as e.g. --dim=200\n"
+        "For systems with two-level tree, use --pdf-map argument to limit\n"
+        "piecewise on for each codebook of pdfs. Use --sv-proportion to\n"
+        "retain only a fraction f of singular values\n"
         "\n"
         "Usage:  nnet-am-limit-rank-final [options] <nnet-in> <nnet-out>\n"
         "e.g.:\n"
         " nnet-am-limit-rank-final --dim=200 1.mdl 1_limited.mdl\n";
+        " nnet-am-limit-rank-final --pdf-map=pdf2group.map --sv-proportion=0.5 1.mdl 1_limited.mdl\n";
     
 
     bool binary_write = true;
     int32 dim = 200;
+    BaseFloat sv_proportion = 0.5;
+    std::string pdf_map_rxfilename;
     
     ParseOptions po(usage);
     po.Register("binary", &binary_write, "Write output in binary mode");
     po.Register("dim", &dim, "Dimension to retain");
+    po.Register("pdf-map", &pdf_map_rxfilename,
+                "To reduce rank piecewise in systems with 2-level trees, the file that "
+                "maps from pdfs to groups (from build-tree-two-level)");
+    po.Register("sv-proportion", &sv_proportion, "Retain a fraction of singular values. Used only when pdf-map is specified");
 
     po.Read(argc, argv);
     
@@ -69,8 +79,17 @@ int main(int argc, char *argv[]) {
       am_nnet.Read(ki.Stream(), binary);
     }
 
-    am_nnet.GetNnet().LimitRankOfLastLayer(dim);
-    
+    if (pdf_map_rxfilename == "") {
+      am_nnet.GetNnet().LimitRankOfLastLayer(dim);
+    } else {
+      bool binary_in;
+      Input ki(pdf_map_rxfilename, &binary_in);
+      std::vector<int32> pdf2group;
+      ReadIntegerVector(ki.Stream(), binary_in, &pdf2group);
+      am_nnet.GetNnet().LimitRankOfLastLayerPiecewise(sv_proportion, 
+          pdf2group);
+    }
+
     {
       Output ko(nnet_wxfilename, binary_write);
       trans_model.Write(ko.Stream(), binary_write);
