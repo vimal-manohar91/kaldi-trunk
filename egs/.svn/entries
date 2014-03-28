@@ -1,110 +1,0 @@
-10
-
-dir
-3813
-svn://svn.code.sf.net/p/kaldi/code/trunk/egs
-svn://svn.code.sf.net/p/kaldi/code
-
-
-
-2014-03-28T03:27:20.833276Z
-3810
-hainan-xv
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5e6a8d80-dfce-4ca6-a32a-6e07a63d50c8
-
-tidigits
-dir
-
-vystadial_en
-dir
-
-timit
-dir
-
-chime_wsj0
-dir
-
-fisher_english
-dir
-
-vystadial_cz
-dir
-
-yesno
-dir
-
-hkust
-dir
-
-swbd
-dir
-
-voxforge
-dir
-
-sre08
-dir
-
-wsj
-dir
-
-babel
-dir
-
-gp
-dir
-
-README.txt
-file
-
-
-
-
-2013-10-31T18:31:41.824135Z
-786e3acc402faf2eed96c26a40303208
-2012-12-03T17:37:13.643183Z
-1638
-danielpovey
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2264
-
-aurora4
-dir
-
-rm
-dir
-
