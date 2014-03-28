@@ -2,7 +2,6 @@
 # Author: Vimal Manohar
 
 set -o pipefail
-set -e
 
 nj=8
 cmd=run.pl

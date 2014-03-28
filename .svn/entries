@@ -1,14 +1,14 @@
 10
 
 dir
-3766
+3813
 svn://svn.code.sf.net/p/kaldi/code/trunk
 svn://svn.code.sf.net/p/kaldi/code
 
 
 
-2014-03-16T04:33:50.205336Z
-3766
+2014-03-28T18:26:11.387398Z
+3813
 danielpovey
 has-props
 
@@ -25,6 +25,46 @@ has-props
 
 
 5e6a8d80-dfce-4ca6-a32a-6e07a63d50c8
+
+egs
+dir
+
+tools
+dir
+
+.gitignore
+file
+
+
+
+
+2014-03-24T19:37:22.316815Z
+3ff3d88354166cb39003b18a47b23a7c
+2014-03-24T17:31:34.500484Z
+3799
+danielpovey
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+16800
 
 INSTALL
 file
@@ -136,44 +176,4 @@ rickychanhoyin
 
 
 1125
-
-egs
-dir
-
-tools
-dir
-
-.gitignore
-file
-
-
-
-
-2014-03-13T18:10:38.170562Z
-9044e4b2c4076a23437d5ec611680c4c
-2014-03-06T03:55:19.844721Z
-3713
-danielpovey
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-16752
 

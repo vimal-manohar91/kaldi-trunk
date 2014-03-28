@@ -1,7 +1,7 @@
 10
 
 dir
-3766
+3813
 svn://svn.code.sf.net/p/kaldi/code/trunk/egs/rm/s5/conf
 svn://svn.code.sf.net/p/kaldi/code
 
@@ -25,6 +25,74 @@ vesis84
 
 
 5e6a8d80-dfce-4ca6-a32a-6e07a63d50c8
+
+mfcc.conf
+file
+
+
+
+
+2013-10-31T18:31:40.808135Z
+f8646cb49898d7815b39d7b5b9340a06
+2011-05-14T21:48:08.230724Z
+2
+danielpovey
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+48
+
+plp.conf
+file
+
+
+
+
+2013-10-31T18:31:40.800135Z
+c32b49da0e80570f36fea73de7de808b
+2012-02-08T01:42:59.468533Z
+718
+danielpovey
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+35
 
 topo.proto
 file
@@ -127,72 +195,4 @@ danielpovey
 
 
 110
-
-mfcc.conf
-file
-
-
-
-
-2013-10-31T18:31:40.808135Z
-f8646cb49898d7815b39d7b5b9340a06
-2011-05-14T21:48:08.230724Z
-2
-danielpovey
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-48
-
-plp.conf
-file
-
-
-
-
-2013-10-31T18:31:40.800135Z
-c32b49da0e80570f36fea73de7de808b
-2012-02-08T01:42:59.468533Z
-718
-danielpovey
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-35
 

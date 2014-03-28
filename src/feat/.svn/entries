@@ -1,14 +1,14 @@
 10
 
 dir
-3766
+3813
 svn://svn.code.sf.net/p/kaldi/code/trunk/src/feat
 svn://svn.code.sf.net/p/kaldi/code
 
 
 
-2014-02-24T22:16:33.613348Z
-3585
+2014-03-28T18:26:11.387398Z
+3813
 danielpovey
 has-props
 
@@ -26,17 +26,17 @@ has-props
 
 5e6a8d80-dfce-4ca6-a32a-6e07a63d50c8
 
-pitch-functions.cc
+feature-mfcc-test.cc
 file
 
 
 
 
-2014-02-05T16:57:24.726483Z
-e19582e66210e205d69d9bb63286e64f
-2014-01-29T06:13:57.356643Z
-3443
-syq163
+2014-03-28T18:51:27.499577Z
+75adbb36d1f26747f5a94b18811de7d7
+2014-03-28T18:26:11.387398Z
+3813
+danielpovey
 
 
 
@@ -58,7 +58,7 @@ syq163
 
 
 
-30210
+21467
 
 feature-functions-test.cc
 file
@@ -94,16 +94,16 @@ danielpovey
 
 3473
 
-feature-mfcc-test.cc
+pitch-functions.h
 file
 
 
 
 
-2014-01-08T02:40:00.845050Z
-bdecf9601ea314de76ee42a32c96a4ed
-2013-12-30T20:17:06.842090Z
-3377
+2014-01-23T00:44:40.978318Z
+1ef5fca4be74e67e105e6157ed4b2ca7
+2014-01-11T06:42:54.761960Z
+3398
 danielpovey
 
 
@@ -126,41 +126,7 @@ danielpovey
 
 
 
-21115
-
-feature-sdc-test.cc
-file
-
-
-
-
-2014-02-17T21:27:57.506111Z
-5f7da4ac09f5d7d903b82c4c7fd2f09a
-2014-02-16T23:07:21.501095Z
-3519
-david-snyder
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6140
+7710
 
 feature-spectrogram.cc
 file
@@ -196,17 +162,17 @@ danielpovey
 
 3258
 
-pitch-functions.h
+feature-sdc-test.cc
 file
 
 
 
 
-2014-01-23T00:44:40.978318Z
-1ef5fca4be74e67e105e6157ed4b2ca7
-2014-01-11T06:42:54.761960Z
-3398
-danielpovey
+2014-02-17T21:27:57.506111Z
+5f7da4ac09f5d7d903b82c4c7fd2f09a
+2014-02-16T23:07:21.501095Z
+3519
+david-snyder
 
 
 
@@ -228,7 +194,7 @@ danielpovey
 
 
 
-7710
+6140
 
 feature-spectrogram.h
 file
@@ -264,9 +230,6 @@ danielpovey
 
 2608
 
-test_data
-dir
-
 feature-plp.cc
 file
 
@@ -300,6 +263,9 @@ danielpovey
 
 
 6750
+
+test_data
+dir
 
 feature-plp.h
 file
@@ -341,10 +307,10 @@ file
 
 
 
-2014-01-08T02:40:01.025050Z
-def2af9150f0d5bffc283f8b1157e02a
-2013-12-30T20:17:06.842090Z
-3377
+2014-03-28T18:51:27.519577Z
+b0219010b5e8816f8effb1729f0266a0
+2014-03-28T18:26:11.387398Z
+3813
 danielpovey
 
 
@@ -367,7 +333,7 @@ danielpovey
 
 
 
-5752
+14118
 
 Makefile
 file
@@ -443,10 +409,10 @@ file
 
 
 
-2014-01-08T02:40:00.717050Z
-82f601f29903b09e9dfff8d6aa000cef
-2013-12-30T20:17:06.842090Z
-3377
+2014-03-28T18:51:27.359577Z
+bca60a87dfec3d5e1f86aa594c2dac2e
+2014-03-28T18:26:11.387398Z
+3813
 danielpovey
 
 
@@ -469,7 +435,7 @@ danielpovey
 
 
 
-11437
+11851
 
 feature-functions.cc
 file
@@ -591,10 +557,10 @@ file
 
 
 
-2013-10-31T18:30:48.172136Z
-02dcb0036cd5bea8a7d5b62fa9f3ffb1
-2013-09-24T22:38:48.828279Z
-2988
+2014-03-28T18:51:27.427577Z
+9ad8c5250d21d31245578ac93b17efcf
+2014-03-28T18:26:11.387398Z
+3813
 danielpovey
 
 
@@ -617,7 +583,7 @@ danielpovey
 
 
 
-4080
+4098
 
 feature-mfcc.h
 file
@@ -659,11 +625,11 @@ file
 
 
 
-2014-02-17T21:27:57.446111Z
-0381d7c403519fdd9924523ed77c0798
-2014-02-16T23:07:21.501095Z
-3519
-david-snyder
+2014-03-28T18:51:27.431577Z
+479276b72b1770358216c06e97fc64c9
+2014-03-28T18:26:11.387398Z
+3813
+danielpovey
 
 
 
@@ -685,7 +651,7 @@ david-snyder
 
 
 
-13826
+14090
 
 wave-reader.h
 file
@@ -788,4 +754,38 @@ danielpovey
 
 
 3771
+
+pitch-functions.cc
+file
+
+
+
+
+2014-02-05T16:57:24.726483Z
+e19582e66210e205d69d9bb63286e64f
+2014-01-29T06:13:57.356643Z
+3443
+syq163
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+30210
 

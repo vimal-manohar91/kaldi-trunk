@@ -1,14 +1,14 @@
 10
 
 dir
-3766
+3813
 svn://svn.code.sf.net/p/kaldi/code/trunk/egs/swbd/s5b
 svn://svn.code.sf.net/p/kaldi/code
 
 
 
-2014-03-15T18:23:14.277525Z
-3765
+2014-03-24T17:31:34.500484Z
+3799
 danielpovey
 has-props
 
@@ -25,43 +25,6 @@ has-props
 
 
 5e6a8d80-dfce-4ca6-a32a-6e07a63d50c8
-
-conf
-dir
-
-path.sh
-file
-
-
-
-
-2013-12-13T19:55:06.499901Z
-88d15e931e7734a91e6270f0d778ba5c
-2013-12-11T18:39:46.616498Z
-3298
-danielpovey
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-481
 
 local
 dir
@@ -140,10 +103,10 @@ file
 
 
 
-2013-12-13T19:55:06.563901Z
-6edb5a4e70bf23374cfa2699fe91a2fc
-2013-12-11T18:39:46.616498Z
-3298
+2014-03-24T19:38:10.932813Z
+bf2dd01afbcdb3c5a81fd260acd79bef
+2014-03-17T21:24:15.484291Z
+3773
 danielpovey
 has-props
 
@@ -166,7 +129,7 @@ has-props
 
 
 
-14414
+14416
 
 steps
 file
@@ -269,4 +232,41 @@ danielpovey
 
 
 13798
+
+conf
+dir
+
+path.sh
+file
+
+
+
+
+2013-12-13T19:55:06.499901Z
+88d15e931e7734a91e6270f0d778ba5c
+2013-12-11T18:39:46.616498Z
+3298
+danielpovey
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+481
 

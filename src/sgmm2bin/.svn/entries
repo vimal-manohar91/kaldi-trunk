@@ -1,14 +1,14 @@
 10
 
 dir
-3766
+3813
 svn://svn.code.sf.net/p/kaldi/code/trunk/src/sgmm2bin
 svn://svn.code.sf.net/p/kaldi/code
 
 
 
-2014-03-09T23:51:36.159401Z
-3755
+2014-03-24T17:31:34.500484Z
+3799
 danielpovey
 has-props
 
@@ -25,6 +25,40 @@ has-props
 
 
 5e6a8d80-dfce-4ca6-a32a-6e07a63d50c8
+
+sgmm2-post-to-gpost.cc
+file
+
+
+
+
+2014-02-25T17:01:17.919920Z
+af393c3830b7ca92cea4bedd61cd6b56
+2014-02-25T04:00:06.088312Z
+3588
+chenguoguo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6735
 
 sgmm2-est-spkvecs-gpost.cc
 file
@@ -162,16 +196,16 @@ chenguoguo
 
 11628
 
-sgmm2-est-ebw.cc
+Makefile
 file
 
 
 
 
-2013-10-31T18:31:04.480136Z
-dd44757b545323663d3e62541a42b775
-2013-09-24T22:38:48.828279Z
-2988
+2013-10-31T18:31:04.488136Z
+4ddea87ead6cb557beaf41b54098309b
+2013-10-29T02:37:00.906222Z
+3123
 danielpovey
 
 
@@ -194,7 +228,7 @@ danielpovey
 
 
 
-4138
+835
 
 sgmm2-project.cc
 file
@@ -230,16 +264,16 @@ danielpovey
 
 4041
 
-Makefile
+sgmm2-est-ebw.cc
 file
 
 
 
 
-2013-10-31T18:31:04.488136Z
-4ddea87ead6cb557beaf41b54098309b
-2013-10-29T02:37:00.906222Z
-3123
+2013-10-31T18:31:04.480136Z
+dd44757b545323663d3e62541a42b775
+2013-09-24T22:38:48.828279Z
+2988
 danielpovey
 
 
@@ -262,7 +296,7 @@ danielpovey
 
 
 
-835
+4138
 
 sgmm2-est-spkvecs.cc
 file
@@ -476,8 +510,8 @@ file
 
 
 e4f749ab40d9151d3cffcc4f3d728cea
-2014-03-09T23:51:36.159401Z
-3755
+2014-03-24T17:31:34.500484Z
+3799
 danielpovey
 has-props
 
@@ -501,40 +535,6 @@ has-props
 
 
 6288
-
-sgmm2-latgen-faster-parallel.cc
-file
-
-
-
-
-2014-02-10T21:32:18.370400Z
-bbac7784de1aded418ea4e78a5bca859
-2014-02-08T01:53:28.866144Z
-3482
-chenguoguo
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-12163
 
 sgmm2-gselect.cc
 file
@@ -569,6 +569,40 @@ danielpovey
 
 
 3835
+
+sgmm2-latgen-faster-parallel.cc
+file
+
+
+
+
+2014-02-10T21:32:18.370400Z
+bbac7784de1aded418ea4e78a5bca859
+2014-02-08T01:53:28.866144Z
+3482
+chenguoguo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+12163
 
 sgmm2-est.cc
 file
@@ -705,38 +739,4 @@ danielpovey
 
 
 2715
-
-sgmm2-post-to-gpost.cc
-file
-
-
-
-
-2014-02-25T17:01:17.919920Z
-af393c3830b7ca92cea4bedd61cd6b56
-2014-02-25T04:00:06.088312Z
-3588
-chenguoguo
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6735
 

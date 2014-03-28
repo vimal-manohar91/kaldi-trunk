@@ -1,7 +1,7 @@
 10
 
 dir
-3766
+3813
 svn://svn.code.sf.net/p/kaldi/code/trunk/egs/gp/s5/conf/xsampa_map
 svn://svn.code.sf.net/p/kaldi/code
 
@@ -25,6 +25,40 @@ arnab13
 
 
 5e6a8d80-dfce-4ca6-a32a-6e07a63d50c8
+
+Portuguese
+file
+
+
+
+
+2013-10-31T18:31:28.292135Z
+186f9fc4cbeabfdebfd50af6d587f700
+2012-10-09T18:07:48.548841Z
+1432
+arnab13
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+918
 
 French
 file
@@ -263,38 +297,4 @@ arnab13
 
 
 1430
-
-Portuguese
-file
-
-
-
-
-2013-10-31T18:31:28.292135Z
-186f9fc4cbeabfdebfd50af6d587f700
-2012-10-09T18:07:48.548841Z
-1432
-arnab13
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-918
 

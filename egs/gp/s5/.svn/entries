@@ -1,7 +1,7 @@
 10
 
 dir
-3766
+3813
 svn://svn.code.sf.net/p/kaldi/code/trunk/egs/gp/s5
 svn://svn.code.sf.net/p/kaldi/code
 
@@ -25,6 +25,40 @@ arnab13
 
 
 5e6a8d80-dfce-4ca6-a32a-6e07a63d50c8
+
+RESULTS
+file
+
+
+
+
+2013-10-31T18:31:29.020135Z
+fc86965fe926df0e025141e1ae71af54
+2012-10-09T18:07:48.548841Z
+1432
+arnab13
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1620
 
 conf
 dir
@@ -201,38 +235,4 @@ svn:special
 
 
 18
-
-RESULTS
-file
-
-
-
-
-2013-10-31T18:31:29.020135Z
-fc86965fe926df0e025141e1ae71af54
-2012-10-09T18:07:48.548841Z
-1432
-arnab13
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1620
 

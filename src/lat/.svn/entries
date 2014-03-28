@@ -1,7 +1,7 @@
 10
 
 dir
-3766
+3813
 svn://svn.code.sf.net/p/kaldi/code/trunk/src/lat
 svn://svn.code.sf.net/p/kaldi/code
 
@@ -25,6 +25,108 @@ has-props
 
 
 5e6a8d80-dfce-4ca6-a32a-6e07a63d50c8
+
+kws-functions.h
+file
+
+
+
+
+2014-03-13T18:10:36.842562Z
+f0f067c42d54bfe3ab3a9f07d7e1df50
+2014-03-06T03:03:09.587915Z
+3709
+chenguoguo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5662
+
+sausages.h
+file
+
+
+
+
+2013-10-31T18:31:00.116136Z
+a28b77b924ffdab8bc23a207cebf0151
+2013-09-24T22:38:48.828279Z
+2988
+danielpovey
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8310
+
+push-lattice-test.cc
+file
+
+
+
+
+2013-10-31T18:31:00.120136Z
+6f5dcfd8e861ed44bc8dc4d6577c6b35
+2013-10-15T06:11:18.512749Z
+3092
+rickychanhoyin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3797
 
 minimize-lattice-test.cc
 file
@@ -60,40 +162,6 @@ rickychanhoyin
 
 2052
 
-kaldi-lattice-test.cc
-file
-
-
-
-
-2013-10-31T18:31:00.124136Z
-58437e164f3e8144c720ddc4f058671c
-2013-09-24T22:38:48.828279Z
-2988
-danielpovey
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4616
-
 phone-align-lattice.cc
 file
 
@@ -127,6 +195,40 @@ danielpovey
 
 
 17383
+
+kaldi-lattice-test.cc
+file
+
+
+
+
+2013-10-31T18:31:00.124136Z
+58437e164f3e8144c720ddc4f058671c
+2013-09-24T22:38:48.828279Z
+2988
+danielpovey
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4616
 
 word-align-lattice-lexicon.cc
 file
@@ -162,40 +264,6 @@ vesis84
 
 42667
 
-phone-align-lattice.h
-file
-
-
-
-
-2013-10-31T18:31:00.136136Z
-b1b6fd0c80de8ea28e374817ea16d6a5
-2013-09-24T22:38:48.828279Z
-2988
-danielpovey
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2813
-
 word-align-lattice.cc
 file
 
@@ -229,6 +297,40 @@ danielpovey
 
 
 38728
+
+phone-align-lattice.h
+file
+
+
+
+
+2013-10-31T18:31:00.136136Z
+b1b6fd0c80de8ea28e374817ea16d6a5
+2013-09-24T22:38:48.828279Z
+2988
+danielpovey
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2813
 
 word-align-lattice-lexicon.h
 file
@@ -740,40 +842,6 @@ danielpovey
 
 4308
 
-kws-functions.cc
-file
-
-
-
-
-2014-03-13T18:10:36.834562Z
-714cd319d09bc6c52194036895418795
-2014-03-06T03:03:09.587915Z
-3709
-chenguoguo
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-20997
-
 determinize-lattice-pruned-test.cc
 file
 
@@ -808,6 +876,40 @@ danielpovey
 
 5590
 
+kws-functions.cc
+file
+
+
+
+
+2014-03-13T18:10:36.834562Z
+714cd319d09bc6c52194036895418795
+2014-03-06T03:03:09.587915Z
+3709
+chenguoguo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+20997
+
 sausages.cc
 file
 
@@ -841,106 +943,4 @@ rickychanhoyin
 
 
 13785
-
-kws-functions.h
-file
-
-
-
-
-2014-03-13T18:10:36.842562Z
-f0f067c42d54bfe3ab3a9f07d7e1df50
-2014-03-06T03:03:09.587915Z
-3709
-chenguoguo
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5662
-
-sausages.h
-file
-
-
-
-
-2013-10-31T18:31:00.116136Z
-a28b77b924ffdab8bc23a207cebf0151
-2013-09-24T22:38:48.828279Z
-2988
-danielpovey
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-8310
-
-push-lattice-test.cc
-file
-
-
-
-
-2013-10-31T18:31:00.120136Z
-6f5dcfd8e861ed44bc8dc4d6577c6b35
-2013-10-15T06:11:18.512749Z
-3092
-rickychanhoyin
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3797
 

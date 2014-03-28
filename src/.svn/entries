@@ -1,14 +1,14 @@
 10
 
 dir
-3766
+3813
 svn://svn.code.sf.net/p/kaldi/code/trunk/src
 svn://svn.code.sf.net/p/kaldi/code
 
 
 
-2014-03-13T02:17:42.319841Z
-3761
+2014-03-28T18:26:11.387398Z
+3813
 danielpovey
 has-props
 
@@ -34,87 +34,6 @@ has-props
 
 
 ()
-
-online
-dir
-
-fstbin
-dir
-
-NOTES
-file
-
-
-
-
-2013-10-31T18:31:04.912136Z
-11e3ea5f370f83361d7354e183684dde
-2012-06-12T22:13:25.247961Z
-1031
-danielpovey
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1866
-
-gst-plugin
-dir
-
-nnet-cpu
-dir
-
-
-
-add
-
-
-
-
-
-
-
-
-
-
-
-
-
-copied
-svn://svn.code.sf.net/p/kaldi/code/trunk/src/nnet-cpu
-3126
-
-sgmmbin
-dir
-
-nnetbin
-dir
-
-kwsbin
-dir
-
-sgmm
-dir
-
-doc
-dir
 
 TODO
 file
@@ -150,53 +69,13 @@ danielpovey
 
 10188
 
-INSTALL
-file
-
-
-
-
-2013-10-31T18:31:04.996136Z
-fe9bdd63b28d5aa3ffd8a0c0c2b2d398
-2011-05-15T20:23:01.484391Z
-16
-danielpovey
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-649
-
-bin
-dir
-
-featbin
+decoder
 dir
 
 base
 dir
 
-transform
-dir
-
-onlinebin
+ivector
 dir
 
 util
@@ -205,135 +84,10 @@ dir
 sgmm2bin
 dir
 
-feat
-dir
-
-lat
-dir
-
-gmm
-dir
-
-hmm
-dir
-
-Doxyfile
-file
-
-
-
-
-2013-10-31T18:31:04.832136Z
-499f3b65bf6e067423420f500854c724
-2013-08-05T10:38:50.911147Z
-2758
-rickychanhoyin
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-50748
-
-sgmm2
-dir
-
-nnet2
-dir
-
-tree
-dir
-
-makefiles
-dir
-
-cudamatrix
-dir
-
-nnet
-dir
-
-ivectorbin
-dir
-
-matrix
-dir
-
-decoder
-dir
-
-thread
-dir
-
-lm
-dir
-
-latbin
-dir
-
-gmmbin
-dir
-
-ivector
-dir
-
-Makefile
-file
-
-
-
-
-2014-03-13T21:51:36.642204Z
-2e42c274907ea5773ce3ebb1f487fec5
-2014-02-18T00:00:24.620834Z
-3529
-danielpovey
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5772
-
-fstext
-dir
-
 fgmmbin
 dir
 
-nnet2bin
+feat
 dir
 
 configure
@@ -371,5 +125,251 @@ has-props
 28251
 
 itf
+dir
+
+Doxyfile
+file
+
+
+
+
+2013-10-31T18:31:04.832136Z
+499f3b65bf6e067423420f500854c724
+2013-08-05T10:38:50.911147Z
+2758
+rickychanhoyin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+50748
+
+NOTES
+file
+
+
+
+
+2013-10-31T18:31:04.912136Z
+11e3ea5f370f83361d7354e183684dde
+2012-06-12T22:13:25.247961Z
+1031
+danielpovey
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1866
+
+sgmmbin
+dir
+
+nnetbin
+dir
+
+tree
+dir
+
+cudamatrix
+dir
+
+ivectorbin
+dir
+
+nnet
+dir
+
+matrix
+dir
+
+doc
+dir
+
+INSTALL
+file
+
+
+
+
+2013-10-31T18:31:04.996136Z
+fe9bdd63b28d5aa3ffd8a0c0c2b2d398
+2011-05-15T20:23:01.484391Z
+16
+danielpovey
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+649
+
+thread
+dir
+
+lm
+dir
+
+bin
+dir
+
+featbin
+dir
+
+gmmbin
+dir
+
+latbin
+dir
+
+transform
+dir
+
+onlinebin
+dir
+
+Makefile
+file
+
+
+
+
+2014-03-24T19:39:13.604812Z
+5c941e27a438b357d01af25c10345556
+2014-03-24T17:31:34.500484Z
+3799
+danielpovey
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5807
+
+fstext
+dir
+
+nnet2bin
+dir
+
+gmm
+dir
+
+lat
+dir
+
+hmm
+dir
+
+online
+dir
+
+sgmm2
+dir
+
+fstbin
+dir
+
+nnet2
+dir
+
+nnet-cpu
+dir
+
+
+
+add
+
+
+
+
+
+
+
+
+
+
+
+
+
+copied
+svn://svn.code.sf.net/p/kaldi/code/trunk/src/nnet-cpu
+3126
+
+gst-plugin
+dir
+
+kwsbin
+dir
+
+makefiles
+dir
+
+sgmm
 dir
 

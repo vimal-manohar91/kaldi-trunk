@@ -75,6 +75,7 @@ context_opts= # e.g. set it to "--context-width=5 --central-position=2"  for a
 leaves_per_group=5 # Relates to the SCTM (state-clustered tied-mixture) aspect:
                    # average number of pdfs in a "group" of pdfs.
 sv_proportion=0.5  # Retain only this proportion of singular values in last layer
+limit_rank_iters=""
 # End configuration section.
 
 
@@ -226,8 +227,8 @@ fi
 
 if [ $stage -le -4 ]; then
   # LDA is computed using the older alignments
-  echo "$0: calling get_lda.sh using alignments from $alidir"
-  steps/nnet2/get_lda.sh $lda_opts --splice-width $splice_width --cmd "$cmd" --transform-dir $transform_dir $data $lang $alidir $dir || exit 1;
+  echo "$0: calling get_lda.sh using alignments from $dir"
+  steps/nnet2/get_lda.sh $lda_opts --splice-width $splice_width --cmd "$cmd" --transform-dir $transform_dir --model $dir/temp.mdl $data $lang $dir $dir || exit 1;
 fi
 
 # these files will have been written by get_lda.sh
@@ -241,7 +242,7 @@ if [ $stage -le -3 ] && [ -z "$egs_dir" ]; then
   steps/nnet2/get_egs.sh $spk_vecs_opt --samples-per-iter $samples_per_iter --num-jobs-nnet $num_jobs_nnet \
       --splice-width $splice_width --stage $get_egs_stage --cmd "$cmd" $egs_opts --io-opts "$io_opts" --transform-dir $transform_dir \
       --model $dir/temp.mdl \
-      $data $lang $alidir $dir || exit 1;
+      $data $lang $dir $dir || exit 1;
 fi
 
 [ -e $dir/temp.mdl ] && rm $dir/temp.mdl
@@ -385,6 +386,15 @@ while [ $x -lt $num_iters ]; do
     $cmd $dir/log/average.$x.log \
       nnet-am-average $nnets_list - \| \
       nnet-am-copy --learning-rates=$lr_string - $dir/$[$x+1].mdl || exit 1;
+    
+    #if echo $limit_rank_iters | grep -w $x >/dev/null && [ $stage -le $x ] && [ $x -le $[$num_iters-$num_iters_final] ]; then
+    if echo $limit_rank_iters | grep -w $x >/dev/null && [ $stage -le $x ]; then
+      echo Limiting rank of last affine layer
+      $cmd $dir/log/limit_rank.log \
+        nnet-am-limit-rank-final --pdf-map=$dir/pdf2group.map \
+        --sv-proportion=$sv_proportion \
+        $dir/$[$x+1].mdl $dir/$[$x+1].mdl
+    fi
 
     rm $nnets_list
   fi
@@ -428,22 +438,35 @@ if [ $stage -le $num_iters ]; then
   # Normalize stddev for affine or block affine layers that are followed by a
   # pnorm layer and then a normalize layer.
   $cmd $parallel_opts $dir/log/normalize.log \
-    nnet-normalize-stddev $dir/final.mdl $dir/final_normalized.mdl || exit 1;
+    nnet-normalize-stddev $dir/final.mdl $dir/final_normalized.mdl || exit 1
+  cp $dir/final_normalized.mdl $dir/final.mdl || exit 1 
+fi
 
+if [ -z "$limit_rank_iters" ] && [ $stage -le $[$num_iters+1] ]; then
   # Limit rank of last affine layer
   $cmd $dir/log/limit_rank.log \
     nnet-am-limit-rank-final --pdf-map=$dir/pdf2group.map \
-    --sv-proportion $sv_proportion \
-    $dir/final_normalized.mdl $dir/final.mdl
+    --sv-proportion=$sv_proportion \
+    $dir/final.mdl $dir/final.mdl
 fi
 
 # Compute the probability of the final, combined model with
 # the same subset we used for the previous compute_probs, as the
 # different subsets will lead to different probs.
-$cmd $dir/log/compute_prob_valid.final.log \
-  nnet-compute-prob $dir/final.mdl ark:$egs_dir/valid_diagnostic.egs &
-$cmd $dir/log/compute_prob_train.final.log \
-  nnet-compute-prob $dir/final.mdl ark:$egs_dir/train_diagnostic.egs &
+if [ $stage -le $[$num_iters+2] ]; then
+  $cmd $dir/log/compute_prob_valid.final.log \
+    nnet-compute-prob $dir/final.mdl ark:$egs_dir/valid_diagnostic.egs &
+  $cmd $dir/log/compute_prob_train.final.log \
+    nnet-compute-prob $dir/final.mdl ark:$egs_dir/train_diagnostic.egs &
+fi
+
+if [ $stage -le $[$num_iters+3] ]; then
+  $cmd $dir/log/set_prior.log \
+    nnet-compute-from-egs "nnet-to-raw-nnet $dir/final.mdl - |" \
+    ark:$egs_dir/combine.egs ark:- \| \
+    prob-to-post ark:- ark:- \| post-to-counts ark:- - \| \
+    nnet-am-set-priors $dir/final.mdl - $dir/final.mdl || exit 1
+fi
 
 sleep 2
 

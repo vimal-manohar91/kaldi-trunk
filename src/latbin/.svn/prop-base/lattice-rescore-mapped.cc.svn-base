@@ -9,7 +9,7 @@ V 824
 /sandbox/kws/src/gmmbin/gmm-rescore-lattice.cc:1533-1557
 /sandbox/oplatek/src/latbin/lattice-rescore-mapped.cc:2513-2541
 /sandbox/pitch/src/latbin/lattice-rescore-mapped.cc:3126-3251
-/sandbox/sail/src/latbin/lattice-rescore-mapped.cc:3642-3712,3716-3754
+/sandbox/sail/src/latbin/lattice-rescore-mapped.cc:3642-3712,3716-3797
 /sandbox/sharedlibs/src/latbin/lattice-rescore-mapped.cc:2585-2662
 /sandbox/tanel/src/latbin/lattice-rescore-mapped.cc:2623-2658
 /sandbox/thang-project/src/gmmbin/gmm-rescore-lattice.cc:233-258

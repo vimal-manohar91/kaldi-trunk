@@ -1,14 +1,14 @@
 10
 
 dir
-3766
+3813
 svn://svn.code.sf.net/p/kaldi/code/trunk/egs/timit/s5
 svn://svn.code.sf.net/p/kaldi/code
 
 
 
-2014-01-15T00:36:15.542186Z
-3405
+2014-03-20T15:59:08.628744Z
+3787
 danielpovey
 
 
@@ -26,90 +26,16 @@ danielpovey
 
 5e6a8d80-dfce-4ca6-a32a-6e07a63d50c8
 
-conf
-dir
-
-path.sh
-file
-
-
-
-
-2013-12-13T20:01:39.095891Z
-147dbb16cbf9f850e612d801d027a9a9
-2013-12-11T18:39:46.616498Z
-3298
-danielpovey
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-469
-
-local
-dir
-
-cmd.sh
-file
-
-
-
-
-2013-10-31T18:31:31.596135Z
-348c5e2a6cee5ad84472930a450ff8f2
-2013-04-02T00:35:25.631910Z
-2295
-bbabaali
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1080
-
 run.sh
 file
 
 
 
 
-2014-01-23T00:44:38.942318Z
-6aa5f1c0471a453b684f6444170dee98
-2014-01-15T00:36:15.542186Z
-3405
+2014-03-24T19:38:16.968813Z
+49c7f1e24b7fd050ccc40d8686ee944b
+2014-03-20T15:59:08.628744Z
+3787
 danielpovey
 has-props
 
@@ -132,7 +58,7 @@ has-props
 
 
 
-9750
+9320
 
 steps
 file
@@ -235,4 +161,78 @@ bbabaali
 
 
 4640
+
+conf
+dir
+
+path.sh
+file
+
+
+
+
+2013-12-13T20:01:39.095891Z
+147dbb16cbf9f850e612d801d027a9a9
+2013-12-11T18:39:46.616498Z
+3298
+danielpovey
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+469
+
+local
+dir
+
+cmd.sh
+file
+
+
+
+
+2013-10-31T18:31:31.596135Z
+348c5e2a6cee5ad84472930a450ff8f2
+2013-04-02T00:35:25.631910Z
+2295
+bbabaali
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1080
 

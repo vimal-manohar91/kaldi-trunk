@@ -16,6 +16,7 @@ within_class_factor=0.0001 # This affects the scaling of the transform rows...
                            # sorry for no explanation, you'll have to see the code.
 transform_dir=     # If supplied, overrides alidir
 lda_dim=  # This defaults to no dimension reduction.
+model=
 
 echo "$0 $@"  # Print the command line for logging
 
@@ -45,15 +46,18 @@ lang=$2
 alidir=$3
 dir=$4
 
+[ -z $model ] && model=$alidir/final.mdl
 # Check some files.
-for f in $data/feats.scp $lang/L.fst $alidir/ali.1.gz $alidir/final.mdl; do
+for f in $data/feats.scp $lang/L.fst $alidir/ali.1.gz $model; do
   [ ! -f $f ] && echo "$0: no such file $f" && exit 1;
 done
 
 
 # Set some variables.
 oov=`cat $lang/oov.int`
-num_leaves=`gmm-info $alidir/final.mdl 2>/dev/null | awk '/number of pdfs/{print $NF}'` || exit 1;
+num_leaves=`tree-info $alidir/tree 2>/dev/null | awk '{print $2}'` || exit 1;
+[ -z $num_leaves ] && echo "\$num_leaves is unset" && exit 1
+[ "$num_leaves" -eq "0" ] && echo "\$num_leaves is 0" && exit 1
 silphonelist=`cat $lang/phones/silence.csl` || exit 1;
 
 nj=`cat $alidir/num_jobs` || exit 1;  # number of jobs in alignment dir...
@@ -80,7 +84,7 @@ case $feat_type in
    ;;
   lda) 
     splice_opts=`cat $alidir/splice_opts 2>/dev/null`
-      feats="ark,s,cs:apply-cmvn --norm-vars=$norm_vars --utt2spk=ark:$sdata/JOB/utt2spk scp:$sdata/JOB/cmvn.scp scp:$sdata/JOB/feats.scp ark:- | splice-feats $splice_opts ark:- ark:- | transform-feats $dir/final.mat ark:- ark:- |"
+      feats="ark,s,cs:apply-cmvn --norm-vars=$norm_vars --utt2spk=ark:$sdata/JOB/utt2spk scp:$sdata/JOB/cmvn.scp scp:$sdata/JOB/feats.scp ark:- | splice-feats $splice_opts ark:- ark:- | transform-feats $alidir/final.mat ark:- ark:- |"
     ;;
   *) echo "$0: invalid feature type $feat_type" && exit 1;
 esac
@@ -103,8 +107,8 @@ if [ $stage -le 0 ]; then
   echo "$0: Accumulating LDA statistics."
   $cmd JOB=1:$nj $dir/log/lda_acc.JOB.log \
     ali-to-post "ark:gunzip -c $alidir/ali.JOB.gz|" ark:- \| \
-      weight-silence-post 0.0 $silphonelist $alidir/final.mdl ark:- ark:- \| \
-      acc-lda --rand-prune=$rand_prune $alidir/final.mdl "$feats splice-feats --left-context=$splice_width --right-context=$splice_width ark:- ark:- |" ark,s,cs:- \
+      weight-silence-post 0.0 $silphonelist $model ark:- ark:- \| \
+      acc-lda --rand-prune=$rand_prune $model "$feats splice-feats --left-context=$splice_width --right-context=$splice_width ark:- ark:- |" ark,s,cs:- \
        $dir/lda.JOB.acc || exit 1;
 fi
 

@@ -143,7 +143,6 @@ class Nnet {
   /// Same as previous. But does it piecewise taking into the pdf map 
   /// from a two-level tree.
   void LimitRankOfLastLayerPiecewise(BaseFloat f, std::vector<int32> &pdf2group); 
-  void LimitRankOfLastLayerPiecewiseInplace(BaseFloat f, std::vector<int32> &pdf2group); 
 
   /// This version of AddNnet adds to *this, alpha times *other, and then scales
   /// *other by beta.  The reason why we make this a separate function is for

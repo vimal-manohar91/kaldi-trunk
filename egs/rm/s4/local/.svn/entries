@@ -1,7 +1,7 @@
 10
 
 dir
-3766
+3813
 svn://svn.code.sf.net/p/kaldi/code/trunk/egs/rm/s4/local
 svn://svn.code.sf.net/p/kaldi/code
 
@@ -25,6 +25,40 @@ vpanayotov
 
 
 5e6a8d80-dfce-4ca6-a32a-6e07a63d50c8
+
+make_trans.pl
+file
+
+
+
+
+2013-10-31T18:31:40.132135Z
+4bea54420222e3b61776bd2d6056492f
+2012-03-04T09:11:29.847255Z
+799
+vpanayotov
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2360
 
 rm_data_prep.sh
 file
@@ -127,38 +161,4 @@ has-props
 
 
 1129
-
-make_trans.pl
-file
-
-
-
-
-2013-10-31T18:31:40.132135Z
-4bea54420222e3b61776bd2d6056492f
-2012-03-04T09:11:29.847255Z
-799
-vpanayotov
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2360
 

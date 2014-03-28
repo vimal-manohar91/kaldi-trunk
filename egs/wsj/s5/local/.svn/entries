@@ -1,15 +1,15 @@
 10
 
 dir
-3766
+3813
 svn://svn.code.sf.net/p/kaldi/code/trunk/egs/wsj/s5/local
 svn://svn.code.sf.net/p/kaldi/code
 
 
 
-2014-03-16T04:33:50.205336Z
-3766
-danielpovey
+2014-03-19T21:38:23.734051Z
+3784
+xiaohuizhang
 
 
 
@@ -25,386 +25,6 @@ danielpovey
 
 
 5e6a8d80-dfce-4ca6-a32a-6e07a63d50c8
-
-generate_example_kws.sh
-file
-
-
-
-
-2013-10-31T18:31:19.908135Z
-c54b81091cf0a98b220dce17c484589e
-2012-11-06T03:37:27.123396Z
-1558
-danielpovey
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2383
-
-wsj_train_rnnlms.sh
-file
-
-
-
-
-2013-10-31T18:31:19.904135Z
-eb6162e89c315bac11f021ccc68741f4
-2012-05-25T03:07:09.197113Z
-953
-danielpovey
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6101
-
-wsj_format_data.sh
-file
-
-
-
-
-2013-10-31T18:31:19.984135Z
-90f0a4aecb34810440e77c6277ebdcd7
-2013-05-09T00:14:30.343406Z
-2431
-danielpovey
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3623
-
-run_mmi_tri2b.sh
-file
-
-
-
-
-2013-10-31T18:31:19.852135Z
-2e1a1010a1581a9913bb7a3787680770
-2012-06-15T01:45:23.148500Z
-1044
-danielpovey
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2565
-
-cstr_wsj_extend_dict.sh
-file
-
-
-
-
-2013-10-31T18:31:19.928135Z
-08e4816a7dd16f8f041717eb7031559d
-2012-06-08T14:56:20.990921Z
-1012
-arnab13
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6608
-
-run_sgmm2.sh
-file
-
-
-
-
-2014-02-25T17:01:22.007919Z
-2419ec523d47e14fd578d5aeaebe31da
-2014-02-21T19:52:26.010221Z
-3567
-danielpovey
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-7223
-
-run_raw_fmllr.sh
-file
-
-
-
-
-2013-10-31T18:31:19.860135Z
-2e46cf5e2959c3d395cac9047a0b987a
-2013-08-21T12:02:37.216398Z
-2830
-danielpovey
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2600
-
-dict
-dir
-
-run_mmi_tri4b.sh
-file
-
-
-
-
-2013-10-31T18:31:19.868135Z
-be2195ccefc207cc6d98236aa756fe64
-2013-03-12T04:59:05.727478Z
-2188
-danielpovey
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2093
-
-normalize_transcript.pl
-file
-
-
-
-
-2013-10-31T18:31:19.932135Z
-7d6f7f6d1fea36ef5bb876a81970e834
-2012-04-22T05:43:12.917539Z
-854
-danielpovey
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3110
-
-wsj_train_lms.sh
-file
-
-
-
-
-2013-12-13T19:55:12.867901Z
-d22abc3bfcd58523bcb6fff724db6656
-2013-12-03T16:02:28.382189Z
-3246
-danielpovey
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-8374
-
-nnet2
-dir
-
-ndx2flist.pl
-file
-
-
-
-
-2013-10-31T18:31:19.884135Z
-fbccd59a860ee03465e294e712280110
-2012-04-22T05:43:12.917539Z
-854
-danielpovey
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2503
 
 wsj_data_prep.sh
 file
@@ -440,50 +60,16 @@ has-props
 
 7932
 
-run_kl_hmm.sh
+wsj_prepare_dict.sh
 file
 
 
 
 
-2013-12-13T19:55:12.891901Z
-7419c091507ec3ed913b7a371fae5f8b
-2013-12-01T18:58:22.174411Z
-3241
-dimseng
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1219
-
-wsj_format_local_lms.sh
-file
-
-
-
-
-2013-10-31T18:31:19.968135Z
-4e6b82e8ce75bb847c681039f696c395
-2013-04-24T18:10:07.600731Z
-2389
+2013-10-31T18:31:19.896135Z
+f5b3e4321554ec07fed77e668c08baaf
+2013-04-19T17:26:37.806317Z
+2376
 danielpovey
 has-props
 
@@ -506,18 +92,18 @@ has-props
 
 
 
-2037
+2994
 
-run_rnnlms_tri3b.sh
+run_sgmm.sh
 file
 
 
 
 
-2013-10-31T18:31:19.964135Z
-54c1e9460b856ccda619e53888ef98a7
-2012-06-07T20:31:24.380816Z
-1004
+2013-10-31T18:31:19.900135Z
+a3c6f922051b4144a6d2ce3a29cbeb52
+2013-10-27T19:40:31.294724Z
+3122
 danielpovey
 has-props
 
@@ -540,19 +126,19 @@ has-props
 
 
 
-2557
+5246
 
-run_fwdbwd.sh
+wsj_train_rnnlms.sh
 file
 
 
 
 
-2013-10-31T18:31:19.980135Z
-a0a9eff6424d6619d7b4ff761c71a55c
-2012-12-05T15:56:31.916616Z
-1646
-mhannemann
+2013-10-31T18:31:19.904135Z
+eb6162e89c315bac11f021ccc68741f4
+2012-05-25T03:07:09.197113Z
+953
+danielpovey
 has-props
 
 
@@ -574,7 +160,41 @@ has-props
 
 
 
-2926
+6101
+
+generate_example_kws.sh
+file
+
+
+
+
+2013-10-31T18:31:19.908135Z
+c54b81091cf0a98b220dce17c484589e
+2012-11-06T03:37:27.123396Z
+1558
+danielpovey
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2383
 
 run_dnn.sh
 file
@@ -610,40 +230,6 @@ has-props
 
 5930
 
-run_rnnlms_sgmm5b.sh
-file
-
-
-
-
-2013-10-31T18:31:19.920135Z
-0d54bd0c2549f5f94701a70d6c5aea9a
-2012-06-06T14:50:18.234091Z
-1002
-danielpovey
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1882
-
 score_combine.sh
 file
 
@@ -678,16 +264,50 @@ has-props
 
 3452
 
-cstr_ndx2flist.pl
+run_rnnlms_sgmm5b.sh
 file
 
 
 
 
-2013-10-31T18:31:19.864135Z
-86166d6a361fe884090236207377d4d8
-2012-05-30T14:40:12.526637Z
-971
+2013-10-31T18:31:19.920135Z
+0d54bd0c2549f5f94701a70d6c5aea9a
+2012-06-06T14:50:18.234091Z
+1002
+danielpovey
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1882
+
+cstr_wsj_extend_dict.sh
+file
+
+
+
+
+2013-10-31T18:31:19.928135Z
+08e4816a7dd16f8f041717eb7031559d
+2012-06-08T14:56:20.990921Z
+1012
 arnab13
 has-props
 
@@ -710,7 +330,75 @@ has-props
 
 
 
-1946
+6608
+
+normalize_transcript.pl
+file
+
+
+
+
+2013-10-31T18:31:19.932135Z
+7d6f7f6d1fea36ef5bb876a81970e834
+2012-04-22T05:43:12.917539Z
+854
+danielpovey
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3110
+
+run_nnet2.sh
+file
+
+
+
+
+2014-03-24T19:38:15.088813Z
+58ed62b617c6f3378efbce73185ea16c
+2014-03-19T21:38:23.734051Z
+3784
+xiaohuizhang
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1012
 
 flist2scp.pl
 file
@@ -746,16 +434,16 @@ has-props
 
 1180
 
-run_nnet2.sh
+score_mbr.sh
 file
 
 
 
 
-2014-03-15T20:52:40.085644Z
-7aaf6523736ce21115994a622bf0c406
-2014-03-15T18:23:14.277525Z
-3765
+2013-10-31T18:31:19.948135Z
+ee67a463c9191436f20081cea1aa7ecb
+2013-03-12T04:59:05.727478Z
+2188
 danielpovey
 has-props
 
@@ -778,7 +466,7 @@ has-props
 
 
 
-914
+1790
 
 score.sh
 file
@@ -814,39 +502,8 @@ has-props
 
 2279
 
-score_mbr.sh
-file
-
-
-
-
-2013-10-31T18:31:19.948135Z
-ee67a463c9191436f20081cea1aa7ecb
-2013-03-12T04:59:05.727478Z
-2188
-danielpovey
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1790
+nnet2
+dir
 
 wsj_extend_dict.sh
 file
@@ -881,74 +538,6 @@ has-props
 
 
 6740
-
-find_transcripts.pl
-file
-
-
-
-
-2013-10-31T18:31:19.880135Z
-b7b3c2027bfea667b1bb080319b686b9
-2012-04-22T05:43:12.917539Z
-854
-danielpovey
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2065
-
-cstr_wsj_data_prep.sh
-file
-
-
-
-
-2013-10-31T18:31:19.876135Z
-a7278b378f41cd69720adbdcd9b71dd0
-2012-05-30T14:40:12.526637Z
-971
-arnab13
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-7359
 
 run_basis_fmllr.sh
 file
@@ -1018,18 +607,17 @@ has-props
 
 1773
 
-wsj_prepare_dict.sh
+run_kl_hmm.sh
 file
 
 
 
 
-2013-10-31T18:31:19.896135Z
-f5b3e4321554ec07fed77e668c08baaf
-2013-04-19T17:26:37.806317Z
-2376
-danielpovey
-has-props
+2013-12-13T19:55:12.891901Z
+7419c091507ec3ed913b7a371fae5f8b
+2013-12-01T18:58:22.174411Z
+3241
+dimseng
 
 
 
@@ -1050,18 +638,19 @@ has-props
 
 
 
-2994
+
+1219
 
-run_sgmm.sh
+run_rnnlms_tri3b.sh
 file
 
 
 
 
-2013-10-31T18:31:19.900135Z
-a3c6f922051b4144a6d2ce3a29cbeb52
-2013-10-27T19:40:31.294724Z
-3122
+2013-10-31T18:31:19.964135Z
+54c1e9460b856ccda619e53888ef98a7
+2012-06-07T20:31:24.380816Z
+1004
 danielpovey
 has-props
 
@@ -1084,5 +673,416 @@ has-props
 
 
 
-5246
+2557
+
+wsj_format_local_lms.sh
+file
+
+
+
+
+2013-10-31T18:31:19.968135Z
+4e6b82e8ce75bb847c681039f696c395
+2013-04-24T18:10:07.600731Z
+2389
+danielpovey
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2037
+
+run_fwdbwd.sh
+file
+
+
+
+
+2013-10-31T18:31:19.980135Z
+a0a9eff6424d6619d7b4ff761c71a55c
+2012-12-05T15:56:31.916616Z
+1646
+mhannemann
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2926
+
+wsj_format_data.sh
+file
+
+
+
+
+2013-10-31T18:31:19.984135Z
+90f0a4aecb34810440e77c6277ebdcd7
+2013-05-09T00:14:30.343406Z
+2431
+danielpovey
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3623
+
+run_mmi_tri2b.sh
+file
+
+
+
+
+2013-10-31T18:31:19.852135Z
+2e1a1010a1581a9913bb7a3787680770
+2012-06-15T01:45:23.148500Z
+1044
+danielpovey
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2565
+
+run_sgmm2.sh
+file
+
+
+
+
+2014-02-25T17:01:22.007919Z
+2419ec523d47e14fd578d5aeaebe31da
+2014-02-21T19:52:26.010221Z
+3567
+danielpovey
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7223
+
+run_raw_fmllr.sh
+file
+
+
+
+
+2013-10-31T18:31:19.860135Z
+2e46cf5e2959c3d395cac9047a0b987a
+2013-08-21T12:02:37.216398Z
+2830
+danielpovey
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2600
+
+cstr_ndx2flist.pl
+file
+
+
+
+
+2013-10-31T18:31:19.864135Z
+86166d6a361fe884090236207377d4d8
+2012-05-30T14:40:12.526637Z
+971
+arnab13
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1946
+
+dict
+dir
+
+run_mmi_tri4b.sh
+file
+
+
+
+
+2013-10-31T18:31:19.868135Z
+be2195ccefc207cc6d98236aa756fe64
+2013-03-12T04:59:05.727478Z
+2188
+danielpovey
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2093
+
+wsj_train_lms.sh
+file
+
+
+
+
+2013-12-13T19:55:12.867901Z
+d22abc3bfcd58523bcb6fff724db6656
+2013-12-03T16:02:28.382189Z
+3246
+danielpovey
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8374
+
+find_transcripts.pl
+file
+
+
+
+
+2013-10-31T18:31:19.880135Z
+b7b3c2027bfea667b1bb080319b686b9
+2012-04-22T05:43:12.917539Z
+854
+danielpovey
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2065
+
+cstr_wsj_data_prep.sh
+file
+
+
+
+
+2013-10-31T18:31:19.876135Z
+a7278b378f41cd69720adbdcd9b71dd0
+2012-05-30T14:40:12.526637Z
+971
+arnab13
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7359
+
+ndx2flist.pl
+file
+
+
+
+
+2013-10-31T18:31:19.884135Z
+fbccd59a860ee03465e294e712280110
+2012-04-22T05:43:12.917539Z
+854
+danielpovey
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2503
 

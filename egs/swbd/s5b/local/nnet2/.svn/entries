@@ -1,7 +1,7 @@
 10
 
 dir
-3766
+3813
 svn://svn.code.sf.net/p/kaldi/code/trunk/egs/swbd/s5b/local/nnet2
 svn://svn.code.sf.net/p/kaldi/code
 
@@ -25,40 +25,6 @@ danielpovey
 
 
 5e6a8d80-dfce-4ca6-a32a-6e07a63d50c8
-
-run_5a.sh
-file
-
-
-
-
-2013-12-13T19:55:05.643901Z
-dbc8cf3500fd8608a33ce0283beb59e1
-2013-11-07T17:18:34.572145Z
-3138
-danielpovey
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-723
 
 run_5a_gpu.sh
 file
@@ -263,4 +229,38 @@ has-props
 
 
 2459
+
+run_5a.sh
+file
+
+
+
+
+2013-12-13T19:55:05.643901Z
+dbc8cf3500fd8608a33ce0283beb59e1
+2013-11-07T17:18:34.572145Z
+3138
+danielpovey
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+723
 

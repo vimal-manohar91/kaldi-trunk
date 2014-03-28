@@ -1,7 +1,7 @@
 10
 
 dir
-3766
+3813
 svn://svn.code.sf.net/p/kaldi/code/trunk/egs/wsj/s5/steps/tandem
 svn://svn.code.sf.net/p/kaldi/code
 
@@ -25,6 +25,108 @@ jtrmal
 
 
 5e6a8d80-dfce-4ca6-a32a-6e07a63d50c8
+
+make_denlats_sgmm2.sh
+file
+
+
+
+
+2013-10-31T18:31:21.104135Z
+4263af94c2c79065e2a4b41182c9c8ec
+2013-02-20T18:24:08.748419Z
+2047
+sikoried
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7998
+
+align_sgmm2.sh
+file
+
+
+
+
+2013-10-31T18:31:21.108135Z
+7d3760196491fd5d2bc04ab276ee6a1c
+2012-11-29T00:23:45.298099Z
+1628
+sikoried
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8784
+
+train_sgmm.sh
+file
+
+
+
+
+2013-10-31T18:31:21.112135Z
+8dd09a1f5bdcc43ad74d131a0f65d92e
+2013-02-19T18:57:58.283752Z
+2033
+sikoried
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+12402
 
 train_mmi_sgmm.sh
 file
@@ -298,40 +400,6 @@ svn:special
 
 9
 
-decode_fmllr.sh
-file
-
-
-
-
-2013-10-31T18:31:21.044135Z
-e9935a806c6feb0bfd73538b45e2be2e
-2012-11-29T00:23:45.298099Z
-1628
-sikoried
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-9698
-
 train_mmi.sh
 file
 
@@ -365,6 +433,40 @@ has-props
 
 
 7637
+
+decode_fmllr.sh
+file
+
+
+
+
+2013-10-31T18:31:21.044135Z
+e9935a806c6feb0bfd73538b45e2be2e
+2012-11-29T00:23:45.298099Z
+1628
+sikoried
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9698
 
 train_ubm.sh
 file
@@ -502,14 +604,14 @@ has-props
 
 5533
 
-mk_aslf_lda_mllt.sh
+train_sat.sh
 file
 
 
 
 
-2013-10-31T18:31:21.076135Z
-f2c85e866115b4b05bab74e43a50bfde
+2013-10-31T18:31:21.068135Z
+64bc1f71e69b276412b110f22726535f
 2013-02-19T18:57:58.283752Z
 2033
 sikoried
@@ -534,7 +636,7 @@ has-props
 
 
 
-6954
+10635
 
 train_mmi_sgmm2.sh
 file
@@ -570,14 +672,14 @@ has-props
 
 7662
 
-train_sat.sh
+mk_aslf_lda_mllt.sh
 file
 
 
 
 
-2013-10-31T18:31:21.068135Z
-64bc1f71e69b276412b110f22726535f
+2013-10-31T18:31:21.076135Z
+f2c85e866115b4b05bab74e43a50bfde
 2013-02-19T18:57:58.283752Z
 2033
 sikoried
@@ -602,41 +704,7 @@ has-props
 
 
 
-10635
-
-align_si.sh
-file
-
-
-
-
-2013-10-31T18:31:21.080135Z
-4ea4aa761e77e96dd9841421df8a4f61
-2012-11-29T00:23:45.298099Z
-1628
-sikoried
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4750
+6954
 
 train_lda_mllt.sh
 file
@@ -671,6 +739,40 @@ has-props
 
 
 10070
+
+align_si.sh
+file
+
+
+
+
+2013-10-31T18:31:21.080135Z
+4ea4aa761e77e96dd9841421df8a4f61
+2012-11-29T00:23:45.298099Z
+1628
+sikoried
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4750
 
 align_fmllr.sh
 file
@@ -773,106 +875,4 @@ has-props
 
 
 10457
-
-make_denlats_sgmm2.sh
-file
-
-
-
-
-2013-10-31T18:31:21.104135Z
-4263af94c2c79065e2a4b41182c9c8ec
-2013-02-20T18:24:08.748419Z
-2047
-sikoried
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-7998
-
-align_sgmm2.sh
-file
-
-
-
-
-2013-10-31T18:31:21.108135Z
-7d3760196491fd5d2bc04ab276ee6a1c
-2012-11-29T00:23:45.298099Z
-1628
-sikoried
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-8784
-
-train_sgmm.sh
-file
-
-
-
-
-2013-10-31T18:31:21.112135Z
-8dd09a1f5bdcc43ad74d131a0f65d92e
-2013-02-19T18:57:58.283752Z
-2033
-sikoried
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-12402
 

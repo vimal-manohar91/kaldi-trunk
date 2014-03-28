@@ -1,14 +1,14 @@
 10
 
 dir
-3766
+3813
 svn://svn.code.sf.net/p/kaldi/code/trunk/egs/babel/s5b
 svn://svn.code.sf.net/p/kaldi/code
 
 
 
-2014-03-09T23:51:36.159401Z
-3755
+2014-03-24T17:31:34.500484Z
+3799
 danielpovey
 has-props
 
@@ -41,12 +41,33 @@ file
 
 
 
-
+2014-03-26T15:15:12.368583Z
 16430d66518d2f71e421e030f582e903
 2014-02-17T19:36:38.270735Z
 3521
 jtrmal
 has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+14061
 
 steps
 file
@@ -116,6 +137,40 @@ has-props
 
 8141
 
+run-2a-nnet-ensemble-gpu.sh
+file
+
+
+
+
+2014-02-20T07:11:05.184513Z
+79a893ce2122ef2880d421266c1f3b1e
+2014-02-20T06:44:10.604840Z
+3549
+xiaohuizhang
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1192
+
 utils
 file
 
@@ -150,39 +205,18 @@ svn:special
 
 18
 
-run-2a-nnet-ensemble-gpu.sh
+run-6-semisupervised-seg.sh
 file
 
 
 
 
-2014-02-20T07:11:05.184513Z
-79a893ce2122ef2880d421266c1f3b1e
-2014-02-20T06:44:10.604840Z
-3549
-xiaohuizhang
+
+eef579e7ef85135957e30df273daa8c0
+2014-03-02T16:26:59.373653Z
+3652
+vimalmanohar91
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1192
 
 RESULTS
 file
@@ -218,19 +252,6 @@ jtrmal
 
 0
 
-run-6-semisupervised-seg.sh
-file
-
-
-
-
-
-eef579e7ef85135957e30df273daa8c0
-2014-03-02T16:26:59.373653Z
-3652
-vimalmanohar91
-has-props
-
 path.sh
 file
 
@@ -264,6 +285,40 @@ has-props
 
 
 472
+
+run-2-segmentation.sh
+file
+
+
+
+
+2014-02-18T03:40:34.409509Z
+2688d5cdbc7ecfe1c941bf410c7974a0
+2014-02-18T03:40:48.642481Z
+3535
+vimalmanohar91
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4293
 
 run-4-test-seg.sh
 file
@@ -312,40 +367,6 @@ has-props
 
 
 18431
-
-run-2-segmentation.sh
-file
-
-
-
-
-2014-02-18T03:40:34.409509Z
-2688d5cdbc7ecfe1c941bf410c7974a0
-2014-02-18T03:40:48.642481Z
-3535
-vimalmanohar91
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4293
 
 run-8a-kaldi-bnf.sh
 file
@@ -565,6 +586,9 @@ has-props
 
 7404
 
+local
+dir
+
 run-6-combine.sh
 file
 
@@ -598,9 +622,6 @@ has-props
 
 
 2262
-
-local
-dir
 
 run-4-test.sh
 file
@@ -717,53 +738,6 @@ has-props
 
 3242
 
-run-1-main-extend-lex.sh
-file
-
-
-
-
-2014-03-05T23:08:39.292703Z
-7c92edbe2edaa8e75d4186bd26767c30
-2014-03-02T22:36:48.267513Z
-3653
-jtrmal
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-15376
-
-run-5-anydecode.sh
-file
-
-
-
-
-
-773a33d5565a6bfcb3d2609320824af4
-2014-03-02T22:36:48.267513Z
-3653
-jtrmal
-has-props
-
 run-2a-nnet-gpu.sh
 file
 
@@ -797,6 +771,53 @@ has-props
 
 
 953
+
+run-5-anydecode.sh
+file
+
+
+
+
+
+773a33d5565a6bfcb3d2609320824af4
+2014-03-02T22:36:48.267513Z
+3653
+jtrmal
+has-props
+
+run-1-main-extend-lex.sh
+file
+
+
+
+
+2014-03-05T23:08:39.292703Z
+7c92edbe2edaa8e75d4186bd26767c30
+2014-03-02T22:36:48.267513Z
+3653
+jtrmal
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+15376
 
 run-1-main-seg.sh
 file

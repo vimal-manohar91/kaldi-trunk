@@ -1,7 +1,7 @@
 10
 
 dir
-3766
+3813
 svn://svn.code.sf.net/p/kaldi/code/trunk/egs/babel/s5b/local/datasets
 svn://svn.code.sf.net/p/kaldi/code
 
@@ -25,74 +25,6 @@ jtrmal
 
 
 5e6a8d80-dfce-4ca6-a32a-6e07a63d50c8
-
-vocab_kws.sh
-file
-
-
-
-
-2014-02-17T21:29:08.354110Z
-859d4d3abbb2b1150d0e999ab2594ae6
-2014-02-17T19:36:38.270735Z
-3521
-jtrmal
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1872
-
-supervised_uem.sh
-file
-
-
-
-
-2014-02-17T21:29:08.370110Z
-be118e14c297c7a29cfe723fc522cae2
-2014-02-17T19:36:38.270735Z
-3521
-jtrmal
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1457
 
 unsupervised_uem.sh
 file
@@ -297,4 +229,72 @@ svn:special
 
 
 17
+
+vocab_kws.sh
+file
+
+
+
+
+2014-02-17T21:29:08.354110Z
+859d4d3abbb2b1150d0e999ab2594ae6
+2014-02-17T19:36:38.270735Z
+3521
+jtrmal
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1872
+
+supervised_uem.sh
+file
+
+
+
+
+2014-02-17T21:29:08.370110Z
+be118e14c297c7a29cfe723fc522cae2
+2014-02-17T19:36:38.270735Z
+3521
+jtrmal
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1457
 

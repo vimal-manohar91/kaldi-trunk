@@ -590,39 +590,6 @@ void Nnet::LimitRankOfLastLayerPiecewise(BaseFloat f, std::vector<int32> &pdf2gr
   }
 
   for (int32 i = components_.size() - 1; i >= 0; i--) {
-    AffineComponent *a = NULL, *b = NULL,
-                    *c = dynamic_cast<AffineComponent*>(components_[i]);
-    std::vector< std::vector<int32> > group2pdf;
-    for (int32 pdf_id = 0; pdf_id < pdf2group.size(); pdf_id++) {
-      int32 group_id = pdf2group[pdf_id];
-      if (group_id >= group2pdf.size()) {
-        group2pdf.resize(group_id+1, std::vector<int32>(0));
-      }
-      group2pdf[group_id].push_back(pdf_id);
-    }
-    if (c != NULL) {
-      if (c->OutputDim() != pdf2group.size()) {
-        KALDI_ERR << "Mismatch in dimensions.\n" <<
-          "Need number of pdfs " << pdf2group.size() << " to match output dimension " << c->OutputDim();
-      }
-      c->LimitRankPiecewise(f, group2pdf, &a, &b);
-      delete c;
-      components_[i] = a;
-      components_.insert(components_.begin() + i + 1, b);
-      this->SetIndexes();
-      this->Check();
-      return;
-    }
-  }
-  KALDI_ERR << "No affine component found in neural net.";
-}
-
-void Nnet::LimitRankOfLastLayerPiecewiseInplace(BaseFloat f, std::vector<int32> &pdf2group) {
-  if (f <= 0.0 || f > 1.0) {
-    KALDI_ERR << "The fraction of singular values to be retained = " << f << "  must be in (0, 1.0]";
-  }
-
-  for (int32 i = components_.size() - 1; i >= 0; i--) {
     AffineComponent *c = dynamic_cast<AffineComponent*>(components_[i]);
     std::vector< std::vector<int32> > group2pdf;
     for (int32 pdf_id = 0; pdf_id < pdf2group.size(); pdf_id++) {
@@ -632,12 +599,14 @@ void Nnet::LimitRankOfLastLayerPiecewiseInplace(BaseFloat f, std::vector<int32> 
       }
       group2pdf[group_id].push_back(pdf_id);
     }
+    for (int32 k = 0; k < group2pdf.size(); k++)
+      KALDI_ASSERT(group2pdf[k].size() > 0);
     if (c != NULL) {
       if (c->OutputDim() != pdf2group.size()) {
         KALDI_ERR << "Mismatch in dimensions.\n" <<
           "Need number of pdfs " << pdf2group.size() << " to match output dimension " << c->OutputDim();
       }
-      c->LimitRankPiecewiseInplace(f, group2pdf);
+      c->LimitRankPiecewise(f, group2pdf);
       this->Check();
       return;
     }

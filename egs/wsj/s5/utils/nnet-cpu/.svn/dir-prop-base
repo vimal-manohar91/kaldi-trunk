@@ -4,7 +4,7 @@ V 420
 /sandbox/dan/egs/wsj/s5/utils/nnet-cpu:1504
 /sandbox/dan2/egs/wsj/s5/utils/nnet-cpu:2775-2829,2832-3292
 /sandbox/pitch/egs/wsj/s5/utils/nnet-cpu:3126-3251
-/sandbox/sail/egs/wsj/s5/utils/nnet-cpu:3642-3712,3716-3754
+/sandbox/sail/egs/wsj/s5/utils/nnet-cpu:3642-3712,3716-3797
 /sandbox/sharedlibs/egs/wsj/s5/utils/nnet-cpu:2585-2662
 /sandbox/tanel/egs/wsj/s5/utils/nnet-cpu:2623-2658
 /sandbox/thang-project/egs/wsj/s5/utils/nnet-cpu:233-258

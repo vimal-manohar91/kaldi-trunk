@@ -1,14 +1,14 @@
 10
 
 dir
-3766
+3813
 svn://svn.code.sf.net/p/kaldi/code/trunk/egs/rm/s5/local
 svn://svn.code.sf.net/p/kaldi/code
 
 
 
-2014-03-15T18:23:14.277525Z
-3765
+2014-03-22T20:56:19.394065Z
+3796
 danielpovey
 
 
@@ -26,16 +26,50 @@ danielpovey
 
 5e6a8d80-dfce-4ca6-a32a-6e07a63d50c8
 
-run_sgmm2.sh
+run_dnn.sh
 file
 
 
 
 
-2014-02-25T17:01:26.859919Z
-70eb63830535f15589357e8c26814882
-2014-02-21T19:52:26.010221Z
-3567
+2014-02-28T18:16:05.196815Z
+4317993f3462c470e2031ed9d2075069
+2014-02-28T17:56:03.836739Z
+3629
+vesis84
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3826
+
+make_rm_lm.pl
+file
+
+
+
+
+2013-10-31T18:31:41.144135Z
+d4ce46ac80ec2d0bdeda2a4b047411f0
+2012-05-09T18:29:34.452314Z
+903
 danielpovey
 has-props
 
@@ -58,7 +92,7 @@ has-props
 
 
 
-2827
+2672
 
 run_raw_fmllr.sh
 file
@@ -94,6 +128,40 @@ has-props
 
 3377
 
+run_sgmm2.sh
+file
+
+
+
+
+2014-02-25T17:01:26.859919Z
+70eb63830535f15589357e8c26814882
+2014-02-21T19:52:26.010221Z
+3567
+danielpovey
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2827
+
 run_nnet2.sh
 file
 
@@ -128,40 +196,6 @@ has-props
 
 1182
 
-score.sh
-file
-
-
-
-
-2013-10-31T18:31:41.104135Z
-7dcae1034e5a2ab804cd60d21fbf2d42
-2013-05-14T18:00:02.589793Z
-2443
-danielpovey
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1471
-
 run_sgmm_multiling.sh
 file
 
@@ -195,6 +229,40 @@ has-props
 
 
 5561
+
+score.sh
+file
+
+
+
+
+2013-10-31T18:31:41.104135Z
+7dcae1034e5a2ab804cd60d21fbf2d42
+2013-05-14T18:00:02.589793Z
+2443
+danielpovey
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1471
 
 nnet2
 dir
@@ -301,40 +369,6 @@ has-props
 
 2145
 
-rm_prepare_grammar_ug.sh
-file
-
-
-
-
-2013-10-31T18:31:41.120135Z
-0d0b483c07b7f5cdf50632f1312e3002
-2013-08-21T12:02:37.216398Z
-2830
-danielpovey
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1747
-
 rm_data_prep.sh
 file
 
@@ -368,6 +402,40 @@ has-props
 
 
 4231
+
+rm_prepare_grammar_ug.sh
+file
+
+
+
+
+2013-10-31T18:31:41.120135Z
+0d0b483c07b7f5cdf50632f1312e3002
+2013-08-21T12:02:37.216398Z
+2830
+danielpovey
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1747
 
 run_sgmm2x.sh
 file
@@ -436,72 +504,4 @@ has-props
 
 
 1321
-
-run_dnn.sh
-file
-
-
-
-
-2014-02-28T18:16:05.196815Z
-4317993f3462c470e2031ed9d2075069
-2014-02-28T17:56:03.836739Z
-3629
-vesis84
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3826
-
-make_rm_lm.pl
-file
-
-
-
-
-2013-10-31T18:31:41.144135Z
-d4ce46ac80ec2d0bdeda2a4b047411f0
-2012-05-09T18:29:34.452314Z
-903
-danielpovey
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2672
 

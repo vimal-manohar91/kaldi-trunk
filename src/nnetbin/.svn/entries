@@ -1,7 +1,7 @@
 10
 
 dir
-3766
+3813
 svn://svn.code.sf.net/p/kaldi/code/trunk/src/nnetbin
 svn://svn.code.sf.net/p/kaldi/code
 
@@ -25,74 +25,6 @@ has-props
 
 
 5e6a8d80-dfce-4ca6-a32a-6e07a63d50c8
-
-cmvn-to-nnet.cc
-file
-
-
-
-
-2014-02-05T16:57:25.410483Z
-7074ba375eb7a07ccffdf2d0dd03f6a0
-2014-01-30T16:49:56.307660Z
-3449
-vesis84
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4375
-
-nnet-kl-hmm-mat-to-component.cc
-file
-
-
-
-
-2013-12-13T19:54:27.735902Z
-ad55d7917ecfd110a21221b94105c481
-2013-12-01T18:58:22.174411Z
-3241
-dimseng
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2393
 
 Makefile
 file
@@ -128,40 +60,6 @@ vesis84
 
 746
 
-nnet-info.cc
-file
-
-
-
-
-2013-10-31T18:30:51.704136Z
-9b4a53f652952656111239b4fa806251
-2013-10-18T13:34:07.084963Z
-3102
-vesis84
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1802
-
 nnet-train-frmshuff.cc
 file
 
@@ -196,17 +94,17 @@ vesis84
 
 10893
 
-nnet-kl-hmm-sum-accs.cc
+nnet-info.cc
 file
 
 
 
 
-2013-12-13T19:54:27.659902Z
-91fa2c297e08fe4a9ec08aee405f79a8
-2013-12-01T18:58:22.174411Z
-3241
-dimseng
+2013-10-31T18:30:51.704136Z
+9b4a53f652952656111239b4fa806251
+2013-10-18T13:34:07.084963Z
+3102
+vesis84
 
 
 
@@ -228,7 +126,7 @@ dimseng
 
 
 
-2438
+1802
 
 nnet-train-perutt.cc
 file
@@ -264,6 +162,40 @@ vesis84
 
 9798
 
+nnet-kl-hmm-sum-accs.cc
+file
+
+
+
+
+2013-12-13T19:54:27.659902Z
+91fa2c297e08fe4a9ec08aee405f79a8
+2013-12-01T18:58:22.174411Z
+3241
+dimseng
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2438
+
 nnet-initialize.cc
 file
 
@@ -298,40 +230,6 @@ vesis84
 
 2152
 
-nnet-train-mpe-sequential.cc
-file
-
-
-
-
-2014-01-08T02:40:01.989050Z
-894ded39fae1415aa5529f2a2d811408
-2013-12-30T22:18:58.290934Z
-3379
-vesis84
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-13819
-
 nnet-forward.cc
 file
 
@@ -365,6 +263,40 @@ vesis84
 
 
 6652
+
+nnet-train-mpe-sequential.cc
+file
+
+
+
+
+2014-01-08T02:40:01.989050Z
+894ded39fae1415aa5529f2a2d811408
+2013-12-30T22:18:58.290934Z
+3379
+vesis84
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+13819
 
 nnet-train-mmi-sequential.cc
 file
@@ -603,4 +535,72 @@ vesis84
 
 
 2202
+
+cmvn-to-nnet.cc
+file
+
+
+
+
+2014-02-05T16:57:25.410483Z
+7074ba375eb7a07ccffdf2d0dd03f6a0
+2014-01-30T16:49:56.307660Z
+3449
+vesis84
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4375
+
+nnet-kl-hmm-mat-to-component.cc
+file
+
+
+
+
+2013-12-13T19:54:27.735902Z
+ad55d7917ecfd110a21221b94105c481
+2013-12-01T18:58:22.174411Z
+3241
+dimseng
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2393
 

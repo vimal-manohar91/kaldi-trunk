@@ -1,7 +1,7 @@
 10
 
 dir
-3766
+3813
 svn://svn.code.sf.net/p/kaldi/code/trunk/egs/gp
 svn://svn.code.sf.net/p/kaldi/code
 
@@ -25,6 +25,12 @@ danielpovey
 
 
 5e6a8d80-dfce-4ca6-a32a-6e07a63d50c8
+
+s1
+dir
+
+s5
+dir
 
 README.txt
 file
@@ -59,10 +65,4 @@ danielpovey
 
 
 508
-
-s1
-dir
-
-s5
-dir
 

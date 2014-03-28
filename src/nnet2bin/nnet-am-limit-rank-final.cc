@@ -43,7 +43,7 @@ int main(int argc, char *argv[]) {
         "\n"
         "Usage:  nnet-am-limit-rank-final [options] <nnet-in> <nnet-out>\n"
         "e.g.:\n"
-        " nnet-am-limit-rank-final --dim=200 1.mdl 1_limited.mdl\n";
+        " nnet-am-limit-rank-final --dim=200 1.mdl 1_limited.mdl\n"
         " nnet-am-limit-rank-final --pdf-map=pdf2group.map --sv-proportion=0.5 1.mdl 1_limited.mdl\n";
     
 

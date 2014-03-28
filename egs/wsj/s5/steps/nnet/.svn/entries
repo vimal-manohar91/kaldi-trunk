@@ -1,7 +1,7 @@
 10
 
 dir
-3766
+3813
 svn://svn.code.sf.net/p/kaldi/code/trunk/egs/wsj/s5/steps/nnet
 svn://svn.code.sf.net/p/kaldi/code
 
@@ -25,6 +25,40 @@ vesis84
 
 
 5e6a8d80-dfce-4ca6-a32a-6e07a63d50c8
+
+decode.sh
+file
+
+
+
+
+2014-03-05T23:07:54.596704Z
+9a9453d2c491e03e2be29821892bed16
+2014-03-03T17:03:59.847898Z
+3665
+vesis84
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5107
 
 make_denlats.sh
 file
@@ -365,38 +399,4 @@ has-props
 
 
 6194
-
-decode.sh
-file
-
-
-
-
-2014-03-05T23:07:54.596704Z
-9a9453d2c491e03e2be29821892bed16
-2014-03-03T17:03:59.847898Z
-3665
-vesis84
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5107
 

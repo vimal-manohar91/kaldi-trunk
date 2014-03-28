@@ -166,85 +166,6 @@ if [ ! -f data/train_sub3/.done ]; then
   touch data/train_sub3/.done
 fi
 
-if [ ! -f data/train_whole/feats.scp ]; then
-
-  train_data_dir=`readlink -f ./data/raw_train_data`
-  if [[ ! -f data/train_whole/wav.scp || data/train_whole/wav.scp -ot "$train_data_dir" ]]; then
-    echo ---------------------------------------------------------------------
-    echo "Preparing acoustic training lists in data/train on" `date`
-    echo ---------------------------------------------------------------------
-    mkdir -p data/train_whole
-    local/prepare_acoustic_training_data.pl --get-whole-transcripts "true" \
-      --vocab data/local/lexicon.txt --fragmentMarkers \-\*\~ \
-      $train_data_dir data/train_whole > data/train_whole/skipped_utts.log
-    mv data/train_whole/text data/train_whole/text_orig
-    if $keep_silence_segments; then
-      # Keep all segments including silence segments
-      cat data/train_whole/text_orig | awk '{if (NF == 2 && $2 == "<silence>") {print $1} else {print $0}}' > data/train_whole/text
-    else
-      # Keep only a fraction of silence segments
-      num_silence_segments=$(cat data/train_whole/text_orig | awk '{if (NF == 2 && $2 == "<silence>") {print $0}}' | wc -l)
-      num_keep_silence_segments=`echo $num_silence_segments | python -c "import sys; sys.stdout.write(\"%d\" % (float(sys.stdin.readline().strip()) * "$silence_segment_fraction"))"` 
-      cat data/train_whole/text_orig \
-        | awk 'BEGIN{i=0} \
-        { \
-          if (NF == 2 && $2 == "<silence>") { \
-            if (i<'$num_keep_silence_segments') { \
-              print $1; \
-              i++; \
-            } \
-          } else {print $0}\
-        }' > data/train_whole/text
-    fi
-    rm data/train_whole/text_orig
-    utils/fix_data_dir.sh data/train_whole
-  fi
-
-  if [[ ! -f data/train_whole/glm || data/train_whole/glm -ot "$glmFile" ]]; then
-    echo ---------------------------------------------------------------------
-    echo "Preparing train stm files in data/train_whole on" `date`
-    echo ---------------------------------------------------------------------
-    local/prepare_stm.pl --fragmentMarkers \-\*\~ data/train_whole || exit 1
-  fi
-
-  echo ---------------------------------------------------------------------
-  echo "Starting plp feature extraction for data/train_whole in plp_whole on" `date`
-  echo ---------------------------------------------------------------------
-
-  if [ ! -f data/train_whole/.plp.done ]; then
-    if $use_pitch; then
-      steps/make_plp_pitch.sh --cmd "$train_cmd" --nj $train_nj data/train_whole exp/make_plp_pitch/train_whole plp_whole
-    else
-      steps/make_plp.sh --cmd "$train_cmd" --nj $train_nj data/train_whole exp/make_plp/train_whole plp_whole
-
-    fi
-    utils/fix_data_dir.sh data/train_whole
-    steps/compute_cmvn_stats.sh data/train_whole exp/make_plp/train_whole plp_whole
-    utils/fix_data_dir.sh data/train_whole
-    touch data/train_whole/.plp.done
-  fi
-
-  if [ ! -f data/train_whole_sub3/.done ]; then
-    echo ---------------------------------------------------------------------
-    echo "Subsetting monophone training data in data/train_whole_sub[123] on" `date`
-    echo ---------------------------------------------------------------------
-    numutt=`cat data/train_whole/feats.scp | wc -l`;
-    utils/subset_data_dir.sh data/train_whole  5000 data/train_whole_sub1
-    if [ $numutt -gt 10000 ] ; then
-      utils/subset_data_dir.sh data/train_whole 10000 data/train_whole_sub2
-    else
-      (cd data; ln -s train_whole train_whole_sub2 )
-    fi
-    if [ $numutt -gt 20000 ] ; then
-      utils/subset_data_dir.sh data/train_whole 20000 data/train_whole_sub3
-    else
-      (cd data; ln -s train_whole train_whole_sub3 )
-    fi
-
-    touch data/train_whole_sub3/.done
-  fi
-fi
-
 if [ ! -f exp/mono/.done ]; then
   echo ---------------------------------------------------------------------
   echo "Starting (small) monophone training in exp/mono on" `date`
@@ -322,7 +243,6 @@ if [ ! -f exp/tri5/.done ]; then
   touch exp/tri5/.done
 fi
 
-local/run_segmentation_train.sh --boost-sil $boost_sil --train-nj $train_nj --nj $train_nj exp/tri4 data/train_whole data/lang exp/tri4b_seg || exit 1
 
 ################################################################################
 # Ready to start SGMM training

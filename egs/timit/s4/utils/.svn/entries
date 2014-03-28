@@ -1,7 +1,7 @@
 10
 
 dir
-3766
+3813
 svn://svn.code.sf.net/p/kaldi/code/trunk/egs/timit/s4/utils
 svn://svn.code.sf.net/p/kaldi/code
 
@@ -25,6 +25,142 @@ arnab13
 
 
 5e6a8d80-dfce-4ca6-a32a-6e07a63d50c8
+
+score_text.sh
+file
+
+
+
+
+2013-10-31T18:31:30.648135Z
+672400a6214c7ca64a72f15c2e1b8326
+2012-02-20T18:19:40.110606Z
+767
+arnab13
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1358
+
+submit_jobs.sh
+file
+
+
+
+
+2013-10-31T18:31:30.656135Z
+38a8ba57074a911b47b7e5bd8002fb77
+2012-02-20T18:19:40.110606Z
+767
+arnab13
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4148
+
+decode.sh
+file
+
+
+
+
+2013-10-31T18:31:30.660135Z
+9ce5303fe083146335b100ee288b4868
+2012-02-20T18:19:40.110606Z
+767
+arnab13
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4877
+
+split_data.sh
+file
+
+
+
+
+2013-10-31T18:31:30.664135Z
+d0b2bed1078bc21987afe33ddb90aa27
+2012-02-20T18:19:40.110606Z
+767
+arnab13
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2587
 
 add_disambig.pl
 file
@@ -298,40 +434,6 @@ has-props
 
 1855
 
-sym2int.pl
-file
-
-
-
-
-2013-10-31T18:31:30.628135Z
-b8097eda1db8650f43ede05ec8bc86b9
-2012-02-20T18:19:40.110606Z
-767
-arnab13
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2636
-
 int2sym.pl
 file
 
@@ -365,6 +467,40 @@ has-props
 
 
 2666
+
+sym2int.pl
+file
+
+
+
+
+2013-10-31T18:31:30.628135Z
+b8097eda1db8650f43ede05ec8bc86b9
+2012-02-20T18:19:40.110606Z
+767
+arnab13
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2636
 
 eps2disambig.pl
 file
@@ -400,40 +536,6 @@ has-props
 
 821
 
-make_lexicon_fst.pl
-file
-
-
-
-
-2013-10-31T18:31:30.644135Z
-9b118c6f54f91d1241267bef739861d8
-2012-02-20T18:19:40.110606Z
-767
-arnab13
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4117
-
 utt2spk_to_spk2utt.pl
 file
 
@@ -468,14 +570,14 @@ has-props
 
 1234
 
-score_text.sh
+make_lexicon_fst.pl
 file
 
 
 
 
-2013-10-31T18:31:30.648135Z
-672400a6214c7ca64a72f15c2e1b8326
+2013-10-31T18:31:30.644135Z
+9b118c6f54f91d1241267bef739861d8
 2012-02-20T18:19:40.110606Z
 767
 arnab13
@@ -500,107 +602,5 @@ has-props
 
 
 
-1358
-
-submit_jobs.sh
-file
-
-
-
-
-2013-10-31T18:31:30.656135Z
-38a8ba57074a911b47b7e5bd8002fb77
-2012-02-20T18:19:40.110606Z
-767
-arnab13
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4148
-
-decode.sh
-file
-
-
-
-
-2013-10-31T18:31:30.660135Z
-9ce5303fe083146335b100ee288b4868
-2012-02-20T18:19:40.110606Z
-767
-arnab13
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4877
-
-split_data.sh
-file
-
-
-
-
-2013-10-31T18:31:30.664135Z
-d0b2bed1078bc21987afe33ddb90aa27
-2012-02-20T18:19:40.110606Z
-767
-arnab13
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2587
+4117
 

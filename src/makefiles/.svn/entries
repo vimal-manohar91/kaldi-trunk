@@ -1,7 +1,7 @@
 10
 
 dir
-3766
+3813
 svn://svn.code.sf.net/p/kaldi/code/trunk/src/makefiles
 svn://svn.code.sf.net/p/kaldi/code
 
@@ -25,6 +25,74 @@ danielpovey
 
 
 5e6a8d80-dfce-4ca6-a32a-6e07a63d50c8
+
+linux_openblas.mk
+file
+
+
+
+
+2014-01-08T02:40:12.117049Z
+1b18bf0c58893af2ca35a8857eb352e2
+2013-12-29T08:24:25.233808Z
+3372
+nshmyrev
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+637
+
+linux_atlas.mk
+file
+
+
+
+
+2013-12-13T19:54:59.935901Z
+828ecf47afa18a6a36f9a54c4b6129d6
+2013-11-20T00:18:15.622283Z
+3170
+danielpovey
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+773
 
 common.mk
 file
@@ -60,40 +128,6 @@ danielpovey
 
 370
 
-linux_cuda.mk
-file
-
-
-
-
-2013-10-31T18:31:02.536136Z
-0ae8309118cb5241a34736a2b0dff2c4
-2013-04-17T20:55:24.626240Z
-2368
-vesis84
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-312
-
 linux_atlas_64bit.mk
 file
 
@@ -127,6 +161,40 @@ danielpovey
 
 
 1592
+
+linux_cuda.mk
+file
+
+
+
+
+2013-10-31T18:31:02.536136Z
+0ae8309118cb5241a34736a2b0dff2c4
+2013-04-17T20:55:24.626240Z
+2368
+vesis84
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+312
 
 default_rules.mk
 file
@@ -230,40 +298,6 @@ jtrmal
 
 567
 
-linux_x86_64_cuda.mk
-file
-
-
-
-
-2013-12-13T19:54:59.607901Z
-d8ccb7e5eaf2675b140af7a3be2dfabb
-2013-12-11T18:39:46.616498Z
-3298
-danielpovey
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-326
-
 darwin_10_6.mk
 file
 
@@ -297,6 +331,40 @@ jtrmal
 
 
 591
+
+linux_x86_64_cuda.mk
+file
+
+
+
+
+2013-12-13T19:54:59.607901Z
+d8ccb7e5eaf2675b140af7a3be2dfabb
+2013-12-11T18:39:46.616498Z
+3298
+danielpovey
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+326
 
 darwin_10_7.mk
 file
@@ -467,72 +535,4 @@ danielpovey
 
 
 2263
-
-linux_openblas.mk
-file
-
-
-
-
-2014-01-08T02:40:12.117049Z
-1b18bf0c58893af2ca35a8857eb352e2
-2013-12-29T08:24:25.233808Z
-3372
-nshmyrev
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-637
-
-linux_atlas.mk
-file
-
-
-
-
-2013-12-13T19:54:59.935901Z
-828ecf47afa18a6a36f9a54c4b6129d6
-2013-11-20T00:18:15.622283Z
-3170
-danielpovey
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-773
 

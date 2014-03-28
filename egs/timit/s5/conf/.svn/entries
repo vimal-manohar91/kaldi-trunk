@@ -1,7 +1,7 @@
 10
 
 dir
-3766
+3813
 svn://svn.code.sf.net/p/kaldi/code/trunk/egs/timit/s5/conf
 svn://svn.code.sf.net/p/kaldi/code
 
@@ -25,6 +25,40 @@ bbabaali
 
 
 5e6a8d80-dfce-4ca6-a32a-6e07a63d50c8
+
+mfcc.conf
+file
+
+
+
+
+2013-10-31T18:31:31.292135Z
+f8646cb49898d7815b39d7b5b9340a06
+2013-04-02T00:35:25.631910Z
+2295
+bbabaali
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+48
 
 phones.60-48-39.map
 file
@@ -161,38 +195,4 @@ bbabaali
 
 
 144
-
-mfcc.conf
-file
-
-
-
-
-2013-10-31T18:31:31.292135Z
-f8646cb49898d7815b39d7b5b9340a06
-2013-04-02T00:35:25.631910Z
-2295
-bbabaali
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-48
 

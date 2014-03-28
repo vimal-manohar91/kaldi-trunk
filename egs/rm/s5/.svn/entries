@@ -1,15 +1,15 @@
 10
 
 dir
-3766
+3813
 svn://svn.code.sf.net/p/kaldi/code/trunk/egs/rm/s5
 svn://svn.code.sf.net/p/kaldi/code
 
 
 
-2014-03-15T18:23:14.277525Z
-3765
-danielpovey
+2014-03-28T03:27:20.833276Z
+3810
+hainan-xv
 
 
 
@@ -25,114 +25,6 @@ danielpovey
 
 
 5e6a8d80-dfce-4ca6-a32a-6e07a63d50c8
-
-utils
-file
-
-
-
-
-2013-10-31T18:31:41.248135Z
-fed9cd2d80bd156049b62fa712511e44
-2012-05-09T18:29:34.452314Z
-903
-danielpovey
-has-props
-
-
-svn:special
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-18
-
-RESULTS
-file
-
-
-
-
-2014-03-05T23:08:40.356703Z
-5a76ab09444855212917182755358c6f
-2014-03-03T14:51:57.855801Z
-3664
-vesis84
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-8998
-
-conf
-dir
-
-path.sh
-file
-
-
-
-
-2013-12-13T20:01:46.739890Z
-28598101a09417b7e57d150bf3d601f3
-2013-12-11T18:39:46.616498Z
-3298
-danielpovey
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-377
-
-local
-dir
 
 cmd.sh
 file
@@ -174,11 +66,11 @@ file
 
 
 
-2014-03-13T17:59:39.782579Z
-6ebbf7ffc9e11c8764cc57d4c27b39d7
-2014-03-13T02:17:42.319841Z
-3761
-danielpovey
+2014-03-28T18:51:32.503577Z
+4d64460014d78b89e9b1e1d611cc214c
+2014-03-28T03:27:20.833276Z
+3810
+hainan-xv
 has-props
 
 
@@ -235,4 +127,112 @@ svn:special
 
 
 18
+
+utils
+file
+
+
+
+
+2013-10-31T18:31:41.248135Z
+fed9cd2d80bd156049b62fa712511e44
+2012-05-09T18:29:34.452314Z
+903
+danielpovey
+has-props
+
+
+svn:special
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+18
+
+RESULTS
+file
+
+
+
+
+2014-03-24T19:38:18.640813Z
+431490afb8f7e30cc7583cc0c6efe52f
+2014-03-20T05:09:02.030784Z
+3785
+hainan-xv
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8999
+
+conf
+dir
+
+path.sh
+file
+
+
+
+
+2013-12-13T20:01:46.739890Z
+28598101a09417b7e57d150bf3d601f3
+2013-12-11T18:39:46.616498Z
+3298
+danielpovey
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+377
+
+local
+dir
 

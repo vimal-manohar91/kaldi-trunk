@@ -110,11 +110,13 @@ fi
 
 if [ $stage -le 1 ]; then
   $cmd JOB=1:$nj $dir/log/decode.JOB.log \
-    nnet-logprob "${spk_vecs_opt[@]}" \
+    nnet-logprob --divide-by-priors=false "${spk_vecs_opt[@]}" \
      "$model" "$feats" ark:- \| \
-     decode-faster --acoustic-scale=$acwt --beam=$beam --allow-partial=true \
-     --max-active=1000 $graphdir/HCLG.fst ark:- \
-     ark:/dev/null "ark:|gzip -c > $dir/ali.JOB.gz" || exit 1;
+     logprob-to-post ark:- ark:- \| \
+     post-decode ark:- "ark:| gzip -c > $dir/ali.JOB.gz" ark:/dev/null || exit 1
+   #decode-faster --acoustic-scale=$acwt --beam=$beam --allow-partial=true \
+   #--max-active=1000 $graphdir/HCLG.fst ark:- \
+   #ark:/dev/null "ark:|gzip -c > $dir/ali.JOB.gz" || exit 1;
 fi
 
 # The output of this script is the files "lat.*.gz"-- we'll rescore this at 

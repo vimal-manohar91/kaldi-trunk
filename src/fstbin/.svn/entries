@@ -1,14 +1,14 @@
 10
 
 dir
-3766
+3813
 svn://svn.code.sf.net/p/kaldi/code/trunk/src/fstbin
 svn://svn.code.sf.net/p/kaldi/code
 
 
 
-2014-03-09T23:51:36.159401Z
-3755
+2014-03-24T17:31:34.500484Z
+3799
 danielpovey
 has-props
 
@@ -25,108 +25,6 @@ has-props
 
 
 5e6a8d80-dfce-4ca6-a32a-6e07a63d50c8
-
-fstrmepslocal.cc
-file
-
-
-
-
-2013-10-31T18:31:00.976136Z
-8639c441134407db48b247d53acdbc27
-2013-09-24T22:38:48.828279Z
-2988
-danielpovey
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3084
-
-fstminimizeencoded.cc
-file
-
-
-
-
-2013-10-31T18:31:00.980136Z
-b8cf8b900e2c786495364ab179043c86
-2013-09-24T22:38:48.828279Z
-2988
-danielpovey
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2109
-
-fstphicompose.cc
-file
-
-
-
-
-2013-10-31T18:31:00.984136Z
-bbf2540b32cd861ea92e869d60f9eb0b
-2013-09-24T22:38:48.828279Z
-2988
-danielpovey
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5590
 
 fstdeterminizestar.cc
 file
@@ -162,40 +60,6 @@ danielpovey
 
 4863
 
-fstcomposecontext.cc
-file
-
-
-
-
-2014-01-08T02:40:10.945050Z
-e12e95289c8a59a7b2e13bd1c8b8b507
-2013-12-28T00:39:35.720312Z
-3363
-danielpovey
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5958
-
 fstcopy.cc
 file
 
@@ -229,6 +93,40 @@ danielpovey
 
 
 1864
+
+fstcomposecontext.cc
+file
+
+
+
+
+2014-01-08T02:40:10.945050Z
+e12e95289c8a59a7b2e13bd1c8b8b507
+2013-12-28T00:39:35.720312Z
+3363
+danielpovey
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5958
 
 Makefile
 file
@@ -298,40 +196,6 @@ danielpovey
 
 7029
 
-fstrhocompose.cc
-file
-
-
-
-
-2013-10-31T18:31:00.944136Z
-5ab52368c556722fa1467c01c0e3e61a
-2013-09-24T22:38:48.828279Z
-2988
-danielpovey
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4855
-
 fstfactor.cc
 file
 
@@ -365,6 +229,40 @@ danielpovey
 
 
 3085
+
+fstrhocompose.cc
+file
+
+
+
+
+2013-10-31T18:31:00.944136Z
+5ab52368c556722fa1467c01c0e3e61a
+2013-09-24T22:38:48.828279Z
+2988
+danielpovey
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4855
 
 fstaddselfloops.cc
 file
@@ -408,8 +306,8 @@ file
 
 
 dc172d31e411a225f9bffaac36611227
-2014-03-09T23:51:36.159401Z
-3755
+2014-03-24T17:31:34.500484Z
+3799
 danielpovey
 has-props
 
@@ -739,4 +637,106 @@ danielpovey
 
 
 3073
+
+fstrmepslocal.cc
+file
+
+
+
+
+2013-10-31T18:31:00.976136Z
+8639c441134407db48b247d53acdbc27
+2013-09-24T22:38:48.828279Z
+2988
+danielpovey
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3084
+
+fstminimizeencoded.cc
+file
+
+
+
+
+2013-10-31T18:31:00.980136Z
+b8cf8b900e2c786495364ab179043c86
+2013-09-24T22:38:48.828279Z
+2988
+danielpovey
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2109
+
+fstphicompose.cc
+file
+
+
+
+
+2013-10-31T18:31:00.984136Z
+bbf2540b32cd861ea92e869d60f9eb0b
+2013-09-24T22:38:48.828279Z
+2988
+danielpovey
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5590
 

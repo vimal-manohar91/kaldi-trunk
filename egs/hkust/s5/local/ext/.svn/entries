@@ -1,7 +1,7 @@
 10
 
 dir
-3766
+3813
 svn://svn.code.sf.net/p/kaldi/code/trunk/egs/hkust/s5/local/ext
 svn://svn.code.sf.net/p/kaldi/code
 
@@ -25,74 +25,6 @@ rickychanhoyin
 
 
 5e6a8d80-dfce-4ca6-a32a-6e07a63d50c8
-
-hkust_word2ch_tran.pl
-file
-
-
-
-
-2013-10-31T18:31:34.100135Z
-e9576d3814bd38e2d82fc60544c8f6c5
-2013-08-16T18:07:57.601269Z
-2804
-rickychanhoyin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3997
-
-score.sh
-file
-
-
-
-
-2013-10-31T18:31:34.104135Z
-a42bc07de8ac0c37ad86336e936cb7a7
-2013-08-01T15:23:42.369270Z
-2747
-rickychanhoyin
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1293
 
 score_basic_ext.sh
 file
@@ -161,4 +93,72 @@ rickychanhoyin
 
 
 3640750
+
+hkust_word2ch_tran.pl
+file
+
+
+
+
+2013-10-31T18:31:34.100135Z
+e9576d3814bd38e2d82fc60544c8f6c5
+2013-08-16T18:07:57.601269Z
+2804
+rickychanhoyin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3997
+
+score.sh
+file
+
+
+
+
+2013-10-31T18:31:34.104135Z
+a42bc07de8ac0c37ad86336e936cb7a7
+2013-08-01T15:23:42.369270Z
+2747
+rickychanhoyin
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1293
 

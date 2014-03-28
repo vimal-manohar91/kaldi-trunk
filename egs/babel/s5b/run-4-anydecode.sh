@@ -22,6 +22,7 @@ wip=0.5
 shadow_set_extra_opts=( --wip $wip )
 segmentation_opts="--isolated-resegmentation \
   --min-inter-utt-silence-length 1.0"
+use_vtln=true
 
 echo "run-4-test.sh $@"
 
@@ -250,11 +251,36 @@ if [ ! -f  $dataset_dir/.done ] ; then
     echo ---------------------------------------------------------------------
     echo "Preparing ${dataset_kind} parametrization files in ${dataset_dir} on" `date`
     echo ---------------------------------------------------------------------
-    make_plp ${dataset_dir} exp/make_plp/${dataset_id} plp
+    if $use_vtln; then
+      use_pitch_temp=$use_pitch
+      use_pitch=false
+      make_plp ${dataset_dir} exp/make_plp/${dataset_id} plp_novtln
+    else
+      make_plp ${dataset_dir} exp/make_plp/${dataset_id} plp
+    fi
     touch ${dataset_dir}/.plp.done
   fi
   touch $dataset_dir/.done 
 fi
+
+if $use_vtln && [ ! -f $dataset_dir/.vtln.done ]; then
+  utils/mkgraph.sh data/lang exp/tri3c exp/tri3c/graph || exit 1
+  steps/decode_lvtln.sh --beam 10 --lattice-beam 4 \
+    --nj $my_nj --cmd "$decode_cmd" "${decode_extra_opts[@]}" \
+    exp/tri3c/graph ${dataset_dir} exp/tri3c/decode_${dataset_id}_novtln || exit 1
+
+  mkdir -p ${dataset_dir}_novtln
+  cp -rT ${dataset_dir} ${dataset_dir}_novtln
+  cp exp/tri3c/decode/final.warp ${dataset_dir}/spk2warp
+  echo ---------------------------------------------------------------------
+  echo "Preparing ${dataset_kind} parametrization files with VTLN in ${dataset_dir} on" `date`
+  echo ---------------------------------------------------------------------
+  use_pitch=$use_pitch_temp
+  make_plp ${dataset_dir} exp/make_plp/${dataset_id}_vtln plp
+
+  touch ${dataset_dir}/.vtln.done
+fi
+
 #####################################################################
 #
 # KWS data directory preparation
@@ -277,7 +303,6 @@ if $data_only ; then
   echo "Exiting, as data-only was requested..."
   exit 0;
 fi
-
 
 ####################################################################
 ##
@@ -403,6 +428,34 @@ if [ -f exp/tri6_nnet/.done ]; then
     ${dataset_dir} data/lang $decode
 fi
 
+####################################################################
+##
+## DNN ("lowrank") decoding
+##
+####################################################################
+if [ -f exp/tri6_nnet2/.done ]; then
+  decode=exp/tri6_nnet2/decode_${dataset_id}
+
+  utils/mkgraph.sh \
+    data/lang exp/tri6_nnet2 exp/tri6_nnet2/graph |tee exp/tri6_nnet2/mkgraph.log || exit 1 
+
+  if [ ! -f $decode/.done ]; then
+    mkdir -p $decode
+    steps/nnet2/decode.sh \
+      --minimize $minimize --cmd "$decode_cmd" --nj $my_nj \
+      --beam $dnn_beam --lat-beam $dnn_lat_beam \
+      --skip-scoring true "${decode_extra_opts[@]}" \
+      --transform-dir exp/tri5/decode_${dataset_id} \
+      exp/tri6_nnet2/graph ${dataset_dir} $decode | tee $decode/decode.log
+
+    touch $decode/.done
+  fi
+  local/run_kws_stt_task.sh --cer $cer --max-states $max_states \
+    --skip-scoring $skip_scoring --extra-kws $extra_kws --wip $wip \
+    --cmd "$decode_cmd" --skip-kws $skip_kws --skip-stt $skip_stt  \
+    "${shadow_set_extra_opts[@]}" "${lmwt_dnn_extra_opts[@]}" \
+    ${dataset_dir} data/lang $decode
+fi
 
 ####################################################################
 ##

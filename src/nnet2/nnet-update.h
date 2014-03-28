@@ -58,7 +58,6 @@ class NnetUpdater {
   // returns average objective function over this minibatch.
   
   void GetOutput(CuMatrix<BaseFloat> *output);
- protected:
 
   /// takes the input and formats as a single matrix, in forward_data_[0].
   void FormatInput(const std::vector<NnetExample> &data);
@@ -68,6 +67,7 @@ class NnetUpdater {
 
   void Propagate();
 
+ protected:
   /// Computes objective function and derivative at output layer.
   double ComputeObjfAndDeriv(const std::vector<NnetExample> &data,
                              CuMatrix<BaseFloat> *deriv) const;

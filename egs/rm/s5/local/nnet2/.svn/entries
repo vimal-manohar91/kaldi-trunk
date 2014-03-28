@@ -1,14 +1,14 @@
 10
 
 dir
-3766
+3813
 svn://svn.code.sf.net/p/kaldi/code/trunk/egs/rm/s5/local/nnet2
 svn://svn.code.sf.net/p/kaldi/code
 
 
 
-2014-03-15T18:23:14.277525Z
-3765
+2014-03-22T20:56:19.394065Z
+3796
 danielpovey
 
 
@@ -100,10 +100,10 @@ file
 
 
 
-2014-03-15T20:52:43.569644Z
-78501e97d725c8fc447c8aac76edafe9
-2014-03-15T18:23:14.277525Z
-3765
+2014-03-24T19:38:18.144813Z
+758e6f90258fed385898cda6775da73c
+2014-03-22T20:56:19.394065Z
+3796
 danielpovey
 has-props
 
@@ -126,7 +126,7 @@ has-props
 
 
 
-1070
+1069
 
 run_5c_gpu.sh
 file

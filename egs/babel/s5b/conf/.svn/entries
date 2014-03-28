@@ -1,7 +1,7 @@
 10
 
 dir
-3766
+3813
 svn://svn.code.sf.net/p/kaldi/code/trunk/egs/babel/s5b/conf
 svn://svn.code.sf.net/p/kaldi/code
 
@@ -25,18 +25,6 @@ chenguoguo
 
 
 5e6a8d80-dfce-4ca6-a32a-6e07a63d50c8
-
-common.semisupervised.limitedLP
-file
-
-
-
-
-
-6f39fdc251ea0bc9af82e1771ab1b75d
-2014-03-02T16:26:59.373653Z
-3652
-vimalmanohar91
 
 lang
 dir
@@ -281,4 +269,16 @@ jtrmal
 
 
 24
+
+common.semisupervised.limitedLP
+file
+
+
+
+
+
+6f39fdc251ea0bc9af82e1771ab1b75d
+2014-03-02T16:26:59.373653Z
+3652
+vimalmanohar91
 

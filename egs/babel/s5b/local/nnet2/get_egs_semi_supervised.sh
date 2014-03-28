@@ -97,9 +97,9 @@ $use_pdf_ali && [ ! -f $latdir/best_path_pdf_ali.1.gz ] && echo "$0: no such fil
 # Set some variables.
 oov=`cat $lang/oov.int`
 num_leaves=`tree-info $alidir/tree 2>/dev/null | awk '{print $2}'` || exit 1;
-silphonelist=`cat $lang/phones/silence.csl` || exit 1;
 [ -z $num_leaves ] && echo "\$num_leaves is unset" && exit 1
 [ "$num_leaves" -eq "0" ] && echo "\$num_leaves is 0" && exit 1
+silphonelist=`cat $lang/phones/silence.csl` || exit 1;
 
 nj_sup=`cat $alidir/num_jobs` || exit 1;  # number of jobs in alignment dir...
 nj_unsup=`cat $latdir/num_jobs` || exit 1;  # number of jobs in decode dir

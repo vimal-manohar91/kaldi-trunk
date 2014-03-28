@@ -1,14 +1,14 @@
 10
 
 dir
-3766
+3813
 svn://svn.code.sf.net/p/kaldi/code/trunk/egs/swbd
 svn://svn.code.sf.net/p/kaldi/code
 
 
 
-2014-03-15T18:23:14.277525Z
-3765
+2014-03-24T17:31:34.500484Z
+3799
 danielpovey
 
 
@@ -25,6 +25,12 @@ danielpovey
 
 
 5e6a8d80-dfce-4ca6-a32a-6e07a63d50c8
+
+s5
+dir
+
+s5b
+dir
 
 README.txt
 file
@@ -59,10 +65,4 @@ danielpovey
 
 
 896
-
-s5
-dir
-
-s5b
-dir
 

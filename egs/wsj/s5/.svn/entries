@@ -1,14 +1,14 @@
 10
 
 dir
-3766
+3813
 svn://svn.code.sf.net/p/kaldi/code/trunk/egs/wsj/s5
 svn://svn.code.sf.net/p/kaldi/code
 
 
 
-2014-03-16T04:33:50.205336Z
-3766
+2014-03-24T17:31:34.500484Z
+3799
 danielpovey
 
 
@@ -25,6 +25,43 @@ danielpovey
 
 
 5e6a8d80-dfce-4ca6-a32a-6e07a63d50c8
+
+utils
+dir
+
+RESULTS
+file
+
+
+
+
+2014-03-24T19:38:15.244813Z
+cfa48be9fa5a9eee2bfaa9de4ecac10d
+2014-03-19T21:38:23.734051Z
+3784
+xiaohuizhang
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+15928
 
 conf
 dir
@@ -136,41 +173,4 @@ has-props
 
 steps
 dir
-
-utils
-dir
-
-RESULTS
-file
-
-
-
-
-2014-03-05T23:07:56.860704Z
-a3b74d9476c9923b82ace07ca091e417
-2014-03-05T13:54:15.247181Z
-3691
-vesis84
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-15642
 

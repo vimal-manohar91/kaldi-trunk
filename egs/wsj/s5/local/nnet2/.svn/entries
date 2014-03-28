@@ -1,15 +1,15 @@
 10
 
 dir
-3766
+3813
 svn://svn.code.sf.net/p/kaldi/code/trunk/egs/wsj/s5/local/nnet2
 svn://svn.code.sf.net/p/kaldi/code
 
 
 
-2014-03-16T04:33:50.205336Z
-3766
-danielpovey
+2014-03-19T21:38:23.734051Z
+3784
+xiaohuizhang
 
 
 
@@ -25,74 +25,6 @@ danielpovey
 
 
 5e6a8d80-dfce-4ca6-a32a-6e07a63d50c8
-
-run_5b_gpu.sh
-file
-
-
-
-
-2013-12-13T19:55:12.759901Z
-13e4209f905ce9a65daf98a48d5d104e
-2013-12-11T18:39:46.616498Z
-3298
-danielpovey
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3167
-
-run_5c_gpu.sh
-file
-
-
-
-
-2014-03-15T20:52:39.641644Z
-c38e4ef99a1ccfca9dfdd84906a554af
-2014-03-15T18:23:14.277525Z
-3765
-danielpovey
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1302
 
 run_5d_gpu.sh
 file
@@ -230,6 +162,40 @@ has-props
 
 1975
 
+run_5e_gpu.sh
+file
+
+
+
+
+2014-03-24T19:38:14.768813Z
+7b7afc821740bad8f9b1ebdaa3264529
+2014-03-19T21:38:23.734051Z
+3784
+xiaohuizhang
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1874
+
 run_5b.sh
 file
 
@@ -365,4 +331,72 @@ has-props
 
 
 1457
+
+run_5b_gpu.sh
+file
+
+
+
+
+2013-12-13T19:55:12.759901Z
+13e4209f905ce9a65daf98a48d5d104e
+2013-12-11T18:39:46.616498Z
+3298
+danielpovey
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3167
+
+run_5c_gpu.sh
+file
+
+
+
+
+2014-03-15T20:52:39.641644Z
+c38e4ef99a1ccfca9dfdd84906a554af
+2014-03-15T18:23:14.277525Z
+3765
+danielpovey
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1302
 

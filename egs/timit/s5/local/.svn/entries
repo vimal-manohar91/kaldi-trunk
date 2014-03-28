@@ -1,15 +1,15 @@
 10
 
 dir
-3766
+3813
 svn://svn.code.sf.net/p/kaldi/code/trunk/egs/timit/s5/local
 svn://svn.code.sf.net/p/kaldi/code
 
 
 
-2013-10-07T16:33:35.970598Z
-3054
-arnab13
+2014-03-20T15:59:08.628744Z
+3787
+danielpovey
 
 
 
@@ -25,6 +25,74 @@ arnab13
 
 
 5e6a8d80-dfce-4ca6-a32a-6e07a63d50c8
+
+score.sh
+file
+
+
+
+
+2013-10-31T18:31:31.468135Z
+a33e8faa2bdcb0de6eb56ca376c4d3b0
+2013-04-02T00:35:25.631910Z
+2295
+bbabaali
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2245
+
+timit_data_prep.sh
+file
+
+
+
+
+2014-03-24T19:38:16.836813Z
+454455cc02abec64415fe8630fd9a0dd
+2014-03-20T15:59:08.628744Z
+3787
+danielpovey
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4018
 
 score_combine.sh
 file
@@ -66,11 +134,11 @@ file
 
 
 
-2013-10-31T18:31:31.452135Z
-f68bbf52dc4dcff1f65d7ce747df8749
-2013-10-07T12:23:08.268491Z
-3052
-bbabaali
+2014-03-24T19:38:16.820813Z
+049274c0bd4af3f85b1a89d8b52c7686
+2014-03-20T15:59:08.628744Z
+3787
+danielpovey
 has-props
 
 
@@ -92,7 +160,7 @@ has-props
 
 
 
-2588
+2667
 
 timit_prepare_dict.sh
 file
@@ -161,72 +229,4 @@ has-props
 
 
 3361
-
-score.sh
-file
-
-
-
-
-2013-10-31T18:31:31.468135Z
-a33e8faa2bdcb0de6eb56ca376c4d3b0
-2013-04-02T00:35:25.631910Z
-2295
-bbabaali
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2245
-
-timit_data_prep.sh
-file
-
-
-
-
-2013-10-31T18:31:31.476135Z
-a4f5c3f042ba49725954dbd558c227e2
-2013-10-07T16:33:35.970598Z
-3054
-arnab13
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4004
 

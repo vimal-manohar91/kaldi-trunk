@@ -1,7 +1,7 @@
 10
 
 dir
-3766
+3813
 svn://svn.code.sf.net/p/kaldi/code/trunk/egs/babel/s5/steps_BNF
 svn://svn.code.sf.net/p/kaldi/code
 
@@ -25,6 +25,74 @@ danielpovey
 
 
 5e6a8d80-dfce-4ca6-a32a-6e07a63d50c8
+
+pfile_rconcat.pl
+file
+
+
+
+
+2013-10-31T18:31:23.280135Z
+2cf37c1cd904916278d6b34988a85d64
+2013-03-27T20:47:13.959847Z
+2279
+danielpovey
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2048
+
+make_denlats_sgmm2.sh
+file
+
+
+
+
+2013-10-31T18:31:23.284135Z
+c016ae4a88fbd60e00a386ef179fde52
+2013-03-02T17:16:11.524630Z
+2116
+yajiemiao
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5988
 
 pfile_burst.pl
 file
@@ -127,72 +195,4 @@ has-props
 
 
 5963
-
-pfile_rconcat.pl
-file
-
-
-
-
-2013-10-31T18:31:23.280135Z
-2cf37c1cd904916278d6b34988a85d64
-2013-03-27T20:47:13.959847Z
-2279
-danielpovey
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2048
-
-make_denlats_sgmm2.sh
-file
-
-
-
-
-2013-10-31T18:31:23.284135Z
-c016ae4a88fbd60e00a386ef179fde52
-2013-03-02T17:16:11.524630Z
-2116
-yajiemiao
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5988
 

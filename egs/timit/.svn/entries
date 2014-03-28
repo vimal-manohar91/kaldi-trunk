@@ -1,14 +1,14 @@
 10
 
 dir
-3766
+3813
 svn://svn.code.sf.net/p/kaldi/code/trunk/egs/timit
 svn://svn.code.sf.net/p/kaldi/code
 
 
 
-2014-01-15T00:36:15.542186Z
-3405
+2014-03-20T15:59:08.628744Z
+3787
 danielpovey
 
 
@@ -25,9 +25,6 @@ danielpovey
 
 
 5e6a8d80-dfce-4ca6-a32a-6e07a63d50c8
-
-s3
-dir
 
 s4
 dir
@@ -68,4 +65,7 @@ danielpovey
 
 
 1515
+
+s3
+dir
 

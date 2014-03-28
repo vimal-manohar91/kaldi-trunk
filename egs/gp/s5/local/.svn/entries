@@ -1,7 +1,7 @@
 10
 
 dir
-3766
+3813
 svn://svn.code.sf.net/p/kaldi/code/trunk/egs/gp/s5/local
 svn://svn.code.sf.net/p/kaldi/code
 
@@ -25,6 +25,176 @@ arnab13
 
 
 5e6a8d80-dfce-4ca6-a32a-6e07a63d50c8
+
+gp_rmn2utf_SP.pl
+file
+
+
+
+
+2013-10-31T18:31:28.772135Z
+feba00794b6c54a0d8e6f829a6138a1a
+2012-08-16T22:29:49.543614Z
+1220
+arnab13
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1947
+
+gp_convert_audio.sh
+file
+
+
+
+
+2013-10-31T18:31:28.776135Z
+1e0d770f4f10185a9fcd10be8d233dbe
+2012-08-16T22:29:49.543614Z
+1220
+arnab13
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3407
+
+gp_rmn2utf_RU.pl
+file
+
+
+
+
+2013-10-31T18:31:28.780135Z
+fdbf4dedf013f08d0766a6fc520299c8
+2012-08-21T10:17:39.109517Z
+1262
+ijanda
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2659
+
+gp_install.sh
+file
+
+
+
+
+2013-10-31T18:31:28.788135Z
+502929b3103eae118cb4d7e35d97f5e6
+2012-10-04T19:18:28.296557Z
+1421
+arnab13
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2873
+
+gp_norm_dict_FR.pl
+file
+
+
+
+
+2013-10-31T18:31:28.784135Z
+e7e0fc6bf09de9cc47fae630f9dc26f8
+2012-10-09T18:07:48.548841Z
+1432
+arnab13
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3669
 
 gp_extract_transcripts.pl
 file
@@ -434,6 +604,40 @@ has-props
 
 3202
 
+score.sh
+file
+
+
+
+
+2013-10-31T18:31:28.716135Z
+1a71f9766ea8bf745e3f1277e297d46e
+2012-10-09T18:07:48.548841Z
+1432
+arnab13
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1447
+
 gp_rmn2utf_FR.pl
 file
 
@@ -536,40 +740,6 @@ has-props
 
 6289
 
-score.sh
-file
-
-
-
-
-2013-10-31T18:31:28.716135Z
-1a71f9766ea8bf745e3f1277e297d46e
-2012-10-09T18:07:48.548841Z
-1432
-arnab13
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1447
-
 gp_make_questions.pl
 file
 
@@ -603,40 +773,6 @@ has-props
 
 
 2562
-
-gp_norm_trans_RU.pl
-file
-
-
-
-
-2013-10-31T18:31:28.740135Z
-2a3c7d7a5d818e92f7d2450820dc627a
-2012-10-04T19:18:28.296557Z
-1421
-arnab13
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4377
 
 gp_rmn2utf_PL.pl
 file
@@ -672,16 +808,16 @@ has-props
 
 1883
 
-gp_norm_dict_GE.pl
+gp_norm_trans_RU.pl
 file
 
 
 
 
-2013-10-31T18:31:28.748135Z
-749d6549ec111610be8b10676f91dd32
-2012-10-09T18:07:48.548841Z
-1432
+2013-10-31T18:31:28.740135Z
+2a3c7d7a5d818e92f7d2450820dc627a
+2012-10-04T19:18:28.296557Z
+1421
 arnab13
 has-props
 
@@ -704,7 +840,7 @@ has-props
 
 
 
-5329
+4377
 
 gp_prep_flists.sh
 file
@@ -739,6 +875,40 @@ has-props
 
 
 6006
+
+gp_norm_dict_GE.pl
+file
+
+
+
+
+2013-10-31T18:31:28.748135Z
+749d6549ec111610be8b10676f91dd32
+2012-10-09T18:07:48.548841Z
+1432
+arnab13
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5329
 
 gp_rmn2utf_PO.pl
 file
@@ -875,174 +1045,4 @@ has-props
 
 
 3537
-
-gp_rmn2utf_SP.pl
-file
-
-
-
-
-2013-10-31T18:31:28.772135Z
-feba00794b6c54a0d8e6f829a6138a1a
-2012-08-16T22:29:49.543614Z
-1220
-arnab13
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1947
-
-gp_convert_audio.sh
-file
-
-
-
-
-2013-10-31T18:31:28.776135Z
-1e0d770f4f10185a9fcd10be8d233dbe
-2012-08-16T22:29:49.543614Z
-1220
-arnab13
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3407
-
-gp_rmn2utf_RU.pl
-file
-
-
-
-
-2013-10-31T18:31:28.780135Z
-fdbf4dedf013f08d0766a6fc520299c8
-2012-08-21T10:17:39.109517Z
-1262
-ijanda
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2659
-
-gp_norm_dict_FR.pl
-file
-
-
-
-
-2013-10-31T18:31:28.784135Z
-e7e0fc6bf09de9cc47fae630f9dc26f8
-2012-10-09T18:07:48.548841Z
-1432
-arnab13
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3669
-
-gp_install.sh
-file
-
-
-
-
-2013-10-31T18:31:28.788135Z
-502929b3103eae118cb4d7e35d97f5e6
-2012-10-04T19:18:28.296557Z
-1421
-arnab13
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2873
 
